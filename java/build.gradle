@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java-library'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    group = project.findProperty('group') ?: 'com.blcvn.switching'
+    version = project.findProperty('version') ?: '0.1.0'
+
+    dependencies {
+        implementation 'com.google.protobuf:protobuf-java:3.21.12'
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java', "../com/blcvn/switching/${project.name}"]
+            }
+        }
+    }
+
+    tasks.withType(Jar) {
+        manifest {
+            attributes 'Implementation-Title': project.name, 'Implementation-Version': project.version
+        }
+    }
+}

@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package accesspoint.v1;
+
+import "common.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
+option java_package = "com.blcvn.switching.accesspoint";
+
+service FiService {
+  rpc CreateTransfer(CreateTransferRequest) returns (CreateTransferResponse) {}
+  rpc GetTransfer(GetTransferRequest) returns (Transfer) {}
+  rpc GetTransferStatus(GetTransferRequest) returns (TransferStatus) {}
+  rpc ConfirmTransfer(ConfirmTransferRequest) returns (ConfirmTransferResponse) {}
+  rpc SearchTransfers(SearchTransfersRequest) returns (SearchTransfersResponse) {}
+  rpc BulkTransfer(BulkTransferRequest) returns (BulkTransferResponse) {}
+}
+
+message CreateTransferRequest {
+  string instruction_id = 1;
+  string debtor = 2;
+  string creditor = 3;
+  double amount = 4;
+  string currency = 5;
+}
+
+message CreateTransferResponse {
+  string instruction_id = 1;
+  string status = 2;
+}
+
+message GetTransferRequest {
+  string instruction_id = 1;
+}
+
+message TransferStatus {
+  string instruction_id = 1;
+  string status = 2;
+}
+
+message ConfirmTransferRequest {
+  string instruction_id = 1;
+  string status = 2;
+  string timestamp = 3;
+}
+
+message ConfirmTransferResponse {
+  string instruction_id = 1;
+  string status = 2;
+}
+
+message SearchTransfersRequest {
+  message Filter {
+    string currency = 1;
+    string date_from = 2;
+    string date_to = 3;
+  }
+  Filter filter = 1;
+}
+
+message SearchTransfersResponse {
+  repeated Transfer results = 1;
+}
+
+message BulkTransferRequest {
+  string batch_id = 1;
+  message Item {
+    string instruction_id = 1;
+    double amount = 2;
+    string currency = 3;
+  }
+  repeated Item transfers = 2;
+}
+
+message BulkTransferResponse {
+  string batch_id = 1;
+  message CreatedItem {
+    string instruction_id = 1;
+    string status = 2;
+  }
+  repeated CreatedItem created = 2;
+}

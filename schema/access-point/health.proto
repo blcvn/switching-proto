@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package accesspoint.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
+option java_package = "com.blcvn.switching.accesspoint";
+
+// Health service
+service HealthService {
+  rpc Check(Empty) returns (HealthResponse) {}
+}
+
+message HealthResponse {
+  string status = 1;
+  google.protobuf.Timestamp time = 2;
+}

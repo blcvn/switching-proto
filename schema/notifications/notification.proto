@@ -1,0 +1,11 @@
+syntax = "proto3";
+package notification.v2;
+
+option go_package = "github.com/blcvn/switching-proto/go/notification;notification";
+option java_package = "com.blcvn.switching.notification";
+
+message Notification {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+}

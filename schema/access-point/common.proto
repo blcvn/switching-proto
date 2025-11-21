@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package accesspoint.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
+option java_package = "com.blcvn.switching.accesspoint";
+
+// Shared messages used across service-specific protos
+
+message Empty {}
+
+message Payment {
+  string id = 1;
+  string uetr = 2;
+  double amount = 3;
+  string currency = 4;
+  string debtor_agent = 5;
+  string creditor_agent = 6;
+  string end_to_end_id = 7;
+  string status = 8;
+  google.protobuf.Timestamp created_at = 9;
+  // Optional structured account details for the debtor (sending) agent.
+  Account debtor_agent_account = 10;
+  // Optional structured account details for the creditor (receiving) agent.
+  Account creditor_agent_account = 11;
+}
+
+message Transfer {
+  string instruction_id = 1;
+  string debtor = 2;
+  string creditor = 3;
+  double amount = 4;
+  string currency = 5;
+  string status = 6;
+  google.protobuf.Timestamp created_at = 7;
+  // Optional structured account details for the debtor/creditor in FI transfers
+  Account debtor_account = 8;
+  Account creditor_account = 9;
+}
+
+message KycEntity {
+  string bic = 1;
+  string name = 2;
+  string country = 3;
+  string lei = 4;
+  string updated_at = 5;
+}
+
+// Account represents the account details associated with an agent.
+message Account {
+  // International Bank Account Number (if available)
+  string iban = 1;
+  // Local account number
+  string account_number = 2;
+  // Account holder name
+  string account_name = 3;
+  // Account currency (optional)
+  string currency = 4;
+  // Additional reference or identification (e.g., secondary id)
+  string reference = 5;
+}

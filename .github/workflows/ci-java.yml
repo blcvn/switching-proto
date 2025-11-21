@@ -1,0 +1,30 @@
+name: CI - Java (Gradle)
+
+on:
+  push:
+    paths:
+      - 'java/**'
+  pull_request:
+    paths:
+      - 'java/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Run Gradle builds for Java projects
+        run: |
+          set -e
+          cd java
+          if [ -f "./gradlew" ]; then
+            ./gradlew build
+          else
+            echo "No Gradle wrapper found. Attempting system 'gradle' command."
+            gradle build
+          fi

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package payment.v1;
+
+option go_package = "github.com/blcvn/switching-proto/go/payment;payment";
+option java_package = "com.blcvn.switching.payment";
+
+message Payment {
+  string id = 1;
+  double amount = 2;
+  string currency = 3;
+}

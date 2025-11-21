@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package accesspoint.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
+option java_package = "com.blcvn.switching.accesspoint";
+
+service EventsService {
+  // server streaming
+  rpc SubscribeEvents(SubscribeEventsRequest) returns (stream Event) {}
+  rpc RegisterCallback(SubscribeCallbackRequest) returns (SubscribeCallbackResponse) {}
+  rpc UnregisterCallback(UnsubscribeCallbackRequest) returns (UnsubscribeCallbackResponse) {}
+}
+
+message SubscribeEventsRequest {
+  string uetr = 1;
+}
+
+message Event {
+  string event = 1; // welcome, update, ping
+  string data = 2;
+  google.protobuf.Timestamp timestamp = 3;
+}
+
+message SubscribeCallbackRequest {
+  string callback_url = 1;
+}
+
+message SubscribeCallbackResponse {
+  string subscribed = 1;
+}
+
+message UnsubscribeCallbackRequest {}
+
+message UnsubscribeCallbackResponse {
+  string unsubscribed = 1;
+}

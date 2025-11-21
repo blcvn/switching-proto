@@ -1,0 +1,6 @@
+rootProject.name = 'switching-proto-java'
+
+include(':accesspoint')
+include(':payment')
+include(':user')
+include(':notification')
