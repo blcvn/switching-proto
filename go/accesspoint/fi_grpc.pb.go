@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: fi.proto
+// source: access-point/fi.proto
 
 package accesspoint
 
@@ -307,5 +307,5 @@ var FiService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "fi.proto",
+	Metadata: "access-point/fi.proto",
 }

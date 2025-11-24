@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: fi.proto
+// source: access-point/fi.proto
 
 package accesspoint
 
@@ -35,7 +35,7 @@ type CreateTransferRequest struct {
 
 func (x *CreateTransferRequest) Reset() {
 	*x = CreateTransferRequest{}
-	mi := &file_fi_proto_msgTypes[0]
+	mi := &file_access_point_fi_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47,7 +47,7 @@ func (x *CreateTransferRequest) String() string {
 func (*CreateTransferRequest) ProtoMessage() {}
 
 func (x *CreateTransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[0]
+	mi := &file_access_point_fi_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *CreateTransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTransferRequest.ProtoReflect.Descriptor instead.
 func (*CreateTransferRequest) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{0}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateTransferRequest) GetInstructionId() string {
@@ -108,7 +108,7 @@ type CreateTransferResponse struct {
 
 func (x *CreateTransferResponse) Reset() {
 	*x = CreateTransferResponse{}
-	mi := &file_fi_proto_msgTypes[1]
+	mi := &file_access_point_fi_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -120,7 +120,7 @@ func (x *CreateTransferResponse) String() string {
 func (*CreateTransferResponse) ProtoMessage() {}
 
 func (x *CreateTransferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[1]
+	mi := &file_access_point_fi_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -133,7 +133,7 @@ func (x *CreateTransferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTransferResponse.ProtoReflect.Descriptor instead.
 func (*CreateTransferResponse) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{1}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateTransferResponse) GetInstructionId() string {
@@ -159,7 +159,7 @@ type GetTransferRequest struct {
 
 func (x *GetTransferRequest) Reset() {
 	*x = GetTransferRequest{}
-	mi := &file_fi_proto_msgTypes[2]
+	mi := &file_access_point_fi_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -171,7 +171,7 @@ func (x *GetTransferRequest) String() string {
 func (*GetTransferRequest) ProtoMessage() {}
 
 func (x *GetTransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[2]
+	mi := &file_access_point_fi_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -184,7 +184,7 @@ func (x *GetTransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTransferRequest.ProtoReflect.Descriptor instead.
 func (*GetTransferRequest) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{2}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetTransferRequest) GetInstructionId() string {
@@ -204,7 +204,7 @@ type TransferStatus struct {
 
 func (x *TransferStatus) Reset() {
 	*x = TransferStatus{}
-	mi := &file_fi_proto_msgTypes[3]
+	mi := &file_access_point_fi_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -216,7 +216,7 @@ func (x *TransferStatus) String() string {
 func (*TransferStatus) ProtoMessage() {}
 
 func (x *TransferStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[3]
+	mi := &file_access_point_fi_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -229,7 +229,7 @@ func (x *TransferStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferStatus.ProtoReflect.Descriptor instead.
 func (*TransferStatus) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{3}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *TransferStatus) GetInstructionId() string {
@@ -257,7 +257,7 @@ type ConfirmTransferRequest struct {
 
 func (x *ConfirmTransferRequest) Reset() {
 	*x = ConfirmTransferRequest{}
-	mi := &file_fi_proto_msgTypes[4]
+	mi := &file_access_point_fi_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -269,7 +269,7 @@ func (x *ConfirmTransferRequest) String() string {
 func (*ConfirmTransferRequest) ProtoMessage() {}
 
 func (x *ConfirmTransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[4]
+	mi := &file_access_point_fi_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -282,7 +282,7 @@ func (x *ConfirmTransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmTransferRequest.ProtoReflect.Descriptor instead.
 func (*ConfirmTransferRequest) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{4}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ConfirmTransferRequest) GetInstructionId() string {
@@ -316,7 +316,7 @@ type ConfirmTransferResponse struct {
 
 func (x *ConfirmTransferResponse) Reset() {
 	*x = ConfirmTransferResponse{}
-	mi := &file_fi_proto_msgTypes[5]
+	mi := &file_access_point_fi_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -328,7 +328,7 @@ func (x *ConfirmTransferResponse) String() string {
 func (*ConfirmTransferResponse) ProtoMessage() {}
 
 func (x *ConfirmTransferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[5]
+	mi := &file_access_point_fi_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *ConfirmTransferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmTransferResponse.ProtoReflect.Descriptor instead.
 func (*ConfirmTransferResponse) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{5}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ConfirmTransferResponse) GetInstructionId() string {
@@ -367,7 +367,7 @@ type SearchTransfersRequest struct {
 
 func (x *SearchTransfersRequest) Reset() {
 	*x = SearchTransfersRequest{}
-	mi := &file_fi_proto_msgTypes[6]
+	mi := &file_access_point_fi_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -379,7 +379,7 @@ func (x *SearchTransfersRequest) String() string {
 func (*SearchTransfersRequest) ProtoMessage() {}
 
 func (x *SearchTransfersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[6]
+	mi := &file_access_point_fi_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -392,7 +392,7 @@ func (x *SearchTransfersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchTransfersRequest.ProtoReflect.Descriptor instead.
 func (*SearchTransfersRequest) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{6}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SearchTransfersRequest) GetFilter() *SearchTransfersRequest_Filter {
@@ -411,7 +411,7 @@ type SearchTransfersResponse struct {
 
 func (x *SearchTransfersResponse) Reset() {
 	*x = SearchTransfersResponse{}
-	mi := &file_fi_proto_msgTypes[7]
+	mi := &file_access_point_fi_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -423,7 +423,7 @@ func (x *SearchTransfersResponse) String() string {
 func (*SearchTransfersResponse) ProtoMessage() {}
 
 func (x *SearchTransfersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[7]
+	mi := &file_access_point_fi_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -436,7 +436,7 @@ func (x *SearchTransfersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchTransfersResponse.ProtoReflect.Descriptor instead.
 func (*SearchTransfersResponse) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{7}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *SearchTransfersResponse) GetResults() []*Transfer {
@@ -456,7 +456,7 @@ type BulkTransferRequest struct {
 
 func (x *BulkTransferRequest) Reset() {
 	*x = BulkTransferRequest{}
-	mi := &file_fi_proto_msgTypes[8]
+	mi := &file_access_point_fi_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -468,7 +468,7 @@ func (x *BulkTransferRequest) String() string {
 func (*BulkTransferRequest) ProtoMessage() {}
 
 func (x *BulkTransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[8]
+	mi := &file_access_point_fi_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -481,7 +481,7 @@ func (x *BulkTransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BulkTransferRequest.ProtoReflect.Descriptor instead.
 func (*BulkTransferRequest) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{8}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *BulkTransferRequest) GetBatchId() string {
@@ -508,7 +508,7 @@ type BulkTransferResponse struct {
 
 func (x *BulkTransferResponse) Reset() {
 	*x = BulkTransferResponse{}
-	mi := &file_fi_proto_msgTypes[9]
+	mi := &file_access_point_fi_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -520,7 +520,7 @@ func (x *BulkTransferResponse) String() string {
 func (*BulkTransferResponse) ProtoMessage() {}
 
 func (x *BulkTransferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[9]
+	mi := &file_access_point_fi_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -533,7 +533,7 @@ func (x *BulkTransferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BulkTransferResponse.ProtoReflect.Descriptor instead.
 func (*BulkTransferResponse) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{9}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *BulkTransferResponse) GetBatchId() string {
@@ -561,7 +561,7 @@ type SearchTransfersRequest_Filter struct {
 
 func (x *SearchTransfersRequest_Filter) Reset() {
 	*x = SearchTransfersRequest_Filter{}
-	mi := &file_fi_proto_msgTypes[10]
+	mi := &file_access_point_fi_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -573,7 +573,7 @@ func (x *SearchTransfersRequest_Filter) String() string {
 func (*SearchTransfersRequest_Filter) ProtoMessage() {}
 
 func (x *SearchTransfersRequest_Filter) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[10]
+	mi := &file_access_point_fi_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -586,7 +586,7 @@ func (x *SearchTransfersRequest_Filter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchTransfersRequest_Filter.ProtoReflect.Descriptor instead.
 func (*SearchTransfersRequest_Filter) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{6, 0}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{6, 0}
 }
 
 func (x *SearchTransfersRequest_Filter) GetCurrency() string {
@@ -621,7 +621,7 @@ type BulkTransferRequest_Item struct {
 
 func (x *BulkTransferRequest_Item) Reset() {
 	*x = BulkTransferRequest_Item{}
-	mi := &file_fi_proto_msgTypes[11]
+	mi := &file_access_point_fi_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -633,7 +633,7 @@ func (x *BulkTransferRequest_Item) String() string {
 func (*BulkTransferRequest_Item) ProtoMessage() {}
 
 func (x *BulkTransferRequest_Item) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[11]
+	mi := &file_access_point_fi_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -646,7 +646,7 @@ func (x *BulkTransferRequest_Item) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BulkTransferRequest_Item.ProtoReflect.Descriptor instead.
 func (*BulkTransferRequest_Item) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{8, 0}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{8, 0}
 }
 
 func (x *BulkTransferRequest_Item) GetInstructionId() string {
@@ -680,7 +680,7 @@ type BulkTransferResponse_CreatedItem struct {
 
 func (x *BulkTransferResponse_CreatedItem) Reset() {
 	*x = BulkTransferResponse_CreatedItem{}
-	mi := &file_fi_proto_msgTypes[12]
+	mi := &file_access_point_fi_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -692,7 +692,7 @@ func (x *BulkTransferResponse_CreatedItem) String() string {
 func (*BulkTransferResponse_CreatedItem) ProtoMessage() {}
 
 func (x *BulkTransferResponse_CreatedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_fi_proto_msgTypes[12]
+	mi := &file_access_point_fi_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -705,7 +705,7 @@ func (x *BulkTransferResponse_CreatedItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BulkTransferResponse_CreatedItem.ProtoReflect.Descriptor instead.
 func (*BulkTransferResponse_CreatedItem) Descriptor() ([]byte, []int) {
-	return file_fi_proto_rawDescGZIP(), []int{9, 0}
+	return file_access_point_fi_proto_rawDescGZIP(), []int{9, 0}
 }
 
 func (x *BulkTransferResponse_CreatedItem) GetInstructionId() string {
@@ -722,11 +722,11 @@ func (x *BulkTransferResponse_CreatedItem) GetStatus() string {
 	return ""
 }
 
-var File_fi_proto protoreflect.FileDescriptor
+var File_access_point_fi_proto protoreflect.FileDescriptor
 
-const file_fi_proto_rawDesc = "" +
+const file_access_point_fi_proto_rawDesc = "" +
 	"\n" +
-	"\bfi.proto\x12\x0eaccesspoint.v1\x1a\fcommon.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa6\x01\n" +
+	"\x15access-point/fi.proto\x12\x0eaccesspoint.v1\x1a\x19access-point/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa6\x01\n" +
 	"\x15CreateTransferRequest\x12%\n" +
 	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
 	"\x06debtor\x18\x02 \x01(\tR\x06debtor\x12\x1a\n" +
@@ -779,19 +779,19 @@ const file_fi_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_fi_proto_rawDescOnce sync.Once
-	file_fi_proto_rawDescData []byte
+	file_access_point_fi_proto_rawDescOnce sync.Once
+	file_access_point_fi_proto_rawDescData []byte
 )
 
-func file_fi_proto_rawDescGZIP() []byte {
-	file_fi_proto_rawDescOnce.Do(func() {
-		file_fi_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_fi_proto_rawDesc), len(file_fi_proto_rawDesc)))
+func file_access_point_fi_proto_rawDescGZIP() []byte {
+	file_access_point_fi_proto_rawDescOnce.Do(func() {
+		file_access_point_fi_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_fi_proto_rawDesc), len(file_access_point_fi_proto_rawDesc)))
 	})
-	return file_fi_proto_rawDescData
+	return file_access_point_fi_proto_rawDescData
 }
 
-var file_fi_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_fi_proto_goTypes = []any{
+var file_access_point_fi_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_access_point_fi_proto_goTypes = []any{
 	(*CreateTransferRequest)(nil),            // 0: accesspoint.v1.CreateTransferRequest
 	(*CreateTransferResponse)(nil),           // 1: accesspoint.v1.CreateTransferResponse
 	(*GetTransferRequest)(nil),               // 2: accesspoint.v1.GetTransferRequest
@@ -807,7 +807,7 @@ var file_fi_proto_goTypes = []any{
 	(*BulkTransferResponse_CreatedItem)(nil), // 12: accesspoint.v1.BulkTransferResponse.CreatedItem
 	(*Transfer)(nil),                         // 13: accesspoint.v1.Transfer
 }
-var file_fi_proto_depIdxs = []int32{
+var file_access_point_fi_proto_depIdxs = []int32{
 	10, // 0: accesspoint.v1.SearchTransfersRequest.filter:type_name -> accesspoint.v1.SearchTransfersRequest.Filter
 	13, // 1: accesspoint.v1.SearchTransfersResponse.results:type_name -> accesspoint.v1.Transfer
 	11, // 2: accesspoint.v1.BulkTransferRequest.transfers:type_name -> accesspoint.v1.BulkTransferRequest.Item
@@ -831,27 +831,27 @@ var file_fi_proto_depIdxs = []int32{
 	0,  // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_fi_proto_init() }
-func file_fi_proto_init() {
-	if File_fi_proto != nil {
+func init() { file_access_point_fi_proto_init() }
+func file_access_point_fi_proto_init() {
+	if File_access_point_fi_proto != nil {
 		return
 	}
-	file_common_proto_init()
+	file_access_point_common_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_fi_proto_rawDesc), len(file_fi_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_fi_proto_rawDesc), len(file_access_point_fi_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_fi_proto_goTypes,
-		DependencyIndexes: file_fi_proto_depIdxs,
-		MessageInfos:      file_fi_proto_msgTypes,
+		GoTypes:           file_access_point_fi_proto_goTypes,
+		DependencyIndexes: file_access_point_fi_proto_depIdxs,
+		MessageInfos:      file_access_point_fi_proto_msgTypes,
 	}.Build()
-	File_fi_proto = out.File
-	file_fi_proto_goTypes = nil
-	file_fi_proto_depIdxs = nil
+	File_access_point_fi_proto = out.File
+	file_access_point_fi_proto_goTypes = nil
+	file_access_point_fi_proto_depIdxs = nil
 }

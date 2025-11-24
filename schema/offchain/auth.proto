@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package offchain.v1;
+
+option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
+option java_package = "com.blcvn.switching.offchain";
+
+// Authentication service (token endpoint)
+service AuthService {
+  rpc Token(TokenRequest) returns (TokenResponse) {}
+}
+
+message TokenRequest {
+  string grant_type = 1;
+  string client_id = 2;
+  string client_secret = 3;
+}
+
+message TokenResponse {
+  string access_token = 1;
+  string token_type = 2;
+  int32 expires_in = 3;
+}

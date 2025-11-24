@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: gpi.proto
+// source: access-point/gpi.proto
 
 package accesspoint
 
@@ -27,20 +27,16 @@ type CreatePaymentRequest struct {
 	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
 	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	Currency      string                 `protobuf:"bytes,3,opt,name=currency,proto3" json:"currency,omitempty"`
-	DebtorAgent   string                 `protobuf:"bytes,4,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`
-	CreditorAgent string                 `protobuf:"bytes,5,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"`
+	CreditorAgent string                 `protobuf:"bytes,4,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"`
+	CreditorIban  string                 `protobuf:"bytes,5,opt,name=creditor_iban,json=creditorIban,proto3" json:"creditor_iban,omitempty"`
 	EndToEndId    string                 `protobuf:"bytes,6,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`
-	// Optional: structured account details for the sending bank's account (debtor)
-	DebtorAgentAccount *Account `protobuf:"bytes,7,opt,name=debtor_agent_account,json=debtorAgentAccount,proto3" json:"debtor_agent_account,omitempty"`
-	// Optional: structured account details for the receiving bank's account (creditor)
-	CreditorAgentAccount *Account `protobuf:"bytes,8,opt,name=creditor_agent_account,json=creditorAgentAccount,proto3" json:"creditor_agent_account,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CreatePaymentRequest) Reset() {
 	*x = CreatePaymentRequest{}
-	mi := &file_gpi_proto_msgTypes[0]
+	mi := &file_access_point_gpi_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52,7 +48,7 @@ func (x *CreatePaymentRequest) String() string {
 func (*CreatePaymentRequest) ProtoMessage() {}
 
 func (x *CreatePaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[0]
+	mi := &file_access_point_gpi_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,7 +61,7 @@ func (x *CreatePaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePaymentRequest.ProtoReflect.Descriptor instead.
 func (*CreatePaymentRequest) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{0}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreatePaymentRequest) GetUetr() string {
@@ -89,16 +85,16 @@ func (x *CreatePaymentRequest) GetCurrency() string {
 	return ""
 }
 
-func (x *CreatePaymentRequest) GetDebtorAgent() string {
+func (x *CreatePaymentRequest) GetCreditorAgent() string {
 	if x != nil {
-		return x.DebtorAgent
+		return x.CreditorAgent
 	}
 	return ""
 }
 
-func (x *CreatePaymentRequest) GetCreditorAgent() string {
+func (x *CreatePaymentRequest) GetCreditorIban() string {
 	if x != nil {
-		return x.CreditorAgent
+		return x.CreditorIban
 	}
 	return ""
 }
@@ -108,20 +104,6 @@ func (x *CreatePaymentRequest) GetEndToEndId() string {
 		return x.EndToEndId
 	}
 	return ""
-}
-
-func (x *CreatePaymentRequest) GetDebtorAgentAccount() *Account {
-	if x != nil {
-		return x.DebtorAgentAccount
-	}
-	return nil
-}
-
-func (x *CreatePaymentRequest) GetCreditorAgentAccount() *Account {
-	if x != nil {
-		return x.CreditorAgentAccount
-	}
-	return nil
 }
 
 type CreatePaymentResponse struct {
@@ -137,7 +119,7 @@ type CreatePaymentResponse struct {
 
 func (x *CreatePaymentResponse) Reset() {
 	*x = CreatePaymentResponse{}
-	mi := &file_gpi_proto_msgTypes[1]
+	mi := &file_access_point_gpi_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -149,7 +131,7 @@ func (x *CreatePaymentResponse) String() string {
 func (*CreatePaymentResponse) ProtoMessage() {}
 
 func (x *CreatePaymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[1]
+	mi := &file_access_point_gpi_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -162,7 +144,7 @@ func (x *CreatePaymentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePaymentResponse.ProtoReflect.Descriptor instead.
 func (*CreatePaymentResponse) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{1}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreatePaymentResponse) GetId() string {
@@ -209,7 +191,7 @@ type GetPaymentRequest struct {
 
 func (x *GetPaymentRequest) Reset() {
 	*x = GetPaymentRequest{}
-	mi := &file_gpi_proto_msgTypes[2]
+	mi := &file_access_point_gpi_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -221,7 +203,7 @@ func (x *GetPaymentRequest) String() string {
 func (*GetPaymentRequest) ProtoMessage() {}
 
 func (x *GetPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[2]
+	mi := &file_access_point_gpi_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +216,7 @@ func (x *GetPaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPaymentRequest.ProtoReflect.Descriptor instead.
 func (*GetPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{2}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetPaymentRequest) GetId() string {
@@ -253,7 +235,7 @@ type GetPaymentStatusRequest struct {
 
 func (x *GetPaymentStatusRequest) Reset() {
 	*x = GetPaymentStatusRequest{}
-	mi := &file_gpi_proto_msgTypes[3]
+	mi := &file_access_point_gpi_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -265,7 +247,7 @@ func (x *GetPaymentStatusRequest) String() string {
 func (*GetPaymentStatusRequest) ProtoMessage() {}
 
 func (x *GetPaymentStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[3]
+	mi := &file_access_point_gpi_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -278,7 +260,7 @@ func (x *GetPaymentStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPaymentStatusRequest.ProtoReflect.Descriptor instead.
 func (*GetPaymentStatusRequest) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{3}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetPaymentStatusRequest) GetUetr() string {
@@ -300,7 +282,7 @@ type PaymentStatus struct {
 
 func (x *PaymentStatus) Reset() {
 	*x = PaymentStatus{}
-	mi := &file_gpi_proto_msgTypes[4]
+	mi := &file_access_point_gpi_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -312,7 +294,7 @@ func (x *PaymentStatus) String() string {
 func (*PaymentStatus) ProtoMessage() {}
 
 func (x *PaymentStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[4]
+	mi := &file_access_point_gpi_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -325,7 +307,7 @@ func (x *PaymentStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentStatus.ProtoReflect.Descriptor instead.
 func (*PaymentStatus) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{4}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *PaymentStatus) GetUetr() string {
@@ -367,7 +349,7 @@ type ConfirmPaymentRequest struct {
 
 func (x *ConfirmPaymentRequest) Reset() {
 	*x = ConfirmPaymentRequest{}
-	mi := &file_gpi_proto_msgTypes[5]
+	mi := &file_access_point_gpi_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -379,7 +361,7 @@ func (x *ConfirmPaymentRequest) String() string {
 func (*ConfirmPaymentRequest) ProtoMessage() {}
 
 func (x *ConfirmPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[5]
+	mi := &file_access_point_gpi_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -392,7 +374,7 @@ func (x *ConfirmPaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmPaymentRequest.ProtoReflect.Descriptor instead.
 func (*ConfirmPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{5}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ConfirmPaymentRequest) GetUetr() string {
@@ -426,7 +408,7 @@ type ConfirmPaymentResponse struct {
 
 func (x *ConfirmPaymentResponse) Reset() {
 	*x = ConfirmPaymentResponse{}
-	mi := &file_gpi_proto_msgTypes[6]
+	mi := &file_access_point_gpi_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -438,7 +420,7 @@ func (x *ConfirmPaymentResponse) String() string {
 func (*ConfirmPaymentResponse) ProtoMessage() {}
 
 func (x *ConfirmPaymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_gpi_proto_msgTypes[6]
+	mi := &file_access_point_gpi_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,7 +433,7 @@ func (x *ConfirmPaymentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmPaymentResponse.ProtoReflect.Descriptor instead.
 func (*ConfirmPaymentResponse) Descriptor() ([]byte, []int) {
-	return file_gpi_proto_rawDescGZIP(), []int{6}
+	return file_access_point_gpi_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ConfirmPaymentResponse) GetUetr() string {
@@ -468,21 +450,19 @@ func (x *ConfirmPaymentResponse) GetStatus() string {
 	return ""
 }
 
-var File_gpi_proto protoreflect.FileDescriptor
+var File_access_point_gpi_proto protoreflect.FileDescriptor
 
-const file_gpi_proto_rawDesc = "" +
+const file_access_point_gpi_proto_rawDesc = "" +
 	"\n" +
-	"\tgpi.proto\x12\x0eaccesspoint.v1\x1a\fcommon.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe5\x02\n" +
+	"\x16access-point/gpi.proto\x12\x0eaccesspoint.v1\x1a\x19access-point/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcd\x01\n" +
 	"\x14CreatePaymentRequest\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x16\n" +
 	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x03 \x01(\tR\bcurrency\x12!\n" +
-	"\fdebtor_agent\x18\x04 \x01(\tR\vdebtorAgent\x12%\n" +
-	"\x0ecreditor_agent\x18\x05 \x01(\tR\rcreditorAgent\x12!\n" +
+	"\bcurrency\x18\x03 \x01(\tR\bcurrency\x12%\n" +
+	"\x0ecreditor_agent\x18\x04 \x01(\tR\rcreditorAgent\x12#\n" +
+	"\rcreditor_iban\x18\x05 \x01(\tR\fcreditorIban\x12!\n" +
 	"\rend_to_end_id\x18\x06 \x01(\tR\n" +
-	"endToEndId\x12I\n" +
-	"\x14debtor_agent_account\x18\a \x01(\v2\x17.accesspoint.v1.AccountR\x12debtorAgentAccount\x12M\n" +
-	"\x16creditor_agent_account\x18\b \x01(\v2\x17.accesspoint.v1.AccountR\x14creditorAgentAccount\"\xd7\x01\n" +
+	"endToEndId\"\xd7\x01\n" +
 	"\x15CreatePaymentResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04uetr\x18\x02 \x01(\tR\x04uetr\x123\n" +
@@ -515,19 +495,19 @@ const file_gpi_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_gpi_proto_rawDescOnce sync.Once
-	file_gpi_proto_rawDescData []byte
+	file_access_point_gpi_proto_rawDescOnce sync.Once
+	file_access_point_gpi_proto_rawDescData []byte
 )
 
-func file_gpi_proto_rawDescGZIP() []byte {
-	file_gpi_proto_rawDescOnce.Do(func() {
-		file_gpi_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_gpi_proto_rawDesc), len(file_gpi_proto_rawDesc)))
+func file_access_point_gpi_proto_rawDescGZIP() []byte {
+	file_access_point_gpi_proto_rawDescOnce.Do(func() {
+		file_access_point_gpi_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_gpi_proto_rawDesc), len(file_access_point_gpi_proto_rawDesc)))
 	})
-	return file_gpi_proto_rawDescData
+	return file_access_point_gpi_proto_rawDescData
 }
 
-var file_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_gpi_proto_goTypes = []any{
+var file_access_point_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_access_point_gpi_proto_goTypes = []any{
 	(*CreatePaymentRequest)(nil),    // 0: accesspoint.v1.CreatePaymentRequest
 	(*CreatePaymentResponse)(nil),   // 1: accesspoint.v1.CreatePaymentResponse
 	(*GetPaymentRequest)(nil),       // 2: accesspoint.v1.GetPaymentRequest
@@ -535,50 +515,47 @@ var file_gpi_proto_goTypes = []any{
 	(*PaymentStatus)(nil),           // 4: accesspoint.v1.PaymentStatus
 	(*ConfirmPaymentRequest)(nil),   // 5: accesspoint.v1.ConfirmPaymentRequest
 	(*ConfirmPaymentResponse)(nil),  // 6: accesspoint.v1.ConfirmPaymentResponse
-	(*Account)(nil),                 // 7: accesspoint.v1.Account
-	(*timestamp.Timestamp)(nil),     // 8: google.protobuf.Timestamp
-	(*Payment)(nil),                 // 9: accesspoint.v1.Payment
+	(*timestamp.Timestamp)(nil),     // 7: google.protobuf.Timestamp
+	(*Payment)(nil),                 // 8: accesspoint.v1.Payment
 }
-var file_gpi_proto_depIdxs = []int32{
-	7, // 0: accesspoint.v1.CreatePaymentRequest.debtor_agent_account:type_name -> accesspoint.v1.Account
-	7, // 1: accesspoint.v1.CreatePaymentRequest.creditor_agent_account:type_name -> accesspoint.v1.Account
-	8, // 2: accesspoint.v1.CreatePaymentResponse.processing_timestamp:type_name -> google.protobuf.Timestamp
-	0, // 3: accesspoint.v1.GpiService.CreatePayment:input_type -> accesspoint.v1.CreatePaymentRequest
-	2, // 4: accesspoint.v1.GpiService.GetPayment:input_type -> accesspoint.v1.GetPaymentRequest
-	3, // 5: accesspoint.v1.GpiService.GetPaymentStatus:input_type -> accesspoint.v1.GetPaymentStatusRequest
-	5, // 6: accesspoint.v1.GpiService.ConfirmPayment:input_type -> accesspoint.v1.ConfirmPaymentRequest
-	1, // 7: accesspoint.v1.GpiService.CreatePayment:output_type -> accesspoint.v1.CreatePaymentResponse
-	9, // 8: accesspoint.v1.GpiService.GetPayment:output_type -> accesspoint.v1.Payment
-	4, // 9: accesspoint.v1.GpiService.GetPaymentStatus:output_type -> accesspoint.v1.PaymentStatus
-	6, // 10: accesspoint.v1.GpiService.ConfirmPayment:output_type -> accesspoint.v1.ConfirmPaymentResponse
-	7, // [7:11] is the sub-list for method output_type
-	3, // [3:7] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+var file_access_point_gpi_proto_depIdxs = []int32{
+	7, // 0: accesspoint.v1.CreatePaymentResponse.processing_timestamp:type_name -> google.protobuf.Timestamp
+	0, // 1: accesspoint.v1.GpiService.CreatePayment:input_type -> accesspoint.v1.CreatePaymentRequest
+	2, // 2: accesspoint.v1.GpiService.GetPayment:input_type -> accesspoint.v1.GetPaymentRequest
+	3, // 3: accesspoint.v1.GpiService.GetPaymentStatus:input_type -> accesspoint.v1.GetPaymentStatusRequest
+	5, // 4: accesspoint.v1.GpiService.ConfirmPayment:input_type -> accesspoint.v1.ConfirmPaymentRequest
+	1, // 5: accesspoint.v1.GpiService.CreatePayment:output_type -> accesspoint.v1.CreatePaymentResponse
+	8, // 6: accesspoint.v1.GpiService.GetPayment:output_type -> accesspoint.v1.Payment
+	4, // 7: accesspoint.v1.GpiService.GetPaymentStatus:output_type -> accesspoint.v1.PaymentStatus
+	6, // 8: accesspoint.v1.GpiService.ConfirmPayment:output_type -> accesspoint.v1.ConfirmPaymentResponse
+	5, // [5:9] is the sub-list for method output_type
+	1, // [1:5] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_gpi_proto_init() }
-func file_gpi_proto_init() {
-	if File_gpi_proto != nil {
+func init() { file_access_point_gpi_proto_init() }
+func file_access_point_gpi_proto_init() {
+	if File_access_point_gpi_proto != nil {
 		return
 	}
-	file_common_proto_init()
+	file_access_point_common_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_gpi_proto_rawDesc), len(file_gpi_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_gpi_proto_rawDesc), len(file_access_point_gpi_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_gpi_proto_goTypes,
-		DependencyIndexes: file_gpi_proto_depIdxs,
-		MessageInfos:      file_gpi_proto_msgTypes,
+		GoTypes:           file_access_point_gpi_proto_goTypes,
+		DependencyIndexes: file_access_point_gpi_proto_depIdxs,
+		MessageInfos:      file_access_point_gpi_proto_msgTypes,
 	}.Build()
-	File_gpi_proto = out.File
-	file_gpi_proto_goTypes = nil
-	file_gpi_proto_depIdxs = nil
+	File_access_point_gpi_proto = out.File
+	file_access_point_gpi_proto_goTypes = nil
+	file_access_point_gpi_proto_depIdxs = nil
 }

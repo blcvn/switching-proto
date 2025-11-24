@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package accesspoint.v1;
 
-import "common.proto";
+import "access-point/common.proto";
 import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
@@ -19,13 +19,9 @@ message CreatePaymentRequest {
   string uetr = 1;
   double amount = 2;
   string currency = 3;
-  string debtor_agent = 4;
-  string creditor_agent = 5;
+  string creditor_agent = 4;
+  string creditor_iban = 5;
   string end_to_end_id = 6;
-  // Optional: structured account details for the sending bank's account (debtor)
-  Account debtor_agent_account = 7;
-  // Optional: structured account details for the receiving bank's account (creditor)
-  Account creditor_agent_account = 8;
 }
 
 message CreatePaymentResponse {

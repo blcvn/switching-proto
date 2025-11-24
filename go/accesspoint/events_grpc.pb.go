@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: events.proto
+// source: access-point/events.proto
 
 package accesspoint
 
@@ -199,5 +199,5 @@ var EventsService_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "events.proto",
+	Metadata: "access-point/events.proto",
 }

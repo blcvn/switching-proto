@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: common.proto
+// source: access-point/common.proto
 
 package accesspoint
 
@@ -30,7 +30,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_common_proto_msgTypes[0]
+	mi := &file_access_point_common_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_common_proto_msgTypes[0]
+	mi := &file_access_point_common_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_common_proto_rawDescGZIP(), []int{0}
+	return file_access_point_common_proto_rawDescGZIP(), []int{0}
 }
 
 type Payment struct {
@@ -79,7 +79,7 @@ type Payment struct {
 
 func (x *Payment) Reset() {
 	*x = Payment{}
-	mi := &file_common_proto_msgTypes[1]
+	mi := &file_access_point_common_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -91,7 +91,7 @@ func (x *Payment) String() string {
 func (*Payment) ProtoMessage() {}
 
 func (x *Payment) ProtoReflect() protoreflect.Message {
-	mi := &file_common_proto_msgTypes[1]
+	mi := &file_access_point_common_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -104,7 +104,7 @@ func (x *Payment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Payment.ProtoReflect.Descriptor instead.
 func (*Payment) Descriptor() ([]byte, []int) {
-	return file_common_proto_rawDescGZIP(), []int{1}
+	return file_access_point_common_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Payment) GetId() string {
@@ -202,7 +202,7 @@ type Transfer struct {
 
 func (x *Transfer) Reset() {
 	*x = Transfer{}
-	mi := &file_common_proto_msgTypes[2]
+	mi := &file_access_point_common_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -214,7 +214,7 @@ func (x *Transfer) String() string {
 func (*Transfer) ProtoMessage() {}
 
 func (x *Transfer) ProtoReflect() protoreflect.Message {
-	mi := &file_common_proto_msgTypes[2]
+	mi := &file_access_point_common_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,7 +227,7 @@ func (x *Transfer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Transfer.ProtoReflect.Descriptor instead.
 func (*Transfer) Descriptor() ([]byte, []int) {
-	return file_common_proto_rawDescGZIP(), []int{2}
+	return file_access_point_common_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Transfer) GetInstructionId() string {
@@ -306,7 +306,7 @@ type KycEntity struct {
 
 func (x *KycEntity) Reset() {
 	*x = KycEntity{}
-	mi := &file_common_proto_msgTypes[3]
+	mi := &file_access_point_common_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -318,7 +318,7 @@ func (x *KycEntity) String() string {
 func (*KycEntity) ProtoMessage() {}
 
 func (x *KycEntity) ProtoReflect() protoreflect.Message {
-	mi := &file_common_proto_msgTypes[3]
+	mi := &file_access_point_common_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +331,7 @@ func (x *KycEntity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KycEntity.ProtoReflect.Descriptor instead.
 func (*KycEntity) Descriptor() ([]byte, []int) {
-	return file_common_proto_rawDescGZIP(), []int{3}
+	return file_access_point_common_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *KycEntity) GetBic() string {
@@ -388,7 +388,7 @@ type Account struct {
 
 func (x *Account) Reset() {
 	*x = Account{}
-	mi := &file_common_proto_msgTypes[4]
+	mi := &file_access_point_common_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -400,7 +400,7 @@ func (x *Account) String() string {
 func (*Account) ProtoMessage() {}
 
 func (x *Account) ProtoReflect() protoreflect.Message {
-	mi := &file_common_proto_msgTypes[4]
+	mi := &file_access_point_common_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -413,7 +413,7 @@ func (x *Account) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Account.ProtoReflect.Descriptor instead.
 func (*Account) Descriptor() ([]byte, []int) {
-	return file_common_proto_rawDescGZIP(), []int{4}
+	return file_access_point_common_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Account) GetIban() string {
@@ -451,11 +451,11 @@ func (x *Account) GetReference() string {
 	return ""
 }
 
-var File_common_proto protoreflect.FileDescriptor
+var File_access_point_common_proto protoreflect.FileDescriptor
 
-const file_common_proto_rawDesc = "" +
+const file_access_point_common_proto_rawDesc = "" +
 	"\n" +
-	"\fcommon.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\a\n" +
+	"\x19access-point/common.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\a\n" +
 	"\x05Empty\"\xbb\x03\n" +
 	"\aPayment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -499,19 +499,19 @@ const file_common_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_common_proto_rawDescOnce sync.Once
-	file_common_proto_rawDescData []byte
+	file_access_point_common_proto_rawDescOnce sync.Once
+	file_access_point_common_proto_rawDescData []byte
 )
 
-func file_common_proto_rawDescGZIP() []byte {
-	file_common_proto_rawDescOnce.Do(func() {
-		file_common_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)))
+func file_access_point_common_proto_rawDescGZIP() []byte {
+	file_access_point_common_proto_rawDescOnce.Do(func() {
+		file_access_point_common_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_common_proto_rawDesc), len(file_access_point_common_proto_rawDesc)))
 	})
-	return file_common_proto_rawDescData
+	return file_access_point_common_proto_rawDescData
 }
 
-var file_common_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_common_proto_goTypes = []any{
+var file_access_point_common_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_access_point_common_proto_goTypes = []any{
 	(*Empty)(nil),               // 0: accesspoint.v1.Empty
 	(*Payment)(nil),             // 1: accesspoint.v1.Payment
 	(*Transfer)(nil),            // 2: accesspoint.v1.Transfer
@@ -519,7 +519,7 @@ var file_common_proto_goTypes = []any{
 	(*Account)(nil),             // 4: accesspoint.v1.Account
 	(*timestamp.Timestamp)(nil), // 5: google.protobuf.Timestamp
 }
-var file_common_proto_depIdxs = []int32{
+var file_access_point_common_proto_depIdxs = []int32{
 	5, // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
 	4, // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
 	4, // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
@@ -533,26 +533,26 @@ var file_common_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_common_proto_init() }
-func file_common_proto_init() {
-	if File_common_proto != nil {
+func init() { file_access_point_common_proto_init() }
+func file_access_point_common_proto_init() {
+	if File_access_point_common_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_proto_rawDesc), len(file_common_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_common_proto_rawDesc), len(file_access_point_common_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_proto_goTypes,
-		DependencyIndexes: file_common_proto_depIdxs,
-		MessageInfos:      file_common_proto_msgTypes,
+		GoTypes:           file_access_point_common_proto_goTypes,
+		DependencyIndexes: file_access_point_common_proto_depIdxs,
+		MessageInfos:      file_access_point_common_proto_msgTypes,
 	}.Build()
-	File_common_proto = out.File
-	file_common_proto_goTypes = nil
-	file_common_proto_depIdxs = nil
+	File_access_point_common_proto = out.File
+	file_access_point_common_proto_goTypes = nil
+	file_access_point_common_proto_depIdxs = nil
 }

@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package offchain.v1;
+
+import "offchain/common.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
+option java_package = "com.blcvn.switching.offchain";
+
+service KycService {
+  rpc ListEntities(Empty) returns (ListEntitiesResponse) {}
+  rpc GetEntity(GetEntityRequest) returns (KycEntity) {}
+  rpc GetEntityDocuments(GetEntityDocsRequest) returns (GetEntityDocsResponse) {}
+  rpc SubmitKyc(SubmitKycRequest) returns (SubmitKycResponse) {}
+  rpc Metadata(Empty) returns (KycMetadata) {}
+  rpc Audit(GetEntityRequest) returns (AuditResponse) {}
+}
+
+message ListEntitiesResponse {
+  repeated KycEntity entities = 1;
+}
+
+message GetEntityRequest {
+  string bic = 1;
+}
+
+message GetEntityDocsRequest {
+  string bic = 1;
+}
+
+message Document {
+  string id = 1;
+  string type = 2;
+  string url = 3;
+}
+
+message GetEntityDocsResponse {
+  repeated Document documents = 1;
+}
+
+message SubmitKycRequest {
+  string bic = 1;
+  map<string, string> updates = 2;
+}
+
+message SubmitKycResponse {
+  string status = 1;
+}
+
+message KycMetadata {
+  string version = 1;
+  repeated string fields = 2;
+}
+
+message AuditEntry {
+  string bic = 1;
+  string action = 2;
+  string time = 3;
+}
+
+message AuditResponse {
+  repeated AuditEntry entries = 1;
+}

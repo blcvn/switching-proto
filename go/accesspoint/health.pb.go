@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: health.proto
+// source: access-point/health.proto
 
 package accesspoint
 
@@ -32,7 +32,7 @@ type HealthResponse struct {
 
 func (x *HealthResponse) Reset() {
 	*x = HealthResponse{}
-	mi := &file_health_proto_msgTypes[0]
+	mi := &file_access_point_health_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *HealthResponse) String() string {
 func (*HealthResponse) ProtoMessage() {}
 
 func (x *HealthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_health_proto_msgTypes[0]
+	mi := &file_access_point_health_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *HealthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthResponse.ProtoReflect.Descriptor instead.
 func (*HealthResponse) Descriptor() ([]byte, []int) {
-	return file_health_proto_rawDescGZIP(), []int{0}
+	return file_access_point_health_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *HealthResponse) GetStatus() string {
@@ -74,11 +74,11 @@ func (x *HealthResponse) GetTime() *timestamp.Timestamp {
 	return nil
 }
 
-var File_health_proto protoreflect.FileDescriptor
+var File_access_point_health_proto protoreflect.FileDescriptor
 
-const file_health_proto_rawDesc = "" +
+const file_access_point_health_proto_rawDesc = "" +
 	"\n" +
-	"\fhealth.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\fcommon.proto\"X\n" +
+	"\x19access-point/health.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x19access-point/common.proto\"X\n" +
 	"\x0eHealthResponse\x12\x16\n" +
 	"\x06status\x18\x01 \x01(\tR\x06status\x12.\n" +
 	"\x04time\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x04time2Q\n" +
@@ -87,24 +87,24 @@ const file_health_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_health_proto_rawDescOnce sync.Once
-	file_health_proto_rawDescData []byte
+	file_access_point_health_proto_rawDescOnce sync.Once
+	file_access_point_health_proto_rawDescData []byte
 )
 
-func file_health_proto_rawDescGZIP() []byte {
-	file_health_proto_rawDescOnce.Do(func() {
-		file_health_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_health_proto_rawDesc), len(file_health_proto_rawDesc)))
+func file_access_point_health_proto_rawDescGZIP() []byte {
+	file_access_point_health_proto_rawDescOnce.Do(func() {
+		file_access_point_health_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_health_proto_rawDesc), len(file_access_point_health_proto_rawDesc)))
 	})
-	return file_health_proto_rawDescData
+	return file_access_point_health_proto_rawDescData
 }
 
-var file_health_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_health_proto_goTypes = []any{
+var file_access_point_health_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_access_point_health_proto_goTypes = []any{
 	(*HealthResponse)(nil),      // 0: accesspoint.v1.HealthResponse
 	(*timestamp.Timestamp)(nil), // 1: google.protobuf.Timestamp
 	(*Empty)(nil),               // 2: accesspoint.v1.Empty
 }
-var file_health_proto_depIdxs = []int32{
+var file_access_point_health_proto_depIdxs = []int32{
 	1, // 0: accesspoint.v1.HealthResponse.time:type_name -> google.protobuf.Timestamp
 	2, // 1: accesspoint.v1.HealthService.Check:input_type -> accesspoint.v1.Empty
 	0, // 2: accesspoint.v1.HealthService.Check:output_type -> accesspoint.v1.HealthResponse
@@ -115,27 +115,27 @@ var file_health_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_health_proto_init() }
-func file_health_proto_init() {
-	if File_health_proto != nil {
+func init() { file_access_point_health_proto_init() }
+func file_access_point_health_proto_init() {
+	if File_access_point_health_proto != nil {
 		return
 	}
-	file_common_proto_init()
+	file_access_point_common_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_health_proto_rawDesc), len(file_health_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_health_proto_rawDesc), len(file_access_point_health_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_health_proto_goTypes,
-		DependencyIndexes: file_health_proto_depIdxs,
-		MessageInfos:      file_health_proto_msgTypes,
+		GoTypes:           file_access_point_health_proto_goTypes,
+		DependencyIndexes: file_access_point_health_proto_depIdxs,
+		MessageInfos:      file_access_point_health_proto_msgTypes,
 	}.Build()
-	File_health_proto = out.File
-	file_health_proto_goTypes = nil
-	file_health_proto_depIdxs = nil
+	File_access_point_health_proto = out.File
+	file_access_point_health_proto_goTypes = nil
+	file_access_point_health_proto_depIdxs = nil
 }

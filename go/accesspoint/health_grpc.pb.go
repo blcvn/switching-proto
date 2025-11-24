@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: health.proto
+// source: access-point/health.proto
 
 package accesspoint
 
@@ -121,5 +121,5 @@ var HealthService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "health.proto",
+	Metadata: "access-point/health.proto",
 }

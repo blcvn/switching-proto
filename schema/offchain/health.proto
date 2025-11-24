@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package offchain.v1;
+
+import "google/protobuf/timestamp.proto";
+import "offchain/common.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
+option java_package = "com.blcvn.switching.offchain";
+
+// Health service
+service HealthService {
+  rpc Check(Empty) returns (HealthResponse) {}
+}
+
+message HealthResponse {
+  string status = 1;
+  google.protobuf.Timestamp time = 2;
+}
