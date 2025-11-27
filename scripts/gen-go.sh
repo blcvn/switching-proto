@@ -11,11 +11,16 @@ command -v protoc >/dev/null 2>&1 || { echo "protoc not found. Install protoc." 
 ensure_go_plugin() {
   local binname="$1"
   local install_path="$2"
-  if command -v "$binname" >/dev/null 2>&1; then
+  local force_install="${3:-false}"
+  if [ "$force_install" != "true" ] && command -v "$binname" >/dev/null 2>&1; then
     echo "$binname: found"
     return 0
   fi
-  echo "$binname: NOT FOUND"
+  if [ "$force_install" = "true" ]; then
+    echo "$binname: forcing reinstall from $install_path"
+  else
+    echo "$binname: NOT FOUND"
+  fi
   if ! command -v go >/dev/null 2>&1; then
     echo "go tool not found; cannot install $binname" >&2
     return 1
@@ -32,7 +37,7 @@ ensure_go_plugin() {
     GO_PKG_BIN="$(go env GOPATH 2>/dev/null)/bin"
     GO_BIN_DIR="$GO_PKG_BIN"
   fi
-  export PATH="$PATH:$GO_BIN_DIR"
+  export PATH="$GO_BIN_DIR:$PATH"
   if command -v "$binname" >/dev/null 2>&1; then
     echo "$binname successfully installed and found on PATH"
     return 0
@@ -44,7 +49,7 @@ ensure_go_plugin() {
 
 ensure_go_plugin protoc-gen-go "google.golang.org/protobuf/cmd/protoc-gen-go" || exit 1
 ensure_go_plugin protoc-gen-go-grpc "google.golang.org/grpc/cmd/protoc-gen-go-grpc" || exit 1
-ensure_go_plugin protoc-gen-grpc-gateway "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway" || exit 1
+ensure_go_plugin protoc-gen-grpc-gateway "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway" true || exit 1
 
 mkdir -p "$OUT_DIR"
 echo "Generating Go code from .proto files in $PROTO_DIR -> $OUT_DIR"
