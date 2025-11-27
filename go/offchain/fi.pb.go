@@ -24,11 +24,9 @@ const (
 
 type CreateTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Debtor        string                 `protobuf:"bytes,2,opt,name=debtor,proto3" json:"debtor,omitempty"`
-	Creditor      string                 `protobuf:"bytes,3,opt,name=creditor,proto3" json:"creditor,omitempty"`
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Data          *Transfer              `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -63,45 +61,33 @@ func (*CreateTransferRequest) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateTransferRequest) GetInstructionId() string {
+func (x *CreateTransferRequest) GetMetadata() *Metadata {
 	if x != nil {
-		return x.InstructionId
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *CreateTransferRequest) GetDebtor() string {
+func (x *CreateTransferRequest) GetSignature() *Signature {
 	if x != nil {
-		return x.Debtor
+		return x.Signature
 	}
-	return ""
+	return nil
 }
 
-func (x *CreateTransferRequest) GetCreditor() string {
+func (x *CreateTransferRequest) GetData() *Transfer {
 	if x != nil {
-		return x.Creditor
+		return x.Data
 	}
-	return ""
-}
-
-func (x *CreateTransferRequest) GetAmount() float64 {
-	if x != nil {
-		return x.Amount
-	}
-	return 0
-}
-
-func (x *CreateTransferRequest) GetCurrency() string {
-	if x != nil {
-		return x.Currency
-	}
-	return ""
+	return nil
 }
 
 type CreateTransferResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -136,23 +122,39 @@ func (*CreateTransferResponse) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateTransferResponse) GetInstructionId() string {
+func (x *CreateTransferResponse) GetMetadata() *Metadata {
 	if x != nil {
-		return x.InstructionId
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *CreateTransferResponse) GetStatus() string {
+func (x *CreateTransferResponse) GetSignature() *Signature {
 	if x != nil {
-		return x.Status
+		return x.Signature
 	}
-	return ""
+	return nil
+}
+
+func (x *CreateTransferResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *CreateTransferResponse) GetData() *Transfer {
+	if x != nil {
+		return x.Data
+	}
+	return nil
 }
 
 type GetTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -187,6 +189,20 @@ func (*GetTransferRequest) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{2}
 }
 
+func (x *GetTransferRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetTransferRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
 func (x *GetTransferRequest) GetInstructionId() string {
 	if x != nil {
 		return x.InstructionId
@@ -196,8 +212,10 @@ func (x *GetTransferRequest) GetInstructionId() string {
 
 type TransferStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -232,25 +250,39 @@ func (*TransferStatus) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *TransferStatus) GetInstructionId() string {
+func (x *TransferStatus) GetMetadata() *Metadata {
 	if x != nil {
-		return x.InstructionId
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *TransferStatus) GetStatus() string {
+func (x *TransferStatus) GetSignature() *Signature {
 	if x != nil {
-		return x.Status
+		return x.Signature
 	}
-	return ""
+	return nil
+}
+
+func (x *TransferStatus) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *TransferStatus) GetData() *Transfer {
+	if x != nil {
+		return x.Data
+	}
+	return nil
 }
 
 type ConfirmTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-	Timestamp     string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -285,6 +317,20 @@ func (*ConfirmTransferRequest) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{4}
 }
 
+func (x *ConfirmTransferRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ConfirmTransferRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
 func (x *ConfirmTransferRequest) GetInstructionId() string {
 	if x != nil {
 		return x.InstructionId
@@ -292,24 +338,12 @@ func (x *ConfirmTransferRequest) GetInstructionId() string {
 	return ""
 }
 
-func (x *ConfirmTransferRequest) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-func (x *ConfirmTransferRequest) GetTimestamp() string {
-	if x != nil {
-		return x.Timestamp
-	}
-	return ""
-}
-
 type ConfirmTransferResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	InstructionId string                 `protobuf:"bytes,4,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -344,6 +378,27 @@ func (*ConfirmTransferResponse) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{5}
 }
 
+func (x *ConfirmTransferResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ConfirmTransferResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *ConfirmTransferResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
 func (x *ConfirmTransferResponse) GetInstructionId() string {
 	if x != nil {
 		return x.InstructionId
@@ -351,16 +406,11 @@ func (x *ConfirmTransferResponse) GetInstructionId() string {
 	return ""
 }
 
-func (x *ConfirmTransferResponse) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
 type SearchTransfersRequest struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Filter        *SearchTransfersRequest_Filter `protobuf:"bytes,1,opt,name=filter,proto3" json:"filter,omitempty"`
+	Metadata      *Metadata                      `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature                     `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Filter        *SearchTransfersRequest_Filter `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -395,6 +445,20 @@ func (*SearchTransfersRequest) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{6}
 }
 
+func (x *SearchTransfersRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *SearchTransfersRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
 func (x *SearchTransfersRequest) GetFilter() *SearchTransfersRequest_Filter {
 	if x != nil {
 		return x.Filter
@@ -404,7 +468,10 @@ func (x *SearchTransfersRequest) GetFilter() *SearchTransfersRequest_Filter {
 
 type SearchTransfersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Results       []*Transfer            `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Results       []*Transfer            `protobuf:"bytes,4,rep,name=results,proto3" json:"results,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -439,6 +506,27 @@ func (*SearchTransfersResponse) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{7}
 }
 
+func (x *SearchTransfersResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *SearchTransfersResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *SearchTransfersResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
 func (x *SearchTransfersResponse) GetResults() []*Transfer {
 	if x != nil {
 		return x.Results
@@ -447,9 +535,10 @@ func (x *SearchTransfersResponse) GetResults() []*Transfer {
 }
 
 type BulkTransferRequest struct {
-	state         protoimpl.MessageState      `protogen:"open.v1"`
-	BatchId       string                      `protobuf:"bytes,1,opt,name=batch_id,json=batchId,proto3" json:"batch_id,omitempty"`
-	Transfers     []*BulkTransferRequest_Item `protobuf:"bytes,2,rep,name=transfers,proto3" json:"transfers,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Transfers     []*Transfer            `protobuf:"bytes,3,rep,name=transfers,proto3" json:"transfers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -484,14 +573,21 @@ func (*BulkTransferRequest) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *BulkTransferRequest) GetBatchId() string {
+func (x *BulkTransferRequest) GetMetadata() *Metadata {
 	if x != nil {
-		return x.BatchId
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *BulkTransferRequest) GetTransfers() []*BulkTransferRequest_Item {
+func (x *BulkTransferRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *BulkTransferRequest) GetTransfers() []*Transfer {
 	if x != nil {
 		return x.Transfers
 	}
@@ -499,9 +595,11 @@ func (x *BulkTransferRequest) GetTransfers() []*BulkTransferRequest_Item {
 }
 
 type BulkTransferResponse struct {
-	state         protoimpl.MessageState              `protogen:"open.v1"`
-	BatchId       string                              `protobuf:"bytes,1,opt,name=batch_id,json=batchId,proto3" json:"batch_id,omitempty"`
-	Created       []*BulkTransferResponse_CreatedItem `protobuf:"bytes,2,rep,name=created,proto3" json:"created,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Transfers     []*Transfer            `protobuf:"bytes,4,rep,name=transfers,proto3" json:"transfers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -536,16 +634,30 @@ func (*BulkTransferResponse) Descriptor() ([]byte, []int) {
 	return file_offchain_fi_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *BulkTransferResponse) GetBatchId() string {
+func (x *BulkTransferResponse) GetMetadata() *Metadata {
 	if x != nil {
-		return x.BatchId
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *BulkTransferResponse) GetCreated() []*BulkTransferResponse_CreatedItem {
+func (x *BulkTransferResponse) GetSignature() *Signature {
 	if x != nil {
-		return x.Created
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *BulkTransferResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *BulkTransferResponse) GetTransfers() []*Transfer {
+	if x != nil {
+		return x.Transfers
 	}
 	return nil
 }
@@ -610,165 +722,60 @@ func (x *SearchTransfersRequest_Filter) GetDateTo() string {
 	return ""
 }
 
-type BulkTransferRequest_Item struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,3,opt,name=currency,proto3" json:"currency,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *BulkTransferRequest_Item) Reset() {
-	*x = BulkTransferRequest_Item{}
-	mi := &file_offchain_fi_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BulkTransferRequest_Item) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BulkTransferRequest_Item) ProtoMessage() {}
-
-func (x *BulkTransferRequest_Item) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_fi_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BulkTransferRequest_Item.ProtoReflect.Descriptor instead.
-func (*BulkTransferRequest_Item) Descriptor() ([]byte, []int) {
-	return file_offchain_fi_proto_rawDescGZIP(), []int{8, 0}
-}
-
-func (x *BulkTransferRequest_Item) GetInstructionId() string {
-	if x != nil {
-		return x.InstructionId
-	}
-	return ""
-}
-
-func (x *BulkTransferRequest_Item) GetAmount() float64 {
-	if x != nil {
-		return x.Amount
-	}
-	return 0
-}
-
-func (x *BulkTransferRequest_Item) GetCurrency() string {
-	if x != nil {
-		return x.Currency
-	}
-	return ""
-}
-
-type BulkTransferResponse_CreatedItem struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *BulkTransferResponse_CreatedItem) Reset() {
-	*x = BulkTransferResponse_CreatedItem{}
-	mi := &file_offchain_fi_proto_msgTypes[12]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *BulkTransferResponse_CreatedItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*BulkTransferResponse_CreatedItem) ProtoMessage() {}
-
-func (x *BulkTransferResponse_CreatedItem) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_fi_proto_msgTypes[12]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use BulkTransferResponse_CreatedItem.ProtoReflect.Descriptor instead.
-func (*BulkTransferResponse_CreatedItem) Descriptor() ([]byte, []int) {
-	return file_offchain_fi_proto_rawDescGZIP(), []int{9, 0}
-}
-
-func (x *BulkTransferResponse_CreatedItem) GetInstructionId() string {
-	if x != nil {
-		return x.InstructionId
-	}
-	return ""
-}
-
-func (x *BulkTransferResponse_CreatedItem) GetStatus() string {
-	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
 var File_offchain_fi_proto protoreflect.FileDescriptor
 
 const file_offchain_fi_proto_rawDesc = "" +
 	"\n" +
-	"\x11offchain/fi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa6\x01\n" +
-	"\x15CreateTransferRequest\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06debtor\x18\x02 \x01(\tR\x06debtor\x12\x1a\n" +
-	"\bcreditor\x18\x03 \x01(\tR\bcreditor\x12\x16\n" +
-	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x05 \x01(\tR\bcurrency\"W\n" +
-	"\x16CreateTransferResponse\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\";\n" +
-	"\x12GetTransferRequest\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\"O\n" +
-	"\x0eTransferStatus\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\"u\n" +
-	"\x16ConfirmTransferRequest\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\x12\x1c\n" +
-	"\ttimestamp\x18\x03 \x01(\tR\ttimestamp\"X\n" +
-	"\x17ConfirmTransferResponse\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\"\xb8\x01\n" +
-	"\x16SearchTransfersRequest\x12B\n" +
-	"\x06filter\x18\x01 \x01(\v2*.offchain.v1.SearchTransfersRequest.FilterR\x06filter\x1aZ\n" +
+	"\x11offchain/fi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xab\x01\n" +
+	"\x15CreateTransferRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12)\n" +
+	"\x04data\x18\x03 \x01(\v2\x15.offchain.v1.TransferR\x04data\"\xd9\x01\n" +
+	"\x16CreateTransferResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12)\n" +
+	"\x04data\x18\x04 \x01(\v2\x15.offchain.v1.TransferR\x04data\"\xa4\x01\n" +
+	"\x12GetTransferRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12%\n" +
+	"\x0einstruction_id\x18\x03 \x01(\tR\rinstructionId\"\xd1\x01\n" +
+	"\x0eTransferStatus\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12)\n" +
+	"\x04data\x18\x04 \x01(\v2\x15.offchain.v1.TransferR\x04data\"\xa8\x01\n" +
+	"\x16ConfirmTransferRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12%\n" +
+	"\x0einstruction_id\x18\x03 \x01(\tR\rinstructionId\"\xd6\x01\n" +
+	"\x17ConfirmTransferResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12%\n" +
+	"\x0einstruction_id\x18\x04 \x01(\tR\rinstructionId\"\xa1\x02\n" +
+	"\x16SearchTransfersRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12B\n" +
+	"\x06filter\x18\x03 \x01(\v2*.offchain.v1.SearchTransfersRequest.FilterR\x06filter\x1aZ\n" +
 	"\x06Filter\x12\x1a\n" +
 	"\bcurrency\x18\x01 \x01(\tR\bcurrency\x12\x1b\n" +
 	"\tdate_from\x18\x02 \x01(\tR\bdateFrom\x12\x17\n" +
-	"\adate_to\x18\x03 \x01(\tR\x06dateTo\"J\n" +
-	"\x17SearchTransfersResponse\x12/\n" +
-	"\aresults\x18\x01 \x03(\v2\x15.offchain.v1.TransferR\aresults\"\xd8\x01\n" +
-	"\x13BulkTransferRequest\x12\x19\n" +
-	"\bbatch_id\x18\x01 \x01(\tR\abatchId\x12C\n" +
-	"\ttransfers\x18\x02 \x03(\v2%.offchain.v1.BulkTransferRequest.ItemR\ttransfers\x1aa\n" +
-	"\x04Item\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x03 \x01(\tR\bcurrency\"\xc8\x01\n" +
-	"\x14BulkTransferResponse\x12\x19\n" +
-	"\bbatch_id\x18\x01 \x01(\tR\abatchId\x12G\n" +
-	"\acreated\x18\x02 \x03(\v2-.offchain.v1.BulkTransferResponse.CreatedItemR\acreated\x1aL\n" +
-	"\vCreatedItem\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status2\x9d\x04\n" +
+	"\adate_to\x18\x03 \x01(\tR\x06dateTo\"\xe0\x01\n" +
+	"\x17SearchTransfersResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12/\n" +
+	"\aresults\x18\x04 \x03(\v2\x15.offchain.v1.TransferR\aresults\"\xb3\x01\n" +
+	"\x13BulkTransferRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x123\n" +
+	"\ttransfers\x18\x03 \x03(\v2\x15.offchain.v1.TransferR\ttransfers\"\xe1\x01\n" +
+	"\x14BulkTransferResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x123\n" +
+	"\ttransfers\x18\x04 \x03(\v2\x15.offchain.v1.TransferR\ttransfers2\x9d\x04\n" +
 	"\tFiService\x12[\n" +
 	"\x0eCreateTransfer\x12\".offchain.v1.CreateTransferRequest\x1a#.offchain.v1.CreateTransferResponse\"\x00\x12G\n" +
 	"\vGetTransfer\x12\x1f.offchain.v1.GetTransferRequest\x1a\x15.offchain.v1.Transfer\"\x00\x12S\n" +
@@ -790,45 +797,74 @@ func file_offchain_fi_proto_rawDescGZIP() []byte {
 	return file_offchain_fi_proto_rawDescData
 }
 
-var file_offchain_fi_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_offchain_fi_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_offchain_fi_proto_goTypes = []any{
-	(*CreateTransferRequest)(nil),            // 0: offchain.v1.CreateTransferRequest
-	(*CreateTransferResponse)(nil),           // 1: offchain.v1.CreateTransferResponse
-	(*GetTransferRequest)(nil),               // 2: offchain.v1.GetTransferRequest
-	(*TransferStatus)(nil),                   // 3: offchain.v1.TransferStatus
-	(*ConfirmTransferRequest)(nil),           // 4: offchain.v1.ConfirmTransferRequest
-	(*ConfirmTransferResponse)(nil),          // 5: offchain.v1.ConfirmTransferResponse
-	(*SearchTransfersRequest)(nil),           // 6: offchain.v1.SearchTransfersRequest
-	(*SearchTransfersResponse)(nil),          // 7: offchain.v1.SearchTransfersResponse
-	(*BulkTransferRequest)(nil),              // 8: offchain.v1.BulkTransferRequest
-	(*BulkTransferResponse)(nil),             // 9: offchain.v1.BulkTransferResponse
-	(*SearchTransfersRequest_Filter)(nil),    // 10: offchain.v1.SearchTransfersRequest.Filter
-	(*BulkTransferRequest_Item)(nil),         // 11: offchain.v1.BulkTransferRequest.Item
-	(*BulkTransferResponse_CreatedItem)(nil), // 12: offchain.v1.BulkTransferResponse.CreatedItem
-	(*Transfer)(nil),                         // 13: offchain.v1.Transfer
+	(*CreateTransferRequest)(nil),         // 0: offchain.v1.CreateTransferRequest
+	(*CreateTransferResponse)(nil),        // 1: offchain.v1.CreateTransferResponse
+	(*GetTransferRequest)(nil),            // 2: offchain.v1.GetTransferRequest
+	(*TransferStatus)(nil),                // 3: offchain.v1.TransferStatus
+	(*ConfirmTransferRequest)(nil),        // 4: offchain.v1.ConfirmTransferRequest
+	(*ConfirmTransferResponse)(nil),       // 5: offchain.v1.ConfirmTransferResponse
+	(*SearchTransfersRequest)(nil),        // 6: offchain.v1.SearchTransfersRequest
+	(*SearchTransfersResponse)(nil),       // 7: offchain.v1.SearchTransfersResponse
+	(*BulkTransferRequest)(nil),           // 8: offchain.v1.BulkTransferRequest
+	(*BulkTransferResponse)(nil),          // 9: offchain.v1.BulkTransferResponse
+	(*SearchTransfersRequest_Filter)(nil), // 10: offchain.v1.SearchTransfersRequest.Filter
+	(*Metadata)(nil),                      // 11: offchain.v1.Metadata
+	(*Signature)(nil),                     // 12: offchain.v1.Signature
+	(*Transfer)(nil),                      // 13: offchain.v1.Transfer
+	(*Result)(nil),                        // 14: offchain.v1.Result
 }
 var file_offchain_fi_proto_depIdxs = []int32{
-	10, // 0: offchain.v1.SearchTransfersRequest.filter:type_name -> offchain.v1.SearchTransfersRequest.Filter
-	13, // 1: offchain.v1.SearchTransfersResponse.results:type_name -> offchain.v1.Transfer
-	11, // 2: offchain.v1.BulkTransferRequest.transfers:type_name -> offchain.v1.BulkTransferRequest.Item
-	12, // 3: offchain.v1.BulkTransferResponse.created:type_name -> offchain.v1.BulkTransferResponse.CreatedItem
-	0,  // 4: offchain.v1.FiService.CreateTransfer:input_type -> offchain.v1.CreateTransferRequest
-	2,  // 5: offchain.v1.FiService.GetTransfer:input_type -> offchain.v1.GetTransferRequest
-	2,  // 6: offchain.v1.FiService.GetTransferStatus:input_type -> offchain.v1.GetTransferRequest
-	4,  // 7: offchain.v1.FiService.ConfirmTransfer:input_type -> offchain.v1.ConfirmTransferRequest
-	6,  // 8: offchain.v1.FiService.SearchTransfers:input_type -> offchain.v1.SearchTransfersRequest
-	8,  // 9: offchain.v1.FiService.BulkTransfer:input_type -> offchain.v1.BulkTransferRequest
-	1,  // 10: offchain.v1.FiService.CreateTransfer:output_type -> offchain.v1.CreateTransferResponse
-	13, // 11: offchain.v1.FiService.GetTransfer:output_type -> offchain.v1.Transfer
-	3,  // 12: offchain.v1.FiService.GetTransferStatus:output_type -> offchain.v1.TransferStatus
-	5,  // 13: offchain.v1.FiService.ConfirmTransfer:output_type -> offchain.v1.ConfirmTransferResponse
-	7,  // 14: offchain.v1.FiService.SearchTransfers:output_type -> offchain.v1.SearchTransfersResponse
-	9,  // 15: offchain.v1.FiService.BulkTransfer:output_type -> offchain.v1.BulkTransferResponse
-	10, // [10:16] is the sub-list for method output_type
-	4,  // [4:10] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	11, // 0: offchain.v1.CreateTransferRequest.metadata:type_name -> offchain.v1.Metadata
+	12, // 1: offchain.v1.CreateTransferRequest.signature:type_name -> offchain.v1.Signature
+	13, // 2: offchain.v1.CreateTransferRequest.data:type_name -> offchain.v1.Transfer
+	11, // 3: offchain.v1.CreateTransferResponse.metadata:type_name -> offchain.v1.Metadata
+	12, // 4: offchain.v1.CreateTransferResponse.signature:type_name -> offchain.v1.Signature
+	14, // 5: offchain.v1.CreateTransferResponse.result:type_name -> offchain.v1.Result
+	13, // 6: offchain.v1.CreateTransferResponse.data:type_name -> offchain.v1.Transfer
+	11, // 7: offchain.v1.GetTransferRequest.metadata:type_name -> offchain.v1.Metadata
+	12, // 8: offchain.v1.GetTransferRequest.signature:type_name -> offchain.v1.Signature
+	11, // 9: offchain.v1.TransferStatus.metadata:type_name -> offchain.v1.Metadata
+	12, // 10: offchain.v1.TransferStatus.signature:type_name -> offchain.v1.Signature
+	14, // 11: offchain.v1.TransferStatus.result:type_name -> offchain.v1.Result
+	13, // 12: offchain.v1.TransferStatus.data:type_name -> offchain.v1.Transfer
+	11, // 13: offchain.v1.ConfirmTransferRequest.metadata:type_name -> offchain.v1.Metadata
+	12, // 14: offchain.v1.ConfirmTransferRequest.signature:type_name -> offchain.v1.Signature
+	11, // 15: offchain.v1.ConfirmTransferResponse.metadata:type_name -> offchain.v1.Metadata
+	12, // 16: offchain.v1.ConfirmTransferResponse.signature:type_name -> offchain.v1.Signature
+	14, // 17: offchain.v1.ConfirmTransferResponse.result:type_name -> offchain.v1.Result
+	11, // 18: offchain.v1.SearchTransfersRequest.metadata:type_name -> offchain.v1.Metadata
+	12, // 19: offchain.v1.SearchTransfersRequest.signature:type_name -> offchain.v1.Signature
+	10, // 20: offchain.v1.SearchTransfersRequest.filter:type_name -> offchain.v1.SearchTransfersRequest.Filter
+	11, // 21: offchain.v1.SearchTransfersResponse.metadata:type_name -> offchain.v1.Metadata
+	12, // 22: offchain.v1.SearchTransfersResponse.signature:type_name -> offchain.v1.Signature
+	14, // 23: offchain.v1.SearchTransfersResponse.result:type_name -> offchain.v1.Result
+	13, // 24: offchain.v1.SearchTransfersResponse.results:type_name -> offchain.v1.Transfer
+	11, // 25: offchain.v1.BulkTransferRequest.metadata:type_name -> offchain.v1.Metadata
+	12, // 26: offchain.v1.BulkTransferRequest.signature:type_name -> offchain.v1.Signature
+	13, // 27: offchain.v1.BulkTransferRequest.transfers:type_name -> offchain.v1.Transfer
+	11, // 28: offchain.v1.BulkTransferResponse.metadata:type_name -> offchain.v1.Metadata
+	12, // 29: offchain.v1.BulkTransferResponse.signature:type_name -> offchain.v1.Signature
+	14, // 30: offchain.v1.BulkTransferResponse.result:type_name -> offchain.v1.Result
+	13, // 31: offchain.v1.BulkTransferResponse.transfers:type_name -> offchain.v1.Transfer
+	0,  // 32: offchain.v1.FiService.CreateTransfer:input_type -> offchain.v1.CreateTransferRequest
+	2,  // 33: offchain.v1.FiService.GetTransfer:input_type -> offchain.v1.GetTransferRequest
+	2,  // 34: offchain.v1.FiService.GetTransferStatus:input_type -> offchain.v1.GetTransferRequest
+	4,  // 35: offchain.v1.FiService.ConfirmTransfer:input_type -> offchain.v1.ConfirmTransferRequest
+	6,  // 36: offchain.v1.FiService.SearchTransfers:input_type -> offchain.v1.SearchTransfersRequest
+	8,  // 37: offchain.v1.FiService.BulkTransfer:input_type -> offchain.v1.BulkTransferRequest
+	1,  // 38: offchain.v1.FiService.CreateTransfer:output_type -> offchain.v1.CreateTransferResponse
+	13, // 39: offchain.v1.FiService.GetTransfer:output_type -> offchain.v1.Transfer
+	3,  // 40: offchain.v1.FiService.GetTransferStatus:output_type -> offchain.v1.TransferStatus
+	5,  // 41: offchain.v1.FiService.ConfirmTransfer:output_type -> offchain.v1.ConfirmTransferResponse
+	7,  // 42: offchain.v1.FiService.SearchTransfers:output_type -> offchain.v1.SearchTransfersResponse
+	9,  // 43: offchain.v1.FiService.BulkTransfer:output_type -> offchain.v1.BulkTransferResponse
+	38, // [38:44] is the sub-list for method output_type
+	32, // [32:38] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	32, // [32:32] is the sub-list for extension extendee
+	0,  // [0:32] is the sub-list for field type_name
 }
 
 func init() { file_offchain_fi_proto_init() }
@@ -843,7 +879,7 @@ func file_offchain_fi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_offchain_fi_proto_rawDesc), len(file_offchain_fi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -14,8 +14,8 @@ public final class Gpi {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface CreatePaymentRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:offchain.v1.CreatePaymentRequest)
+  public interface ConfirmMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.ConfirmMessage)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -31,138 +31,52 @@ public final class Gpi {
         getUetrBytes();
 
     /**
-     * <code>double amount = 2;</code>
-     * @return The amount.
+     * <code>string confirmation_type = 2;</code>
+     * @return The confirmationType.
      */
-    double getAmount();
-
+    java.lang.String getConfirmationType();
     /**
-     * <code>string currency = 3;</code>
-     * @return The currency.
-     */
-    java.lang.String getCurrency();
-    /**
-     * <code>string currency = 3;</code>
-     * @return The bytes for currency.
+     * <code>string confirmation_type = 2;</code>
+     * @return The bytes for confirmationType.
      */
     com.google.protobuf.ByteString
-        getCurrencyBytes();
+        getConfirmationTypeBytes();
 
     /**
-     * <code>string debtor_agent = 4;</code>
-     * @return The debtorAgent.
+     * <code>string timestamp = 3;</code>
+     * @return The timestamp.
      */
-    java.lang.String getDebtorAgent();
+    java.lang.String getTimestamp();
     /**
-     * <code>string debtor_agent = 4;</code>
-     * @return The bytes for debtorAgent.
+     * <code>string timestamp = 3;</code>
+     * @return The bytes for timestamp.
      */
     com.google.protobuf.ByteString
-        getDebtorAgentBytes();
-
-    /**
-     * <code>string creditor_agent = 5;</code>
-     * @return The creditorAgent.
-     */
-    java.lang.String getCreditorAgent();
-    /**
-     * <code>string creditor_agent = 5;</code>
-     * @return The bytes for creditorAgent.
-     */
-    com.google.protobuf.ByteString
-        getCreditorAgentBytes();
-
-    /**
-     * <code>string end_to_end_id = 6;</code>
-     * @return The endToEndId.
-     */
-    java.lang.String getEndToEndId();
-    /**
-     * <code>string end_to_end_id = 6;</code>
-     * @return The bytes for endToEndId.
-     */
-    com.google.protobuf.ByteString
-        getEndToEndIdBytes();
-
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     * @return Whether the debtorAgentAccount field is set.
-     */
-    boolean hasDebtorAgentAccount();
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     * @return The debtorAgentAccount.
-     */
-    com.blcvn.switching.offchain.Common.Account getDebtorAgentAccount();
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     */
-    com.blcvn.switching.offchain.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder();
-
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     * @return Whether the creditorAgentAccount field is set.
-     */
-    boolean hasCreditorAgentAccount();
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     * @return The creditorAgentAccount.
-     */
-    com.blcvn.switching.offchain.Common.Account getCreditorAgentAccount();
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     */
-    com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder();
+        getTimestampBytes();
   }
   /**
-   * Protobuf type {@code offchain.v1.CreatePaymentRequest}
+   * Protobuf type {@code offchain.v1.ConfirmMessage}
    */
-  public static final class CreatePaymentRequest extends
+  public static final class ConfirmMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:offchain.v1.CreatePaymentRequest)
-      CreatePaymentRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:offchain.v1.ConfirmMessage)
+      ConfirmMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreatePaymentRequest.newBuilder() to construct.
-    private CreatePaymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ConfirmMessage.newBuilder() to construct.
+    private ConfirmMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreatePaymentRequest() {
+    private ConfirmMessage() {
       uetr_ = "";
-      currency_ = "";
-      debtorAgent_ = "";
-      creditorAgent_ = "";
-      endToEndId_ = "";
+      confirmationType_ = "";
+      timestamp_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreatePaymentRequest();
+      return new ConfirmMessage();
     }
 
     @java.lang.Override
@@ -170,7 +84,7 @@ public final class Gpi {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreatePaymentRequest(
+    private ConfirmMessage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -194,59 +108,16 @@ public final class Gpi {
               uetr_ = s;
               break;
             }
-            case 17: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              amount_ = input.readDouble();
+              confirmationType_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              currency_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              debtorAgent_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creditorAgent_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              endToEndId_ = s;
-              break;
-            }
-            case 58: {
-              com.blcvn.switching.offchain.Common.Account.Builder subBuilder = null;
-              if (debtorAgentAccount_ != null) {
-                subBuilder = debtorAgentAccount_.toBuilder();
-              }
-              debtorAgentAccount_ = input.readMessage(com.blcvn.switching.offchain.Common.Account.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(debtorAgentAccount_);
-                debtorAgentAccount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              com.blcvn.switching.offchain.Common.Account.Builder subBuilder = null;
-              if (creditorAgentAccount_ != null) {
-                subBuilder = creditorAgentAccount_.toBuilder();
-              }
-              creditorAgentAccount_ = input.readMessage(com.blcvn.switching.offchain.Common.Account.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(creditorAgentAccount_);
-                creditorAgentAccount_ = subBuilder.buildPartial();
-              }
-
+              timestamp_ = s;
               break;
             }
             default: {
@@ -270,15 +141,15 @@ public final class Gpi {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_CreatePaymentRequest_descriptor;
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ConfirmMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_CreatePaymentRequest_fieldAccessorTable
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ConfirmMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.blcvn.switching.offchain.Gpi.CreatePaymentRequest.class, com.blcvn.switching.offchain.Gpi.CreatePaymentRequest.Builder.class);
+              com.blcvn.switching.offchain.Gpi.ConfirmMessage.class, com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder.class);
     }
 
     public static final int UETR_FIELD_NUMBER = 1;
@@ -319,243 +190,80 @@ public final class Gpi {
       }
     }
 
-    public static final int AMOUNT_FIELD_NUMBER = 2;
-    private double amount_;
+    public static final int CONFIRMATION_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object confirmationType_;
     /**
-     * <code>double amount = 2;</code>
-     * @return The amount.
+     * <code>string confirmation_type = 2;</code>
+     * @return The confirmationType.
      */
     @java.lang.Override
-    public double getAmount() {
-      return amount_;
-    }
-
-    public static final int CURRENCY_FIELD_NUMBER = 3;
-    private volatile java.lang.Object currency_;
-    /**
-     * <code>string currency = 3;</code>
-     * @return The currency.
-     */
-    @java.lang.Override
-    public java.lang.String getCurrency() {
-      java.lang.Object ref = currency_;
+    public java.lang.String getConfirmationType() {
+      java.lang.Object ref = confirmationType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        currency_ = s;
+        confirmationType_ = s;
         return s;
       }
     }
     /**
-     * <code>string currency = 3;</code>
-     * @return The bytes for currency.
+     * <code>string confirmation_type = 2;</code>
+     * @return The bytes for confirmationType.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getCurrencyBytes() {
-      java.lang.Object ref = currency_;
+        getConfirmationTypeBytes() {
+      java.lang.Object ref = confirmationType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        currency_ = b;
+        confirmationType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int DEBTOR_AGENT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object debtorAgent_;
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private volatile java.lang.Object timestamp_;
     /**
-     * <code>string debtor_agent = 4;</code>
-     * @return The debtorAgent.
+     * <code>string timestamp = 3;</code>
+     * @return The timestamp.
      */
     @java.lang.Override
-    public java.lang.String getDebtorAgent() {
-      java.lang.Object ref = debtorAgent_;
+    public java.lang.String getTimestamp() {
+      java.lang.Object ref = timestamp_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        debtorAgent_ = s;
+        timestamp_ = s;
         return s;
       }
     }
     /**
-     * <code>string debtor_agent = 4;</code>
-     * @return The bytes for debtorAgent.
+     * <code>string timestamp = 3;</code>
+     * @return The bytes for timestamp.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDebtorAgentBytes() {
-      java.lang.Object ref = debtorAgent_;
+        getTimestampBytes() {
+      java.lang.Object ref = timestamp_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        debtorAgent_ = b;
+        timestamp_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int CREDITOR_AGENT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object creditorAgent_;
-    /**
-     * <code>string creditor_agent = 5;</code>
-     * @return The creditorAgent.
-     */
-    @java.lang.Override
-    public java.lang.String getCreditorAgent() {
-      java.lang.Object ref = creditorAgent_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        creditorAgent_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string creditor_agent = 5;</code>
-     * @return The bytes for creditorAgent.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreditorAgentBytes() {
-      java.lang.Object ref = creditorAgent_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        creditorAgent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int END_TO_END_ID_FIELD_NUMBER = 6;
-    private volatile java.lang.Object endToEndId_;
-    /**
-     * <code>string end_to_end_id = 6;</code>
-     * @return The endToEndId.
-     */
-    @java.lang.Override
-    public java.lang.String getEndToEndId() {
-      java.lang.Object ref = endToEndId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        endToEndId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string end_to_end_id = 6;</code>
-     * @return The bytes for endToEndId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEndToEndIdBytes() {
-      java.lang.Object ref = endToEndId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        endToEndId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DEBTOR_AGENT_ACCOUNT_FIELD_NUMBER = 7;
-    private com.blcvn.switching.offchain.Common.Account debtorAgentAccount_;
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     * @return Whether the debtorAgentAccount field is set.
-     */
-    @java.lang.Override
-    public boolean hasDebtorAgentAccount() {
-      return debtorAgentAccount_ != null;
-    }
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     * @return The debtorAgentAccount.
-     */
-    @java.lang.Override
-    public com.blcvn.switching.offchain.Common.Account getDebtorAgentAccount() {
-      return debtorAgentAccount_ == null ? com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : debtorAgentAccount_;
-    }
-    /**
-     * <pre>
-     * Optional: structured account details for the sending bank's account (debtor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-     */
-    @java.lang.Override
-    public com.blcvn.switching.offchain.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder() {
-      return getDebtorAgentAccount();
-    }
-
-    public static final int CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER = 8;
-    private com.blcvn.switching.offchain.Common.Account creditorAgentAccount_;
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     * @return Whether the creditorAgentAccount field is set.
-     */
-    @java.lang.Override
-    public boolean hasCreditorAgentAccount() {
-      return creditorAgentAccount_ != null;
-    }
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     * @return The creditorAgentAccount.
-     */
-    @java.lang.Override
-    public com.blcvn.switching.offchain.Common.Account getCreditorAgentAccount() {
-      return creditorAgentAccount_ == null ? com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : creditorAgentAccount_;
-    }
-    /**
-     * <pre>
-     * Optional: structured account details for the receiving bank's account (creditor)
-     * </pre>
-     *
-     * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-     */
-    @java.lang.Override
-    public com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder() {
-      return getCreditorAgentAccount();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -575,26 +283,11 @@ public final class Gpi {
       if (!getUetrBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uetr_);
       }
-      if (amount_ != 0D) {
-        output.writeDouble(2, amount_);
+      if (!getConfirmationTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confirmationType_);
       }
-      if (!getCurrencyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currency_);
-      }
-      if (!getDebtorAgentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, debtorAgent_);
-      }
-      if (!getCreditorAgentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, creditorAgent_);
-      }
-      if (!getEndToEndIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endToEndId_);
-      }
-      if (debtorAgentAccount_ != null) {
-        output.writeMessage(7, getDebtorAgentAccount());
-      }
-      if (creditorAgentAccount_ != null) {
-        output.writeMessage(8, getCreditorAgentAccount());
+      if (!getTimestampBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timestamp_);
       }
       unknownFields.writeTo(output);
     }
@@ -608,29 +301,873 @@ public final class Gpi {
       if (!getUetrBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uetr_);
       }
-      if (amount_ != 0D) {
+      if (!getConfirmationTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confirmationType_);
+      }
+      if (!getTimestampBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Gpi.ConfirmMessage)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Gpi.ConfirmMessage other = (com.blcvn.switching.offchain.Gpi.ConfirmMessage) obj;
+
+      if (!getUetr()
+          .equals(other.getUetr())) return false;
+      if (!getConfirmationType()
+          .equals(other.getConfirmationType())) return false;
+      if (!getTimestamp()
+          .equals(other.getTimestamp())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UETR_FIELD_NUMBER;
+      hash = (53 * hash) + getUetr().hashCode();
+      hash = (37 * hash) + CONFIRMATION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getConfirmationType().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Gpi.ConfirmMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code offchain.v1.ConfirmMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.ConfirmMessage)
+        com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ConfirmMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ConfirmMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Gpi.ConfirmMessage.class, com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Gpi.ConfirmMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uetr_ = "";
+
+        confirmationType_ = "";
+
+        timestamp_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ConfirmMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessage getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Gpi.ConfirmMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessage build() {
+        com.blcvn.switching.offchain.Gpi.ConfirmMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessage buildPartial() {
+        com.blcvn.switching.offchain.Gpi.ConfirmMessage result = new com.blcvn.switching.offchain.Gpi.ConfirmMessage(this);
+        result.uetr_ = uetr_;
+        result.confirmationType_ = confirmationType_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Gpi.ConfirmMessage) {
+          return mergeFrom((com.blcvn.switching.offchain.Gpi.ConfirmMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.ConfirmMessage other) {
+        if (other == com.blcvn.switching.offchain.Gpi.ConfirmMessage.getDefaultInstance()) return this;
+        if (!other.getUetr().isEmpty()) {
+          uetr_ = other.uetr_;
+          onChanged();
+        }
+        if (!other.getConfirmationType().isEmpty()) {
+          confirmationType_ = other.confirmationType_;
+          onChanged();
+        }
+        if (!other.getTimestamp().isEmpty()) {
+          timestamp_ = other.timestamp_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Gpi.ConfirmMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Gpi.ConfirmMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uetr_ = "";
+      /**
+       * <code>string uetr = 1;</code>
+       * @return The uetr.
+       */
+      public java.lang.String getUetr() {
+        java.lang.Object ref = uetr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uetr_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @return The bytes for uetr.
+       */
+      public com.google.protobuf.ByteString
+          getUetrBytes() {
+        java.lang.Object ref = uetr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uetr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @param value The uetr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUetr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uetr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUetr() {
+        
+        uetr_ = getDefaultInstance().getUetr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @param value The bytes for uetr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUetrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uetr_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object confirmationType_ = "";
+      /**
+       * <code>string confirmation_type = 2;</code>
+       * @return The confirmationType.
+       */
+      public java.lang.String getConfirmationType() {
+        java.lang.Object ref = confirmationType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          confirmationType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string confirmation_type = 2;</code>
+       * @return The bytes for confirmationType.
+       */
+      public com.google.protobuf.ByteString
+          getConfirmationTypeBytes() {
+        java.lang.Object ref = confirmationType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          confirmationType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string confirmation_type = 2;</code>
+       * @param value The confirmationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfirmationType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        confirmationType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string confirmation_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfirmationType() {
+        
+        confirmationType_ = getDefaultInstance().getConfirmationType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string confirmation_type = 2;</code>
+       * @param value The bytes for confirmationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfirmationTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        confirmationType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object timestamp_ = "";
+      /**
+       * <code>string timestamp = 3;</code>
+       * @return The timestamp.
+       */
+      public java.lang.String getTimestamp() {
+        java.lang.Object ref = timestamp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          timestamp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       * @return The bytes for timestamp.
+       */
+      public com.google.protobuf.ByteString
+          getTimestampBytes() {
+        java.lang.Object ref = timestamp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          timestamp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = getDefaultInstance().getTimestamp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       * @param value The bytes for timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestampBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.ConfirmMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.ConfirmMessage)
+    private static final com.blcvn.switching.offchain.Gpi.ConfirmMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Gpi.ConfirmMessage();
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ConfirmMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfirmMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ConfirmMessage>() {
+      @java.lang.Override
+      public ConfirmMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ConfirmMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfirmMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfirmMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Gpi.ConfirmMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreatePaymentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.CreatePaymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.Payment getData();
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder();
+  }
+  /**
+   * Protobuf type {@code offchain.v1.CreatePaymentRequest}
+   */
+  public static final class CreatePaymentRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.CreatePaymentRequest)
+      CreatePaymentRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreatePaymentRequest.newBuilder() to construct.
+    private CreatePaymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreatePaymentRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreatePaymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreatePaymentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Payment.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Payment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_CreatePaymentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_CreatePaymentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Gpi.CreatePaymentRequest.class, com.blcvn.switching.offchain.Gpi.CreatePaymentRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Payment data_;
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Payment getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (data_ != null) {
+        output.writeMessage(3, getData());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, amount_);
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getCurrencyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currency_);
-      }
-      if (!getDebtorAgentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, debtorAgent_);
-      }
-      if (!getCreditorAgentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, creditorAgent_);
-      }
-      if (!getEndToEndIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endToEndId_);
-      }
-      if (debtorAgentAccount_ != null) {
+      if (signature_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getDebtorAgentAccount());
+          .computeMessageSize(2, getSignature());
       }
-      if (creditorAgentAccount_ != null) {
+      if (data_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getCreditorAgentAccount());
+          .computeMessageSize(3, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -647,28 +1184,20 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.CreatePaymentRequest other = (com.blcvn.switching.offchain.Gpi.CreatePaymentRequest) obj;
 
-      if (!getUetr()
-          .equals(other.getUetr())) return false;
-      if (java.lang.Double.doubleToLongBits(getAmount())
-          != java.lang.Double.doubleToLongBits(
-              other.getAmount())) return false;
-      if (!getCurrency()
-          .equals(other.getCurrency())) return false;
-      if (!getDebtorAgent()
-          .equals(other.getDebtorAgent())) return false;
-      if (!getCreditorAgent()
-          .equals(other.getCreditorAgent())) return false;
-      if (!getEndToEndId()
-          .equals(other.getEndToEndId())) return false;
-      if (hasDebtorAgentAccount() != other.hasDebtorAgentAccount()) return false;
-      if (hasDebtorAgentAccount()) {
-        if (!getDebtorAgentAccount()
-            .equals(other.getDebtorAgentAccount())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
       }
-      if (hasCreditorAgentAccount() != other.hasCreditorAgentAccount()) return false;
-      if (hasCreditorAgentAccount()) {
-        if (!getCreditorAgentAccount()
-            .equals(other.getCreditorAgentAccount())) return false;
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -681,26 +1210,17 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UETR_FIELD_NUMBER;
-      hash = (53 * hash) + getUetr().hashCode();
-      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAmount()));
-      hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrency().hashCode();
-      hash = (37 * hash) + DEBTOR_AGENT_FIELD_NUMBER;
-      hash = (53 * hash) + getDebtorAgent().hashCode();
-      hash = (37 * hash) + CREDITOR_AGENT_FIELD_NUMBER;
-      hash = (53 * hash) + getCreditorAgent().hashCode();
-      hash = (37 * hash) + END_TO_END_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEndToEndId().hashCode();
-      if (hasDebtorAgentAccount()) {
-        hash = (37 * hash) + DEBTOR_AGENT_ACCOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getDebtorAgentAccount().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
       }
-      if (hasCreditorAgentAccount()) {
-        hash = (37 * hash) + CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getCreditorAgentAccount().hashCode();
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -835,29 +1355,23 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uetr_ = "";
-
-        amount_ = 0D;
-
-        currency_ = "";
-
-        debtorAgent_ = "";
-
-        creditorAgent_ = "";
-
-        endToEndId_ = "";
-
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = null;
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
         } else {
-          debtorAgentAccount_ = null;
-          debtorAgentAccountBuilder_ = null;
+          metadata_ = null;
+          metadataBuilder_ = null;
         }
-        if (creditorAgentAccountBuilder_ == null) {
-          creditorAgentAccount_ = null;
+        if (signatureBuilder_ == null) {
+          signature_ = null;
         } else {
-          creditorAgentAccount_ = null;
-          creditorAgentAccountBuilder_ = null;
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
         }
         return this;
       }
@@ -885,21 +1399,20 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.CreatePaymentRequest buildPartial() {
         com.blcvn.switching.offchain.Gpi.CreatePaymentRequest result = new com.blcvn.switching.offchain.Gpi.CreatePaymentRequest(this);
-        result.uetr_ = uetr_;
-        result.amount_ = amount_;
-        result.currency_ = currency_;
-        result.debtorAgent_ = debtorAgent_;
-        result.creditorAgent_ = creditorAgent_;
-        result.endToEndId_ = endToEndId_;
-        if (debtorAgentAccountBuilder_ == null) {
-          result.debtorAgentAccount_ = debtorAgentAccount_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
         } else {
-          result.debtorAgentAccount_ = debtorAgentAccountBuilder_.build();
+          result.metadata_ = metadataBuilder_.build();
         }
-        if (creditorAgentAccountBuilder_ == null) {
-          result.creditorAgentAccount_ = creditorAgentAccount_;
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
         } else {
-          result.creditorAgentAccount_ = creditorAgentAccountBuilder_.build();
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -949,34 +1462,14 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.CreatePaymentRequest other) {
         if (other == com.blcvn.switching.offchain.Gpi.CreatePaymentRequest.getDefaultInstance()) return this;
-        if (!other.getUetr().isEmpty()) {
-          uetr_ = other.uetr_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (other.getAmount() != 0D) {
-          setAmount(other.getAmount());
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
         }
-        if (!other.getCurrency().isEmpty()) {
-          currency_ = other.currency_;
-          onChanged();
-        }
-        if (!other.getDebtorAgent().isEmpty()) {
-          debtorAgent_ = other.debtorAgent_;
-          onChanged();
-        }
-        if (!other.getCreditorAgent().isEmpty()) {
-          creditorAgent_ = other.creditorAgent_;
-          onChanged();
-        }
-        if (!other.getEndToEndId().isEmpty()) {
-          endToEndId_ = other.endToEndId_;
-          onChanged();
-        }
-        if (other.hasDebtorAgentAccount()) {
-          mergeDebtorAgentAccount(other.getDebtorAgentAccount());
-        }
-        if (other.hasCreditorAgentAccount()) {
-          mergeCreditorAgentAccount(other.getCreditorAgentAccount());
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1007,725 +1500,361 @@ public final class Gpi {
         return this;
       }
 
-      private java.lang.Object uetr_ = "";
-      /**
-       * <code>string uetr = 1;</code>
-       * @return The uetr.
-       */
-      public java.lang.String getUetr() {
-        java.lang.Object ref = uetr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uetr_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @return The bytes for uetr.
-       */
-      public com.google.protobuf.ByteString
-          getUetrBytes() {
-        java.lang.Object ref = uetr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uetr_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @param value The uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetr(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUetr() {
-        
-        uetr_ = getDefaultInstance().getUetr();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @param value The bytes for uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-
-      private double amount_ ;
-      /**
-       * <code>double amount = 2;</code>
-       * @return The amount.
-       */
-      @java.lang.Override
-      public double getAmount() {
-        return amount_;
-      }
-      /**
-       * <code>double amount = 2;</code>
-       * @param value The amount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAmount(double value) {
-        
-        amount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double amount = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAmount() {
-        
-        amount_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object currency_ = "";
-      /**
-       * <code>string currency = 3;</code>
-       * @return The currency.
-       */
-      public java.lang.String getCurrency() {
-        java.lang.Object ref = currency_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          currency_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string currency = 3;</code>
-       * @return The bytes for currency.
-       */
-      public com.google.protobuf.ByteString
-          getCurrencyBytes() {
-        java.lang.Object ref = currency_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          currency_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string currency = 3;</code>
-       * @param value The currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrency(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurrency() {
-        
-        currency_ = getDefaultInstance().getCurrency();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 3;</code>
-       * @param value The bytes for currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrencyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object debtorAgent_ = "";
-      /**
-       * <code>string debtor_agent = 4;</code>
-       * @return The debtorAgent.
-       */
-      public java.lang.String getDebtorAgent() {
-        java.lang.Object ref = debtorAgent_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          debtorAgent_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string debtor_agent = 4;</code>
-       * @return The bytes for debtorAgent.
-       */
-      public com.google.protobuf.ByteString
-          getDebtorAgentBytes() {
-        java.lang.Object ref = debtorAgent_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          debtorAgent_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string debtor_agent = 4;</code>
-       * @param value The debtorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDebtorAgent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        debtorAgent_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debtor_agent = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDebtorAgent() {
-        
-        debtorAgent_ = getDefaultInstance().getDebtorAgent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debtor_agent = 4;</code>
-       * @param value The bytes for debtorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDebtorAgentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        debtorAgent_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object creditorAgent_ = "";
-      /**
-       * <code>string creditor_agent = 5;</code>
-       * @return The creditorAgent.
-       */
-      public java.lang.String getCreditorAgent() {
-        java.lang.Object ref = creditorAgent_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          creditorAgent_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string creditor_agent = 5;</code>
-       * @return The bytes for creditorAgent.
-       */
-      public com.google.protobuf.ByteString
-          getCreditorAgentBytes() {
-        java.lang.Object ref = creditorAgent_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          creditorAgent_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string creditor_agent = 5;</code>
-       * @param value The creditorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreditorAgent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        creditorAgent_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string creditor_agent = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreditorAgent() {
-        
-        creditorAgent_ = getDefaultInstance().getCreditorAgent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string creditor_agent = 5;</code>
-       * @param value The bytes for creditorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreditorAgentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        creditorAgent_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object endToEndId_ = "";
-      /**
-       * <code>string end_to_end_id = 6;</code>
-       * @return The endToEndId.
-       */
-      public java.lang.String getEndToEndId() {
-        java.lang.Object ref = endToEndId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          endToEndId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string end_to_end_id = 6;</code>
-       * @return The bytes for endToEndId.
-       */
-      public com.google.protobuf.ByteString
-          getEndToEndIdBytes() {
-        java.lang.Object ref = endToEndId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          endToEndId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string end_to_end_id = 6;</code>
-       * @param value The endToEndId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndToEndId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        endToEndId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string end_to_end_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndToEndId() {
-        
-        endToEndId_ = getDefaultInstance().getEndToEndId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string end_to_end_id = 6;</code>
-       * @param value The bytes for endToEndId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndToEndIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        endToEndId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.blcvn.switching.offchain.Common.Account debtorAgentAccount_;
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> debtorAgentAccountBuilder_;
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-       * @return Whether the debtorAgentAccount field is set.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public boolean hasDebtorAgentAccount() {
-        return debtorAgentAccountBuilder_ != null || debtorAgentAccount_ != null;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
-       * @return The debtorAgentAccount.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
        */
-      public com.blcvn.switching.offchain.Common.Account getDebtorAgentAccount() {
-        if (debtorAgentAccountBuilder_ == null) {
-          return debtorAgentAccount_ == null ? com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : debtorAgentAccount_;
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return debtorAgentAccountBuilder_.getMessage();
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setDebtorAgentAccount(com.blcvn.switching.offchain.Common.Account value) {
-        if (debtorAgentAccountBuilder_ == null) {
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          debtorAgentAccount_ = value;
+          metadata_ = value;
           onChanged();
         } else {
-          debtorAgentAccountBuilder_.setMessage(value);
+          metadataBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setDebtorAgentAccount(
-          com.blcvn.switching.offchain.Common.Account.Builder builderForValue) {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = builderForValue.build();
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
           onChanged();
         } else {
-          debtorAgentAccountBuilder_.setMessage(builderForValue.build());
+          metadataBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder mergeDebtorAgentAccount(com.blcvn.switching.offchain.Common.Account value) {
-        if (debtorAgentAccountBuilder_ == null) {
-          if (debtorAgentAccount_ != null) {
-            debtorAgentAccount_ =
-              com.blcvn.switching.offchain.Common.Account.newBuilder(debtorAgentAccount_).mergeFrom(value).buildPartial();
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
           } else {
-            debtorAgentAccount_ = value;
+            metadata_ = value;
           }
           onChanged();
         } else {
-          debtorAgentAccountBuilder_.mergeFrom(value);
+          metadataBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder clearDebtorAgentAccount() {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = null;
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
           onChanged();
         } else {
-          debtorAgentAccount_ = null;
-          debtorAgentAccountBuilder_ = null;
+          metadata_ = null;
+          metadataBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.blcvn.switching.offchain.Common.Account.Builder getDebtorAgentAccountBuilder() {
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
         
         onChanged();
-        return getDebtorAgentAccountFieldBuilder().getBuilder();
+        return getMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.blcvn.switching.offchain.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder() {
-        if (debtorAgentAccountBuilder_ != null) {
-          return debtorAgentAccountBuilder_.getMessageOrBuilder();
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
         } else {
-          return debtorAgentAccount_ == null ?
-              com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : debtorAgentAccount_;
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <pre>
-       * Optional: structured account details for the sending bank's account (debtor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account debtor_agent_account = 7;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> 
-          getDebtorAgentAccountFieldBuilder() {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder>(
-                  getDebtorAgentAccount(),
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
                   getParentForChildren(),
                   isClean());
-          debtorAgentAccount_ = null;
+          metadata_ = null;
         }
-        return debtorAgentAccountBuilder_;
+        return metadataBuilder_;
       }
 
-      private com.blcvn.switching.offchain.Common.Account creditorAgentAccount_;
+      private com.blcvn.switching.offchain.Common.Signature signature_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> creditorAgentAccountBuilder_;
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-       * @return Whether the creditorAgentAccount field is set.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public boolean hasCreditorAgentAccount() {
-        return creditorAgentAccountBuilder_ != null || creditorAgentAccount_ != null;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
-       * @return The creditorAgentAccount.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
        */
-      public com.blcvn.switching.offchain.Common.Account getCreditorAgentAccount() {
-        if (creditorAgentAccountBuilder_ == null) {
-          return creditorAgentAccount_ == null ? com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : creditorAgentAccount_;
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return creditorAgentAccountBuilder_.getMessage();
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setCreditorAgentAccount(com.blcvn.switching.offchain.Common.Account value) {
-        if (creditorAgentAccountBuilder_ == null) {
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          creditorAgentAccount_ = value;
+          signature_ = value;
           onChanged();
         } else {
-          creditorAgentAccountBuilder_.setMessage(value);
+          signatureBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setCreditorAgentAccount(
-          com.blcvn.switching.offchain.Common.Account.Builder builderForValue) {
-        if (creditorAgentAccountBuilder_ == null) {
-          creditorAgentAccount_ = builderForValue.build();
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
           onChanged();
         } else {
-          creditorAgentAccountBuilder_.setMessage(builderForValue.build());
+          signatureBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder mergeCreditorAgentAccount(com.blcvn.switching.offchain.Common.Account value) {
-        if (creditorAgentAccountBuilder_ == null) {
-          if (creditorAgentAccount_ != null) {
-            creditorAgentAccount_ =
-              com.blcvn.switching.offchain.Common.Account.newBuilder(creditorAgentAccount_).mergeFrom(value).buildPartial();
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
           } else {
-            creditorAgentAccount_ = value;
+            signature_ = value;
           }
           onChanged();
         } else {
-          creditorAgentAccountBuilder_.mergeFrom(value);
+          signatureBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder clearCreditorAgentAccount() {
-        if (creditorAgentAccountBuilder_ == null) {
-          creditorAgentAccount_ = null;
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
           onChanged();
         } else {
-          creditorAgentAccount_ = null;
-          creditorAgentAccountBuilder_ = null;
+          signature_ = null;
+          signatureBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.blcvn.switching.offchain.Common.Account.Builder getCreditorAgentAccountBuilder() {
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
         
         onChanged();
-        return getCreditorAgentAccountFieldBuilder().getBuilder();
+        return getSignatureFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder() {
-        if (creditorAgentAccountBuilder_ != null) {
-          return creditorAgentAccountBuilder_.getMessageOrBuilder();
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
         } else {
-          return creditorAgentAccount_ == null ?
-              com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : creditorAgentAccount_;
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <pre>
-       * Optional: structured account details for the receiving bank's account (creditor)
-       * </pre>
-       *
-       * <code>.offchain.v1.Account creditor_agent_account = 8;</code>
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> 
-          getCreditorAgentAccountFieldBuilder() {
-        if (creditorAgentAccountBuilder_ == null) {
-          creditorAgentAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder>(
-                  getCreditorAgentAccount(),
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
                   getParentForChildren(),
                   isClean());
-          creditorAgentAccount_ = null;
+          signature_ = null;
         }
-        return creditorAgentAccountBuilder_;
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Payment data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Payment getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Payment.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1785,67 +1914,64 @@ public final class Gpi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getId();
+    boolean hasMetadata();
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string uetr = 2;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getUetr();
+    boolean hasSignature();
     /**
-     * <code>string uetr = 2;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getUetrBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
-     * <code>string transaction_reference = 3;</code>
-     * @return The transactionReference.
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
      */
-    java.lang.String getTransactionReference();
+    boolean hasResult();
     /**
-     * <code>string transaction_reference = 3;</code>
-     * @return The bytes for transactionReference.
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
      */
-    com.google.protobuf.ByteString
-        getTransactionReferenceBytes();
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
-     * <code>string status = 4;</code>
-     * @return The status.
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
      */
-    java.lang.String getStatus();
+    boolean hasData();
     /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
      */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
+    com.blcvn.switching.offchain.Common.Payment getData();
     /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     * @return Whether the processingTimestamp field is set.
+     * <code>.offchain.v1.Payment data = 4;</code>
      */
-    boolean hasProcessingTimestamp();
-    /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     * @return The processingTimestamp.
-     */
-    com.google.protobuf.Timestamp getProcessingTimestamp();
-    /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getProcessingTimestampOrBuilder();
+    com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.CreatePaymentResponse}
@@ -1860,10 +1986,6 @@ public final class Gpi {
       super(builder);
     }
     private CreatePaymentResponse() {
-      id_ = "";
-      uetr_ = "";
-      transactionReference_ = "";
-      status_ = "";
     }
 
     @java.lang.Override
@@ -1897,38 +2019,53 @@ public final class Gpi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              id_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              uetr_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
 
-              transactionReference_ = s;
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (processingTimestamp_ != null) {
-                subBuilder = processingTimestamp_.toBuilder();
+              com.blcvn.switching.offchain.Common.Payment.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
               }
-              processingTimestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Payment.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(processingTimestamp_);
-                processingTimestamp_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1965,182 +2102,108 @@ public final class Gpi {
               com.blcvn.switching.offchain.Gpi.CreatePaymentResponse.class, com.blcvn.switching.offchain.Gpi.CreatePaymentResponse.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string id = 1;</code>
-     * @return The id.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int UETR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object uetr_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string uetr = 2;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getUetr() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uetr_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string uetr = 2;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUetrBytes() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uetr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
     }
 
-    public static final int TRANSACTION_REFERENCE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object transactionReference_;
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
     /**
-     * <code>string transaction_reference = 3;</code>
-     * @return The transactionReference.
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
      */
     @java.lang.Override
-    public java.lang.String getTransactionReference() {
-      java.lang.Object ref = transactionReference_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        transactionReference_ = s;
-        return s;
-      }
+    public boolean hasResult() {
+      return result_ != null;
     }
     /**
-     * <code>string transaction_reference = 3;</code>
-     * @return The bytes for transactionReference.
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTransactionReferenceBytes() {
-      java.lang.Object ref = transactionReference_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        transactionReference_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object status_;
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.Payment data_;
     /**
-     * <code>string status = 4;</code>
-     * @return The status.
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
+    public boolean hasData() {
+      return data_ != null;
     }
     /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PROCESSING_TIMESTAMP_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp processingTimestamp_;
-    /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     * @return Whether the processingTimestamp field is set.
-     */
-    @java.lang.Override
-    public boolean hasProcessingTimestamp() {
-      return processingTimestamp_ != null;
+    public com.blcvn.switching.offchain.Common.Payment getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
     }
     /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     * @return The processingTimestamp.
+     * <code>.offchain.v1.Payment data = 4;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getProcessingTimestamp() {
-      return processingTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : processingTimestamp_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getProcessingTimestampOrBuilder() {
-      return getProcessingTimestamp();
+    public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2157,20 +2220,17 @@ public final class Gpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getUetrBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uetr_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
       }
-      if (!getTransactionReferenceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, transactionReference_);
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
-      }
-      if (processingTimestamp_ != null) {
-        output.writeMessage(5, getProcessingTimestamp());
+      if (data_ != null) {
+        output.writeMessage(4, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -2181,21 +2241,21 @@ public final class Gpi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-      }
-      if (!getUetrBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uetr_);
-      }
-      if (!getTransactionReferenceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, transactionReference_);
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
-      }
-      if (processingTimestamp_ != null) {
+      if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getProcessingTimestamp());
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2212,18 +2272,25 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.CreatePaymentResponse other = (com.blcvn.switching.offchain.Gpi.CreatePaymentResponse) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getUetr()
-          .equals(other.getUetr())) return false;
-      if (!getTransactionReference()
-          .equals(other.getTransactionReference())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
-      if (hasProcessingTimestamp() != other.hasProcessingTimestamp()) return false;
-      if (hasProcessingTimestamp()) {
-        if (!getProcessingTimestamp()
-            .equals(other.getProcessingTimestamp())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2236,17 +2303,21 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + UETR_FIELD_NUMBER;
-      hash = (53 * hash) + getUetr().hashCode();
-      hash = (37 * hash) + TRANSACTION_REFERENCE_FIELD_NUMBER;
-      hash = (53 * hash) + getTransactionReference().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      if (hasProcessingTimestamp()) {
-        hash = (37 * hash) + PROCESSING_TIMESTAMP_FIELD_NUMBER;
-        hash = (53 * hash) + getProcessingTimestamp().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2381,19 +2452,29 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
-
-        uetr_ = "";
-
-        transactionReference_ = "";
-
-        status_ = "";
-
-        if (processingTimestampBuilder_ == null) {
-          processingTimestamp_ = null;
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
         } else {
-          processingTimestamp_ = null;
-          processingTimestampBuilder_ = null;
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
         }
         return this;
       }
@@ -2421,14 +2502,25 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.CreatePaymentResponse buildPartial() {
         com.blcvn.switching.offchain.Gpi.CreatePaymentResponse result = new com.blcvn.switching.offchain.Gpi.CreatePaymentResponse(this);
-        result.id_ = id_;
-        result.uetr_ = uetr_;
-        result.transactionReference_ = transactionReference_;
-        result.status_ = status_;
-        if (processingTimestampBuilder_ == null) {
-          result.processingTimestamp_ = processingTimestamp_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
         } else {
-          result.processingTimestamp_ = processingTimestampBuilder_.build();
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2478,24 +2570,17 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.CreatePaymentResponse other) {
         if (other == com.blcvn.switching.offchain.Gpi.CreatePaymentResponse.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getUetr().isEmpty()) {
-          uetr_ = other.uetr_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
         }
-        if (!other.getTransactionReference().isEmpty()) {
-          transactionReference_ = other.transactionReference_;
-          onChanged();
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
-        if (other.hasProcessingTimestamp()) {
-          mergeProcessingTimestamp(other.getProcessingTimestamp());
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2526,427 +2611,480 @@ public final class Gpi {
         return this;
       }
 
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 1;</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object uetr_ = "";
-      /**
-       * <code>string uetr = 2;</code>
-       * @return The uetr.
-       */
-      public java.lang.String getUetr() {
-        java.lang.Object ref = uetr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uetr_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string uetr = 2;</code>
-       * @return The bytes for uetr.
-       */
-      public com.google.protobuf.ByteString
-          getUetrBytes() {
-        java.lang.Object ref = uetr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uetr_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string uetr = 2;</code>
-       * @param value The uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetr(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUetr() {
-        
-        uetr_ = getDefaultInstance().getUetr();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 2;</code>
-       * @param value The bytes for uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object transactionReference_ = "";
-      /**
-       * <code>string transaction_reference = 3;</code>
-       * @return The transactionReference.
-       */
-      public java.lang.String getTransactionReference() {
-        java.lang.Object ref = transactionReference_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          transactionReference_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string transaction_reference = 3;</code>
-       * @return The bytes for transactionReference.
-       */
-      public com.google.protobuf.ByteString
-          getTransactionReferenceBytes() {
-        java.lang.Object ref = transactionReference_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          transactionReference_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string transaction_reference = 3;</code>
-       * @param value The transactionReference to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransactionReference(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        transactionReference_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string transaction_reference = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTransactionReference() {
-        
-        transactionReference_ = getDefaultInstance().getTransactionReference();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string transaction_reference = 3;</code>
-       * @param value The bytes for transactionReference to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransactionReferenceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        transactionReference_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 4;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp processingTimestamp_;
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> processingTimestampBuilder_;
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-       * @return Whether the processingTimestamp field is set.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public boolean hasProcessingTimestamp() {
-        return processingTimestampBuilder_ != null || processingTimestamp_ != null;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
-       * @return The processingTimestamp.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
        */
-      public com.google.protobuf.Timestamp getProcessingTimestamp() {
-        if (processingTimestampBuilder_ == null) {
-          return processingTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : processingTimestamp_;
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return processingTimestampBuilder_.getMessage();
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setProcessingTimestamp(com.google.protobuf.Timestamp value) {
-        if (processingTimestampBuilder_ == null) {
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          processingTimestamp_ = value;
+          metadata_ = value;
           onChanged();
         } else {
-          processingTimestampBuilder_.setMessage(value);
+          metadataBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setProcessingTimestamp(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (processingTimestampBuilder_ == null) {
-          processingTimestamp_ = builderForValue.build();
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
           onChanged();
         } else {
-          processingTimestampBuilder_.setMessage(builderForValue.build());
+          metadataBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder mergeProcessingTimestamp(com.google.protobuf.Timestamp value) {
-        if (processingTimestampBuilder_ == null) {
-          if (processingTimestamp_ != null) {
-            processingTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(processingTimestamp_).mergeFrom(value).buildPartial();
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
           } else {
-            processingTimestamp_ = value;
+            metadata_ = value;
           }
           onChanged();
         } else {
-          processingTimestampBuilder_.mergeFrom(value);
+          metadataBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder clearProcessingTimestamp() {
-        if (processingTimestampBuilder_ == null) {
-          processingTimestamp_ = null;
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
           onChanged();
         } else {
-          processingTimestamp_ = null;
-          processingTimestampBuilder_ = null;
+          metadata_ = null;
+          metadataBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getProcessingTimestampBuilder() {
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
         
         onChanged();
-        return getProcessingTimestampFieldBuilder().getBuilder();
+        return getMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getProcessingTimestampOrBuilder() {
-        if (processingTimestampBuilder_ != null) {
-          return processingTimestampBuilder_.getMessageOrBuilder();
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
         } else {
-          return processingTimestamp_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : processingTimestamp_;
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp processing_timestamp = 5;</code>
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getProcessingTimestampFieldBuilder() {
-        if (processingTimestampBuilder_ == null) {
-          processingTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getProcessingTimestamp(),
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
                   getParentForChildren(),
                   isClean());
-          processingTimestamp_ = null;
+          metadata_ = null;
         }
-        return processingTimestampBuilder_;
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Payment data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Payment getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Payment.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3006,12 +3144,42 @@ public final class Gpi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string id = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string id = 3;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     com.google.protobuf.ByteString
@@ -3064,6 +3232,32 @@ public final class Gpi {
               done = true;
               break;
             case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
@@ -3101,10 +3295,62 @@ public final class Gpi {
               com.blcvn.switching.offchain.Gpi.GetPaymentRequest.class, com.blcvn.switching.offchain.Gpi.GetPaymentRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object id_;
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 3;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -3121,7 +3367,7 @@ public final class Gpi {
       }
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 3;</code>
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -3153,8 +3399,14 @@ public final class Gpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
       if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -3165,8 +3417,16 @@ public final class Gpi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
       if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3183,6 +3443,16 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.GetPaymentRequest other = (com.blcvn.switching.offchain.Gpi.GetPaymentRequest) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (!getId()
           .equals(other.getId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3196,6 +3466,14 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3331,6 +3609,18 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         id_ = "";
 
         return this;
@@ -3359,6 +3649,16 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.GetPaymentRequest buildPartial() {
         com.blcvn.switching.offchain.Gpi.GetPaymentRequest result = new com.blcvn.switching.offchain.Gpi.GetPaymentRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         result.id_ = id_;
         onBuilt();
         return result;
@@ -3408,6 +3708,12 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.GetPaymentRequest other) {
         if (other == com.blcvn.switching.offchain.Gpi.GetPaymentRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
@@ -3441,9 +3747,247 @@ public final class Gpi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
       private java.lang.Object id_ = "";
       /**
-       * <code>string id = 1;</code>
+       * <code>string id = 3;</code>
        * @return The id.
        */
       public java.lang.String getId() {
@@ -3459,7 +4003,7 @@ public final class Gpi {
         }
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string id = 3;</code>
        * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
@@ -3476,7 +4020,7 @@ public final class Gpi {
         }
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string id = 3;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -3491,7 +4035,7 @@ public final class Gpi {
         return this;
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -3501,7 +4045,7 @@ public final class Gpi {
         return this;
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string id = 3;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
@@ -3569,17 +4113,1277 @@ public final class Gpi {
 
   }
 
+  public interface GetPaymentResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.GetPaymentResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.Payment getData();
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder();
+  }
+  /**
+   * Protobuf type {@code offchain.v1.GetPaymentResponse}
+   */
+  public static final class GetPaymentResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.GetPaymentResponse)
+      GetPaymentResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetPaymentResponse.newBuilder() to construct.
+    private GetPaymentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetPaymentResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetPaymentResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetPaymentResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.blcvn.switching.offchain.Common.Payment.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Payment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_GetPaymentResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_GetPaymentResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Gpi.GetPaymentResponse.class, com.blcvn.switching.offchain.Gpi.GetPaymentResponse.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.Payment data_;
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Payment getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (data_ != null) {
+        output.writeMessage(4, getData());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Gpi.GetPaymentResponse)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Gpi.GetPaymentResponse other = (com.blcvn.switching.offchain.Gpi.GetPaymentResponse) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Gpi.GetPaymentResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code offchain.v1.GetPaymentResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.GetPaymentResponse)
+        com.blcvn.switching.offchain.Gpi.GetPaymentResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_GetPaymentResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_GetPaymentResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Gpi.GetPaymentResponse.class, com.blcvn.switching.offchain.Gpi.GetPaymentResponse.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Gpi.GetPaymentResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_GetPaymentResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.GetPaymentResponse getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Gpi.GetPaymentResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.GetPaymentResponse build() {
+        com.blcvn.switching.offchain.Gpi.GetPaymentResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.GetPaymentResponse buildPartial() {
+        com.blcvn.switching.offchain.Gpi.GetPaymentResponse result = new com.blcvn.switching.offchain.Gpi.GetPaymentResponse(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Gpi.GetPaymentResponse) {
+          return mergeFrom((com.blcvn.switching.offchain.Gpi.GetPaymentResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.GetPaymentResponse other) {
+        if (other == com.blcvn.switching.offchain.Gpi.GetPaymentResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Gpi.GetPaymentResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Gpi.GetPaymentResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Payment data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Payment getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Payment.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.GetPaymentResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.GetPaymentResponse)
+    private static final com.blcvn.switching.offchain.Gpi.GetPaymentResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Gpi.GetPaymentResponse();
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.GetPaymentResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetPaymentResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetPaymentResponse>() {
+      @java.lang.Override
+      public GetPaymentResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetPaymentResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetPaymentResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetPaymentResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Gpi.GetPaymentResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetPaymentStatusRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:offchain.v1.GetPaymentStatusRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string uetr = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string uetr = 3;</code>
      * @return The uetr.
      */
     java.lang.String getUetr();
     /**
-     * <code>string uetr = 1;</code>
+     * <code>string uetr = 3;</code>
      * @return The bytes for uetr.
      */
     com.google.protobuf.ByteString
@@ -3632,6 +5436,32 @@ public final class Gpi {
               done = true;
               break;
             case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               uetr_ = s;
@@ -3669,10 +5499,62 @@ public final class Gpi {
               com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest.class, com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest.Builder.class);
     }
 
-    public static final int UETR_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int UETR_FIELD_NUMBER = 3;
     private volatile java.lang.Object uetr_;
     /**
-     * <code>string uetr = 1;</code>
+     * <code>string uetr = 3;</code>
      * @return The uetr.
      */
     @java.lang.Override
@@ -3689,7 +5571,7 @@ public final class Gpi {
       }
     }
     /**
-     * <code>string uetr = 1;</code>
+     * <code>string uetr = 3;</code>
      * @return The bytes for uetr.
      */
     @java.lang.Override
@@ -3721,8 +5603,14 @@ public final class Gpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
       if (!getUetrBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uetr_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uetr_);
       }
       unknownFields.writeTo(output);
     }
@@ -3733,8 +5621,16 @@ public final class Gpi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
       if (!getUetrBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uetr_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uetr_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3751,6 +5647,16 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest other = (com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (!getUetr()
           .equals(other.getUetr())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3764,6 +5670,14 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       hash = (37 * hash) + UETR_FIELD_NUMBER;
       hash = (53 * hash) + getUetr().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3899,6 +5813,18 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         uetr_ = "";
 
         return this;
@@ -3927,6 +5853,16 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest buildPartial() {
         com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest result = new com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         result.uetr_ = uetr_;
         onBuilt();
         return result;
@@ -3976,6 +5912,12 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest other) {
         if (other == com.blcvn.switching.offchain.Gpi.GetPaymentStatusRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
         if (!other.getUetr().isEmpty()) {
           uetr_ = other.uetr_;
           onChanged();
@@ -4009,9 +5951,247 @@ public final class Gpi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
       private java.lang.Object uetr_ = "";
       /**
-       * <code>string uetr = 1;</code>
+       * <code>string uetr = 3;</code>
        * @return The uetr.
        */
       public java.lang.String getUetr() {
@@ -4027,7 +6207,7 @@ public final class Gpi {
         }
       }
       /**
-       * <code>string uetr = 1;</code>
+       * <code>string uetr = 3;</code>
        * @return The bytes for uetr.
        */
       public com.google.protobuf.ByteString
@@ -4044,7 +6224,7 @@ public final class Gpi {
         }
       }
       /**
-       * <code>string uetr = 1;</code>
+       * <code>string uetr = 3;</code>
        * @param value The uetr to set.
        * @return This builder for chaining.
        */
@@ -4059,7 +6239,7 @@ public final class Gpi {
         return this;
       }
       /**
-       * <code>string uetr = 1;</code>
+       * <code>string uetr = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearUetr() {
@@ -4069,7 +6249,7 @@ public final class Gpi {
         return this;
       }
       /**
-       * <code>string uetr = 1;</code>
+       * <code>string uetr = 3;</code>
        * @param value The bytes for uetr to set.
        * @return This builder for chaining.
        */
@@ -5082,40 +7262,49 @@ public final class Gpi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string uetr = 1;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getUetr();
+    boolean hasMetadata();
     /**
-     * <code>string uetr = 1;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getUetrBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string confirmation_type = 2;</code>
-     * @return The confirmationType.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getConfirmationType();
+    boolean hasSignature();
     /**
-     * <code>string confirmation_type = 2;</code>
-     * @return The bytes for confirmationType.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getConfirmationTypeBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
-     * <code>string timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     * @return Whether the data field is set.
      */
-    java.lang.String getTimestamp();
+    boolean hasData();
     /**
-     * <code>string timestamp = 3;</code>
-     * @return The bytes for timestamp.
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     * @return The data.
      */
-    com.google.protobuf.ByteString
-        getTimestampBytes();
+    com.blcvn.switching.offchain.Gpi.ConfirmMessage getData();
+    /**
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     */
+    com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.ConfirmPaymentRequest}
@@ -5130,9 +7319,6 @@ public final class Gpi {
       super(builder);
     }
     private ConfirmPaymentRequest() {
-      uetr_ = "";
-      confirmationType_ = "";
-      timestamp_ = "";
     }
 
     @java.lang.Override
@@ -5166,21 +7352,42 @@ public final class Gpi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              uetr_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              confirmationType_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Gpi.ConfirmMessage.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
 
-              timestamp_ = s;
               break;
             }
             default: {
@@ -5215,118 +7422,82 @@ public final class Gpi {
               com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest.class, com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest.Builder.class);
     }
 
-    public static final int UETR_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uetr_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string uetr = 1;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getUetr() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uetr_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string uetr = 1;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUetrBytes() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uetr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int CONFIRMATION_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object confirmationType_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string confirmation_type = 2;</code>
-     * @return The confirmationType.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getConfirmationType() {
-      java.lang.Object ref = confirmationType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        confirmationType_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string confirmation_type = 2;</code>
-     * @return The bytes for confirmationType.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getConfirmationTypeBytes() {
-      java.lang.Object ref = confirmationType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        confirmationType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private volatile java.lang.Object timestamp_;
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Gpi.ConfirmMessage data_;
     /**
-     * <code>string timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     * @return Whether the data field is set.
      */
     @java.lang.Override
-    public java.lang.String getTimestamp() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timestamp_ = s;
-        return s;
-      }
+    public boolean hasData() {
+      return data_ != null;
     }
     /**
-     * <code>string timestamp = 3;</code>
-     * @return The bytes for timestamp.
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTimestampBytes() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timestamp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Gpi.ConfirmMessage getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Gpi.ConfirmMessage.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5343,14 +7514,14 @@ public final class Gpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUetrBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uetr_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getConfirmationTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confirmationType_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
       }
-      if (!getTimestampBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timestamp_);
+      if (data_ != null) {
+        output.writeMessage(3, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -5361,14 +7532,17 @@ public final class Gpi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUetrBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uetr_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getConfirmationTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confirmationType_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
       }
-      if (!getTimestampBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timestamp_);
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5385,12 +7559,21 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest other = (com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest) obj;
 
-      if (!getUetr()
-          .equals(other.getUetr())) return false;
-      if (!getConfirmationType()
-          .equals(other.getConfirmationType())) return false;
-      if (!getTimestamp()
-          .equals(other.getTimestamp())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5402,12 +7585,18 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UETR_FIELD_NUMBER;
-      hash = (53 * hash) + getUetr().hashCode();
-      hash = (37 * hash) + CONFIRMATION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getConfirmationType().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5541,12 +7730,24 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uetr_ = "";
-
-        confirmationType_ = "";
-
-        timestamp_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -5573,9 +7774,21 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest buildPartial() {
         com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest result = new com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest(this);
-        result.uetr_ = uetr_;
-        result.confirmationType_ = confirmationType_;
-        result.timestamp_ = timestamp_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5624,17 +7837,14 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest other) {
         if (other == com.blcvn.switching.offchain.Gpi.ConfirmPaymentRequest.getDefaultInstance()) return this;
-        if (!other.getUetr().isEmpty()) {
-          uetr_ = other.uetr_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getConfirmationType().isEmpty()) {
-          confirmationType_ = other.confirmationType_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
         }
-        if (!other.getTimestamp().isEmpty()) {
-          timestamp_ = other.timestamp_;
-          onChanged();
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5665,232 +7875,361 @@ public final class Gpi {
         return this;
       }
 
-      private java.lang.Object uetr_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string uetr = 1;</code>
-       * @return The uetr.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getUetr() {
-        java.lang.Object ref = uetr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uetr_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string uetr = 1;</code>
-       * @return The bytes for uetr.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUetrBytes() {
-        java.lang.Object ref = uetr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uetr_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string uetr = 1;</code>
-       * @param value The uetr to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setUetr(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUetr() {
-        
-        uetr_ = getDefaultInstance().getUetr();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @param value The bytes for uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        uetr_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.lang.Object confirmationType_ = "";
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <code>string confirmation_type = 2;</code>
-       * @return The confirmationType.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public java.lang.String getConfirmationType() {
-        java.lang.Object ref = confirmationType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          confirmationType_ = s;
-          return s;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return (java.lang.String) ref;
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <code>string confirmation_type = 2;</code>
-       * @return The bytes for confirmationType.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getConfirmationTypeBytes() {
-        java.lang.Object ref = confirmationType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          confirmationType_ = b;
-          return b;
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <code>string confirmation_type = 2;</code>
-       * @param value The confirmationType to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setConfirmationType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        confirmationType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string confirmation_type = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfirmationType() {
-        
-        confirmationType_ = getDefaultInstance().getConfirmationType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string confirmation_type = 2;</code>
-       * @param value The bytes for confirmationType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfirmationTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        confirmationType_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
       }
 
-      private java.lang.Object timestamp_ = "";
+      private com.blcvn.switching.offchain.Gpi.ConfirmMessage data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Gpi.ConfirmMessage, com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder, com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder> dataBuilder_;
       /**
-       * <code>string timestamp = 3;</code>
-       * @return The timestamp.
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       * @return Whether the data field is set.
        */
-      public java.lang.String getTimestamp() {
-        java.lang.Object ref = timestamp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          timestamp_ = s;
-          return s;
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessage getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Gpi.ConfirmMessage.getDefaultInstance() : data_;
         } else {
-          return (java.lang.String) ref;
+          return dataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string timestamp = 3;</code>
-       * @return The bytes for timestamp.
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getTimestampBytes() {
-        java.lang.Object ref = timestamp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timestamp_ = b;
-          return b;
+      public Builder setData(com.blcvn.switching.offchain.Gpi.ConfirmMessage value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Gpi.ConfirmMessage value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Gpi.ConfirmMessage.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Gpi.ConfirmMessage.getDefaultInstance() : data_;
         }
       }
       /**
-       * <code>string timestamp = 3;</code>
-       * @param value The timestamp to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.ConfirmMessage data = 3;</code>
        */
-      public Builder setTimestamp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimestamp() {
-        
-        timestamp_ = getDefaultInstance().getTimestamp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @param value The bytes for timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestampBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        timestamp_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Gpi.ConfirmMessage, com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder, com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Gpi.ConfirmMessage, com.blcvn.switching.offchain.Gpi.ConfirmMessage.Builder, com.blcvn.switching.offchain.Gpi.ConfirmMessageOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5950,28 +8289,64 @@ public final class Gpi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string uetr = 1;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getUetr();
+    boolean hasMetadata();
     /**
-     * <code>string uetr = 1;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getUetrBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getStatus();
+    boolean hasSignature();
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getStatusBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.Payment getData();
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.ConfirmPaymentResponse}
@@ -5986,8 +8361,6 @@ public final class Gpi {
       super(builder);
     }
     private ConfirmPaymentResponse() {
-      uetr_ = "";
-      status_ = "";
     }
 
     @java.lang.Override
@@ -6021,15 +8394,55 @@ public final class Gpi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              uetr_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              status_ = s;
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.blcvn.switching.offchain.Common.Payment.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Payment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -6064,80 +8477,108 @@ public final class Gpi {
               com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse.class, com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse.Builder.class);
     }
 
-    public static final int UETR_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uetr_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string uetr = 1;</code>
-     * @return The uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getUetr() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uetr_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string uetr = 1;</code>
-     * @return The bytes for uetr.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUetrBytes() {
-      java.lang.Object ref = uetr_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uetr_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.Payment data_;
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Payment getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6154,11 +8595,17 @@ public final class Gpi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUetrBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uetr_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (data_ != null) {
+        output.writeMessage(4, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -6169,11 +8616,21 @@ public final class Gpi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUetrBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uetr_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6190,10 +8647,26 @@ public final class Gpi {
       }
       com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse other = (com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse) obj;
 
-      if (!getUetr()
-          .equals(other.getUetr())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6205,10 +8678,22 @@ public final class Gpi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UETR_FIELD_NUMBER;
-      hash = (53 * hash) + getUetr().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6342,10 +8827,30 @@ public final class Gpi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uetr_ = "";
-
-        status_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -6372,8 +8877,26 @@ public final class Gpi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse buildPartial() {
         com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse result = new com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse(this);
-        result.uetr_ = uetr_;
-        result.status_ = status_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -6422,13 +8945,17 @@ public final class Gpi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse other) {
         if (other == com.blcvn.switching.offchain.Gpi.ConfirmPaymentResponse.getDefaultInstance()) return this;
-        if (!other.getUetr().isEmpty()) {
-          uetr_ = other.uetr_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6459,156 +8986,480 @@ public final class Gpi {
         return this;
       }
 
-      private java.lang.Object uetr_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string uetr = 1;</code>
-       * @return The uetr.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getUetr() {
-        java.lang.Object ref = uetr_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uetr_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string uetr = 1;</code>
-       * @return The bytes for uetr.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUetrBytes() {
-        java.lang.Object ref = uetr_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uetr_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string uetr = 1;</code>
-       * @param value The uetr to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setUetr(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        uetr_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUetr() {
-        
-        uetr_ = getDefaultInstance().getUetr();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string uetr = 1;</code>
-       * @param value The bytes for uetr to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUetrBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        uetr_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.lang.Object status_ = "";
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <code>string status = 2;</code>
-       * @return The status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return (java.lang.String) ref;
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
         return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Payment data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Payment getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Payment.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Payment.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Payment data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6664,6 +9515,11 @@ public final class Gpi {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_ConfirmMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_ConfirmMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_CreatePaymentRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6678,6 +9534,11 @@ public final class Gpi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_offchain_v1_GetPaymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_GetPaymentResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_GetPaymentResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_GetPaymentStatusRequest_descriptor;
   private static final 
@@ -6709,36 +9570,50 @@ public final class Gpi {
     java.lang.String[] descriptorData = {
       "\n\022offchain/gpi.proto\022\013offchain.v1\032\025offch" +
       "ain/common.proto\032\037google/protobuf/timest" +
-      "amp.proto\"\365\001\n\024CreatePaymentRequest\022\014\n\004ue" +
-      "tr\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\022\020\n\010currency\030\003 \001" +
-      "(\t\022\024\n\014debtor_agent\030\004 \001(\t\022\026\n\016creditor_age" +
-      "nt\030\005 \001(\t\022\025\n\rend_to_end_id\030\006 \001(\t\0222\n\024debto" +
-      "r_agent_account\030\007 \001(\0132\024.offchain.v1.Acco" +
-      "unt\0224\n\026creditor_agent_account\030\010 \001(\0132\024.of" +
-      "fchain.v1.Account\"\232\001\n\025CreatePaymentRespo" +
-      "nse\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 \001(\t\022\035\n\025transac" +
-      "tion_reference\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\0228\n\024" +
-      "processing_timestamp\030\005 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\"\037\n\021GetPaymentRequest\022\n\n\002i" +
-      "d\030\001 \001(\t\"\'\n\027GetPaymentStatusRequest\022\014\n\004ue" +
-      "tr\030\001 \001(\t\"O\n\rPaymentStatus\022\014\n\004uetr\030\001 \001(\t\022" +
-      "\016\n\006status\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010curre" +
-      "ncy\030\004 \001(\t\"S\n\025ConfirmPaymentRequest\022\014\n\004ue" +
-      "tr\030\001 \001(\t\022\031\n\021confirmation_type\030\002 \001(\t\022\021\n\tt" +
-      "imestamp\030\003 \001(\t\"6\n\026ConfirmPaymentResponse" +
-      "\022\014\n\004uetr\030\001 \001(\t\022\016\n\006status\030\002 \001(\t2\341\002\n\nGpiSe" +
-      "rvice\022X\n\rCreatePayment\022!.offchain.v1.Cre" +
-      "atePaymentRequest\032\".offchain.v1.CreatePa" +
-      "ymentResponse\"\000\022D\n\nGetPayment\022\036.offchain" +
-      ".v1.GetPaymentRequest\032\024.offchain.v1.Paym" +
-      "ent\"\000\022V\n\020GetPaymentStatus\022$.offchain.v1." +
-      "GetPaymentStatusRequest\032\032.offchain.v1.Pa" +
-      "ymentStatus\"\000\022[\n\016ConfirmPayment\022\".offcha" +
-      "in.v1.ConfirmPaymentRequest\032#.offchain.v" +
-      "1.ConfirmPaymentResponse\"\000BU\n\034com.blcvn." +
-      "switching.offchainZ5github.com/blcvn/swi" +
-      "tching-proto/go/offchain;offchainb\006proto" +
-      "3"
+      "amp.proto\"L\n\016ConfirmMessage\022\014\n\004uetr\030\001 \001(" +
+      "\t\022\031\n\021confirmation_type\030\002 \001(\t\022\021\n\ttimestam" +
+      "p\030\003 \001(\t\"\216\001\n\024CreatePaymentRequest\022\'\n\010meta" +
+      "data\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\tsig" +
+      "nature\030\002 \001(\0132\026.offchain.v1.Signature\022\"\n\004" +
+      "data\030\003 \001(\0132\024.offchain.v1.Payment\"\264\001\n\025Cre" +
+      "atePaymentResponse\022\'\n\010metadata\030\001 \001(\0132\025.o" +
+      "ffchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
+      ".offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023" +
+      ".offchain.v1.Result\022\"\n\004data\030\004 \001(\0132\024.offc" +
+      "hain.v1.Payment\"s\n\021GetPaymentRequest\022\'\n\010" +
+      "metadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n" +
+      "\tsignature\030\002 \001(\0132\026.offchain.v1.Signature" +
+      "\022\n\n\002id\030\003 \001(\t\"\261\001\n\022GetPaymentResponse\022\'\n\010m" +
+      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
+      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
+      "#\n\006result\030\003 \001(\0132\023.offchain.v1.Result\022\"\n\004" +
+      "data\030\004 \001(\0132\024.offchain.v1.Payment\"{\n\027GetP" +
+      "aymentStatusRequest\022\'\n\010metadata\030\001 \001(\0132\025." +
+      "offchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132" +
+      "\026.offchain.v1.Signature\022\014\n\004uetr\030\003 \001(\t\"O\n" +
+      "\rPaymentStatus\022\014\n\004uetr\030\001 \001(\t\022\016\n\006status\030\002" +
+      " \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\"\226" +
+      "\001\n\025ConfirmPaymentRequest\022\'\n\010metadata\030\001 \001" +
+      "(\0132\025.offchain.v1.Metadata\022)\n\tsignature\030\002" +
+      " \001(\0132\026.offchain.v1.Signature\022)\n\004data\030\003 \001" +
+      "(\0132\033.offchain.v1.ConfirmMessage\"\265\001\n\026Conf" +
+      "irmPaymentResponse\022\'\n\010metadata\030\001 \001(\0132\025.o" +
+      "ffchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
+      ".offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023" +
+      ".offchain.v1.Result\022\"\n\004data\030\004 \001(\0132\024.offc" +
+      "hain.v1.Payment2\361\002\n\nGpiService\022X\n\rCreate" +
+      "Payment\022!.offchain.v1.CreatePaymentReque" +
+      "st\032\".offchain.v1.CreatePaymentResponse\"\000" +
+      "\022O\n\nGetPayment\022\036.offchain.v1.GetPaymentR" +
+      "equest\032\037.offchain.v1.GetPaymentResponse\"" +
+      "\000\022[\n\020GetPaymentStatus\022$.offchain.v1.GetP" +
+      "aymentStatusRequest\032\037.offchain.v1.GetPay" +
+      "mentResponse\"\000\022[\n\016ConfirmPayment\022\".offch" +
+      "ain.v1.ConfirmPaymentRequest\032#.offchain." +
+      "v1.ConfirmPaymentResponse\"\000BU\n\034com.blcvn" +
+      ".switching.offchainZ5github.com/blcvn/sw" +
+      "itching-proto/go/offchain;offchainb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6746,48 +9621,60 @@ public final class Gpi {
           com.blcvn.switching.offchain.Common.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_offchain_v1_CreatePaymentRequest_descriptor =
+    internal_static_offchain_v1_ConfirmMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_offchain_v1_ConfirmMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_ConfirmMessage_descriptor,
+        new java.lang.String[] { "Uetr", "ConfirmationType", "Timestamp", });
+    internal_static_offchain_v1_CreatePaymentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_offchain_v1_CreatePaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_CreatePaymentRequest_descriptor,
-        new java.lang.String[] { "Uetr", "Amount", "Currency", "DebtorAgent", "CreditorAgent", "EndToEndId", "DebtorAgentAccount", "CreditorAgentAccount", });
+        new java.lang.String[] { "Metadata", "Signature", "Data", });
     internal_static_offchain_v1_CreatePaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_offchain_v1_CreatePaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_CreatePaymentResponse_descriptor,
-        new java.lang.String[] { "Id", "Uetr", "TransactionReference", "Status", "ProcessingTimestamp", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     internal_static_offchain_v1_GetPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_offchain_v1_GetPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetPaymentRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Metadata", "Signature", "Id", });
+    internal_static_offchain_v1_GetPaymentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_offchain_v1_GetPaymentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_GetPaymentResponse_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     internal_static_offchain_v1_GetPaymentStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_offchain_v1_GetPaymentStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetPaymentStatusRequest_descriptor,
-        new java.lang.String[] { "Uetr", });
+        new java.lang.String[] { "Metadata", "Signature", "Uetr", });
     internal_static_offchain_v1_PaymentStatus_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_offchain_v1_PaymentStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_PaymentStatus_descriptor,
         new java.lang.String[] { "Uetr", "Status", "Amount", "Currency", });
     internal_static_offchain_v1_ConfirmPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_offchain_v1_ConfirmPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ConfirmPaymentRequest_descriptor,
-        new java.lang.String[] { "Uetr", "ConfirmationType", "Timestamp", });
+        new java.lang.String[] { "Metadata", "Signature", "Data", });
     internal_static_offchain_v1_ConfirmPaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_offchain_v1_ConfirmPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ConfirmPaymentResponse_descriptor,
-        new java.lang.String[] { "Uetr", "Status", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     com.blcvn.switching.offchain.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

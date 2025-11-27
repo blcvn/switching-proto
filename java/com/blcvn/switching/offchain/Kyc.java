@@ -14,6 +14,2263 @@ public final class Kyc {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface RegisterRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.RegisterRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.KycEntity getData();
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder();
+  }
+  /**
+   * Protobuf type {@code offchain.v1.RegisterRequest}
+   */
+  public static final class RegisterRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.RegisterRequest)
+      RegisterRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RegisterRequest.newBuilder() to construct.
+    private RegisterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RegisterRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RegisterRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RegisterRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.KycEntity.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.KycEntity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Kyc.RegisterRequest.class, com.blcvn.switching.offchain.Kyc.RegisterRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.KycEntity data_;
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.KycEntity getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.KycEntity data = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (data_ != null) {
+        output.writeMessage(3, getData());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getData());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Kyc.RegisterRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Kyc.RegisterRequest other = (com.blcvn.switching.offchain.Kyc.RegisterRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Kyc.RegisterRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code offchain.v1.RegisterRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.RegisterRequest)
+        com.blcvn.switching.offchain.Kyc.RegisterRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Kyc.RegisterRequest.class, com.blcvn.switching.offchain.Kyc.RegisterRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Kyc.RegisterRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterRequest getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Kyc.RegisterRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterRequest build() {
+        com.blcvn.switching.offchain.Kyc.RegisterRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterRequest buildPartial() {
+        com.blcvn.switching.offchain.Kyc.RegisterRequest result = new com.blcvn.switching.offchain.Kyc.RegisterRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Kyc.RegisterRequest) {
+          return mergeFrom((com.blcvn.switching.offchain.Kyc.RegisterRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Kyc.RegisterRequest other) {
+        if (other == com.blcvn.switching.offchain.Kyc.RegisterRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Kyc.RegisterRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Kyc.RegisterRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.KycEntity data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.KycEntity getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.KycEntity value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.KycEntity.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.KycEntity value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.KycEntity.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.KycEntity.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.RegisterRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.RegisterRequest)
+    private static final com.blcvn.switching.offchain.Kyc.RegisterRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Kyc.RegisterRequest();
+    }
+
+    public static com.blcvn.switching.offchain.Kyc.RegisterRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RegisterRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RegisterRequest>() {
+      @java.lang.Override
+      public RegisterRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RegisterRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RegisterRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RegisterRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Kyc.RegisterRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RegisterResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.RegisterResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.KycEntity getData();
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder();
+  }
+  /**
+   * Protobuf type {@code offchain.v1.RegisterResponse}
+   */
+  public static final class RegisterResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.RegisterResponse)
+      RegisterResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RegisterResponse.newBuilder() to construct.
+    private RegisterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RegisterResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RegisterResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RegisterResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.blcvn.switching.offchain.Common.KycEntity.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.KycEntity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Kyc.RegisterResponse.class, com.blcvn.switching.offchain.Kyc.RegisterResponse.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.KycEntity data_;
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.KycEntity getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.KycEntity data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (data_ != null) {
+        output.writeMessage(4, getData());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Kyc.RegisterResponse)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Kyc.RegisterResponse other = (com.blcvn.switching.offchain.Kyc.RegisterResponse) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Kyc.RegisterResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code offchain.v1.RegisterResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.RegisterResponse)
+        com.blcvn.switching.offchain.Kyc.RegisterResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Kyc.RegisterResponse.class, com.blcvn.switching.offchain.Kyc.RegisterResponse.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Kyc.RegisterResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Kyc.internal_static_offchain_v1_RegisterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterResponse getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Kyc.RegisterResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterResponse build() {
+        com.blcvn.switching.offchain.Kyc.RegisterResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Kyc.RegisterResponse buildPartial() {
+        com.blcvn.switching.offchain.Kyc.RegisterResponse result = new com.blcvn.switching.offchain.Kyc.RegisterResponse(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Kyc.RegisterResponse) {
+          return mergeFrom((com.blcvn.switching.offchain.Kyc.RegisterResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Kyc.RegisterResponse other) {
+        if (other == com.blcvn.switching.offchain.Kyc.RegisterResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Kyc.RegisterResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Kyc.RegisterResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.KycEntity data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.KycEntity getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.KycEntity value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.KycEntity.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.KycEntity value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.KycEntity.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.KycEntity.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.KycEntity data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.RegisterResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.RegisterResponse)
+    private static final com.blcvn.switching.offchain.Kyc.RegisterResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Kyc.RegisterResponse();
+    }
+
+    public static com.blcvn.switching.offchain.Kyc.RegisterResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RegisterResponse>
+        PARSER = new com.google.protobuf.AbstractParser<RegisterResponse>() {
+      @java.lang.Override
+      public RegisterResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RegisterResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RegisterResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RegisterResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Kyc.RegisterResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListEntitiesResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:offchain.v1.ListEntitiesResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -7510,6 +9767,16 @@ public final class Kyc {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_RegisterRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_RegisterRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_RegisterResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_RegisterResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_ListEntitiesResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7574,74 +9841,96 @@ public final class Kyc {
   static {
     java.lang.String[] descriptorData = {
       "\n\022offchain/kyc.proto\022\013offchain.v1\032\025offch" +
-      "ain/common.proto\"@\n\024ListEntitiesResponse" +
-      "\022(\n\010entities\030\001 \003(\0132\026.offchain.v1.KycEnti" +
-      "ty\"\037\n\020GetEntityRequest\022\013\n\003bic\030\001 \001(\t\"#\n\024G" +
-      "etEntityDocsRequest\022\013\n\003bic\030\001 \001(\t\"1\n\010Docu" +
-      "ment\022\n\n\002id\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\013\n\003url\030\003 " +
-      "\001(\t\"A\n\025GetEntityDocsResponse\022(\n\tdocument" +
-      "s\030\001 \003(\0132\025.offchain.v1.Document\"\214\001\n\020Submi" +
-      "tKycRequest\022\013\n\003bic\030\001 \001(\t\022;\n\007updates\030\002 \003(" +
-      "\0132*.offchain.v1.SubmitKycRequest.Updates" +
-      "Entry\032.\n\014UpdatesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"#\n\021SubmitKycResponse\022\016\n\006st" +
-      "atus\030\001 \001(\t\".\n\013KycMetadata\022\017\n\007version\030\001 \001" +
-      "(\t\022\016\n\006fields\030\002 \003(\t\"7\n\nAuditEntry\022\013\n\003bic\030" +
-      "\001 \001(\t\022\016\n\006action\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"9\n\rA" +
-      "uditResponse\022(\n\007entries\030\001 \003(\0132\027.offchain" +
-      ".v1.AuditEntry2\312\003\n\nKycService\022G\n\014ListEnt" +
-      "ities\022\022.offchain.v1.Empty\032!.offchain.v1." +
-      "ListEntitiesResponse\"\000\022D\n\tGetEntity\022\035.of" +
-      "fchain.v1.GetEntityRequest\032\026.offchain.v1" +
-      ".KycEntity\"\000\022]\n\022GetEntityDocuments\022!.off" +
-      "chain.v1.GetEntityDocsRequest\032\".offchain" +
-      ".v1.GetEntityDocsResponse\"\000\022L\n\tSubmitKyc" +
-      "\022\035.offchain.v1.SubmitKycRequest\032\036.offcha" +
-      "in.v1.SubmitKycResponse\"\000\022:\n\010Metadata\022\022." +
-      "offchain.v1.Empty\032\030.offchain.v1.KycMetad" +
-      "ata\"\000\022D\n\005Audit\022\035.offchain.v1.GetEntityRe" +
-      "quest\032\032.offchain.v1.AuditResponse\"\000BU\n\034c" +
-      "om.blcvn.switching.offchainZ5github.com/" +
-      "blcvn/switching-proto/go/offchain;offcha" +
-      "inb\006proto3"
+      "ain/common.proto\"\213\001\n\017RegisterRequest\022\'\n\010" +
+      "metadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n" +
+      "\tsignature\030\002 \001(\0132\026.offchain.v1.Signature" +
+      "\022$\n\004data\030\003 \001(\0132\026.offchain.v1.KycEntity\"\261" +
+      "\001\n\020RegisterResponse\022\'\n\010metadata\030\001 \001(\0132\025." +
+      "offchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132" +
+      "\026.offchain.v1.Signature\022#\n\006result\030\003 \001(\0132" +
+      "\023.offchain.v1.Result\022$\n\004data\030\004 \001(\0132\026.off" +
+      "chain.v1.KycEntity\"@\n\024ListEntitiesRespon" +
+      "se\022(\n\010entities\030\001 \003(\0132\026.offchain.v1.KycEn" +
+      "tity\"\037\n\020GetEntityRequest\022\013\n\003bic\030\001 \001(\t\"#\n" +
+      "\024GetEntityDocsRequest\022\013\n\003bic\030\001 \001(\t\"1\n\010Do" +
+      "cument\022\n\n\002id\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\013\n\003url\030" +
+      "\003 \001(\t\"A\n\025GetEntityDocsResponse\022(\n\tdocume" +
+      "nts\030\001 \003(\0132\025.offchain.v1.Document\"\214\001\n\020Sub" +
+      "mitKycRequest\022\013\n\003bic\030\001 \001(\t\022;\n\007updates\030\002 " +
+      "\003(\0132*.offchain.v1.SubmitKycRequest.Updat" +
+      "esEntry\032.\n\014UpdatesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"#\n\021SubmitKycResponse\022\016\n\006" +
+      "status\030\001 \001(\t\".\n\013KycMetadata\022\017\n\007version\030\001" +
+      " \001(\t\022\016\n\006fields\030\002 \003(\t\"7\n\nAuditEntry\022\013\n\003bi" +
+      "c\030\001 \001(\t\022\016\n\006action\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"9\n" +
+      "\rAuditResponse\022(\n\007entries\030\001 \003(\0132\027.offcha" +
+      "in.v1.AuditEntry2\225\004\n\nKycService\022G\n\014ListE" +
+      "ntities\022\022.offchain.v1.Empty\032!.offchain.v" +
+      "1.ListEntitiesResponse\"\000\022D\n\tGetEntity\022\035." +
+      "offchain.v1.GetEntityRequest\032\026.offchain." +
+      "v1.KycEntity\"\000\022]\n\022GetEntityDocuments\022!.o" +
+      "ffchain.v1.GetEntityDocsRequest\032\".offcha" +
+      "in.v1.GetEntityDocsResponse\"\000\022I\n\010Registe" +
+      "r\022\034.offchain.v1.RegisterRequest\032\035.offcha" +
+      "in.v1.RegisterResponse\"\000\022L\n\tSubmitKyc\022\035." +
+      "offchain.v1.SubmitKycRequest\032\036.offchain." +
+      "v1.SubmitKycResponse\"\000\022:\n\010Metadata\022\022.off" +
+      "chain.v1.Empty\032\030.offchain.v1.KycMetadata" +
+      "\"\000\022D\n\005Audit\022\035.offchain.v1.GetEntityReque" +
+      "st\032\032.offchain.v1.AuditResponse\"\000BU\n\034com." +
+      "blcvn.switching.offchainZ5github.com/blc" +
+      "vn/switching-proto/go/offchain;offchainb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.switching.offchain.Common.getDescriptor(),
         });
-    internal_static_offchain_v1_ListEntitiesResponse_descriptor =
+    internal_static_offchain_v1_RegisterRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_offchain_v1_RegisterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_RegisterRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Data", });
+    internal_static_offchain_v1_RegisterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_offchain_v1_RegisterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_RegisterResponse_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
+    internal_static_offchain_v1_ListEntitiesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_offchain_v1_ListEntitiesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ListEntitiesResponse_descriptor,
         new java.lang.String[] { "Entities", });
     internal_static_offchain_v1_GetEntityRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_offchain_v1_GetEntityRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetEntityRequest_descriptor,
         new java.lang.String[] { "Bic", });
     internal_static_offchain_v1_GetEntityDocsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_offchain_v1_GetEntityDocsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetEntityDocsRequest_descriptor,
         new java.lang.String[] { "Bic", });
     internal_static_offchain_v1_Document_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_offchain_v1_Document_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_Document_descriptor,
         new java.lang.String[] { "Id", "Type", "Url", });
     internal_static_offchain_v1_GetEntityDocsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_offchain_v1_GetEntityDocsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetEntityDocsResponse_descriptor,
         new java.lang.String[] { "Documents", });
     internal_static_offchain_v1_SubmitKycRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_offchain_v1_SubmitKycRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_SubmitKycRequest_descriptor,
@@ -7653,25 +9942,25 @@ public final class Kyc {
         internal_static_offchain_v1_SubmitKycRequest_UpdatesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_offchain_v1_SubmitKycResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_offchain_v1_SubmitKycResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_SubmitKycResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_offchain_v1_KycMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_offchain_v1_KycMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_KycMetadata_descriptor,
         new java.lang.String[] { "Version", "Fields", });
     internal_static_offchain_v1_AuditEntry_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_offchain_v1_AuditEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_AuditEntry_descriptor,
         new java.lang.String[] { "Bic", "Action", "Time", });
     internal_static_offchain_v1_AuditResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_offchain_v1_AuditResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_AuditResponse_descriptor,

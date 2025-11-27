@@ -29,15 +29,13 @@ message Payment {
 
 message Transfer {
   string instruction_id = 1;
-  string debtor = 2;
-  string creditor = 3;
-  double amount = 4;
-  string currency = 5;
-  string status = 6;
-  google.protobuf.Timestamp created_at = 7;
+  string creditor = 2;
+  double amount = 3;
+  string currency = 4;
+  string status = 5;
+  google.protobuf.Timestamp created_at = 6;
   // Optional structured account details for the debtor/creditor in FI transfers
-  Account debtor_account = 8;
-  Account creditor_account = 9;
+  Account creditor_account = 7;
 }
 
 message KycEntity {
@@ -60,4 +58,30 @@ message Account {
   string currency = 4;
   // Additional reference or identification (e.g., secondary id)
   string reference = 5;
+}
+
+message Metadata {
+  string request_id = 1;    // ID định danh duy nhất cho request
+  int64 request_time = 2;   // Thời gian gửi request (Unix timestamp)
+  string version = 3;       // Phiên bản của protocol
+}
+
+// CCSignature định nghĩa cấu trúc chữ ký số cho request
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dùng tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số 
+}
+
+// CCResult định nghĩa cấu trúc kết quả trả về
+message Result {
+  string code = 1;     // Mã kết quả thực thi
+  string message = 2;  // Thông điệp mô tả kết quả
 }

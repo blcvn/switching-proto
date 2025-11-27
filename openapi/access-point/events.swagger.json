@@ -1,0 +1,81 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "access-point/events.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "EventsService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "accesspointv1Event": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "type": "string",
+          "title": "welcome, update, ping"
+        },
+        "data": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "accesspointv1SubscribeCallbackResponse": {
+      "type": "object",
+      "properties": {
+        "subscribed": {
+          "type": "string"
+        }
+      }
+    },
+    "accesspointv1UnsubscribeCallbackResponse": {
+      "type": "object",
+      "properties": {
+        "unsubscribed": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

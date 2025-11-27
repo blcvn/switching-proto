@@ -594,6 +594,18 @@ public final class Common {
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
      */
     com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder();
+
+    /**
+     * <code>string transaction_reference = 12;</code>
+     * @return The transactionReference.
+     */
+    java.lang.String getTransactionReference();
+    /**
+     * <code>string transaction_reference = 12;</code>
+     * @return The bytes for transactionReference.
+     */
+    com.google.protobuf.ByteString
+        getTransactionReferenceBytes();
   }
   /**
    * Protobuf type {@code offchain.v1.Payment}
@@ -615,6 +627,7 @@ public final class Common {
       creditorAgent_ = "";
       endToEndId_ = "";
       status_ = "";
+      transactionReference_ = "";
     }
 
     @java.lang.Override
@@ -731,6 +744,12 @@ public final class Common {
                 creditorAgentAccount_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              transactionReference_ = s;
               break;
             }
             default: {
@@ -1144,6 +1163,44 @@ public final class Common {
       return getCreditorAgentAccount();
     }
 
+    public static final int TRANSACTION_REFERENCE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object transactionReference_;
+    /**
+     * <code>string transaction_reference = 12;</code>
+     * @return The transactionReference.
+     */
+    @java.lang.Override
+    public java.lang.String getTransactionReference() {
+      java.lang.Object ref = transactionReference_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        transactionReference_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string transaction_reference = 12;</code>
+     * @return The bytes for transactionReference.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTransactionReferenceBytes() {
+      java.lang.Object ref = transactionReference_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        transactionReference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1191,6 +1248,9 @@ public final class Common {
       if (creditorAgentAccount_ != null) {
         output.writeMessage(11, getCreditorAgentAccount());
       }
+      if (!getTransactionReferenceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, transactionReference_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1236,6 +1296,9 @@ public final class Common {
       if (creditorAgentAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getCreditorAgentAccount());
+      }
+      if (!getTransactionReferenceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, transactionReference_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1284,6 +1347,8 @@ public final class Common {
         if (!getCreditorAgentAccount()
             .equals(other.getCreditorAgentAccount())) return false;
       }
+      if (!getTransactionReference()
+          .equals(other.getTransactionReference())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1324,6 +1389,8 @@ public final class Common {
         hash = (37 * hash) + CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getCreditorAgentAccount().hashCode();
       }
+      hash = (37 * hash) + TRANSACTION_REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getTransactionReference().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1491,6 +1558,8 @@ public final class Common {
           creditorAgentAccount_ = null;
           creditorAgentAccountBuilder_ = null;
         }
+        transactionReference_ = "";
+
         return this;
       }
 
@@ -1540,6 +1609,7 @@ public final class Common {
         } else {
           result.creditorAgentAccount_ = creditorAgentAccountBuilder_.build();
         }
+        result.transactionReference_ = transactionReference_;
         onBuilt();
         return result;
       }
@@ -1627,6 +1697,10 @@ public final class Common {
         }
         if (other.hasCreditorAgentAccount()) {
           mergeCreditorAgentAccount(other.getCreditorAgentAccount());
+        }
+        if (!other.getTransactionReference().isEmpty()) {
+          transactionReference_ = other.transactionReference_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2647,6 +2721,82 @@ public final class Common {
           creditorAgentAccount_ = null;
         }
         return creditorAgentAccountBuilder_;
+      }
+
+      private java.lang.Object transactionReference_ = "";
+      /**
+       * <code>string transaction_reference = 12;</code>
+       * @return The transactionReference.
+       */
+      public java.lang.String getTransactionReference() {
+        java.lang.Object ref = transactionReference_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          transactionReference_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string transaction_reference = 12;</code>
+       * @return The bytes for transactionReference.
+       */
+      public com.google.protobuf.ByteString
+          getTransactionReferenceBytes() {
+        java.lang.Object ref = transactionReference_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          transactionReference_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string transaction_reference = 12;</code>
+       * @param value The transactionReference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTransactionReference(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        transactionReference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string transaction_reference = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTransactionReference() {
+        
+        transactionReference_ = getDefaultInstance().getTransactionReference();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string transaction_reference = 12;</code>
+       * @param value The bytes for transactionReference to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTransactionReferenceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        transactionReference_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7134,6 +7284,2696 @@ public final class Common {
 
   }
 
+  public interface MetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.Metadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * ID định danh duy nhất cho request
+     * </pre>
+     *
+     * <code>string request_id = 1;</code>
+     * @return The requestId.
+     */
+    java.lang.String getRequestId();
+    /**
+     * <pre>
+     * ID định danh duy nhất cho request
+     * </pre>
+     *
+     * <code>string request_id = 1;</code>
+     * @return The bytes for requestId.
+     */
+    com.google.protobuf.ByteString
+        getRequestIdBytes();
+
+    /**
+     * <pre>
+     * Thời gian gửi request (Unix timestamp)
+     * </pre>
+     *
+     * <code>int64 request_time = 2;</code>
+     * @return The requestTime.
+     */
+    long getRequestTime();
+
+    /**
+     * <pre>
+     * Phiên bản của protocol
+     * </pre>
+     *
+     * <code>string version = 3;</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * Phiên bản của protocol
+     * </pre>
+     *
+     * <code>string version = 3;</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+  }
+  /**
+   * Protobuf type {@code offchain.v1.Metadata}
+   */
+  public static final class Metadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.Metadata)
+      MetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Metadata.newBuilder() to construct.
+    private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Metadata() {
+      requestId_ = "";
+      version_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Metadata();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Metadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+            case 16: {
+
+              requestTime_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Metadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Metadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Common.Metadata.class, com.blcvn.switching.offchain.Common.Metadata.Builder.class);
+    }
+
+    public static final int REQUEST_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object requestId_;
+    /**
+     * <pre>
+     * ID định danh duy nhất cho request
+     * </pre>
+     *
+     * <code>string request_id = 1;</code>
+     * @return The requestId.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ID định danh duy nhất cho request
+     * </pre>
+     *
+     * <code>string request_id = 1;</code>
+     * @return The bytes for requestId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUEST_TIME_FIELD_NUMBER = 2;
+    private long requestTime_;
+    /**
+     * <pre>
+     * Thời gian gửi request (Unix timestamp)
+     * </pre>
+     *
+     * <code>int64 request_time = 2;</code>
+     * @return The requestTime.
+     */
+    @java.lang.Override
+    public long getRequestTime() {
+      return requestTime_;
+    }
+
+    public static final int VERSION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * Phiên bản của protocol
+     * </pre>
+     *
+     * <code>string version = 3;</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Phiên bản của protocol
+     * </pre>
+     *
+     * <code>string version = 3;</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRequestIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
+      }
+      if (requestTime_ != 0L) {
+        output.writeInt64(2, requestTime_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, version_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
+      }
+      if (requestTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, requestTime_);
+      }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, version_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Common.Metadata)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Common.Metadata other = (com.blcvn.switching.offchain.Common.Metadata) obj;
+
+      if (!getRequestId()
+          .equals(other.getRequestId())) return false;
+      if (getRequestTime()
+          != other.getRequestTime()) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestId().hashCode();
+      hash = (37 * hash) + REQUEST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRequestTime());
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Metadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Common.Metadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code offchain.v1.Metadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.Metadata)
+        com.blcvn.switching.offchain.Common.MetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Metadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Metadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Common.Metadata.class, com.blcvn.switching.offchain.Common.Metadata.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Common.Metadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestId_ = "";
+
+        requestTime_ = 0L;
+
+        version_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Metadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Metadata getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Metadata build() {
+        com.blcvn.switching.offchain.Common.Metadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Metadata buildPartial() {
+        com.blcvn.switching.offchain.Common.Metadata result = new com.blcvn.switching.offchain.Common.Metadata(this);
+        result.requestId_ = requestId_;
+        result.requestTime_ = requestTime_;
+        result.version_ = version_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Common.Metadata) {
+          return mergeFrom((com.blcvn.switching.offchain.Common.Metadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Common.Metadata other) {
+        if (other == com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance()) return this;
+        if (!other.getRequestId().isEmpty()) {
+          requestId_ = other.requestId_;
+          onChanged();
+        }
+        if (other.getRequestTime() != 0L) {
+          setRequestTime(other.getRequestTime());
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Common.Metadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Common.Metadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object requestId_ = "";
+      /**
+       * <pre>
+       * ID định danh duy nhất cho request
+       * </pre>
+       *
+       * <code>string request_id = 1;</code>
+       * @return The requestId.
+       */
+      public java.lang.String getRequestId() {
+        java.lang.Object ref = requestId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ID định danh duy nhất cho request
+       * </pre>
+       *
+       * <code>string request_id = 1;</code>
+       * @return The bytes for requestId.
+       */
+      public com.google.protobuf.ByteString
+          getRequestIdBytes() {
+        java.lang.Object ref = requestId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ID định danh duy nhất cho request
+       * </pre>
+       *
+       * <code>string request_id = 1;</code>
+       * @param value The requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ID định danh duy nhất cho request
+       * </pre>
+       *
+       * <code>string request_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestId() {
+        
+        requestId_ = getDefaultInstance().getRequestId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ID định danh duy nhất cho request
+       * </pre>
+       *
+       * <code>string request_id = 1;</code>
+       * @param value The bytes for requestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long requestTime_ ;
+      /**
+       * <pre>
+       * Thời gian gửi request (Unix timestamp)
+       * </pre>
+       *
+       * <code>int64 request_time = 2;</code>
+       * @return The requestTime.
+       */
+      @java.lang.Override
+      public long getRequestTime() {
+        return requestTime_;
+      }
+      /**
+       * <pre>
+       * Thời gian gửi request (Unix timestamp)
+       * </pre>
+       *
+       * <code>int64 request_time = 2;</code>
+       * @param value The requestTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestTime(long value) {
+        
+        requestTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Thời gian gửi request (Unix timestamp)
+       * </pre>
+       *
+       * <code>int64 request_time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestTime() {
+        
+        requestTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * Phiên bản của protocol
+       * </pre>
+       *
+       * <code>string version = 3;</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Phiên bản của protocol
+       * </pre>
+       *
+       * <code>string version = 3;</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Phiên bản của protocol
+       * </pre>
+       *
+       * <code>string version = 3;</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Phiên bản của protocol
+       * </pre>
+       *
+       * <code>string version = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Phiên bản của protocol
+       * </pre>
+       *
+       * <code>string version = 3;</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.Metadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.Metadata)
+    private static final com.blcvn.switching.offchain.Common.Metadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Common.Metadata();
+    }
+
+    public static com.blcvn.switching.offchain.Common.Metadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Metadata>
+        PARSER = new com.google.protobuf.AbstractParser<Metadata>() {
+      @java.lang.Override
+      public Metadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Metadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Metadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Metadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SignatureOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.Signature)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Loại chữ ký được sử dụng
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+     * @return The enum numeric value on the wire for sType.
+     */
+    int getSTypeValue();
+    /**
+     * <pre>
+     * Loại chữ ký được sử dụng
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+     * @return The sType.
+     */
+    com.blcvn.switching.offchain.Common.Signature.SignatureType getSType();
+
+    /**
+     * <pre>
+     * Chuỗi dùng tạo ra chữ ký
+     * </pre>
+     *
+     * <code>string s = 2;</code>
+     * @return The s.
+     */
+    java.lang.String getS();
+    /**
+     * <pre>
+     * Chuỗi dùng tạo ra chữ ký
+     * </pre>
+     *
+     * <code>string s = 2;</code>
+     * @return The bytes for s.
+     */
+    com.google.protobuf.ByteString
+        getSBytes();
+
+    /**
+     * <pre>
+     * Chữ ký số 
+     * </pre>
+     *
+     * <code>bytes b = 3;</code>
+     * @return The b.
+     */
+    com.google.protobuf.ByteString getB();
+  }
+  /**
+   * <pre>
+   * CCSignature định nghĩa cấu trúc chữ ký số cho request
+   * </pre>
+   *
+   * Protobuf type {@code offchain.v1.Signature}
+   */
+  public static final class Signature extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.Signature)
+      SignatureOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Signature.newBuilder() to construct.
+    private Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Signature() {
+      sType_ = 0;
+      s_ = "";
+      b_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Signature();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Signature(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              sType_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              s_ = s;
+              break;
+            }
+            case 26: {
+
+              b_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Signature_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Signature_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Common.Signature.class, com.blcvn.switching.offchain.Common.Signature.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * SignatureType định nghĩa các loại chữ ký được hỗ trợ
+     * </pre>
+     *
+     * Protobuf enum {@code offchain.v1.Signature.SignatureType}
+     */
+    public enum SignatureType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * Giá trị mặc định, không sử dụng
+       * </pre>
+       *
+       * <code>NO_USE_TYPE = 0;</code>
+       */
+      NO_USE_TYPE(0),
+      /**
+       * <pre>
+       * Chữ ký loại J
+       * </pre>
+       *
+       * <code>J = 1;</code>
+       */
+      J(1),
+      /**
+       * <pre>
+       * Chữ ký loại C
+       * </pre>
+       *
+       * <code>C = 2;</code>
+       */
+      C(2),
+      /**
+       * <pre>
+       * Chữ ký loại S
+       * </pre>
+       *
+       * <code>S = 3;</code>
+       */
+      S(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * Giá trị mặc định, không sử dụng
+       * </pre>
+       *
+       * <code>NO_USE_TYPE = 0;</code>
+       */
+      public static final int NO_USE_TYPE_VALUE = 0;
+      /**
+       * <pre>
+       * Chữ ký loại J
+       * </pre>
+       *
+       * <code>J = 1;</code>
+       */
+      public static final int J_VALUE = 1;
+      /**
+       * <pre>
+       * Chữ ký loại C
+       * </pre>
+       *
+       * <code>C = 2;</code>
+       */
+      public static final int C_VALUE = 2;
+      /**
+       * <pre>
+       * Chữ ký loại S
+       * </pre>
+       *
+       * <code>S = 3;</code>
+       */
+      public static final int S_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SignatureType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SignatureType forNumber(int value) {
+        switch (value) {
+          case 0: return NO_USE_TYPE;
+          case 1: return J;
+          case 2: return C;
+          case 3: return S;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SignatureType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          SignatureType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SignatureType>() {
+              public SignatureType findValueByNumber(int number) {
+                return SignatureType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Common.Signature.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final SignatureType[] VALUES = values();
+
+      public static SignatureType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SignatureType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:offchain.v1.Signature.SignatureType)
+    }
+
+    public static final int S_TYPE_FIELD_NUMBER = 1;
+    private int sType_;
+    /**
+     * <pre>
+     * Loại chữ ký được sử dụng
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+     * @return The enum numeric value on the wire for sType.
+     */
+    @java.lang.Override public int getSTypeValue() {
+      return sType_;
+    }
+    /**
+     * <pre>
+     * Loại chữ ký được sử dụng
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+     * @return The sType.
+     */
+    @java.lang.Override public com.blcvn.switching.offchain.Common.Signature.SignatureType getSType() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.switching.offchain.Common.Signature.SignatureType result = com.blcvn.switching.offchain.Common.Signature.SignatureType.valueOf(sType_);
+      return result == null ? com.blcvn.switching.offchain.Common.Signature.SignatureType.UNRECOGNIZED : result;
+    }
+
+    public static final int S_FIELD_NUMBER = 2;
+    private volatile java.lang.Object s_;
+    /**
+     * <pre>
+     * Chuỗi dùng tạo ra chữ ký
+     * </pre>
+     *
+     * <code>string s = 2;</code>
+     * @return The s.
+     */
+    @java.lang.Override
+    public java.lang.String getS() {
+      java.lang.Object ref = s_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        s_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Chuỗi dùng tạo ra chữ ký
+     * </pre>
+     *
+     * <code>string s = 2;</code>
+     * @return The bytes for s.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSBytes() {
+      java.lang.Object ref = s_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        s_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int B_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString b_;
+    /**
+     * <pre>
+     * Chữ ký số 
+     * </pre>
+     *
+     * <code>bytes b = 3;</code>
+     * @return The b.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getB() {
+      return b_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sType_ != com.blcvn.switching.offchain.Common.Signature.SignatureType.NO_USE_TYPE.getNumber()) {
+        output.writeEnum(1, sType_);
+      }
+      if (!getSBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, s_);
+      }
+      if (!b_.isEmpty()) {
+        output.writeBytes(3, b_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sType_ != com.blcvn.switching.offchain.Common.Signature.SignatureType.NO_USE_TYPE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, sType_);
+      }
+      if (!getSBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, s_);
+      }
+      if (!b_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, b_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Common.Signature)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Common.Signature other = (com.blcvn.switching.offchain.Common.Signature) obj;
+
+      if (sType_ != other.sType_) return false;
+      if (!getS()
+          .equals(other.getS())) return false;
+      if (!getB()
+          .equals(other.getB())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + S_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + sType_;
+      hash = (37 * hash) + S_FIELD_NUMBER;
+      hash = (53 * hash) + getS().hashCode();
+      hash = (37 * hash) + B_FIELD_NUMBER;
+      hash = (53 * hash) + getB().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Signature parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Common.Signature prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CCSignature định nghĩa cấu trúc chữ ký số cho request
+     * </pre>
+     *
+     * Protobuf type {@code offchain.v1.Signature}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.Signature)
+        com.blcvn.switching.offchain.Common.SignatureOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Signature_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Signature_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Common.Signature.class, com.blcvn.switching.offchain.Common.Signature.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Common.Signature.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        sType_ = 0;
+
+        s_ = "";
+
+        b_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Signature_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Signature getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Common.Signature.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Signature build() {
+        com.blcvn.switching.offchain.Common.Signature result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Signature buildPartial() {
+        com.blcvn.switching.offchain.Common.Signature result = new com.blcvn.switching.offchain.Common.Signature(this);
+        result.sType_ = sType_;
+        result.s_ = s_;
+        result.b_ = b_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Common.Signature) {
+          return mergeFrom((com.blcvn.switching.offchain.Common.Signature)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Common.Signature other) {
+        if (other == com.blcvn.switching.offchain.Common.Signature.getDefaultInstance()) return this;
+        if (other.sType_ != 0) {
+          setSTypeValue(other.getSTypeValue());
+        }
+        if (!other.getS().isEmpty()) {
+          s_ = other.s_;
+          onChanged();
+        }
+        if (other.getB() != com.google.protobuf.ByteString.EMPTY) {
+          setB(other.getB());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Common.Signature parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Common.Signature) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int sType_ = 0;
+      /**
+       * <pre>
+       * Loại chữ ký được sử dụng
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+       * @return The enum numeric value on the wire for sType.
+       */
+      @java.lang.Override public int getSTypeValue() {
+        return sType_;
+      }
+      /**
+       * <pre>
+       * Loại chữ ký được sử dụng
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+       * @param value The enum numeric value on the wire for sType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSTypeValue(int value) {
+        
+        sType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Loại chữ ký được sử dụng
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+       * @return The sType.
+       */
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Signature.SignatureType getSType() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.switching.offchain.Common.Signature.SignatureType result = com.blcvn.switching.offchain.Common.Signature.SignatureType.valueOf(sType_);
+        return result == null ? com.blcvn.switching.offchain.Common.Signature.SignatureType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Loại chữ ký được sử dụng
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+       * @param value The sType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSType(com.blcvn.switching.offchain.Common.Signature.SignatureType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        sType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Loại chữ ký được sử dụng
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature.SignatureType s_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSType() {
+        
+        sType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object s_ = "";
+      /**
+       * <pre>
+       * Chuỗi dùng tạo ra chữ ký
+       * </pre>
+       *
+       * <code>string s = 2;</code>
+       * @return The s.
+       */
+      public java.lang.String getS() {
+        java.lang.Object ref = s_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          s_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Chuỗi dùng tạo ra chữ ký
+       * </pre>
+       *
+       * <code>string s = 2;</code>
+       * @return The bytes for s.
+       */
+      public com.google.protobuf.ByteString
+          getSBytes() {
+        java.lang.Object ref = s_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          s_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Chuỗi dùng tạo ra chữ ký
+       * </pre>
+       *
+       * <code>string s = 2;</code>
+       * @param value The s to set.
+       * @return This builder for chaining.
+       */
+      public Builder setS(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        s_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Chuỗi dùng tạo ra chữ ký
+       * </pre>
+       *
+       * <code>string s = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearS() {
+        
+        s_ = getDefaultInstance().getS();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Chuỗi dùng tạo ra chữ ký
+       * </pre>
+       *
+       * <code>string s = 2;</code>
+       * @param value The bytes for s to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        s_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString b_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Chữ ký số 
+       * </pre>
+       *
+       * <code>bytes b = 3;</code>
+       * @return The b.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getB() {
+        return b_;
+      }
+      /**
+       * <pre>
+       * Chữ ký số 
+       * </pre>
+       *
+       * <code>bytes b = 3;</code>
+       * @param value The b to set.
+       * @return This builder for chaining.
+       */
+      public Builder setB(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        b_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số 
+       * </pre>
+       *
+       * <code>bytes b = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearB() {
+        
+        b_ = getDefaultInstance().getB();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.Signature)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.Signature)
+    private static final com.blcvn.switching.offchain.Common.Signature DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Common.Signature();
+    }
+
+    public static com.blcvn.switching.offchain.Common.Signature getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Signature>
+        PARSER = new com.google.protobuf.AbstractParser<Signature>() {
+      @java.lang.Override
+      public Signature parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Signature(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Signature> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Signature> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResultOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.Result)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Mã kết quả thực thi
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <pre>
+     * Mã kết quả thực thi
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <pre>
+     * Thông điệp mô tả kết quả
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * Thông điệp mô tả kết quả
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * <pre>
+   * CCResult định nghĩa cấu trúc kết quả trả về
+   * </pre>
+   *
+   * Protobuf type {@code offchain.v1.Result}
+   */
+  public static final class Result extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.Result)
+      ResultOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Result.newBuilder() to construct.
+    private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Result() {
+      code_ = "";
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Result();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Result(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              code_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Result_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Result_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Common.Result.class, com.blcvn.switching.offchain.Common.Result.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object code_;
+    /**
+     * <pre>
+     * Mã kết quả thực thi
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Mã kết quả thực thi
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object message_;
+    /**
+     * <pre>
+     * Thông điệp mô tả kết quả
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Thông điệp mô tả kết quả
+     * </pre>
+     *
+     * <code>string message = 2;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Common.Result)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Common.Result other = (com.blcvn.switching.offchain.Common.Result) obj;
+
+      if (!getCode()
+          .equals(other.getCode())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Common.Result parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Common.Result prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CCResult định nghĩa cấu trúc kết quả trả về
+     * </pre>
+     *
+     * Protobuf type {@code offchain.v1.Result}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.Result)
+        com.blcvn.switching.offchain.Common.ResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Result_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Result_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Common.Result.class, com.blcvn.switching.offchain.Common.Result.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Common.Result.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        code_ = "";
+
+        message_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Common.internal_static_offchain_v1_Result_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Result getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Common.Result.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Result build() {
+        com.blcvn.switching.offchain.Common.Result result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Common.Result buildPartial() {
+        com.blcvn.switching.offchain.Common.Result result = new com.blcvn.switching.offchain.Common.Result(this);
+        result.code_ = code_;
+        result.message_ = message_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Common.Result) {
+          return mergeFrom((com.blcvn.switching.offchain.Common.Result)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Common.Result other) {
+        if (other == com.blcvn.switching.offchain.Common.Result.getDefaultInstance()) return this;
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          onChanged();
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Common.Result parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Common.Result) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <pre>
+       * Mã kết quả thực thi
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * Thông điệp mô tả kết quả
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Thông điệp mô tả kết quả
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Thông điệp mô tả kết quả
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Thông điệp mô tả kết quả
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Thông điệp mô tả kết quả
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.Result)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.Result)
+    private static final com.blcvn.switching.offchain.Common.Result DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Common.Result();
+    }
+
+    public static com.blcvn.switching.offchain.Common.Result getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Result>
+        PARSER = new com.google.protobuf.AbstractParser<Result>() {
+      @java.lang.Override
+      public Result parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Result(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Result> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Result> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_Empty_descriptor;
   private static final 
@@ -7159,6 +9999,21 @@ public final class Common {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_offchain_v1_Account_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_Metadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_Metadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_Signature_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_Signature_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_Result_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_Result_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7169,7 +10024,7 @@ public final class Common {
   static {
     java.lang.String[] descriptorData = {
       "\n\025offchain/common.proto\022\013offchain.v1\032\037go" +
-      "ogle/protobuf/timestamp.proto\"\007\n\005Empty\"\264" +
+      "ogle/protobuf/timestamp.proto\"\007\n\005Empty\"\323" +
       "\002\n\007Payment\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 \001(\t\022\016\n\006" +
       "amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\024\n\014debtor" +
       "_agent\030\005 \001(\t\022\026\n\016creditor_agent\030\006 \001(\t\022\025\n\r" +
@@ -7177,21 +10032,28 @@ public final class Common {
       "reated_at\030\t \001(\0132\032.google.protobuf.Timest" +
       "amp\0222\n\024debtor_agent_account\030\n \001(\0132\024.offc" +
       "hain.v1.Account\0224\n\026creditor_agent_accoun" +
-      "t\030\013 \001(\0132\024.offchain.v1.Account\"\204\002\n\010Transf" +
-      "er\022\026\n\016instruction_id\030\001 \001(\t\022\016\n\006debtor\030\002 \001" +
-      "(\t\022\020\n\010creditor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010" +
-      "currency\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022.\n\ncreate" +
-      "d_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022," +
-      "\n\016debtor_account\030\010 \001(\0132\024.offchain.v1.Acc" +
-      "ount\022.\n\020creditor_account\030\t \001(\0132\024.offchai" +
-      "n.v1.Account\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(\t\022\014" +
-      "\n\004name\030\002 \001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030\004 \001" +
-      "(\t\022\022\n\nupdated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004iba" +
-      "n\030\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\024\n\014accou" +
-      "nt_name\030\003 \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\trefer" +
-      "ence\030\005 \001(\tBU\n\034com.blcvn.switching.offcha" +
-      "inZ5github.com/blcvn/switching-proto/go/" +
-      "offchain;offchainb\006proto3"
+      "t\030\013 \001(\0132\024.offchain.v1.Account\022\035\n\025transac" +
+      "tion_reference\030\014 \001(\t\"\204\002\n\010Transfer\022\026\n\016ins" +
+      "truction_id\030\001 \001(\t\022\016\n\006debtor\030\002 \001(\t\022\020\n\010cre" +
+      "ditor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010currency\030" +
+      "\005 \001(\t\022\016\n\006status\030\006 \001(\t\022.\n\ncreated_at\030\007 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022,\n\016debtor_" +
+      "account\030\010 \001(\0132\024.offchain.v1.Account\022.\n\020c" +
+      "reditor_account\030\t \001(\0132\024.offchain.v1.Acco" +
+      "unt\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 " +
+      "\001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupd" +
+      "ated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026" +
+      "\n\016account_number\030\002 \001(\t\022\024\n\014account_name\030\003" +
+      " \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\treference\030\005 \001(" +
+      "\t\"E\n\010Metadata\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014req" +
+      "uest_time\030\002 \001(\003\022\017\n\007version\030\003 \001(\t\"\216\001\n\tSig" +
+      "nature\0224\n\006s_type\030\001 \001(\0162$.offchain.v1.Sig" +
+      "nature.SignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001" +
+      "(\014\"5\n\rSignatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001" +
+      "J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\'\n\006Result\022\014\n\004code\030\001 \001(" +
+      "\t\022\017\n\007message\030\002 \001(\tBU\n\034com.blcvn.switchin" +
+      "g.offchainZ5github.com/blcvn/switching-p" +
+      "roto/go/offchain;offchainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7209,7 +10071,7 @@ public final class Common {
     internal_static_offchain_v1_Payment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_Payment_descriptor,
-        new java.lang.String[] { "Id", "Uetr", "Amount", "Currency", "DebtorAgent", "CreditorAgent", "EndToEndId", "Status", "CreatedAt", "DebtorAgentAccount", "CreditorAgentAccount", });
+        new java.lang.String[] { "Id", "Uetr", "Amount", "Currency", "DebtorAgent", "CreditorAgent", "EndToEndId", "Status", "CreatedAt", "DebtorAgentAccount", "CreditorAgentAccount", "TransactionReference", });
     internal_static_offchain_v1_Transfer_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_offchain_v1_Transfer_fieldAccessorTable = new
@@ -7228,6 +10090,24 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_Account_descriptor,
         new java.lang.String[] { "Iban", "AccountNumber", "AccountName", "Currency", "Reference", });
+    internal_static_offchain_v1_Metadata_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_offchain_v1_Metadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_Metadata_descriptor,
+        new java.lang.String[] { "RequestId", "RequestTime", "Version", });
+    internal_static_offchain_v1_Signature_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_offchain_v1_Signature_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_Signature_descriptor,
+        new java.lang.String[] { "SType", "S", "B", });
+    internal_static_offchain_v1_Result_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_offchain_v1_Result_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_Result_descriptor,
+        new java.lang.String[] { "Code", "Message", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

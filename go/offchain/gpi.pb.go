@@ -7,7 +7,7 @@
 package offchain
 
 import (
-	timestamp "github.com/golang/protobuf/ptypes/timestamp"
+	_ "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,25 +22,78 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ConfirmMessage struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	ConfirmationType string                 `protobuf:"bytes,2,opt,name=confirmation_type,json=confirmationType,proto3" json:"confirmation_type,omitempty"`
+	Timestamp        string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ConfirmMessage) Reset() {
+	*x = ConfirmMessage{}
+	mi := &file_offchain_gpi_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmMessage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmMessage) ProtoMessage() {}
+
+func (x *ConfirmMessage) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmMessage.ProtoReflect.Descriptor instead.
+func (*ConfirmMessage) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ConfirmMessage) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+func (x *ConfirmMessage) GetConfirmationType() string {
+	if x != nil {
+		return x.ConfirmationType
+	}
+	return ""
+}
+
+func (x *ConfirmMessage) GetTimestamp() string {
+	if x != nil {
+		return x.Timestamp
+	}
+	return ""
+}
+
 type CreatePaymentRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	Amount        float64                `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,3,opt,name=currency,proto3" json:"currency,omitempty"`
-	DebtorAgent   string                 `protobuf:"bytes,4,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`
-	CreditorAgent string                 `protobuf:"bytes,5,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"`
-	EndToEndId    string                 `protobuf:"bytes,6,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`
-	// Optional: structured account details for the sending bank's account (debtor)
-	DebtorAgentAccount *Account `protobuf:"bytes,7,opt,name=debtor_agent_account,json=debtorAgentAccount,proto3" json:"debtor_agent_account,omitempty"`
-	// Optional: structured account details for the receiving bank's account (creditor)
-	CreditorAgentAccount *Account `protobuf:"bytes,8,opt,name=creditor_agent_account,json=creditorAgentAccount,proto3" json:"creditor_agent_account,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Data          *Payment               `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CreatePaymentRequest) Reset() {
 	*x = CreatePaymentRequest{}
-	mi := &file_offchain_gpi_proto_msgTypes[0]
+	mi := &file_offchain_gpi_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52,7 +105,7 @@ func (x *CreatePaymentRequest) String() string {
 func (*CreatePaymentRequest) ProtoMessage() {}
 
 func (x *CreatePaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[0]
+	mi := &file_offchain_gpi_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,79 +118,43 @@ func (x *CreatePaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePaymentRequest.ProtoReflect.Descriptor instead.
 func (*CreatePaymentRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{0}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreatePaymentRequest) GetUetr() string {
+func (x *CreatePaymentRequest) GetMetadata() *Metadata {
 	if x != nil {
-		return x.Uetr
-	}
-	return ""
-}
-
-func (x *CreatePaymentRequest) GetAmount() float64 {
-	if x != nil {
-		return x.Amount
-	}
-	return 0
-}
-
-func (x *CreatePaymentRequest) GetCurrency() string {
-	if x != nil {
-		return x.Currency
-	}
-	return ""
-}
-
-func (x *CreatePaymentRequest) GetDebtorAgent() string {
-	if x != nil {
-		return x.DebtorAgent
-	}
-	return ""
-}
-
-func (x *CreatePaymentRequest) GetCreditorAgent() string {
-	if x != nil {
-		return x.CreditorAgent
-	}
-	return ""
-}
-
-func (x *CreatePaymentRequest) GetEndToEndId() string {
-	if x != nil {
-		return x.EndToEndId
-	}
-	return ""
-}
-
-func (x *CreatePaymentRequest) GetDebtorAgentAccount() *Account {
-	if x != nil {
-		return x.DebtorAgentAccount
+		return x.Metadata
 	}
 	return nil
 }
 
-func (x *CreatePaymentRequest) GetCreditorAgentAccount() *Account {
+func (x *CreatePaymentRequest) GetSignature() *Signature {
 	if x != nil {
-		return x.CreditorAgentAccount
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *CreatePaymentRequest) GetData() *Payment {
+	if x != nil {
+		return x.Data
 	}
 	return nil
 }
 
 type CreatePaymentResponse struct {
-	state                protoimpl.MessageState `protogen:"open.v1"`
-	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Uetr                 string                 `protobuf:"bytes,2,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	TransactionReference string                 `protobuf:"bytes,3,opt,name=transaction_reference,json=transactionReference,proto3" json:"transaction_reference,omitempty"`
-	Status               string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	ProcessingTimestamp  *timestamp.Timestamp   `protobuf:"bytes,5,opt,name=processing_timestamp,json=processingTimestamp,proto3" json:"processing_timestamp,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CreatePaymentResponse) Reset() {
 	*x = CreatePaymentResponse{}
-	mi := &file_offchain_gpi_proto_msgTypes[1]
+	mi := &file_offchain_gpi_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -149,7 +166,7 @@ func (x *CreatePaymentResponse) String() string {
 func (*CreatePaymentResponse) ProtoMessage() {}
 
 func (x *CreatePaymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[1]
+	mi := &file_offchain_gpi_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -162,54 +179,49 @@ func (x *CreatePaymentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePaymentResponse.ProtoReflect.Descriptor instead.
 func (*CreatePaymentResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{1}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreatePaymentResponse) GetId() string {
+func (x *CreatePaymentResponse) GetMetadata() *Metadata {
 	if x != nil {
-		return x.Id
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *CreatePaymentResponse) GetUetr() string {
+func (x *CreatePaymentResponse) GetSignature() *Signature {
 	if x != nil {
-		return x.Uetr
+		return x.Signature
 	}
-	return ""
+	return nil
 }
 
-func (x *CreatePaymentResponse) GetTransactionReference() string {
+func (x *CreatePaymentResponse) GetResult() *Result {
 	if x != nil {
-		return x.TransactionReference
+		return x.Result
 	}
-	return ""
+	return nil
 }
 
-func (x *CreatePaymentResponse) GetStatus() string {
+func (x *CreatePaymentResponse) GetData() *Payment {
 	if x != nil {
-		return x.Status
-	}
-	return ""
-}
-
-func (x *CreatePaymentResponse) GetProcessingTimestamp() *timestamp.Timestamp {
-	if x != nil {
-		return x.ProcessingTimestamp
+		return x.Data
 	}
 	return nil
 }
 
 type GetPaymentRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetPaymentRequest) Reset() {
 	*x = GetPaymentRequest{}
-	mi := &file_offchain_gpi_proto_msgTypes[2]
+	mi := &file_offchain_gpi_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -221,7 +233,7 @@ func (x *GetPaymentRequest) String() string {
 func (*GetPaymentRequest) ProtoMessage() {}
 
 func (x *GetPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[2]
+	mi := &file_offchain_gpi_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +246,21 @@ func (x *GetPaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPaymentRequest.ProtoReflect.Descriptor instead.
 func (*GetPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{2}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetPaymentRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetPaymentRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
 }
 
 func (x *GetPaymentRequest) GetId() string {
@@ -244,16 +270,86 @@ func (x *GetPaymentRequest) GetId() string {
 	return ""
 }
 
+type GetPaymentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPaymentResponse) Reset() {
+	*x = GetPaymentResponse{}
+	mi := &file_offchain_gpi_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPaymentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPaymentResponse) ProtoMessage() {}
+
+func (x *GetPaymentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPaymentResponse.ProtoReflect.Descriptor instead.
+func (*GetPaymentResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetPaymentResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetPaymentResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *GetPaymentResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *GetPaymentResponse) GetData() *Payment {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 type GetPaymentStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Uetr          string                 `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GetPaymentStatusRequest) Reset() {
 	*x = GetPaymentStatusRequest{}
-	mi := &file_offchain_gpi_proto_msgTypes[3]
+	mi := &file_offchain_gpi_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -265,7 +361,7 @@ func (x *GetPaymentStatusRequest) String() string {
 func (*GetPaymentStatusRequest) ProtoMessage() {}
 
 func (x *GetPaymentStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[3]
+	mi := &file_offchain_gpi_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -278,7 +374,21 @@ func (x *GetPaymentStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPaymentStatusRequest.ProtoReflect.Descriptor instead.
 func (*GetPaymentStatusRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{3}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetPaymentStatusRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetPaymentStatusRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
 }
 
 func (x *GetPaymentStatusRequest) GetUetr() string {
@@ -300,7 +410,7 @@ type PaymentStatus struct {
 
 func (x *PaymentStatus) Reset() {
 	*x = PaymentStatus{}
-	mi := &file_offchain_gpi_proto_msgTypes[4]
+	mi := &file_offchain_gpi_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -312,7 +422,7 @@ func (x *PaymentStatus) String() string {
 func (*PaymentStatus) ProtoMessage() {}
 
 func (x *PaymentStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[4]
+	mi := &file_offchain_gpi_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -325,7 +435,7 @@ func (x *PaymentStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentStatus.ProtoReflect.Descriptor instead.
 func (*PaymentStatus) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{4}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PaymentStatus) GetUetr() string {
@@ -357,17 +467,17 @@ func (x *PaymentStatus) GetCurrency() string {
 }
 
 type ConfirmPaymentRequest struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	ConfirmationType string                 `protobuf:"bytes,2,opt,name=confirmation_type,json=confirmationType,proto3" json:"confirmation_type,omitempty"`
-	Timestamp        string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Data          *ConfirmMessage        `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConfirmPaymentRequest) Reset() {
 	*x = ConfirmPaymentRequest{}
-	mi := &file_offchain_gpi_proto_msgTypes[5]
+	mi := &file_offchain_gpi_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -379,7 +489,7 @@ func (x *ConfirmPaymentRequest) String() string {
 func (*ConfirmPaymentRequest) ProtoMessage() {}
 
 func (x *ConfirmPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[5]
+	mi := &file_offchain_gpi_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -392,41 +502,43 @@ func (x *ConfirmPaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmPaymentRequest.ProtoReflect.Descriptor instead.
 func (*ConfirmPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{5}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ConfirmPaymentRequest) GetUetr() string {
+func (x *ConfirmPaymentRequest) GetMetadata() *Metadata {
 	if x != nil {
-		return x.Uetr
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *ConfirmPaymentRequest) GetConfirmationType() string {
+func (x *ConfirmPaymentRequest) GetSignature() *Signature {
 	if x != nil {
-		return x.ConfirmationType
+		return x.Signature
 	}
-	return ""
+	return nil
 }
 
-func (x *ConfirmPaymentRequest) GetTimestamp() string {
+func (x *ConfirmPaymentRequest) GetData() *ConfirmMessage {
 	if x != nil {
-		return x.Timestamp
+		return x.Data
 	}
-	return ""
+	return nil
 }
 
 type ConfirmPaymentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ConfirmPaymentResponse) Reset() {
 	*x = ConfirmPaymentResponse{}
-	mi := &file_offchain_gpi_proto_msgTypes[6]
+	mi := &file_offchain_gpi_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -438,7 +550,7 @@ func (x *ConfirmPaymentResponse) String() string {
 func (*ConfirmPaymentResponse) ProtoMessage() {}
 
 func (x *ConfirmPaymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_gpi_proto_msgTypes[6]
+	mi := &file_offchain_gpi_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,66 +563,88 @@ func (x *ConfirmPaymentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConfirmPaymentResponse.ProtoReflect.Descriptor instead.
 func (*ConfirmPaymentResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_gpi_proto_rawDescGZIP(), []int{6}
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ConfirmPaymentResponse) GetUetr() string {
+func (x *ConfirmPaymentResponse) GetMetadata() *Metadata {
 	if x != nil {
-		return x.Uetr
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *ConfirmPaymentResponse) GetStatus() string {
+func (x *ConfirmPaymentResponse) GetSignature() *Signature {
 	if x != nil {
-		return x.Status
+		return x.Signature
 	}
-	return ""
+	return nil
+}
+
+func (x *ConfirmPaymentResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *ConfirmPaymentResponse) GetData() *Payment {
+	if x != nil {
+		return x.Data
+	}
+	return nil
 }
 
 var File_offchain_gpi_proto protoreflect.FileDescriptor
 
 const file_offchain_gpi_proto_rawDesc = "" +
 	"\n" +
-	"\x12offchain/gpi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x02\n" +
-	"\x14CreatePaymentRequest\x12\x12\n" +
-	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x16\n" +
-	"\x06amount\x18\x02 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x03 \x01(\tR\bcurrency\x12!\n" +
-	"\fdebtor_agent\x18\x04 \x01(\tR\vdebtorAgent\x12%\n" +
-	"\x0ecreditor_agent\x18\x05 \x01(\tR\rcreditorAgent\x12!\n" +
-	"\rend_to_end_id\x18\x06 \x01(\tR\n" +
-	"endToEndId\x12F\n" +
-	"\x14debtor_agent_account\x18\a \x01(\v2\x14.offchain.v1.AccountR\x12debtorAgentAccount\x12J\n" +
-	"\x16creditor_agent_account\x18\b \x01(\v2\x14.offchain.v1.AccountR\x14creditorAgentAccount\"\xd7\x01\n" +
-	"\x15CreatePaymentResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04uetr\x18\x02 \x01(\tR\x04uetr\x123\n" +
-	"\x15transaction_reference\x18\x03 \x01(\tR\x14transactionReference\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status\x12M\n" +
-	"\x14processing_timestamp\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x13processingTimestamp\"#\n" +
-	"\x11GetPaymentRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"-\n" +
-	"\x17GetPaymentStatusRequest\x12\x12\n" +
-	"\x04uetr\x18\x01 \x01(\tR\x04uetr\"o\n" +
+	"\x12offchain/gpi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"o\n" +
+	"\x0eConfirmMessage\x12\x12\n" +
+	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12+\n" +
+	"\x11confirmation_type\x18\x02 \x01(\tR\x10confirmationType\x12\x1c\n" +
+	"\ttimestamp\x18\x03 \x01(\tR\ttimestamp\"\xa9\x01\n" +
+	"\x14CreatePaymentRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12(\n" +
+	"\x04data\x18\x03 \x01(\v2\x14.offchain.v1.PaymentR\x04data\"\xd7\x01\n" +
+	"\x15CreatePaymentResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
+	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data\"\x8c\x01\n" +
+	"\x11GetPaymentRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12\x0e\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id\"\xd4\x01\n" +
+	"\x12GetPaymentResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
+	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data\"\x96\x01\n" +
+	"\x17GetPaymentStatusRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12\x12\n" +
+	"\x04uetr\x18\x03 \x01(\tR\x04uetr\"o\n" +
 	"\rPaymentStatus\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x12\x16\n" +
 	"\x06amount\x18\x03 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x04 \x01(\tR\bcurrency\"v\n" +
-	"\x15ConfirmPaymentRequest\x12\x12\n" +
-	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12+\n" +
-	"\x11confirmation_type\x18\x02 \x01(\tR\x10confirmationType\x12\x1c\n" +
-	"\ttimestamp\x18\x03 \x01(\tR\ttimestamp\"D\n" +
-	"\x16ConfirmPaymentResponse\x12\x12\n" +
-	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status2\xe1\x02\n" +
+	"\bcurrency\x18\x04 \x01(\tR\bcurrency\"\xb1\x01\n" +
+	"\x15ConfirmPaymentRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12/\n" +
+	"\x04data\x18\x03 \x01(\v2\x1b.offchain.v1.ConfirmMessageR\x04data\"\xd8\x01\n" +
+	"\x16ConfirmPaymentResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
+	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data2\xf1\x02\n" +
 	"\n" +
 	"GpiService\x12X\n" +
-	"\rCreatePayment\x12!.offchain.v1.CreatePaymentRequest\x1a\".offchain.v1.CreatePaymentResponse\"\x00\x12D\n" +
+	"\rCreatePayment\x12!.offchain.v1.CreatePaymentRequest\x1a\".offchain.v1.CreatePaymentResponse\"\x00\x12O\n" +
 	"\n" +
-	"GetPayment\x12\x1e.offchain.v1.GetPaymentRequest\x1a\x14.offchain.v1.Payment\"\x00\x12V\n" +
-	"\x10GetPaymentStatus\x12$.offchain.v1.GetPaymentStatusRequest\x1a\x1a.offchain.v1.PaymentStatus\"\x00\x12[\n" +
+	"GetPayment\x12\x1e.offchain.v1.GetPaymentRequest\x1a\x1f.offchain.v1.GetPaymentResponse\"\x00\x12[\n" +
+	"\x10GetPaymentStatus\x12$.offchain.v1.GetPaymentStatusRequest\x1a\x1f.offchain.v1.GetPaymentResponse\"\x00\x12[\n" +
 	"\x0eConfirmPayment\x12\".offchain.v1.ConfirmPaymentRequest\x1a#.offchain.v1.ConfirmPaymentResponse\"\x00BU\n" +
 	"\x1ccom.blcvn.switching.offchainZ5github.com/blcvn/switching-proto/go/offchain;offchainb\x06proto3"
 
@@ -526,36 +660,58 @@ func file_offchain_gpi_proto_rawDescGZIP() []byte {
 	return file_offchain_gpi_proto_rawDescData
 }
 
-var file_offchain_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_offchain_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_offchain_gpi_proto_goTypes = []any{
-	(*CreatePaymentRequest)(nil),    // 0: offchain.v1.CreatePaymentRequest
-	(*CreatePaymentResponse)(nil),   // 1: offchain.v1.CreatePaymentResponse
-	(*GetPaymentRequest)(nil),       // 2: offchain.v1.GetPaymentRequest
-	(*GetPaymentStatusRequest)(nil), // 3: offchain.v1.GetPaymentStatusRequest
-	(*PaymentStatus)(nil),           // 4: offchain.v1.PaymentStatus
-	(*ConfirmPaymentRequest)(nil),   // 5: offchain.v1.ConfirmPaymentRequest
-	(*ConfirmPaymentResponse)(nil),  // 6: offchain.v1.ConfirmPaymentResponse
-	(*Account)(nil),                 // 7: offchain.v1.Account
-	(*timestamp.Timestamp)(nil),     // 8: google.protobuf.Timestamp
-	(*Payment)(nil),                 // 9: offchain.v1.Payment
+	(*ConfirmMessage)(nil),          // 0: offchain.v1.ConfirmMessage
+	(*CreatePaymentRequest)(nil),    // 1: offchain.v1.CreatePaymentRequest
+	(*CreatePaymentResponse)(nil),   // 2: offchain.v1.CreatePaymentResponse
+	(*GetPaymentRequest)(nil),       // 3: offchain.v1.GetPaymentRequest
+	(*GetPaymentResponse)(nil),      // 4: offchain.v1.GetPaymentResponse
+	(*GetPaymentStatusRequest)(nil), // 5: offchain.v1.GetPaymentStatusRequest
+	(*PaymentStatus)(nil),           // 6: offchain.v1.PaymentStatus
+	(*ConfirmPaymentRequest)(nil),   // 7: offchain.v1.ConfirmPaymentRequest
+	(*ConfirmPaymentResponse)(nil),  // 8: offchain.v1.ConfirmPaymentResponse
+	(*Metadata)(nil),                // 9: offchain.v1.Metadata
+	(*Signature)(nil),               // 10: offchain.v1.Signature
+	(*Payment)(nil),                 // 11: offchain.v1.Payment
+	(*Result)(nil),                  // 12: offchain.v1.Result
 }
 var file_offchain_gpi_proto_depIdxs = []int32{
-	7, // 0: offchain.v1.CreatePaymentRequest.debtor_agent_account:type_name -> offchain.v1.Account
-	7, // 1: offchain.v1.CreatePaymentRequest.creditor_agent_account:type_name -> offchain.v1.Account
-	8, // 2: offchain.v1.CreatePaymentResponse.processing_timestamp:type_name -> google.protobuf.Timestamp
-	0, // 3: offchain.v1.GpiService.CreatePayment:input_type -> offchain.v1.CreatePaymentRequest
-	2, // 4: offchain.v1.GpiService.GetPayment:input_type -> offchain.v1.GetPaymentRequest
-	3, // 5: offchain.v1.GpiService.GetPaymentStatus:input_type -> offchain.v1.GetPaymentStatusRequest
-	5, // 6: offchain.v1.GpiService.ConfirmPayment:input_type -> offchain.v1.ConfirmPaymentRequest
-	1, // 7: offchain.v1.GpiService.CreatePayment:output_type -> offchain.v1.CreatePaymentResponse
-	9, // 8: offchain.v1.GpiService.GetPayment:output_type -> offchain.v1.Payment
-	4, // 9: offchain.v1.GpiService.GetPaymentStatus:output_type -> offchain.v1.PaymentStatus
-	6, // 10: offchain.v1.GpiService.ConfirmPayment:output_type -> offchain.v1.ConfirmPaymentResponse
-	7, // [7:11] is the sub-list for method output_type
-	3, // [3:7] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	9,  // 0: offchain.v1.CreatePaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	10, // 1: offchain.v1.CreatePaymentRequest.signature:type_name -> offchain.v1.Signature
+	11, // 2: offchain.v1.CreatePaymentRequest.data:type_name -> offchain.v1.Payment
+	9,  // 3: offchain.v1.CreatePaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	10, // 4: offchain.v1.CreatePaymentResponse.signature:type_name -> offchain.v1.Signature
+	12, // 5: offchain.v1.CreatePaymentResponse.result:type_name -> offchain.v1.Result
+	11, // 6: offchain.v1.CreatePaymentResponse.data:type_name -> offchain.v1.Payment
+	9,  // 7: offchain.v1.GetPaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	10, // 8: offchain.v1.GetPaymentRequest.signature:type_name -> offchain.v1.Signature
+	9,  // 9: offchain.v1.GetPaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	10, // 10: offchain.v1.GetPaymentResponse.signature:type_name -> offchain.v1.Signature
+	12, // 11: offchain.v1.GetPaymentResponse.result:type_name -> offchain.v1.Result
+	11, // 12: offchain.v1.GetPaymentResponse.data:type_name -> offchain.v1.Payment
+	9,  // 13: offchain.v1.GetPaymentStatusRequest.metadata:type_name -> offchain.v1.Metadata
+	10, // 14: offchain.v1.GetPaymentStatusRequest.signature:type_name -> offchain.v1.Signature
+	9,  // 15: offchain.v1.ConfirmPaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	10, // 16: offchain.v1.ConfirmPaymentRequest.signature:type_name -> offchain.v1.Signature
+	0,  // 17: offchain.v1.ConfirmPaymentRequest.data:type_name -> offchain.v1.ConfirmMessage
+	9,  // 18: offchain.v1.ConfirmPaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	10, // 19: offchain.v1.ConfirmPaymentResponse.signature:type_name -> offchain.v1.Signature
+	12, // 20: offchain.v1.ConfirmPaymentResponse.result:type_name -> offchain.v1.Result
+	11, // 21: offchain.v1.ConfirmPaymentResponse.data:type_name -> offchain.v1.Payment
+	1,  // 22: offchain.v1.GpiService.CreatePayment:input_type -> offchain.v1.CreatePaymentRequest
+	3,  // 23: offchain.v1.GpiService.GetPayment:input_type -> offchain.v1.GetPaymentRequest
+	5,  // 24: offchain.v1.GpiService.GetPaymentStatus:input_type -> offchain.v1.GetPaymentStatusRequest
+	7,  // 25: offchain.v1.GpiService.ConfirmPayment:input_type -> offchain.v1.ConfirmPaymentRequest
+	2,  // 26: offchain.v1.GpiService.CreatePayment:output_type -> offchain.v1.CreatePaymentResponse
+	4,  // 27: offchain.v1.GpiService.GetPayment:output_type -> offchain.v1.GetPaymentResponse
+	4,  // 28: offchain.v1.GpiService.GetPaymentStatus:output_type -> offchain.v1.GetPaymentResponse
+	8,  // 29: offchain.v1.GpiService.ConfirmPayment:output_type -> offchain.v1.ConfirmPaymentResponse
+	26, // [26:30] is the sub-list for method output_type
+	22, // [22:26] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
 func init() { file_offchain_gpi_proto_init() }
@@ -570,7 +726,7 @@ func file_offchain_gpi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_offchain_gpi_proto_rawDesc), len(file_offchain_gpi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -22,6 +22,59 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// SignatureType định nghĩa các loại chữ ký được hỗ trợ
+type Signature_SignatureType int32
+
+const (
+	Signature_NO_USE_TYPE Signature_SignatureType = 0 // Giá trị mặc định, không sử dụng
+	Signature_J           Signature_SignatureType = 1 // Chữ ký loại J
+	Signature_C           Signature_SignatureType = 2 // Chữ ký loại C
+	Signature_S           Signature_SignatureType = 3 // Chữ ký loại S
+)
+
+// Enum value maps for Signature_SignatureType.
+var (
+	Signature_SignatureType_name = map[int32]string{
+		0: "NO_USE_TYPE",
+		1: "J",
+		2: "C",
+		3: "S",
+	}
+	Signature_SignatureType_value = map[string]int32{
+		"NO_USE_TYPE": 0,
+		"J":           1,
+		"C":           2,
+		"S":           3,
+	}
+)
+
+func (x Signature_SignatureType) Enum() *Signature_SignatureType {
+	p := new(Signature_SignatureType)
+	*p = x
+	return p
+}
+
+func (x Signature_SignatureType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Signature_SignatureType) Descriptor() protoreflect.EnumDescriptor {
+	return file_access_point_common_proto_enumTypes[0].Descriptor()
+}
+
+func (Signature_SignatureType) Type() protoreflect.EnumType {
+	return &file_access_point_common_proto_enumTypes[0]
+}
+
+func (x Signature_SignatureType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Signature_SignatureType.Descriptor instead.
+func (Signature_SignatureType) EnumDescriptor() ([]byte, []int) {
+	return file_access_point_common_proto_rawDescGZIP(), []int{6, 0}
+}
+
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -187,15 +240,13 @@ func (x *Payment) GetCreditorAgentAccount() *Account {
 type Transfer struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Debtor        string                 `protobuf:"bytes,2,opt,name=debtor,proto3" json:"debtor,omitempty"`
-	Creditor      string                 `protobuf:"bytes,3,opt,name=creditor,proto3" json:"creditor,omitempty"`
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
-	Status        string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
-	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Creditor      string                 `protobuf:"bytes,2,opt,name=creditor,proto3" json:"creditor,omitempty"`
+	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`
+	Status        string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// Optional structured account details for the debtor/creditor in FI transfers
-	DebtorAccount   *Account `protobuf:"bytes,8,opt,name=debtor_account,json=debtorAccount,proto3" json:"debtor_account,omitempty"`
-	CreditorAccount *Account `protobuf:"bytes,9,opt,name=creditor_account,json=creditorAccount,proto3" json:"creditor_account,omitempty"`
+	CreditorAccount *Account `protobuf:"bytes,7,opt,name=creditor_account,json=creditorAccount,proto3" json:"creditor_account,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -237,13 +288,6 @@ func (x *Transfer) GetInstructionId() string {
 	return ""
 }
 
-func (x *Transfer) GetDebtor() string {
-	if x != nil {
-		return x.Debtor
-	}
-	return ""
-}
-
 func (x *Transfer) GetCreditor() string {
 	if x != nil {
 		return x.Creditor
@@ -275,13 +319,6 @@ func (x *Transfer) GetStatus() string {
 func (x *Transfer) GetCreatedAt() *timestamp.Timestamp {
 	if x != nil {
 		return x.CreatedAt
-	}
-	return nil
-}
-
-func (x *Transfer) GetDebtorAccount() *Account {
-	if x != nil {
-		return x.DebtorAccount
 	}
 	return nil
 }
@@ -451,6 +488,180 @@ func (x *Account) GetReference() string {
 	return ""
 }
 
+type Metadata struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`        // ID định danh duy nhất cho request
+	RequestTime   int64                  `protobuf:"varint,2,opt,name=request_time,json=requestTime,proto3" json:"request_time,omitempty"` // Thời gian gửi request (Unix timestamp)
+	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`                             // Phiên bản của protocol
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Metadata) Reset() {
+	*x = Metadata{}
+	mi := &file_access_point_common_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Metadata) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Metadata) ProtoMessage() {}
+
+func (x *Metadata) ProtoReflect() protoreflect.Message {
+	mi := &file_access_point_common_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Metadata.ProtoReflect.Descriptor instead.
+func (*Metadata) Descriptor() ([]byte, []int) {
+	return file_access_point_common_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *Metadata) GetRequestId() string {
+	if x != nil {
+		return x.RequestId
+	}
+	return ""
+}
+
+func (x *Metadata) GetRequestTime() int64 {
+	if x != nil {
+		return x.RequestTime
+	}
+	return 0
+}
+
+func (x *Metadata) GetVersion() string {
+	if x != nil {
+		return x.Version
+	}
+	return ""
+}
+
+// CCSignature định nghĩa cấu trúc chữ ký số cho request
+type Signature struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	SType         Signature_SignatureType `protobuf:"varint,1,opt,name=s_type,json=sType,proto3,enum=accesspoint.v1.Signature_SignatureType" json:"s_type,omitempty"` // Loại chữ ký được sử dụng
+	S             string                  `protobuf:"bytes,2,opt,name=s,proto3" json:"s,omitempty"`                                                                   // Chuỗi dùng tạo ra chữ ký
+	B             []byte                  `protobuf:"bytes,3,opt,name=b,proto3" json:"b,omitempty"`                                                                   // Chữ ký số
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Signature) Reset() {
+	*x = Signature{}
+	mi := &file_access_point_common_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Signature) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Signature) ProtoMessage() {}
+
+func (x *Signature) ProtoReflect() protoreflect.Message {
+	mi := &file_access_point_common_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Signature.ProtoReflect.Descriptor instead.
+func (*Signature) Descriptor() ([]byte, []int) {
+	return file_access_point_common_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Signature) GetSType() Signature_SignatureType {
+	if x != nil {
+		return x.SType
+	}
+	return Signature_NO_USE_TYPE
+}
+
+func (x *Signature) GetS() string {
+	if x != nil {
+		return x.S
+	}
+	return ""
+}
+
+func (x *Signature) GetB() []byte {
+	if x != nil {
+		return x.B
+	}
+	return nil
+}
+
+// CCResult định nghĩa cấu trúc kết quả trả về
+type Result struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`       // Mã kết quả thực thi
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"` // Thông điệp mô tả kết quả
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Result) Reset() {
+	*x = Result{}
+	mi := &file_access_point_common_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Result) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Result) ProtoMessage() {}
+
+func (x *Result) ProtoReflect() protoreflect.Message {
+	mi := &file_access_point_common_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Result.ProtoReflect.Descriptor instead.
+func (*Result) Descriptor() ([]byte, []int) {
+	return file_access_point_common_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *Result) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *Result) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_access_point_common_proto protoreflect.FileDescriptor
 
 const file_access_point_common_proto_rawDesc = "" +
@@ -471,18 +682,16 @@ const file_access_point_common_proto_rawDesc = "" +
 	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12I\n" +
 	"\x14debtor_agent_account\x18\n" +
 	" \x01(\v2\x17.accesspoint.v1.AccountR\x12debtorAgentAccount\x12M\n" +
-	"\x16creditor_agent_account\x18\v \x01(\v2\x17.accesspoint.v1.AccountR\x14creditorAgentAccount\"\xf0\x02\n" +
+	"\x16creditor_agent_account\x18\v \x01(\v2\x17.accesspoint.v1.AccountR\x14creditorAgentAccount\"\x98\x02\n" +
 	"\bTransfer\x12%\n" +
-	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x16\n" +
-	"\x06debtor\x18\x02 \x01(\tR\x06debtor\x12\x1a\n" +
-	"\bcreditor\x18\x03 \x01(\tR\bcreditor\x12\x16\n" +
-	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x05 \x01(\tR\bcurrency\x12\x16\n" +
-	"\x06status\x18\x06 \x01(\tR\x06status\x129\n" +
+	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x1a\n" +
+	"\bcreditor\x18\x02 \x01(\tR\bcreditor\x12\x16\n" +
+	"\x06amount\x18\x03 \x01(\x01R\x06amount\x12\x1a\n" +
+	"\bcurrency\x18\x04 \x01(\tR\bcurrency\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x129\n" +
 	"\n" +
-	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12>\n" +
-	"\x0edebtor_account\x18\b \x01(\v2\x17.accesspoint.v1.AccountR\rdebtorAccount\x12B\n" +
-	"\x10creditor_account\x18\t \x01(\v2\x17.accesspoint.v1.AccountR\x0fcreditorAccount\"|\n" +
+	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12B\n" +
+	"\x10creditor_account\x18\a \x01(\v2\x17.accesspoint.v1.AccountR\x0fcreditorAccount\"|\n" +
 	"\tKycEntity\x12\x10\n" +
 	"\x03bic\x18\x01 \x01(\tR\x03bic\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -495,7 +704,24 @@ const file_access_point_common_proto_rawDesc = "" +
 	"\x0eaccount_number\x18\x02 \x01(\tR\raccountNumber\x12!\n" +
 	"\faccount_name\x18\x03 \x01(\tR\vaccountName\x12\x1a\n" +
 	"\bcurrency\x18\x04 \x01(\tR\bcurrency\x12\x1c\n" +
-	"\treference\x18\x05 \x01(\tR\treferenceB^\n" +
+	"\treference\x18\x05 \x01(\tR\treference\"f\n" +
+	"\bMetadata\x12\x1d\n" +
+	"\n" +
+	"request_id\x18\x01 \x01(\tR\trequestId\x12!\n" +
+	"\frequest_time\x18\x02 \x01(\x03R\vrequestTime\x12\x18\n" +
+	"\aversion\x18\x03 \x01(\tR\aversion\"\x9e\x01\n" +
+	"\tSignature\x12>\n" +
+	"\x06s_type\x18\x01 \x01(\x0e2'.accesspoint.v1.Signature.SignatureTypeR\x05sType\x12\f\n" +
+	"\x01s\x18\x02 \x01(\tR\x01s\x12\f\n" +
+	"\x01b\x18\x03 \x01(\fR\x01b\"5\n" +
+	"\rSignatureType\x12\x0f\n" +
+	"\vNO_USE_TYPE\x10\x00\x12\x05\n" +
+	"\x01J\x10\x01\x12\x05\n" +
+	"\x01C\x10\x02\x12\x05\n" +
+	"\x01S\x10\x03\"6\n" +
+	"\x06Result\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\tR\x04code\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessageB^\n" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
@@ -510,22 +736,27 @@ func file_access_point_common_proto_rawDescGZIP() []byte {
 	return file_access_point_common_proto_rawDescData
 }
 
-var file_access_point_common_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_access_point_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_access_point_common_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_access_point_common_proto_goTypes = []any{
-	(*Empty)(nil),               // 0: accesspoint.v1.Empty
-	(*Payment)(nil),             // 1: accesspoint.v1.Payment
-	(*Transfer)(nil),            // 2: accesspoint.v1.Transfer
-	(*KycEntity)(nil),           // 3: accesspoint.v1.KycEntity
-	(*Account)(nil),             // 4: accesspoint.v1.Account
-	(*timestamp.Timestamp)(nil), // 5: google.protobuf.Timestamp
+	(Signature_SignatureType)(0), // 0: accesspoint.v1.Signature.SignatureType
+	(*Empty)(nil),                // 1: accesspoint.v1.Empty
+	(*Payment)(nil),              // 2: accesspoint.v1.Payment
+	(*Transfer)(nil),             // 3: accesspoint.v1.Transfer
+	(*KycEntity)(nil),            // 4: accesspoint.v1.KycEntity
+	(*Account)(nil),              // 5: accesspoint.v1.Account
+	(*Metadata)(nil),             // 6: accesspoint.v1.Metadata
+	(*Signature)(nil),            // 7: accesspoint.v1.Signature
+	(*Result)(nil),               // 8: accesspoint.v1.Result
+	(*timestamp.Timestamp)(nil),  // 9: google.protobuf.Timestamp
 }
 var file_access_point_common_proto_depIdxs = []int32{
-	5, // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
-	4, // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
-	4, // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
-	5, // 3: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
-	4, // 4: accesspoint.v1.Transfer.debtor_account:type_name -> accesspoint.v1.Account
-	4, // 5: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
+	9, // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
+	5, // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
+	5, // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
+	9, // 3: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
+	5, // 4: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
+	0, // 5: accesspoint.v1.Signature.s_type:type_name -> accesspoint.v1.Signature.SignatureType
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -543,13 +774,14 @@ func file_access_point_common_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_common_proto_rawDesc), len(file_access_point_common_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   5,
+			NumEnums:      1,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_access_point_common_proto_goTypes,
 		DependencyIndexes: file_access_point_common_proto_depIdxs,
+		EnumInfos:         file_access_point_common_proto_enumTypes,
 		MessageInfos:      file_access_point_common_proto_msgTypes,
 	}.Build()
 	File_access_point_common_proto = out.File

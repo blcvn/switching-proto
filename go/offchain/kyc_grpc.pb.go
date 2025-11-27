@@ -22,6 +22,7 @@ const (
 	KycService_ListEntities_FullMethodName       = "/offchain.v1.KycService/ListEntities"
 	KycService_GetEntity_FullMethodName          = "/offchain.v1.KycService/GetEntity"
 	KycService_GetEntityDocuments_FullMethodName = "/offchain.v1.KycService/GetEntityDocuments"
+	KycService_Register_FullMethodName           = "/offchain.v1.KycService/Register"
 	KycService_SubmitKyc_FullMethodName          = "/offchain.v1.KycService/SubmitKyc"
 	KycService_Metadata_FullMethodName           = "/offchain.v1.KycService/Metadata"
 	KycService_Audit_FullMethodName              = "/offchain.v1.KycService/Audit"
@@ -34,6 +35,7 @@ type KycServiceClient interface {
 	ListEntities(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListEntitiesResponse, error)
 	GetEntity(ctx context.Context, in *GetEntityRequest, opts ...grpc.CallOption) (*KycEntity, error)
 	GetEntityDocuments(ctx context.Context, in *GetEntityDocsRequest, opts ...grpc.CallOption) (*GetEntityDocsResponse, error)
+	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	SubmitKyc(ctx context.Context, in *SubmitKycRequest, opts ...grpc.CallOption) (*SubmitKycResponse, error)
 	Metadata(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*KycMetadata, error)
 	Audit(ctx context.Context, in *GetEntityRequest, opts ...grpc.CallOption) (*AuditResponse, error)
@@ -77,6 +79,16 @@ func (c *kycServiceClient) GetEntityDocuments(ctx context.Context, in *GetEntity
 	return out, nil
 }
 
+func (c *kycServiceClient) Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterResponse)
+	err := c.cc.Invoke(ctx, KycService_Register_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *kycServiceClient) SubmitKyc(ctx context.Context, in *SubmitKycRequest, opts ...grpc.CallOption) (*SubmitKycResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SubmitKycResponse)
@@ -114,6 +126,7 @@ type KycServiceServer interface {
 	ListEntities(context.Context, *Empty) (*ListEntitiesResponse, error)
 	GetEntity(context.Context, *GetEntityRequest) (*KycEntity, error)
 	GetEntityDocuments(context.Context, *GetEntityDocsRequest) (*GetEntityDocsResponse, error)
+	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	SubmitKyc(context.Context, *SubmitKycRequest) (*SubmitKycResponse, error)
 	Metadata(context.Context, *Empty) (*KycMetadata, error)
 	Audit(context.Context, *GetEntityRequest) (*AuditResponse, error)
@@ -135,6 +148,9 @@ func (UnimplementedKycServiceServer) GetEntity(context.Context, *GetEntityReques
 }
 func (UnimplementedKycServiceServer) GetEntityDocuments(context.Context, *GetEntityDocsRequest) (*GetEntityDocsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntityDocuments not implemented")
+}
+func (UnimplementedKycServiceServer) Register(context.Context, *RegisterRequest) (*RegisterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
 }
 func (UnimplementedKycServiceServer) SubmitKyc(context.Context, *SubmitKycRequest) (*SubmitKycResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitKyc not implemented")
@@ -220,6 +236,24 @@ func _KycService_GetEntityDocuments_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _KycService_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(KycServiceServer).Register(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: KycService_Register_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(KycServiceServer).Register(ctx, req.(*RegisterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _KycService_SubmitKyc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SubmitKycRequest)
 	if err := dec(in); err != nil {
@@ -292,6 +326,10 @@ var KycService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEntityDocuments",
 			Handler:    _KycService_GetEntityDocuments_Handler,
+		},
+		{
+			MethodName: "Register",
+			Handler:    _KycService_Register_Handler,
 		},
 		{
 			MethodName: "SubmitKyc",

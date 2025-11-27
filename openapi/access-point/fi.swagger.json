@@ -1,0 +1,274 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "access-point/fi.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "FiService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "accesspointv1Account": {
+      "type": "object",
+      "properties": {
+        "iban": {
+          "type": "string",
+          "title": "International Bank Account Number (if available)"
+        },
+        "account_number": {
+          "type": "string",
+          "title": "Local account number"
+        },
+        "account_name": {
+          "type": "string",
+          "title": "Account holder name"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Account currency (optional)"
+        },
+        "reference": {
+          "type": "string",
+          "title": "Additional reference or identification (e.g., secondary id)"
+        }
+      },
+      "description": "Account represents the account details associated with an agent."
+    },
+    "accesspointv1BulkTransferResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/accesspointv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/accesspointv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/accesspointv1Result"
+        },
+        "transfers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/accesspointv1Transfer"
+          }
+        }
+      }
+    },
+    "accesspointv1ConfirmTransferResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/accesspointv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/accesspointv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/accesspointv1Result"
+        },
+        "instruction_id": {
+          "type": "string"
+        }
+      }
+    },
+    "accesspointv1CreateTransferResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/accesspointv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/accesspointv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/accesspointv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/accesspointv1Transfer"
+        }
+      }
+    },
+    "accesspointv1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      }
+    },
+    "accesspointv1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Mã kết quả thực thi"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+    },
+    "accesspointv1SearchTransfersRequestFilter": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "date_from": {
+          "type": "string"
+        },
+        "date_to": {
+          "type": "string"
+        }
+      }
+    },
+    "accesspointv1SearchTransfersResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/accesspointv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/accesspointv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/accesspointv1Result"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/accesspointv1Transfer"
+          }
+        }
+      }
+    },
+    "accesspointv1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/accesspointv1SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dùng tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số"
+        }
+      },
+      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+    },
+    "accesspointv1SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "accesspointv1Transfer": {
+      "type": "object",
+      "properties": {
+        "instruction_id": {
+          "type": "string"
+        },
+        "creditor": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "creditor_account": {
+          "$ref": "#/definitions/accesspointv1Account",
+          "title": "Optional structured account details for the debtor/creditor in FI transfers"
+        }
+      }
+    },
+    "accesspointv1TransferStatus": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/accesspointv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/accesspointv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/accesspointv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/accesspointv1Transfer"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,8 @@ Proto definitions, generated code, and release scripts for both Go and Java serv
 - `schema/` – canonical `.proto` sources grouped by domain (`access-point`, `offchain`, `payments`, `notifications`, `users`, ...).
 - `go/` – Go modules generated from the schemas (`accesspoint`, `offchain`, `payment`, `notification`, `user`). Each module has its own `go.mod`.
 - `java/` – Gradle subprojects mirroring the same domains with generated Java sources under `com/blcvn/switching/**`.
-- `scripts/` – shared helpers such as `gen-go.sh`, `gen-java.sh`, and `release.sh`.
+- `kotlin/` – optional Kotlin output root when using `scripts/gen-kotlin.sh`.
+- `scripts/` – shared helpers such as `gen-go.sh`, `gen-java.sh`, `gen-kotlin.sh`, and `release.sh`.
 - `release_artifacts/` – populated by the release workflow (artifacts per module + version).
 
 ## Prerequisites
@@ -21,15 +22,32 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
 
 - Java toolchain (Gradle 8+, JDK 17) for building the Java modules.
+- `protoc-gen-kotlin` on your `PATH` if you plan to emit Kotlin stubs. To install:
+  ```bash
+  # Install Java if not already installed
+  sudo apt-get update && sudo apt-get install -y openjdk-17-jdk
+  # Or: sudo apt-get install -y default-jdk
+  
+  # The protoc-gen-kotlin wrapper script should be in ~/.local/bin
+  # Ensure ~/.local/bin is in your PATH:
+  export PATH="$HOME/.local/bin:$PATH"
+  ```
+- `protoc-gen-openapiv2` for generating OpenAPI/Swagger docs. The helper script will
+  attempt `go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest`
+  automatically if it is missing.
+- `python3` for converting OpenAPI specs to Markdown summaries.
 
 ## Generate sources
 
 Run the helper scripts from the repo root (they handle all domains listed in `schema/`):
 
 ```bash
-chmod +x scripts/gen-go.sh scripts/gen-java.sh
+chmod +x scripts/gen-go.sh scripts/gen-java.sh scripts/gen-kotlin.sh
 ./scripts/gen-go.sh        # writes into go/**
 ./scripts/gen-java.sh      # writes into java/**
+./scripts/gen-kotlin.sh    # writes into kotlin/**
+./scripts/gen-openapi.sh   # writes Swagger/OpenAPI specs into openapi/**
+./scripts/gen-openapi-md.sh # converts Swagger JSON into Markdown under docs/api/**
 ```
 
 For bulk Go maintenance you can also run `go/scripts/go_mod_tidy_all.sh`, which tidies every Go module to keep `go.sum` files in sync.

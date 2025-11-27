@@ -30,8 +30,8 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GpiServiceClient interface {
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
-	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*Payment, error)
-	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*PaymentStatus, error)
+	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
+	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*ConfirmPaymentResponse, error)
 }
 
@@ -53,9 +53,9 @@ func (c *gpiServiceClient) CreatePayment(ctx context.Context, in *CreatePaymentR
 	return out, nil
 }
 
-func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*Payment, error) {
+func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Payment)
+	out := new(GetPaymentResponse)
 	err := c.cc.Invoke(ctx, GpiService_GetPayment_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -63,9 +63,9 @@ func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest
 	return out, nil
 }
 
-func (c *gpiServiceClient) GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*PaymentStatus, error) {
+func (c *gpiServiceClient) GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(PaymentStatus)
+	out := new(GetPaymentResponse)
 	err := c.cc.Invoke(ctx, GpiService_GetPaymentStatus_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -88,8 +88,8 @@ func (c *gpiServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymen
 // for forward compatibility.
 type GpiServiceServer interface {
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
-	GetPayment(context.Context, *GetPaymentRequest) (*Payment, error)
-	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*PaymentStatus, error)
+	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
+	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error)
 	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error)
 	mustEmbedUnimplementedGpiServiceServer()
 }
@@ -104,10 +104,10 @@ type UnimplementedGpiServiceServer struct{}
 func (UnimplementedGpiServiceServer) CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePayment not implemented")
 }
-func (UnimplementedGpiServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*Payment, error) {
+func (UnimplementedGpiServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayment not implemented")
 }
-func (UnimplementedGpiServiceServer) GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*PaymentStatus, error) {
+func (UnimplementedGpiServiceServer) GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentStatus not implemented")
 }
 func (UnimplementedGpiServiceServer) ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error) {

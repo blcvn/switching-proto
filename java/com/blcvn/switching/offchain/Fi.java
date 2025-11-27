@@ -19,58 +19,49 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getInstructionId();
+    boolean hasMetadata();
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getInstructionIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string debtor = 2;</code>
-     * @return The debtor.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getDebtor();
+    boolean hasSignature();
     /**
-     * <code>string debtor = 2;</code>
-     * @return The bytes for debtor.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getDebtorBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
-     * <code>string creditor = 3;</code>
-     * @return The creditor.
+     * <code>.offchain.v1.Transfer data = 3;</code>
+     * @return Whether the data field is set.
      */
-    java.lang.String getCreditor();
+    boolean hasData();
     /**
-     * <code>string creditor = 3;</code>
-     * @return The bytes for creditor.
+     * <code>.offchain.v1.Transfer data = 3;</code>
+     * @return The data.
      */
-    com.google.protobuf.ByteString
-        getCreditorBytes();
-
+    com.blcvn.switching.offchain.Common.Transfer getData();
     /**
-     * <code>double amount = 4;</code>
-     * @return The amount.
+     * <code>.offchain.v1.Transfer data = 3;</code>
      */
-    double getAmount();
-
-    /**
-     * <code>string currency = 5;</code>
-     * @return The currency.
-     */
-    java.lang.String getCurrency();
-    /**
-     * <code>string currency = 5;</code>
-     * @return The bytes for currency.
-     */
-    com.google.protobuf.ByteString
-        getCurrencyBytes();
+    com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.CreateTransferRequest}
@@ -85,10 +76,6 @@ public final class Fi {
       super(builder);
     }
     private CreateTransferRequest() {
-      instructionId_ = "";
-      debtor_ = "";
-      creditor_ = "";
-      currency_ = "";
     }
 
     @java.lang.Override
@@ -122,32 +109,42 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              instructionId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              debtor_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Transfer.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Transfer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
 
-              creditor_ = s;
-              break;
-            }
-            case 33: {
-
-              amount_ = input.readDouble();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currency_ = s;
               break;
             }
             default: {
@@ -182,167 +179,82 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.CreateTransferRequest.class, com.blcvn.switching.offchain.Fi.CreateTransferRequest.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instructionId_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getInstructionId() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instructionId_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInstructionIdBytes() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        instructionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int DEBTOR_FIELD_NUMBER = 2;
-    private volatile java.lang.Object debtor_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string debtor = 2;</code>
-     * @return The debtor.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getDebtor() {
-      java.lang.Object ref = debtor_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        debtor_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string debtor = 2;</code>
-     * @return The bytes for debtor.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDebtorBytes() {
-      java.lang.Object ref = debtor_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        debtor_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
     }
 
-    public static final int CREDITOR_FIELD_NUMBER = 3;
-    private volatile java.lang.Object creditor_;
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Transfer data_;
     /**
-     * <code>string creditor = 3;</code>
-     * @return The creditor.
+     * <code>.offchain.v1.Transfer data = 3;</code>
+     * @return Whether the data field is set.
      */
     @java.lang.Override
-    public java.lang.String getCreditor() {
-      java.lang.Object ref = creditor_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        creditor_ = s;
-        return s;
-      }
+    public boolean hasData() {
+      return data_ != null;
     }
     /**
-     * <code>string creditor = 3;</code>
-     * @return The bytes for creditor.
+     * <code>.offchain.v1.Transfer data = 3;</code>
+     * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCreditorBytes() {
-      java.lang.Object ref = creditor_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        creditor_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AMOUNT_FIELD_NUMBER = 4;
-    private double amount_;
-    /**
-     * <code>double amount = 4;</code>
-     * @return The amount.
-     */
-    @java.lang.Override
-    public double getAmount() {
-      return amount_;
-    }
-
-    public static final int CURRENCY_FIELD_NUMBER = 5;
-    private volatile java.lang.Object currency_;
-    /**
-     * <code>string currency = 5;</code>
-     * @return The currency.
-     */
-    @java.lang.Override
-    public java.lang.String getCurrency() {
-      java.lang.Object ref = currency_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        currency_ = s;
-        return s;
-      }
+    public com.blcvn.switching.offchain.Common.Transfer getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
     }
     /**
-     * <code>string currency = 5;</code>
-     * @return The bytes for currency.
+     * <code>.offchain.v1.Transfer data = 3;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCurrencyBytes() {
-      java.lang.Object ref = currency_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        currency_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -359,20 +271,14 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getDebtorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, debtor_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
       }
-      if (!getCreditorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, creditor_);
-      }
-      if (amount_ != 0D) {
-        output.writeDouble(4, amount_);
-      }
-      if (!getCurrencyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, currency_);
+      if (data_ != null) {
+        output.writeMessage(3, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -383,21 +289,17 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
-      }
-      if (!getDebtorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, debtor_);
-      }
-      if (!getCreditorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, creditor_);
-      }
-      if (amount_ != 0D) {
+      if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, amount_);
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getCurrencyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, currency_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -414,17 +316,21 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.CreateTransferRequest other = (com.blcvn.switching.offchain.Fi.CreateTransferRequest) obj;
 
-      if (!getInstructionId()
-          .equals(other.getInstructionId())) return false;
-      if (!getDebtor()
-          .equals(other.getDebtor())) return false;
-      if (!getCreditor()
-          .equals(other.getCreditor())) return false;
-      if (java.lang.Double.doubleToLongBits(getAmount())
-          != java.lang.Double.doubleToLongBits(
-              other.getAmount())) return false;
-      if (!getCurrency()
-          .equals(other.getCurrency())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -436,17 +342,18 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstructionId().hashCode();
-      hash = (37 * hash) + DEBTOR_FIELD_NUMBER;
-      hash = (53 * hash) + getDebtor().hashCode();
-      hash = (37 * hash) + CREDITOR_FIELD_NUMBER;
-      hash = (53 * hash) + getCreditor().hashCode();
-      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAmount()));
-      hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrency().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -580,16 +487,24 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instructionId_ = "";
-
-        debtor_ = "";
-
-        creditor_ = "";
-
-        amount_ = 0D;
-
-        currency_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -616,11 +531,21 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.CreateTransferRequest buildPartial() {
         com.blcvn.switching.offchain.Fi.CreateTransferRequest result = new com.blcvn.switching.offchain.Fi.CreateTransferRequest(this);
-        result.instructionId_ = instructionId_;
-        result.debtor_ = debtor_;
-        result.creditor_ = creditor_;
-        result.amount_ = amount_;
-        result.currency_ = currency_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -669,24 +594,14 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.CreateTransferRequest other) {
         if (other == com.blcvn.switching.offchain.Fi.CreateTransferRequest.getDefaultInstance()) return this;
-        if (!other.getInstructionId().isEmpty()) {
-          instructionId_ = other.instructionId_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getDebtor().isEmpty()) {
-          debtor_ = other.debtor_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
         }
-        if (!other.getCreditor().isEmpty()) {
-          creditor_ = other.creditor_;
-          onChanged();
-        }
-        if (other.getAmount() != 0D) {
-          setAmount(other.getAmount());
-        }
-        if (!other.getCurrency().isEmpty()) {
-          currency_ = other.currency_;
-          onChanged();
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -717,339 +632,361 @@ public final class Fi {
         return this;
       }
 
-      private java.lang.Object instructionId_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getInstructionId() {
-        java.lang.Object ref = instructionId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instructionId_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getInstructionIdBytes() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          instructionId_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The instructionId to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setInstructionId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        instructionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstructionId() {
-        
-        instructionId_ = getDefaultInstance().getInstructionId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The bytes for instructionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstructionIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        instructionId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.lang.Object debtor_ = "";
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <code>string debtor = 2;</code>
-       * @return The debtor.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public java.lang.String getDebtor() {
-        java.lang.Object ref = debtor_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          debtor_ = s;
-          return s;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return (java.lang.String) ref;
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <code>string debtor = 2;</code>
-       * @return The bytes for debtor.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getDebtorBytes() {
-        java.lang.Object ref = debtor_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          debtor_ = b;
-          return b;
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <code>string debtor = 2;</code>
-       * @param value The debtor to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setDebtor(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        debtor_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debtor = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDebtor() {
-        
-        debtor_ = getDefaultInstance().getDebtor();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debtor = 2;</code>
-       * @param value The bytes for debtor to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDebtorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        debtor_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
       }
 
-      private java.lang.Object creditor_ = "";
+      private com.blcvn.switching.offchain.Common.Transfer data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
       /**
-       * <code>string creditor = 3;</code>
-       * @return The creditor.
+       * <code>.offchain.v1.Transfer data = 3;</code>
+       * @return Whether the data field is set.
        */
-      public java.lang.String getCreditor() {
-        java.lang.Object ref = creditor_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          creditor_ = s;
-          return s;
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 3;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Transfer getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
         } else {
-          return (java.lang.String) ref;
+          return dataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string creditor = 3;</code>
-       * @return The bytes for creditor.
+       * <code>.offchain.v1.Transfer data = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getCreditorBytes() {
-        java.lang.Object ref = creditor_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          creditor_ = b;
-          return b;
+      public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          dataBuilder_.setMessage(value);
         }
-      }
-      /**
-       * <code>string creditor = 3;</code>
-       * @param value The creditor to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreditor(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        creditor_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string creditor = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreditor() {
-        
-        creditor_ = getDefaultInstance().getCreditor();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string creditor = 3;</code>
-       * @param value The bytes for creditor to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreditorBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        creditor_ = value;
-        onChanged();
-        return this;
-      }
 
-      private double amount_ ;
-      /**
-       * <code>double amount = 4;</code>
-       * @return The amount.
-       */
-      @java.lang.Override
-      public double getAmount() {
-        return amount_;
-      }
-      /**
-       * <code>double amount = 4;</code>
-       * @param value The amount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAmount(double value) {
-        
-        amount_ = value;
-        onChanged();
         return this;
       }
       /**
-       * <code>double amount = 4;</code>
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Transfer data = 3;</code>
        */
-      public Builder clearAmount() {
-        
-        amount_ = 0D;
-        onChanged();
-        return this;
-      }
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
 
-      private java.lang.Object currency_ = "";
+        return this;
+      }
       /**
-       * <code>string currency = 5;</code>
-       * @return The currency.
+       * <code>.offchain.v1.Transfer data = 3;</code>
        */
-      public java.lang.String getCurrency() {
-        java.lang.Object ref = currency_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          currency_ = s;
-          return s;
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Transfer.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
         } else {
-          return (java.lang.String) ref;
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 3;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
         }
       }
       /**
-       * <code>string currency = 5;</code>
-       * @return The bytes for currency.
+       * <code>.offchain.v1.Transfer data = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getCurrencyBytes() {
-        java.lang.Object ref = currency_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          currency_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
         }
-      }
-      /**
-       * <code>string currency = 5;</code>
-       * @param value The currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrency(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurrency() {
-        
-        currency_ = getDefaultInstance().getCurrency();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 5;</code>
-       * @param value The bytes for currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrencyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        currency_ = value;
-        onChanged();
-        return this;
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1109,28 +1046,64 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getInstructionId();
+    boolean hasMetadata();
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getInstructionIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getStatus();
+    boolean hasSignature();
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getStatusBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.Transfer getData();
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.CreateTransferResponse}
@@ -1145,8 +1118,6 @@ public final class Fi {
       super(builder);
     }
     private CreateTransferResponse() {
-      instructionId_ = "";
-      status_ = "";
     }
 
     @java.lang.Override
@@ -1180,15 +1151,55 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              instructionId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              status_ = s;
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.blcvn.switching.offchain.Common.Transfer.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Transfer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -1223,80 +1234,108 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.CreateTransferResponse.class, com.blcvn.switching.offchain.Fi.CreateTransferResponse.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instructionId_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getInstructionId() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instructionId_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInstructionIdBytes() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        instructionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.Transfer data_;
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Transfer getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1313,11 +1352,17 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (data_ != null) {
+        output.writeMessage(4, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -1328,11 +1373,21 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1349,10 +1404,26 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.CreateTransferResponse other = (com.blcvn.switching.offchain.Fi.CreateTransferResponse) obj;
 
-      if (!getInstructionId()
-          .equals(other.getInstructionId())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1364,10 +1435,22 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstructionId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1501,10 +1584,30 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instructionId_ = "";
-
-        status_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -1531,8 +1634,26 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.CreateTransferResponse buildPartial() {
         com.blcvn.switching.offchain.Fi.CreateTransferResponse result = new com.blcvn.switching.offchain.Fi.CreateTransferResponse(this);
-        result.instructionId_ = instructionId_;
-        result.status_ = status_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1581,13 +1702,17 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.CreateTransferResponse other) {
         if (other == com.blcvn.switching.offchain.Fi.CreateTransferResponse.getDefaultInstance()) return this;
-        if (!other.getInstructionId().isEmpty()) {
-          instructionId_ = other.instructionId_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1618,156 +1743,480 @@ public final class Fi {
         return this;
       }
 
-      private java.lang.Object instructionId_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getInstructionId() {
-        java.lang.Object ref = instructionId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instructionId_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getInstructionIdBytes() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          instructionId_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The instructionId to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setInstructionId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        instructionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstructionId() {
-        
-        instructionId_ = getDefaultInstance().getInstructionId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The bytes for instructionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstructionIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        instructionId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.lang.Object status_ = "";
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <code>string status = 2;</code>
-       * @return The status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return (java.lang.String) ref;
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
         return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Transfer data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Transfer getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Transfer.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1827,12 +2276,42 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
     com.google.protobuf.ByteString
@@ -1885,6 +2364,32 @@ public final class Fi {
               done = true;
               break;
             case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               instructionId_ = s;
@@ -1922,10 +2427,62 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.GetTransferRequest.class, com.blcvn.switching.offchain.Fi.GetTransferRequest.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int INSTRUCTION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object instructionId_;
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     @java.lang.Override
@@ -1942,7 +2499,7 @@ public final class Fi {
       }
     }
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
     @java.lang.Override
@@ -1974,8 +2531,14 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
       if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instructionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1986,8 +2549,16 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
       if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instructionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2004,6 +2575,16 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.GetTransferRequest other = (com.blcvn.switching.offchain.Fi.GetTransferRequest) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (!getInstructionId()
           .equals(other.getInstructionId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2017,6 +2598,14 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstructionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2152,6 +2741,18 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         instructionId_ = "";
 
         return this;
@@ -2180,6 +2781,16 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.GetTransferRequest buildPartial() {
         com.blcvn.switching.offchain.Fi.GetTransferRequest result = new com.blcvn.switching.offchain.Fi.GetTransferRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         result.instructionId_ = instructionId_;
         onBuilt();
         return result;
@@ -2229,6 +2840,12 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.GetTransferRequest other) {
         if (other == com.blcvn.switching.offchain.Fi.GetTransferRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
         if (!other.getInstructionId().isEmpty()) {
           instructionId_ = other.instructionId_;
           onChanged();
@@ -2262,9 +2879,247 @@ public final class Fi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
       private java.lang.Object instructionId_ = "";
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return The instructionId.
        */
       public java.lang.String getInstructionId() {
@@ -2280,7 +3135,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return The bytes for instructionId.
        */
       public com.google.protobuf.ByteString
@@ -2297,7 +3152,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
        */
@@ -2312,7 +3167,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstructionId() {
@@ -2322,7 +3177,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
        */
@@ -2395,28 +3250,64 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getInstructionId();
+    boolean hasMetadata();
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getInstructionIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.lang.String getStatus();
+    boolean hasSignature();
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.google.protobuf.ByteString
-        getStatusBytes();
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return The data.
+     */
+    com.blcvn.switching.offchain.Common.Transfer getData();
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code offchain.v1.TransferStatus}
@@ -2431,8 +3322,6 @@ public final class Fi {
       super(builder);
     }
     private TransferStatus() {
-      instructionId_ = "";
-      status_ = "";
     }
 
     @java.lang.Override
@@ -2466,15 +3355,55 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              instructionId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              status_ = s;
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.blcvn.switching.offchain.Common.Transfer.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.blcvn.switching.offchain.Common.Transfer.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -2509,80 +3438,108 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.TransferStatus.class, com.blcvn.switching.offchain.Fi.TransferStatus.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object instructionId_;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getInstructionId() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        instructionId_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string instruction_id = 1;</code>
-     * @return The bytes for instructionId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInstructionIdBytes() {
-      java.lang.Object ref = instructionId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        instructionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private com.blcvn.switching.offchain.Common.Transfer data_;
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Transfer getData() {
+      return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+    }
+    /**
+     * <code>.offchain.v1.Transfer data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+      return getData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2599,11 +3556,17 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (data_ != null) {
+        output.writeMessage(4, getData());
       }
       unknownFields.writeTo(output);
     }
@@ -2614,11 +3577,21 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2635,10 +3608,26 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.TransferStatus other = (com.blcvn.switching.offchain.Fi.TransferStatus) obj;
 
-      if (!getInstructionId()
-          .equals(other.getInstructionId())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2650,10 +3639,22 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getInstructionId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2787,10 +3788,30 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        instructionId_ = "";
-
-        status_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
         return this;
       }
 
@@ -2817,8 +3838,26 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.TransferStatus buildPartial() {
         com.blcvn.switching.offchain.Fi.TransferStatus result = new com.blcvn.switching.offchain.Fi.TransferStatus(this);
-        result.instructionId_ = instructionId_;
-        result.status_ = status_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2867,13 +3906,17 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.TransferStatus other) {
         if (other == com.blcvn.switching.offchain.Fi.TransferStatus.getDefaultInstance()) return this;
-        if (!other.getInstructionId().isEmpty()) {
-          instructionId_ = other.instructionId_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2904,156 +3947,480 @@ public final class Fi {
         return this;
       }
 
-      private java.lang.Object instructionId_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getInstructionId() {
-        java.lang.Object ref = instructionId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instructionId_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getInstructionIdBytes() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          instructionId_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The instructionId to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setInstructionId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        instructionId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInstructionId() {
-        
-        instructionId_ = getDefaultInstance().getInstructionId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @param value The bytes for instructionId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInstructionIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        instructionId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.lang.Object status_ = "";
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
-       * <code>string status = 2;</code>
-       * @return The status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         } else {
-          return (java.lang.String) ref;
+          return signatureBuilder_.getMessage();
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
         }
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Signature signature = 2;</code>
        */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Result result = 3;</code>
        */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
         return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Transfer data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       * @return The data.
+       */
+      public com.blcvn.switching.offchain.Common.Transfer getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder setData(
+          com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.blcvn.switching.offchain.Common.Transfer.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Transfer data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3113,40 +4480,46 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
     com.google.protobuf.ByteString
         getInstructionIdBytes();
-
-    /**
-     * <code>string status = 2;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string timestamp = 3;</code>
-     * @return The timestamp.
-     */
-    java.lang.String getTimestamp();
-    /**
-     * <code>string timestamp = 3;</code>
-     * @return The bytes for timestamp.
-     */
-    com.google.protobuf.ByteString
-        getTimestampBytes();
   }
   /**
    * Protobuf type {@code offchain.v1.ConfirmTransferRequest}
@@ -3162,8 +4535,6 @@ public final class Fi {
     }
     private ConfirmTransferRequest() {
       instructionId_ = "";
-      status_ = "";
-      timestamp_ = "";
     }
 
     @java.lang.Override
@@ -3197,21 +4568,35 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              instructionId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
 
-              status_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              timestamp_ = s;
+              instructionId_ = s;
               break;
             }
             default: {
@@ -3246,10 +4631,62 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.ConfirmTransferRequest.class, com.blcvn.switching.offchain.Fi.ConfirmTransferRequest.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int INSTRUCTION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object instructionId_;
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     @java.lang.Override
@@ -3266,7 +4703,7 @@ public final class Fi {
       }
     }
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
     @java.lang.Override
@@ -3278,82 +4715,6 @@ public final class Fi {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         instructionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private volatile java.lang.Object timestamp_;
-    /**
-     * <code>string timestamp = 3;</code>
-     * @return The timestamp.
-     */
-    @java.lang.Override
-    public java.lang.String getTimestamp() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        timestamp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string timestamp = 3;</code>
-     * @return The bytes for timestamp.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTimestampBytes() {
-      java.lang.Object ref = timestamp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        timestamp_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3374,14 +4735,14 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
       if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
-      }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
-      if (!getTimestampBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timestamp_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instructionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -3392,14 +4753,16 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
       if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
-      }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
-      }
-      if (!getTimestampBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timestamp_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instructionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3416,12 +4779,18 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.ConfirmTransferRequest other = (com.blcvn.switching.offchain.Fi.ConfirmTransferRequest) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (!getInstructionId()
           .equals(other.getInstructionId())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
-      if (!getTimestamp()
-          .equals(other.getTimestamp())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3433,12 +4802,16 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstructionId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3572,11 +4945,19 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         instructionId_ = "";
-
-        status_ = "";
-
-        timestamp_ = "";
 
         return this;
       }
@@ -3604,9 +4985,17 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.ConfirmTransferRequest buildPartial() {
         com.blcvn.switching.offchain.Fi.ConfirmTransferRequest result = new com.blcvn.switching.offchain.Fi.ConfirmTransferRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         result.instructionId_ = instructionId_;
-        result.status_ = status_;
-        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -3655,16 +5044,14 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.ConfirmTransferRequest other) {
         if (other == com.blcvn.switching.offchain.Fi.ConfirmTransferRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
         if (!other.getInstructionId().isEmpty()) {
           instructionId_ = other.instructionId_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
-        if (!other.getTimestamp().isEmpty()) {
-          timestamp_ = other.timestamp_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3696,9 +5083,247 @@ public final class Fi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
       private java.lang.Object instructionId_ = "";
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return The instructionId.
        */
       public java.lang.String getInstructionId() {
@@ -3714,7 +5339,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return The bytes for instructionId.
        */
       public com.google.protobuf.ByteString
@@ -3731,7 +5356,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
        */
@@ -3746,7 +5371,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstructionId() {
@@ -3756,7 +5381,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 3;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
        */
@@ -3768,158 +5393,6 @@ public final class Fi {
   checkByteStringIsUtf8(value);
         
         instructionId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object timestamp_ = "";
-      /**
-       * <code>string timestamp = 3;</code>
-       * @return The timestamp.
-       */
-      public java.lang.String getTimestamp() {
-        java.lang.Object ref = timestamp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          timestamp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @return The bytes for timestamp.
-       */
-      public com.google.protobuf.ByteString
-          getTimestampBytes() {
-        java.lang.Object ref = timestamp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          timestamp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @param value The timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestamp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimestamp() {
-        
-        timestamp_ = getDefaultInstance().getTimestamp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string timestamp = 3;</code>
-       * @param value The bytes for timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestampBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        timestamp_ = value;
         onChanged();
         return this;
       }
@@ -3981,28 +5454,61 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>string instruction_id = 4;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 4;</code>
      * @return The bytes for instructionId.
      */
     com.google.protobuf.ByteString
         getInstructionIdBytes();
-
-    /**
-     * <code>string status = 2;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
   }
   /**
    * Protobuf type {@code offchain.v1.ConfirmTransferResponse}
@@ -4018,7 +5524,6 @@ public final class Fi {
     }
     private ConfirmTransferResponse() {
       instructionId_ = "";
-      status_ = "";
     }
 
     @java.lang.Override
@@ -4052,15 +5557,48 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              instructionId_ = s;
               break;
             }
             case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              status_ = s;
+              instructionId_ = s;
               break;
             }
             default: {
@@ -4095,10 +5633,88 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.ConfirmTransferResponse.class, com.blcvn.switching.offchain.Fi.ConfirmTransferResponse.Builder.class);
     }
 
-    public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int INSTRUCTION_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object instructionId_;
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 4;</code>
      * @return The instructionId.
      */
     @java.lang.Override
@@ -4115,7 +5731,7 @@ public final class Fi {
       }
     }
     /**
-     * <code>string instruction_id = 1;</code>
+     * <code>string instruction_id = 4;</code>
      * @return The bytes for instructionId.
      */
     @java.lang.Override
@@ -4127,44 +5743,6 @@ public final class Fi {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         instructionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 2;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4185,11 +5763,17 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getInstructionIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      if (!getInstructionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instructionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -4200,11 +5784,20 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getInstructionIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      if (!getInstructionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instructionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4221,10 +5814,23 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.ConfirmTransferResponse other = (com.blcvn.switching.offchain.Fi.ConfirmTransferResponse) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
       if (!getInstructionId()
           .equals(other.getInstructionId())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4236,10 +5842,20 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
       hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstructionId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4373,9 +5989,25 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
         instructionId_ = "";
-
-        status_ = "";
 
         return this;
       }
@@ -4403,8 +6035,22 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.ConfirmTransferResponse buildPartial() {
         com.blcvn.switching.offchain.Fi.ConfirmTransferResponse result = new com.blcvn.switching.offchain.Fi.ConfirmTransferResponse(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
         result.instructionId_ = instructionId_;
-        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -4453,12 +6099,17 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.ConfirmTransferResponse other) {
         if (other == com.blcvn.switching.offchain.Fi.ConfirmTransferResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
         if (!other.getInstructionId().isEmpty()) {
           instructionId_ = other.instructionId_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4490,9 +6141,366 @@ public final class Fi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
       private java.lang.Object instructionId_ = "";
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 4;</code>
        * @return The instructionId.
        */
       public java.lang.String getInstructionId() {
@@ -4508,7 +6516,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 4;</code>
        * @return The bytes for instructionId.
        */
       public com.google.protobuf.ByteString
@@ -4525,7 +6533,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 4;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
        */
@@ -4540,7 +6548,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearInstructionId() {
@@ -4550,7 +6558,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>string instruction_id = 1;</code>
+       * <code>string instruction_id = 4;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
        */
@@ -4562,82 +6570,6 @@ public final class Fi {
   checkByteStringIsUtf8(value);
         
         instructionId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 2;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
         onChanged();
         return this;
       }
@@ -4699,17 +6631,47 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return Whether the filter field is set.
      */
     boolean hasFilter();
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return The filter.
      */
     com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter getFilter();
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      */
     com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder getFilterOrBuilder();
   }
@@ -4759,6 +6721,32 @@ public final class Fi {
               done = true;
               break;
             case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder subBuilder = null;
               if (filter_ != null) {
                 subBuilder = filter_.toBuilder();
@@ -5671,10 +7659,62 @@ public final class Fi {
 
     }
 
-    public static final int FILTER_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int FILTER_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter filter_;
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return Whether the filter field is set.
      */
     @java.lang.Override
@@ -5682,7 +7722,7 @@ public final class Fi {
       return filter_ != null;
     }
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return The filter.
      */
     @java.lang.Override
@@ -5690,7 +7730,7 @@ public final class Fi {
       return filter_ == null ? com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.getDefaultInstance() : filter_;
     }
     /**
-     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+     * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      */
     @java.lang.Override
     public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder getFilterOrBuilder() {
@@ -5711,8 +7751,14 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
       if (filter_ != null) {
-        output.writeMessage(1, getFilter());
+        output.writeMessage(3, getFilter());
       }
       unknownFields.writeTo(output);
     }
@@ -5723,9 +7769,17 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
       if (filter_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getFilter());
+          .computeMessageSize(3, getFilter());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5742,6 +7796,16 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.SearchTransfersRequest other = (com.blcvn.switching.offchain.Fi.SearchTransfersRequest) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (hasFilter() != other.hasFilter()) return false;
       if (hasFilter()) {
         if (!getFilter()
@@ -5758,6 +7822,14 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       if (hasFilter()) {
         hash = (37 * hash) + FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getFilter().hashCode();
@@ -5895,6 +7967,18 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         if (filterBuilder_ == null) {
           filter_ = null;
         } else {
@@ -5927,6 +8011,16 @@ public final class Fi {
       @java.lang.Override
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest buildPartial() {
         com.blcvn.switching.offchain.Fi.SearchTransfersRequest result = new com.blcvn.switching.offchain.Fi.SearchTransfersRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         if (filterBuilder_ == null) {
           result.filter_ = filter_;
         } else {
@@ -5980,6 +8074,12 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.SearchTransfersRequest other) {
         if (other == com.blcvn.switching.offchain.Fi.SearchTransfersRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
         if (other.hasFilter()) {
           mergeFilter(other.getFilter());
         }
@@ -6012,18 +8112,256 @@ public final class Fi {
         return this;
       }
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
       private com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter filter_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder> filterBuilder_;
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        * @return Whether the filter field is set.
        */
       public boolean hasFilter() {
         return filterBuilder_ != null || filter_ != null;
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        * @return The filter.
        */
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter getFilter() {
@@ -6034,7 +8372,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder setFilter(com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter value) {
         if (filterBuilder_ == null) {
@@ -6050,7 +8388,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder setFilter(
           com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder builderForValue) {
@@ -6064,7 +8402,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder mergeFilter(com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter value) {
         if (filterBuilder_ == null) {
@@ -6082,7 +8420,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder clearFilter() {
         if (filterBuilder_ == null) {
@@ -6096,7 +8434,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder getFilterBuilder() {
         
@@ -6104,7 +8442,7 @@ public final class Fi {
         return getFilterFieldBuilder().getBuilder();
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder getFilterOrBuilder() {
         if (filterBuilder_ != null) {
@@ -6115,7 +8453,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 1;</code>
+       * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder> 
@@ -6188,25 +8526,70 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
         getResultsList();
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     com.blcvn.switching.offchain.Common.Transfer getResults(int index);
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     int getResultsCount();
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getResultsOrBuilderList();
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getResultsOrBuilder(
         int index);
@@ -6259,6 +8642,45 @@ public final class Fi {
               done = true;
               break;
             case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 results_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Transfer>();
                 mutable_bitField0_ |= 0x00000001;
@@ -6302,17 +8724,95 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.SearchTransfersResponse.class, com.blcvn.switching.offchain.Fi.SearchTransfersResponse.Builder.class);
     }
 
-    public static final int RESULTS_FIELD_NUMBER = 1;
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int RESULTS_FIELD_NUMBER = 4;
     private java.util.List<com.blcvn.switching.offchain.Common.Transfer> results_;
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
     public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getResultsList() {
       return results_;
     }
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
@@ -6320,21 +8820,21 @@ public final class Fi {
       return results_;
     }
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
     public int getResultsCount() {
       return results_.size();
     }
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
     public com.blcvn.switching.offchain.Common.Transfer getResults(int index) {
       return results_.get(index);
     }
     /**
-     * <code>repeated .offchain.v1.Transfer results = 1;</code>
+     * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
     public com.blcvn.switching.offchain.Common.TransferOrBuilder getResultsOrBuilder(
@@ -6356,8 +8856,17 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
       for (int i = 0; i < results_.size(); i++) {
-        output.writeMessage(1, results_.get(i));
+        output.writeMessage(4, results_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -6368,9 +8877,21 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
       for (int i = 0; i < results_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, results_.get(i));
+          .computeMessageSize(4, results_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6387,6 +8908,21 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.SearchTransfersResponse other = (com.blcvn.switching.offchain.Fi.SearchTransfersResponse) obj;
 
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
       if (!getResultsList()
           .equals(other.getResultsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -6400,6 +8936,18 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
       if (getResultsCount() > 0) {
         hash = (37 * hash) + RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getResultsList().hashCode();
@@ -6538,6 +9086,24 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -6571,6 +9137,21 @@ public final class Fi {
       public com.blcvn.switching.offchain.Fi.SearchTransfersResponse buildPartial() {
         com.blcvn.switching.offchain.Fi.SearchTransfersResponse result = new com.blcvn.switching.offchain.Fi.SearchTransfersResponse(this);
         int from_bitField0_ = bitField0_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
         if (resultsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             results_ = java.util.Collections.unmodifiableList(results_);
@@ -6628,6 +9209,15 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.SearchTransfersResponse other) {
         if (other == com.blcvn.switching.offchain.Fi.SearchTransfersResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
         if (resultsBuilder_ == null) {
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
@@ -6684,6 +9274,363 @@ public final class Fi {
       }
       private int bitField0_;
 
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
       private java.util.List<com.blcvn.switching.offchain.Common.Transfer> results_ =
         java.util.Collections.emptyList();
       private void ensureResultsIsMutable() {
@@ -6697,7 +9644,7 @@ public final class Fi {
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> resultsBuilder_;
 
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getResultsList() {
         if (resultsBuilder_ == null) {
@@ -6707,7 +9654,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public int getResultsCount() {
         if (resultsBuilder_ == null) {
@@ -6717,7 +9664,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer getResults(int index) {
         if (resultsBuilder_ == null) {
@@ -6727,7 +9674,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder setResults(
           int index, com.blcvn.switching.offchain.Common.Transfer value) {
@@ -6744,7 +9691,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder setResults(
           int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
@@ -6758,7 +9705,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(com.blcvn.switching.offchain.Common.Transfer value) {
         if (resultsBuilder_ == null) {
@@ -6774,7 +9721,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
           int index, com.blcvn.switching.offchain.Common.Transfer value) {
@@ -6791,7 +9738,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
           com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
@@ -6805,7 +9752,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
           int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
@@ -6819,7 +9766,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addAllResults(
           java.lang.Iterable<? extends com.blcvn.switching.offchain.Common.Transfer> values) {
@@ -6834,7 +9781,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder clearResults() {
         if (resultsBuilder_ == null) {
@@ -6847,7 +9794,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder removeResults(int index) {
         if (resultsBuilder_ == null) {
@@ -6860,14 +9807,14 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getResultsBuilder(
           int index) {
         return getResultsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getResultsOrBuilder(
           int index) {
@@ -6877,7 +9824,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
            getResultsOrBuilderList() {
@@ -6888,14 +9835,14 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addResultsBuilder() {
         return getResultsFieldBuilder().addBuilder(
             com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addResultsBuilder(
           int index) {
@@ -6903,7 +9850,7 @@ public final class Fi {
             index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.Transfer results = 1;</code>
+       * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
            getResultsBuilderList() {
@@ -6981,39 +9928,57 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getBatchId();
+    boolean hasMetadata();
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The bytes for batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getBatchIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> 
+    boolean hasSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
+     */
+    java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
         getTransfersList();
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
-    com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getTransfers(int index);
+    com.blcvn.switching.offchain.Common.Transfer getTransfers(int index);
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     int getTransfersCount();
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
-    java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder> 
+    java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getTransfersOrBuilderList();
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
-    com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder getTransfersOrBuilder(
+    com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index);
   }
   /**
@@ -7029,7 +9994,6 @@ public final class Fi {
       super(builder);
     }
     private BulkTransferRequest() {
-      batchId_ = "";
       transfers_ = java.util.Collections.emptyList();
     }
 
@@ -7065,18 +10029,38 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              batchId_ = s;
               break;
             }
             case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item>();
+                transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Transfer>();
                 mutable_bitField0_ |= 0x00000001;
               }
               transfers_.add(
-                  input.readMessage(com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.parser(), extensionRegistry));
+                  input.readMessage(com.blcvn.switching.offchain.Common.Transfer.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -7114,870 +10098,94 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.BulkTransferRequest.class, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Builder.class);
     }
 
-    public interface ItemOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:offchain.v1.BulkTransferRequest.Item)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
-       */
-      java.lang.String getInstructionId();
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
-       */
-      com.google.protobuf.ByteString
-          getInstructionIdBytes();
-
-      /**
-       * <code>double amount = 2;</code>
-       * @return The amount.
-       */
-      double getAmount();
-
-      /**
-       * <code>string currency = 3;</code>
-       * @return The currency.
-       */
-      java.lang.String getCurrency();
-      /**
-       * <code>string currency = 3;</code>
-       * @return The bytes for currency.
-       */
-      com.google.protobuf.ByteString
-          getCurrencyBytes();
-    }
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * Protobuf type {@code offchain.v1.BulkTransferRequest.Item}
-     */
-    public static final class Item extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:offchain.v1.BulkTransferRequest.Item)
-        ItemOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use Item.newBuilder() to construct.
-      private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private Item() {
-        instructionId_ = "";
-        currency_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new Item();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private Item(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                instructionId_ = s;
-                break;
-              }
-              case 17: {
-
-                amount_ = input.readDouble();
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                currency_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferRequest_Item_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferRequest_Item_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.class, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder.class);
-      }
-
-      public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object instructionId_;
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
-       */
-      @java.lang.Override
-      public java.lang.String getInstructionId() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instructionId_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getInstructionIdBytes() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          instructionId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int AMOUNT_FIELD_NUMBER = 2;
-      private double amount_;
-      /**
-       * <code>double amount = 2;</code>
-       * @return The amount.
-       */
-      @java.lang.Override
-      public double getAmount() {
-        return amount_;
-      }
-
-      public static final int CURRENCY_FIELD_NUMBER = 3;
-      private volatile java.lang.Object currency_;
-      /**
-       * <code>string currency = 3;</code>
-       * @return The currency.
-       */
-      @java.lang.Override
-      public java.lang.String getCurrency() {
-        java.lang.Object ref = currency_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          currency_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string currency = 3;</code>
-       * @return The bytes for currency.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getCurrencyBytes() {
-        java.lang.Object ref = currency_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          currency_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getInstructionIdBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
-        }
-        if (amount_ != 0D) {
-          output.writeDouble(2, amount_);
-        }
-        if (!getCurrencyBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currency_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getInstructionIdBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
-        }
-        if (amount_ != 0D) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, amount_);
-        }
-        if (!getCurrencyBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currency_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item)) {
-          return super.equals(obj);
-        }
-        com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item other = (com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item) obj;
-
-        if (!getInstructionId()
-            .equals(other.getInstructionId())) return false;
-        if (java.lang.Double.doubleToLongBits(getAmount())
-            != java.lang.Double.doubleToLongBits(
-                other.getAmount())) return false;
-        if (!getCurrency()
-            .equals(other.getCurrency())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getInstructionId().hashCode();
-        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAmount()));
-        hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-        hash = (53 * hash) + getCurrency().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code offchain.v1.BulkTransferRequest.Item}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:offchain.v1.BulkTransferRequest.Item)
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferRequest_Item_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferRequest_Item_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.class, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder.class);
-        }
-
-        // Construct using com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          instructionId_ = "";
-
-          amount_ = 0D;
-
-          currency_ = "";
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferRequest_Item_descriptor;
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getDefaultInstanceForType() {
-          return com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item build() {
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item buildPartial() {
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item result = new com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item(this);
-          result.instructionId_ = instructionId_;
-          result.amount_ = amount_;
-          result.currency_ = currency_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item) {
-            return mergeFrom((com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item other) {
-          if (other == com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.getDefaultInstance()) return this;
-          if (!other.getInstructionId().isEmpty()) {
-            instructionId_ = other.instructionId_;
-            onChanged();
-          }
-          if (other.getAmount() != 0D) {
-            setAmount(other.getAmount());
-          }
-          if (!other.getCurrency().isEmpty()) {
-            currency_ = other.currency_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object instructionId_ = "";
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return The instructionId.
-         */
-        public java.lang.String getInstructionId() {
-          java.lang.Object ref = instructionId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            instructionId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return The bytes for instructionId.
-         */
-        public com.google.protobuf.ByteString
-            getInstructionIdBytes() {
-          java.lang.Object ref = instructionId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            instructionId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @param value The instructionId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setInstructionId(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          instructionId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearInstructionId() {
-          
-          instructionId_ = getDefaultInstance().getInstructionId();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @param value The bytes for instructionId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setInstructionIdBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          instructionId_ = value;
-          onChanged();
-          return this;
-        }
-
-        private double amount_ ;
-        /**
-         * <code>double amount = 2;</code>
-         * @return The amount.
-         */
-        @java.lang.Override
-        public double getAmount() {
-          return amount_;
-        }
-        /**
-         * <code>double amount = 2;</code>
-         * @param value The amount to set.
-         * @return This builder for chaining.
-         */
-        public Builder setAmount(double value) {
-          
-          amount_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>double amount = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearAmount() {
-          
-          amount_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object currency_ = "";
-        /**
-         * <code>string currency = 3;</code>
-         * @return The currency.
-         */
-        public java.lang.String getCurrency() {
-          java.lang.Object ref = currency_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            currency_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string currency = 3;</code>
-         * @return The bytes for currency.
-         */
-        public com.google.protobuf.ByteString
-            getCurrencyBytes() {
-          java.lang.Object ref = currency_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            currency_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string currency = 3;</code>
-         * @param value The currency to set.
-         * @return This builder for chaining.
-         */
-        public Builder setCurrency(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          currency_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string currency = 3;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearCurrency() {
-          
-          currency_ = getDefaultInstance().getCurrency();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string currency = 3;</code>
-         * @param value The bytes for currency to set.
-         * @return This builder for chaining.
-         */
-        public Builder setCurrencyBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          currency_ = value;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:offchain.v1.BulkTransferRequest.Item)
-      }
-
-      // @@protoc_insertion_point(class_scope:offchain.v1.BulkTransferRequest.Item)
-      private static final com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item();
-      }
-
-      public static com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<Item>
-          PARSER = new com.google.protobuf.AbstractParser<Item>() {
-        @java.lang.Override
-        public Item parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Item(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Item> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Item> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int BATCH_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object batchId_;
-    /**
-     * <code>string batch_id = 1;</code>
-     * @return The batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getBatchId() {
-      java.lang.Object ref = batchId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        batchId_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The bytes for batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBatchIdBytes() {
-      java.lang.Object ref = batchId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        batchId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int TRANSFERS_FIELD_NUMBER = 2;
-    private java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> transfers_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> getTransfersList() {
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int TRANSFERS_FIELD_NUMBER = 3;
+    private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_;
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
       return transfers_;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder> 
+    public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getTransfersOrBuilderList() {
       return transfers_;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
     public int getTransfersCount() {
       return transfers_.size();
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
-    public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getTransfers(int index) {
+    public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
       return transfers_.get(index);
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+     * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
-    public com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder getTransfersOrBuilder(
+    public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index) {
       return transfers_.get(index);
     }
@@ -7996,11 +10204,14 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBatchIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, batchId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
       }
       for (int i = 0; i < transfers_.size(); i++) {
-        output.writeMessage(2, transfers_.get(i));
+        output.writeMessage(3, transfers_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -8011,12 +10222,17 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBatchIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, batchId_);
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
       }
       for (int i = 0; i < transfers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, transfers_.get(i));
+          .computeMessageSize(3, transfers_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8033,8 +10249,16 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.BulkTransferRequest other = (com.blcvn.switching.offchain.Fi.BulkTransferRequest) obj;
 
-      if (!getBatchId()
-          .equals(other.getBatchId())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
       if (!getTransfersList()
           .equals(other.getTransfersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8048,8 +10272,14 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BATCH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBatchId().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
       if (getTransfersCount() > 0) {
         hash = (37 * hash) + TRANSFERS_FIELD_NUMBER;
         hash = (53 * hash) + getTransfersList().hashCode();
@@ -8188,8 +10418,18 @@ public final class Fi {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        batchId_ = "";
-
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
         if (transfersBuilder_ == null) {
           transfers_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -8223,7 +10463,16 @@ public final class Fi {
       public com.blcvn.switching.offchain.Fi.BulkTransferRequest buildPartial() {
         com.blcvn.switching.offchain.Fi.BulkTransferRequest result = new com.blcvn.switching.offchain.Fi.BulkTransferRequest(this);
         int from_bitField0_ = bitField0_;
-        result.batchId_ = batchId_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
         if (transfersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             transfers_ = java.util.Collections.unmodifiableList(transfers_);
@@ -8281,9 +10530,11 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.BulkTransferRequest other) {
         if (other == com.blcvn.switching.offchain.Fi.BulkTransferRequest.getDefaultInstance()) return this;
-        if (!other.getBatchId().isEmpty()) {
-          batchId_ = other.batchId_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
         }
         if (transfersBuilder_ == null) {
           if (!other.transfers_.isEmpty()) {
@@ -8341,98 +10592,260 @@ public final class Fi {
       }
       private int bitField0_;
 
-      private java.lang.Object batchId_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string batch_id = 1;</code>
-       * @return The batchId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getBatchId() {
-        java.lang.Object ref = batchId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          batchId_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string batch_id = 1;</code>
-       * @return The bytes for batchId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getBatchIdBytes() {
-        java.lang.Object ref = batchId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          batchId_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string batch_id = 1;</code>
-       * @param value The batchId to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setBatchId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        batchId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string batch_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBatchId() {
-        
-        batchId_ = getDefaultInstance().getBatchId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string batch_id = 1;</code>
-       * @param value The bytes for batchId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBatchIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        batchId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> transfers_ =
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_ =
         java.util.Collections.emptyList();
       private void ensureTransfersIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item>(transfers_);
+          transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Transfer>(transfers_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder, com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder> transfersBuilder_;
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> transfersBuilder_;
 
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> getTransfersList() {
+      public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
         if (transfersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(transfers_);
         } else {
@@ -8440,7 +10853,7 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public int getTransfersCount() {
         if (transfersBuilder_ == null) {
@@ -8450,9 +10863,9 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item getTransfers(int index) {
+      public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
         if (transfersBuilder_ == null) {
           return transfers_.get(index);
         } else {
@@ -8460,10 +10873,10 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder setTransfers(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item value) {
+          int index, com.blcvn.switching.offchain.Common.Transfer value) {
         if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8477,10 +10890,10 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder setTransfers(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder builderForValue) {
+          int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
         if (transfersBuilder_ == null) {
           ensureTransfersIsMutable();
           transfers_.set(index, builderForValue.build());
@@ -8491,9 +10904,9 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public Builder addTransfers(com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item value) {
+      public Builder addTransfers(com.blcvn.switching.offchain.Common.Transfer value) {
         if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8507,10 +10920,10 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item value) {
+          int index, com.blcvn.switching.offchain.Common.Transfer value) {
         if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8524,10 +10937,10 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder builderForValue) {
+          com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
         if (transfersBuilder_ == null) {
           ensureTransfersIsMutable();
           transfers_.add(builderForValue.build());
@@ -8538,10 +10951,10 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder builderForValue) {
+          int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
         if (transfersBuilder_ == null) {
           ensureTransfersIsMutable();
           transfers_.add(index, builderForValue.build());
@@ -8552,10 +10965,10 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addAllTransfers(
-          java.lang.Iterable<? extends com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item> values) {
+          java.lang.Iterable<? extends com.blcvn.switching.offchain.Common.Transfer> values) {
         if (transfersBuilder_ == null) {
           ensureTransfersIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -8567,7 +10980,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder clearTransfers() {
         if (transfersBuilder_ == null) {
@@ -8580,7 +10993,7 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder removeTransfers(int index) {
         if (transfersBuilder_ == null) {
@@ -8593,16 +11006,16 @@ public final class Fi {
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder getTransfersBuilder(
+      public com.blcvn.switching.offchain.Common.Transfer.Builder getTransfersBuilder(
           int index) {
         return getTransfersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder getTransfersOrBuilder(
+      public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
           int index) {
         if (transfersBuilder_ == null) {
           return transfers_.get(index);  } else {
@@ -8610,9 +11023,9 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder> 
+      public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
            getTransfersOrBuilderList() {
         if (transfersBuilder_ != null) {
           return transfersBuilder_.getMessageOrBuilderList();
@@ -8621,33 +11034,33 @@ public final class Fi {
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder addTransfersBuilder() {
+      public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder() {
         return getTransfersFieldBuilder().addBuilder(
-            com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.getDefaultInstance());
+            com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder addTransfersBuilder(
+      public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder(
           int index) {
         return getTransfersFieldBuilder().addBuilder(
-            index, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.getDefaultInstance());
+            index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferRequest.Item transfers = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
-      public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder> 
+      public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
            getTransfersBuilderList() {
         return getTransfersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder, com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder> 
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> 
           getTransfersFieldBuilder() {
         if (transfersBuilder_ == null) {
           transfersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item, com.blcvn.switching.offchain.Fi.BulkTransferRequest.Item.Builder, com.blcvn.switching.offchain.Fi.BulkTransferRequest.ItemOrBuilder>(
+              com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder>(
                   transfers_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -8714,39 +11127,72 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
-    java.lang.String getBatchId();
+    boolean hasMetadata();
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The bytes for batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
-    com.google.protobuf.ByteString
-        getBatchIdBytes();
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
-    java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> 
-        getCreatedList();
+    boolean hasSignature();
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
-    com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getCreated(int index);
+    com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
      */
-    int getCreatedCount();
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
      */
-    java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder> 
-        getCreatedOrBuilderList();
+    boolean hasResult();
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
      */
-    com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder getCreatedOrBuilder(
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
+        getTransfersList();
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.Transfer getTransfers(int index);
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    int getTransfersCount();
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+        getTransfersOrBuilderList();
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index);
   }
   /**
@@ -8762,8 +11208,7 @@ public final class Fi {
       super(builder);
     }
     private BulkTransferResponse() {
-      batchId_ = "";
-      created_ = java.util.Collections.emptyList();
+      transfers_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -8798,18 +11243,51 @@ public final class Fi {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-              batchId_ = s;
               break;
             }
             case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                created_ = new java.util.ArrayList<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem>();
+                transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Transfer>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              created_.add(
-                  input.readMessage(com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.parser(), extensionRegistry));
+              transfers_.add(
+                  input.readMessage(com.blcvn.switching.offchain.Common.Transfer.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -8828,7 +11306,7 @@ public final class Fi {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          created_ = java.util.Collections.unmodifiableList(created_);
+          transfers_ = java.util.Collections.unmodifiableList(transfers_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -8847,800 +11325,122 @@ public final class Fi {
               com.blcvn.switching.offchain.Fi.BulkTransferResponse.class, com.blcvn.switching.offchain.Fi.BulkTransferResponse.Builder.class);
     }
 
-    public interface CreatedItemOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:offchain.v1.BulkTransferResponse.CreatedItem)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
-       */
-      java.lang.String getInstructionId();
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
-       */
-      com.google.protobuf.ByteString
-          getInstructionIdBytes();
-
-      /**
-       * <code>string status = 2;</code>
-       * @return The status.
-       */
-      java.lang.String getStatus();
-      /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
-       */
-      com.google.protobuf.ByteString
-          getStatusBytes();
-    }
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
-     * Protobuf type {@code offchain.v1.BulkTransferResponse.CreatedItem}
-     */
-    public static final class CreatedItem extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:offchain.v1.BulkTransferResponse.CreatedItem)
-        CreatedItemOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use CreatedItem.newBuilder() to construct.
-      private CreatedItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private CreatedItem() {
-        instructionId_ = "";
-        status_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new CreatedItem();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private CreatedItem(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                instructionId_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                status_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferResponse_CreatedItem_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.class, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder.class);
-      }
-
-      public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
-      private volatile java.lang.Object instructionId_;
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The instructionId.
-       */
-      @java.lang.Override
-      public java.lang.String getInstructionId() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          instructionId_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string instruction_id = 1;</code>
-       * @return The bytes for instructionId.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getInstructionIdBytes() {
-        java.lang.Object ref = instructionId_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          instructionId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int STATUS_FIELD_NUMBER = 2;
-      private volatile java.lang.Object status_;
-      /**
-       * <code>string status = 2;</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getInstructionIdBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instructionId_);
-        }
-        if (!getStatusBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getInstructionIdBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instructionId_);
-        }
-        if (!getStatusBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem)) {
-          return super.equals(obj);
-        }
-        com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem other = (com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem) obj;
-
-        if (!getInstructionId()
-            .equals(other.getInstructionId())) return false;
-        if (!getStatus()
-            .equals(other.getStatus())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + INSTRUCTION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getInstructionId().hashCode();
-        hash = (37 * hash) + STATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getStatus().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code offchain.v1.BulkTransferResponse.CreatedItem}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:offchain.v1.BulkTransferResponse.CreatedItem)
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferResponse_CreatedItem_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.class, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder.class);
-        }
-
-        // Construct using com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          instructionId_ = "";
-
-          status_ = "";
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.blcvn.switching.offchain.Fi.internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor;
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getDefaultInstanceForType() {
-          return com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem build() {
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem buildPartial() {
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem result = new com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem(this);
-          result.instructionId_ = instructionId_;
-          result.status_ = status_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem) {
-            return mergeFrom((com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem other) {
-          if (other == com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.getDefaultInstance()) return this;
-          if (!other.getInstructionId().isEmpty()) {
-            instructionId_ = other.instructionId_;
-            onChanged();
-          }
-          if (!other.getStatus().isEmpty()) {
-            status_ = other.status_;
-            onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object instructionId_ = "";
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return The instructionId.
-         */
-        public java.lang.String getInstructionId() {
-          java.lang.Object ref = instructionId_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            instructionId_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return The bytes for instructionId.
-         */
-        public com.google.protobuf.ByteString
-            getInstructionIdBytes() {
-          java.lang.Object ref = instructionId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            instructionId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @param value The instructionId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setInstructionId(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          instructionId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearInstructionId() {
-          
-          instructionId_ = getDefaultInstance().getInstructionId();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string instruction_id = 1;</code>
-         * @param value The bytes for instructionId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setInstructionIdBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          instructionId_ = value;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object status_ = "";
-        /**
-         * <code>string status = 2;</code>
-         * @return The status.
-         */
-        public java.lang.String getStatus() {
-          java.lang.Object ref = status_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            status_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string status = 2;</code>
-         * @return The bytes for status.
-         */
-        public com.google.protobuf.ByteString
-            getStatusBytes() {
-          java.lang.Object ref = status_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            status_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string status = 2;</code>
-         * @param value The status to set.
-         * @return This builder for chaining.
-         */
-        public Builder setStatus(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          status_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string status = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearStatus() {
-          
-          status_ = getDefaultInstance().getStatus();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string status = 2;</code>
-         * @param value The bytes for status to set.
-         * @return This builder for chaining.
-         */
-        public Builder setStatusBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          status_ = value;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:offchain.v1.BulkTransferResponse.CreatedItem)
-      }
-
-      // @@protoc_insertion_point(class_scope:offchain.v1.BulkTransferResponse.CreatedItem)
-      private static final com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem();
-      }
-
-      public static com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<CreatedItem>
-          PARSER = new com.google.protobuf.AbstractParser<CreatedItem>() {
-        @java.lang.Override
-        public CreatedItem parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreatedItem(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<CreatedItem> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<CreatedItem> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int BATCH_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object batchId_;
-    /**
-     * <code>string batch_id = 1;</code>
-     * @return The batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
      */
     @java.lang.Override
-    public java.lang.String getBatchId() {
-      java.lang.Object ref = batchId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        batchId_ = s;
-        return s;
-      }
+    public boolean hasMetadata() {
+      return metadata_ != null;
     }
     /**
-     * <code>string batch_id = 1;</code>
-     * @return The bytes for batchId.
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBatchIdBytes() {
-      java.lang.Object ref = batchId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        batchId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
     }
 
-    public static final int CREATED_FIELD_NUMBER = 2;
-    private java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> created_;
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
      */
     @java.lang.Override
-    public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> getCreatedList() {
-      return created_;
+    public boolean hasSignature() {
+      return signature_ != null;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
      */
     @java.lang.Override
-    public java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder> 
-        getCreatedOrBuilderList() {
-      return created_;
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
-    public int getCreatedCount() {
-      return created_.size();
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
      */
     @java.lang.Override
-    public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getCreated(int index) {
-      return created_.get(index);
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
-     * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+     * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
-    public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder getCreatedOrBuilder(
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int TRANSFERS_FIELD_NUMBER = 4;
+    private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_;
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
+      return transfers_;
+    }
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+        getTransfersOrBuilderList() {
+      return transfers_;
+    }
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    @java.lang.Override
+    public int getTransfersCount() {
+      return transfers_.size();
+    }
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
+      return transfers_.get(index);
+    }
+    /**
+     * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index) {
-      return created_.get(index);
+      return transfers_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9657,11 +11457,17 @@ public final class Fi {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getBatchIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, batchId_);
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
       }
-      for (int i = 0; i < created_.size(); i++) {
-        output.writeMessage(2, created_.get(i));
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      for (int i = 0; i < transfers_.size(); i++) {
+        output.writeMessage(4, transfers_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -9672,12 +11478,21 @@ public final class Fi {
       if (size != -1) return size;
 
       size = 0;
-      if (!getBatchIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, batchId_);
-      }
-      for (int i = 0; i < created_.size(); i++) {
+      if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, created_.get(i));
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      for (int i = 0; i < transfers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, transfers_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9694,10 +11509,23 @@ public final class Fi {
       }
       com.blcvn.switching.offchain.Fi.BulkTransferResponse other = (com.blcvn.switching.offchain.Fi.BulkTransferResponse) obj;
 
-      if (!getBatchId()
-          .equals(other.getBatchId())) return false;
-      if (!getCreatedList()
-          .equals(other.getCreatedList())) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!getTransfersList()
+          .equals(other.getTransfersList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9709,11 +11537,21 @@ public final class Fi {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BATCH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBatchId().hashCode();
-      if (getCreatedCount() > 0) {
-        hash = (37 * hash) + CREATED_FIELD_NUMBER;
-        hash = (53 * hash) + getCreatedList().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (getTransfersCount() > 0) {
+        hash = (37 * hash) + TRANSFERS_FIELD_NUMBER;
+        hash = (53 * hash) + getTransfersList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -9843,19 +11681,35 @@ public final class Fi {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCreatedFieldBuilder();
+          getTransfersFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        batchId_ = "";
-
-        if (createdBuilder_ == null) {
-          created_ = java.util.Collections.emptyList();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (transfersBuilder_ == null) {
+          transfers_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          createdBuilder_.clear();
+          transfersBuilder_.clear();
         }
         return this;
       }
@@ -9884,15 +11738,29 @@ public final class Fi {
       public com.blcvn.switching.offchain.Fi.BulkTransferResponse buildPartial() {
         com.blcvn.switching.offchain.Fi.BulkTransferResponse result = new com.blcvn.switching.offchain.Fi.BulkTransferResponse(this);
         int from_bitField0_ = bitField0_;
-        result.batchId_ = batchId_;
-        if (createdBuilder_ == null) {
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (transfersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            created_ = java.util.Collections.unmodifiableList(created_);
+            transfers_ = java.util.Collections.unmodifiableList(transfers_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.created_ = created_;
+          result.transfers_ = transfers_;
         } else {
-          result.created_ = createdBuilder_.build();
+          result.transfers_ = transfersBuilder_.build();
         }
         onBuilt();
         return result;
@@ -9942,33 +11810,38 @@ public final class Fi {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Fi.BulkTransferResponse other) {
         if (other == com.blcvn.switching.offchain.Fi.BulkTransferResponse.getDefaultInstance()) return this;
-        if (!other.getBatchId().isEmpty()) {
-          batchId_ = other.batchId_;
-          onChanged();
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
         }
-        if (createdBuilder_ == null) {
-          if (!other.created_.isEmpty()) {
-            if (created_.isEmpty()) {
-              created_ = other.created_;
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (transfersBuilder_ == null) {
+          if (!other.transfers_.isEmpty()) {
+            if (transfers_.isEmpty()) {
+              transfers_ = other.transfers_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureCreatedIsMutable();
-              created_.addAll(other.created_);
+              ensureTransfersIsMutable();
+              transfers_.addAll(other.transfers_);
             }
             onChanged();
           }
         } else {
-          if (!other.created_.isEmpty()) {
-            if (createdBuilder_.isEmpty()) {
-              createdBuilder_.dispose();
-              createdBuilder_ = null;
-              created_ = other.created_;
+          if (!other.transfers_.isEmpty()) {
+            if (transfersBuilder_.isEmpty()) {
+              transfersBuilder_.dispose();
+              transfersBuilder_ = null;
+              transfers_ = other.transfers_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              createdBuilder_ = 
+              transfersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCreatedFieldBuilder() : null;
+                   getTransfersFieldBuilder() : null;
             } else {
-              createdBuilder_.addAllMessages(other.created_);
+              transfersBuilder_.addAllMessages(other.transfers_);
             }
           }
         }
@@ -10002,320 +11875,601 @@ public final class Fi {
       }
       private int bitField0_;
 
-      private java.lang.Object batchId_ = "";
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>string batch_id = 1;</code>
-       * @return The batchId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
        */
-      public java.lang.String getBatchId() {
-        java.lang.Object ref = batchId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          batchId_ = s;
-          return s;
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         } else {
-          return (java.lang.String) ref;
+          return metadataBuilder_.getMessage();
         }
       }
       /**
-       * <code>string batch_id = 1;</code>
-       * @return The bytes for batchId.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getBatchIdBytes() {
-        java.lang.Object ref = batchId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          batchId_ = b;
-          return b;
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
         }
       }
       /**
-       * <code>string batch_id = 1;</code>
-       * @param value The batchId to set.
-       * @return This builder for chaining.
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
-      public Builder setBatchId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        batchId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string batch_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBatchId() {
-        
-        batchId_ = getDefaultInstance().getBatchId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string batch_id = 1;</code>
-       * @param value The bytes for batchId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBatchIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        batchId_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
       }
 
-      private java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> created_ =
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_ =
         java.util.Collections.emptyList();
-      private void ensureCreatedIsMutable() {
+      private void ensureTransfersIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          created_ = new java.util.ArrayList<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem>(created_);
+          transfers_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Transfer>(transfers_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder> createdBuilder_;
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> transfersBuilder_;
 
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> getCreatedList() {
-        if (createdBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(created_);
+      public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
+        if (transfersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(transfers_);
         } else {
-          return createdBuilder_.getMessageList();
+          return transfersBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public int getCreatedCount() {
-        if (createdBuilder_ == null) {
-          return created_.size();
+      public int getTransfersCount() {
+        if (transfersBuilder_ == null) {
+          return transfers_.size();
         } else {
-          return createdBuilder_.getCount();
+          return transfersBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem getCreated(int index) {
-        if (createdBuilder_ == null) {
-          return created_.get(index);
+      public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
+        if (transfersBuilder_ == null) {
+          return transfers_.get(index);
         } else {
-          return createdBuilder_.getMessage(index);
+          return transfersBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder setCreated(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem value) {
-        if (createdBuilder_ == null) {
+      public Builder setTransfers(
+          int index, com.blcvn.switching.offchain.Common.Transfer value) {
+        if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCreatedIsMutable();
-          created_.set(index, value);
+          ensureTransfersIsMutable();
+          transfers_.set(index, value);
           onChanged();
         } else {
-          createdBuilder_.setMessage(index, value);
+          transfersBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder setCreated(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder builderForValue) {
-        if (createdBuilder_ == null) {
-          ensureCreatedIsMutable();
-          created_.set(index, builderForValue.build());
+      public Builder setTransfers(
+          int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (transfersBuilder_ == null) {
+          ensureTransfersIsMutable();
+          transfers_.set(index, builderForValue.build());
           onChanged();
         } else {
-          createdBuilder_.setMessage(index, builderForValue.build());
+          transfersBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder addCreated(com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem value) {
-        if (createdBuilder_ == null) {
+      public Builder addTransfers(com.blcvn.switching.offchain.Common.Transfer value) {
+        if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCreatedIsMutable();
-          created_.add(value);
+          ensureTransfersIsMutable();
+          transfers_.add(value);
           onChanged();
         } else {
-          createdBuilder_.addMessage(value);
+          transfersBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder addCreated(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem value) {
-        if (createdBuilder_ == null) {
+      public Builder addTransfers(
+          int index, com.blcvn.switching.offchain.Common.Transfer value) {
+        if (transfersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCreatedIsMutable();
-          created_.add(index, value);
+          ensureTransfersIsMutable();
+          transfers_.add(index, value);
           onChanged();
         } else {
-          createdBuilder_.addMessage(index, value);
+          transfersBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder addCreated(
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder builderForValue) {
-        if (createdBuilder_ == null) {
-          ensureCreatedIsMutable();
-          created_.add(builderForValue.build());
+      public Builder addTransfers(
+          com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (transfersBuilder_ == null) {
+          ensureTransfersIsMutable();
+          transfers_.add(builderForValue.build());
           onChanged();
         } else {
-          createdBuilder_.addMessage(builderForValue.build());
+          transfersBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder addCreated(
-          int index, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder builderForValue) {
-        if (createdBuilder_ == null) {
-          ensureCreatedIsMutable();
-          created_.add(index, builderForValue.build());
+      public Builder addTransfers(
+          int index, com.blcvn.switching.offchain.Common.Transfer.Builder builderForValue) {
+        if (transfersBuilder_ == null) {
+          ensureTransfersIsMutable();
+          transfers_.add(index, builderForValue.build());
           onChanged();
         } else {
-          createdBuilder_.addMessage(index, builderForValue.build());
+          transfersBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder addAllCreated(
-          java.lang.Iterable<? extends com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem> values) {
-        if (createdBuilder_ == null) {
-          ensureCreatedIsMutable();
+      public Builder addAllTransfers(
+          java.lang.Iterable<? extends com.blcvn.switching.offchain.Common.Transfer> values) {
+        if (transfersBuilder_ == null) {
+          ensureTransfersIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, created_);
+              values, transfers_);
           onChanged();
         } else {
-          createdBuilder_.addAllMessages(values);
+          transfersBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder clearCreated() {
-        if (createdBuilder_ == null) {
-          created_ = java.util.Collections.emptyList();
+      public Builder clearTransfers() {
+        if (transfersBuilder_ == null) {
+          transfers_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          createdBuilder_.clear();
+          transfersBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public Builder removeCreated(int index) {
-        if (createdBuilder_ == null) {
-          ensureCreatedIsMutable();
-          created_.remove(index);
+      public Builder removeTransfers(int index) {
+        if (transfersBuilder_ == null) {
+          ensureTransfersIsMutable();
+          transfers_.remove(index);
           onChanged();
         } else {
-          createdBuilder_.remove(index);
+          transfersBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder getCreatedBuilder(
+      public com.blcvn.switching.offchain.Common.Transfer.Builder getTransfersBuilder(
           int index) {
-        return getCreatedFieldBuilder().getBuilder(index);
+        return getTransfersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder getCreatedOrBuilder(
+      public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
           int index) {
-        if (createdBuilder_ == null) {
-          return created_.get(index);  } else {
-          return createdBuilder_.getMessageOrBuilder(index);
+        if (transfersBuilder_ == null) {
+          return transfers_.get(index);  } else {
+          return transfersBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public java.util.List<? extends com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder> 
-           getCreatedOrBuilderList() {
-        if (createdBuilder_ != null) {
-          return createdBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+           getTransfersOrBuilderList() {
+        if (transfersBuilder_ != null) {
+          return transfersBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(created_);
+          return java.util.Collections.unmodifiableList(transfers_);
         }
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder addCreatedBuilder() {
-        return getCreatedFieldBuilder().addBuilder(
-            com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.getDefaultInstance());
+      public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder() {
+        return getTransfersFieldBuilder().addBuilder(
+            com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder addCreatedBuilder(
+      public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder(
           int index) {
-        return getCreatedFieldBuilder().addBuilder(
-            index, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.getDefaultInstance());
+        return getTransfersFieldBuilder().addBuilder(
+            index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
-       * <code>repeated .offchain.v1.BulkTransferResponse.CreatedItem created = 2;</code>
+       * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
-      public java.util.List<com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder> 
-           getCreatedBuilderList() {
-        return getCreatedFieldBuilder().getBuilderList();
+      public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
+           getTransfersBuilderList() {
+        return getTransfersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder> 
-          getCreatedFieldBuilder() {
-        if (createdBuilder_ == null) {
-          createdBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItem.Builder, com.blcvn.switching.offchain.Fi.BulkTransferResponse.CreatedItemOrBuilder>(
-                  created_,
+          com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> 
+          getTransfersFieldBuilder() {
+        if (transfersBuilder_ == null) {
+          transfersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder>(
+                  transfers_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          created_ = null;
+          transfers_ = null;
         }
-        return createdBuilder_;
+        return transfersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10421,20 +12575,10 @@ public final class Fi {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_offchain_v1_BulkTransferRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_offchain_v1_BulkTransferRequest_Item_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_offchain_v1_BulkTransferRequest_Item_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_BulkTransferResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_offchain_v1_BulkTransferResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_offchain_v1_BulkTransferResponse_CreatedItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10446,47 +12590,65 @@ public final class Fi {
     java.lang.String[] descriptorData = {
       "\n\021offchain/fi.proto\022\013offchain.v1\032\025offcha" +
       "in/common.proto\032\037google/protobuf/timesta" +
-      "mp.proto\"s\n\025CreateTransferRequest\022\026\n\016ins" +
-      "truction_id\030\001 \001(\t\022\016\n\006debtor\030\002 \001(\t\022\020\n\010cre" +
-      "ditor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010currency\030" +
-      "\005 \001(\t\"@\n\026CreateTransferResponse\022\026\n\016instr" +
-      "uction_id\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\",\n\022GetTr" +
-      "ansferRequest\022\026\n\016instruction_id\030\001 \001(\t\"8\n" +
-      "\016TransferStatus\022\026\n\016instruction_id\030\001 \001(\t\022" +
-      "\016\n\006status\030\002 \001(\t\"S\n\026ConfirmTransferReques" +
-      "t\022\026\n\016instruction_id\030\001 \001(\t\022\016\n\006status\030\002 \001(" +
-      "\t\022\021\n\ttimestamp\030\003 \001(\t\"A\n\027ConfirmTransferR" +
-      "esponse\022\026\n\016instruction_id\030\001 \001(\t\022\016\n\006statu" +
-      "s\030\002 \001(\t\"\224\001\n\026SearchTransfersRequest\022:\n\006fi" +
-      "lter\030\001 \001(\0132*.offchain.v1.SearchTransfers" +
-      "Request.Filter\032>\n\006Filter\022\020\n\010currency\030\001 \001" +
-      "(\t\022\021\n\tdate_from\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"A" +
-      "\n\027SearchTransfersResponse\022&\n\007results\030\001 \003" +
-      "(\0132\025.offchain.v1.Transfer\"\243\001\n\023BulkTransf" +
-      "erRequest\022\020\n\010batch_id\030\001 \001(\t\0228\n\ttransfers" +
-      "\030\002 \003(\0132%.offchain.v1.BulkTransferRequest" +
-      ".Item\032@\n\004Item\022\026\n\016instruction_id\030\001 \001(\t\022\016\n" +
-      "\006amount\030\002 \001(\001\022\020\n\010currency\030\003 \001(\t\"\237\001\n\024Bulk" +
-      "TransferResponse\022\020\n\010batch_id\030\001 \001(\t\022>\n\007cr" +
-      "eated\030\002 \003(\0132-.offchain.v1.BulkTransferRe" +
-      "sponse.CreatedItem\0325\n\013CreatedItem\022\026\n\016ins" +
-      "truction_id\030\001 \001(\t\022\016\n\006status\030\002 \001(\t2\235\004\n\tFi" +
-      "Service\022[\n\016CreateTransfer\022\".offchain.v1." +
-      "CreateTransferRequest\032#.offchain.v1.Crea" +
-      "teTransferResponse\"\000\022G\n\013GetTransfer\022\037.of" +
-      "fchain.v1.GetTransferRequest\032\025.offchain." +
-      "v1.Transfer\"\000\022S\n\021GetTransferStatus\022\037.off" +
-      "chain.v1.GetTransferRequest\032\033.offchain.v" +
-      "1.TransferStatus\"\000\022^\n\017ConfirmTransfer\022#." +
-      "offchain.v1.ConfirmTransferRequest\032$.off" +
-      "chain.v1.ConfirmTransferResponse\"\000\022^\n\017Se" +
-      "archTransfers\022#.offchain.v1.SearchTransf" +
-      "ersRequest\032$.offchain.v1.SearchTransfers" +
-      "Response\"\000\022U\n\014BulkTransfer\022 .offchain.v1" +
-      ".BulkTransferRequest\032!.offchain.v1.BulkT" +
-      "ransferResponse\"\000BU\n\034com.blcvn.switching" +
-      ".offchainZ5github.com/blcvn/switching-pr" +
-      "oto/go/offchain;offchainb\006proto3"
+      "mp.proto\"\220\001\n\025CreateTransferRequest\022\'\n\010me" +
+      "tadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\ts" +
+      "ignature\030\002 \001(\0132\026.offchain.v1.Signature\022#" +
+      "\n\004data\030\003 \001(\0132\025.offchain.v1.Transfer\"\266\001\n\026" +
+      "CreateTransferResponse\022\'\n\010metadata\030\001 \001(\013" +
+      "2\025.offchain.v1.Metadata\022)\n\tsignature\030\002 \001" +
+      "(\0132\026.offchain.v1.Signature\022#\n\006result\030\003 \001" +
+      "(\0132\023.offchain.v1.Result\022#\n\004data\030\004 \001(\0132\025." +
+      "offchain.v1.Transfer\"\200\001\n\022GetTransferRequ" +
+      "est\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Meta" +
+      "data\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Si" +
+      "gnature\022\026\n\016instruction_id\030\003 \001(\t\"\256\001\n\016Tran" +
+      "sferStatus\022\'\n\010metadata\030\001 \001(\0132\025.offchain." +
+      "v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.offchai" +
+      "n.v1.Signature\022#\n\006result\030\003 \001(\0132\023.offchai" +
+      "n.v1.Result\022#\n\004data\030\004 \001(\0132\025.offchain.v1." +
+      "Transfer\"\204\001\n\026ConfirmTransferRequest\022\'\n\010m" +
+      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
+      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
+      "\026\n\016instruction_id\030\003 \001(\t\"\252\001\n\027ConfirmTrans" +
+      "ferResponse\022\'\n\010metadata\030\001 \001(\0132\025.offchain" +
+      ".v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.offcha" +
+      "in.v1.Signature\022#\n\006result\030\003 \001(\0132\023.offcha" +
+      "in.v1.Result\022\026\n\016instruction_id\030\004 \001(\t\"\350\001\n" +
+      "\026SearchTransfersRequest\022\'\n\010metadata\030\001 \001(" +
+      "\0132\025.offchain.v1.Metadata\022)\n\tsignature\030\002 " +
+      "\001(\0132\026.offchain.v1.Signature\022:\n\006filter\030\003 " +
+      "\001(\0132*.offchain.v1.SearchTransfersRequest" +
+      ".Filter\032>\n\006Filter\022\020\n\010currency\030\001 \001(\t\022\021\n\td" +
+      "ate_from\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"\272\001\n\027Sear" +
+      "chTransfersResponse\022\'\n\010metadata\030\001 \001(\0132\025." +
+      "offchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132" +
+      "\026.offchain.v1.Signature\022#\n\006result\030\003 \001(\0132" +
+      "\023.offchain.v1.Result\022&\n\007results\030\004 \003(\0132\025." +
+      "offchain.v1.Transfer\"\223\001\n\023BulkTransferReq" +
+      "uest\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Met" +
+      "adata\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.S" +
+      "ignature\022(\n\ttransfers\030\003 \003(\0132\025.offchain.v" +
+      "1.Transfer\"\271\001\n\024BulkTransferResponse\022\'\n\010m" +
+      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
+      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
+      "#\n\006result\030\003 \001(\0132\023.offchain.v1.Result\022(\n\t" +
+      "transfers\030\004 \003(\0132\025.offchain.v1.Transfer2\235" +
+      "\004\n\tFiService\022[\n\016CreateTransfer\022\".offchai" +
+      "n.v1.CreateTransferRequest\032#.offchain.v1" +
+      ".CreateTransferResponse\"\000\022G\n\013GetTransfer" +
+      "\022\037.offchain.v1.GetTransferRequest\032\025.offc" +
+      "hain.v1.Transfer\"\000\022S\n\021GetTransferStatus\022" +
+      "\037.offchain.v1.GetTransferRequest\032\033.offch" +
+      "ain.v1.TransferStatus\"\000\022^\n\017ConfirmTransf" +
+      "er\022#.offchain.v1.ConfirmTransferRequest\032" +
+      "$.offchain.v1.ConfirmTransferResponse\"\000\022" +
+      "^\n\017SearchTransfers\022#.offchain.v1.SearchT" +
+      "ransfersRequest\032$.offchain.v1.SearchTran" +
+      "sfersResponse\"\000\022U\n\014BulkTransfer\022 .offcha" +
+      "in.v1.BulkTransferRequest\032!.offchain.v1." +
+      "BulkTransferResponse\"\000BU\n\034com.blcvn.swit" +
+      "ching.offchainZ5github.com/blcvn/switchi" +
+      "ng-proto/go/offchain;offchainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10499,43 +12661,43 @@ public final class Fi {
     internal_static_offchain_v1_CreateTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_CreateTransferRequest_descriptor,
-        new java.lang.String[] { "InstructionId", "Debtor", "Creditor", "Amount", "Currency", });
+        new java.lang.String[] { "Metadata", "Signature", "Data", });
     internal_static_offchain_v1_CreateTransferResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_offchain_v1_CreateTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_CreateTransferResponse_descriptor,
-        new java.lang.String[] { "InstructionId", "Status", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     internal_static_offchain_v1_GetTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_offchain_v1_GetTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_GetTransferRequest_descriptor,
-        new java.lang.String[] { "InstructionId", });
+        new java.lang.String[] { "Metadata", "Signature", "InstructionId", });
     internal_static_offchain_v1_TransferStatus_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_offchain_v1_TransferStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_TransferStatus_descriptor,
-        new java.lang.String[] { "InstructionId", "Status", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     internal_static_offchain_v1_ConfirmTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_offchain_v1_ConfirmTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ConfirmTransferRequest_descriptor,
-        new java.lang.String[] { "InstructionId", "Status", "Timestamp", });
+        new java.lang.String[] { "Metadata", "Signature", "InstructionId", });
     internal_static_offchain_v1_ConfirmTransferResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_offchain_v1_ConfirmTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ConfirmTransferResponse_descriptor,
-        new java.lang.String[] { "InstructionId", "Status", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "InstructionId", });
     internal_static_offchain_v1_SearchTransfersRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_offchain_v1_SearchTransfersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_SearchTransfersRequest_descriptor,
-        new java.lang.String[] { "Filter", });
+        new java.lang.String[] { "Metadata", "Signature", "Filter", });
     internal_static_offchain_v1_SearchTransfersRequest_Filter_descriptor =
       internal_static_offchain_v1_SearchTransfersRequest_descriptor.getNestedTypes().get(0);
     internal_static_offchain_v1_SearchTransfersRequest_Filter_fieldAccessorTable = new
@@ -10547,31 +12709,19 @@ public final class Fi {
     internal_static_offchain_v1_SearchTransfersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_SearchTransfersResponse_descriptor,
-        new java.lang.String[] { "Results", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Results", });
     internal_static_offchain_v1_BulkTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_offchain_v1_BulkTransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_BulkTransferRequest_descriptor,
-        new java.lang.String[] { "BatchId", "Transfers", });
-    internal_static_offchain_v1_BulkTransferRequest_Item_descriptor =
-      internal_static_offchain_v1_BulkTransferRequest_descriptor.getNestedTypes().get(0);
-    internal_static_offchain_v1_BulkTransferRequest_Item_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_offchain_v1_BulkTransferRequest_Item_descriptor,
-        new java.lang.String[] { "InstructionId", "Amount", "Currency", });
+        new java.lang.String[] { "Metadata", "Signature", "Transfers", });
     internal_static_offchain_v1_BulkTransferResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_offchain_v1_BulkTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_BulkTransferResponse_descriptor,
-        new java.lang.String[] { "BatchId", "Created", });
-    internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor =
-      internal_static_offchain_v1_BulkTransferResponse_descriptor.getNestedTypes().get(0);
-    internal_static_offchain_v1_BulkTransferResponse_CreatedItem_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_offchain_v1_BulkTransferResponse_CreatedItem_descriptor,
-        new java.lang.String[] { "InstructionId", "Status", });
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Transfers", });
     com.blcvn.switching.offchain.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

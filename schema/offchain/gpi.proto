@@ -10,38 +10,47 @@ option java_package = "com.blcvn.switching.offchain";
 
 service GpiService {
   rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {}
-  rpc GetPayment(GetPaymentRequest) returns (Payment) {}
-  rpc GetPaymentStatus(GetPaymentStatusRequest) returns (PaymentStatus) {}
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {}
+  rpc GetPaymentStatus(GetPaymentStatusRequest) returns (GetPaymentResponse) {}
   rpc ConfirmPayment(ConfirmPaymentRequest) returns (ConfirmPaymentResponse) {}
 }
 
-message CreatePaymentRequest {
+message ConfirmMessage {
   string uetr = 1;
-  double amount = 2;
-  string currency = 3;
-  string debtor_agent = 4;
-  string creditor_agent = 5;
-  string end_to_end_id = 6;
-  // Optional: structured account details for the sending bank's account (debtor)
-  Account debtor_agent_account = 7;
-  // Optional: structured account details for the receiving bank's account (creditor)
-  Account creditor_agent_account = 8;
+  string confirmation_type = 2;
+  string timestamp = 3;
+}
+
+message CreatePaymentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Payment data = 3;
 }
 
 message CreatePaymentResponse {
-  string id = 1;
-  string uetr = 2;
-  string transaction_reference = 3;
-  string status = 4;
-  google.protobuf.Timestamp processing_timestamp = 5;
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
 }
 
 message GetPaymentRequest {
-  string id = 1;
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+message GetPaymentResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
 }
 
 message GetPaymentStatusRequest {
-  string uetr = 1;
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string uetr = 3;
 }
 
 message PaymentStatus {
@@ -52,12 +61,14 @@ message PaymentStatus {
 }
 
 message ConfirmPaymentRequest {
-  string uetr = 1;
-  string confirmation_type = 2;
-  string timestamp = 3;
+  Metadata metadata = 1;
+  Signature signature = 2;
+  ConfirmMessage data = 3;
 }
 
 message ConfirmPaymentResponse {
-  string uetr = 1;
-  string status = 2;
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
 }

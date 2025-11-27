@@ -21,6 +21,134 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type RegisterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Data          *KycEntity             `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterRequest) Reset() {
+	*x = RegisterRequest{}
+	mi := &file_offchain_kyc_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterRequest) ProtoMessage() {}
+
+func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_kyc_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
+func (*RegisterRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *RegisterRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *RegisterRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *RegisterRequest) GetData() *KycEntity {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+type RegisterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
+	Data          *KycEntity             `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterResponse) Reset() {
+	*x = RegisterResponse{}
+	mi := &file_offchain_kyc_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterResponse) ProtoMessage() {}
+
+func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_kyc_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterResponse.ProtoReflect.Descriptor instead.
+func (*RegisterResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *RegisterResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *RegisterResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *RegisterResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *RegisterResponse) GetData() *KycEntity {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 type ListEntitiesResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Entities      []*KycEntity           `protobuf:"bytes,1,rep,name=entities,proto3" json:"entities,omitempty"`
@@ -30,7 +158,7 @@ type ListEntitiesResponse struct {
 
 func (x *ListEntitiesResponse) Reset() {
 	*x = ListEntitiesResponse{}
-	mi := &file_offchain_kyc_proto_msgTypes[0]
+	mi := &file_offchain_kyc_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +170,7 @@ func (x *ListEntitiesResponse) String() string {
 func (*ListEntitiesResponse) ProtoMessage() {}
 
 func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[0]
+	mi := &file_offchain_kyc_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +183,7 @@ func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesResponse.ProtoReflect.Descriptor instead.
 func (*ListEntitiesResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{0}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ListEntitiesResponse) GetEntities() []*KycEntity {
@@ -74,7 +202,7 @@ type GetEntityRequest struct {
 
 func (x *GetEntityRequest) Reset() {
 	*x = GetEntityRequest{}
-	mi := &file_offchain_kyc_proto_msgTypes[1]
+	mi := &file_offchain_kyc_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -86,7 +214,7 @@ func (x *GetEntityRequest) String() string {
 func (*GetEntityRequest) ProtoMessage() {}
 
 func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[1]
+	mi := &file_offchain_kyc_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -99,7 +227,7 @@ func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityRequest.ProtoReflect.Descriptor instead.
 func (*GetEntityRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{1}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetEntityRequest) GetBic() string {
@@ -118,7 +246,7 @@ type GetEntityDocsRequest struct {
 
 func (x *GetEntityDocsRequest) Reset() {
 	*x = GetEntityDocsRequest{}
-	mi := &file_offchain_kyc_proto_msgTypes[2]
+	mi := &file_offchain_kyc_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +258,7 @@ func (x *GetEntityDocsRequest) String() string {
 func (*GetEntityDocsRequest) ProtoMessage() {}
 
 func (x *GetEntityDocsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[2]
+	mi := &file_offchain_kyc_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +271,7 @@ func (x *GetEntityDocsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityDocsRequest.ProtoReflect.Descriptor instead.
 func (*GetEntityDocsRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{2}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetEntityDocsRequest) GetBic() string {
@@ -164,7 +292,7 @@ type Document struct {
 
 func (x *Document) Reset() {
 	*x = Document{}
-	mi := &file_offchain_kyc_proto_msgTypes[3]
+	mi := &file_offchain_kyc_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -176,7 +304,7 @@ func (x *Document) String() string {
 func (*Document) ProtoMessage() {}
 
 func (x *Document) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[3]
+	mi := &file_offchain_kyc_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -189,7 +317,7 @@ func (x *Document) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Document.ProtoReflect.Descriptor instead.
 func (*Document) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{3}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Document) GetId() string {
@@ -222,7 +350,7 @@ type GetEntityDocsResponse struct {
 
 func (x *GetEntityDocsResponse) Reset() {
 	*x = GetEntityDocsResponse{}
-	mi := &file_offchain_kyc_proto_msgTypes[4]
+	mi := &file_offchain_kyc_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +362,7 @@ func (x *GetEntityDocsResponse) String() string {
 func (*GetEntityDocsResponse) ProtoMessage() {}
 
 func (x *GetEntityDocsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[4]
+	mi := &file_offchain_kyc_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +375,7 @@ func (x *GetEntityDocsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityDocsResponse.ProtoReflect.Descriptor instead.
 func (*GetEntityDocsResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{4}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetEntityDocsResponse) GetDocuments() []*Document {
@@ -267,7 +395,7 @@ type SubmitKycRequest struct {
 
 func (x *SubmitKycRequest) Reset() {
 	*x = SubmitKycRequest{}
-	mi := &file_offchain_kyc_proto_msgTypes[5]
+	mi := &file_offchain_kyc_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -279,7 +407,7 @@ func (x *SubmitKycRequest) String() string {
 func (*SubmitKycRequest) ProtoMessage() {}
 
 func (x *SubmitKycRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[5]
+	mi := &file_offchain_kyc_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -292,7 +420,7 @@ func (x *SubmitKycRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitKycRequest.ProtoReflect.Descriptor instead.
 func (*SubmitKycRequest) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{5}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *SubmitKycRequest) GetBic() string {
@@ -318,7 +446,7 @@ type SubmitKycResponse struct {
 
 func (x *SubmitKycResponse) Reset() {
 	*x = SubmitKycResponse{}
-	mi := &file_offchain_kyc_proto_msgTypes[6]
+	mi := &file_offchain_kyc_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -330,7 +458,7 @@ func (x *SubmitKycResponse) String() string {
 func (*SubmitKycResponse) ProtoMessage() {}
 
 func (x *SubmitKycResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[6]
+	mi := &file_offchain_kyc_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -343,7 +471,7 @@ func (x *SubmitKycResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitKycResponse.ProtoReflect.Descriptor instead.
 func (*SubmitKycResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{6}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *SubmitKycResponse) GetStatus() string {
@@ -363,7 +491,7 @@ type KycMetadata struct {
 
 func (x *KycMetadata) Reset() {
 	*x = KycMetadata{}
-	mi := &file_offchain_kyc_proto_msgTypes[7]
+	mi := &file_offchain_kyc_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -375,7 +503,7 @@ func (x *KycMetadata) String() string {
 func (*KycMetadata) ProtoMessage() {}
 
 func (x *KycMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[7]
+	mi := &file_offchain_kyc_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +516,7 @@ func (x *KycMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KycMetadata.ProtoReflect.Descriptor instead.
 func (*KycMetadata) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{7}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *KycMetadata) GetVersion() string {
@@ -416,7 +544,7 @@ type AuditEntry struct {
 
 func (x *AuditEntry) Reset() {
 	*x = AuditEntry{}
-	mi := &file_offchain_kyc_proto_msgTypes[8]
+	mi := &file_offchain_kyc_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -428,7 +556,7 @@ func (x *AuditEntry) String() string {
 func (*AuditEntry) ProtoMessage() {}
 
 func (x *AuditEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[8]
+	mi := &file_offchain_kyc_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -441,7 +569,7 @@ func (x *AuditEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditEntry.ProtoReflect.Descriptor instead.
 func (*AuditEntry) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{8}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *AuditEntry) GetBic() string {
@@ -474,7 +602,7 @@ type AuditResponse struct {
 
 func (x *AuditResponse) Reset() {
 	*x = AuditResponse{}
-	mi := &file_offchain_kyc_proto_msgTypes[9]
+	mi := &file_offchain_kyc_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -486,7 +614,7 @@ func (x *AuditResponse) String() string {
 func (*AuditResponse) ProtoMessage() {}
 
 func (x *AuditResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_offchain_kyc_proto_msgTypes[9]
+	mi := &file_offchain_kyc_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -499,7 +627,7 @@ func (x *AuditResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditResponse.ProtoReflect.Descriptor instead.
 func (*AuditResponse) Descriptor() ([]byte, []int) {
-	return file_offchain_kyc_proto_rawDescGZIP(), []int{9}
+	return file_offchain_kyc_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *AuditResponse) GetEntries() []*AuditEntry {
@@ -513,7 +641,16 @@ var File_offchain_kyc_proto protoreflect.FileDescriptor
 
 const file_offchain_kyc_proto_rawDesc = "" +
 	"\n" +
-	"\x12offchain/kyc.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\"J\n" +
+	"\x12offchain/kyc.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\"\xa6\x01\n" +
+	"\x0fRegisterRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12*\n" +
+	"\x04data\x18\x03 \x01(\v2\x16.offchain.v1.KycEntityR\x04data\"\xd4\x01\n" +
+	"\x10RegisterResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12*\n" +
+	"\x04data\x18\x04 \x01(\v2\x16.offchain.v1.KycEntityR\x04data\"J\n" +
 	"\x14ListEntitiesResponse\x122\n" +
 	"\bentities\x18\x01 \x03(\v2\x16.offchain.v1.KycEntityR\bentities\"$\n" +
 	"\x10GetEntityRequest\x12\x10\n" +
@@ -543,12 +680,13 @@ const file_offchain_kyc_proto_rawDesc = "" +
 	"\x06action\x18\x02 \x01(\tR\x06action\x12\x12\n" +
 	"\x04time\x18\x03 \x01(\tR\x04time\"B\n" +
 	"\rAuditResponse\x121\n" +
-	"\aentries\x18\x01 \x03(\v2\x17.offchain.v1.AuditEntryR\aentries2\xca\x03\n" +
+	"\aentries\x18\x01 \x03(\v2\x17.offchain.v1.AuditEntryR\aentries2\x95\x04\n" +
 	"\n" +
 	"KycService\x12G\n" +
 	"\fListEntities\x12\x12.offchain.v1.Empty\x1a!.offchain.v1.ListEntitiesResponse\"\x00\x12D\n" +
 	"\tGetEntity\x12\x1d.offchain.v1.GetEntityRequest\x1a\x16.offchain.v1.KycEntity\"\x00\x12]\n" +
-	"\x12GetEntityDocuments\x12!.offchain.v1.GetEntityDocsRequest\x1a\".offchain.v1.GetEntityDocsResponse\"\x00\x12L\n" +
+	"\x12GetEntityDocuments\x12!.offchain.v1.GetEntityDocsRequest\x1a\".offchain.v1.GetEntityDocsResponse\"\x00\x12I\n" +
+	"\bRegister\x12\x1c.offchain.v1.RegisterRequest\x1a\x1d.offchain.v1.RegisterResponse\"\x00\x12L\n" +
 	"\tSubmitKyc\x12\x1d.offchain.v1.SubmitKycRequest\x1a\x1e.offchain.v1.SubmitKycResponse\"\x00\x12:\n" +
 	"\bMetadata\x12\x12.offchain.v1.Empty\x1a\x18.offchain.v1.KycMetadata\"\x00\x12D\n" +
 	"\x05Audit\x12\x1d.offchain.v1.GetEntityRequest\x1a\x1a.offchain.v1.AuditResponse\"\x00BU\n" +
@@ -566,44 +704,58 @@ func file_offchain_kyc_proto_rawDescGZIP() []byte {
 	return file_offchain_kyc_proto_rawDescData
 }
 
-var file_offchain_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_offchain_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_offchain_kyc_proto_goTypes = []any{
-	(*ListEntitiesResponse)(nil),  // 0: offchain.v1.ListEntitiesResponse
-	(*GetEntityRequest)(nil),      // 1: offchain.v1.GetEntityRequest
-	(*GetEntityDocsRequest)(nil),  // 2: offchain.v1.GetEntityDocsRequest
-	(*Document)(nil),              // 3: offchain.v1.Document
-	(*GetEntityDocsResponse)(nil), // 4: offchain.v1.GetEntityDocsResponse
-	(*SubmitKycRequest)(nil),      // 5: offchain.v1.SubmitKycRequest
-	(*SubmitKycResponse)(nil),     // 6: offchain.v1.SubmitKycResponse
-	(*KycMetadata)(nil),           // 7: offchain.v1.KycMetadata
-	(*AuditEntry)(nil),            // 8: offchain.v1.AuditEntry
-	(*AuditResponse)(nil),         // 9: offchain.v1.AuditResponse
-	nil,                           // 10: offchain.v1.SubmitKycRequest.UpdatesEntry
-	(*KycEntity)(nil),             // 11: offchain.v1.KycEntity
-	(*Empty)(nil),                 // 12: offchain.v1.Empty
+	(*RegisterRequest)(nil),       // 0: offchain.v1.RegisterRequest
+	(*RegisterResponse)(nil),      // 1: offchain.v1.RegisterResponse
+	(*ListEntitiesResponse)(nil),  // 2: offchain.v1.ListEntitiesResponse
+	(*GetEntityRequest)(nil),      // 3: offchain.v1.GetEntityRequest
+	(*GetEntityDocsRequest)(nil),  // 4: offchain.v1.GetEntityDocsRequest
+	(*Document)(nil),              // 5: offchain.v1.Document
+	(*GetEntityDocsResponse)(nil), // 6: offchain.v1.GetEntityDocsResponse
+	(*SubmitKycRequest)(nil),      // 7: offchain.v1.SubmitKycRequest
+	(*SubmitKycResponse)(nil),     // 8: offchain.v1.SubmitKycResponse
+	(*KycMetadata)(nil),           // 9: offchain.v1.KycMetadata
+	(*AuditEntry)(nil),            // 10: offchain.v1.AuditEntry
+	(*AuditResponse)(nil),         // 11: offchain.v1.AuditResponse
+	nil,                           // 12: offchain.v1.SubmitKycRequest.UpdatesEntry
+	(*Metadata)(nil),              // 13: offchain.v1.Metadata
+	(*Signature)(nil),             // 14: offchain.v1.Signature
+	(*KycEntity)(nil),             // 15: offchain.v1.KycEntity
+	(*Result)(nil),                // 16: offchain.v1.Result
+	(*Empty)(nil),                 // 17: offchain.v1.Empty
 }
 var file_offchain_kyc_proto_depIdxs = []int32{
-	11, // 0: offchain.v1.ListEntitiesResponse.entities:type_name -> offchain.v1.KycEntity
-	3,  // 1: offchain.v1.GetEntityDocsResponse.documents:type_name -> offchain.v1.Document
-	10, // 2: offchain.v1.SubmitKycRequest.updates:type_name -> offchain.v1.SubmitKycRequest.UpdatesEntry
-	8,  // 3: offchain.v1.AuditResponse.entries:type_name -> offchain.v1.AuditEntry
-	12, // 4: offchain.v1.KycService.ListEntities:input_type -> offchain.v1.Empty
-	1,  // 5: offchain.v1.KycService.GetEntity:input_type -> offchain.v1.GetEntityRequest
-	2,  // 6: offchain.v1.KycService.GetEntityDocuments:input_type -> offchain.v1.GetEntityDocsRequest
-	5,  // 7: offchain.v1.KycService.SubmitKyc:input_type -> offchain.v1.SubmitKycRequest
-	12, // 8: offchain.v1.KycService.Metadata:input_type -> offchain.v1.Empty
-	1,  // 9: offchain.v1.KycService.Audit:input_type -> offchain.v1.GetEntityRequest
-	0,  // 10: offchain.v1.KycService.ListEntities:output_type -> offchain.v1.ListEntitiesResponse
-	11, // 11: offchain.v1.KycService.GetEntity:output_type -> offchain.v1.KycEntity
-	4,  // 12: offchain.v1.KycService.GetEntityDocuments:output_type -> offchain.v1.GetEntityDocsResponse
-	6,  // 13: offchain.v1.KycService.SubmitKyc:output_type -> offchain.v1.SubmitKycResponse
-	7,  // 14: offchain.v1.KycService.Metadata:output_type -> offchain.v1.KycMetadata
-	9,  // 15: offchain.v1.KycService.Audit:output_type -> offchain.v1.AuditResponse
-	10, // [10:16] is the sub-list for method output_type
-	4,  // [4:10] is the sub-list for method input_type
-	4,  // [4:4] is the sub-list for extension type_name
-	4,  // [4:4] is the sub-list for extension extendee
-	0,  // [0:4] is the sub-list for field type_name
+	13, // 0: offchain.v1.RegisterRequest.metadata:type_name -> offchain.v1.Metadata
+	14, // 1: offchain.v1.RegisterRequest.signature:type_name -> offchain.v1.Signature
+	15, // 2: offchain.v1.RegisterRequest.data:type_name -> offchain.v1.KycEntity
+	13, // 3: offchain.v1.RegisterResponse.metadata:type_name -> offchain.v1.Metadata
+	14, // 4: offchain.v1.RegisterResponse.signature:type_name -> offchain.v1.Signature
+	16, // 5: offchain.v1.RegisterResponse.result:type_name -> offchain.v1.Result
+	15, // 6: offchain.v1.RegisterResponse.data:type_name -> offchain.v1.KycEntity
+	15, // 7: offchain.v1.ListEntitiesResponse.entities:type_name -> offchain.v1.KycEntity
+	5,  // 8: offchain.v1.GetEntityDocsResponse.documents:type_name -> offchain.v1.Document
+	12, // 9: offchain.v1.SubmitKycRequest.updates:type_name -> offchain.v1.SubmitKycRequest.UpdatesEntry
+	10, // 10: offchain.v1.AuditResponse.entries:type_name -> offchain.v1.AuditEntry
+	17, // 11: offchain.v1.KycService.ListEntities:input_type -> offchain.v1.Empty
+	3,  // 12: offchain.v1.KycService.GetEntity:input_type -> offchain.v1.GetEntityRequest
+	4,  // 13: offchain.v1.KycService.GetEntityDocuments:input_type -> offchain.v1.GetEntityDocsRequest
+	0,  // 14: offchain.v1.KycService.Register:input_type -> offchain.v1.RegisterRequest
+	7,  // 15: offchain.v1.KycService.SubmitKyc:input_type -> offchain.v1.SubmitKycRequest
+	17, // 16: offchain.v1.KycService.Metadata:input_type -> offchain.v1.Empty
+	3,  // 17: offchain.v1.KycService.Audit:input_type -> offchain.v1.GetEntityRequest
+	2,  // 18: offchain.v1.KycService.ListEntities:output_type -> offchain.v1.ListEntitiesResponse
+	15, // 19: offchain.v1.KycService.GetEntity:output_type -> offchain.v1.KycEntity
+	6,  // 20: offchain.v1.KycService.GetEntityDocuments:output_type -> offchain.v1.GetEntityDocsResponse
+	1,  // 21: offchain.v1.KycService.Register:output_type -> offchain.v1.RegisterResponse
+	8,  // 22: offchain.v1.KycService.SubmitKyc:output_type -> offchain.v1.SubmitKycResponse
+	9,  // 23: offchain.v1.KycService.Metadata:output_type -> offchain.v1.KycMetadata
+	11, // 24: offchain.v1.KycService.Audit:output_type -> offchain.v1.AuditResponse
+	18, // [18:25] is the sub-list for method output_type
+	11, // [11:18] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_offchain_kyc_proto_init() }
@@ -618,7 +770,7 @@ func file_offchain_kyc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_offchain_kyc_proto_rawDesc), len(file_offchain_kyc_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
