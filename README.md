@@ -1,63 +1,81 @@
-# Proto workspace helper
+# Switching Proto Workspace
 
-This workspace contains proto files under `schema/` and helper scripts to generate language bindings.
+Proto definitions, generated code, and release scripts for both Go and Java services that power the VNPAY Switching platform.
 
-- `schema/` : .proto sources (examples: `payments`, `users`, `notifications`)
-- `types/` : intended output for Go generated files (by default `--go_out`)
-- `java_package/` : intended output for Java generated files (by default `--java_out`)
-- `scripts/gen-go.sh` : Script to generate Go code using `protoc` + `protoc-gen-go` and `protoc-gen-go-grpc`.
-- `scripts/gen-java.sh` : Script to generate Java code using `protoc`.
+## Layout
 
-Usage
+- `schema/` – canonical `.proto` sources grouped by domain (`access-point`, `offchain`, `payments`, `notifications`, `users`, ...).
+- `go/` – Go modules generated from the schemas (`accesspoint`, `offchain`, `payment`, `notification`, `user`). Each module has its own `go.mod`.
+- `java/` – Gradle subprojects mirroring the same domains with generated Java sources under `com/blcvn/switching/**`.
+- `kotlin/` – optional Kotlin output root when using `scripts/gen-kotlin.sh`.
+- `scripts/` – shared helpers such as `gen-go.sh`, `gen-java.sh`, `gen-kotlin.sh`, and `release.sh`.
+- `release_artifacts/` – populated by the release workflow (artifacts per module + version).
 
-Make the scripts executable and run them:
+## Prerequisites
 
-```bash
-chmod +x scripts/gen-go.sh scripts/gen-java.sh
-./scripts/gen-go.sh
-./scripts/gen-java.sh
-```
-
-Requirements
-
-- `protoc` (Protocol Buffers compiler)
-- For Go generation: `protoc-gen-go` and `protoc-gen-go-grpc` installed in `GOBIN` (or in PATH). Install via:
+- `protoc` (>=3.21).
+- `protoc-gen-go` and `protoc-gen-go-grpc` on your `PATH` for Go generation:
 
 ```bash
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
 
-Notes
+- Java toolchain (Gradle 8+, JDK 17) for building the Java modules.
+- `protoc-gen-kotlin` on your `PATH` if you plan to emit Kotlin stubs. To install:
+  ```bash
+  # Install Java if not already installed
+  sudo apt-get update && sudo apt-get install -y openjdk-17-jdk
+  # Or: sudo apt-get install -y default-jdk
+  
+  # The protoc-gen-kotlin wrapper script should be in ~/.local/bin
+  # Ensure ~/.local/bin is in your PATH:
+  export PATH="$HOME/.local/bin:$PATH"
+  ```
+- `protoc-gen-openapiv2` for generating OpenAPI/Swagger docs. The helper script will
+  attempt `go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest`
+  automatically if it is missing.
+- `python3` for converting OpenAPI specs to Markdown summaries.
 
-- The `types/` and `java_package/` folders contain small placeholder files so the structure is visible. Running the scripts will overwrite or add real generated files.
+## Generate sources
 
-Monorepo: Go + Java modules, CI/CD and versioning
+Run the helper scripts from the repo root (they handle all domains listed in `schema/`):
 
-- **Structure**: keep language roots separated — `go/` for Go modules and `java/` for Java/Gradle modules. Each subfolder that is a module should contain its own `go.mod` or `build.gradle`.
-- **CI**: GitHub Actions workflows are added under `.github/workflows`:
-	- `ci-go.yml` runs tests for Go modules when files under `go/**` change.
-	- `ci-java.yml` runs Gradle builds when files under `java/**` change.
-	- `release.yml` triggers on any pushed tag and runs `scripts/release.sh` to build the matching module and create a GitHub Release.
-- **Tagging / Versioning**: we use Git tags to release modules. Tag naming convention:
-	- `<lang>/<module>/vX.Y.Z`  (examples: `go/accesspoint/v1.2.0`, `java/payment/v1.2.0`).
-	- The release workflow will parse the tag to determine which module to build and attach artifacts.
-- **Go module notes**: for major versions v2+ your `module` path inside `go.mod` must include the `/vN` suffix (for example: `module github.com/yourorg/yourrepo/go/accesspoint/v2`) and tags must match that major version (e.g., `go/accesspoint/v2.0.0`).
-- **Release process (example)**:
+```bash
+chmod +x scripts/gen-go.sh scripts/gen-java.sh scripts/gen-kotlin.sh
+./scripts/gen-go.sh        # writes into go/**
+./scripts/gen-java.sh      # writes into java/**
+./scripts/gen-kotlin.sh    # writes into kotlin/**
+./scripts/gen-openapi.sh   # writes Swagger/OpenAPI specs into openapi/**
+./scripts/gen-openapi-md.sh # converts Swagger JSON into Markdown under docs/api/**
+```
 
-	1. Create an annotated tag for the module you want to release:
+For bulk Go maintenance you can also run `go/scripts/go_mod_tidy_all.sh`, which tidies every Go module to keep `go.sum` files in sync.
 
-		 ```bash
-		 git tag -a go/accesspoint/v1.2.0 -m "release go/accesspoint v1.2.0"
-		 git push origin refs/tags/go/accesspoint/v1.2.0
-		 ```
+Java modules can be built individually via Gradle (`./gradlew :accesspoint:build`, etc.) or all at once using `java/scripts/build-modules.sh`.
 
-	2. Pushing the tag triggers the `release.yml` workflow which will run `scripts/release.sh` and then create a GitHub Release with any artifacts found under `release_artifacts/`.
+## CI/CD & Release process
 
-- **Scripts**: A helper `scripts/release.sh` is provided. It expects tags in the format above and will build the targeted module and place artifacts under `release_artifacts/`.
+- `.github/workflows/ci-go.yml` runs when files under `go/**` change.
+- `.github/workflows/ci-java.yml` runs for changes under `java/**`.
+- `.github/workflows/release.yml` is tag-driven and executes `scripts/release.sh`, which:
+  1. Detects the module from the tag pattern `<lang>/<module>/vX.Y.Z`.
+  2. Builds the corresponding Go or Java artifact.
+  3. Places outputs under `release_artifacts/<module>_<version>/`.
+  4. Uploads the artifact set to the GitHub Release.
 
-Next steps / recommendations
+Example release:
 
-- Add credentials / publishing steps if you intend to publish artifacts: e.g., GitHub Packages, Maven Central (for Java) or a storage bucket. Store secrets in GitHub Actions secrets.
-- Consider automating version bumps (via Gradle properties or a small release tool) and using conventional commits or a release tool like `semantic-release` if you want fully automated versioning.
+```bash
+git tag -a go/accesspoint/v1.2.0 -m "release go/accesspoint v1.2.0"
+git push origin refs/tags/go/accesspoint/v1.2.0
+```
+
+For Go modules with major versions ≥2, remember to add the `/vN` suffix to the module path in `go.mod` and match it in the tag (e.g., `go/accesspoint/v2.0.0`).
+
+## Recommendations
+
+- Store publishing credentials (Maven, artifact buckets, etc.) as GitHub Actions secrets to automate distribution.
+- Adopt conventional commits or another release automation tool if you want fully automated version bumps.
+- Keep generated code committed only when necessary; otherwise, rely on scripts during CI to avoid large diffs. 
 

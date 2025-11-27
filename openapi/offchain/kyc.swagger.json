@@ -1,0 +1,235 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "offchain/kyc.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "KycService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "offchainv1AuditEntry": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        }
+      }
+    },
+    "offchainv1AuditResponse": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/offchainv1AuditEntry"
+          }
+        }
+      }
+    },
+    "offchainv1Document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "offchainv1GetEntityDocsResponse": {
+      "type": "object",
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/offchainv1Document"
+          }
+        }
+      }
+    },
+    "offchainv1KycEntity": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "lei": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      }
+    },
+    "offchainv1KycMetadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "offchainv1ListEntitiesResponse": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/offchainv1KycEntity"
+          }
+        }
+      }
+    },
+    "offchainv1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      }
+    },
+    "offchainv1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Mã kết quả thực thi"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+    },
+    "offchainv1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/offchainv1SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dùng tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số"
+        }
+      },
+      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+    },
+    "offchainv1SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "offchainv1SubmitKycResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1RegisterResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/offchainv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/offchainv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/offchainv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/offchainv1KycEntity"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "offchain/gpi.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "GpiService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "offchainv1Account": {
+      "type": "object",
+      "properties": {
+        "iban": {
+          "type": "string",
+          "title": "International Bank Account Number (if available)"
+        },
+        "account_number": {
+          "type": "string",
+          "title": "Local account number"
+        },
+        "account_name": {
+          "type": "string",
+          "title": "Account holder name"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Account currency (optional)"
+        },
+        "reference": {
+          "type": "string",
+          "title": "Additional reference or identification (e.g., secondary id)"
+        }
+      },
+      "description": "Account represents the account details associated with an agent."
+    },
+    "offchainv1ConfirmMessage": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "confirmation_type": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      }
+    },
+    "offchainv1ConfirmPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/offchainv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/offchainv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/offchainv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/offchainv1Payment"
+        }
+      }
+    },
+    "offchainv1CreatePaymentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/offchainv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/offchainv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/offchainv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/offchainv1Payment"
+        }
+      }
+    },
+    "offchainv1GetPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/offchainv1Metadata"
+        },
+        "signature": {
+          "$ref": "#/definitions/offchainv1Signature"
+        },
+        "result": {
+          "$ref": "#/definitions/offchainv1Result"
+        },
+        "data": {
+          "$ref": "#/definitions/offchainv1Payment"
+        }
+      }
+    },
+    "offchainv1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      }
+    },
+    "offchainv1Payment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "uetr": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "debtor_agent": {
+          "type": "string"
+        },
+        "creditor_agent": {
+          "type": "string"
+        },
+        "end_to_end_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "debtor_agent_account": {
+          "$ref": "#/definitions/offchainv1Account",
+          "description": "Optional structured account details for the debtor (sending) agent."
+        },
+        "creditor_agent_account": {
+          "$ref": "#/definitions/offchainv1Account",
+          "description": "Optional structured account details for the creditor (receiving) agent."
+        },
+        "transaction_reference": {
+          "type": "string"
+        }
+      }
+    },
+    "offchainv1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Mã kết quả thực thi"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+    },
+    "offchainv1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/offchainv1SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dùng tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số"
+        }
+      },
+      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+    },
+    "offchainv1SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

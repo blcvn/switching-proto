@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package offchain.v1;
+
+import "offchain/common.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
+option java_package = "com.blcvn.switching.offchain";
+
+service GpiService {
+  rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {}
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {}
+  rpc GetPaymentStatus(GetPaymentStatusRequest) returns (GetPaymentResponse) {}
+  rpc ConfirmPayment(ConfirmPaymentRequest) returns (ConfirmPaymentResponse) {}
+}
+
+message ConfirmMessage {
+  string uetr = 1;
+  string confirmation_type = 2;
+  string timestamp = 3;
+}
+
+message CreatePaymentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Payment data = 3;
+}
+
+message CreatePaymentResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
+}
+
+message GetPaymentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string id = 3;
+}
+
+message GetPaymentResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
+}
+
+message GetPaymentStatusRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string uetr = 3;
+}
+
+message PaymentStatus {
+  string uetr = 1;
+  string status = 2;
+  double amount = 3;
+  string currency = 4;
+}
+
+message ConfirmPaymentRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  ConfirmMessage data = 3;
+}
+
+message ConfirmPaymentResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Payment data = 4;
+}

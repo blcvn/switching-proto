@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: gpi.proto
+// source: access-point/gpi.proto
 
 package accesspoint
 
@@ -231,5 +231,5 @@ var GpiService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "gpi.proto",
+	Metadata: "access-point/gpi.proto",
 }

@@ -1,17 +1,43 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Run 'go mod tidy' for every submodule in the go/ folder that contains a go.mod
+# Ensure every subfolder that contains Go files has a module and run go mod tidy
 # Usage: ./go/scripts/go_mod_tidy_all.sh
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+MODULE_PREFIX="github.com/blcvn/switching-proto/go"
+DEFAULT_GO_VERSION="${GO_DEFAULT_VERSION:-1.24.0}"
 
 echo "Looking for go modules under $ROOT_DIR"
 
 failures=()
 
 for moddir in "$ROOT_DIR"/*; do
-  if [ -d "$moddir" ] && [ -f "$moddir/go.mod" ]; then
+  [ -d "$moddir" ] || continue
+
+  first_go_file="$(find "$moddir" -name '*.go' -print -quit)"
+  has_go_files=false
+  if [ -n "$first_go_file" ]; then
+    has_go_files=true
+  fi
+
+  if [ ! -f "$moddir/go.mod" ]; then
+    if [ "$has_go_files" = false ]; then
+      continue
+    fi
+    module_name="$MODULE_PREFIX/$(basename "$moddir")"
+    echo "\n==> Initializing Go module $module_name in $moddir"
+    pushd "$moddir" >/dev/null
+    go mod init "$module_name"
+    go mod edit -go="$DEFAULT_GO_VERSION"
+    popd >/dev/null
+  fi
+
+  if [ -f "$moddir/go.mod" ]; then
+    if [ "$has_go_files" = false ]; then
+      echo "\n==> Skipping '$moddir' (has go.mod but no Go files)"
+      continue
+    fi
     echo "\n==> Running 'go mod tidy' in: $moddir"
     pushd "$moddir" >/dev/null
     if go mod tidy; then

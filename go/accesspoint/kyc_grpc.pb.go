@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: kyc.proto
+// source: access-point/kyc.proto
 
 package accesspoint
 
@@ -307,5 +307,5 @@ var KycService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "kyc.proto",
+	Metadata: "access-point/kyc.proto",
 }

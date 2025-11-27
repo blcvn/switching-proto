@@ -48,25 +48,26 @@ ensure_go_plugin protoc-gen-go-grpc "google.golang.org/grpc/cmd/protoc-gen-go-gr
 mkdir -p "$OUT_DIR"
 echo "Generating Go code from .proto files in $PROTO_DIR -> $OUT_DIR"
 
-# collect proto files
-PROTO_FILES=$(find "$PROTO_DIR" -name '*.proto' -print)
-
-if [ -z "$PROTO_FILES" ]; then
-  echo "No .proto files found in $PROTO_DIR" >&2
+# collect proto files (relative paths) to avoid proto_path shadowing
+if ! mapfile -t PROTO_FILES < <(cd "$PROTO_DIR" && find . -name '*.proto' -print | sed 's|^\./||' | sort); then
+  echo "Failed to enumerate proto files under $PROTO_DIR" >&2
   exit 1
 fi
 
-# Build include path list (include all subdirectories under schema)
-INCLUDE_PATHS=$(find "$PROTO_DIR" -mindepth 1 -type d -print | awk '{printf "-I %s ", $0}')
-
+if [ "${#PROTO_FILES[@]}" -eq 0 ]; then
+  echo "No .proto files found in $PROTO_DIR" >&2
+  exit 1
+fi
 
 # Use paths=import so protoc-gen-go honors `option go_package` and writes files
 # into subdirectories under $OUT_DIR that match the import path.
 PROTO_MODULE_PREFIX="github.com/blcvn/switching-proto/go"
 
-protoc $INCLUDE_PATHS \
-  --go_out=module=${PROTO_MODULE_PREFIX},paths=import:"$OUT_DIR" \
-  --go-grpc_out=module=${PROTO_MODULE_PREFIX},paths=import:"$OUT_DIR" \
-  $PROTO_FILES
+(cd "$PROTO_DIR" && \
+  protoc -I . \
+    --go_out=module=${PROTO_MODULE_PREFIX},paths=import:"$OUT_DIR" \
+    --go-grpc_out=module=${PROTO_MODULE_PREFIX},paths=import:"$OUT_DIR" \
+    "${PROTO_FILES[@]}"
+)
 
 echo "Go code generation complete. Files written to $OUT_DIR"

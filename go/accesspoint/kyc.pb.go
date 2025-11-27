@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: kyc.proto
+// source: access-point/kyc.proto
 
 package accesspoint
 
@@ -30,7 +30,7 @@ type ListEntitiesResponse struct {
 
 func (x *ListEntitiesResponse) Reset() {
 	*x = ListEntitiesResponse{}
-	mi := &file_kyc_proto_msgTypes[0]
+	mi := &file_access_point_kyc_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *ListEntitiesResponse) String() string {
 func (*ListEntitiesResponse) ProtoMessage() {}
 
 func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[0]
+	mi := &file_access_point_kyc_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *ListEntitiesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEntitiesResponse.ProtoReflect.Descriptor instead.
 func (*ListEntitiesResponse) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{0}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListEntitiesResponse) GetEntities() []*KycEntity {
@@ -74,7 +74,7 @@ type GetEntityRequest struct {
 
 func (x *GetEntityRequest) Reset() {
 	*x = GetEntityRequest{}
-	mi := &file_kyc_proto_msgTypes[1]
+	mi := &file_access_point_kyc_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -86,7 +86,7 @@ func (x *GetEntityRequest) String() string {
 func (*GetEntityRequest) ProtoMessage() {}
 
 func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[1]
+	mi := &file_access_point_kyc_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -99,7 +99,7 @@ func (x *GetEntityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityRequest.ProtoReflect.Descriptor instead.
 func (*GetEntityRequest) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{1}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetEntityRequest) GetBic() string {
@@ -118,7 +118,7 @@ type GetEntityDocsRequest struct {
 
 func (x *GetEntityDocsRequest) Reset() {
 	*x = GetEntityDocsRequest{}
-	mi := &file_kyc_proto_msgTypes[2]
+	mi := &file_access_point_kyc_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +130,7 @@ func (x *GetEntityDocsRequest) String() string {
 func (*GetEntityDocsRequest) ProtoMessage() {}
 
 func (x *GetEntityDocsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[2]
+	mi := &file_access_point_kyc_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +143,7 @@ func (x *GetEntityDocsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityDocsRequest.ProtoReflect.Descriptor instead.
 func (*GetEntityDocsRequest) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{2}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetEntityDocsRequest) GetBic() string {
@@ -164,7 +164,7 @@ type Document struct {
 
 func (x *Document) Reset() {
 	*x = Document{}
-	mi := &file_kyc_proto_msgTypes[3]
+	mi := &file_access_point_kyc_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -176,7 +176,7 @@ func (x *Document) String() string {
 func (*Document) ProtoMessage() {}
 
 func (x *Document) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[3]
+	mi := &file_access_point_kyc_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -189,7 +189,7 @@ func (x *Document) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Document.ProtoReflect.Descriptor instead.
 func (*Document) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{3}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Document) GetId() string {
@@ -222,7 +222,7 @@ type GetEntityDocsResponse struct {
 
 func (x *GetEntityDocsResponse) Reset() {
 	*x = GetEntityDocsResponse{}
-	mi := &file_kyc_proto_msgTypes[4]
+	mi := &file_access_point_kyc_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +234,7 @@ func (x *GetEntityDocsResponse) String() string {
 func (*GetEntityDocsResponse) ProtoMessage() {}
 
 func (x *GetEntityDocsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[4]
+	mi := &file_access_point_kyc_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *GetEntityDocsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEntityDocsResponse.ProtoReflect.Descriptor instead.
 func (*GetEntityDocsResponse) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{4}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetEntityDocsResponse) GetDocuments() []*Document {
@@ -267,7 +267,7 @@ type SubmitKycRequest struct {
 
 func (x *SubmitKycRequest) Reset() {
 	*x = SubmitKycRequest{}
-	mi := &file_kyc_proto_msgTypes[5]
+	mi := &file_access_point_kyc_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -279,7 +279,7 @@ func (x *SubmitKycRequest) String() string {
 func (*SubmitKycRequest) ProtoMessage() {}
 
 func (x *SubmitKycRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[5]
+	mi := &file_access_point_kyc_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -292,7 +292,7 @@ func (x *SubmitKycRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitKycRequest.ProtoReflect.Descriptor instead.
 func (*SubmitKycRequest) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{5}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SubmitKycRequest) GetBic() string {
@@ -318,7 +318,7 @@ type SubmitKycResponse struct {
 
 func (x *SubmitKycResponse) Reset() {
 	*x = SubmitKycResponse{}
-	mi := &file_kyc_proto_msgTypes[6]
+	mi := &file_access_point_kyc_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -330,7 +330,7 @@ func (x *SubmitKycResponse) String() string {
 func (*SubmitKycResponse) ProtoMessage() {}
 
 func (x *SubmitKycResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[6]
+	mi := &file_access_point_kyc_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -343,7 +343,7 @@ func (x *SubmitKycResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitKycResponse.ProtoReflect.Descriptor instead.
 func (*SubmitKycResponse) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{6}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SubmitKycResponse) GetStatus() string {
@@ -363,7 +363,7 @@ type KycMetadata struct {
 
 func (x *KycMetadata) Reset() {
 	*x = KycMetadata{}
-	mi := &file_kyc_proto_msgTypes[7]
+	mi := &file_access_point_kyc_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -375,7 +375,7 @@ func (x *KycMetadata) String() string {
 func (*KycMetadata) ProtoMessage() {}
 
 func (x *KycMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[7]
+	mi := &file_access_point_kyc_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *KycMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KycMetadata.ProtoReflect.Descriptor instead.
 func (*KycMetadata) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{7}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *KycMetadata) GetVersion() string {
@@ -416,7 +416,7 @@ type AuditEntry struct {
 
 func (x *AuditEntry) Reset() {
 	*x = AuditEntry{}
-	mi := &file_kyc_proto_msgTypes[8]
+	mi := &file_access_point_kyc_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -428,7 +428,7 @@ func (x *AuditEntry) String() string {
 func (*AuditEntry) ProtoMessage() {}
 
 func (x *AuditEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[8]
+	mi := &file_access_point_kyc_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -441,7 +441,7 @@ func (x *AuditEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditEntry.ProtoReflect.Descriptor instead.
 func (*AuditEntry) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{8}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *AuditEntry) GetBic() string {
@@ -474,7 +474,7 @@ type AuditResponse struct {
 
 func (x *AuditResponse) Reset() {
 	*x = AuditResponse{}
-	mi := &file_kyc_proto_msgTypes[9]
+	mi := &file_access_point_kyc_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -486,7 +486,7 @@ func (x *AuditResponse) String() string {
 func (*AuditResponse) ProtoMessage() {}
 
 func (x *AuditResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_kyc_proto_msgTypes[9]
+	mi := &file_access_point_kyc_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -499,7 +499,7 @@ func (x *AuditResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditResponse.ProtoReflect.Descriptor instead.
 func (*AuditResponse) Descriptor() ([]byte, []int) {
-	return file_kyc_proto_rawDescGZIP(), []int{9}
+	return file_access_point_kyc_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *AuditResponse) GetEntries() []*AuditEntry {
@@ -509,11 +509,11 @@ func (x *AuditResponse) GetEntries() []*AuditEntry {
 	return nil
 }
 
-var File_kyc_proto protoreflect.FileDescriptor
+var File_access_point_kyc_proto protoreflect.FileDescriptor
 
-const file_kyc_proto_rawDesc = "" +
+const file_access_point_kyc_proto_rawDesc = "" +
 	"\n" +
-	"\tkyc.proto\x12\x0eaccesspoint.v1\x1a\fcommon.proto\"M\n" +
+	"\x16access-point/kyc.proto\x12\x0eaccesspoint.v1\x1a\x19access-point/common.proto\"M\n" +
 	"\x14ListEntitiesResponse\x125\n" +
 	"\bentities\x18\x01 \x03(\v2\x19.accesspoint.v1.KycEntityR\bentities\"$\n" +
 	"\x10GetEntityRequest\x12\x10\n" +
@@ -555,19 +555,19 @@ const file_kyc_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_kyc_proto_rawDescOnce sync.Once
-	file_kyc_proto_rawDescData []byte
+	file_access_point_kyc_proto_rawDescOnce sync.Once
+	file_access_point_kyc_proto_rawDescData []byte
 )
 
-func file_kyc_proto_rawDescGZIP() []byte {
-	file_kyc_proto_rawDescOnce.Do(func() {
-		file_kyc_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_kyc_proto_rawDesc), len(file_kyc_proto_rawDesc)))
+func file_access_point_kyc_proto_rawDescGZIP() []byte {
+	file_access_point_kyc_proto_rawDescOnce.Do(func() {
+		file_access_point_kyc_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_kyc_proto_rawDesc), len(file_access_point_kyc_proto_rawDesc)))
 	})
-	return file_kyc_proto_rawDescData
+	return file_access_point_kyc_proto_rawDescData
 }
 
-var file_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_kyc_proto_goTypes = []any{
+var file_access_point_kyc_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_access_point_kyc_proto_goTypes = []any{
 	(*ListEntitiesResponse)(nil),  // 0: accesspoint.v1.ListEntitiesResponse
 	(*GetEntityRequest)(nil),      // 1: accesspoint.v1.GetEntityRequest
 	(*GetEntityDocsRequest)(nil),  // 2: accesspoint.v1.GetEntityDocsRequest
@@ -582,7 +582,7 @@ var file_kyc_proto_goTypes = []any{
 	(*KycEntity)(nil),             // 11: accesspoint.v1.KycEntity
 	(*Empty)(nil),                 // 12: accesspoint.v1.Empty
 }
-var file_kyc_proto_depIdxs = []int32{
+var file_access_point_kyc_proto_depIdxs = []int32{
 	11, // 0: accesspoint.v1.ListEntitiesResponse.entities:type_name -> accesspoint.v1.KycEntity
 	3,  // 1: accesspoint.v1.GetEntityDocsResponse.documents:type_name -> accesspoint.v1.Document
 	10, // 2: accesspoint.v1.SubmitKycRequest.updates:type_name -> accesspoint.v1.SubmitKycRequest.UpdatesEntry
@@ -606,27 +606,27 @@ var file_kyc_proto_depIdxs = []int32{
 	0,  // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_kyc_proto_init() }
-func file_kyc_proto_init() {
-	if File_kyc_proto != nil {
+func init() { file_access_point_kyc_proto_init() }
+func file_access_point_kyc_proto_init() {
+	if File_access_point_kyc_proto != nil {
 		return
 	}
-	file_common_proto_init()
+	file_access_point_common_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_kyc_proto_rawDesc), len(file_kyc_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_kyc_proto_rawDesc), len(file_access_point_kyc_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_kyc_proto_goTypes,
-		DependencyIndexes: file_kyc_proto_depIdxs,
-		MessageInfos:      file_kyc_proto_msgTypes,
+		GoTypes:           file_access_point_kyc_proto_goTypes,
+		DependencyIndexes: file_access_point_kyc_proto_depIdxs,
+		MessageInfos:      file_access_point_kyc_proto_msgTypes,
 	}.Build()
-	File_kyc_proto = out.File
-	file_kyc_proto_goTypes = nil
-	file_kyc_proto_depIdxs = nil
+	File_access_point_kyc_proto = out.File
+	file_access_point_kyc_proto_goTypes = nil
+	file_access_point_kyc_proto_depIdxs = nil
 }

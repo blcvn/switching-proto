@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: events.proto
+// source: access-point/events.proto
 
 package accesspoint
 
@@ -31,7 +31,7 @@ type SubscribeEventsRequest struct {
 
 func (x *SubscribeEventsRequest) Reset() {
 	*x = SubscribeEventsRequest{}
-	mi := &file_events_proto_msgTypes[0]
+	mi := &file_access_point_events_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *SubscribeEventsRequest) String() string {
 func (*SubscribeEventsRequest) ProtoMessage() {}
 
 func (x *SubscribeEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[0]
+	mi := &file_access_point_events_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *SubscribeEventsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeEventsRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeEventsRequest) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{0}
+	return file_access_point_events_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SubscribeEventsRequest) GetUetr() string {
@@ -77,7 +77,7 @@ type Event struct {
 
 func (x *Event) Reset() {
 	*x = Event{}
-	mi := &file_events_proto_msgTypes[1]
+	mi := &file_access_point_events_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -89,7 +89,7 @@ func (x *Event) String() string {
 func (*Event) ProtoMessage() {}
 
 func (x *Event) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[1]
+	mi := &file_access_point_events_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -102,7 +102,7 @@ func (x *Event) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Event.ProtoReflect.Descriptor instead.
 func (*Event) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{1}
+	return file_access_point_events_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Event) GetEvent() string {
@@ -135,7 +135,7 @@ type SubscribeCallbackRequest struct {
 
 func (x *SubscribeCallbackRequest) Reset() {
 	*x = SubscribeCallbackRequest{}
-	mi := &file_events_proto_msgTypes[2]
+	mi := &file_access_point_events_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -147,7 +147,7 @@ func (x *SubscribeCallbackRequest) String() string {
 func (*SubscribeCallbackRequest) ProtoMessage() {}
 
 func (x *SubscribeCallbackRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[2]
+	mi := &file_access_point_events_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -160,7 +160,7 @@ func (x *SubscribeCallbackRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeCallbackRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeCallbackRequest) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{2}
+	return file_access_point_events_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *SubscribeCallbackRequest) GetCallbackUrl() string {
@@ -179,7 +179,7 @@ type SubscribeCallbackResponse struct {
 
 func (x *SubscribeCallbackResponse) Reset() {
 	*x = SubscribeCallbackResponse{}
-	mi := &file_events_proto_msgTypes[3]
+	mi := &file_access_point_events_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -191,7 +191,7 @@ func (x *SubscribeCallbackResponse) String() string {
 func (*SubscribeCallbackResponse) ProtoMessage() {}
 
 func (x *SubscribeCallbackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[3]
+	mi := &file_access_point_events_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -204,7 +204,7 @@ func (x *SubscribeCallbackResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeCallbackResponse.ProtoReflect.Descriptor instead.
 func (*SubscribeCallbackResponse) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{3}
+	return file_access_point_events_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SubscribeCallbackResponse) GetSubscribed() string {
@@ -222,7 +222,7 @@ type UnsubscribeCallbackRequest struct {
 
 func (x *UnsubscribeCallbackRequest) Reset() {
 	*x = UnsubscribeCallbackRequest{}
-	mi := &file_events_proto_msgTypes[4]
+	mi := &file_access_point_events_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +234,7 @@ func (x *UnsubscribeCallbackRequest) String() string {
 func (*UnsubscribeCallbackRequest) ProtoMessage() {}
 
 func (x *UnsubscribeCallbackRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[4]
+	mi := &file_access_point_events_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *UnsubscribeCallbackRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnsubscribeCallbackRequest.ProtoReflect.Descriptor instead.
 func (*UnsubscribeCallbackRequest) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{4}
+	return file_access_point_events_proto_rawDescGZIP(), []int{4}
 }
 
 type UnsubscribeCallbackResponse struct {
@@ -259,7 +259,7 @@ type UnsubscribeCallbackResponse struct {
 
 func (x *UnsubscribeCallbackResponse) Reset() {
 	*x = UnsubscribeCallbackResponse{}
-	mi := &file_events_proto_msgTypes[5]
+	mi := &file_access_point_events_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -271,7 +271,7 @@ func (x *UnsubscribeCallbackResponse) String() string {
 func (*UnsubscribeCallbackResponse) ProtoMessage() {}
 
 func (x *UnsubscribeCallbackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_events_proto_msgTypes[5]
+	mi := &file_access_point_events_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -284,7 +284,7 @@ func (x *UnsubscribeCallbackResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnsubscribeCallbackResponse.ProtoReflect.Descriptor instead.
 func (*UnsubscribeCallbackResponse) Descriptor() ([]byte, []int) {
-	return file_events_proto_rawDescGZIP(), []int{5}
+	return file_access_point_events_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UnsubscribeCallbackResponse) GetUnsubscribed() string {
@@ -294,11 +294,11 @@ func (x *UnsubscribeCallbackResponse) GetUnsubscribed() string {
 	return ""
 }
 
-var File_events_proto protoreflect.FileDescriptor
+var File_access_point_events_proto protoreflect.FileDescriptor
 
-const file_events_proto_rawDesc = "" +
+const file_access_point_events_proto_rawDesc = "" +
 	"\n" +
-	"\fevents.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\",\n" +
+	"\x19access-point/events.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\",\n" +
 	"\x16SubscribeEventsRequest\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\"k\n" +
 	"\x05Event\x12\x14\n" +
@@ -321,19 +321,19 @@ const file_events_proto_rawDesc = "" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
-	file_events_proto_rawDescOnce sync.Once
-	file_events_proto_rawDescData []byte
+	file_access_point_events_proto_rawDescOnce sync.Once
+	file_access_point_events_proto_rawDescData []byte
 )
 
-func file_events_proto_rawDescGZIP() []byte {
-	file_events_proto_rawDescOnce.Do(func() {
-		file_events_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_events_proto_rawDesc), len(file_events_proto_rawDesc)))
+func file_access_point_events_proto_rawDescGZIP() []byte {
+	file_access_point_events_proto_rawDescOnce.Do(func() {
+		file_access_point_events_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_access_point_events_proto_rawDesc), len(file_access_point_events_proto_rawDesc)))
 	})
-	return file_events_proto_rawDescData
+	return file_access_point_events_proto_rawDescData
 }
 
-var file_events_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_events_proto_goTypes = []any{
+var file_access_point_events_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_access_point_events_proto_goTypes = []any{
 	(*SubscribeEventsRequest)(nil),      // 0: accesspoint.v1.SubscribeEventsRequest
 	(*Event)(nil),                       // 1: accesspoint.v1.Event
 	(*SubscribeCallbackRequest)(nil),    // 2: accesspoint.v1.SubscribeCallbackRequest
@@ -342,7 +342,7 @@ var file_events_proto_goTypes = []any{
 	(*UnsubscribeCallbackResponse)(nil), // 5: accesspoint.v1.UnsubscribeCallbackResponse
 	(*timestamp.Timestamp)(nil),         // 6: google.protobuf.Timestamp
 }
-var file_events_proto_depIdxs = []int32{
+var file_access_point_events_proto_depIdxs = []int32{
 	6, // 0: accesspoint.v1.Event.timestamp:type_name -> google.protobuf.Timestamp
 	0, // 1: accesspoint.v1.EventsService.SubscribeEvents:input_type -> accesspoint.v1.SubscribeEventsRequest
 	2, // 2: accesspoint.v1.EventsService.RegisterCallback:input_type -> accesspoint.v1.SubscribeCallbackRequest
@@ -357,26 +357,26 @@ var file_events_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_events_proto_init() }
-func file_events_proto_init() {
-	if File_events_proto != nil {
+func init() { file_access_point_events_proto_init() }
+func file_access_point_events_proto_init() {
+	if File_access_point_events_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_events_proto_rawDesc), len(file_events_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_events_proto_rawDesc), len(file_access_point_events_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_events_proto_goTypes,
-		DependencyIndexes: file_events_proto_depIdxs,
-		MessageInfos:      file_events_proto_msgTypes,
+		GoTypes:           file_access_point_events_proto_goTypes,
+		DependencyIndexes: file_access_point_events_proto_depIdxs,
+		MessageInfos:      file_access_point_events_proto_msgTypes,
 	}.Build()
-	File_events_proto = out.File
-	file_events_proto_goTypes = nil
-	file_events_proto_depIdxs = nil
+	File_access_point_events_proto = out.File
+	file_access_point_events_proto_goTypes = nil
+	file_access_point_events_proto_depIdxs = nil
 }

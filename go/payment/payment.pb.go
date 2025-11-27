@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: payment.proto
+// source: payments/payment.proto
 
 package payment
 
@@ -32,7 +32,7 @@ type Payment struct {
 
 func (x *Payment) Reset() {
 	*x = Payment{}
-	mi := &file_payment_proto_msgTypes[0]
+	mi := &file_payments_payment_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *Payment) String() string {
 func (*Payment) ProtoMessage() {}
 
 func (x *Payment) ProtoReflect() protoreflect.Message {
-	mi := &file_payment_proto_msgTypes[0]
+	mi := &file_payments_payment_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *Payment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Payment.ProtoReflect.Descriptor instead.
 func (*Payment) Descriptor() ([]byte, []int) {
-	return file_payment_proto_rawDescGZIP(), []int{0}
+	return file_payments_payment_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Payment) GetId() string {
@@ -81,11 +81,11 @@ func (x *Payment) GetCurrency() string {
 	return ""
 }
 
-var File_payment_proto protoreflect.FileDescriptor
+var File_payments_payment_proto protoreflect.FileDescriptor
 
-const file_payment_proto_rawDesc = "" +
+const file_payments_payment_proto_rawDesc = "" +
 	"\n" +
-	"\rpayment.proto\x12\n" +
+	"\x16payments/payment.proto\x12\n" +
 	"payment.v1\"M\n" +
 	"\aPayment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
@@ -94,22 +94,22 @@ const file_payment_proto_rawDesc = "" +
 	"\x1bcom.blcvn.switching.paymentZ3github.com/blcvn/switching-proto/go/payment;paymentb\x06proto3"
 
 var (
-	file_payment_proto_rawDescOnce sync.Once
-	file_payment_proto_rawDescData []byte
+	file_payments_payment_proto_rawDescOnce sync.Once
+	file_payments_payment_proto_rawDescData []byte
 )
 
-func file_payment_proto_rawDescGZIP() []byte {
-	file_payment_proto_rawDescOnce.Do(func() {
-		file_payment_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_payment_proto_rawDesc), len(file_payment_proto_rawDesc)))
+func file_payments_payment_proto_rawDescGZIP() []byte {
+	file_payments_payment_proto_rawDescOnce.Do(func() {
+		file_payments_payment_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_payments_payment_proto_rawDesc), len(file_payments_payment_proto_rawDesc)))
 	})
-	return file_payment_proto_rawDescData
+	return file_payments_payment_proto_rawDescData
 }
 
-var file_payment_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_payment_proto_goTypes = []any{
+var file_payments_payment_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_payments_payment_proto_goTypes = []any{
 	(*Payment)(nil), // 0: payment.v1.Payment
 }
-var file_payment_proto_depIdxs = []int32{
+var file_payments_payment_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -117,26 +117,26 @@ var file_payment_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_payment_proto_init() }
-func file_payment_proto_init() {
-	if File_payment_proto != nil {
+func init() { file_payments_payment_proto_init() }
+func file_payments_payment_proto_init() {
+	if File_payments_payment_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_payment_proto_rawDesc), len(file_payment_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_payments_payment_proto_rawDesc), len(file_payments_payment_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_payment_proto_goTypes,
-		DependencyIndexes: file_payment_proto_depIdxs,
-		MessageInfos:      file_payment_proto_msgTypes,
+		GoTypes:           file_payments_payment_proto_goTypes,
+		DependencyIndexes: file_payments_payment_proto_depIdxs,
+		MessageInfos:      file_payments_payment_proto_msgTypes,
 	}.Build()
-	File_payment_proto = out.File
-	file_payment_proto_goTypes = nil
-	file_payment_proto_depIdxs = nil
+	File_payments_payment_proto = out.File
+	file_payments_payment_proto_goTypes = nil
+	file_payments_payment_proto_depIdxs = nil
 }

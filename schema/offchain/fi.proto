@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package offchain.v1;
+
+import "offchain/common.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
+option java_package = "com.blcvn.switching.offchain";
+
+service FiService {
+  rpc CreateTransfer(CreateTransferRequest) returns (CreateTransferResponse) {}
+  rpc GetTransfer(GetTransferRequest) returns (Transfer) {}
+  rpc GetTransferStatus(GetTransferRequest) returns (TransferStatus) {}
+  rpc ConfirmTransfer(ConfirmTransferRequest) returns (ConfirmTransferResponse) {}
+  rpc SearchTransfers(SearchTransfersRequest) returns (SearchTransfersResponse) {}
+  rpc BulkTransfer(BulkTransferRequest) returns (BulkTransferResponse) {}
+}
+
+message CreateTransferRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Transfer data = 3;
+}
+
+message CreateTransferResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Transfer data = 4;
+}
+
+message GetTransferRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string instruction_id = 3;
+}
+
+message TransferStatus {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  Transfer data = 4;
+}
+
+message ConfirmTransferRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  string instruction_id = 3;
+}
+
+message ConfirmTransferResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  string instruction_id = 4;
+}
+
+message SearchTransfersRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  message Filter {
+    string currency = 1;
+    string date_from = 2;
+    string date_to = 3;
+  }
+  Filter filter = 3;
+}
+
+message SearchTransfersResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated Transfer results = 4;
+}
+
+message BulkTransferRequest {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  repeated Transfer transfers = 3;
+}
+
+message BulkTransferResponse {
+  Metadata metadata = 1;
+  Signature signature = 2;
+  Result result = 3;
+  repeated Transfer transfers = 4;
+}

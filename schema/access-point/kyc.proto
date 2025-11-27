@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package accesspoint.v1;
 
-import "common.proto";
+import "access-point/common.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
