@@ -38,6 +38,9 @@ release_one() {
   local version="$3"
   local tag="${lang}/${module}/${version}"
   local moddir="$REPO_ROOT/${lang}/${module}"
+  local current_ref
+  local checkout_target
+  local temp_branch=""
 
   if [ ! -d "$moddir" ]; then
     echo "Module directory not found: $moddir"
@@ -66,11 +69,21 @@ release_one() {
       ;;
   esac
 
-  # If there are uncommitted changes in the module, commit them with a preparatory message
+  # Remember the current ref (branch name or commit hash) before any branch juggling
+  if current_ref=$(git symbolic-ref -q --short HEAD 2>/dev/null); then
+    checkout_target="$current_ref"
+  else
+    checkout_target="$(git rev-parse HEAD)"
+  fi
+
+  # If there are uncommitted changes in the module, prepare them on a temporary branch
   if [ -n "$(git status --porcelain -- "$moddir")" ]; then
-    echo "Uncommitted changes detected in $moddir. Adding and committing them."
+    temp_branch="tmp-release-${lang}-${module}-$(date +%s)"
+    echo "Uncommitted changes detected in $moddir."
+    echo "Creating temporary branch $temp_branch to stage release commit."
+    git checkout -b "$temp_branch"
     git add "$moddir"
-    git commit -m "chore(release): prepare ${tag}" || true
+    git commit -m "chore(release): prepare ${tag}"
   fi
 
   # Create annotated tag and push
@@ -80,6 +93,13 @@ release_one() {
   git push origin "$tag"
 
   echo "Released $tag"
+
+  if [ -n "$temp_branch" ]; then
+    echo "Switching back to $checkout_target"
+    git checkout "$checkout_target"
+    echo "Deleting temporary branch $temp_branch"
+    git branch -D "$temp_branch"
+  fi
 }
 
 if [ "$MODULE" = "all" ] || [ "$MODULE" = "*" ]; then
