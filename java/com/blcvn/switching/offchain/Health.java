@@ -19,11 +19,19 @@ public final class Health {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Trạng thái (thường là "ok", "healthy", "unhealthy")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
+     * <pre>
+     * Trạng thái (thường là "ok", "healthy", "unhealthy")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -31,21 +39,37 @@ public final class Health {
         getStatusBytes();
 
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      * @return Whether the time field is set.
      */
     boolean hasTime();
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      * @return The time.
      */
     com.google.protobuf.Timestamp getTime();
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
   }
   /**
+   * <pre>
+   * Phản hồi kiểm tra sức khỏe
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.HealthResponse}
    */
   public static final class HealthResponse extends
@@ -145,6 +169,10 @@ public final class Health {
     public static final int STATUS_FIELD_NUMBER = 1;
     private volatile java.lang.Object status_;
     /**
+     * <pre>
+     * Trạng thái (thường là "ok", "healthy", "unhealthy")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
@@ -162,6 +190,10 @@ public final class Health {
       }
     }
     /**
+     * <pre>
+     * Trạng thái (thường là "ok", "healthy", "unhealthy")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -183,6 +215,10 @@ public final class Health {
     public static final int TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp time_;
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      * @return Whether the time field is set.
      */
@@ -191,6 +227,10 @@ public final class Health {
       return time_ != null;
     }
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      * @return The time.
      */
@@ -199,6 +239,10 @@ public final class Health {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
     /**
+     * <pre>
+     * Thời gian kiểm tra
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      */
     @java.lang.Override
@@ -377,6 +421,10 @@ public final class Health {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi kiểm tra sức khỏe
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.HealthResponse}
      */
     public static final class Builder extends
@@ -540,6 +588,10 @@ public final class Health {
 
       private java.lang.Object status_ = "";
       /**
+       * <pre>
+       * Trạng thái (thường là "ok", "healthy", "unhealthy")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The status.
        */
@@ -556,6 +608,10 @@ public final class Health {
         }
       }
       /**
+       * <pre>
+       * Trạng thái (thường là "ok", "healthy", "unhealthy")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The bytes for status.
        */
@@ -573,6 +629,10 @@ public final class Health {
         }
       }
       /**
+       * <pre>
+       * Trạng thái (thường là "ok", "healthy", "unhealthy")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -588,6 +648,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái (thường là "ok", "healthy", "unhealthy")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return This builder for chaining.
        */
@@ -598,6 +662,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái (thường là "ok", "healthy", "unhealthy")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
@@ -618,6 +686,10 @@ public final class Health {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        * @return Whether the time field is set.
        */
@@ -625,6 +697,10 @@ public final class Health {
         return timeBuilder_ != null || time_ != null;
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        * @return The time.
        */
@@ -636,6 +712,10 @@ public final class Health {
         }
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public Builder setTime(com.google.protobuf.Timestamp value) {
@@ -652,6 +732,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public Builder setTime(
@@ -666,6 +750,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
@@ -684,6 +772,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public Builder clearTime() {
@@ -698,6 +790,10 @@ public final class Health {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
@@ -706,6 +802,10 @@ public final class Health {
         return getTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
@@ -717,6 +817,10 @@ public final class Health {
         }
       }
       /**
+       * <pre>
+       * Thời gian kiểm tra
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp time = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

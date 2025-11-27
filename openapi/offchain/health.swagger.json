@@ -21,13 +21,16 @@
       "type": "object",
       "properties": {
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái (thường là \"ok\", \"healthy\", \"unhealthy\")"
         },
         "time": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian kiểm tra"
         }
-      }
+      },
+      "title": "Phản hồi kiểm tra sức khỏe"
     },
     "protobufAny": {
       "type": "object",

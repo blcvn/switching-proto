@@ -7,7 +7,6 @@
 package accesspoint
 
 import (
-	_ "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -726,7 +725,7 @@ var File_access_point_fi_proto protoreflect.FileDescriptor
 
 const file_access_point_fi_proto_rawDesc = "" +
 	"\n" +
-	"\x15access-point/fi.proto\x12\x0eaccesspoint.v1\x1a\x19access-point/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb4\x01\n" +
+	"\x15access-point/fi.proto\x12\x0eaccesspoint.v1\x1a\x19access-point/common.proto\"\xb4\x01\n" +
 	"\x15CreateTransferRequest\x124\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x18.accesspoint.v1.MetadataR\bmetadata\x127\n" +
 	"\tsignature\x18\x02 \x01(\v2\x19.accesspoint.v1.SignatureR\tsignature\x12,\n" +

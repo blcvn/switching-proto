@@ -26,8 +26,10 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// Authentication service (token endpoint)
+// Service xác thực (endpoint token)
+// Dịch vụ cung cấp chức năng xác thực và cấp token truy cập
 type AuthServiceClient interface {
+	// Lấy token truy cập dựa trên thông tin xác thực client
 	Token(ctx context.Context, in *TokenRequest, opts ...grpc.CallOption) (*TokenResponse, error)
 }
 
@@ -53,8 +55,10 @@ func (c *authServiceClient) Token(ctx context.Context, in *TokenRequest, opts ..
 // All implementations must embed UnimplementedAuthServiceServer
 // for forward compatibility.
 //
-// Authentication service (token endpoint)
+// Service xác thực (endpoint token)
+// Dịch vụ cung cấp chức năng xác thực và cấp token truy cập
 type AuthServiceServer interface {
+	// Lấy token truy cập dựa trên thông tin xác thực client
 	Token(context.Context, *TokenRequest) (*TokenResponse, error)
 	mustEmbedUnimplementedAuthServiceServer()
 }

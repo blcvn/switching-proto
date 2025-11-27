@@ -19,51 +19,91 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      * @return The data.
      */
     com.blcvn.switching.offchain.Common.Transfer getData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
+   * <pre>
+   * Yêu cầu tạo lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.CreateTransferRequest}
    */
   public static final class CreateTransferRequest extends
@@ -182,6 +222,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -190,6 +234,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -198,6 +246,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -208,6 +260,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -216,6 +272,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -224,6 +284,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -234,6 +298,10 @@ public final class Fi {
     public static final int DATA_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Transfer data_;
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      * @return Whether the data field is set.
      */
@@ -242,6 +310,10 @@ public final class Fi {
       return data_ != null;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      * @return The data.
      */
@@ -250,6 +322,10 @@ public final class Fi {
       return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 3;</code>
      */
     @java.lang.Override
@@ -450,6 +526,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu tạo lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.CreateTransferRequest}
      */
     public static final class Builder extends
@@ -636,6 +716,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -643,6 +727,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -654,6 +742,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -670,6 +762,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -684,6 +780,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -702,6 +802,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -716,6 +820,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -724,6 +832,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -735,6 +847,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -755,6 +871,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -762,6 +882,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -773,6 +897,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -789,6 +917,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -803,6 +935,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -821,6 +957,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -835,6 +975,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -843,6 +987,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -854,6 +1002,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -874,6 +1026,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        * @return Whether the data field is set.
        */
@@ -881,6 +1037,10 @@ public final class Fi {
         return dataBuilder_ != null || data_ != null;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        * @return The data.
        */
@@ -892,6 +1052,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -908,6 +1072,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public Builder setData(
@@ -922,6 +1090,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -940,6 +1112,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public Builder clearData() {
@@ -954,6 +1130,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
@@ -962,6 +1142,10 @@ public final class Fi {
         return getDataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
@@ -973,6 +1157,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1046,66 +1234,118 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return The data.
      */
     com.blcvn.switching.offchain.Common.Transfer getData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
+   * <pre>
+   * Phản hồi tạo lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.CreateTransferResponse}
    */
   public static final class CreateTransferResponse extends
@@ -1237,6 +1477,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -1245,6 +1489,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -1253,6 +1501,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -1263,6 +1515,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -1271,6 +1527,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -1279,6 +1539,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -1289,6 +1553,10 @@ public final class Fi {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -1297,6 +1565,10 @@ public final class Fi {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -1305,6 +1577,10 @@ public final class Fi {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -1315,6 +1591,10 @@ public final class Fi {
     public static final int DATA_FIELD_NUMBER = 4;
     private com.blcvn.switching.offchain.Common.Transfer data_;
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return Whether the data field is set.
      */
@@ -1323,6 +1603,10 @@ public final class Fi {
       return data_ != null;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return The data.
      */
@@ -1331,6 +1615,10 @@ public final class Fi {
       return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền đã tạo
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      */
     @java.lang.Override
@@ -1547,6 +1835,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi tạo lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.CreateTransferResponse}
      */
     public static final class Builder extends
@@ -1747,6 +2039,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -1754,6 +2050,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -1765,6 +2065,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -1781,6 +2085,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -1795,6 +2103,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -1813,6 +2125,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -1827,6 +2143,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -1835,6 +2155,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -1846,6 +2170,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1866,6 +2194,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -1873,6 +2205,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -1884,6 +2220,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -1900,6 +2240,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -1914,6 +2258,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -1932,6 +2280,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -1946,6 +2298,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -1954,6 +2310,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -1965,6 +2325,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1985,6 +2349,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -1992,6 +2360,10 @@ public final class Fi {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -2003,6 +2375,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -2019,6 +2395,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -2033,6 +2413,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -2051,6 +2435,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -2065,6 +2453,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -2073,6 +2465,10 @@ public final class Fi {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -2084,6 +2480,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2104,6 +2504,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        * @return Whether the data field is set.
        */
@@ -2111,6 +2515,10 @@ public final class Fi {
         return dataBuilder_ != null || data_ != null;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        * @return The data.
        */
@@ -2122,6 +2530,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -2138,6 +2550,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder setData(
@@ -2152,6 +2568,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -2170,6 +2590,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder clearData() {
@@ -2184,6 +2608,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
@@ -2192,6 +2620,10 @@ public final class Fi {
         return getDataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
@@ -2203,6 +2635,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền đã tạo
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2276,41 +2712,73 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
@@ -2318,6 +2786,10 @@ public final class Fi {
         getInstructionIdBytes();
   }
   /**
+   * <pre>
+   * Yêu cầu lấy thông tin lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.GetTransferRequest}
    */
   public static final class GetTransferRequest extends
@@ -2430,6 +2902,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -2438,6 +2914,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -2446,6 +2926,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -2456,6 +2940,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -2464,6 +2952,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -2472,6 +2964,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -2482,6 +2978,10 @@ public final class Fi {
     public static final int INSTRUCTION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object instructionId_;
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
@@ -2499,6 +2999,10 @@ public final class Fi {
       }
     }
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
@@ -2704,6 +3208,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu lấy thông tin lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.GetTransferRequest}
      */
     public static final class Builder extends
@@ -2883,6 +3391,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -2890,6 +3402,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -2901,6 +3417,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -2917,6 +3437,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -2931,6 +3455,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -2949,6 +3477,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -2963,6 +3495,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -2971,6 +3507,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -2982,6 +3522,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3002,6 +3546,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -3009,6 +3557,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -3020,6 +3572,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -3036,6 +3592,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -3050,6 +3610,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -3068,6 +3632,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -3082,6 +3650,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -3090,6 +3662,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -3101,6 +3677,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3119,6 +3699,10 @@ public final class Fi {
 
       private java.lang.Object instructionId_ = "";
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return The instructionId.
        */
@@ -3135,6 +3719,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return The bytes for instructionId.
        */
@@ -3152,6 +3740,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
@@ -3167,6 +3759,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return This builder for chaining.
        */
@@ -3177,6 +3773,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
@@ -3250,66 +3850,118 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return The data.
      */
     com.blcvn.switching.offchain.Common.Transfer getData();
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder();
   }
   /**
+   * <pre>
+   * Trạng thái lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.TransferStatus}
    */
   public static final class TransferStatus extends
@@ -3441,6 +4093,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -3449,6 +4105,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -3457,6 +4117,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -3467,6 +4131,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -3475,6 +4143,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -3483,6 +4155,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -3493,6 +4169,10 @@ public final class Fi {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -3501,6 +4181,10 @@ public final class Fi {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -3509,6 +4193,10 @@ public final class Fi {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -3519,6 +4207,10 @@ public final class Fi {
     public static final int DATA_FIELD_NUMBER = 4;
     private com.blcvn.switching.offchain.Common.Transfer data_;
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return Whether the data field is set.
      */
@@ -3527,6 +4219,10 @@ public final class Fi {
       return data_ != null;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      * @return The data.
      */
@@ -3535,6 +4231,10 @@ public final class Fi {
       return data_ == null ? com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance() : data_;
     }
     /**
+     * <pre>
+     * Dữ liệu lệnh chuyển tiền và trạng thái
+     * </pre>
+     *
      * <code>.offchain.v1.Transfer data = 4;</code>
      */
     @java.lang.Override
@@ -3751,6 +4451,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Trạng thái lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.TransferStatus}
      */
     public static final class Builder extends
@@ -3951,6 +4655,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -3958,6 +4666,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -3969,6 +4681,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -3985,6 +4701,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -3999,6 +4719,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -4017,6 +4741,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -4031,6 +4759,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -4039,6 +4771,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -4050,6 +4786,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4070,6 +4810,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -4077,6 +4821,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -4088,6 +4836,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -4104,6 +4856,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -4118,6 +4874,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -4136,6 +4896,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -4150,6 +4914,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -4158,6 +4926,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -4169,6 +4941,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4189,6 +4965,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -4196,6 +4976,10 @@ public final class Fi {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -4207,6 +4991,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -4223,6 +5011,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -4237,6 +5029,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -4255,6 +5051,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -4269,6 +5069,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -4277,6 +5081,10 @@ public final class Fi {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -4288,6 +5096,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4308,6 +5120,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> dataBuilder_;
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        * @return Whether the data field is set.
        */
@@ -4315,6 +5131,10 @@ public final class Fi {
         return dataBuilder_ != null || data_ != null;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        * @return The data.
        */
@@ -4326,6 +5146,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder setData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -4342,6 +5166,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder setData(
@@ -4356,6 +5184,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder mergeData(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -4374,6 +5206,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public Builder clearData() {
@@ -4388,6 +5224,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getDataBuilder() {
@@ -4396,6 +5236,10 @@ public final class Fi {
         return getDataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getDataOrBuilder() {
@@ -4407,6 +5251,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu lệnh chuyển tiền và trạng thái
+       * </pre>
+       *
        * <code>.offchain.v1.Transfer data = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4480,41 +5328,73 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền cần xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền cần xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
@@ -4522,6 +5402,10 @@ public final class Fi {
         getInstructionIdBytes();
   }
   /**
+   * <pre>
+   * Yêu cầu xác nhận lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.ConfirmTransferRequest}
    */
   public static final class ConfirmTransferRequest extends
@@ -4634,6 +5518,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -4642,6 +5530,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -4650,6 +5542,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -4660,6 +5556,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -4668,6 +5568,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -4676,6 +5580,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -4686,6 +5594,10 @@ public final class Fi {
     public static final int INSTRUCTION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object instructionId_;
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền cần xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The instructionId.
      */
@@ -4703,6 +5615,10 @@ public final class Fi {
       }
     }
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền cần xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 3;</code>
      * @return The bytes for instructionId.
      */
@@ -4908,6 +5824,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu xác nhận lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.ConfirmTransferRequest}
      */
     public static final class Builder extends
@@ -5087,6 +6007,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -5094,6 +6018,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -5105,6 +6033,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -5121,6 +6053,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -5135,6 +6071,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -5153,6 +6093,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -5167,6 +6111,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -5175,6 +6123,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -5186,6 +6138,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5206,6 +6162,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -5213,6 +6173,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -5224,6 +6188,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -5240,6 +6208,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -5254,6 +6226,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -5272,6 +6248,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -5286,6 +6266,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -5294,6 +6278,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -5305,6 +6293,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5323,6 +6315,10 @@ public final class Fi {
 
       private java.lang.Object instructionId_ = "";
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền cần xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return The instructionId.
        */
@@ -5339,6 +6335,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền cần xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return The bytes for instructionId.
        */
@@ -5356,6 +6356,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền cần xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
@@ -5371,6 +6375,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền cần xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @return This builder for chaining.
        */
@@ -5381,6 +6389,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền cần xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 3;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
@@ -5454,56 +6466,100 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền đã xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 4;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền đã xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 4;</code>
      * @return The bytes for instructionId.
      */
@@ -5511,6 +6567,10 @@ public final class Fi {
         getInstructionIdBytes();
   }
   /**
+   * <pre>
+   * Phản hồi xác nhận lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.ConfirmTransferResponse}
    */
   public static final class ConfirmTransferResponse extends
@@ -5636,6 +6696,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -5644,6 +6708,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -5652,6 +6720,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -5662,6 +6734,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -5670,6 +6746,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -5678,6 +6758,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -5688,6 +6772,10 @@ public final class Fi {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -5696,6 +6784,10 @@ public final class Fi {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -5704,6 +6796,10 @@ public final class Fi {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -5714,6 +6810,10 @@ public final class Fi {
     public static final int INSTRUCTION_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object instructionId_;
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền đã xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 4;</code>
      * @return The instructionId.
      */
@@ -5731,6 +6831,10 @@ public final class Fi {
       }
     }
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền đã xác nhận
+     * </pre>
+     *
      * <code>string instruction_id = 4;</code>
      * @return The bytes for instructionId.
      */
@@ -5952,6 +7056,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi xác nhận lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.ConfirmTransferResponse}
      */
     public static final class Builder extends
@@ -6145,6 +7253,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -6152,6 +7264,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -6163,6 +7279,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -6179,6 +7299,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -6193,6 +7317,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -6211,6 +7339,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -6225,6 +7357,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -6233,6 +7369,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -6244,6 +7384,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6264,6 +7408,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -6271,6 +7419,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -6282,6 +7434,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -6298,6 +7454,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -6312,6 +7472,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -6330,6 +7494,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -6344,6 +7512,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -6352,6 +7524,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -6363,6 +7539,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6383,6 +7563,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -6390,6 +7574,10 @@ public final class Fi {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -6401,6 +7589,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -6417,6 +7609,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -6431,6 +7627,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -6449,6 +7649,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -6463,6 +7667,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -6471,6 +7679,10 @@ public final class Fi {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -6482,6 +7694,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6500,6 +7716,10 @@ public final class Fi {
 
       private java.lang.Object instructionId_ = "";
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền đã xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 4;</code>
        * @return The instructionId.
        */
@@ -6516,6 +7736,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền đã xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 4;</code>
        * @return The bytes for instructionId.
        */
@@ -6533,6 +7757,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền đã xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 4;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
@@ -6548,6 +7776,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền đã xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 4;</code>
        * @return This builder for chaining.
        */
@@ -6558,6 +7790,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền đã xác nhận
+       * </pre>
+       *
        * <code>string instruction_id = 4;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
@@ -6631,51 +7867,91 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return Whether the filter field is set.
      */
     boolean hasFilter();
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return The filter.
      */
     com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter getFilter();
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      */
     com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder getFilterOrBuilder();
   }
   /**
+   * <pre>
+   * Yêu cầu tìm kiếm lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.SearchTransfersRequest}
    */
   public static final class SearchTransfersRequest extends
@@ -6796,11 +8072,19 @@ public final class Fi {
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       * <pre>
+       * Lọc theo mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 1;</code>
        * @return The currency.
        */
       java.lang.String getCurrency();
       /**
+       * <pre>
+       * Lọc theo mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 1;</code>
        * @return The bytes for currency.
        */
@@ -6808,11 +8092,19 @@ public final class Fi {
           getCurrencyBytes();
 
       /**
+       * <pre>
+       * Ngày bắt đầu (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_from = 2;</code>
        * @return The dateFrom.
        */
       java.lang.String getDateFrom();
       /**
+       * <pre>
+       * Ngày bắt đầu (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_from = 2;</code>
        * @return The bytes for dateFrom.
        */
@@ -6820,11 +8112,19 @@ public final class Fi {
           getDateFromBytes();
 
       /**
+       * <pre>
+       * Ngày kết thúc (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_to = 3;</code>
        * @return The dateTo.
        */
       java.lang.String getDateTo();
       /**
+       * <pre>
+       * Ngày kết thúc (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_to = 3;</code>
        * @return The bytes for dateTo.
        */
@@ -6832,6 +8132,10 @@ public final class Fi {
           getDateToBytes();
     }
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.SearchTransfersRequest.Filter}
      */
     public static final class Filter extends
@@ -6932,6 +8236,10 @@ public final class Fi {
       public static final int CURRENCY_FIELD_NUMBER = 1;
       private volatile java.lang.Object currency_;
       /**
+       * <pre>
+       * Lọc theo mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 1;</code>
        * @return The currency.
        */
@@ -6949,6 +8257,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Lọc theo mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 1;</code>
        * @return The bytes for currency.
        */
@@ -6970,6 +8282,10 @@ public final class Fi {
       public static final int DATE_FROM_FIELD_NUMBER = 2;
       private volatile java.lang.Object dateFrom_;
       /**
+       * <pre>
+       * Ngày bắt đầu (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_from = 2;</code>
        * @return The dateFrom.
        */
@@ -6987,6 +8303,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Ngày bắt đầu (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_from = 2;</code>
        * @return The bytes for dateFrom.
        */
@@ -7008,6 +8328,10 @@ public final class Fi {
       public static final int DATE_TO_FIELD_NUMBER = 3;
       private volatile java.lang.Object dateTo_;
       /**
+       * <pre>
+       * Ngày kết thúc (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_to = 3;</code>
        * @return The dateTo.
        */
@@ -7025,6 +8349,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Ngày kết thúc (format: YYYY-MM-DD)
+       * </pre>
+       *
        * <code>string date_to = 3;</code>
        * @return The bytes for dateTo.
        */
@@ -7218,6 +8546,10 @@ public final class Fi {
         return builder;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * Protobuf type {@code offchain.v1.SearchTransfersRequest.Filter}
        */
       public static final class Builder extends
@@ -7381,6 +8713,10 @@ public final class Fi {
 
         private java.lang.Object currency_ = "";
         /**
+         * <pre>
+         * Lọc theo mã tiền tệ
+         * </pre>
+         *
          * <code>string currency = 1;</code>
          * @return The currency.
          */
@@ -7397,6 +8733,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Lọc theo mã tiền tệ
+         * </pre>
+         *
          * <code>string currency = 1;</code>
          * @return The bytes for currency.
          */
@@ -7414,6 +8754,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Lọc theo mã tiền tệ
+         * </pre>
+         *
          * <code>string currency = 1;</code>
          * @param value The currency to set.
          * @return This builder for chaining.
@@ -7429,6 +8773,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Lọc theo mã tiền tệ
+         * </pre>
+         *
          * <code>string currency = 1;</code>
          * @return This builder for chaining.
          */
@@ -7439,6 +8787,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Lọc theo mã tiền tệ
+         * </pre>
+         *
          * <code>string currency = 1;</code>
          * @param value The bytes for currency to set.
          * @return This builder for chaining.
@@ -7457,6 +8809,10 @@ public final class Fi {
 
         private java.lang.Object dateFrom_ = "";
         /**
+         * <pre>
+         * Ngày bắt đầu (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_from = 2;</code>
          * @return The dateFrom.
          */
@@ -7473,6 +8829,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Ngày bắt đầu (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_from = 2;</code>
          * @return The bytes for dateFrom.
          */
@@ -7490,6 +8850,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Ngày bắt đầu (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_from = 2;</code>
          * @param value The dateFrom to set.
          * @return This builder for chaining.
@@ -7505,6 +8869,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Ngày bắt đầu (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_from = 2;</code>
          * @return This builder for chaining.
          */
@@ -7515,6 +8883,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Ngày bắt đầu (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_from = 2;</code>
          * @param value The bytes for dateFrom to set.
          * @return This builder for chaining.
@@ -7533,6 +8905,10 @@ public final class Fi {
 
         private java.lang.Object dateTo_ = "";
         /**
+         * <pre>
+         * Ngày kết thúc (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_to = 3;</code>
          * @return The dateTo.
          */
@@ -7549,6 +8925,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Ngày kết thúc (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_to = 3;</code>
          * @return The bytes for dateTo.
          */
@@ -7566,6 +8946,10 @@ public final class Fi {
           }
         }
         /**
+         * <pre>
+         * Ngày kết thúc (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_to = 3;</code>
          * @param value The dateTo to set.
          * @return This builder for chaining.
@@ -7581,6 +8965,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Ngày kết thúc (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_to = 3;</code>
          * @return This builder for chaining.
          */
@@ -7591,6 +8979,10 @@ public final class Fi {
           return this;
         }
         /**
+         * <pre>
+         * Ngày kết thúc (format: YYYY-MM-DD)
+         * </pre>
+         *
          * <code>string date_to = 3;</code>
          * @param value The bytes for dateTo to set.
          * @return This builder for chaining.
@@ -7662,6 +9054,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -7670,6 +9066,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -7678,6 +9078,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -7688,6 +9092,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -7696,6 +9104,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -7704,6 +9116,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -7714,6 +9130,10 @@ public final class Fi {
     public static final int FILTER_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter filter_;
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return Whether the filter field is set.
      */
@@ -7722,6 +9142,10 @@ public final class Fi {
       return filter_ != null;
     }
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      * @return The filter.
      */
@@ -7730,6 +9154,10 @@ public final class Fi {
       return filter_ == null ? com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.getDefaultInstance() : filter_;
     }
     /**
+     * <pre>
+     * Bộ lọc tìm kiếm
+     * </pre>
+     *
      * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
      */
     @java.lang.Override
@@ -7930,6 +9358,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu tìm kiếm lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.SearchTransfersRequest}
      */
     public static final class Builder extends
@@ -8116,6 +9548,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -8123,6 +9559,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -8134,6 +9574,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -8150,6 +9594,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -8164,6 +9612,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -8182,6 +9634,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -8196,6 +9652,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -8204,6 +9664,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -8215,6 +9679,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8235,6 +9703,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -8242,6 +9714,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -8253,6 +9729,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -8269,6 +9749,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -8283,6 +9767,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -8301,6 +9789,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -8315,6 +9807,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -8323,6 +9819,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -8334,6 +9834,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8354,6 +9858,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder, com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder> filterBuilder_;
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        * @return Whether the filter field is set.
        */
@@ -8361,6 +9869,10 @@ public final class Fi {
         return filterBuilder_ != null || filter_ != null;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        * @return The filter.
        */
@@ -8372,6 +9884,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder setFilter(com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter value) {
@@ -8388,6 +9904,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder setFilter(
@@ -8402,6 +9922,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder mergeFilter(com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter value) {
@@ -8420,6 +9944,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public Builder clearFilter() {
@@ -8434,6 +9962,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.Filter.Builder getFilterBuilder() {
@@ -8442,6 +9974,10 @@ public final class Fi {
         return getFilterFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       public com.blcvn.switching.offchain.Fi.SearchTransfersRequest.FilterOrBuilder getFilterOrBuilder() {
@@ -8453,6 +9989,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Bộ lọc tìm kiếm
+       * </pre>
+       *
        * <code>.offchain.v1.SearchTransfersRequest.Filter filter = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8526,75 +10066,135 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
         getResultsList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     com.blcvn.switching.offchain.Common.Transfer getResults(int index);
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     int getResultsCount();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getResultsOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getResultsOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Phản hồi tìm kiếm lệnh chuyển tiền
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.SearchTransfersResponse}
    */
   public static final class SearchTransfersResponse extends
@@ -8727,6 +10327,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -8735,6 +10339,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -8743,6 +10351,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -8753,6 +10365,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -8761,6 +10377,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -8769,6 +10389,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -8779,6 +10403,10 @@ public final class Fi {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -8787,6 +10415,10 @@ public final class Fi {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -8795,6 +10427,10 @@ public final class Fi {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -8805,6 +10441,10 @@ public final class Fi {
     public static final int RESULTS_FIELD_NUMBER = 4;
     private java.util.List<com.blcvn.switching.offchain.Common.Transfer> results_;
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
@@ -8812,6 +10452,10 @@ public final class Fi {
       return results_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
@@ -8820,6 +10464,10 @@ public final class Fi {
       return results_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
@@ -8827,6 +10475,10 @@ public final class Fi {
       return results_.size();
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
@@ -8834,6 +10486,10 @@ public final class Fi {
       return results_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền tìm được
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer results = 4;</code>
      */
     @java.lang.Override
@@ -9048,6 +10704,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi tìm kiếm lệnh chuyển tiền
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.SearchTransfersResponse}
      */
     public static final class Builder extends
@@ -9278,6 +10938,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -9285,6 +10949,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -9296,6 +10964,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -9312,6 +10984,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -9326,6 +11002,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -9344,6 +11024,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -9358,6 +11042,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -9366,6 +11054,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -9377,6 +11069,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -9397,6 +11093,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -9404,6 +11104,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -9415,6 +11119,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -9431,6 +11139,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -9445,6 +11157,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -9463,6 +11179,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -9477,6 +11197,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -9485,6 +11209,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -9496,6 +11224,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -9516,6 +11248,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -9523,6 +11259,10 @@ public final class Fi {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -9534,6 +11274,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -9550,6 +11294,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -9564,6 +11312,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -9582,6 +11334,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -9596,6 +11352,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -9604,6 +11364,10 @@ public final class Fi {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -9615,6 +11379,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -9644,6 +11412,10 @@ public final class Fi {
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> resultsBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getResultsList() {
@@ -9654,6 +11426,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public int getResultsCount() {
@@ -9664,6 +11440,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer getResults(int index) {
@@ -9674,6 +11454,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder setResults(
@@ -9691,6 +11475,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder setResults(
@@ -9705,6 +11493,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -9721,6 +11513,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
@@ -9738,6 +11534,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
@@ -9752,6 +11552,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addResults(
@@ -9766,6 +11570,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder addAllResults(
@@ -9781,6 +11589,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder clearResults() {
@@ -9794,6 +11606,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public Builder removeResults(int index) {
@@ -9807,6 +11623,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getResultsBuilder(
@@ -9814,6 +11634,10 @@ public final class Fi {
         return getResultsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getResultsOrBuilder(
@@ -9824,6 +11648,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
@@ -9835,6 +11663,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addResultsBuilder() {
@@ -9842,6 +11674,10 @@ public final class Fi {
             com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addResultsBuilder(
@@ -9850,6 +11686,10 @@ public final class Fi {
             index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền tìm được
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer results = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
@@ -9928,60 +11768,108 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
         getTransfersList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     com.blcvn.switching.offchain.Common.Transfer getTransfers(int index);
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     int getTransfersCount();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getTransfersOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Yêu cầu chuyển tiền hàng loạt
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.BulkTransferRequest}
    */
   public static final class BulkTransferRequest extends
@@ -10101,6 +11989,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -10109,6 +12001,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -10117,6 +12013,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -10127,6 +12027,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -10135,6 +12039,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -10143,6 +12051,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -10153,6 +12065,10 @@ public final class Fi {
     public static final int TRANSFERS_FIELD_NUMBER = 3;
     private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_;
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
@@ -10160,6 +12076,10 @@ public final class Fi {
       return transfers_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
@@ -10168,6 +12088,10 @@ public final class Fi {
       return transfers_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
@@ -10175,6 +12099,10 @@ public final class Fi {
       return transfers_.size();
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
@@ -10182,6 +12110,10 @@ public final class Fi {
       return transfers_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
      */
     @java.lang.Override
@@ -10380,6 +12312,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu chuyển tiền hàng loạt
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.BulkTransferRequest}
      */
     public static final class Builder extends
@@ -10596,6 +12532,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -10603,6 +12543,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -10614,6 +12558,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -10630,6 +12578,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -10644,6 +12596,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -10662,6 +12618,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -10676,6 +12636,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -10684,6 +12648,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -10695,6 +12663,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -10715,6 +12687,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -10722,6 +12698,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -10733,6 +12713,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -10749,6 +12733,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -10763,6 +12751,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -10781,6 +12773,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -10795,6 +12791,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -10803,6 +12803,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -10814,6 +12818,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -10843,6 +12851,10 @@ public final class Fi {
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> transfersBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
@@ -10853,6 +12865,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public int getTransfersCount() {
@@ -10863,6 +12879,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
@@ -10873,6 +12893,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder setTransfers(
@@ -10890,6 +12914,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder setTransfers(
@@ -10904,6 +12932,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -10920,6 +12952,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
@@ -10937,6 +12973,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
@@ -10951,6 +12991,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addTransfers(
@@ -10965,6 +13009,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder addAllTransfers(
@@ -10980,6 +13028,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder clearTransfers() {
@@ -10993,6 +13045,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public Builder removeTransfers(int index) {
@@ -11006,6 +13062,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getTransfersBuilder(
@@ -11013,6 +13073,10 @@ public final class Fi {
         return getTransfersFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
@@ -11023,6 +13087,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
@@ -11034,6 +13102,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder() {
@@ -11041,6 +13113,10 @@ public final class Fi {
             com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder(
@@ -11049,6 +13125,10 @@ public final class Fi {
             index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 3;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
@@ -11127,75 +13207,135 @@ public final class Fi {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Common.Transfer> 
         getTransfersList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     com.blcvn.switching.offchain.Common.Transfer getTransfers(int index);
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     int getTransfersCount();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
         getTransfersOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Phản hồi chuyển tiền hàng loạt
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.BulkTransferResponse}
    */
   public static final class BulkTransferResponse extends
@@ -11328,6 +13468,10 @@ public final class Fi {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -11336,6 +13480,10 @@ public final class Fi {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -11344,6 +13492,10 @@ public final class Fi {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -11354,6 +13506,10 @@ public final class Fi {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -11362,6 +13518,10 @@ public final class Fi {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -11370,6 +13530,10 @@ public final class Fi {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -11380,6 +13544,10 @@ public final class Fi {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -11388,6 +13556,10 @@ public final class Fi {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -11396,6 +13568,10 @@ public final class Fi {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -11406,6 +13582,10 @@ public final class Fi {
     public static final int TRANSFERS_FIELD_NUMBER = 4;
     private java.util.List<com.blcvn.switching.offchain.Common.Transfer> transfers_;
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     @java.lang.Override
@@ -11413,6 +13593,10 @@ public final class Fi {
       return transfers_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     @java.lang.Override
@@ -11421,6 +13605,10 @@ public final class Fi {
       return transfers_;
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     @java.lang.Override
@@ -11428,6 +13616,10 @@ public final class Fi {
       return transfers_.size();
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     @java.lang.Override
@@ -11435,6 +13627,10 @@ public final class Fi {
       return transfers_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các lệnh chuyển tiền đã xử lý
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
      */
     @java.lang.Override
@@ -11649,6 +13845,10 @@ public final class Fi {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi chuyển tiền hàng loạt
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.BulkTransferResponse}
      */
     public static final class Builder extends
@@ -11879,6 +14079,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -11886,6 +14090,10 @@ public final class Fi {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -11897,6 +14105,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -11913,6 +14125,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -11927,6 +14143,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -11945,6 +14165,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -11959,6 +14183,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -11967,6 +14195,10 @@ public final class Fi {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -11978,6 +14210,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11998,6 +14234,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -12005,6 +14245,10 @@ public final class Fi {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -12016,6 +14260,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -12032,6 +14280,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -12046,6 +14298,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -12064,6 +14320,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -12078,6 +14338,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -12086,6 +14350,10 @@ public final class Fi {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -12097,6 +14365,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -12117,6 +14389,10 @@ public final class Fi {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -12124,6 +14400,10 @@ public final class Fi {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -12135,6 +14415,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -12151,6 +14435,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -12165,6 +14453,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -12183,6 +14475,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -12197,6 +14493,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -12205,6 +14505,10 @@ public final class Fi {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -12216,6 +14520,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -12245,6 +14553,10 @@ public final class Fi {
           com.blcvn.switching.offchain.Common.Transfer, com.blcvn.switching.offchain.Common.Transfer.Builder, com.blcvn.switching.offchain.Common.TransferOrBuilder> transfersBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer> getTransfersList() {
@@ -12255,6 +14567,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public int getTransfersCount() {
@@ -12265,6 +14581,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer getTransfers(int index) {
@@ -12275,6 +14595,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder setTransfers(
@@ -12292,6 +14616,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder setTransfers(
@@ -12306,6 +14634,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder addTransfers(com.blcvn.switching.offchain.Common.Transfer value) {
@@ -12322,6 +14654,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder addTransfers(
@@ -12339,6 +14675,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder addTransfers(
@@ -12353,6 +14693,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder addTransfers(
@@ -12367,6 +14711,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder addAllTransfers(
@@ -12382,6 +14730,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder clearTransfers() {
@@ -12395,6 +14747,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public Builder removeTransfers(int index) {
@@ -12408,6 +14764,10 @@ public final class Fi {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder getTransfersBuilder(
@@ -12415,6 +14775,10 @@ public final class Fi {
         return getTransfersFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.TransferOrBuilder getTransfersOrBuilder(
@@ -12425,6 +14789,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Common.TransferOrBuilder> 
@@ -12436,6 +14804,10 @@ public final class Fi {
         }
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder() {
@@ -12443,6 +14815,10 @@ public final class Fi {
             com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.Transfer.Builder addTransfersBuilder(
@@ -12451,6 +14827,10 @@ public final class Fi {
             index, com.blcvn.switching.offchain.Common.Transfer.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các lệnh chuyển tiền đã xử lý
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Transfer transfers = 4;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.Transfer.Builder> 
@@ -12589,72 +14969,71 @@ public final class Fi {
   static {
     java.lang.String[] descriptorData = {
       "\n\021offchain/fi.proto\022\013offchain.v1\032\025offcha" +
-      "in/common.proto\032\037google/protobuf/timesta" +
-      "mp.proto\"\220\001\n\025CreateTransferRequest\022\'\n\010me" +
-      "tadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\ts" +
-      "ignature\030\002 \001(\0132\026.offchain.v1.Signature\022#" +
-      "\n\004data\030\003 \001(\0132\025.offchain.v1.Transfer\"\266\001\n\026" +
-      "CreateTransferResponse\022\'\n\010metadata\030\001 \001(\013" +
-      "2\025.offchain.v1.Metadata\022)\n\tsignature\030\002 \001" +
-      "(\0132\026.offchain.v1.Signature\022#\n\006result\030\003 \001" +
-      "(\0132\023.offchain.v1.Result\022#\n\004data\030\004 \001(\0132\025." +
-      "offchain.v1.Transfer\"\200\001\n\022GetTransferRequ" +
-      "est\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Meta" +
-      "data\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Si" +
-      "gnature\022\026\n\016instruction_id\030\003 \001(\t\"\256\001\n\016Tran" +
-      "sferStatus\022\'\n\010metadata\030\001 \001(\0132\025.offchain." +
+      "in/common.proto\"\220\001\n\025CreateTransferReques" +
+      "t\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metada" +
+      "ta\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Sign" +
+      "ature\022#\n\004data\030\003 \001(\0132\025.offchain.v1.Transf" +
+      "er\"\266\001\n\026CreateTransferResponse\022\'\n\010metadat" +
+      "a\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\tsignat" +
+      "ure\030\002 \001(\0132\026.offchain.v1.Signature\022#\n\006res" +
+      "ult\030\003 \001(\0132\023.offchain.v1.Result\022#\n\004data\030\004" +
+      " \001(\0132\025.offchain.v1.Transfer\"\200\001\n\022GetTrans" +
+      "ferRequest\022\'\n\010metadata\030\001 \001(\0132\025.offchain." +
       "v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.offchai" +
-      "n.v1.Signature\022#\n\006result\030\003 \001(\0132\023.offchai" +
-      "n.v1.Result\022#\n\004data\030\004 \001(\0132\025.offchain.v1." +
-      "Transfer\"\204\001\n\026ConfirmTransferRequest\022\'\n\010m" +
-      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
-      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
-      "\026\n\016instruction_id\030\003 \001(\t\"\252\001\n\027ConfirmTrans" +
-      "ferResponse\022\'\n\010metadata\030\001 \001(\0132\025.offchain" +
+      "n.v1.Signature\022\026\n\016instruction_id\030\003 \001(\t\"\256" +
+      "\001\n\016TransferStatus\022\'\n\010metadata\030\001 \001(\0132\025.of" +
+      "fchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026." +
+      "offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023." +
+      "offchain.v1.Result\022#\n\004data\030\004 \001(\0132\025.offch" +
+      "ain.v1.Transfer\"\204\001\n\026ConfirmTransferReque" +
+      "st\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metad" +
+      "ata\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Sig" +
+      "nature\022\026\n\016instruction_id\030\003 \001(\t\"\252\001\n\027Confi" +
+      "rmTransferResponse\022\'\n\010metadata\030\001 \001(\0132\025.o" +
+      "ffchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
+      ".offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023" +
+      ".offchain.v1.Result\022\026\n\016instruction_id\030\004 " +
+      "\001(\t\"\350\001\n\026SearchTransfersRequest\022\'\n\010metada" +
+      "ta\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\tsigna" +
+      "ture\030\002 \001(\0132\026.offchain.v1.Signature\022:\n\006fi" +
+      "lter\030\003 \001(\0132*.offchain.v1.SearchTransfers" +
+      "Request.Filter\032>\n\006Filter\022\020\n\010currency\030\001 \001" +
+      "(\t\022\021\n\tdate_from\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"\272" +
+      "\001\n\027SearchTransfersResponse\022\'\n\010metadata\030\001" +
+      " \001(\0132\025.offchain.v1.Metadata\022)\n\tsignature" +
+      "\030\002 \001(\0132\026.offchain.v1.Signature\022#\n\006result" +
+      "\030\003 \001(\0132\023.offchain.v1.Result\022&\n\007results\030\004" +
+      " \003(\0132\025.offchain.v1.Transfer\"\223\001\n\023BulkTran" +
+      "sferRequest\022\'\n\010metadata\030\001 \001(\0132\025.offchain" +
       ".v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026.offcha" +
-      "in.v1.Signature\022#\n\006result\030\003 \001(\0132\023.offcha" +
-      "in.v1.Result\022\026\n\016instruction_id\030\004 \001(\t\"\350\001\n" +
-      "\026SearchTransfersRequest\022\'\n\010metadata\030\001 \001(" +
-      "\0132\025.offchain.v1.Metadata\022)\n\tsignature\030\002 " +
-      "\001(\0132\026.offchain.v1.Signature\022:\n\006filter\030\003 " +
-      "\001(\0132*.offchain.v1.SearchTransfersRequest" +
-      ".Filter\032>\n\006Filter\022\020\n\010currency\030\001 \001(\t\022\021\n\td" +
-      "ate_from\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"\272\001\n\027Sear" +
-      "chTransfersResponse\022\'\n\010metadata\030\001 \001(\0132\025." +
-      "offchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132" +
-      "\026.offchain.v1.Signature\022#\n\006result\030\003 \001(\0132" +
-      "\023.offchain.v1.Result\022&\n\007results\030\004 \003(\0132\025." +
-      "offchain.v1.Transfer\"\223\001\n\023BulkTransferReq" +
-      "uest\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Met" +
-      "adata\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.S" +
-      "ignature\022(\n\ttransfers\030\003 \003(\0132\025.offchain.v" +
-      "1.Transfer\"\271\001\n\024BulkTransferResponse\022\'\n\010m" +
-      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
-      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
-      "#\n\006result\030\003 \001(\0132\023.offchain.v1.Result\022(\n\t" +
-      "transfers\030\004 \003(\0132\025.offchain.v1.Transfer2\235" +
-      "\004\n\tFiService\022[\n\016CreateTransfer\022\".offchai" +
-      "n.v1.CreateTransferRequest\032#.offchain.v1" +
-      ".CreateTransferResponse\"\000\022G\n\013GetTransfer" +
-      "\022\037.offchain.v1.GetTransferRequest\032\025.offc" +
-      "hain.v1.Transfer\"\000\022S\n\021GetTransferStatus\022" +
-      "\037.offchain.v1.GetTransferRequest\032\033.offch" +
-      "ain.v1.TransferStatus\"\000\022^\n\017ConfirmTransf" +
-      "er\022#.offchain.v1.ConfirmTransferRequest\032" +
-      "$.offchain.v1.ConfirmTransferResponse\"\000\022" +
-      "^\n\017SearchTransfers\022#.offchain.v1.SearchT" +
-      "ransfersRequest\032$.offchain.v1.SearchTran" +
-      "sfersResponse\"\000\022U\n\014BulkTransfer\022 .offcha" +
-      "in.v1.BulkTransferRequest\032!.offchain.v1." +
-      "BulkTransferResponse\"\000BU\n\034com.blcvn.swit" +
-      "ching.offchainZ5github.com/blcvn/switchi" +
-      "ng-proto/go/offchain;offchainb\006proto3"
+      "in.v1.Signature\022(\n\ttransfers\030\003 \003(\0132\025.off" +
+      "chain.v1.Transfer\"\271\001\n\024BulkTransferRespon" +
+      "se\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metad" +
+      "ata\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Sig" +
+      "nature\022#\n\006result\030\003 \001(\0132\023.offchain.v1.Res" +
+      "ult\022(\n\ttransfers\030\004 \003(\0132\025.offchain.v1.Tra" +
+      "nsfer2\235\004\n\tFiService\022[\n\016CreateTransfer\022\"." +
+      "offchain.v1.CreateTransferRequest\032#.offc" +
+      "hain.v1.CreateTransferResponse\"\000\022G\n\013GetT" +
+      "ransfer\022\037.offchain.v1.GetTransferRequest" +
+      "\032\025.offchain.v1.Transfer\"\000\022S\n\021GetTransfer" +
+      "Status\022\037.offchain.v1.GetTransferRequest\032" +
+      "\033.offchain.v1.TransferStatus\"\000\022^\n\017Confir" +
+      "mTransfer\022#.offchain.v1.ConfirmTransferR" +
+      "equest\032$.offchain.v1.ConfirmTransferResp" +
+      "onse\"\000\022^\n\017SearchTransfers\022#.offchain.v1." +
+      "SearchTransfersRequest\032$.offchain.v1.Sea" +
+      "rchTransfersResponse\"\000\022U\n\014BulkTransfer\022 " +
+      ".offchain.v1.BulkTransferRequest\032!.offch" +
+      "ain.v1.BulkTransferResponse\"\000BU\n\034com.blc" +
+      "vn.switching.offchainZ5github.com/blcvn/" +
+      "switching-proto/go/offchain;offchainb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.switching.offchain.Common.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_offchain_v1_CreateTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12723,7 +15102,6 @@ public final class Fi {
         internal_static_offchain_v1_BulkTransferResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Transfers", });
     com.blcvn.switching.offchain.Common.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

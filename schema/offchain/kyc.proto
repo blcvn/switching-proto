@@ -7,71 +7,91 @@ import "offchain/common.proto";
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
+// Service quản lý KYC (Know Your Customer) - Xác thực khách hàng
 service KycService {
+  // Liệt kê tất cả các thực thể KYC
   rpc ListEntities(Empty) returns (ListEntitiesResponse) {}
+  // Lấy thông tin chi tiết của một thực thể KYC
   rpc GetEntity(GetEntityRequest) returns (KycEntity) {}
+  // Lấy danh sách tài liệu của một thực thể KYC
   rpc GetEntityDocuments(GetEntityDocsRequest) returns (GetEntityDocsResponse) {}
+  // Đăng ký thực thể KYC mới
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
+  // Gửi thông tin KYC để xác thực
   rpc SubmitKyc(SubmitKycRequest) returns (SubmitKycResponse) {}
+  // Lấy metadata về cấu trúc KYC
   rpc Metadata(Empty) returns (KycMetadata) {}
+  // Lấy lịch sử audit của một thực thể KYC
   rpc Audit(GetEntityRequest) returns (AuditResponse) {}
 }
 
+// Yêu cầu đăng ký thực thể KYC
 message RegisterRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  KycEntity data = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  KycEntity data = 3;       // Dữ liệu thực thể KYC
 }
 
+// Phản hồi đăng ký thực thể KYC
 message RegisterResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  KycEntity data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  KycEntity data = 4;       // Dữ liệu thực thể KYC đã đăng ký
 }
 
+// Phản hồi danh sách thực thể KYC
 message ListEntitiesResponse {
-  repeated KycEntity entities = 1;
+  repeated KycEntity entities = 1;  // Danh sách các thực thể KYC
 }
 
+// Yêu cầu lấy thông tin thực thể KYC
 message GetEntityRequest {
-  string bic = 1;
+  string bic = 1;  // Bank Identifier Code của thực thể
 }
 
+// Yêu cầu lấy tài liệu của thực thể KYC
 message GetEntityDocsRequest {
-  string bic = 1;
+  string bic = 1;  // Bank Identifier Code của thực thể
 }
 
+// Thông tin tài liệu
 message Document {
-  string id = 1;
-  string type = 2;
-  string url = 3;
+  string id = 1;    // ID của tài liệu
+  string type = 2;  // Loại tài liệu
+  string url = 3;   // URL để truy cập tài liệu
 }
 
+// Phản hồi danh sách tài liệu
 message GetEntityDocsResponse {
-  repeated Document documents = 1;
+  repeated Document documents = 1;  // Danh sách các tài liệu
 }
 
+// Yêu cầu gửi thông tin KYC
 message SubmitKycRequest {
-  string bic = 1;
-  map<string, string> updates = 2;
+  string bic = 1;                    // Bank Identifier Code của thực thể
+  map<string, string> updates = 2;   // Map các trường cần cập nhật (key: tên trường, value: giá trị)
 }
 
+// Phản hồi gửi thông tin KYC
 message SubmitKycResponse {
-  string status = 1;
+  string status = 1;  // Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
 }
 
+// Metadata về cấu trúc KYC
 message KycMetadata {
-  string version = 1;
-  repeated string fields = 2;
+  string version = 1;           // Phiên bản của schema KYC
+  repeated string fields = 2;    // Danh sách các trường được hỗ trợ
 }
 
+// Một entry trong lịch sử audit
 message AuditEntry {
-  string bic = 1;
-  string action = 2;
-  string time = 3;
+  string bic = 1;     // Bank Identifier Code của thực thể
+  string action = 2;  // Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+  string time = 3;    // Thời gian thực hiện hành động
 }
 
+// Phản hồi lịch sử audit
 message AuditResponse {
-  repeated AuditEntry entries = 1;
+  repeated AuditEntry entries = 1;  // Danh sách các entry trong lịch sử audit
 }

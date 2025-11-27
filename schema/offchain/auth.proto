@@ -5,19 +5,23 @@ package offchain.v1;
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
-// Authentication service (token endpoint)
+// Service xác thực (endpoint token)
+// Dịch vụ cung cấp chức năng xác thực và cấp token truy cập
 service AuthService {
+  // Lấy token truy cập dựa trên thông tin xác thực client
   rpc Token(TokenRequest) returns (TokenResponse) {}
 }
 
+// Yêu cầu lấy token
 message TokenRequest {
-  string grant_type = 1;
-  string client_id = 2;
-  string client_secret = 3;
+  string grant_type = 1;      // Loại grant type (thường là "client_credentials")
+  string client_id = 2;        // ID của client
+  string client_secret = 3;    // Secret key của client
 }
 
+// Phản hồi chứa token truy cập
 message TokenResponse {
-  string access_token = 1;
-  string token_type = 2;
-  int32 expires_in = 3;
+  string access_token = 1;     // Token truy cập được cấp
+  string token_type = 2;       // Loại token (thường là "Bearer")
+  int32 expires_in = 3;        // Thời gian hết hạn của token (tính bằng giây)
 }

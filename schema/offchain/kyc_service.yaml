@@ -1,0 +1,16 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: offchain.v1.KycService.ListEntities
+          get: /kyc/list
+
+        - selector: offchain.v1.KycService.GetEntity
+          post: /kyc/detail
+          body: "*"
+
+        - selector: offchain.v1.KycService.Register
+          post: /kyc/register
+          body: "*"

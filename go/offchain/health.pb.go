@@ -22,10 +22,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Phản hồi kiểm tra sức khỏe
 type HealthResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	Time          *timestamp.Timestamp   `protobuf:"bytes,2,opt,name=time,proto3" json:"time,omitempty"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // Trạng thái (thường là "ok", "healthy", "unhealthy")
+	Time          *timestamp.Timestamp   `protobuf:"bytes,2,opt,name=time,proto3" json:"time,omitempty"`     // Thời gian kiểm tra
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

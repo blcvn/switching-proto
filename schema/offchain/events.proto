@@ -7,33 +7,42 @@ import "google/protobuf/timestamp.proto";
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
+// Service quản lý sự kiện và thông báo
 service EventsService {
-  // server streaming
+  // Đăng ký nhận sự kiện theo stream (server streaming)
   rpc SubscribeEvents(SubscribeEventsRequest) returns (stream Event) {}
+  // Đăng ký callback URL để nhận thông báo sự kiện
   rpc RegisterCallback(SubscribeCallbackRequest) returns (SubscribeCallbackResponse) {}
+  // Hủy đăng ký callback URL
   rpc UnregisterCallback(UnsubscribeCallbackRequest) returns (UnsubscribeCallbackResponse) {}
 }
 
+// Yêu cầu đăng ký nhận sự kiện
 message SubscribeEventsRequest {
-  string uetr = 1;
+  string uetr = 1;  // Unique End-to-End Transaction Reference
 }
 
+// Sự kiện được gửi đến client
 message Event {
-  string event = 1; // welcome, update, ping
-  string data = 2;
-  google.protobuf.Timestamp timestamp = 3;
+  string event = 1;  // Loại sự kiện: welcome, update, ping
+  string data = 2;   // Dữ liệu của sự kiện (JSON string)
+  google.protobuf.Timestamp timestamp = 3;  // Thời gian xảy ra sự kiện
 }
 
+// Yêu cầu đăng ký callback URL
 message SubscribeCallbackRequest {
-  string callback_url = 1;
+  string callback_url = 1;  // URL callback để nhận thông báo sự kiện
 }
 
+// Phản hồi đăng ký callback
 message SubscribeCallbackResponse {
-  string subscribed = 1;
+  string subscribed = 1;  // Trạng thái đăng ký (thường là "ok" hoặc "success")
 }
 
+// Yêu cầu hủy đăng ký callback
 message UnsubscribeCallbackRequest {}
 
+// Phản hồi hủy đăng ký callback
 message UnsubscribeCallbackResponse {
-  string unsubscribed = 1;
+  string unsubscribed = 1;  // Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
 }

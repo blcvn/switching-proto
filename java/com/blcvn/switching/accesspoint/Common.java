@@ -8679,23 +8679,22 @@ public final class Common {
 
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The code.
+     * <code>.accesspoint.v1.ResultCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
      */
-    java.lang.String getCode();
+    int getCodeValue();
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The bytes for code.
+     * <code>.accesspoint.v1.ResultCode code = 1;</code>
+     * @return The code.
      */
-    com.google.protobuf.ByteString
-        getCodeBytes();
+    com.blcvn.switching.accesspoint.Error.ResultCode getCode();
 
     /**
      * <pre>
@@ -8719,7 +8718,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * CCResult định nghĩa cấu trúc kết quả trả về
+   * Result định nghĩa cấu trúc kết quả trả về
    * </pre>
    *
    * Protobuf type {@code accesspoint.v1.Result}
@@ -8734,7 +8733,7 @@ public final class Common {
       super(builder);
     }
     private Result() {
-      code_ = "";
+      code_ = 0;
       message_ = "";
     }
 
@@ -8768,10 +8767,10 @@ public final class Common {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
+              int rawValue = input.readEnum();
 
-              code_ = s;
+              code_ = rawValue;
               break;
             }
             case 18: {
@@ -8813,49 +8812,30 @@ public final class Common {
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object code_;
+    private int code_;
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The code.
+     * <code>.accesspoint.v1.ResultCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
      */
-    @java.lang.Override
-    public java.lang.String getCode() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        code_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCodeValue() {
+      return code_;
     }
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The bytes for code.
+     * <code>.accesspoint.v1.ResultCode code = 1;</code>
+     * @return The code.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCodeBytes() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        code_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.blcvn.switching.accesspoint.Error.ResultCode getCode() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.switching.accesspoint.Error.ResultCode result = com.blcvn.switching.accesspoint.Error.ResultCode.valueOf(code_);
+      return result == null ? com.blcvn.switching.accesspoint.Error.ResultCode.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -8918,8 +8898,8 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+      if (code_ != com.blcvn.switching.accesspoint.Error.ResultCode.UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -8933,8 +8913,9 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+      if (code_ != com.blcvn.switching.accesspoint.Error.ResultCode.UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -8954,8 +8935,7 @@ public final class Common {
       }
       com.blcvn.switching.accesspoint.Common.Result other = (com.blcvn.switching.accesspoint.Common.Result) obj;
 
-      if (!getCode()
-          .equals(other.getCode())) return false;
+      if (code_ != other.code_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -8970,7 +8950,7 @@ public final class Common {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode().hashCode();
+      hash = (53 * hash) + code_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9070,7 +9050,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * CCResult định nghĩa cấu trúc kết quả trả về
+     * Result định nghĩa cấu trúc kết quả trả về
      * </pre>
      *
      * Protobuf type {@code accesspoint.v1.Result}
@@ -9110,7 +9090,7 @@ public final class Common {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        code_ = "";
+        code_ = 0;
 
         message_ = "";
 
@@ -9190,9 +9170,8 @@ public final class Common {
 
       public Builder mergeFrom(com.blcvn.switching.accesspoint.Common.Result other) {
         if (other == com.blcvn.switching.accesspoint.Common.Result.getDefaultInstance()) return this;
-        if (!other.getCode().isEmpty()) {
-          code_ = other.code_;
-          onChanged();
+        if (other.code_ != 0) {
+          setCodeValue(other.getCodeValue());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -9227,98 +9206,76 @@ public final class Common {
         return this;
       }
 
-      private java.lang.Object code_ = "";
+      private int code_ = 0;
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
-       * @return The code.
+       * <code>.accesspoint.v1.ResultCode code = 1;</code>
+       * @return The enum numeric value on the wire for code.
        */
-      public java.lang.String getCode() {
-        java.lang.Object ref = code_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          code_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCodeValue() {
+        return code_;
       }
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
-       * @return The bytes for code.
-       */
-      public com.google.protobuf.ByteString
-          getCodeBytes() {
-        java.lang.Object ref = code_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          code_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Mã kết quả thực thi
-       * </pre>
-       *
-       * <code>string code = 1;</code>
-       * @param value The code to set.
+       * <code>.accesspoint.v1.ResultCode code = 1;</code>
+       * @param value The enum numeric value on the wire for code to set.
        * @return This builder for chaining.
        */
-      public Builder setCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setCodeValue(int value) {
+        
         code_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
+       * <code>.accesspoint.v1.ResultCode code = 1;</code>
+       * @return The code.
+       */
+      @java.lang.Override
+      public com.blcvn.switching.accesspoint.Error.ResultCode getCode() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.switching.accesspoint.Error.ResultCode result = com.blcvn.switching.accesspoint.Error.ResultCode.valueOf(code_);
+        return result == null ? com.blcvn.switching.accesspoint.Error.ResultCode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi (enum)
+       * </pre>
+       *
+       * <code>.accesspoint.v1.ResultCode code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(com.blcvn.switching.accesspoint.Error.ResultCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        code_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi (enum)
+       * </pre>
+       *
+       * <code>.accesspoint.v1.ResultCode code = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCode() {
         
-        code_ = getDefaultInstance().getCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Mã kết quả thực thi
-       * </pre>
-       *
-       * <code>string code = 1;</code>
-       * @param value The bytes for code to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        code_ = value;
+        code_ = 0;
         onChanged();
         return this;
       }
@@ -9521,40 +9478,42 @@ public final class Common {
   static {
     java.lang.String[] descriptorData = {
       "\n\031access-point/common.proto\022\016accesspoint" +
-      ".v1\032\037google/protobuf/timestamp.proto\"\007\n\005" +
-      "Empty\"\272\002\n\007Payment\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 " +
-      "\001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\024\n" +
-      "\014debtor_agent\030\005 \001(\t\022\026\n\016creditor_agent\030\006 " +
-      "\001(\t\022\025\n\rend_to_end_id\030\007 \001(\t\022\016\n\006status\030\010 \001" +
-      "(\t\022.\n\ncreated_at\030\t \001(\0132\032.google.protobuf" +
-      ".Timestamp\0225\n\024debtor_agent_account\030\n \001(\013" +
-      "2\027.accesspoint.v1.Account\0227\n\026creditor_ag" +
-      "ent_account\030\013 \001(\0132\027.accesspoint.v1.Accou" +
-      "nt\"\311\001\n\010Transfer\022\026\n\016instruction_id\030\001 \001(\t\022" +
-      "\020\n\010creditor\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010cur" +
-      "rency\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022.\n\ncreated_a" +
-      "t\030\006 \001(\0132\032.google.protobuf.Timestamp\0221\n\020c" +
-      "reditor_account\030\007 \001(\0132\027.accesspoint.v1.A" +
-      "ccount\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name" +
-      "\030\002 \001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\n" +
-      "updated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(" +
-      "\t\022\026\n\016account_number\030\002 \001(\t\022\024\n\014account_nam" +
-      "e\030\003 \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\treference\030\005" +
-      " \001(\t\"E\n\010Metadata\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014" +
-      "request_time\030\002 \001(\003\022\017\n\007version\030\003 \001(\t\"\221\001\n\t" +
-      "Signature\0227\n\006s_type\030\001 \001(\0162\'.accesspoint." +
-      "v1.Signature.SignatureType\022\t\n\001s\030\002 \001(\t\022\t\n" +
-      "\001b\030\003 \001(\014\"5\n\rSignatureType\022\017\n\013NO_USE_TYPE" +
-      "\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\'\n\006Result\022\014\n\004cod" +
-      "e\030\001 \001(\t\022\017\n\007message\030\002 \001(\tB^\n\037com.blcvn.sw" +
-      "itching.accesspointZ;github.com/blcvn/sw" +
-      "itching-proto/go/accesspoint;accesspoint" +
-      "b\006proto3"
+      ".v1\032\037google/protobuf/timestamp.proto\032\030ac" +
+      "cess-point/error.proto\"\007\n\005Empty\"\272\002\n\007Paym" +
+      "ent\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 \001(\t\022\016\n\006amount\030" +
+      "\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\024\n\014debtor_agent\030" +
+      "\005 \001(\t\022\026\n\016creditor_agent\030\006 \001(\t\022\025\n\rend_to_" +
+      "end_id\030\007 \001(\t\022\016\n\006status\030\010 \001(\t\022.\n\ncreated_" +
+      "at\030\t \001(\0132\032.google.protobuf.Timestamp\0225\n\024" +
+      "debtor_agent_account\030\n \001(\0132\027.accesspoint" +
+      ".v1.Account\0227\n\026creditor_agent_account\030\013 " +
+      "\001(\0132\027.accesspoint.v1.Account\"\311\001\n\010Transfe" +
+      "r\022\026\n\016instruction_id\030\001 \001(\t\022\020\n\010creditor\030\002 " +
+      "\001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\016\n" +
+      "\006status\030\005 \001(\t\022.\n\ncreated_at\030\006 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\0221\n\020creditor_accoun" +
+      "t\030\007 \001(\0132\027.accesspoint.v1.Account\"X\n\tKycE" +
+      "ntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007coun" +
+      "try\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030\005 \001" +
+      "(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_n" +
+      "umber\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010cur" +
+      "rency\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metada" +
+      "ta\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_time\030\002" +
+      " \001(\003\022\017\n\007version\030\003 \001(\t\"\221\001\n\tSignature\0227\n\006s" +
+      "_type\030\001 \001(\0162\'.accesspoint.v1.Signature.S" +
+      "ignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSi" +
+      "gnatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C" +
+      "\020\002\022\005\n\001S\020\003\"C\n\006Result\022(\n\004code\030\001 \001(\0162\032.acce" +
+      "sspoint.v1.ResultCode\022\017\n\007message\030\002 \001(\tB^" +
+      "\n\037com.blcvn.switching.accesspointZ;githu" +
+      "b.com/blcvn/switching-proto/go/accesspoi" +
+      "nt;accesspointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.blcvn.switching.accesspoint.Error.getDescriptor(),
         });
     internal_static_accesspoint_v1_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9605,6 +9564,7 @@ public final class Common {
         internal_static_accesspoint_v1_Result_descriptor,
         new java.lang.String[] { "Code", "Message", });
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.blcvn.switching.accesspoint.Error.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

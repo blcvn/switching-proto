@@ -3,7 +3,6 @@ syntax = "proto3";
 package accesspoint.v1;
 
 import "access-point/common.proto";
-import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";

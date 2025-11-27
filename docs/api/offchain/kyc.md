@@ -2,104 +2,153 @@
 
 ---
 
-## Schemas
+## Public endpoints
 
-### `offchainv1AuditEntry`
+### POST /kyc/detail
+- Mô tả: Lấy thông tin chi tiết của một thực thể KYC
+- Auth: không
+- Request JSON:
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `action` | string | `False` |  |
-| `bic` | string | `False` |  |
-| `time` | string | `False` |  |
+```json
+{
+  "bic": "..."
+}
+```
 
-### `offchainv1AuditResponse`
+- Response 200 (object `v1KycEntity`):
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `entries` | array | `False` |  |
+```json
+{
+  "bic": "...",
+  "name": "...",
+  "country": "...",
+  "lei": "...",
+  "updated_at": "..."
+}
+```
 
-### `offchainv1Document`
+- Response default: An unexpected error response.
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | string | `False` |  |
-| `type` | string | `False` |  |
-| `url` | string | `False` |  |
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-### `offchainv1GetEntityDocsResponse`
+### GET /kyc/list
+- Mô tả: Liệt kê tất cả các thực thể KYC
+- Auth: không
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `documents` | array | `False` |  |
+- Response 200 (object `v1ListEntitiesResponse`):
 
-### `offchainv1KycEntity`
+```json
+{
+  "entities": [
+    {
+      "bic": "...",
+      "name": "...",
+      "country": "...",
+      "lei": "...",
+      "updated_at": "..."
+    }
+  ]
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `bic` | string | `False` |  |
-| `country` | string | `False` |  |
-| `lei` | string | `False` |  |
-| `name` | string | `False` |  |
-| `updated_at` | string | `False` |  |
+- Response default: An unexpected error response.
 
-### `offchainv1KycMetadata`
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `fields` | array | `False` |  |
-| `version` | string | `False` |  |
+### POST /kyc/register
+- Mô tả: Đăng ký thực thể KYC mới
+- Auth: không
+- Request JSON:
 
-### `offchainv1ListEntitiesResponse`
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "data": {
+    "bic": "...",
+    "name": "...",
+    "country": "...",
+    "lei": "...",
+    "updated_at": "..."
+  }
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `entities` | array | `False` |  |
+- Response 200 (object `v1RegisterResponse`):
 
-### `offchainv1Metadata`
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "data": {
+    "bic": "...",
+    "name": "...",
+    "country": "...",
+    "lei": "...",
+    "updated_at": "..."
+  }
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `request_id` | string | `False` | ID định danh duy nhất cho request |
-| `request_time` | string (int64) | `False` | Thời gian gửi request (Unix timestamp) |
-| `version` | string | `False` | Phiên bản của protocol |
+- Response default: An unexpected error response.
 
-### `offchainv1Result`
-CCResult định nghĩa cấu trúc kết quả trả về
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `code` | string | `False` | Mã kết quả thực thi |
-| `message` | string | `False` | Thông điệp mô tả kết quả |
+---
 
-### `offchainv1Signature`
-CCSignature định nghĩa cấu trúc chữ ký số cho request
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `b` | string (byte) | `False` | Chữ ký số |
-| `s` | string | `False` | Chuỗi dùng tạo ra chữ ký |
-| `s_type` | object [offchainv1SignatureSignatureType] | `False` | Loại chữ ký được sử dụng |
-
-### `offchainv1SignatureSignatureType`
-- NO_USE_TYPE: Giá trị mặc định, không sử dụng
- - J: Chữ ký loại J
- - C: Chữ ký loại C
- - S: Chữ ký loại S
-
-### `offchainv1SubmitKycResponse`
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `status` | string | `False` |  |
-
-### `v1RegisterResponse`
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | object [offchainv1KycEntity] | `False` |  |
-| `metadata` | object [offchainv1Metadata] | `False` |  |
-| `result` | object [offchainv1Result] | `False` |  |
-| `signature` | object [offchainv1Signature] | `False` |  |
+## Notes chung / Behaviour
+- Server sử dụng in-memory stores (maps) cho dữ liệu. Dữ liệu sẽ mất khi server dừng.
+- Một vài sample data có thể được seed sẵn để test.
 
 ---
 

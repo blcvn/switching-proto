@@ -7,7 +7,6 @@
 package offchain
 
 import (
-	_ "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,11 +21,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Thông điệp xác nhận thanh toán
 type ConfirmMessage struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	ConfirmationType string                 `protobuf:"bytes,2,opt,name=confirmation_type,json=confirmationType,proto3" json:"confirmation_type,omitempty"`
-	Timestamp        string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`                                                 // Unique End-to-End Transaction Reference
+	ConfirmationType string                 `protobuf:"bytes,2,opt,name=confirmation_type,json=confirmationType,proto3" json:"confirmation_type,omitempty"` // Loại xác nhận
+	Timestamp        string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`                                       // Thời gian xác nhận
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -82,11 +82,12 @@ func (x *ConfirmMessage) GetTimestamp() string {
 	return ""
 }
 
+// Yêu cầu tạo thanh toán
 type CreatePaymentRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Data          *Payment               `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Data          *Payment               `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -142,12 +143,13 @@ func (x *CreatePaymentRequest) GetData() *Payment {
 	return nil
 }
 
+// Phản hồi tạo thanh toán
 type CreatePaymentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán đã tạo
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -210,11 +212,12 @@ func (x *CreatePaymentResponse) GetData() *Payment {
 	return nil
 }
 
+// Yêu cầu lấy thông tin thanh toán
 type GetPaymentRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`               // ID của thanh toán
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -270,12 +273,13 @@ func (x *GetPaymentRequest) GetId() string {
 	return ""
 }
 
+// Phản hồi lấy thông tin thanh toán
 type GetPaymentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -338,11 +342,12 @@ func (x *GetPaymentResponse) GetData() *Payment {
 	return nil
 }
 
+// Yêu cầu lấy trạng thái thanh toán
 type GetPaymentStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Uetr          string                 `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Uetr          string                 `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`           // Unique End-to-End Transaction Reference
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -398,12 +403,13 @@ func (x *GetPaymentStatusRequest) GetUetr() string {
 	return ""
 }
 
+// Trạng thái thanh toán
 type PaymentStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`
+	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`         // Unique End-to-End Transaction Reference
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`     // Trạng thái thanh toán
+	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`   // Số tiền thanh toán
+	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"` // Mã tiền tệ
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -466,11 +472,12 @@ func (x *PaymentStatus) GetCurrency() string {
 	return ""
 }
 
+// Yêu cầu xác nhận thanh toán
 type ConfirmPaymentRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Data          *ConfirmMessage        `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Data          *ConfirmMessage        `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu xác nhận thanh toán
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -526,12 +533,13 @@ func (x *ConfirmPaymentRequest) GetData() *ConfirmMessage {
 	return nil
 }
 
+// Phản hồi xác nhận thanh toán
 type ConfirmPaymentResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán đã xác nhận
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -598,7 +606,7 @@ var File_offchain_gpi_proto protoreflect.FileDescriptor
 
 const file_offchain_gpi_proto_rawDesc = "" +
 	"\n" +
-	"\x12offchain/gpi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"o\n" +
+	"\x12offchain/gpi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\"o\n" +
 	"\x0eConfirmMessage\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12+\n" +
 	"\x11confirmation_type\x18\x02 \x01(\tR\x10confirmationType\x12\x1c\n" +

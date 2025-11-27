@@ -65,11 +65,55 @@ fi
 
 OPENAPI_OPTS="${OPENAPI_OPTS:-logtostderr=true,json_names_for_fields=false}"
 
+# Generate OpenAPI specs from proto files
 (cd "$PROTO_DIR" && \
   protoc -I . \
     --openapiv2_out="$OUT_DIR" \
     --openapiv2_opt="$OPENAPI_OPTS" \
     "${PROTO_FILES[@]}"
 )
+
+# Find and process YAML service definition files for enhanced OpenAPI generation
+if ! mapfile -t YAML_FILES < <(cd "$PROTO_DIR" && find . -name '*.yaml' -print | sed 's|^\./||' | sort 2>/dev/null); then
+  YAML_FILES=()
+fi
+
+# If YAML files exist, regenerate OpenAPI with YAML configuration for better HTTP mapping
+if [ "${#YAML_FILES[@]}" -gt 0 ]; then
+  echo "Processing YAML service definitions for OpenAPI generation..."
+  for yaml_file in "${YAML_FILES[@]}"; do
+    yaml_dir=$(dirname "$yaml_file")
+    yaml_base=$(basename "$yaml_file")
+    proto_targets=()
+
+    # Prefer a proto that matches the YAML naming convention (e.g. foo_service.yaml -> foo.proto)
+    if [[ "$yaml_base" == *_service.yaml ]]; then
+      proto_guess="${yaml_file%_service.yaml}.proto"
+      if [ -f "$PROTO_DIR/$proto_guess" ]; then
+        proto_targets=("$proto_guess")
+      fi
+    fi
+
+    # Fallback: grab all protos in the same directory (older behaviour)
+    if [ "${#proto_targets[@]}" -eq 0 ]; then
+      if mapfile -t proto_targets < <(cd "$PROTO_DIR" && find "$yaml_dir" -maxdepth 1 -name '*.proto' -print | sed 's|^\./||' | sort 2>/dev/null); then
+        :
+      fi
+    fi
+
+    if [ "${#proto_targets[@]}" -eq 0 ]; then
+      echo "Warning: Không tìm thấy file .proto phù hợp cho $yaml_file, bỏ qua." >&2
+      continue
+    fi
+
+    echo "Generating OpenAPI with YAML config: $yaml_file (${proto_targets[*]})"
+    (cd "$PROTO_DIR" && \
+      protoc -I . \
+        --openapiv2_out="$OUT_DIR" \
+        --openapiv2_opt="${OPENAPI_OPTS},grpc_api_configuration=${yaml_file}" \
+        "${proto_targets[@]}"
+    )
+  done
+fi
 
 echo "OpenAPI generation complete. Files written to $OUT_DIR"

@@ -3,6 +3,7 @@ syntax = "proto3";
 package accesspoint.v1;
 
 import "google/protobuf/timestamp.proto";
+import "access-point/error.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
@@ -80,8 +81,8 @@ message Signature {
   bytes b = 3;               // Chữ ký số 
 }
 
-// CCResult định nghĩa cấu trúc kết quả trả về
+// Result định nghĩa cấu trúc kết quả trả về
 message Result {
-  string code = 1;     // Mã kết quả thực thi
-  string message = 2;  // Thông điệp mô tả kết quả
+  ResultCode code = 1;     // Mã kết quả thực thi (enum)
+  string message = 2;     // Thông điệp mô tả kết quả
 }

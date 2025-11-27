@@ -3,86 +3,103 @@ syntax = "proto3";
 package offchain.v1;
 
 import "offchain/common.proto";
-import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
+// Service quản lý chuyển tiền giữa các tổ chức tài chính (Financial Institution)
 service FiService {
+  // Tạo lệnh chuyển tiền mới
   rpc CreateTransfer(CreateTransferRequest) returns (CreateTransferResponse) {}
+  // Lấy thông tin chi tiết của một lệnh chuyển tiền
   rpc GetTransfer(GetTransferRequest) returns (Transfer) {}
+  // Lấy trạng thái của một lệnh chuyển tiền
   rpc GetTransferStatus(GetTransferRequest) returns (TransferStatus) {}
+  // Xác nhận một lệnh chuyển tiền
   rpc ConfirmTransfer(ConfirmTransferRequest) returns (ConfirmTransferResponse) {}
+  // Tìm kiếm các lệnh chuyển tiền theo bộ lọc
   rpc SearchTransfers(SearchTransfersRequest) returns (SearchTransfersResponse) {}
+  // Thực hiện chuyển tiền hàng loạt
   rpc BulkTransfer(BulkTransferRequest) returns (BulkTransferResponse) {}
 }
 
+// Yêu cầu tạo lệnh chuyển tiền
 message CreateTransferRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Transfer data = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  Transfer data = 3;        // Dữ liệu lệnh chuyển tiền
 }
 
+// Phản hồi tạo lệnh chuyển tiền
 message CreateTransferResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  Transfer data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Transfer data = 4;        // Dữ liệu lệnh chuyển tiền đã tạo
 }
 
+// Yêu cầu lấy thông tin lệnh chuyển tiền
 message GetTransferRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string instruction_id = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string instruction_id = 3;  // ID của lệnh chuyển tiền
 }
 
+// Trạng thái lệnh chuyển tiền
 message TransferStatus {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  Transfer data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Transfer data = 4;        // Dữ liệu lệnh chuyển tiền và trạng thái
 }
 
+// Yêu cầu xác nhận lệnh chuyển tiền
 message ConfirmTransferRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string instruction_id = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string instruction_id = 3;  // ID của lệnh chuyển tiền cần xác nhận
 }
 
+// Phản hồi xác nhận lệnh chuyển tiền
 message ConfirmTransferResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  string instruction_id = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  string instruction_id = 4;  // ID của lệnh chuyển tiền đã xác nhận
 }
 
+// Yêu cầu tìm kiếm lệnh chuyển tiền
 message SearchTransfersRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  // Bộ lọc tìm kiếm
   message Filter {
-    string currency = 1;
-    string date_from = 2;
-    string date_to = 3;
+    string currency = 1;    // Lọc theo mã tiền tệ
+    string date_from = 2;   // Ngày bắt đầu (format: YYYY-MM-DD)
+    string date_to = 3;     // Ngày kết thúc (format: YYYY-MM-DD)
   }
-  Filter filter = 3;
+  Filter filter = 3;        // Bộ lọc tìm kiếm
 }
 
+// Phản hồi tìm kiếm lệnh chuyển tiền
 message SearchTransfersResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  repeated Transfer results = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  repeated Transfer results = 4;  // Danh sách các lệnh chuyển tiền tìm được
 }
 
+// Yêu cầu chuyển tiền hàng loạt
 message BulkTransferRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  repeated Transfer transfers = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  repeated Transfer transfers = 3;  // Danh sách các lệnh chuyển tiền
 }
 
+// Phản hồi chuyển tiền hàng loạt
 message BulkTransferResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  repeated Transfer transfers = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  repeated Transfer transfers = 4;  // Danh sách các lệnh chuyển tiền đã xử lý
 }

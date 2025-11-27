@@ -30,12 +30,20 @@ const (
 // FiServiceClient is the client API for FiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Service quản lý chuyển tiền giữa các tổ chức tài chính (Financial Institution)
 type FiServiceClient interface {
+	// Tạo lệnh chuyển tiền mới
 	CreateTransfer(ctx context.Context, in *CreateTransferRequest, opts ...grpc.CallOption) (*CreateTransferResponse, error)
+	// Lấy thông tin chi tiết của một lệnh chuyển tiền
 	GetTransfer(ctx context.Context, in *GetTransferRequest, opts ...grpc.CallOption) (*Transfer, error)
+	// Lấy trạng thái của một lệnh chuyển tiền
 	GetTransferStatus(ctx context.Context, in *GetTransferRequest, opts ...grpc.CallOption) (*TransferStatus, error)
+	// Xác nhận một lệnh chuyển tiền
 	ConfirmTransfer(ctx context.Context, in *ConfirmTransferRequest, opts ...grpc.CallOption) (*ConfirmTransferResponse, error)
+	// Tìm kiếm các lệnh chuyển tiền theo bộ lọc
 	SearchTransfers(ctx context.Context, in *SearchTransfersRequest, opts ...grpc.CallOption) (*SearchTransfersResponse, error)
+	// Thực hiện chuyển tiền hàng loạt
 	BulkTransfer(ctx context.Context, in *BulkTransferRequest, opts ...grpc.CallOption) (*BulkTransferResponse, error)
 }
 
@@ -110,12 +118,20 @@ func (c *fiServiceClient) BulkTransfer(ctx context.Context, in *BulkTransferRequ
 // FiServiceServer is the server API for FiService service.
 // All implementations must embed UnimplementedFiServiceServer
 // for forward compatibility.
+//
+// Service quản lý chuyển tiền giữa các tổ chức tài chính (Financial Institution)
 type FiServiceServer interface {
+	// Tạo lệnh chuyển tiền mới
 	CreateTransfer(context.Context, *CreateTransferRequest) (*CreateTransferResponse, error)
+	// Lấy thông tin chi tiết của một lệnh chuyển tiền
 	GetTransfer(context.Context, *GetTransferRequest) (*Transfer, error)
+	// Lấy trạng thái của một lệnh chuyển tiền
 	GetTransferStatus(context.Context, *GetTransferRequest) (*TransferStatus, error)
+	// Xác nhận một lệnh chuyển tiền
 	ConfirmTransfer(context.Context, *ConfirmTransferRequest) (*ConfirmTransferResponse, error)
+	// Tìm kiếm các lệnh chuyển tiền theo bộ lọc
 	SearchTransfers(context.Context, *SearchTransfersRequest) (*SearchTransfersResponse, error)
+	// Thực hiện chuyển tiền hàng loạt
 	BulkTransfer(context.Context, *BulkTransferRequest) (*BulkTransferResponse, error)
 	mustEmbedUnimplementedFiServiceServer()
 }

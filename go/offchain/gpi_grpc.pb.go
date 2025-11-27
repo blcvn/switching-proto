@@ -28,10 +28,16 @@ const (
 // GpiServiceClient is the client API for GpiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Service quản lý thanh toán GPI (Global Payments Innovation)
 type GpiServiceClient interface {
+	// Tạo thanh toán mới
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
+	// Lấy thông tin chi tiết của một thanh toán
 	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
+	// Lấy trạng thái của một thanh toán
 	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
+	// Xác nhận một thanh toán
 	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*ConfirmPaymentResponse, error)
 }
 
@@ -86,10 +92,16 @@ func (c *gpiServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymen
 // GpiServiceServer is the server API for GpiService service.
 // All implementations must embed UnimplementedGpiServiceServer
 // for forward compatibility.
+//
+// Service quản lý thanh toán GPI (Global Payments Innovation)
 type GpiServiceServer interface {
+	// Tạo thanh toán mới
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
+	// Lấy thông tin chi tiết của một thanh toán
 	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
+	// Lấy trạng thái của một thanh toán
 	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error)
+	// Xác nhận một thanh toán
 	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error)
 	mustEmbedUnimplementedGpiServiceServer()
 }

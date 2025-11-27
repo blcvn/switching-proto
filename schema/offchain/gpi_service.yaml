@@ -1,0 +1,19 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: offchain.v1.GpiService.CreatePayment
+          post: /gpi/create
+          body: "*"
+
+        - selector: offchain.v1.GpiService.GetPayment
+          get: /gpi/id/{id}
+
+        - selector: offchain.v1.GpiService.GetPaymentStatus
+          get: /gpi/uetr/{uetr}
+
+        - selector: offchain.v1.GpiService.ConfirmPayment
+          post: /gpi/confirm
+          body: "*"

@@ -3,72 +3,85 @@ syntax = "proto3";
 package offchain.v1;
 
 import "offchain/common.proto";
-import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
+// Service quản lý thanh toán GPI (Global Payments Innovation)
 service GpiService {
+  // Tạo thanh toán mới
   rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {}
+  // Lấy thông tin chi tiết của một thanh toán
   rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {}
+  // Lấy trạng thái của một thanh toán
   rpc GetPaymentStatus(GetPaymentStatusRequest) returns (GetPaymentResponse) {}
+  // Xác nhận một thanh toán
   rpc ConfirmPayment(ConfirmPaymentRequest) returns (ConfirmPaymentResponse) {}
 }
 
+// Thông điệp xác nhận thanh toán
 message ConfirmMessage {
-  string uetr = 1;
-  string confirmation_type = 2;
-  string timestamp = 3;
+  string uetr = 1;                // Unique End-to-End Transaction Reference
+  string confirmation_type = 2;   // Loại xác nhận
+  string timestamp = 3;           // Thời gian xác nhận
 }
 
+// Yêu cầu tạo thanh toán
 message CreatePaymentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Payment data = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  Payment data = 3;        // Dữ liệu thanh toán
 }
 
+// Phản hồi tạo thanh toán
 message CreatePaymentResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  Payment data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Payment data = 4;        // Dữ liệu thanh toán đã tạo
 }
 
+// Yêu cầu lấy thông tin thanh toán
 message GetPaymentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string id = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string id = 3;            // ID của thanh toán
 }
 
+// Phản hồi lấy thông tin thanh toán
 message GetPaymentResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  Payment data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Payment data = 4;        // Dữ liệu thanh toán
 }
 
+// Yêu cầu lấy trạng thái thanh toán
 message GetPaymentStatusRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  string uetr = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string uetr = 3;          // Unique End-to-End Transaction Reference
 }
 
+// Trạng thái thanh toán
 message PaymentStatus {
-  string uetr = 1;
-  string status = 2;
-  double amount = 3;
-  string currency = 4;
+  string uetr = 1;          // Unique End-to-End Transaction Reference
+  string status = 2;        // Trạng thái thanh toán
+  double amount = 3;        // Số tiền thanh toán
+  string currency = 4;      // Mã tiền tệ
 }
 
+// Yêu cầu xác nhận thanh toán
 message ConfirmPaymentRequest {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  ConfirmMessage data = 3;
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  ConfirmMessage data = 3;  // Dữ liệu xác nhận thanh toán
 }
 
+// Phản hồi xác nhận thanh toán
 message ConfirmPaymentResponse {
-  Metadata metadata = 1;
-  Signature signature = 2;
-  Result result = 3;
-  Payment data = 4;
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Payment data = 4;        // Dữ liệu thanh toán đã xác nhận
 }

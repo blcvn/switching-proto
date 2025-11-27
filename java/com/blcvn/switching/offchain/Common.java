@@ -19,6 +19,10 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Message rỗng, dùng cho các RPC không cần tham số đầu vào
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.Empty}
    */
   public static final class Empty extends
@@ -240,6 +244,10 @@ public final class Common {
       return builder;
     }
     /**
+     * <pre>
+     * Message rỗng, dùng cho các RPC không cần tham số đầu vào
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.Empty}
      */
     public static final class Builder extends
@@ -437,11 +445,19 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -449,11 +465,19 @@ public final class Common {
         getIdBytes();
 
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference
+     * </pre>
+     *
      * <code>string uetr = 2;</code>
      * @return The uetr.
      */
     java.lang.String getUetr();
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference
+     * </pre>
+     *
      * <code>string uetr = 2;</code>
      * @return The bytes for uetr.
      */
@@ -461,17 +485,29 @@ public final class Common {
         getUetrBytes();
 
     /**
+     * <pre>
+     * Số tiền thanh toán
+     * </pre>
+     *
      * <code>double amount = 3;</code>
      * @return The amount.
      */
     double getAmount();
 
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 4;</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 4;</code>
      * @return The bytes for currency.
      */
@@ -479,11 +515,19 @@ public final class Common {
         getCurrencyBytes();
 
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor_agent = 5;</code>
      * @return The debtorAgent.
      */
     java.lang.String getDebtorAgent();
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor_agent = 5;</code>
      * @return The bytes for debtorAgent.
      */
@@ -491,11 +535,19 @@ public final class Common {
         getDebtorAgentBytes();
 
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor_agent = 6;</code>
      * @return The creditorAgent.
      */
     java.lang.String getCreditorAgent();
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor_agent = 6;</code>
      * @return The bytes for creditorAgent.
      */
@@ -503,11 +555,19 @@ public final class Common {
         getCreditorAgentBytes();
 
     /**
+     * <pre>
+     * ID định danh end-to-end của giao dịch
+     * </pre>
+     *
      * <code>string end_to_end_id = 7;</code>
      * @return The endToEndId.
      */
     java.lang.String getEndToEndId();
     /**
+     * <pre>
+     * ID định danh end-to-end của giao dịch
+     * </pre>
+     *
      * <code>string end_to_end_id = 7;</code>
      * @return The bytes for endToEndId.
      */
@@ -515,11 +575,19 @@ public final class Common {
         getEndToEndIdBytes();
 
     /**
+     * <pre>
+     * Trạng thái thanh toán
+     * </pre>
+     *
      * <code>string status = 8;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
+     * <pre>
+     * Trạng thái thanh toán
+     * </pre>
+     *
      * <code>string status = 8;</code>
      * @return The bytes for status.
      */
@@ -527,23 +595,35 @@ public final class Common {
         getStatusBytes();
 
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      * @return Whether the createdAt field is set.
      */
     boolean hasCreatedAt();
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      * @return The createdAt.
      */
     com.google.protobuf.Timestamp getCreatedAt();
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      */
     com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -552,7 +632,7 @@ public final class Common {
     boolean hasDebtorAgentAccount();
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -561,7 +641,7 @@ public final class Common {
     com.blcvn.switching.offchain.Common.Account getDebtorAgentAccount();
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -570,7 +650,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -579,7 +659,7 @@ public final class Common {
     boolean hasCreditorAgentAccount();
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -588,7 +668,7 @@ public final class Common {
     com.blcvn.switching.offchain.Common.Account getCreditorAgentAccount();
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -596,11 +676,19 @@ public final class Common {
     com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder();
 
     /**
+     * <pre>
+     * Mã tham chiếu giao dịch
+     * </pre>
+     *
      * <code>string transaction_reference = 12;</code>
      * @return The transactionReference.
      */
     java.lang.String getTransactionReference();
     /**
+     * <pre>
+     * Mã tham chiếu giao dịch
+     * </pre>
+     *
      * <code>string transaction_reference = 12;</code>
      * @return The bytes for transactionReference.
      */
@@ -608,6 +696,10 @@ public final class Common {
         getTransactionReferenceBytes();
   }
   /**
+   * <pre>
+   * Thông tin thanh toán
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.Payment}
    */
   public static final class Payment extends
@@ -787,6 +879,10 @@ public final class Common {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -804,6 +900,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -825,6 +925,10 @@ public final class Common {
     public static final int UETR_FIELD_NUMBER = 2;
     private volatile java.lang.Object uetr_;
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference
+     * </pre>
+     *
      * <code>string uetr = 2;</code>
      * @return The uetr.
      */
@@ -842,6 +946,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference
+     * </pre>
+     *
      * <code>string uetr = 2;</code>
      * @return The bytes for uetr.
      */
@@ -863,6 +971,10 @@ public final class Common {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private double amount_;
     /**
+     * <pre>
+     * Số tiền thanh toán
+     * </pre>
+     *
      * <code>double amount = 3;</code>
      * @return The amount.
      */
@@ -874,6 +986,10 @@ public final class Common {
     public static final int CURRENCY_FIELD_NUMBER = 4;
     private volatile java.lang.Object currency_;
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 4;</code>
      * @return The currency.
      */
@@ -891,6 +1007,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 4;</code>
      * @return The bytes for currency.
      */
@@ -912,6 +1032,10 @@ public final class Common {
     public static final int DEBTOR_AGENT_FIELD_NUMBER = 5;
     private volatile java.lang.Object debtorAgent_;
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor_agent = 5;</code>
      * @return The debtorAgent.
      */
@@ -929,6 +1053,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor_agent = 5;</code>
      * @return The bytes for debtorAgent.
      */
@@ -950,6 +1078,10 @@ public final class Common {
     public static final int CREDITOR_AGENT_FIELD_NUMBER = 6;
     private volatile java.lang.Object creditorAgent_;
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor_agent = 6;</code>
      * @return The creditorAgent.
      */
@@ -967,6 +1099,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor_agent = 6;</code>
      * @return The bytes for creditorAgent.
      */
@@ -988,6 +1124,10 @@ public final class Common {
     public static final int END_TO_END_ID_FIELD_NUMBER = 7;
     private volatile java.lang.Object endToEndId_;
     /**
+     * <pre>
+     * ID định danh end-to-end của giao dịch
+     * </pre>
+     *
      * <code>string end_to_end_id = 7;</code>
      * @return The endToEndId.
      */
@@ -1005,6 +1145,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * ID định danh end-to-end của giao dịch
+     * </pre>
+     *
      * <code>string end_to_end_id = 7;</code>
      * @return The bytes for endToEndId.
      */
@@ -1026,6 +1170,10 @@ public final class Common {
     public static final int STATUS_FIELD_NUMBER = 8;
     private volatile java.lang.Object status_;
     /**
+     * <pre>
+     * Trạng thái thanh toán
+     * </pre>
+     *
      * <code>string status = 8;</code>
      * @return The status.
      */
@@ -1043,6 +1191,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Trạng thái thanh toán
+     * </pre>
+     *
      * <code>string status = 8;</code>
      * @return The bytes for status.
      */
@@ -1064,6 +1216,10 @@ public final class Common {
     public static final int CREATED_AT_FIELD_NUMBER = 9;
     private com.google.protobuf.Timestamp createdAt_;
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      * @return Whether the createdAt field is set.
      */
@@ -1072,6 +1228,10 @@ public final class Common {
       return createdAt_ != null;
     }
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      * @return The createdAt.
      */
@@ -1080,6 +1240,10 @@ public final class Common {
       return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
     }
     /**
+     * <pre>
+     * Thời gian tạo thanh toán
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 9;</code>
      */
     @java.lang.Override
@@ -1091,7 +1255,7 @@ public final class Common {
     private com.blcvn.switching.offchain.Common.Account debtorAgentAccount_;
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -1103,7 +1267,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -1115,7 +1279,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the debtor (sending) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -1129,7 +1293,7 @@ public final class Common {
     private com.blcvn.switching.offchain.Common.Account creditorAgentAccount_;
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -1141,7 +1305,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -1153,7 +1317,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the creditor (receiving) agent.
+     * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -1166,6 +1330,10 @@ public final class Common {
     public static final int TRANSACTION_REFERENCE_FIELD_NUMBER = 12;
     private volatile java.lang.Object transactionReference_;
     /**
+     * <pre>
+     * Mã tham chiếu giao dịch
+     * </pre>
+     *
      * <code>string transaction_reference = 12;</code>
      * @return The transactionReference.
      */
@@ -1183,6 +1351,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Mã tham chiếu giao dịch
+     * </pre>
+     *
      * <code>string transaction_reference = 12;</code>
      * @return The bytes for transactionReference.
      */
@@ -1487,6 +1659,10 @@ public final class Common {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin thanh toán
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.Payment}
      */
     public static final class Builder extends
@@ -1733,6 +1909,10 @@ public final class Common {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -1749,6 +1929,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -1766,6 +1950,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -1781,6 +1969,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1791,6 +1983,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -1809,6 +2005,10 @@ public final class Common {
 
       private java.lang.Object uetr_ = "";
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference
+       * </pre>
+       *
        * <code>string uetr = 2;</code>
        * @return The uetr.
        */
@@ -1825,6 +2025,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference
+       * </pre>
+       *
        * <code>string uetr = 2;</code>
        * @return The bytes for uetr.
        */
@@ -1842,6 +2046,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference
+       * </pre>
+       *
        * <code>string uetr = 2;</code>
        * @param value The uetr to set.
        * @return This builder for chaining.
@@ -1857,6 +2065,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference
+       * </pre>
+       *
        * <code>string uetr = 2;</code>
        * @return This builder for chaining.
        */
@@ -1867,6 +2079,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference
+       * </pre>
+       *
        * <code>string uetr = 2;</code>
        * @param value The bytes for uetr to set.
        * @return This builder for chaining.
@@ -1885,6 +2101,10 @@ public final class Common {
 
       private double amount_ ;
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 3;</code>
        * @return The amount.
        */
@@ -1893,6 +2113,10 @@ public final class Common {
         return amount_;
       }
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 3;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
@@ -1904,6 +2128,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 3;</code>
        * @return This builder for chaining.
        */
@@ -1916,6 +2144,10 @@ public final class Common {
 
       private java.lang.Object currency_ = "";
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 4;</code>
        * @return The currency.
        */
@@ -1932,6 +2164,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 4;</code>
        * @return The bytes for currency.
        */
@@ -1949,6 +2185,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 4;</code>
        * @param value The currency to set.
        * @return This builder for chaining.
@@ -1964,6 +2204,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 4;</code>
        * @return This builder for chaining.
        */
@@ -1974,6 +2218,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 4;</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.
@@ -1992,6 +2240,10 @@ public final class Common {
 
       private java.lang.Object debtorAgent_ = "";
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor_agent = 5;</code>
        * @return The debtorAgent.
        */
@@ -2008,6 +2260,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor_agent = 5;</code>
        * @return The bytes for debtorAgent.
        */
@@ -2025,6 +2281,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor_agent = 5;</code>
        * @param value The debtorAgent to set.
        * @return This builder for chaining.
@@ -2040,6 +2300,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor_agent = 5;</code>
        * @return This builder for chaining.
        */
@@ -2050,6 +2314,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor_agent = 5;</code>
        * @param value The bytes for debtorAgent to set.
        * @return This builder for chaining.
@@ -2068,6 +2336,10 @@ public final class Common {
 
       private java.lang.Object creditorAgent_ = "";
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor_agent = 6;</code>
        * @return The creditorAgent.
        */
@@ -2084,6 +2356,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor_agent = 6;</code>
        * @return The bytes for creditorAgent.
        */
@@ -2101,6 +2377,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor_agent = 6;</code>
        * @param value The creditorAgent to set.
        * @return This builder for chaining.
@@ -2116,6 +2396,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor_agent = 6;</code>
        * @return This builder for chaining.
        */
@@ -2126,6 +2410,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor_agent = 6;</code>
        * @param value The bytes for creditorAgent to set.
        * @return This builder for chaining.
@@ -2144,6 +2432,10 @@ public final class Common {
 
       private java.lang.Object endToEndId_ = "";
       /**
+       * <pre>
+       * ID định danh end-to-end của giao dịch
+       * </pre>
+       *
        * <code>string end_to_end_id = 7;</code>
        * @return The endToEndId.
        */
@@ -2160,6 +2452,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID định danh end-to-end của giao dịch
+       * </pre>
+       *
        * <code>string end_to_end_id = 7;</code>
        * @return The bytes for endToEndId.
        */
@@ -2177,6 +2473,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID định danh end-to-end của giao dịch
+       * </pre>
+       *
        * <code>string end_to_end_id = 7;</code>
        * @param value The endToEndId to set.
        * @return This builder for chaining.
@@ -2192,6 +2492,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh end-to-end của giao dịch
+       * </pre>
+       *
        * <code>string end_to_end_id = 7;</code>
        * @return This builder for chaining.
        */
@@ -2202,6 +2506,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh end-to-end của giao dịch
+       * </pre>
+       *
        * <code>string end_to_end_id = 7;</code>
        * @param value The bytes for endToEndId to set.
        * @return This builder for chaining.
@@ -2220,6 +2528,10 @@ public final class Common {
 
       private java.lang.Object status_ = "";
       /**
+       * <pre>
+       * Trạng thái thanh toán
+       * </pre>
+       *
        * <code>string status = 8;</code>
        * @return The status.
        */
@@ -2236,6 +2548,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Trạng thái thanh toán
+       * </pre>
+       *
        * <code>string status = 8;</code>
        * @return The bytes for status.
        */
@@ -2253,6 +2569,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Trạng thái thanh toán
+       * </pre>
+       *
        * <code>string status = 8;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -2268,6 +2588,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái thanh toán
+       * </pre>
+       *
        * <code>string status = 8;</code>
        * @return This builder for chaining.
        */
@@ -2278,6 +2602,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái thanh toán
+       * </pre>
+       *
        * <code>string status = 8;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
@@ -2298,6 +2626,10 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        * @return Whether the createdAt field is set.
        */
@@ -2305,6 +2637,10 @@ public final class Common {
         return createdAtBuilder_ != null || createdAt_ != null;
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        * @return The createdAt.
        */
@@ -2316,6 +2652,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
@@ -2332,6 +2672,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public Builder setCreatedAt(
@@ -2346,6 +2690,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
@@ -2364,6 +2712,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public Builder clearCreatedAt() {
@@ -2378,6 +2730,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
@@ -2386,6 +2742,10 @@ public final class Common {
         return getCreatedAtFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
@@ -2397,6 +2757,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian tạo thanh toán
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2418,7 +2782,7 @@ public final class Common {
           com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> debtorAgentAccountBuilder_;
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2429,7 +2793,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2444,7 +2808,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2464,7 +2828,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2482,7 +2846,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2504,7 +2868,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2522,7 +2886,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2534,7 +2898,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2549,7 +2913,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor (sending) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_agent_account = 10;</code>
@@ -2573,7 +2937,7 @@ public final class Common {
           com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> creditorAgentAccountBuilder_;
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2584,7 +2948,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2599,7 +2963,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2619,7 +2983,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2637,7 +3001,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2659,7 +3023,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2677,7 +3041,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2689,7 +3053,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2704,7 +3068,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the creditor (receiving) agent.
+       * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account creditor_agent_account = 11;</code>
@@ -2725,6 +3089,10 @@ public final class Common {
 
       private java.lang.Object transactionReference_ = "";
       /**
+       * <pre>
+       * Mã tham chiếu giao dịch
+       * </pre>
+       *
        * <code>string transaction_reference = 12;</code>
        * @return The transactionReference.
        */
@@ -2741,6 +3109,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tham chiếu giao dịch
+       * </pre>
+       *
        * <code>string transaction_reference = 12;</code>
        * @return The bytes for transactionReference.
        */
@@ -2758,6 +3130,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tham chiếu giao dịch
+       * </pre>
+       *
        * <code>string transaction_reference = 12;</code>
        * @param value The transactionReference to set.
        * @return This builder for chaining.
@@ -2773,6 +3149,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tham chiếu giao dịch
+       * </pre>
+       *
        * <code>string transaction_reference = 12;</code>
        * @return This builder for chaining.
        */
@@ -2783,6 +3163,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tham chiếu giao dịch
+       * </pre>
+       *
        * <code>string transaction_reference = 12;</code>
        * @param value The bytes for transactionReference to set.
        * @return This builder for chaining.
@@ -2856,11 +3240,19 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 1;</code>
      * @return The instructionId.
      */
     java.lang.String getInstructionId();
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 1;</code>
      * @return The bytes for instructionId.
      */
@@ -2868,11 +3260,19 @@ public final class Common {
         getInstructionIdBytes();
 
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor = 2;</code>
      * @return The debtor.
      */
     java.lang.String getDebtor();
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor = 2;</code>
      * @return The bytes for debtor.
      */
@@ -2880,11 +3280,19 @@ public final class Common {
         getDebtorBytes();
 
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor = 3;</code>
      * @return The creditor.
      */
     java.lang.String getCreditor();
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor = 3;</code>
      * @return The bytes for creditor.
      */
@@ -2892,17 +3300,29 @@ public final class Common {
         getCreditorBytes();
 
     /**
+     * <pre>
+     * Số tiền chuyển
+     * </pre>
+     *
      * <code>double amount = 4;</code>
      * @return The amount.
      */
     double getAmount();
 
     /**
+     * <pre>
+     * Mã tiền tệ
+     * </pre>
+     *
      * <code>string currency = 5;</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
+     * <pre>
+     * Mã tiền tệ
+     * </pre>
+     *
      * <code>string currency = 5;</code>
      * @return The bytes for currency.
      */
@@ -2910,11 +3330,19 @@ public final class Common {
         getCurrencyBytes();
 
     /**
+     * <pre>
+     * Trạng thái chuyển tiền
+     * </pre>
+     *
      * <code>string status = 6;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
+     * <pre>
+     * Trạng thái chuyển tiền
+     * </pre>
+     *
      * <code>string status = 6;</code>
      * @return The bytes for status.
      */
@@ -2922,23 +3350,35 @@ public final class Common {
         getStatusBytes();
 
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      * @return Whether the createdAt field is set.
      */
     boolean hasCreatedAt();
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      * @return The createdAt.
      */
     com.google.protobuf.Timestamp getCreatedAt();
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      */
     com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -2947,7 +3387,7 @@ public final class Common {
     boolean hasDebtorAccount();
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -2956,7 +3396,7 @@ public final class Common {
     com.blcvn.switching.offchain.Common.Account getDebtorAccount();
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -2964,21 +3404,37 @@ public final class Common {
     com.blcvn.switching.offchain.Common.AccountOrBuilder getDebtorAccountOrBuilder();
 
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      * @return Whether the creditorAccount field is set.
      */
     boolean hasCreditorAccount();
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      * @return The creditorAccount.
      */
     com.blcvn.switching.offchain.Common.Account getCreditorAccount();
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      */
     com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAccountOrBuilder();
   }
   /**
+   * <pre>
+   * Thông tin chuyển tiền giữa các tổ chức tài chính
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.Transfer}
    */
   public static final class Transfer extends
@@ -3137,6 +3593,10 @@ public final class Common {
     public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object instructionId_;
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 1;</code>
      * @return The instructionId.
      */
@@ -3154,6 +3614,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * ID của lệnh chuyển tiền
+     * </pre>
+     *
      * <code>string instruction_id = 1;</code>
      * @return The bytes for instructionId.
      */
@@ -3175,6 +3639,10 @@ public final class Common {
     public static final int DEBTOR_FIELD_NUMBER = 2;
     private volatile java.lang.Object debtor_;
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor = 2;</code>
      * @return The debtor.
      */
@@ -3192,6 +3660,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * BIC của ngân hàng người gửi
+     * </pre>
+     *
      * <code>string debtor = 2;</code>
      * @return The bytes for debtor.
      */
@@ -3213,6 +3685,10 @@ public final class Common {
     public static final int CREDITOR_FIELD_NUMBER = 3;
     private volatile java.lang.Object creditor_;
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor = 3;</code>
      * @return The creditor.
      */
@@ -3230,6 +3706,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * BIC của ngân hàng người nhận
+     * </pre>
+     *
      * <code>string creditor = 3;</code>
      * @return The bytes for creditor.
      */
@@ -3251,6 +3731,10 @@ public final class Common {
     public static final int AMOUNT_FIELD_NUMBER = 4;
     private double amount_;
     /**
+     * <pre>
+     * Số tiền chuyển
+     * </pre>
+     *
      * <code>double amount = 4;</code>
      * @return The amount.
      */
@@ -3262,6 +3746,10 @@ public final class Common {
     public static final int CURRENCY_FIELD_NUMBER = 5;
     private volatile java.lang.Object currency_;
     /**
+     * <pre>
+     * Mã tiền tệ
+     * </pre>
+     *
      * <code>string currency = 5;</code>
      * @return The currency.
      */
@@ -3279,6 +3767,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Mã tiền tệ
+     * </pre>
+     *
      * <code>string currency = 5;</code>
      * @return The bytes for currency.
      */
@@ -3300,6 +3792,10 @@ public final class Common {
     public static final int STATUS_FIELD_NUMBER = 6;
     private volatile java.lang.Object status_;
     /**
+     * <pre>
+     * Trạng thái chuyển tiền
+     * </pre>
+     *
      * <code>string status = 6;</code>
      * @return The status.
      */
@@ -3317,6 +3813,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Trạng thái chuyển tiền
+     * </pre>
+     *
      * <code>string status = 6;</code>
      * @return The bytes for status.
      */
@@ -3338,6 +3838,10 @@ public final class Common {
     public static final int CREATED_AT_FIELD_NUMBER = 7;
     private com.google.protobuf.Timestamp createdAt_;
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      * @return Whether the createdAt field is set.
      */
@@ -3346,6 +3850,10 @@ public final class Common {
       return createdAt_ != null;
     }
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      * @return The createdAt.
      */
@@ -3354,6 +3862,10 @@ public final class Common {
       return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
     }
     /**
+     * <pre>
+     * Thời gian tạo lệnh chuyển
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
      */
     @java.lang.Override
@@ -3365,7 +3877,7 @@ public final class Common {
     private com.blcvn.switching.offchain.Common.Account debtorAccount_;
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -3377,7 +3889,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -3389,7 +3901,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Optional structured account details for the debtor/creditor in FI transfers
+     * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
      * </pre>
      *
      * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -3402,6 +3914,10 @@ public final class Common {
     public static final int CREDITOR_ACCOUNT_FIELD_NUMBER = 9;
     private com.blcvn.switching.offchain.Common.Account creditorAccount_;
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      * @return Whether the creditorAccount field is set.
      */
@@ -3410,6 +3926,10 @@ public final class Common {
       return creditorAccount_ != null;
     }
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      * @return The creditorAccount.
      */
@@ -3418,6 +3938,10 @@ public final class Common {
       return creditorAccount_ == null ? com.blcvn.switching.offchain.Common.Account.getDefaultInstance() : creditorAccount_;
     }
     /**
+     * <pre>
+     * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+     * </pre>
+     *
      * <code>.offchain.v1.Account creditor_account = 9;</code>
      */
     @java.lang.Override
@@ -3681,6 +4205,10 @@ public final class Common {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin chuyển tiền giữa các tổ chức tài chính
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.Transfer}
      */
     public static final class Builder extends
@@ -3906,6 +4434,10 @@ public final class Common {
 
       private java.lang.Object instructionId_ = "";
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 1;</code>
        * @return The instructionId.
        */
@@ -3922,6 +4454,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 1;</code>
        * @return The bytes for instructionId.
        */
@@ -3939,6 +4475,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 1;</code>
        * @param value The instructionId to set.
        * @return This builder for chaining.
@@ -3954,6 +4494,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -3964,6 +4508,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * ID của lệnh chuyển tiền
+       * </pre>
+       *
        * <code>string instruction_id = 1;</code>
        * @param value The bytes for instructionId to set.
        * @return This builder for chaining.
@@ -3982,6 +4530,10 @@ public final class Common {
 
       private java.lang.Object debtor_ = "";
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor = 2;</code>
        * @return The debtor.
        */
@@ -3998,6 +4550,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor = 2;</code>
        * @return The bytes for debtor.
        */
@@ -4015,6 +4571,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor = 2;</code>
        * @param value The debtor to set.
        * @return This builder for chaining.
@@ -4030,6 +4590,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor = 2;</code>
        * @return This builder for chaining.
        */
@@ -4040,6 +4604,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người gửi
+       * </pre>
+       *
        * <code>string debtor = 2;</code>
        * @param value The bytes for debtor to set.
        * @return This builder for chaining.
@@ -4058,6 +4626,10 @@ public final class Common {
 
       private java.lang.Object creditor_ = "";
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor = 3;</code>
        * @return The creditor.
        */
@@ -4074,6 +4646,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor = 3;</code>
        * @return The bytes for creditor.
        */
@@ -4091,6 +4667,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor = 3;</code>
        * @param value The creditor to set.
        * @return This builder for chaining.
@@ -4106,6 +4686,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor = 3;</code>
        * @return This builder for chaining.
        */
@@ -4116,6 +4700,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * BIC của ngân hàng người nhận
+       * </pre>
+       *
        * <code>string creditor = 3;</code>
        * @param value The bytes for creditor to set.
        * @return This builder for chaining.
@@ -4134,6 +4722,10 @@ public final class Common {
 
       private double amount_ ;
       /**
+       * <pre>
+       * Số tiền chuyển
+       * </pre>
+       *
        * <code>double amount = 4;</code>
        * @return The amount.
        */
@@ -4142,6 +4734,10 @@ public final class Common {
         return amount_;
       }
       /**
+       * <pre>
+       * Số tiền chuyển
+       * </pre>
+       *
        * <code>double amount = 4;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
@@ -4153,6 +4749,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Số tiền chuyển
+       * </pre>
+       *
        * <code>double amount = 4;</code>
        * @return This builder for chaining.
        */
@@ -4165,6 +4765,10 @@ public final class Common {
 
       private java.lang.Object currency_ = "";
       /**
+       * <pre>
+       * Mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 5;</code>
        * @return The currency.
        */
@@ -4181,6 +4785,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 5;</code>
        * @return The bytes for currency.
        */
@@ -4198,6 +4806,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 5;</code>
        * @param value The currency to set.
        * @return This builder for chaining.
@@ -4213,6 +4825,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 5;</code>
        * @return This builder for chaining.
        */
@@ -4223,6 +4839,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ
+       * </pre>
+       *
        * <code>string currency = 5;</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.
@@ -4241,6 +4861,10 @@ public final class Common {
 
       private java.lang.Object status_ = "";
       /**
+       * <pre>
+       * Trạng thái chuyển tiền
+       * </pre>
+       *
        * <code>string status = 6;</code>
        * @return The status.
        */
@@ -4257,6 +4881,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Trạng thái chuyển tiền
+       * </pre>
+       *
        * <code>string status = 6;</code>
        * @return The bytes for status.
        */
@@ -4274,6 +4902,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Trạng thái chuyển tiền
+       * </pre>
+       *
        * <code>string status = 6;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -4289,6 +4921,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái chuyển tiền
+       * </pre>
+       *
        * <code>string status = 6;</code>
        * @return This builder for chaining.
        */
@@ -4299,6 +4935,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái chuyển tiền
+       * </pre>
+       *
        * <code>string status = 6;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
@@ -4319,6 +4959,10 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        * @return Whether the createdAt field is set.
        */
@@ -4326,6 +4970,10 @@ public final class Common {
         return createdAtBuilder_ != null || createdAt_ != null;
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        * @return The createdAt.
        */
@@ -4337,6 +4985,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
@@ -4353,6 +5005,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public Builder setCreatedAt(
@@ -4367,6 +5023,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
@@ -4385,6 +5045,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public Builder clearCreatedAt() {
@@ -4399,6 +5063,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
@@ -4407,6 +5075,10 @@ public final class Common {
         return getCreatedAtFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
@@ -4418,6 +5090,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian tạo lệnh chuyển
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp created_at = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4439,7 +5115,7 @@ public final class Common {
           com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> debtorAccountBuilder_;
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4450,7 +5126,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4465,7 +5141,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4485,7 +5161,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4503,7 +5179,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4525,7 +5201,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4543,7 +5219,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4555,7 +5231,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4570,7 +5246,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Optional structured account details for the debtor/creditor in FI transfers
+       * Thông tin tài khoản chi tiết của người gửi (tùy chọn)
        * </pre>
        *
        * <code>.offchain.v1.Account debtor_account = 8;</code>
@@ -4593,6 +5269,10 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Account, com.blcvn.switching.offchain.Common.Account.Builder, com.blcvn.switching.offchain.Common.AccountOrBuilder> creditorAccountBuilder_;
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        * @return Whether the creditorAccount field is set.
        */
@@ -4600,6 +5280,10 @@ public final class Common {
         return creditorAccountBuilder_ != null || creditorAccount_ != null;
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        * @return The creditorAccount.
        */
@@ -4611,6 +5295,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public Builder setCreditorAccount(com.blcvn.switching.offchain.Common.Account value) {
@@ -4627,6 +5315,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public Builder setCreditorAccount(
@@ -4641,6 +5333,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public Builder mergeCreditorAccount(com.blcvn.switching.offchain.Common.Account value) {
@@ -4659,6 +5355,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public Builder clearCreditorAccount() {
@@ -4673,6 +5373,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public com.blcvn.switching.offchain.Common.Account.Builder getCreditorAccountBuilder() {
@@ -4681,6 +5385,10 @@ public final class Common {
         return getCreditorAccountFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       public com.blcvn.switching.offchain.Common.AccountOrBuilder getCreditorAccountOrBuilder() {
@@ -4692,6 +5400,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thông tin tài khoản chi tiết của người nhận (tùy chọn)
+       * </pre>
+       *
        * <code>.offchain.v1.Account creditor_account = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4765,11 +5477,19 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -4777,11 +5497,19 @@ public final class Common {
         getBicBytes();
 
     /**
+     * <pre>
+     * Tên tổ chức
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
+     * <pre>
+     * Tên tổ chức
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -4789,11 +5517,19 @@ public final class Common {
         getNameBytes();
 
     /**
+     * <pre>
+     * Mã quốc gia
+     * </pre>
+     *
      * <code>string country = 3;</code>
      * @return The country.
      */
     java.lang.String getCountry();
     /**
+     * <pre>
+     * Mã quốc gia
+     * </pre>
+     *
      * <code>string country = 3;</code>
      * @return The bytes for country.
      */
@@ -4801,11 +5537,19 @@ public final class Common {
         getCountryBytes();
 
     /**
+     * <pre>
+     * Legal Entity Identifier
+     * </pre>
+     *
      * <code>string lei = 4;</code>
      * @return The lei.
      */
     java.lang.String getLei();
     /**
+     * <pre>
+     * Legal Entity Identifier
+     * </pre>
+     *
      * <code>string lei = 4;</code>
      * @return The bytes for lei.
      */
@@ -4813,11 +5557,19 @@ public final class Common {
         getLeiBytes();
 
     /**
+     * <pre>
+     * Thời gian cập nhật lần cuối
+     * </pre>
+     *
      * <code>string updated_at = 5;</code>
      * @return The updatedAt.
      */
     java.lang.String getUpdatedAt();
     /**
+     * <pre>
+     * Thời gian cập nhật lần cuối
+     * </pre>
+     *
      * <code>string updated_at = 5;</code>
      * @return The bytes for updatedAt.
      */
@@ -4825,6 +5577,10 @@ public final class Common {
         getUpdatedAtBytes();
   }
   /**
+   * <pre>
+   * Thông tin thực thể KYC (Know Your Customer)
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.KycEntity}
    */
   public static final class KycEntity extends
@@ -4939,6 +5695,10 @@ public final class Common {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -4956,6 +5716,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -4977,6 +5741,10 @@ public final class Common {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
+     * <pre>
+     * Tên tổ chức
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -4994,6 +5762,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Tên tổ chức
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -5015,6 +5787,10 @@ public final class Common {
     public static final int COUNTRY_FIELD_NUMBER = 3;
     private volatile java.lang.Object country_;
     /**
+     * <pre>
+     * Mã quốc gia
+     * </pre>
+     *
      * <code>string country = 3;</code>
      * @return The country.
      */
@@ -5032,6 +5808,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Mã quốc gia
+     * </pre>
+     *
      * <code>string country = 3;</code>
      * @return The bytes for country.
      */
@@ -5053,6 +5833,10 @@ public final class Common {
     public static final int LEI_FIELD_NUMBER = 4;
     private volatile java.lang.Object lei_;
     /**
+     * <pre>
+     * Legal Entity Identifier
+     * </pre>
+     *
      * <code>string lei = 4;</code>
      * @return The lei.
      */
@@ -5070,6 +5854,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Legal Entity Identifier
+     * </pre>
+     *
      * <code>string lei = 4;</code>
      * @return The bytes for lei.
      */
@@ -5091,6 +5879,10 @@ public final class Common {
     public static final int UPDATED_AT_FIELD_NUMBER = 5;
     private volatile java.lang.Object updatedAt_;
     /**
+     * <pre>
+     * Thời gian cập nhật lần cuối
+     * </pre>
+     *
      * <code>string updated_at = 5;</code>
      * @return The updatedAt.
      */
@@ -5108,6 +5900,10 @@ public final class Common {
       }
     }
     /**
+     * <pre>
+     * Thời gian cập nhật lần cuối
+     * </pre>
+     *
      * <code>string updated_at = 5;</code>
      * @return The bytes for updatedAt.
      */
@@ -5321,6 +6117,10 @@ public final class Common {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin thực thể KYC (Know Your Customer)
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.KycEntity}
      */
     public static final class Builder extends
@@ -5498,6 +6298,10 @@ public final class Common {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -5514,6 +6318,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -5531,6 +6339,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -5546,6 +6358,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -5556,6 +6372,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -5574,6 +6394,10 @@ public final class Common {
 
       private java.lang.Object name_ = "";
       /**
+       * <pre>
+       * Tên tổ chức
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The name.
        */
@@ -5590,6 +6414,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Tên tổ chức
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The bytes for name.
        */
@@ -5607,6 +6435,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Tên tổ chức
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The name to set.
        * @return This builder for chaining.
@@ -5622,6 +6454,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Tên tổ chức
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return This builder for chaining.
        */
@@ -5632,6 +6468,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Tên tổ chức
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -5650,6 +6490,10 @@ public final class Common {
 
       private java.lang.Object country_ = "";
       /**
+       * <pre>
+       * Mã quốc gia
+       * </pre>
+       *
        * <code>string country = 3;</code>
        * @return The country.
        */
@@ -5666,6 +6510,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã quốc gia
+       * </pre>
+       *
        * <code>string country = 3;</code>
        * @return The bytes for country.
        */
@@ -5683,6 +6531,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Mã quốc gia
+       * </pre>
+       *
        * <code>string country = 3;</code>
        * @param value The country to set.
        * @return This builder for chaining.
@@ -5698,6 +6550,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã quốc gia
+       * </pre>
+       *
        * <code>string country = 3;</code>
        * @return This builder for chaining.
        */
@@ -5708,6 +6564,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Mã quốc gia
+       * </pre>
+       *
        * <code>string country = 3;</code>
        * @param value The bytes for country to set.
        * @return This builder for chaining.
@@ -5726,6 +6586,10 @@ public final class Common {
 
       private java.lang.Object lei_ = "";
       /**
+       * <pre>
+       * Legal Entity Identifier
+       * </pre>
+       *
        * <code>string lei = 4;</code>
        * @return The lei.
        */
@@ -5742,6 +6606,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Legal Entity Identifier
+       * </pre>
+       *
        * <code>string lei = 4;</code>
        * @return The bytes for lei.
        */
@@ -5759,6 +6627,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Legal Entity Identifier
+       * </pre>
+       *
        * <code>string lei = 4;</code>
        * @param value The lei to set.
        * @return This builder for chaining.
@@ -5774,6 +6646,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Legal Entity Identifier
+       * </pre>
+       *
        * <code>string lei = 4;</code>
        * @return This builder for chaining.
        */
@@ -5784,6 +6660,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Legal Entity Identifier
+       * </pre>
+       *
        * <code>string lei = 4;</code>
        * @param value The bytes for lei to set.
        * @return This builder for chaining.
@@ -5802,6 +6682,10 @@ public final class Common {
 
       private java.lang.Object updatedAt_ = "";
       /**
+       * <pre>
+       * Thời gian cập nhật lần cuối
+       * </pre>
+       *
        * <code>string updated_at = 5;</code>
        * @return The updatedAt.
        */
@@ -5818,6 +6702,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian cập nhật lần cuối
+       * </pre>
+       *
        * <code>string updated_at = 5;</code>
        * @return The bytes for updatedAt.
        */
@@ -5835,6 +6723,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * Thời gian cập nhật lần cuối
+       * </pre>
+       *
        * <code>string updated_at = 5;</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
@@ -5850,6 +6742,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian cập nhật lần cuối
+       * </pre>
+       *
        * <code>string updated_at = 5;</code>
        * @return This builder for chaining.
        */
@@ -5860,6 +6756,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian cập nhật lần cuối
+       * </pre>
+       *
        * <code>string updated_at = 5;</code>
        * @param value The bytes for updatedAt to set.
        * @return This builder for chaining.
@@ -5934,7 +6834,7 @@ public final class Common {
 
     /**
      * <pre>
-     * International Bank Account Number (if available)
+     * Số tài khoản quốc tế IBAN (nếu có)
      * </pre>
      *
      * <code>string iban = 1;</code>
@@ -5943,7 +6843,7 @@ public final class Common {
     java.lang.String getIban();
     /**
      * <pre>
-     * International Bank Account Number (if available)
+     * Số tài khoản quốc tế IBAN (nếu có)
      * </pre>
      *
      * <code>string iban = 1;</code>
@@ -5954,7 +6854,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Local account number
+     * Số tài khoản nội địa
      * </pre>
      *
      * <code>string account_number = 2;</code>
@@ -5963,7 +6863,7 @@ public final class Common {
     java.lang.String getAccountNumber();
     /**
      * <pre>
-     * Local account number
+     * Số tài khoản nội địa
      * </pre>
      *
      * <code>string account_number = 2;</code>
@@ -5974,7 +6874,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Account holder name
+     * Tên chủ tài khoản
      * </pre>
      *
      * <code>string account_name = 3;</code>
@@ -5983,7 +6883,7 @@ public final class Common {
     java.lang.String getAccountName();
     /**
      * <pre>
-     * Account holder name
+     * Tên chủ tài khoản
      * </pre>
      *
      * <code>string account_name = 3;</code>
@@ -5994,7 +6894,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Account currency (optional)
+     * Mã tiền tệ của tài khoản (tùy chọn)
      * </pre>
      *
      * <code>string currency = 4;</code>
@@ -6003,7 +6903,7 @@ public final class Common {
     java.lang.String getCurrency();
     /**
      * <pre>
-     * Account currency (optional)
+     * Mã tiền tệ của tài khoản (tùy chọn)
      * </pre>
      *
      * <code>string currency = 4;</code>
@@ -6014,7 +6914,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Additional reference or identification (e.g., secondary id)
+     * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
      * </pre>
      *
      * <code>string reference = 5;</code>
@@ -6023,7 +6923,7 @@ public final class Common {
     java.lang.String getReference();
     /**
      * <pre>
-     * Additional reference or identification (e.g., secondary id)
+     * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
      * </pre>
      *
      * <code>string reference = 5;</code>
@@ -6034,7 +6934,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * Account represents the account details associated with an agent.
+   * Thông tin chi tiết tài khoản liên kết với một agent
    * </pre>
    *
    * Protobuf type {@code offchain.v1.Account}
@@ -6152,7 +7052,7 @@ public final class Common {
     private volatile java.lang.Object iban_;
     /**
      * <pre>
-     * International Bank Account Number (if available)
+     * Số tài khoản quốc tế IBAN (nếu có)
      * </pre>
      *
      * <code>string iban = 1;</code>
@@ -6173,7 +7073,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * International Bank Account Number (if available)
+     * Số tài khoản quốc tế IBAN (nếu có)
      * </pre>
      *
      * <code>string iban = 1;</code>
@@ -6198,7 +7098,7 @@ public final class Common {
     private volatile java.lang.Object accountNumber_;
     /**
      * <pre>
-     * Local account number
+     * Số tài khoản nội địa
      * </pre>
      *
      * <code>string account_number = 2;</code>
@@ -6219,7 +7119,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Local account number
+     * Số tài khoản nội địa
      * </pre>
      *
      * <code>string account_number = 2;</code>
@@ -6244,7 +7144,7 @@ public final class Common {
     private volatile java.lang.Object accountName_;
     /**
      * <pre>
-     * Account holder name
+     * Tên chủ tài khoản
      * </pre>
      *
      * <code>string account_name = 3;</code>
@@ -6265,7 +7165,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Account holder name
+     * Tên chủ tài khoản
      * </pre>
      *
      * <code>string account_name = 3;</code>
@@ -6290,7 +7190,7 @@ public final class Common {
     private volatile java.lang.Object currency_;
     /**
      * <pre>
-     * Account currency (optional)
+     * Mã tiền tệ của tài khoản (tùy chọn)
      * </pre>
      *
      * <code>string currency = 4;</code>
@@ -6311,7 +7211,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Account currency (optional)
+     * Mã tiền tệ của tài khoản (tùy chọn)
      * </pre>
      *
      * <code>string currency = 4;</code>
@@ -6336,7 +7236,7 @@ public final class Common {
     private volatile java.lang.Object reference_;
     /**
      * <pre>
-     * Additional reference or identification (e.g., secondary id)
+     * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
      * </pre>
      *
      * <code>string reference = 5;</code>
@@ -6357,7 +7257,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Additional reference or identification (e.g., secondary id)
+     * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
      * </pre>
      *
      * <code>string reference = 5;</code>
@@ -6574,7 +7474,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Account represents the account details associated with an agent.
+     * Thông tin chi tiết tài khoản liên kết với một agent
      * </pre>
      *
      * Protobuf type {@code offchain.v1.Account}
@@ -6755,7 +7655,7 @@ public final class Common {
       private java.lang.Object iban_ = "";
       /**
        * <pre>
-       * International Bank Account Number (if available)
+       * Số tài khoản quốc tế IBAN (nếu có)
        * </pre>
        *
        * <code>string iban = 1;</code>
@@ -6775,7 +7675,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * International Bank Account Number (if available)
+       * Số tài khoản quốc tế IBAN (nếu có)
        * </pre>
        *
        * <code>string iban = 1;</code>
@@ -6796,7 +7696,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * International Bank Account Number (if available)
+       * Số tài khoản quốc tế IBAN (nếu có)
        * </pre>
        *
        * <code>string iban = 1;</code>
@@ -6815,7 +7715,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * International Bank Account Number (if available)
+       * Số tài khoản quốc tế IBAN (nếu có)
        * </pre>
        *
        * <code>string iban = 1;</code>
@@ -6829,7 +7729,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * International Bank Account Number (if available)
+       * Số tài khoản quốc tế IBAN (nếu có)
        * </pre>
        *
        * <code>string iban = 1;</code>
@@ -6851,7 +7751,7 @@ public final class Common {
       private java.lang.Object accountNumber_ = "";
       /**
        * <pre>
-       * Local account number
+       * Số tài khoản nội địa
        * </pre>
        *
        * <code>string account_number = 2;</code>
@@ -6871,7 +7771,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Local account number
+       * Số tài khoản nội địa
        * </pre>
        *
        * <code>string account_number = 2;</code>
@@ -6892,7 +7792,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Local account number
+       * Số tài khoản nội địa
        * </pre>
        *
        * <code>string account_number = 2;</code>
@@ -6911,7 +7811,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Local account number
+       * Số tài khoản nội địa
        * </pre>
        *
        * <code>string account_number = 2;</code>
@@ -6925,7 +7825,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Local account number
+       * Số tài khoản nội địa
        * </pre>
        *
        * <code>string account_number = 2;</code>
@@ -6947,7 +7847,7 @@ public final class Common {
       private java.lang.Object accountName_ = "";
       /**
        * <pre>
-       * Account holder name
+       * Tên chủ tài khoản
        * </pre>
        *
        * <code>string account_name = 3;</code>
@@ -6967,7 +7867,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account holder name
+       * Tên chủ tài khoản
        * </pre>
        *
        * <code>string account_name = 3;</code>
@@ -6988,7 +7888,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account holder name
+       * Tên chủ tài khoản
        * </pre>
        *
        * <code>string account_name = 3;</code>
@@ -7007,7 +7907,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account holder name
+       * Tên chủ tài khoản
        * </pre>
        *
        * <code>string account_name = 3;</code>
@@ -7021,7 +7921,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account holder name
+       * Tên chủ tài khoản
        * </pre>
        *
        * <code>string account_name = 3;</code>
@@ -7043,7 +7943,7 @@ public final class Common {
       private java.lang.Object currency_ = "";
       /**
        * <pre>
-       * Account currency (optional)
+       * Mã tiền tệ của tài khoản (tùy chọn)
        * </pre>
        *
        * <code>string currency = 4;</code>
@@ -7063,7 +7963,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account currency (optional)
+       * Mã tiền tệ của tài khoản (tùy chọn)
        * </pre>
        *
        * <code>string currency = 4;</code>
@@ -7084,7 +7984,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account currency (optional)
+       * Mã tiền tệ của tài khoản (tùy chọn)
        * </pre>
        *
        * <code>string currency = 4;</code>
@@ -7103,7 +8003,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account currency (optional)
+       * Mã tiền tệ của tài khoản (tùy chọn)
        * </pre>
        *
        * <code>string currency = 4;</code>
@@ -7117,7 +8017,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Account currency (optional)
+       * Mã tiền tệ của tài khoản (tùy chọn)
        * </pre>
        *
        * <code>string currency = 4;</code>
@@ -7139,7 +8039,7 @@ public final class Common {
       private java.lang.Object reference_ = "";
       /**
        * <pre>
-       * Additional reference or identification (e.g., secondary id)
+       * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
        * </pre>
        *
        * <code>string reference = 5;</code>
@@ -7159,7 +8059,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Additional reference or identification (e.g., secondary id)
+       * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
        * </pre>
        *
        * <code>string reference = 5;</code>
@@ -7180,7 +8080,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Additional reference or identification (e.g., secondary id)
+       * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
        * </pre>
        *
        * <code>string reference = 5;</code>
@@ -7199,7 +8099,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Additional reference or identification (e.g., secondary id)
+       * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
        * </pre>
        *
        * <code>string reference = 5;</code>
@@ -7213,7 +8113,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Additional reference or identification (e.g., secondary id)
+       * Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
        * </pre>
        *
        * <code>string reference = 5;</code>
@@ -9182,23 +10082,22 @@ public final class Common {
 
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The code.
+     * <code>.offchain.v1.ResultCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
      */
-    java.lang.String getCode();
+    int getCodeValue();
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The bytes for code.
+     * <code>.offchain.v1.ResultCode code = 1;</code>
+     * @return The code.
      */
-    com.google.protobuf.ByteString
-        getCodeBytes();
+    com.blcvn.switching.offchain.Error.ResultCode getCode();
 
     /**
      * <pre>
@@ -9222,7 +10121,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * CCResult định nghĩa cấu trúc kết quả trả về
+   * Result định nghĩa cấu trúc kết quả trả về
    * </pre>
    *
    * Protobuf type {@code offchain.v1.Result}
@@ -9237,7 +10136,7 @@ public final class Common {
       super(builder);
     }
     private Result() {
-      code_ = "";
+      code_ = 0;
       message_ = "";
     }
 
@@ -9271,10 +10170,10 @@ public final class Common {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
+              int rawValue = input.readEnum();
 
-              code_ = s;
+              code_ = rawValue;
               break;
             }
             case 18: {
@@ -9316,49 +10215,30 @@ public final class Common {
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object code_;
+    private int code_;
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The code.
+     * <code>.offchain.v1.ResultCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
      */
-    @java.lang.Override
-    public java.lang.String getCode() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        code_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCodeValue() {
+      return code_;
     }
     /**
      * <pre>
-     * Mã kết quả thực thi
+     * Mã kết quả thực thi (enum)
      * </pre>
      *
-     * <code>string code = 1;</code>
-     * @return The bytes for code.
+     * <code>.offchain.v1.ResultCode code = 1;</code>
+     * @return The code.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCodeBytes() {
-      java.lang.Object ref = code_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        code_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.blcvn.switching.offchain.Error.ResultCode getCode() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.switching.offchain.Error.ResultCode result = com.blcvn.switching.offchain.Error.ResultCode.valueOf(code_);
+      return result == null ? com.blcvn.switching.offchain.Error.ResultCode.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -9421,8 +10301,8 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCodeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+      if (code_ != com.blcvn.switching.offchain.Error.ResultCode.UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -9436,8 +10316,9 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (!getCodeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+      if (code_ != com.blcvn.switching.offchain.Error.ResultCode.UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -9457,8 +10338,7 @@ public final class Common {
       }
       com.blcvn.switching.offchain.Common.Result other = (com.blcvn.switching.offchain.Common.Result) obj;
 
-      if (!getCode()
-          .equals(other.getCode())) return false;
+      if (code_ != other.code_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9473,7 +10353,7 @@ public final class Common {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode().hashCode();
+      hash = (53 * hash) + code_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9573,7 +10453,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * CCResult định nghĩa cấu trúc kết quả trả về
+     * Result định nghĩa cấu trúc kết quả trả về
      * </pre>
      *
      * Protobuf type {@code offchain.v1.Result}
@@ -9613,7 +10493,7 @@ public final class Common {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        code_ = "";
+        code_ = 0;
 
         message_ = "";
 
@@ -9693,9 +10573,8 @@ public final class Common {
 
       public Builder mergeFrom(com.blcvn.switching.offchain.Common.Result other) {
         if (other == com.blcvn.switching.offchain.Common.Result.getDefaultInstance()) return this;
-        if (!other.getCode().isEmpty()) {
-          code_ = other.code_;
-          onChanged();
+        if (other.code_ != 0) {
+          setCodeValue(other.getCodeValue());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -9730,98 +10609,76 @@ public final class Common {
         return this;
       }
 
-      private java.lang.Object code_ = "";
+      private int code_ = 0;
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
-       * @return The code.
+       * <code>.offchain.v1.ResultCode code = 1;</code>
+       * @return The enum numeric value on the wire for code.
        */
-      public java.lang.String getCode() {
-        java.lang.Object ref = code_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          code_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCodeValue() {
+        return code_;
       }
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
-       * @return The bytes for code.
-       */
-      public com.google.protobuf.ByteString
-          getCodeBytes() {
-        java.lang.Object ref = code_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          code_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Mã kết quả thực thi
-       * </pre>
-       *
-       * <code>string code = 1;</code>
-       * @param value The code to set.
+       * <code>.offchain.v1.ResultCode code = 1;</code>
+       * @param value The enum numeric value on the wire for code to set.
        * @return This builder for chaining.
        */
-      public Builder setCode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setCodeValue(int value) {
+        
         code_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Mã kết quả thực thi
+       * Mã kết quả thực thi (enum)
        * </pre>
        *
-       * <code>string code = 1;</code>
+       * <code>.offchain.v1.ResultCode code = 1;</code>
+       * @return The code.
+       */
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Error.ResultCode getCode() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.switching.offchain.Error.ResultCode result = com.blcvn.switching.offchain.Error.ResultCode.valueOf(code_);
+        return result == null ? com.blcvn.switching.offchain.Error.ResultCode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi (enum)
+       * </pre>
+       *
+       * <code>.offchain.v1.ResultCode code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(com.blcvn.switching.offchain.Error.ResultCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        code_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mã kết quả thực thi (enum)
+       * </pre>
+       *
+       * <code>.offchain.v1.ResultCode code = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearCode() {
         
-        code_ = getDefaultInstance().getCode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Mã kết quả thực thi
-       * </pre>
-       *
-       * <code>string code = 1;</code>
-       * @param value The bytes for code to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        code_ = value;
+        code_ = 0;
         onChanged();
         return this;
       }
@@ -10024,41 +10881,43 @@ public final class Common {
   static {
     java.lang.String[] descriptorData = {
       "\n\025offchain/common.proto\022\013offchain.v1\032\037go" +
-      "ogle/protobuf/timestamp.proto\"\007\n\005Empty\"\323" +
-      "\002\n\007Payment\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 \001(\t\022\016\n\006" +
-      "amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\024\n\014debtor" +
-      "_agent\030\005 \001(\t\022\026\n\016creditor_agent\030\006 \001(\t\022\025\n\r" +
-      "end_to_end_id\030\007 \001(\t\022\016\n\006status\030\010 \001(\t\022.\n\nc" +
-      "reated_at\030\t \001(\0132\032.google.protobuf.Timest" +
-      "amp\0222\n\024debtor_agent_account\030\n \001(\0132\024.offc" +
-      "hain.v1.Account\0224\n\026creditor_agent_accoun" +
-      "t\030\013 \001(\0132\024.offchain.v1.Account\022\035\n\025transac" +
-      "tion_reference\030\014 \001(\t\"\204\002\n\010Transfer\022\026\n\016ins" +
-      "truction_id\030\001 \001(\t\022\016\n\006debtor\030\002 \001(\t\022\020\n\010cre" +
-      "ditor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010currency\030" +
-      "\005 \001(\t\022\016\n\006status\030\006 \001(\t\022.\n\ncreated_at\030\007 \001(" +
-      "\0132\032.google.protobuf.Timestamp\022,\n\016debtor_" +
-      "account\030\010 \001(\0132\024.offchain.v1.Account\022.\n\020c" +
-      "reditor_account\030\t \001(\0132\024.offchain.v1.Acco" +
-      "unt\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 " +
-      "\001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupd" +
-      "ated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026" +
-      "\n\016account_number\030\002 \001(\t\022\024\n\014account_name\030\003" +
-      " \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\treference\030\005 \001(" +
-      "\t\"E\n\010Metadata\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014req" +
-      "uest_time\030\002 \001(\003\022\017\n\007version\030\003 \001(\t\"\216\001\n\tSig" +
-      "nature\0224\n\006s_type\030\001 \001(\0162$.offchain.v1.Sig" +
-      "nature.SignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001" +
-      "(\014\"5\n\rSignatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001" +
-      "J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"\'\n\006Result\022\014\n\004code\030\001 \001(" +
-      "\t\022\017\n\007message\030\002 \001(\tBU\n\034com.blcvn.switchin" +
-      "g.offchainZ5github.com/blcvn/switching-p" +
-      "roto/go/offchain;offchainb\006proto3"
+      "ogle/protobuf/timestamp.proto\032\024offchain/" +
+      "error.proto\"\007\n\005Empty\"\323\002\n\007Payment\022\n\n\002id\030\001" +
+      " \001(\t\022\014\n\004uetr\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010cu" +
+      "rrency\030\004 \001(\t\022\024\n\014debtor_agent\030\005 \001(\t\022\026\n\016cr" +
+      "editor_agent\030\006 \001(\t\022\025\n\rend_to_end_id\030\007 \001(" +
+      "\t\022\016\n\006status\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032." +
+      "google.protobuf.Timestamp\0222\n\024debtor_agen" +
+      "t_account\030\n \001(\0132\024.offchain.v1.Account\0224\n" +
+      "\026creditor_agent_account\030\013 \001(\0132\024.offchain" +
+      ".v1.Account\022\035\n\025transaction_reference\030\014 \001" +
+      "(\t\"\204\002\n\010Transfer\022\026\n\016instruction_id\030\001 \001(\t\022" +
+      "\016\n\006debtor\030\002 \001(\t\022\020\n\010creditor\030\003 \001(\t\022\016\n\006amo" +
+      "unt\030\004 \001(\001\022\020\n\010currency\030\005 \001(\t\022\016\n\006status\030\006 " +
+      "\001(\t\022.\n\ncreated_at\030\007 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022,\n\016debtor_account\030\010 \001(\0132\024.of" +
+      "fchain.v1.Account\022.\n\020creditor_account\030\t " +
+      "\001(\0132\024.offchain.v1.Account\"X\n\tKycEntity\022\013" +
+      "\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007country\030\003 \001" +
+      "(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\"j\n\007A" +
+      "ccount\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_number\030\002" +
+      " \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010currency\030\004" +
+      " \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metadata\022\022\n\nr" +
+      "equest_id\030\001 \001(\t\022\024\n\014request_time\030\002 \001(\003\022\017\n" +
+      "\007version\030\003 \001(\t\"\216\001\n\tSignature\0224\n\006s_type\030\001" +
+      " \001(\0162$.offchain.v1.Signature.SignatureTy" +
+      "pe\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureTyp" +
+      "e\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"" +
+      "@\n\006Result\022%\n\004code\030\001 \001(\0162\027.offchain.v1.Re" +
+      "sultCode\022\017\n\007message\030\002 \001(\tBU\n\034com.blcvn.s" +
+      "witching.offchainZ5github.com/blcvn/swit" +
+      "ching-proto/go/offchain;offchainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.blcvn.switching.offchain.Error.getDescriptor(),
         });
     internal_static_offchain_v1_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -10109,6 +10968,7 @@ public final class Common {
         internal_static_offchain_v1_Result_descriptor,
         new java.lang.String[] { "Code", "Message", });
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.blcvn.switching.offchain.Error.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
