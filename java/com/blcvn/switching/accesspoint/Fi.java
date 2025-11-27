@@ -12589,76 +12589,74 @@ public final class Fi {
   static {
     java.lang.String[] descriptorData = {
       "\n\025access-point/fi.proto\022\016accesspoint.v1\032" +
-      "\031access-point/common.proto\032\037google/proto" +
-      "buf/timestamp.proto\"\231\001\n\025CreateTransferRe" +
-      "quest\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1" +
-      ".Metadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoi" +
-      "nt.v1.Signature\022&\n\004data\030\003 \001(\0132\030.accesspo" +
-      "int.v1.Transfer\"\302\001\n\026CreateTransferRespon" +
-      "se\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.Me" +
+      "\031access-point/common.proto\"\231\001\n\025CreateTra" +
+      "nsferRequest\022*\n\010metadata\030\001 \001(\0132\030.accessp" +
+      "oint.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.ac" +
+      "cesspoint.v1.Signature\022&\n\004data\030\003 \001(\0132\030.a" +
+      "ccesspoint.v1.Transfer\"\302\001\n\026CreateTransfe" +
+      "rResponse\022*\n\010metadata\030\001 \001(\0132\030.accesspoin" +
+      "t.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.acces" +
+      "spoint.v1.Signature\022&\n\006result\030\003 \001(\0132\026.ac" +
+      "cesspoint.v1.Result\022&\n\004data\030\004 \001(\0132\030.acce" +
+      "sspoint.v1.Transfer\"\206\001\n\022GetTransferReque" +
+      "st\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.Me" +
       "tadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoint." +
-      "v1.Signature\022&\n\006result\030\003 \001(\0132\026.accesspoi" +
-      "nt.v1.Result\022&\n\004data\030\004 \001(\0132\030.accesspoint" +
-      ".v1.Transfer\"\206\001\n\022GetTransferRequest\022*\n\010m" +
-      "etadata\030\001 \001(\0132\030.accesspoint.v1.Metadata\022" +
-      ",\n\tsignature\030\002 \001(\0132\031.accesspoint.v1.Sign" +
-      "ature\022\026\n\016instruction_id\030\003 \001(\t\"\272\001\n\016Transf" +
-      "erStatus\022*\n\010metadata\030\001 \001(\0132\030.accesspoint" +
-      ".v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.access" +
-      "point.v1.Signature\022&\n\006result\030\003 \001(\0132\026.acc" +
-      "esspoint.v1.Result\022&\n\004data\030\004 \001(\0132\030.acces" +
-      "spoint.v1.Transfer\"\212\001\n\026ConfirmTransferRe" +
-      "quest\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1" +
-      ".Metadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoi" +
-      "nt.v1.Signature\022\026\n\016instruction_id\030\003 \001(\t\"" +
-      "\263\001\n\027ConfirmTransferResponse\022*\n\010metadata\030" +
-      "\001 \001(\0132\030.accesspoint.v1.Metadata\022,\n\tsigna" +
-      "ture\030\002 \001(\0132\031.accesspoint.v1.Signature\022&\n" +
-      "\006result\030\003 \001(\0132\026.accesspoint.v1.Result\022\026\n" +
-      "\016instruction_id\030\004 \001(\t\"\361\001\n\026SearchTransfer" +
-      "sRequest\022*\n\010metadata\030\001 \001(\0132\030.accesspoint" +
-      ".v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.access" +
-      "point.v1.Signature\022=\n\006filter\030\003 \001(\0132-.acc" +
-      "esspoint.v1.SearchTransfersRequest.Filte" +
-      "r\032>\n\006Filter\022\020\n\010currency\030\001 \001(\t\022\021\n\tdate_fr" +
-      "om\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"\306\001\n\027SearchTran" +
-      "sfersResponse\022*\n\010metadata\030\001 \001(\0132\030.access" +
-      "point.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.a" +
-      "ccesspoint.v1.Signature\022&\n\006result\030\003 \001(\0132" +
-      "\026.accesspoint.v1.Result\022)\n\007results\030\004 \003(\013" +
-      "2\030.accesspoint.v1.Transfer\"\234\001\n\023BulkTrans" +
-      "ferRequest\022*\n\010metadata\030\001 \001(\0132\030.accesspoi" +
-      "nt.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.acce" +
-      "sspoint.v1.Signature\022+\n\ttransfers\030\003 \003(\0132" +
-      "\030.accesspoint.v1.Transfer\"\305\001\n\024BulkTransf" +
-      "erResponse\022*\n\010metadata\030\001 \001(\0132\030.accesspoi" +
-      "nt.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.acce" +
-      "sspoint.v1.Signature\022&\n\006result\030\003 \001(\0132\026.a" +
-      "ccesspoint.v1.Result\022+\n\ttransfers\030\004 \003(\0132" +
-      "\030.accesspoint.v1.Transfer2\301\004\n\tFiService\022" +
-      "a\n\016CreateTransfer\022%.accesspoint.v1.Creat" +
-      "eTransferRequest\032&.accesspoint.v1.Create" +
-      "TransferResponse\"\000\022M\n\013GetTransfer\022\".acce" +
-      "sspoint.v1.GetTransferRequest\032\030.accesspo" +
-      "int.v1.Transfer\"\000\022Y\n\021GetTransferStatus\022\"" +
-      ".accesspoint.v1.GetTransferRequest\032\036.acc" +
-      "esspoint.v1.TransferStatus\"\000\022d\n\017ConfirmT" +
-      "ransfer\022&.accesspoint.v1.ConfirmTransfer" +
-      "Request\032\'.accesspoint.v1.ConfirmTransfer" +
-      "Response\"\000\022d\n\017SearchTransfers\022&.accesspo" +
-      "int.v1.SearchTransfersRequest\032\'.accesspo" +
-      "int.v1.SearchTransfersResponse\"\000\022[\n\014Bulk" +
-      "Transfer\022#.accesspoint.v1.BulkTransferRe" +
-      "quest\032$.accesspoint.v1.BulkTransferRespo" +
-      "nse\"\000B^\n\037com.blcvn.switching.accesspoint" +
-      "Z;github.com/blcvn/switching-proto/go/ac" +
-      "cesspoint;accesspointb\006proto3"
+      "v1.Signature\022\026\n\016instruction_id\030\003 \001(\t\"\272\001\n" +
+      "\016TransferStatus\022*\n\010metadata\030\001 \001(\0132\030.acce" +
+      "sspoint.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031" +
+      ".accesspoint.v1.Signature\022&\n\006result\030\003 \001(" +
+      "\0132\026.accesspoint.v1.Result\022&\n\004data\030\004 \001(\0132" +
+      "\030.accesspoint.v1.Transfer\"\212\001\n\026ConfirmTra" +
+      "nsferRequest\022*\n\010metadata\030\001 \001(\0132\030.accessp" +
+      "oint.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.ac" +
+      "cesspoint.v1.Signature\022\026\n\016instruction_id" +
+      "\030\003 \001(\t\"\263\001\n\027ConfirmTransferResponse\022*\n\010me" +
+      "tadata\030\001 \001(\0132\030.accesspoint.v1.Metadata\022," +
+      "\n\tsignature\030\002 \001(\0132\031.accesspoint.v1.Signa" +
+      "ture\022&\n\006result\030\003 \001(\0132\026.accesspoint.v1.Re" +
+      "sult\022\026\n\016instruction_id\030\004 \001(\t\"\361\001\n\026SearchT" +
+      "ransfersRequest\022*\n\010metadata\030\001 \001(\0132\030.acce" +
+      "sspoint.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031" +
+      ".accesspoint.v1.Signature\022=\n\006filter\030\003 \001(" +
+      "\0132-.accesspoint.v1.SearchTransfersReques" +
+      "t.Filter\032>\n\006Filter\022\020\n\010currency\030\001 \001(\t\022\021\n\t" +
+      "date_from\030\002 \001(\t\022\017\n\007date_to\030\003 \001(\t\"\306\001\n\027Sea" +
+      "rchTransfersResponse\022*\n\010metadata\030\001 \001(\0132\030" +
+      ".accesspoint.v1.Metadata\022,\n\tsignature\030\002 " +
+      "\001(\0132\031.accesspoint.v1.Signature\022&\n\006result" +
+      "\030\003 \001(\0132\026.accesspoint.v1.Result\022)\n\007result" +
+      "s\030\004 \003(\0132\030.accesspoint.v1.Transfer\"\234\001\n\023Bu" +
+      "lkTransferRequest\022*\n\010metadata\030\001 \001(\0132\030.ac" +
+      "cesspoint.v1.Metadata\022,\n\tsignature\030\002 \001(\013" +
+      "2\031.accesspoint.v1.Signature\022+\n\ttransfers" +
+      "\030\003 \003(\0132\030.accesspoint.v1.Transfer\"\305\001\n\024Bul" +
+      "kTransferResponse\022*\n\010metadata\030\001 \001(\0132\030.ac" +
+      "cesspoint.v1.Metadata\022,\n\tsignature\030\002 \001(\013" +
+      "2\031.accesspoint.v1.Signature\022&\n\006result\030\003 " +
+      "\001(\0132\026.accesspoint.v1.Result\022+\n\ttransfers" +
+      "\030\004 \003(\0132\030.accesspoint.v1.Transfer2\301\004\n\tFiS" +
+      "ervice\022a\n\016CreateTransfer\022%.accesspoint.v" +
+      "1.CreateTransferRequest\032&.accesspoint.v1" +
+      ".CreateTransferResponse\"\000\022M\n\013GetTransfer" +
+      "\022\".accesspoint.v1.GetTransferRequest\032\030.a" +
+      "ccesspoint.v1.Transfer\"\000\022Y\n\021GetTransferS" +
+      "tatus\022\".accesspoint.v1.GetTransferReques" +
+      "t\032\036.accesspoint.v1.TransferStatus\"\000\022d\n\017C" +
+      "onfirmTransfer\022&.accesspoint.v1.ConfirmT" +
+      "ransferRequest\032\'.accesspoint.v1.ConfirmT" +
+      "ransferResponse\"\000\022d\n\017SearchTransfers\022&.a" +
+      "ccesspoint.v1.SearchTransfersRequest\032\'.a" +
+      "ccesspoint.v1.SearchTransfersResponse\"\000\022" +
+      "[\n\014BulkTransfer\022#.accesspoint.v1.BulkTra" +
+      "nsferRequest\032$.accesspoint.v1.BulkTransf" +
+      "erResponse\"\000B^\n\037com.blcvn.switching.acce" +
+      "sspointZ;github.com/blcvn/switching-prot" +
+      "o/go/accesspoint;accesspointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.switching.accesspoint.Common.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_accesspoint_v1_CreateTransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12727,7 +12725,6 @@ public final class Fi {
         internal_static_accesspoint_v1_BulkTransferResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Transfers", });
     com.blcvn.switching.accesspoint.Common.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

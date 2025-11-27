@@ -7,7 +7,6 @@
 package offchain
 
 import (
-	_ "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -737,7 +736,7 @@ var File_offchain_fi_proto protoreflect.FileDescriptor
 
 const file_offchain_fi_proto_rawDesc = "" +
 	"\n" +
-	"\x11offchain/fi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xab\x01\n" +
+	"\x11offchain/fi.proto\x12\voffchain.v1\x1a\x15offchain/common.proto\"\xab\x01\n" +
 	"\x15CreateTransferRequest\x121\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
 	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12)\n" +

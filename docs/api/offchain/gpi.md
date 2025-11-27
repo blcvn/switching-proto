@@ -2,121 +2,336 @@
 
 ---
 
-## Schemas
+## Public endpoints
 
-### `offchainv1Account`
-Thông tin chi tiết tài khoản liên kết với một agent
+### POST /gpi/confirm
+- Mô tả: Xác nhận một thanh toán
+- Auth: không
+- Request JSON:
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `account_name` | string | `False` | Tên chủ tài khoản |
-| `account_number` | string | `False` | Số tài khoản nội địa |
-| `currency` | string | `False` | Mã tiền tệ của tài khoản (tùy chọn) |
-| `iban` | string | `False` | Số tài khoản quốc tế IBAN (nếu có) |
-| `reference` | string | `False` | Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ) |
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "data": {
+    "uetr": "...",
+    "confirmation_type": "...",
+    "timestamp": "..."
+  }
+}
+```
 
-### `offchainv1ConfirmMessage`
-Thông điệp xác nhận thanh toán
+- Response 200 (object `v1ConfirmPaymentResponse`):
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `confirmation_type` | string | `False` | Loại xác nhận |
-| `timestamp` | string | `False` | Thời gian xác nhận |
-| `uetr` | string | `False` | Unique End-to-End Transaction Reference |
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "data": {
+    "id": "...",
+    "uetr": "...",
+    "amount": 1000.0,
+    "currency": "...",
+    "debtor_agent": "...",
+    "creditor_agent": "...",
+    "end_to_end_id": "...",
+    "status": "...",
+    "created_at": "2025-...",
+    "debtor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "creditor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "transaction_reference": "..."
+  }
+}
+```
 
-### `offchainv1ConfirmPaymentResponse`
-Phản hồi xác nhận thanh toán
+- Response default: An unexpected error response.
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | object [offchainv1Payment] | `False` | Dữ liệu thanh toán đã xác nhận |
-| `metadata` | object [offchainv1Metadata] | `False` | Metadata của response |
-| `result` | object [offchainv1Result] | `False` | Kết quả thực thi |
-| `signature` | object [offchainv1Signature] | `False` | Chữ ký số của response |
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-### `offchainv1CreatePaymentResponse`
-Phản hồi tạo thanh toán
+### POST /gpi/create
+- Mô tả: Tạo thanh toán mới
+- Auth: không
+- Request JSON:
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | object [offchainv1Payment] | `False` | Dữ liệu thanh toán đã tạo |
-| `metadata` | object [offchainv1Metadata] | `False` | Metadata của response |
-| `result` | object [offchainv1Result] | `False` | Kết quả thực thi |
-| `signature` | object [offchainv1Signature] | `False` | Chữ ký số của response |
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "data": {
+    "id": "...",
+    "uetr": "...",
+    "amount": 1000.0,
+    "currency": "...",
+    "debtor_agent": "...",
+    "creditor_agent": "...",
+    "end_to_end_id": "...",
+    "status": "...",
+    "created_at": "2025-...",
+    "debtor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "creditor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "transaction_reference": "..."
+  }
+}
+```
 
-### `offchainv1GetPaymentResponse`
-Phản hồi lấy thông tin thanh toán
+- Response 200 (object `v1CreatePaymentResponse`):
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | object [offchainv1Payment] | `False` | Dữ liệu thanh toán |
-| `metadata` | object [offchainv1Metadata] | `False` | Metadata của response |
-| `result` | object [offchainv1Result] | `False` | Kết quả thực thi |
-| `signature` | object [offchainv1Signature] | `False` | Chữ ký số của response |
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "data": {
+    "id": "...",
+    "uetr": "...",
+    "amount": 1000.0,
+    "currency": "...",
+    "debtor_agent": "...",
+    "creditor_agent": "...",
+    "end_to_end_id": "...",
+    "status": "...",
+    "created_at": "2025-...",
+    "debtor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "creditor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "transaction_reference": "..."
+  }
+}
+```
 
-### `offchainv1Metadata`
+- Response default: An unexpected error response.
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `request_id` | string | `False` | ID định danh duy nhất cho request |
-| `request_time` | string (int64) | `False` | Thời gian gửi request (Unix timestamp) |
-| `version` | string | `False` | Phiên bản của protocol |
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-### `offchainv1Payment`
-Thông tin thanh toán
+### GET /gpi/id/{id}
+- Mô tả: Lấy thông tin chi tiết của một thanh toán theo `id`
+- Auth: không
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `amount` | number (double) | `False` | Số tiền thanh toán |
-| `created_at` | string (date-time) | `False` | Thời gian tạo thanh toán |
-| `creditor_agent` | string | `False` | BIC của ngân hàng người nhận |
-| `creditor_agent_account` | object [offchainv1Account] | `False` | Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn) |
-| `currency` | string | `False` | Mã tiền tệ (ví dụ: USD, VND) |
-| `debtor_agent` | string | `False` | BIC của ngân hàng người gửi |
-| `debtor_agent_account` | object [offchainv1Account] | `False` | Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn) |
-| `end_to_end_id` | string | `False` | ID định danh end-to-end của giao dịch |
-| `id` | string | `False` | ID định danh thanh toán |
-| `status` | string | `False` | Trạng thái thanh toán |
-| `transaction_reference` | string | `False` | Mã tham chiếu giao dịch |
-| `uetr` | string | `False` | Unique End-to-End Transaction Reference |
+- Response 200 (object `v1GetPaymentResponse`):
 
-### `offchainv1Result`
-Result định nghĩa cấu trúc kết quả trả về
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "data": {
+    "id": "...",
+    "uetr": "...",
+    "amount": 1000.0,
+    "currency": "...",
+    "debtor_agent": "...",
+    "creditor_agent": "...",
+    "end_to_end_id": "...",
+    "status": "...",
+    "created_at": "2025-...",
+    "debtor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "creditor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "transaction_reference": "..."
+  }
+}
+```
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `code` | object [offchainv1ResultCode] | `False` | Mã kết quả thực thi (enum) |
-| `message` | string | `False` | Thông điệp mô tả kết quả |
+- Response default: An unexpected error response.
 
-### `offchainv1ResultCode`
-- UNSPECIFIED: Giá trị mặc định, không xác định
- - SUCCESS: Thành công
- - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ
- - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ
- - FORBIDDEN: Không có quyền truy cập
- - NOT_FOUND: Không tìm thấy tài nguyên
- - DUPLICATE_REQUEST: Request trùng lặp
- - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý
- - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian
- - INTERNAL: Lỗi nội bộ của server
- - BAD_GATEWAY: Lỗi gateway
- - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng
- - GATEWAY_TIMEOUT: Gateway timeout
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
 
-### `offchainv1Signature`
-CCSignature định nghĩa cấu trúc chữ ký số cho request
+### GET /gpi/uetr/{uetr}
+- Mô tả: Lấy trạng thái của một thanh toán theo `uetr`
+- Auth: không
 
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `b` | string (byte) | `False` | Chữ ký số |
-| `s` | string | `False` | Chuỗi dùng tạo ra chữ ký |
-| `s_type` | object [offchainv1SignatureSignatureType] | `False` | Loại chữ ký được sử dụng |
+- Response 200 (object `v1GetPaymentResponse`):
 
-### `offchainv1SignatureSignatureType`
-- NO_USE_TYPE: Giá trị mặc định, không sử dụng
- - J: Chữ ký loại J
- - C: Chữ ký loại C
- - S: Chữ ký loại S
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "result": {
+    "code": "...",
+    "message": "..."
+  },
+  "data": {
+    "id": "...",
+    "uetr": "...",
+    "amount": 1000.0,
+    "currency": "...",
+    "debtor_agent": "...",
+    "creditor_agent": "...",
+    "end_to_end_id": "...",
+    "status": "...",
+    "created_at": "2025-...",
+    "debtor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "creditor_agent_account": {
+      "iban": "...",
+      "account_number": "...",
+      "account_name": "...",
+      "currency": "...",
+      "reference": "..."
+    },
+    "transaction_reference": "..."
+  }
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+---
+
+## Notes chung / Behaviour
+- Server sử dụng in-memory stores (maps) cho dữ liệu. Dữ liệu sẽ mất khi server dừng.
+- Một vài sample data có thể được seed sẵn để test.
 
 ---
 

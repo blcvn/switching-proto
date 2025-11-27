@@ -3,7 +3,6 @@ syntax = "proto3";
 package offchain.v1;
 
 import "offchain/common.proto";
-import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";

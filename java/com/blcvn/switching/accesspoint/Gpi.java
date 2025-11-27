@@ -9569,49 +9569,48 @@ public final class Gpi {
   static {
     java.lang.String[] descriptorData = {
       "\n\026access-point/gpi.proto\022\016accesspoint.v1" +
-      "\032\031access-point/common.proto\032\037google/prot" +
-      "obuf/timestamp.proto\"L\n\016ConfirmMessage\022\014" +
-      "\n\004uetr\030\001 \001(\t\022\031\n\021confirmation_type\030\002 \001(\t\022" +
-      "\021\n\ttimestamp\030\003 \001(\t\"\227\001\n\024CreatePaymentRequ" +
-      "est\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.M" +
-      "etadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoint" +
-      ".v1.Signature\022%\n\004data\030\003 \001(\0132\027.accesspoin" +
-      "t.v1.Payment\"\300\001\n\025CreatePaymentResponse\022*" +
-      "\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.Metada" +
-      "ta\022,\n\tsignature\030\002 \001(\0132\031.accesspoint.v1.S" +
-      "ignature\022&\n\006result\030\003 \001(\0132\026.accesspoint.v" +
-      "1.Result\022%\n\004data\030\004 \001(\0132\027.accesspoint.v1." +
-      "Payment\"y\n\021GetPaymentRequest\022*\n\010metadata" +
-      "\030\001 \001(\0132\030.accesspoint.v1.Metadata\022,\n\tsign" +
-      "ature\030\002 \001(\0132\031.accesspoint.v1.Signature\022\n" +
-      "\n\002id\030\003 \001(\t\"\275\001\n\022GetPaymentResponse\022*\n\010met" +
-      "adata\030\001 \001(\0132\030.accesspoint.v1.Metadata\022,\n" +
-      "\tsignature\030\002 \001(\0132\031.accesspoint.v1.Signat" +
-      "ure\022&\n\006result\030\003 \001(\0132\026.accesspoint.v1.Res" +
-      "ult\022%\n\004data\030\004 \001(\0132\027.accesspoint.v1.Payme" +
-      "nt\"\201\001\n\027GetPaymentStatusRequest\022*\n\010metada" +
-      "ta\030\001 \001(\0132\030.accesspoint.v1.Metadata\022,\n\tsi" +
-      "gnature\030\002 \001(\0132\031.accesspoint.v1.Signature" +
-      "\022\014\n\004uetr\030\003 \001(\t\"O\n\rPaymentStatus\022\014\n\004uetr\030" +
-      "\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n" +
-      "\010currency\030\004 \001(\t\"\237\001\n\025ConfirmPaymentReques" +
-      "t\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.Met" +
-      "adata\022,\n\tsignature\030\002 \001(\0132\031.accesspoint.v" +
-      "1.Signature\022,\n\004data\030\003 \001(\0132\036.accesspoint." +
-      "v1.ConfirmMessage\"\301\001\n\026ConfirmPaymentResp" +
-      "onse\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1." +
-      "Metadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoin" +
-      "t.v1.Signature\022&\n\006result\030\003 \001(\0132\026.accessp" +
-      "oint.v1.Result\022%\n\004data\030\004 \001(\0132\027.accesspoi" +
-      "nt.v1.PaymentB^\n\037com.blcvn.switching.acc" +
-      "esspointZ;github.com/blcvn/switching-pro" +
-      "to/go/accesspoint;accesspointb\006proto3"
+      "\032\031access-point/common.proto\"L\n\016ConfirmMe" +
+      "ssage\022\014\n\004uetr\030\001 \001(\t\022\031\n\021confirmation_type" +
+      "\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\t\"\227\001\n\024CreatePaym" +
+      "entRequest\022*\n\010metadata\030\001 \001(\0132\030.accesspoi" +
+      "nt.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.acce" +
+      "sspoint.v1.Signature\022%\n\004data\030\003 \001(\0132\027.acc" +
+      "esspoint.v1.Payment\"\300\001\n\025CreatePaymentRes" +
+      "ponse\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1" +
+      ".Metadata\022,\n\tsignature\030\002 \001(\0132\031.accesspoi" +
+      "nt.v1.Signature\022&\n\006result\030\003 \001(\0132\026.access" +
+      "point.v1.Result\022%\n\004data\030\004 \001(\0132\027.accesspo" +
+      "int.v1.Payment\"y\n\021GetPaymentRequest\022*\n\010m" +
+      "etadata\030\001 \001(\0132\030.accesspoint.v1.Metadata\022" +
+      ",\n\tsignature\030\002 \001(\0132\031.accesspoint.v1.Sign" +
+      "ature\022\n\n\002id\030\003 \001(\t\"\275\001\n\022GetPaymentResponse" +
+      "\022*\n\010metadata\030\001 \001(\0132\030.accesspoint.v1.Meta" +
+      "data\022,\n\tsignature\030\002 \001(\0132\031.accesspoint.v1" +
+      ".Signature\022&\n\006result\030\003 \001(\0132\026.accesspoint" +
+      ".v1.Result\022%\n\004data\030\004 \001(\0132\027.accesspoint.v" +
+      "1.Payment\"\201\001\n\027GetPaymentStatusRequest\022*\n" +
+      "\010metadata\030\001 \001(\0132\030.accesspoint.v1.Metadat" +
+      "a\022,\n\tsignature\030\002 \001(\0132\031.accesspoint.v1.Si" +
+      "gnature\022\014\n\004uetr\030\003 \001(\t\"O\n\rPaymentStatus\022\014" +
+      "\n\004uetr\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\016\n\006amount\030\003" +
+      " \001(\001\022\020\n\010currency\030\004 \001(\t\"\237\001\n\025ConfirmPaymen" +
+      "tRequest\022*\n\010metadata\030\001 \001(\0132\030.accesspoint" +
+      ".v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.access" +
+      "point.v1.Signature\022,\n\004data\030\003 \001(\0132\036.acces" +
+      "spoint.v1.ConfirmMessage\"\301\001\n\026ConfirmPaym" +
+      "entResponse\022*\n\010metadata\030\001 \001(\0132\030.accesspo" +
+      "int.v1.Metadata\022,\n\tsignature\030\002 \001(\0132\031.acc" +
+      "esspoint.v1.Signature\022&\n\006result\030\003 \001(\0132\026." +
+      "accesspoint.v1.Result\022%\n\004data\030\004 \001(\0132\027.ac" +
+      "cesspoint.v1.PaymentB^\n\037com.blcvn.switch" +
+      "ing.accesspointZ;github.com/blcvn/switch" +
+      "ing-proto/go/accesspoint;accesspointb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.switching.accesspoint.Common.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_accesspoint_v1_ConfirmMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9668,7 +9667,6 @@ public final class Gpi {
         internal_static_accesspoint_v1_ConfirmPaymentResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     com.blcvn.switching.accesspoint.Common.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -15,128 +15,109 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/kyc/detail": {
+      "post": {
+        "summary": "Lấy thông tin chi tiết của một thực thể KYC",
+        "operationId": "KycService_GetEntity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1KycEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1GetEntityRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KycService"
+        ]
+      }
+    },
+    "/kyc/list": {
+      "get": {
+        "summary": "Liệt kê tất cả các thực thể KYC",
+        "operationId": "KycService_ListEntities",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListEntitiesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "KycService"
+        ]
+      }
+    },
+    "/kyc/register": {
+      "post": {
+        "summary": "Đăng ký thực thể KYC mới",
+        "operationId": "KycService_Register",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RegisterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RegisterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KycService"
+        ]
+      }
+    }
+  },
   "definitions": {
-    "offchainv1AuditEntry": {
-      "type": "object",
-      "properties": {
-        "bic": {
-          "type": "string",
-          "title": "Bank Identifier Code của thực thể"
-        },
-        "action": {
-          "type": "string",
-          "title": "Hành động đã thực hiện (ví dụ: \"register\", \"update\", \"verify\")"
-        },
-        "time": {
-          "type": "string",
-          "title": "Thời gian thực hiện hành động"
-        }
-      },
-      "title": "Một entry trong lịch sử audit"
-    },
-    "offchainv1AuditResponse": {
-      "type": "object",
-      "properties": {
-        "entries": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/offchainv1AuditEntry"
-          },
-          "title": "Danh sách các entry trong lịch sử audit"
-        }
-      },
-      "title": "Phản hồi lịch sử audit"
-    },
-    "offchainv1Document": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "title": "ID của tài liệu"
-        },
-        "type": {
-          "type": "string",
-          "title": "Loại tài liệu"
-        },
-        "url": {
-          "type": "string",
-          "title": "URL để truy cập tài liệu"
-        }
-      },
-      "title": "Thông tin tài liệu"
-    },
-    "offchainv1GetEntityDocsResponse": {
-      "type": "object",
-      "properties": {
-        "documents": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/offchainv1Document"
-          },
-          "title": "Danh sách các tài liệu"
-        }
-      },
-      "title": "Phản hồi danh sách tài liệu"
-    },
-    "offchainv1KycEntity": {
-      "type": "object",
-      "properties": {
-        "bic": {
-          "type": "string",
-          "title": "Bank Identifier Code"
-        },
-        "name": {
-          "type": "string",
-          "title": "Tên tổ chức"
-        },
-        "country": {
-          "type": "string",
-          "title": "Mã quốc gia"
-        },
-        "lei": {
-          "type": "string",
-          "title": "Legal Entity Identifier"
-        },
-        "updated_at": {
-          "type": "string",
-          "title": "Thời gian cập nhật lần cuối"
-        }
-      },
-      "title": "Thông tin thực thể KYC (Know Your Customer)"
-    },
-    "offchainv1KycMetadata": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "type": "string",
-          "title": "Phiên bản của schema KYC"
-        },
-        "fields": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Danh sách các trường được hỗ trợ"
-        }
-      },
-      "title": "Metadata về cấu trúc KYC"
-    },
-    "offchainv1ListEntitiesResponse": {
-      "type": "object",
-      "properties": {
-        "entities": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/offchainv1KycEntity"
-          },
-          "title": "Danh sách các thực thể KYC"
-        }
-      },
-      "title": "Phản hồi danh sách thực thể KYC"
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
     },
     "offchainv1Metadata": {
       "type": "object",
@@ -155,82 +136,6 @@
           "title": "Phiên bản của protocol"
         }
       }
-    },
-    "offchainv1Result": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "$ref": "#/definitions/offchainv1ResultCode",
-          "title": "Mã kết quả thực thi (enum)"
-        },
-        "message": {
-          "type": "string",
-          "title": "Thông điệp mô tả kết quả"
-        }
-      },
-      "title": "Result định nghĩa cấu trúc kết quả trả về"
-    },
-    "offchainv1ResultCode": {
-      "type": "string",
-      "enum": [
-        "UNSPECIFIED",
-        "SUCCESS",
-        "BAD_REQUEST",
-        "UNAUTHORIZED",
-        "FORBIDDEN",
-        "NOT_FOUND",
-        "DUPLICATE_REQUEST",
-        "UNPROCESSABLE_ENTITY",
-        "TOO_MANY_REQUESTS",
-        "INTERNAL",
-        "BAD_GATEWAY",
-        "SERVICE_UNAVAILABLE",
-        "GATEWAY_TIMEOUT"
-      ],
-      "default": "UNSPECIFIED",
-      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
-      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
-    },
-    "offchainv1Signature": {
-      "type": "object",
-      "properties": {
-        "s_type": {
-          "$ref": "#/definitions/offchainv1SignatureSignatureType",
-          "title": "Loại chữ ký được sử dụng"
-        },
-        "s": {
-          "type": "string",
-          "title": "Chuỗi dùng tạo ra chữ ký"
-        },
-        "b": {
-          "type": "string",
-          "format": "byte",
-          "title": "Chữ ký số"
-        }
-      },
-      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
-    },
-    "offchainv1SignatureSignatureType": {
-      "type": "string",
-      "enum": [
-        "NO_USE_TYPE",
-        "J",
-        "C",
-        "S"
-      ],
-      "default": "NO_USE_TYPE",
-      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
-      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
-    },
-    "offchainv1SubmitKycResponse": {
-      "type": "object",
-      "properties": {
-        "status": {
-          "type": "string",
-          "title": "Trạng thái xử lý (ví dụ: \"pending\", \"approved\", \"rejected\")"
-        }
-      },
-      "title": "Phản hồi gửi thông tin KYC"
     },
     "protobufAny": {
       "type": "object",
@@ -260,6 +165,155 @@
         }
       }
     },
+    "v1AuditEntry": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string",
+          "title": "Bank Identifier Code của thực thể"
+        },
+        "action": {
+          "type": "string",
+          "title": "Hành động đã thực hiện (ví dụ: \"register\", \"update\", \"verify\")"
+        },
+        "time": {
+          "type": "string",
+          "title": "Thời gian thực hiện hành động"
+        }
+      },
+      "title": "Một entry trong lịch sử audit"
+    },
+    "v1AuditResponse": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1AuditEntry"
+          },
+          "title": "Danh sách các entry trong lịch sử audit"
+        }
+      },
+      "title": "Phản hồi lịch sử audit"
+    },
+    "v1Document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "ID của tài liệu"
+        },
+        "type": {
+          "type": "string",
+          "title": "Loại tài liệu"
+        },
+        "url": {
+          "type": "string",
+          "title": "URL để truy cập tài liệu"
+        }
+      },
+      "title": "Thông tin tài liệu"
+    },
+    "v1GetEntityDocsResponse": {
+      "type": "object",
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Document"
+          },
+          "title": "Danh sách các tài liệu"
+        }
+      },
+      "title": "Phản hồi danh sách tài liệu"
+    },
+    "v1GetEntityRequest": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string",
+          "title": "Bank Identifier Code của thực thể"
+        }
+      },
+      "title": "Yêu cầu lấy thông tin thực thể KYC"
+    },
+    "v1KycEntity": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string",
+          "title": "Bank Identifier Code"
+        },
+        "name": {
+          "type": "string",
+          "title": "Tên tổ chức"
+        },
+        "country": {
+          "type": "string",
+          "title": "Mã quốc gia"
+        },
+        "lei": {
+          "type": "string",
+          "title": "Legal Entity Identifier"
+        },
+        "updated_at": {
+          "type": "string",
+          "title": "Thời gian cập nhật lần cuối"
+        }
+      },
+      "title": "Thông tin thực thể KYC (Know Your Customer)"
+    },
+    "v1KycMetadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của schema KYC"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Danh sách các trường được hỗ trợ"
+        }
+      },
+      "title": "Metadata về cấu trúc KYC"
+    },
+    "v1ListEntitiesResponse": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1KycEntity"
+          },
+          "title": "Danh sách các thực thể KYC"
+        }
+      },
+      "title": "Phản hồi danh sách thực thể KYC"
+    },
+    "v1RegisterRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/offchainv1Metadata",
+          "title": "Metadata của request"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của request"
+        },
+        "data": {
+          "$ref": "#/definitions/v1KycEntity",
+          "title": "Dữ liệu thực thể KYC"
+        }
+      },
+      "title": "Yêu cầu đăng ký thực thể KYC"
+    },
     "v1RegisterResponse": {
       "type": "object",
       "properties": {
@@ -268,19 +322,83 @@
           "title": "Metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/offchainv1Signature",
+          "$ref": "#/definitions/v1Signature",
           "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/offchainv1Result",
+          "$ref": "#/definitions/v1Result",
           "title": "Kết quả thực thi"
         },
         "data": {
-          "$ref": "#/definitions/offchainv1KycEntity",
+          "$ref": "#/definitions/v1KycEntity",
           "title": "Dữ liệu thực thể KYC đã đăng ký"
         }
       },
       "title": "Phản hồi đăng ký thực thể KYC"
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dùng tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số"
+        }
+      },
+      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+    },
+    "v1SubmitKycResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "title": "Trạng thái xử lý (ví dụ: \"pending\", \"approved\", \"rejected\")"
+        }
+      },
+      "title": "Phản hồi gửi thông tin KYC"
     }
   }
 }

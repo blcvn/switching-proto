@@ -11269,57 +11269,55 @@ public final class Gpi {
   static {
     java.lang.String[] descriptorData = {
       "\n\022offchain/gpi.proto\022\013offchain.v1\032\025offch" +
-      "ain/common.proto\032\037google/protobuf/timest" +
-      "amp.proto\"L\n\016ConfirmMessage\022\014\n\004uetr\030\001 \001(" +
-      "\t\022\031\n\021confirmation_type\030\002 \001(\t\022\021\n\ttimestam" +
-      "p\030\003 \001(\t\"\216\001\n\024CreatePaymentRequest\022\'\n\010meta" +
-      "data\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\tsig" +
-      "nature\030\002 \001(\0132\026.offchain.v1.Signature\022\"\n\004" +
-      "data\030\003 \001(\0132\024.offchain.v1.Payment\"\264\001\n\025Cre" +
-      "atePaymentResponse\022\'\n\010metadata\030\001 \001(\0132\025.o" +
-      "ffchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
-      ".offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023" +
-      ".offchain.v1.Result\022\"\n\004data\030\004 \001(\0132\024.offc" +
-      "hain.v1.Payment\"s\n\021GetPaymentRequest\022\'\n\010" +
-      "metadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n" +
-      "\tsignature\030\002 \001(\0132\026.offchain.v1.Signature" +
-      "\022\n\n\002id\030\003 \001(\t\"\261\001\n\022GetPaymentResponse\022\'\n\010m" +
-      "etadata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\t" +
-      "signature\030\002 \001(\0132\026.offchain.v1.Signature\022" +
-      "#\n\006result\030\003 \001(\0132\023.offchain.v1.Result\022\"\n\004" +
-      "data\030\004 \001(\0132\024.offchain.v1.Payment\"{\n\027GetP" +
-      "aymentStatusRequest\022\'\n\010metadata\030\001 \001(\0132\025." +
-      "offchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132" +
-      "\026.offchain.v1.Signature\022\014\n\004uetr\030\003 \001(\t\"O\n" +
-      "\rPaymentStatus\022\014\n\004uetr\030\001 \001(\t\022\016\n\006status\030\002" +
-      " \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\"\226" +
-      "\001\n\025ConfirmPaymentRequest\022\'\n\010metadata\030\001 \001" +
-      "(\0132\025.offchain.v1.Metadata\022)\n\tsignature\030\002" +
-      " \001(\0132\026.offchain.v1.Signature\022)\n\004data\030\003 \001" +
-      "(\0132\033.offchain.v1.ConfirmMessage\"\265\001\n\026Conf" +
-      "irmPaymentResponse\022\'\n\010metadata\030\001 \001(\0132\025.o" +
-      "ffchain.v1.Metadata\022)\n\tsignature\030\002 \001(\0132\026" +
-      ".offchain.v1.Signature\022#\n\006result\030\003 \001(\0132\023" +
-      ".offchain.v1.Result\022\"\n\004data\030\004 \001(\0132\024.offc" +
-      "hain.v1.Payment2\361\002\n\nGpiService\022X\n\rCreate" +
-      "Payment\022!.offchain.v1.CreatePaymentReque" +
-      "st\032\".offchain.v1.CreatePaymentResponse\"\000" +
-      "\022O\n\nGetPayment\022\036.offchain.v1.GetPaymentR" +
-      "equest\032\037.offchain.v1.GetPaymentResponse\"" +
-      "\000\022[\n\020GetPaymentStatus\022$.offchain.v1.GetP" +
-      "aymentStatusRequest\032\037.offchain.v1.GetPay" +
-      "mentResponse\"\000\022[\n\016ConfirmPayment\022\".offch" +
-      "ain.v1.ConfirmPaymentRequest\032#.offchain." +
-      "v1.ConfirmPaymentResponse\"\000BU\n\034com.blcvn" +
-      ".switching.offchainZ5github.com/blcvn/sw" +
-      "itching-proto/go/offchain;offchainb\006prot" +
-      "o3"
+      "ain/common.proto\"L\n\016ConfirmMessage\022\014\n\004ue" +
+      "tr\030\001 \001(\t\022\031\n\021confirmation_type\030\002 \001(\t\022\021\n\tt" +
+      "imestamp\030\003 \001(\t\"\216\001\n\024CreatePaymentRequest\022" +
+      "\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metadata" +
+      "\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Signat" +
+      "ure\022\"\n\004data\030\003 \001(\0132\024.offchain.v1.Payment\"" +
+      "\264\001\n\025CreatePaymentResponse\022\'\n\010metadata\030\001 " +
+      "\001(\0132\025.offchain.v1.Metadata\022)\n\tsignature\030" +
+      "\002 \001(\0132\026.offchain.v1.Signature\022#\n\006result\030" +
+      "\003 \001(\0132\023.offchain.v1.Result\022\"\n\004data\030\004 \001(\013" +
+      "2\024.offchain.v1.Payment\"s\n\021GetPaymentRequ" +
+      "est\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Meta" +
+      "data\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Si" +
+      "gnature\022\n\n\002id\030\003 \001(\t\"\261\001\n\022GetPaymentRespon" +
+      "se\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metad" +
+      "ata\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Sig" +
+      "nature\022#\n\006result\030\003 \001(\0132\023.offchain.v1.Res" +
+      "ult\022\"\n\004data\030\004 \001(\0132\024.offchain.v1.Payment\"" +
+      "{\n\027GetPaymentStatusRequest\022\'\n\010metadata\030\001" +
+      " \001(\0132\025.offchain.v1.Metadata\022)\n\tsignature" +
+      "\030\002 \001(\0132\026.offchain.v1.Signature\022\014\n\004uetr\030\003" +
+      " \001(\t\"O\n\rPaymentStatus\022\014\n\004uetr\030\001 \001(\t\022\016\n\006s" +
+      "tatus\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030" +
+      "\004 \001(\t\"\226\001\n\025ConfirmPaymentRequest\022\'\n\010metad" +
+      "ata\030\001 \001(\0132\025.offchain.v1.Metadata\022)\n\tsign" +
+      "ature\030\002 \001(\0132\026.offchain.v1.Signature\022)\n\004d" +
+      "ata\030\003 \001(\0132\033.offchain.v1.ConfirmMessage\"\265" +
+      "\001\n\026ConfirmPaymentResponse\022\'\n\010metadata\030\001 " +
+      "\001(\0132\025.offchain.v1.Metadata\022)\n\tsignature\030" +
+      "\002 \001(\0132\026.offchain.v1.Signature\022#\n\006result\030" +
+      "\003 \001(\0132\023.offchain.v1.Result\022\"\n\004data\030\004 \001(\013" +
+      "2\024.offchain.v1.Payment2\361\002\n\nGpiService\022X\n" +
+      "\rCreatePayment\022!.offchain.v1.CreatePayme" +
+      "ntRequest\032\".offchain.v1.CreatePaymentRes" +
+      "ponse\"\000\022O\n\nGetPayment\022\036.offchain.v1.GetP" +
+      "aymentRequest\032\037.offchain.v1.GetPaymentRe" +
+      "sponse\"\000\022[\n\020GetPaymentStatus\022$.offchain." +
+      "v1.GetPaymentStatusRequest\032\037.offchain.v1" +
+      ".GetPaymentResponse\"\000\022[\n\016ConfirmPayment\022" +
+      "\".offchain.v1.ConfirmPaymentRequest\032#.of" +
+      "fchain.v1.ConfirmPaymentResponse\"\000BU\n\034co" +
+      "m.blcvn.switching.offchainZ5github.com/b" +
+      "lcvn/switching-proto/go/offchain;offchai" +
+      "nb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.blcvn.switching.offchain.Common.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_offchain_v1_ConfirmMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -11376,7 +11374,6 @@ public final class Gpi {
         internal_static_offchain_v1_ConfirmPaymentResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     com.blcvn.switching.offchain.Common.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
