@@ -22,91 +22,110 @@
       "properties": {
         "iban": {
           "type": "string",
-          "title": "International Bank Account Number (if available)"
+          "title": "Số tài khoản quốc tế IBAN (nếu có)"
         },
         "account_number": {
           "type": "string",
-          "title": "Local account number"
+          "title": "Số tài khoản nội địa"
         },
         "account_name": {
           "type": "string",
-          "title": "Account holder name"
+          "title": "Tên chủ tài khoản"
         },
         "currency": {
           "type": "string",
-          "title": "Account currency (optional)"
+          "title": "Mã tiền tệ của tài khoản (tùy chọn)"
         },
         "reference": {
           "type": "string",
-          "title": "Additional reference or identification (e.g., secondary id)"
+          "title": "Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)"
         }
       },
-      "description": "Account represents the account details associated with an agent."
+      "title": "Thông tin chi tiết tài khoản liên kết với một agent"
     },
     "offchainv1ConfirmMessage": {
       "type": "object",
       "properties": {
         "uetr": {
-          "type": "string"
+          "type": "string",
+          "title": "Unique End-to-End Transaction Reference"
         },
         "confirmation_type": {
-          "type": "string"
+          "type": "string",
+          "title": "Loại xác nhận"
         },
         "timestamp": {
-          "type": "string"
+          "type": "string",
+          "title": "Thời gian xác nhận"
         }
-      }
+      },
+      "title": "Thông điệp xác nhận thanh toán"
     },
     "offchainv1ConfirmPaymentResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/offchainv1Metadata"
+          "$ref": "#/definitions/offchainv1Metadata",
+          "title": "Metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/offchainv1Signature"
+          "$ref": "#/definitions/offchainv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/offchainv1Result"
+          "$ref": "#/definitions/offchainv1Result",
+          "title": "Kết quả thực thi"
         },
         "data": {
-          "$ref": "#/definitions/offchainv1Payment"
+          "$ref": "#/definitions/offchainv1Payment",
+          "title": "Dữ liệu thanh toán đã xác nhận"
         }
-      }
+      },
+      "title": "Phản hồi xác nhận thanh toán"
     },
     "offchainv1CreatePaymentResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/offchainv1Metadata"
+          "$ref": "#/definitions/offchainv1Metadata",
+          "title": "Metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/offchainv1Signature"
+          "$ref": "#/definitions/offchainv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/offchainv1Result"
+          "$ref": "#/definitions/offchainv1Result",
+          "title": "Kết quả thực thi"
         },
         "data": {
-          "$ref": "#/definitions/offchainv1Payment"
+          "$ref": "#/definitions/offchainv1Payment",
+          "title": "Dữ liệu thanh toán đã tạo"
         }
-      }
+      },
+      "title": "Phản hồi tạo thanh toán"
     },
     "offchainv1GetPaymentResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/offchainv1Metadata"
+          "$ref": "#/definitions/offchainv1Metadata",
+          "title": "Metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/offchainv1Signature"
+          "$ref": "#/definitions/offchainv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/offchainv1Result"
+          "$ref": "#/definitions/offchainv1Result",
+          "title": "Kết quả thực thi"
         },
         "data": {
-          "$ref": "#/definitions/offchainv1Payment"
+          "$ref": "#/definitions/offchainv1Payment",
+          "title": "Dữ liệu thanh toán"
         }
-      }
+      },
+      "title": "Phản hồi lấy thông tin thanh toán"
     },
     "offchainv1Metadata": {
       "type": "object",
@@ -130,60 +149,92 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID định danh thanh toán"
         },
         "uetr": {
-          "type": "string"
+          "type": "string",
+          "title": "Unique End-to-End Transaction Reference"
         },
         "amount": {
           "type": "number",
-          "format": "double"
+          "format": "double",
+          "title": "Số tiền thanh toán"
         },
         "currency": {
-          "type": "string"
+          "type": "string",
+          "title": "Mã tiền tệ (ví dụ: USD, VND)"
         },
         "debtor_agent": {
-          "type": "string"
+          "type": "string",
+          "title": "BIC của ngân hàng người gửi"
         },
         "creditor_agent": {
-          "type": "string"
+          "type": "string",
+          "title": "BIC của ngân hàng người nhận"
         },
         "end_to_end_id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID định danh end-to-end của giao dịch"
         },
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái thanh toán"
         },
         "created_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian tạo thanh toán"
         },
         "debtor_agent_account": {
           "$ref": "#/definitions/offchainv1Account",
-          "description": "Optional structured account details for the debtor (sending) agent."
+          "title": "Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)"
         },
         "creditor_agent_account": {
           "$ref": "#/definitions/offchainv1Account",
-          "description": "Optional structured account details for the creditor (receiving) agent."
+          "title": "Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)"
         },
         "transaction_reference": {
-          "type": "string"
+          "type": "string",
+          "title": "Mã tham chiếu giao dịch"
         }
-      }
+      },
+      "title": "Thông tin thanh toán"
     },
     "offchainv1Result": {
       "type": "object",
       "properties": {
         "code": {
-          "type": "string",
-          "title": "Mã kết quả thực thi"
+          "$ref": "#/definitions/offchainv1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
         },
         "message": {
           "type": "string",
           "title": "Thông điệp mô tả kết quả"
         }
       },
-      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "offchainv1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
     },
     "offchainv1Signature": {
       "type": "object",

@@ -21,11 +21,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Yêu cầu đăng ký thực thể KYC
 type RegisterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Data          *KycEntity             `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Data          *KycEntity             `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thực thể KYC
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -81,12 +82,13 @@ func (x *RegisterRequest) GetData() *KycEntity {
 	return nil
 }
 
+// Phản hồi đăng ký thực thể KYC
 type RegisterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *KycEntity             `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *KycEntity             `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thực thể KYC đã đăng ký
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -149,9 +151,10 @@ func (x *RegisterResponse) GetData() *KycEntity {
 	return nil
 }
 
+// Phản hồi danh sách thực thể KYC
 type ListEntitiesResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Entities      []*KycEntity           `protobuf:"bytes,1,rep,name=entities,proto3" json:"entities,omitempty"`
+	Entities      []*KycEntity           `protobuf:"bytes,1,rep,name=entities,proto3" json:"entities,omitempty"` // Danh sách các thực thể KYC
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -193,9 +196,10 @@ func (x *ListEntitiesResponse) GetEntities() []*KycEntity {
 	return nil
 }
 
+// Yêu cầu lấy thông tin thực thể KYC
 type GetEntityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`
+	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"` // Bank Identifier Code của thực thể
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -237,9 +241,10 @@ func (x *GetEntityRequest) GetBic() string {
 	return ""
 }
 
+// Yêu cầu lấy tài liệu của thực thể KYC
 type GetEntityDocsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`
+	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"` // Bank Identifier Code của thực thể
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -281,11 +286,12 @@ func (x *GetEntityDocsRequest) GetBic() string {
 	return ""
 }
 
+// Thông tin tài liệu
 type Document struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	Url           string                 `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`     // ID của tài liệu
+	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"` // Loại tài liệu
+	Url           string                 `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`   // URL để truy cập tài liệu
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -341,9 +347,10 @@ func (x *Document) GetUrl() string {
 	return ""
 }
 
+// Phản hồi danh sách tài liệu
 type GetEntityDocsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Documents     []*Document            `protobuf:"bytes,1,rep,name=documents,proto3" json:"documents,omitempty"`
+	Documents     []*Document            `protobuf:"bytes,1,rep,name=documents,proto3" json:"documents,omitempty"` // Danh sách các tài liệu
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -385,10 +392,11 @@ func (x *GetEntityDocsResponse) GetDocuments() []*Document {
 	return nil
 }
 
+// Yêu cầu gửi thông tin KYC
 type SubmitKycRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`
-	Updates       map[string]string      `protobuf:"bytes,2,rep,name=updates,proto3" json:"updates,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`                                                                                   // Bank Identifier Code của thực thể
+	Updates       map[string]string      `protobuf:"bytes,2,rep,name=updates,proto3" json:"updates,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // Map các trường cần cập nhật (key: tên trường, value: giá trị)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -437,9 +445,10 @@ func (x *SubmitKycRequest) GetUpdates() map[string]string {
 	return nil
 }
 
+// Phản hồi gửi thông tin KYC
 type SubmitKycResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -481,10 +490,11 @@ func (x *SubmitKycResponse) GetStatus() string {
 	return ""
 }
 
+// Metadata về cấu trúc KYC
 type KycMetadata struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Version       string                 `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
-	Fields        []string               `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
+	Version       string                 `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"` // Phiên bản của schema KYC
+	Fields        []string               `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`   // Danh sách các trường được hỗ trợ
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -533,11 +543,12 @@ func (x *KycMetadata) GetFields() []string {
 	return nil
 }
 
+// Một entry trong lịch sử audit
 type AuditEntry struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`
-	Action        string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"`
-	Time          string                 `protobuf:"bytes,3,opt,name=time,proto3" json:"time,omitempty"`
+	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`       // Bank Identifier Code của thực thể
+	Action        string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"` // Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+	Time          string                 `protobuf:"bytes,3,opt,name=time,proto3" json:"time,omitempty"`     // Thời gian thực hiện hành động
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -593,9 +604,10 @@ func (x *AuditEntry) GetTime() string {
 	return ""
 }
 
+// Phản hồi lịch sử audit
 type AuditResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Entries       []*AuditEntry          `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	Entries       []*AuditEntry          `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"` // Danh sách các entry trong lịch sử audit
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -75,6 +75,7 @@ func (Signature_SignatureType) EnumDescriptor() ([]byte, []int) {
 	return file_offchain_common_proto_rawDescGZIP(), []int{6, 0}
 }
 
+// Message rỗng, dùng cho các RPC không cần tham số đầu vào
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -111,22 +112,23 @@ func (*Empty) Descriptor() ([]byte, []int) {
 	return file_offchain_common_proto_rawDescGZIP(), []int{0}
 }
 
+// Thông tin thanh toán
 type Payment struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Uetr          string                 `protobuf:"bytes,2,opt,name=uetr,proto3" json:"uetr,omitempty"`
-	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`
-	DebtorAgent   string                 `protobuf:"bytes,5,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`
-	CreditorAgent string                 `protobuf:"bytes,6,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"`
-	EndToEndId    string                 `protobuf:"bytes,7,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`
-	Status        string                 `protobuf:"bytes,8,opt,name=status,proto3" json:"status,omitempty"`
-	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	// Optional structured account details for the debtor (sending) agent.
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                            // ID định danh thanh toán
+	Uetr          string                 `protobuf:"bytes,2,opt,name=uetr,proto3" json:"uetr,omitempty"`                                        // Unique End-to-End Transaction Reference
+	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`                                  // Số tiền thanh toán
+	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`                                // Mã tiền tệ (ví dụ: USD, VND)
+	DebtorAgent   string                 `protobuf:"bytes,5,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`       // BIC của ngân hàng người gửi
+	CreditorAgent string                 `protobuf:"bytes,6,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"` // BIC của ngân hàng người nhận
+	EndToEndId    string                 `protobuf:"bytes,7,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`      // ID định danh end-to-end của giao dịch
+	Status        string                 `protobuf:"bytes,8,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái thanh toán
+	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo thanh toán
+	// Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
 	DebtorAgentAccount *Account `protobuf:"bytes,10,opt,name=debtor_agent_account,json=debtorAgentAccount,proto3" json:"debtor_agent_account,omitempty"`
-	// Optional structured account details for the creditor (receiving) agent.
+	// Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
 	CreditorAgentAccount *Account `protobuf:"bytes,11,opt,name=creditor_agent_account,json=creditorAgentAccount,proto3" json:"creditor_agent_account,omitempty"`
-	TransactionReference string   `protobuf:"bytes,12,opt,name=transaction_reference,json=transactionReference,proto3" json:"transaction_reference,omitempty"`
+	TransactionReference string   `protobuf:"bytes,12,opt,name=transaction_reference,json=transactionReference,proto3" json:"transaction_reference,omitempty"` // Mã tham chiếu giao dịch
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -245,17 +247,19 @@ func (x *Payment) GetTransactionReference() string {
 	return ""
 }
 
+// Thông tin chuyển tiền giữa các tổ chức tài chính
 type Transfer struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
-	Debtor        string                 `protobuf:"bytes,2,opt,name=debtor,proto3" json:"debtor,omitempty"`
-	Creditor      string                 `protobuf:"bytes,3,opt,name=creditor,proto3" json:"creditor,omitempty"`
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency      string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`
-	Status        string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
-	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	// Optional structured account details for the debtor/creditor in FI transfers
-	DebtorAccount   *Account `protobuf:"bytes,8,opt,name=debtor_account,json=debtorAccount,proto3" json:"debtor_account,omitempty"`
+	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"` // ID của lệnh chuyển tiền
+	Debtor        string                 `protobuf:"bytes,2,opt,name=debtor,proto3" json:"debtor,omitempty"`                                    // BIC của ngân hàng người gửi
+	Creditor      string                 `protobuf:"bytes,3,opt,name=creditor,proto3" json:"creditor,omitempty"`                                // BIC của ngân hàng người nhận
+	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`                                  // Số tiền chuyển
+	Currency      string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`                                // Mã tiền tệ
+	Status        string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái chuyển tiền
+	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo lệnh chuyển
+	// Thông tin tài khoản chi tiết của người gửi (tùy chọn)
+	DebtorAccount *Account `protobuf:"bytes,8,opt,name=debtor_account,json=debtorAccount,proto3" json:"debtor_account,omitempty"`
+	// Thông tin tài khoản chi tiết của người nhận (tùy chọn)
 	CreditorAccount *Account `protobuf:"bytes,9,opt,name=creditor_account,json=creditorAccount,proto3" json:"creditor_account,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -354,13 +358,14 @@ func (x *Transfer) GetCreditorAccount() *Account {
 	return nil
 }
 
+// Thông tin thực thể KYC (Know Your Customer)
 type KycEntity struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Country       string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`
-	Lei           string                 `protobuf:"bytes,4,opt,name=lei,proto3" json:"lei,omitempty"`
-	UpdatedAt     string                 `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`                              // Bank Identifier Code
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                            // Tên tổ chức
+	Country       string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`                      // Mã quốc gia
+	Lei           string                 `protobuf:"bytes,4,opt,name=lei,proto3" json:"lei,omitempty"`                              // Legal Entity Identifier
+	UpdatedAt     string                 `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // Thời gian cập nhật lần cuối
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -430,18 +435,18 @@ func (x *KycEntity) GetUpdatedAt() string {
 	return ""
 }
 
-// Account represents the account details associated with an agent.
+// Thông tin chi tiết tài khoản liên kết với một agent
 type Account struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// International Bank Account Number (if available)
+	// Số tài khoản quốc tế IBAN (nếu có)
 	Iban string `protobuf:"bytes,1,opt,name=iban,proto3" json:"iban,omitempty"`
-	// Local account number
+	// Số tài khoản nội địa
 	AccountNumber string `protobuf:"bytes,2,opt,name=account_number,json=accountNumber,proto3" json:"account_number,omitempty"`
-	// Account holder name
+	// Tên chủ tài khoản
 	AccountName string `protobuf:"bytes,3,opt,name=account_name,json=accountName,proto3" json:"account_name,omitempty"`
-	// Account currency (optional)
+	// Mã tiền tệ của tài khoản (tùy chọn)
 	Currency string `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`
-	// Additional reference or identification (e.g., secondary id)
+	// Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
 	Reference     string `protobuf:"bytes,5,opt,name=reference,proto3" json:"reference,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -633,11 +638,11 @@ func (x *Signature) GetB() []byte {
 	return nil
 }
 
-// CCResult định nghĩa cấu trúc kết quả trả về
+// Result định nghĩa cấu trúc kết quả trả về
 type Result struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`       // Mã kết quả thực thi
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"` // Thông điệp mô tả kết quả
+	Code          ResultCode             `protobuf:"varint,1,opt,name=code,proto3,enum=offchain.v1.ResultCode" json:"code,omitempty"` // Mã kết quả thực thi (enum)
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                        // Thông điệp mô tả kết quả
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -672,11 +677,11 @@ func (*Result) Descriptor() ([]byte, []int) {
 	return file_offchain_common_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *Result) GetCode() string {
+func (x *Result) GetCode() ResultCode {
 	if x != nil {
 		return x.Code
 	}
-	return ""
+	return ResultCode_UNSPECIFIED
 }
 
 func (x *Result) GetMessage() string {
@@ -690,7 +695,7 @@ var File_offchain_common_proto protoreflect.FileDescriptor
 
 const file_offchain_common_proto_rawDesc = "" +
 	"\n" +
-	"\x15offchain/common.proto\x12\voffchain.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\a\n" +
+	"\x15offchain/common.proto\x12\voffchain.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14offchain/error.proto\"\a\n" +
 	"\x05Empty\"\xea\x03\n" +
 	"\aPayment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -745,9 +750,9 @@ const file_offchain_common_proto_rawDesc = "" +
 	"\vNO_USE_TYPE\x10\x00\x12\x05\n" +
 	"\x01J\x10\x01\x12\x05\n" +
 	"\x01C\x10\x02\x12\x05\n" +
-	"\x01S\x10\x03\"6\n" +
-	"\x06Result\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12\x18\n" +
+	"\x01S\x10\x03\"O\n" +
+	"\x06Result\x12+\n" +
+	"\x04code\x18\x01 \x01(\x0e2\x17.offchain.v1.ResultCodeR\x04code\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessageBU\n" +
 	"\x1ccom.blcvn.switching.offchainZ5github.com/blcvn/switching-proto/go/offchain;offchainb\x06proto3"
 
@@ -776,20 +781,22 @@ var file_offchain_common_proto_goTypes = []any{
 	(*Signature)(nil),            // 7: offchain.v1.Signature
 	(*Result)(nil),               // 8: offchain.v1.Result
 	(*timestamp.Timestamp)(nil),  // 9: google.protobuf.Timestamp
+	(ResultCode)(0),              // 10: offchain.v1.ResultCode
 }
 var file_offchain_common_proto_depIdxs = []int32{
-	9, // 0: offchain.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
-	5, // 1: offchain.v1.Payment.debtor_agent_account:type_name -> offchain.v1.Account
-	5, // 2: offchain.v1.Payment.creditor_agent_account:type_name -> offchain.v1.Account
-	9, // 3: offchain.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
-	5, // 4: offchain.v1.Transfer.debtor_account:type_name -> offchain.v1.Account
-	5, // 5: offchain.v1.Transfer.creditor_account:type_name -> offchain.v1.Account
-	0, // 6: offchain.v1.Signature.s_type:type_name -> offchain.v1.Signature.SignatureType
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	9,  // 0: offchain.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 1: offchain.v1.Payment.debtor_agent_account:type_name -> offchain.v1.Account
+	5,  // 2: offchain.v1.Payment.creditor_agent_account:type_name -> offchain.v1.Account
+	9,  // 3: offchain.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 4: offchain.v1.Transfer.debtor_account:type_name -> offchain.v1.Account
+	5,  // 5: offchain.v1.Transfer.creditor_account:type_name -> offchain.v1.Account
+	0,  // 6: offchain.v1.Signature.s_type:type_name -> offchain.v1.Signature.SignatureType
+	10, // 7: offchain.v1.Result.code:type_name -> offchain.v1.ResultCode
+	8,  // [8:8] is the sub-list for method output_type
+	8,  // [8:8] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_offchain_common_proto_init() }
@@ -797,6 +804,7 @@ func file_offchain_common_proto_init() {
 	if File_offchain_common_proto != nil {
 		return
 	}
+	file_offchain_error_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

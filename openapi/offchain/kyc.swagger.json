@@ -21,15 +21,19 @@
       "type": "object",
       "properties": {
         "bic": {
-          "type": "string"
+          "type": "string",
+          "title": "Bank Identifier Code của thực thể"
         },
         "action": {
-          "type": "string"
+          "type": "string",
+          "title": "Hành động đã thực hiện (ví dụ: \"register\", \"update\", \"verify\")"
         },
         "time": {
-          "type": "string"
+          "type": "string",
+          "title": "Thời gian thực hiện hành động"
         }
-      }
+      },
+      "title": "Một entry trong lịch sử audit"
     },
     "offchainv1AuditResponse": {
       "type": "object",
@@ -39,23 +43,29 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/offchainv1AuditEntry"
-          }
+          },
+          "title": "Danh sách các entry trong lịch sử audit"
         }
-      }
+      },
+      "title": "Phản hồi lịch sử audit"
     },
     "offchainv1Document": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID của tài liệu"
         },
         "type": {
-          "type": "string"
+          "type": "string",
+          "title": "Loại tài liệu"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "title": "URL để truy cập tài liệu"
         }
-      }
+      },
+      "title": "Thông tin tài liệu"
     },
     "offchainv1GetEntityDocsResponse": {
       "type": "object",
@@ -65,43 +75,54 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/offchainv1Document"
-          }
+          },
+          "title": "Danh sách các tài liệu"
         }
-      }
+      },
+      "title": "Phản hồi danh sách tài liệu"
     },
     "offchainv1KycEntity": {
       "type": "object",
       "properties": {
         "bic": {
-          "type": "string"
+          "type": "string",
+          "title": "Bank Identifier Code"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "Tên tổ chức"
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "title": "Mã quốc gia"
         },
         "lei": {
-          "type": "string"
+          "type": "string",
+          "title": "Legal Entity Identifier"
         },
         "updated_at": {
-          "type": "string"
+          "type": "string",
+          "title": "Thời gian cập nhật lần cuối"
         }
-      }
+      },
+      "title": "Thông tin thực thể KYC (Know Your Customer)"
     },
     "offchainv1KycMetadata": {
       "type": "object",
       "properties": {
         "version": {
-          "type": "string"
+          "type": "string",
+          "title": "Phiên bản của schema KYC"
         },
         "fields": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Danh sách các trường được hỗ trợ"
         }
-      }
+      },
+      "title": "Metadata về cấu trúc KYC"
     },
     "offchainv1ListEntitiesResponse": {
       "type": "object",
@@ -111,9 +132,11 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/offchainv1KycEntity"
-          }
+          },
+          "title": "Danh sách các thực thể KYC"
         }
-      }
+      },
+      "title": "Phản hồi danh sách thực thể KYC"
     },
     "offchainv1Metadata": {
       "type": "object",
@@ -137,15 +160,36 @@
       "type": "object",
       "properties": {
         "code": {
-          "type": "string",
-          "title": "Mã kết quả thực thi"
+          "$ref": "#/definitions/offchainv1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
         },
         "message": {
           "type": "string",
           "title": "Thông điệp mô tả kết quả"
         }
       },
-      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "offchainv1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
     },
     "offchainv1Signature": {
       "type": "object",
@@ -182,9 +226,11 @@
       "type": "object",
       "properties": {
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái xử lý (ví dụ: \"pending\", \"approved\", \"rejected\")"
         }
-      }
+      },
+      "title": "Phản hồi gửi thông tin KYC"
     },
     "protobufAny": {
       "type": "object",
@@ -218,18 +264,23 @@
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/offchainv1Metadata"
+          "$ref": "#/definitions/offchainv1Metadata",
+          "title": "Metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/offchainv1Signature"
+          "$ref": "#/definitions/offchainv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/offchainv1Result"
+          "$ref": "#/definitions/offchainv1Result",
+          "title": "Kết quả thực thi"
         },
         "data": {
-          "$ref": "#/definitions/offchainv1KycEntity"
+          "$ref": "#/definitions/offchainv1KycEntity",
+          "title": "Dữ liệu thực thể KYC đã đăng ký"
         }
-      }
+      },
+      "title": "Phản hồi đăng ký thực thể KYC"
     }
   }
 }

@@ -8,12 +8,14 @@ import "offchain/common.proto";
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
-// Health service
+// Service kiểm tra trạng thái sức khỏe của hệ thống
 service HealthService {
+  // Kiểm tra trạng thái sức khỏe của service
   rpc Check(Empty) returns (HealthResponse) {}
 }
 
+// Phản hồi kiểm tra sức khỏe
 message HealthResponse {
-  string status = 1;
-  google.protobuf.Timestamp time = 2;
+  string status = 1;                        // Trạng thái (thường là "ok", "healthy", "unhealthy")
+  google.protobuf.Timestamp time = 2;       // Thời gian kiểm tra
 }

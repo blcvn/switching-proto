@@ -609,11 +609,11 @@ func (x *Signature) GetB() []byte {
 	return nil
 }
 
-// CCResult định nghĩa cấu trúc kết quả trả về
+// Result định nghĩa cấu trúc kết quả trả về
 type Result struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`       // Mã kết quả thực thi
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"` // Thông điệp mô tả kết quả
+	Code          ResultCode             `protobuf:"varint,1,opt,name=code,proto3,enum=accesspoint.v1.ResultCode" json:"code,omitempty"` // Mã kết quả thực thi (enum)
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                           // Thông điệp mô tả kết quả
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -648,11 +648,11 @@ func (*Result) Descriptor() ([]byte, []int) {
 	return file_access_point_common_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *Result) GetCode() string {
+func (x *Result) GetCode() ResultCode {
 	if x != nil {
 		return x.Code
 	}
-	return ""
+	return ResultCode_UNSPECIFIED
 }
 
 func (x *Result) GetMessage() string {
@@ -666,7 +666,7 @@ var File_access_point_common_proto protoreflect.FileDescriptor
 
 const file_access_point_common_proto_rawDesc = "" +
 	"\n" +
-	"\x19access-point/common.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\a\n" +
+	"\x19access-point/common.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x18access-point/error.proto\"\a\n" +
 	"\x05Empty\"\xbb\x03\n" +
 	"\aPayment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -718,9 +718,9 @@ const file_access_point_common_proto_rawDesc = "" +
 	"\vNO_USE_TYPE\x10\x00\x12\x05\n" +
 	"\x01J\x10\x01\x12\x05\n" +
 	"\x01C\x10\x02\x12\x05\n" +
-	"\x01S\x10\x03\"6\n" +
-	"\x06Result\x12\x12\n" +
-	"\x04code\x18\x01 \x01(\tR\x04code\x12\x18\n" +
+	"\x01S\x10\x03\"R\n" +
+	"\x06Result\x12.\n" +
+	"\x04code\x18\x01 \x01(\x0e2\x1a.accesspoint.v1.ResultCodeR\x04code\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessageB^\n" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
@@ -749,19 +749,21 @@ var file_access_point_common_proto_goTypes = []any{
 	(*Signature)(nil),            // 7: accesspoint.v1.Signature
 	(*Result)(nil),               // 8: accesspoint.v1.Result
 	(*timestamp.Timestamp)(nil),  // 9: google.protobuf.Timestamp
+	(ResultCode)(0),              // 10: accesspoint.v1.ResultCode
 }
 var file_access_point_common_proto_depIdxs = []int32{
-	9, // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
-	5, // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
-	5, // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
-	9, // 3: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
-	5, // 4: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
-	0, // 5: accesspoint.v1.Signature.s_type:type_name -> accesspoint.v1.Signature.SignatureType
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	9,  // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
+	5,  // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
+	9,  // 3: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 4: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
+	0,  // 5: accesspoint.v1.Signature.s_type:type_name -> accesspoint.v1.Signature.SignatureType
+	10, // 6: accesspoint.v1.Result.code:type_name -> accesspoint.v1.ResultCode
+	7,  // [7:7] is the sub-list for method output_type
+	7,  // [7:7] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_access_point_common_proto_init() }
@@ -769,6 +771,7 @@ func file_access_point_common_proto_init() {
 	if File_access_point_common_proto != nil {
 		return
 	}
+	file_access_point_error_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

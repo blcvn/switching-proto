@@ -1,0 +1,4 @@
+# Release artifacts - generated binaries/archives
+# These are built from source and uploaded to GitHub Releases
+release_artifacts/
+

@@ -27,10 +27,14 @@ const (
 // EventsServiceClient is the client API for EventsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Service quản lý sự kiện và thông báo
 type EventsServiceClient interface {
-	// server streaming
+	// Đăng ký nhận sự kiện theo stream (server streaming)
 	SubscribeEvents(ctx context.Context, in *SubscribeEventsRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Event], error)
+	// Đăng ký callback URL để nhận thông báo sự kiện
 	RegisterCallback(ctx context.Context, in *SubscribeCallbackRequest, opts ...grpc.CallOption) (*SubscribeCallbackResponse, error)
+	// Hủy đăng ký callback URL
 	UnregisterCallback(ctx context.Context, in *UnsubscribeCallbackRequest, opts ...grpc.CallOption) (*UnsubscribeCallbackResponse, error)
 }
 
@@ -84,10 +88,14 @@ func (c *eventsServiceClient) UnregisterCallback(ctx context.Context, in *Unsubs
 // EventsServiceServer is the server API for EventsService service.
 // All implementations must embed UnimplementedEventsServiceServer
 // for forward compatibility.
+//
+// Service quản lý sự kiện và thông báo
 type EventsServiceServer interface {
-	// server streaming
+	// Đăng ký nhận sự kiện theo stream (server streaming)
 	SubscribeEvents(*SubscribeEventsRequest, grpc.ServerStreamingServer[Event]) error
+	// Đăng ký callback URL để nhận thông báo sự kiện
 	RegisterCallback(context.Context, *SubscribeCallbackRequest) (*SubscribeCallbackResponse, error)
+	// Hủy đăng ký callback URL
 	UnregisterCallback(context.Context, *UnsubscribeCallbackRequest) (*UnsubscribeCallbackResponse, error)
 	mustEmbedUnimplementedEventsServiceServer()
 }

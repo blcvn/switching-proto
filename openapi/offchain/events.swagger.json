@@ -22,32 +22,39 @@
       "properties": {
         "event": {
           "type": "string",
-          "title": "welcome, update, ping"
+          "title": "Loại sự kiện: welcome, update, ping"
         },
         "data": {
-          "type": "string"
+          "type": "string",
+          "title": "Dữ liệu của sự kiện (JSON string)"
         },
         "timestamp": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian xảy ra sự kiện"
         }
-      }
+      },
+      "title": "Sự kiện được gửi đến client"
     },
     "offchainv1SubscribeCallbackResponse": {
       "type": "object",
       "properties": {
         "subscribed": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái đăng ký (thường là \"ok\" hoặc \"success\")"
         }
-      }
+      },
+      "title": "Phản hồi đăng ký callback"
     },
     "offchainv1UnsubscribeCallbackResponse": {
       "type": "object",
       "properties": {
         "unsubscribed": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái hủy đăng ký (thường là \"ok\" hoặc \"success\")"
         }
-      }
+      },
+      "title": "Phản hồi hủy đăng ký callback"
     },
     "protobufAny": {
       "type": "object",

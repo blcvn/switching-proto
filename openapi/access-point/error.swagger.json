@@ -1,14 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/auth.proto",
+    "title": "access-point/error.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "AuthService"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -17,25 +12,6 @@
   ],
   "paths": {},
   "definitions": {
-    "offchainv1TokenResponse": {
-      "type": "object",
-      "properties": {
-        "access_token": {
-          "type": "string",
-          "title": "Token truy cập được cấp"
-        },
-        "token_type": {
-          "type": "string",
-          "title": "Loại token (thường là \"Bearer\")"
-        },
-        "expires_in": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Thời gian hết hạn của token (tính bằng giây)"
-        }
-      },
-      "title": "Phản hồi chứa token truy cập"
-    },
     "protobufAny": {
       "type": "object",
       "properties": {

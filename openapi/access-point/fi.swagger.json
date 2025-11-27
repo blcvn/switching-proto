@@ -120,15 +120,36 @@
       "type": "object",
       "properties": {
         "code": {
-          "type": "string",
-          "title": "Mã kết quả thực thi"
+          "$ref": "#/definitions/accesspointv1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
         },
         "message": {
           "type": "string",
           "title": "Thông điệp mô tả kết quả"
         }
       },
-      "title": "CCResult định nghĩa cấu trúc kết quả trả về"
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "accesspointv1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
     },
     "accesspointv1SearchTransfersRequestFilter": {
       "type": "object",

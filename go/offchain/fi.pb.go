@@ -22,11 +22,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Yêu cầu tạo lệnh chuyển tiền
 type CreateTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Data          *Transfer              `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Data          *Transfer              `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu lệnh chuyển tiền
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -82,12 +83,13 @@ func (x *CreateTransferRequest) GetData() *Transfer {
 	return nil
 }
 
+// Phản hồi tạo lệnh chuyển tiền
 type CreateTransferResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu lệnh chuyển tiền đã tạo
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -150,11 +152,12 @@ func (x *CreateTransferResponse) GetData() *Transfer {
 	return nil
 }
 
+// Yêu cầu lấy thông tin lệnh chuyển tiền
 type GetTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`                                // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`                              // Chữ ký số của request
+	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"` // ID của lệnh chuyển tiền
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -210,12 +213,13 @@ func (x *GetTransferRequest) GetInstructionId() string {
 	return ""
 }
 
+// Trạng thái lệnh chuyển tiền
 type TransferStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Transfer              `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu lệnh chuyển tiền và trạng thái
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -278,11 +282,12 @@ func (x *TransferStatus) GetData() *Transfer {
 	return nil
 }
 
+// Yêu cầu xác nhận lệnh chuyển tiền
 type ConfirmTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`                                // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`                              // Chữ ký số của request
+	InstructionId string                 `protobuf:"bytes,3,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"` // ID của lệnh chuyển tiền cần xác nhận
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -338,12 +343,13 @@ func (x *ConfirmTransferRequest) GetInstructionId() string {
 	return ""
 }
 
+// Phản hồi xác nhận lệnh chuyển tiền
 type ConfirmTransferResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	InstructionId string                 `protobuf:"bytes,4,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`                                // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`                              // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`                                    // Kết quả thực thi
+	InstructionId string                 `protobuf:"bytes,4,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"` // ID của lệnh chuyển tiền đã xác nhận
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -406,11 +412,12 @@ func (x *ConfirmTransferResponse) GetInstructionId() string {
 	return ""
 }
 
+// Yêu cầu tìm kiếm lệnh chuyển tiền
 type SearchTransfersRequest struct {
 	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Metadata      *Metadata                      `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature                     `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Filter        *SearchTransfersRequest_Filter `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
+	Metadata      *Metadata                      `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature                     `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Filter        *SearchTransfersRequest_Filter `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`       // Bộ lọc tìm kiếm
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -466,12 +473,13 @@ func (x *SearchTransfersRequest) GetFilter() *SearchTransfersRequest_Filter {
 	return nil
 }
 
+// Phản hồi tìm kiếm lệnh chuyển tiền
 type SearchTransfersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Results       []*Transfer            `protobuf:"bytes,4,rep,name=results,proto3" json:"results,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Results       []*Transfer            `protobuf:"bytes,4,rep,name=results,proto3" json:"results,omitempty"`     // Danh sách các lệnh chuyển tiền tìm được
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -534,11 +542,12 @@ func (x *SearchTransfersResponse) GetResults() []*Transfer {
 	return nil
 }
 
+// Yêu cầu chuyển tiền hàng loạt
 type BulkTransferRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Transfers     []*Transfer            `protobuf:"bytes,3,rep,name=transfers,proto3" json:"transfers,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Transfers     []*Transfer            `protobuf:"bytes,3,rep,name=transfers,proto3" json:"transfers,omitempty"` // Danh sách các lệnh chuyển tiền
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -594,12 +603,13 @@ func (x *BulkTransferRequest) GetTransfers() []*Transfer {
 	return nil
 }
 
+// Phản hồi chuyển tiền hàng loạt
 type BulkTransferResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`
-	Transfers     []*Transfer            `protobuf:"bytes,4,rep,name=transfers,proto3" json:"transfers,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Transfers     []*Transfer            `protobuf:"bytes,4,rep,name=transfers,proto3" json:"transfers,omitempty"` // Danh sách các lệnh chuyển tiền đã xử lý
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -662,11 +672,12 @@ func (x *BulkTransferResponse) GetTransfers() []*Transfer {
 	return nil
 }
 
+// Bộ lọc tìm kiếm
 type SearchTransfersRequest_Filter struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Currency      string                 `protobuf:"bytes,1,opt,name=currency,proto3" json:"currency,omitempty"`
-	DateFrom      string                 `protobuf:"bytes,2,opt,name=date_from,json=dateFrom,proto3" json:"date_from,omitempty"`
-	DateTo        string                 `protobuf:"bytes,3,opt,name=date_to,json=dateTo,proto3" json:"date_to,omitempty"`
+	Currency      string                 `protobuf:"bytes,1,opt,name=currency,proto3" json:"currency,omitempty"`                 // Lọc theo mã tiền tệ
+	DateFrom      string                 `protobuf:"bytes,2,opt,name=date_from,json=dateFrom,proto3" json:"date_from,omitempty"` // Ngày bắt đầu (format: YYYY-MM-DD)
+	DateTo        string                 `protobuf:"bytes,3,opt,name=date_to,json=dateTo,proto3" json:"date_to,omitempty"`       // Ngày kết thúc (format: YYYY-MM-DD)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -19,51 +19,91 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      * @return The data.
      */
     com.blcvn.switching.offchain.Common.KycEntity getData();
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      */
     com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder();
   }
   /**
+   * <pre>
+   * Yêu cầu đăng ký thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.RegisterRequest}
    */
   public static final class RegisterRequest extends
@@ -182,6 +222,10 @@ public final class Kyc {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -190,6 +234,10 @@ public final class Kyc {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -198,6 +246,10 @@ public final class Kyc {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -208,6 +260,10 @@ public final class Kyc {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -216,6 +272,10 @@ public final class Kyc {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -224,6 +284,10 @@ public final class Kyc {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -234,6 +298,10 @@ public final class Kyc {
     public static final int DATA_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.KycEntity data_;
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      * @return Whether the data field is set.
      */
@@ -242,6 +310,10 @@ public final class Kyc {
       return data_ != null;
     }
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      * @return The data.
      */
@@ -250,6 +322,10 @@ public final class Kyc {
       return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
     }
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 3;</code>
      */
     @java.lang.Override
@@ -450,6 +526,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu đăng ký thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.RegisterRequest}
      */
     public static final class Builder extends
@@ -636,6 +716,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -643,6 +727,10 @@ public final class Kyc {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -654,6 +742,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -670,6 +762,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -684,6 +780,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -702,6 +802,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -716,6 +820,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -724,6 +832,10 @@ public final class Kyc {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -735,6 +847,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -755,6 +871,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -762,6 +882,10 @@ public final class Kyc {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -773,6 +897,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -789,6 +917,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -803,6 +935,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -821,6 +957,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -835,6 +975,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -843,6 +987,10 @@ public final class Kyc {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -854,6 +1002,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -874,6 +1026,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> dataBuilder_;
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        * @return Whether the data field is set.
        */
@@ -881,6 +1037,10 @@ public final class Kyc {
         return dataBuilder_ != null || data_ != null;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        * @return The data.
        */
@@ -892,6 +1052,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public Builder setData(com.blcvn.switching.offchain.Common.KycEntity value) {
@@ -908,6 +1072,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public Builder setData(
@@ -922,6 +1090,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public Builder mergeData(com.blcvn.switching.offchain.Common.KycEntity value) {
@@ -940,6 +1112,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public Builder clearData() {
@@ -954,6 +1130,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity.Builder getDataBuilder() {
@@ -962,6 +1142,10 @@ public final class Kyc {
         return getDataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
@@ -973,6 +1157,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1046,66 +1234,118 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
     com.blcvn.switching.offchain.Common.Metadata getMetadata();
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
 
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
     boolean hasSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
     com.blcvn.switching.offchain.Common.Signature getSignature();
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
 
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
     boolean hasResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
     com.blcvn.switching.offchain.Common.Result getResult();
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
 
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      * @return The data.
      */
     com.blcvn.switching.offchain.Common.KycEntity getData();
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      */
     com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder();
   }
   /**
+   * <pre>
+   * Phản hồi đăng ký thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.RegisterResponse}
    */
   public static final class RegisterResponse extends
@@ -1237,6 +1477,10 @@ public final class Kyc {
     public static final int METADATA_FIELD_NUMBER = 1;
     private com.blcvn.switching.offchain.Common.Metadata metadata_;
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return Whether the metadata field is set.
      */
@@ -1245,6 +1489,10 @@ public final class Kyc {
       return metadata_ != null;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      * @return The metadata.
      */
@@ -1253,6 +1501,10 @@ public final class Kyc {
       return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
     }
     /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
      * <code>.offchain.v1.Metadata metadata = 1;</code>
      */
     @java.lang.Override
@@ -1263,6 +1515,10 @@ public final class Kyc {
     public static final int SIGNATURE_FIELD_NUMBER = 2;
     private com.blcvn.switching.offchain.Common.Signature signature_;
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return Whether the signature field is set.
      */
@@ -1271,6 +1527,10 @@ public final class Kyc {
       return signature_ != null;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      * @return The signature.
      */
@@ -1279,6 +1539,10 @@ public final class Kyc {
       return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
     }
     /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
      * <code>.offchain.v1.Signature signature = 2;</code>
      */
     @java.lang.Override
@@ -1289,6 +1553,10 @@ public final class Kyc {
     public static final int RESULT_FIELD_NUMBER = 3;
     private com.blcvn.switching.offchain.Common.Result result_;
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return Whether the result field is set.
      */
@@ -1297,6 +1565,10 @@ public final class Kyc {
       return result_ != null;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      * @return The result.
      */
@@ -1305,6 +1577,10 @@ public final class Kyc {
       return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
     }
     /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
      * <code>.offchain.v1.Result result = 3;</code>
      */
     @java.lang.Override
@@ -1315,6 +1591,10 @@ public final class Kyc {
     public static final int DATA_FIELD_NUMBER = 4;
     private com.blcvn.switching.offchain.Common.KycEntity data_;
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      * @return Whether the data field is set.
      */
@@ -1323,6 +1603,10 @@ public final class Kyc {
       return data_ != null;
     }
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      * @return The data.
      */
@@ -1331,6 +1615,10 @@ public final class Kyc {
       return data_ == null ? com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance() : data_;
     }
     /**
+     * <pre>
+     * Dữ liệu thực thể KYC đã đăng ký
+     * </pre>
+     *
      * <code>.offchain.v1.KycEntity data = 4;</code>
      */
     @java.lang.Override
@@ -1547,6 +1835,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi đăng ký thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.RegisterResponse}
      */
     public static final class Builder extends
@@ -1747,6 +2039,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return Whether the metadata field is set.
        */
@@ -1754,6 +2050,10 @@ public final class Kyc {
         return metadataBuilder_ != null || metadata_ != null;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        * @return The metadata.
        */
@@ -1765,6 +2065,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -1781,6 +2085,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder setMetadata(
@@ -1795,6 +2103,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
@@ -1813,6 +2125,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public Builder clearMetadata() {
@@ -1827,6 +2143,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
@@ -1835,6 +2155,10 @@ public final class Kyc {
         return getMetadataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
@@ -1846,6 +2170,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
        * <code>.offchain.v1.Metadata metadata = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1866,6 +2194,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return Whether the signature field is set.
        */
@@ -1873,6 +2205,10 @@ public final class Kyc {
         return signatureBuilder_ != null || signature_ != null;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        * @return The signature.
        */
@@ -1884,6 +2220,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -1900,6 +2240,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder setSignature(
@@ -1914,6 +2258,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
@@ -1932,6 +2280,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public Builder clearSignature() {
@@ -1946,6 +2298,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
@@ -1954,6 +2310,10 @@ public final class Kyc {
         return getSignatureFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
@@ -1965,6 +2325,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
        * <code>.offchain.v1.Signature signature = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1985,6 +2349,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return Whether the result field is set.
        */
@@ -1992,6 +2360,10 @@ public final class Kyc {
         return resultBuilder_ != null || result_ != null;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        * @return The result.
        */
@@ -2003,6 +2375,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -2019,6 +2395,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder setResult(
@@ -2033,6 +2413,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
@@ -2051,6 +2435,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public Builder clearResult() {
@@ -2065,6 +2453,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
@@ -2073,6 +2465,10 @@ public final class Kyc {
         return getResultFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
@@ -2084,6 +2480,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
        * <code>.offchain.v1.Result result = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2104,6 +2504,10 @@ public final class Kyc {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> dataBuilder_;
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        * @return Whether the data field is set.
        */
@@ -2111,6 +2515,10 @@ public final class Kyc {
         return dataBuilder_ != null || data_ != null;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        * @return The data.
        */
@@ -2122,6 +2530,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public Builder setData(com.blcvn.switching.offchain.Common.KycEntity value) {
@@ -2138,6 +2550,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public Builder setData(
@@ -2152,6 +2568,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public Builder mergeData(com.blcvn.switching.offchain.Common.KycEntity value) {
@@ -2170,6 +2590,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public Builder clearData() {
@@ -2184,6 +2608,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity.Builder getDataBuilder() {
@@ -2192,6 +2620,10 @@ public final class Kyc {
         return getDataFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getDataOrBuilder() {
@@ -2203,6 +2635,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu thực thể KYC đã đăng ký
+       * </pre>
+       *
        * <code>.offchain.v1.KycEntity data = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2276,30 +2712,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Common.KycEntity> 
         getEntitiesList();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     com.blcvn.switching.offchain.Common.KycEntity getEntities(int index);
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     int getEntitiesCount();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Common.KycEntityOrBuilder> 
         getEntitiesOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     com.blcvn.switching.offchain.Common.KycEntityOrBuilder getEntitiesOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Phản hồi danh sách thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.ListEntitiesResponse}
    */
   public static final class ListEntitiesResponse extends
@@ -2393,6 +2853,10 @@ public final class Kyc {
     public static final int ENTITIES_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.offchain.Common.KycEntity> entities_;
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -2400,6 +2864,10 @@ public final class Kyc {
       return entities_;
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -2408,6 +2876,10 @@ public final class Kyc {
       return entities_;
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -2415,6 +2887,10 @@ public final class Kyc {
       return entities_.size();
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -2422,6 +2898,10 @@ public final class Kyc {
       return entities_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -2588,6 +3068,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi danh sách thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.ListEntitiesResponse}
      */
     public static final class Builder extends
@@ -2785,6 +3269,10 @@ public final class Kyc {
           com.blcvn.switching.offchain.Common.KycEntity, com.blcvn.switching.offchain.Common.KycEntity.Builder, com.blcvn.switching.offchain.Common.KycEntityOrBuilder> entitiesBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.KycEntity> getEntitiesList() {
@@ -2795,6 +3283,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public int getEntitiesCount() {
@@ -2805,6 +3297,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity getEntities(int index) {
@@ -2815,6 +3311,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder setEntities(
@@ -2832,6 +3332,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder setEntities(
@@ -2846,6 +3350,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(com.blcvn.switching.offchain.Common.KycEntity value) {
@@ -2862,6 +3370,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -2879,6 +3391,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -2893,6 +3409,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -2907,6 +3427,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder addAllEntities(
@@ -2922,6 +3446,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder clearEntities() {
@@ -2935,6 +3463,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public Builder removeEntities(int index) {
@@ -2948,6 +3480,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity.Builder getEntitiesBuilder(
@@ -2955,6 +3491,10 @@ public final class Kyc {
         return getEntitiesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntityOrBuilder getEntitiesOrBuilder(
@@ -2965,6 +3505,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Common.KycEntityOrBuilder> 
@@ -2976,6 +3520,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity.Builder addEntitiesBuilder() {
@@ -2983,6 +3531,10 @@ public final class Kyc {
             com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.offchain.Common.KycEntity.Builder addEntitiesBuilder(
@@ -2991,6 +3543,10 @@ public final class Kyc {
             index, com.blcvn.switching.offchain.Common.KycEntity.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .offchain.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Common.KycEntity.Builder> 
@@ -3069,11 +3625,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3081,6 +3645,10 @@ public final class Kyc {
         getBicBytes();
   }
   /**
+   * <pre>
+   * Yêu cầu lấy thông tin thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.GetEntityRequest}
    */
   public static final class GetEntityRequest extends
@@ -3167,6 +3735,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -3184,6 +3756,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3357,6 +3933,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu lấy thông tin thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.GetEntityRequest}
      */
     public static final class Builder extends
@@ -3506,6 +4086,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -3522,6 +4106,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -3539,6 +4127,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -3554,6 +4146,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -3564,6 +4160,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -3637,11 +4237,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3649,6 +4257,10 @@ public final class Kyc {
         getBicBytes();
   }
   /**
+   * <pre>
+   * Yêu cầu lấy tài liệu của thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.GetEntityDocsRequest}
    */
   public static final class GetEntityDocsRequest extends
@@ -3735,6 +4347,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -3752,6 +4368,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3925,6 +4545,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu lấy tài liệu của thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.GetEntityDocsRequest}
      */
     public static final class Builder extends
@@ -4074,6 +4698,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -4090,6 +4718,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -4107,6 +4739,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -4122,6 +4758,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -4132,6 +4772,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -4205,11 +4849,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -4217,11 +4869,19 @@ public final class Kyc {
         getIdBytes();
 
     /**
+     * <pre>
+     * Loại tài liệu
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The type.
      */
     java.lang.String getType();
     /**
+     * <pre>
+     * Loại tài liệu
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The bytes for type.
      */
@@ -4229,11 +4889,19 @@ public final class Kyc {
         getTypeBytes();
 
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The url.
      */
     java.lang.String getUrl();
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The bytes for url.
      */
@@ -4241,6 +4909,10 @@ public final class Kyc {
         getUrlBytes();
   }
   /**
+   * <pre>
+   * Thông tin tài liệu
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.Document}
    */
   public static final class Document extends
@@ -4341,6 +5013,10 @@ public final class Kyc {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -4358,6 +5034,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -4379,6 +5059,10 @@ public final class Kyc {
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
+     * <pre>
+     * Loại tài liệu
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The type.
      */
@@ -4396,6 +5080,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Loại tài liệu
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The bytes for type.
      */
@@ -4417,6 +5105,10 @@ public final class Kyc {
     public static final int URL_FIELD_NUMBER = 3;
     private volatile java.lang.Object url_;
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The url.
      */
@@ -4434,6 +5126,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The bytes for url.
      */
@@ -4627,6 +5323,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin tài liệu
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.Document}
      */
     public static final class Builder extends
@@ -4790,6 +5490,10 @@ public final class Kyc {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -4806,6 +5510,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -4823,6 +5531,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -4838,6 +5550,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -4848,6 +5564,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -4866,6 +5586,10 @@ public final class Kyc {
 
       private java.lang.Object type_ = "";
       /**
+       * <pre>
+       * Loại tài liệu
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return The type.
        */
@@ -4882,6 +5606,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Loại tài liệu
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return The bytes for type.
        */
@@ -4899,6 +5627,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Loại tài liệu
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @param value The type to set.
        * @return This builder for chaining.
@@ -4914,6 +5646,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Loại tài liệu
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return This builder for chaining.
        */
@@ -4924,6 +5660,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Loại tài liệu
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @param value The bytes for type to set.
        * @return This builder for chaining.
@@ -4942,6 +5682,10 @@ public final class Kyc {
 
       private java.lang.Object url_ = "";
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return The url.
        */
@@ -4958,6 +5702,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return The bytes for url.
        */
@@ -4975,6 +5723,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @param value The url to set.
        * @return This builder for chaining.
@@ -4990,6 +5742,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return This builder for chaining.
        */
@@ -5000,6 +5756,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @param value The bytes for url to set.
        * @return This builder for chaining.
@@ -5073,30 +5833,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Kyc.Document> 
         getDocumentsList();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     com.blcvn.switching.offchain.Kyc.Document getDocuments(int index);
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     int getDocumentsCount();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Kyc.DocumentOrBuilder> 
         getDocumentsOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     com.blcvn.switching.offchain.Kyc.DocumentOrBuilder getDocumentsOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Phản hồi danh sách tài liệu
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.GetEntityDocsResponse}
    */
   public static final class GetEntityDocsResponse extends
@@ -5190,6 +5974,10 @@ public final class Kyc {
     public static final int DOCUMENTS_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.offchain.Kyc.Document> documents_;
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -5197,6 +5985,10 @@ public final class Kyc {
       return documents_;
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -5205,6 +5997,10 @@ public final class Kyc {
       return documents_;
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -5212,6 +6008,10 @@ public final class Kyc {
       return documents_.size();
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -5219,6 +6019,10 @@ public final class Kyc {
       return documents_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .offchain.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -5385,6 +6189,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi danh sách tài liệu
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.GetEntityDocsResponse}
      */
     public static final class Builder extends
@@ -5582,6 +6390,10 @@ public final class Kyc {
           com.blcvn.switching.offchain.Kyc.Document, com.blcvn.switching.offchain.Kyc.Document.Builder, com.blcvn.switching.offchain.Kyc.DocumentOrBuilder> documentsBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Kyc.Document> getDocumentsList() {
@@ -5592,6 +6404,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public int getDocumentsCount() {
@@ -5602,6 +6418,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.Document getDocuments(int index) {
@@ -5612,6 +6432,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder setDocuments(
@@ -5629,6 +6453,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder setDocuments(
@@ -5643,6 +6471,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(com.blcvn.switching.offchain.Kyc.Document value) {
@@ -5659,6 +6491,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -5676,6 +6512,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -5690,6 +6530,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -5704,6 +6548,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder addAllDocuments(
@@ -5719,6 +6567,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder clearDocuments() {
@@ -5732,6 +6584,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public Builder removeDocuments(int index) {
@@ -5745,6 +6601,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.Document.Builder getDocumentsBuilder(
@@ -5752,6 +6612,10 @@ public final class Kyc {
         return getDocumentsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.DocumentOrBuilder getDocumentsOrBuilder(
@@ -5762,6 +6626,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Kyc.DocumentOrBuilder> 
@@ -5773,6 +6641,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.Document.Builder addDocumentsBuilder() {
@@ -5780,6 +6652,10 @@ public final class Kyc {
             com.blcvn.switching.offchain.Kyc.Document.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.Document.Builder addDocumentsBuilder(
@@ -5788,6 +6664,10 @@ public final class Kyc {
             index, com.blcvn.switching.offchain.Kyc.Document.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .offchain.v1.Document documents = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Kyc.Document.Builder> 
@@ -5866,11 +6746,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -5878,10 +6766,18 @@ public final class Kyc {
         getBicBytes();
 
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     int getUpdatesCount();
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     boolean containsUpdates(
@@ -5893,11 +6789,19 @@ public final class Kyc {
     java.util.Map<java.lang.String, java.lang.String>
     getUpdates();
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getUpdatesMap();
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -5905,6 +6809,10 @@ public final class Kyc {
         java.lang.String key,
         java.lang.String defaultValue);
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -5912,6 +6820,10 @@ public final class Kyc {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * Yêu cầu gửi thông tin KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.SubmitKycRequest}
    */
   public static final class SubmitKycRequest extends
@@ -6024,6 +6936,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -6041,6 +6957,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -6086,6 +7006,10 @@ public final class Kyc {
       return internalGetUpdates().getMap().size();
     }
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -6104,6 +7028,10 @@ public final class Kyc {
       return getUpdatesMap();
     }
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -6112,6 +7040,10 @@ public final class Kyc {
       return internalGetUpdates().getMap();
     }
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -6125,6 +7057,10 @@ public final class Kyc {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -6317,6 +7253,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Yêu cầu gửi thông tin KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.SubmitKycRequest}
      */
     public static final class Builder extends
@@ -6495,6 +7435,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -6511,6 +7455,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -6528,6 +7476,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -6543,6 +7495,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -6553,6 +7509,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -6596,6 +7556,10 @@ public final class Kyc {
         return internalGetUpdates().getMap().size();
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -6614,6 +7578,10 @@ public final class Kyc {
         return getUpdatesMap();
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -6622,6 +7590,10 @@ public final class Kyc {
         return internalGetUpdates().getMap();
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -6635,6 +7607,10 @@ public final class Kyc {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -6656,6 +7632,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -6675,6 +7655,10 @@ public final class Kyc {
         return internalGetMutableUpdates().getMutableMap();
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       public Builder putUpdates(
@@ -6687,6 +7671,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Map các trường cần cập nhật (key: tên trường, value: giá trị)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -6754,11 +7742,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -6766,6 +7762,10 @@ public final class Kyc {
         getStatusBytes();
   }
   /**
+   * <pre>
+   * Phản hồi gửi thông tin KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.SubmitKycResponse}
    */
   public static final class SubmitKycResponse extends
@@ -6852,6 +7852,10 @@ public final class Kyc {
     public static final int STATUS_FIELD_NUMBER = 1;
     private volatile java.lang.Object status_;
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
@@ -6869,6 +7873,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -7042,6 +8050,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi gửi thông tin KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.SubmitKycResponse}
      */
     public static final class Builder extends
@@ -7191,6 +8203,10 @@ public final class Kyc {
 
       private java.lang.Object status_ = "";
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The status.
        */
@@ -7207,6 +8223,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The bytes for status.
        */
@@ -7224,6 +8244,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -7239,6 +8263,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return This builder for chaining.
        */
@@ -7249,6 +8277,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
@@ -7322,11 +8354,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The version.
      */
     java.lang.String getVersion();
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The bytes for version.
      */
@@ -7334,23 +8374,39 @@ public final class Kyc {
         getVersionBytes();
 
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return A list containing the fields.
      */
     java.util.List<java.lang.String>
         getFieldsList();
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return The count of fields.
      */
     int getFieldsCount();
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the element to return.
      * @return The fields at the given index.
      */
     java.lang.String getFields(int index);
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the fields at the given index.
@@ -7359,6 +8415,10 @@ public final class Kyc {
         getFieldsBytes(int index);
   }
   /**
+   * <pre>
+   * Metadata về cấu trúc KYC
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.KycMetadata}
    */
   public static final class KycMetadata extends
@@ -7459,6 +8519,10 @@ public final class Kyc {
     public static final int VERSION_FIELD_NUMBER = 1;
     private volatile java.lang.Object version_;
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The version.
      */
@@ -7476,6 +8540,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The bytes for version.
      */
@@ -7497,6 +8565,10 @@ public final class Kyc {
     public static final int FIELDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList fields_;
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return A list containing the fields.
      */
@@ -7505,6 +8577,10 @@ public final class Kyc {
       return fields_;
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return The count of fields.
      */
@@ -7512,6 +8588,10 @@ public final class Kyc {
       return fields_.size();
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the element to return.
      * @return The fields at the given index.
@@ -7520,6 +8600,10 @@ public final class Kyc {
       return fields_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the fields at the given index.
@@ -7701,6 +8785,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Metadata về cấu trúc KYC
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.KycMetadata}
      */
     public static final class Builder extends
@@ -7869,6 +8957,10 @@ public final class Kyc {
 
       private java.lang.Object version_ = "";
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return The version.
        */
@@ -7885,6 +8977,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return The bytes for version.
        */
@@ -7902,6 +8998,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @param value The version to set.
        * @return This builder for chaining.
@@ -7917,6 +9017,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return This builder for chaining.
        */
@@ -7927,6 +9031,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @param value The bytes for version to set.
        * @return This builder for chaining.
@@ -7951,6 +9059,10 @@ public final class Kyc {
          }
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return A list containing the fields.
        */
@@ -7959,6 +9071,10 @@ public final class Kyc {
         return fields_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return The count of fields.
        */
@@ -7966,6 +9082,10 @@ public final class Kyc {
         return fields_.size();
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index of the element to return.
        * @return The fields at the given index.
@@ -7974,6 +9094,10 @@ public final class Kyc {
         return fields_.get(index);
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index of the value to return.
        * @return The bytes of the fields at the given index.
@@ -7983,6 +9107,10 @@ public final class Kyc {
         return fields_.getByteString(index);
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index to set the value at.
        * @param value The fields to set.
@@ -7999,6 +9127,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param value The fields to add.
        * @return This builder for chaining.
@@ -8014,6 +9146,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param values The fields to add.
        * @return This builder for chaining.
@@ -8027,6 +9163,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return This builder for chaining.
        */
@@ -8037,6 +9177,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param value The bytes of the fields to add.
        * @return This builder for chaining.
@@ -8110,11 +9254,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -8122,11 +9274,19 @@ public final class Kyc {
         getBicBytes();
 
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The action.
      */
     java.lang.String getAction();
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The bytes for action.
      */
@@ -8134,11 +9294,19 @@ public final class Kyc {
         getActionBytes();
 
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The time.
      */
     java.lang.String getTime();
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The bytes for time.
      */
@@ -8146,6 +9314,10 @@ public final class Kyc {
         getTimeBytes();
   }
   /**
+   * <pre>
+   * Một entry trong lịch sử audit
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.AuditEntry}
    */
   public static final class AuditEntry extends
@@ -8246,6 +9418,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -8263,6 +9439,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -8284,6 +9464,10 @@ public final class Kyc {
     public static final int ACTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object action_;
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The action.
      */
@@ -8301,6 +9485,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The bytes for action.
      */
@@ -8322,6 +9510,10 @@ public final class Kyc {
     public static final int TIME_FIELD_NUMBER = 3;
     private volatile java.lang.Object time_;
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The time.
      */
@@ -8339,6 +9531,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The bytes for time.
      */
@@ -8532,6 +9728,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Một entry trong lịch sử audit
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.AuditEntry}
      */
     public static final class Builder extends
@@ -8695,6 +9895,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -8711,6 +9915,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -8728,6 +9936,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -8743,6 +9955,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -8753,6 +9969,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -8771,6 +9991,10 @@ public final class Kyc {
 
       private java.lang.Object action_ = "";
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return The action.
        */
@@ -8787,6 +10011,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return The bytes for action.
        */
@@ -8804,6 +10032,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @param value The action to set.
        * @return This builder for chaining.
@@ -8819,6 +10051,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return This builder for chaining.
        */
@@ -8829,6 +10065,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "register", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @param value The bytes for action to set.
        * @return This builder for chaining.
@@ -8847,6 +10087,10 @@ public final class Kyc {
 
       private java.lang.Object time_ = "";
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return The time.
        */
@@ -8863,6 +10107,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return The bytes for time.
        */
@@ -8880,6 +10128,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @param value The time to set.
        * @return This builder for chaining.
@@ -8895,6 +10147,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return This builder for chaining.
        */
@@ -8905,6 +10161,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @param value The bytes for time to set.
        * @return This builder for chaining.
@@ -8978,30 +10238,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     java.util.List<com.blcvn.switching.offchain.Kyc.AuditEntry> 
         getEntriesList();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     com.blcvn.switching.offchain.Kyc.AuditEntry getEntries(int index);
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     int getEntriesCount();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.offchain.Kyc.AuditEntryOrBuilder> 
         getEntriesOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     com.blcvn.switching.offchain.Kyc.AuditEntryOrBuilder getEntriesOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Phản hồi lịch sử audit
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.AuditResponse}
    */
   public static final class AuditResponse extends
@@ -9095,6 +10379,10 @@ public final class Kyc {
     public static final int ENTRIES_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.offchain.Kyc.AuditEntry> entries_;
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -9102,6 +10390,10 @@ public final class Kyc {
       return entries_;
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -9110,6 +10402,10 @@ public final class Kyc {
       return entries_;
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -9117,6 +10413,10 @@ public final class Kyc {
       return entries_.size();
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -9124,6 +10424,10 @@ public final class Kyc {
       return entries_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -9290,6 +10594,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Phản hồi lịch sử audit
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.AuditResponse}
      */
     public static final class Builder extends
@@ -9487,6 +10795,10 @@ public final class Kyc {
           com.blcvn.switching.offchain.Kyc.AuditEntry, com.blcvn.switching.offchain.Kyc.AuditEntry.Builder, com.blcvn.switching.offchain.Kyc.AuditEntryOrBuilder> entriesBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Kyc.AuditEntry> getEntriesList() {
@@ -9497,6 +10809,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public int getEntriesCount() {
@@ -9507,6 +10823,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.AuditEntry getEntries(int index) {
@@ -9517,6 +10837,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder setEntries(
@@ -9534,6 +10858,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder setEntries(
@@ -9548,6 +10876,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(com.blcvn.switching.offchain.Kyc.AuditEntry value) {
@@ -9564,6 +10896,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -9581,6 +10917,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -9595,6 +10935,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -9609,6 +10953,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder addAllEntries(
@@ -9624,6 +10972,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder clearEntries() {
@@ -9637,6 +10989,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public Builder removeEntries(int index) {
@@ -9650,6 +11006,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.AuditEntry.Builder getEntriesBuilder(
@@ -9657,6 +11017,10 @@ public final class Kyc {
         return getEntriesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.AuditEntryOrBuilder getEntriesOrBuilder(
@@ -9667,6 +11031,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.offchain.Kyc.AuditEntryOrBuilder> 
@@ -9678,6 +11046,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.AuditEntry.Builder addEntriesBuilder() {
@@ -9685,6 +11057,10 @@ public final class Kyc {
             com.blcvn.switching.offchain.Kyc.AuditEntry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.offchain.Kyc.AuditEntry.Builder addEntriesBuilder(
@@ -9693,6 +11069,10 @@ public final class Kyc {
             index, com.blcvn.switching.offchain.Kyc.AuditEntry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .offchain.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<com.blcvn.switching.offchain.Kyc.AuditEntry.Builder> 

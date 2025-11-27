@@ -51,12 +51,27 @@ Account represents the account details associated with an agent.
 | `version` | string | `False` | Phiên bản của protocol |
 
 ### `accesspointv1Result`
-CCResult định nghĩa cấu trúc kết quả trả về
+Result định nghĩa cấu trúc kết quả trả về
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `code` | string | `False` | Mã kết quả thực thi |
+| `code` | object [accesspointv1ResultCode] | `False` | Mã kết quả thực thi (enum) |
 | `message` | string | `False` | Thông điệp mô tả kết quả |
+
+### `accesspointv1ResultCode`
+- UNSPECIFIED: Giá trị mặc định, không xác định
+ - SUCCESS: Thành công
+ - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ
+ - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ
+ - FORBIDDEN: Không có quyền truy cập
+ - NOT_FOUND: Không tìm thấy tài nguyên
+ - DUPLICATE_REQUEST: Request trùng lặp
+ - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý
+ - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian
+ - INTERNAL: Lỗi nội bộ của server
+ - BAD_GATEWAY: Lỗi gateway
+ - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng
+ - GATEWAY_TIMEOUT: Gateway timeout
 
 ### `accesspointv1SearchTransfersRequestFilter`
 
