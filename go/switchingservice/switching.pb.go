@@ -845,7 +845,7 @@ var File_switching_service_switching_proto protoreflect.FileDescriptor
 
 const file_switching_service_switching_proto_rawDesc = "" +
 	"\n" +
-	"!switching-service/switching.proto\x12\fswitching.v1\"2\n" +
+	"!switching-service/switching.proto\x12\x13switchingservice.v1\"2\n" +
 	"\x13RegisterBankRequest\x12\x1b\n" +
 	"\tbank_code\x18\x01 \x01(\tR\bbankCode\"\xa7\x01\n" +
 	"\x14RegisterBankResponse\x12\x1b\n" +
@@ -872,11 +872,11 @@ const file_switching_service_switching_proto_rawDesc = "" +
 	"\x12receiver_bank_code\x18\x04 \x01(\tR\x10receiverBankCode\x12/\n" +
 	"\x13beneficiary_account\x18\x05 \x01(\tR\x12beneficiaryAccount\x12\x16\n" +
 	"\x06amount\x18\x06 \x01(\tR\x06amount\x12\x12\n" +
-	"\x04note\x18\a \x01(\tR\x04note\"o\n" +
+	"\x04note\x18\a \x01(\tR\x04note\"v\n" +
 	"\x17HoldBatchPaymentRequest\x12\x1f\n" +
 	"\vsender_bank\x18\x01 \x01(\tR\n" +
-	"senderBank\x123\n" +
-	"\x05items\x18\x02 \x03(\v2\x1d.switching.v1.HoldPaymentItemR\x05items\"\xb0\x01\n" +
+	"senderBank\x12:\n" +
+	"\x05items\x18\x02 \x03(\v2$.switchingservice.v1.HoldPaymentItemR\x05items\"\xb0\x01\n" +
 	"\x0fHoldPaymentItem\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12/\n" +
 	"\x13beneficiary_account\x18\x02 \x01(\tR\x12beneficiaryAccount\x12,\n" +
@@ -886,9 +886,9 @@ const file_switching_service_switching_proto_rawDesc = "" +
 	"\x0fPaymentResponse\x12\x17\n" +
 	"\atx_hash\x18\x01 \x01(\tR\x06txHash\x12\x15\n" +
 	"\x06ref_id\x18\x02 \x01(\tR\x05refId\x12\x16\n" +
-	"\x06status\x18\x03 \x01(\tR\x06status\"M\n" +
-	"\x14BatchPaymentResponse\x125\n" +
-	"\aresults\x18\x01 \x03(\v2\x1b.switching.v1.PaymentResultR\aresults\"n\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\"T\n" +
+	"\x14BatchPaymentResponse\x12<\n" +
+	"\aresults\x18\x01 \x03(\v2\".switchingservice.v1.PaymentResultR\aresults\"n\n" +
 	"\rPaymentResult\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x17\n" +
 	"\atx_hash\x18\x02 \x01(\tR\x06txHash\x12\x16\n" +
@@ -907,14 +907,14 @@ const file_switching_service_switching_proto_rawDesc = "" +
 	"\x11from_bank_account\x18\x04 \x01(\tR\x0ffromBankAccount\x12&\n" +
 	"\x0fto_bank_account\x18\x05 \x01(\tR\rtoBankAccount\x12!\n" +
 	"\ftx_reference\x18\x06 \x01(\tR\vtxReference\x12\x12\n" +
-	"\x04note\x18\a \x01(\tR\x04note2\xa1\x04\n" +
-	"\x10SwitchingService\x12U\n" +
-	"\fRegisterBank\x12!.switching.v1.RegisterBankRequest\x1a\".switching.v1.RegisterBankResponse\x12Y\n" +
-	"\x10QueryBankBalance\x12!.switching.v1.QueryBalanceRequest\x1a\".switching.v1.QueryBalanceResponse\x12N\n" +
-	"\vHoldPayment\x12 .switching.v1.HoldPaymentRequest\x1a\x1d.switching.v1.PaymentResponse\x12]\n" +
-	"\x10HoldBatchPayment\x12%.switching.v1.HoldBatchPaymentRequest\x1a\".switching.v1.BatchPaymentResponse\x12V\n" +
-	"\rCancelPayment\x12\".switching.v1.CancelPaymentRequest\x1a!.switching.v1.TransactionResponse\x12T\n" +
-	"\x0eConfirmPayment\x12#.switching.v1.ConfirmPaymentRequest\x1a\x1d.switching.v1.PaymentResponseBm\n" +
+	"\x04note\x18\a \x01(\tR\x04note2\xf5\x04\n" +
+	"\x10SwitchingService\x12c\n" +
+	"\fRegisterBank\x12(.switchingservice.v1.RegisterBankRequest\x1a).switchingservice.v1.RegisterBankResponse\x12g\n" +
+	"\x10QueryBankBalance\x12(.switchingservice.v1.QueryBalanceRequest\x1a).switchingservice.v1.QueryBalanceResponse\x12\\\n" +
+	"\vHoldPayment\x12'.switchingservice.v1.HoldPaymentRequest\x1a$.switchingservice.v1.PaymentResponse\x12k\n" +
+	"\x10HoldBatchPayment\x12,.switchingservice.v1.HoldBatchPaymentRequest\x1a).switchingservice.v1.BatchPaymentResponse\x12d\n" +
+	"\rCancelPayment\x12).switchingservice.v1.CancelPaymentRequest\x1a(.switchingservice.v1.TransactionResponse\x12b\n" +
+	"\x0eConfirmPayment\x12*.switchingservice.v1.ConfirmPaymentRequest\x1a$.switchingservice.v1.PaymentResponseBm\n" +
 	"$com.blcvn.switching.switchingserviceZEgithub.com/blcvn/switching-proto/go/switchingservice;switchingserviceb\x06proto3"
 
 var (
@@ -931,35 +931,35 @@ func file_switching_service_switching_proto_rawDescGZIP() []byte {
 
 var file_switching_service_switching_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_switching_service_switching_proto_goTypes = []any{
-	(*RegisterBankRequest)(nil),     // 0: switching.v1.RegisterBankRequest
-	(*RegisterBankResponse)(nil),    // 1: switching.v1.RegisterBankResponse
-	(*TransactionResponse)(nil),     // 2: switching.v1.TransactionResponse
-	(*QueryBalanceRequest)(nil),     // 3: switching.v1.QueryBalanceRequest
-	(*QueryBalanceResponse)(nil),    // 4: switching.v1.QueryBalanceResponse
-	(*HoldPaymentRequest)(nil),      // 5: switching.v1.HoldPaymentRequest
-	(*HoldBatchPaymentRequest)(nil), // 6: switching.v1.HoldBatchPaymentRequest
-	(*HoldPaymentItem)(nil),         // 7: switching.v1.HoldPaymentItem
-	(*PaymentResponse)(nil),         // 8: switching.v1.PaymentResponse
-	(*BatchPaymentResponse)(nil),    // 9: switching.v1.BatchPaymentResponse
-	(*PaymentResult)(nil),           // 10: switching.v1.PaymentResult
-	(*CancelPaymentRequest)(nil),    // 11: switching.v1.CancelPaymentRequest
-	(*ConfirmPaymentRequest)(nil),   // 12: switching.v1.ConfirmPaymentRequest
+	(*RegisterBankRequest)(nil),     // 0: switchingservice.v1.RegisterBankRequest
+	(*RegisterBankResponse)(nil),    // 1: switchingservice.v1.RegisterBankResponse
+	(*TransactionResponse)(nil),     // 2: switchingservice.v1.TransactionResponse
+	(*QueryBalanceRequest)(nil),     // 3: switchingservice.v1.QueryBalanceRequest
+	(*QueryBalanceResponse)(nil),    // 4: switchingservice.v1.QueryBalanceResponse
+	(*HoldPaymentRequest)(nil),      // 5: switchingservice.v1.HoldPaymentRequest
+	(*HoldBatchPaymentRequest)(nil), // 6: switchingservice.v1.HoldBatchPaymentRequest
+	(*HoldPaymentItem)(nil),         // 7: switchingservice.v1.HoldPaymentItem
+	(*PaymentResponse)(nil),         // 8: switchingservice.v1.PaymentResponse
+	(*BatchPaymentResponse)(nil),    // 9: switchingservice.v1.BatchPaymentResponse
+	(*PaymentResult)(nil),           // 10: switchingservice.v1.PaymentResult
+	(*CancelPaymentRequest)(nil),    // 11: switchingservice.v1.CancelPaymentRequest
+	(*ConfirmPaymentRequest)(nil),   // 12: switchingservice.v1.ConfirmPaymentRequest
 }
 var file_switching_service_switching_proto_depIdxs = []int32{
-	7,  // 0: switching.v1.HoldBatchPaymentRequest.items:type_name -> switching.v1.HoldPaymentItem
-	10, // 1: switching.v1.BatchPaymentResponse.results:type_name -> switching.v1.PaymentResult
-	0,  // 2: switching.v1.SwitchingService.RegisterBank:input_type -> switching.v1.RegisterBankRequest
-	3,  // 3: switching.v1.SwitchingService.QueryBankBalance:input_type -> switching.v1.QueryBalanceRequest
-	5,  // 4: switching.v1.SwitchingService.HoldPayment:input_type -> switching.v1.HoldPaymentRequest
-	6,  // 5: switching.v1.SwitchingService.HoldBatchPayment:input_type -> switching.v1.HoldBatchPaymentRequest
-	11, // 6: switching.v1.SwitchingService.CancelPayment:input_type -> switching.v1.CancelPaymentRequest
-	12, // 7: switching.v1.SwitchingService.ConfirmPayment:input_type -> switching.v1.ConfirmPaymentRequest
-	1,  // 8: switching.v1.SwitchingService.RegisterBank:output_type -> switching.v1.RegisterBankResponse
-	4,  // 9: switching.v1.SwitchingService.QueryBankBalance:output_type -> switching.v1.QueryBalanceResponse
-	8,  // 10: switching.v1.SwitchingService.HoldPayment:output_type -> switching.v1.PaymentResponse
-	9,  // 11: switching.v1.SwitchingService.HoldBatchPayment:output_type -> switching.v1.BatchPaymentResponse
-	2,  // 12: switching.v1.SwitchingService.CancelPayment:output_type -> switching.v1.TransactionResponse
-	8,  // 13: switching.v1.SwitchingService.ConfirmPayment:output_type -> switching.v1.PaymentResponse
+	7,  // 0: switchingservice.v1.HoldBatchPaymentRequest.items:type_name -> switchingservice.v1.HoldPaymentItem
+	10, // 1: switchingservice.v1.BatchPaymentResponse.results:type_name -> switchingservice.v1.PaymentResult
+	0,  // 2: switchingservice.v1.SwitchingService.RegisterBank:input_type -> switchingservice.v1.RegisterBankRequest
+	3,  // 3: switchingservice.v1.SwitchingService.QueryBankBalance:input_type -> switchingservice.v1.QueryBalanceRequest
+	5,  // 4: switchingservice.v1.SwitchingService.HoldPayment:input_type -> switchingservice.v1.HoldPaymentRequest
+	6,  // 5: switchingservice.v1.SwitchingService.HoldBatchPayment:input_type -> switchingservice.v1.HoldBatchPaymentRequest
+	11, // 6: switchingservice.v1.SwitchingService.CancelPayment:input_type -> switchingservice.v1.CancelPaymentRequest
+	12, // 7: switchingservice.v1.SwitchingService.ConfirmPayment:input_type -> switchingservice.v1.ConfirmPaymentRequest
+	1,  // 8: switchingservice.v1.SwitchingService.RegisterBank:output_type -> switchingservice.v1.RegisterBankResponse
+	4,  // 9: switchingservice.v1.SwitchingService.QueryBankBalance:output_type -> switchingservice.v1.QueryBalanceResponse
+	8,  // 10: switchingservice.v1.SwitchingService.HoldPayment:output_type -> switchingservice.v1.PaymentResponse
+	9,  // 11: switchingservice.v1.SwitchingService.HoldBatchPayment:output_type -> switchingservice.v1.BatchPaymentResponse
+	2,  // 12: switchingservice.v1.SwitchingService.CancelPayment:output_type -> switchingservice.v1.TransactionResponse
+	8,  // 13: switchingservice.v1.SwitchingService.ConfirmPayment:output_type -> switchingservice.v1.PaymentResponse
 	8,  // [8:14] is the sub-list for method output_type
 	2,  // [2:8] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "switching.proto",
+    "title": "switching-service/switching.proto",
     "version": "version not set"
   },
   "tags": [
@@ -49,10 +49,10 @@
         ]
       }
     },
-    "/v1/switching/banks/{bankAddress}/balance": {
+    "/v1/switching/banks/{bank_address}/balance": {
       "get": {
         "summary": "Query the current on-chain balance of a bank.",
-        "operationId": "SwitchingService_QueryBalance",
+        "operationId": "SwitchingService_QueryBankBalance",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -69,7 +69,7 @@
         },
         "parameters": [
           {
-            "name": "bankAddress",
+            "name": "bank_address",
             "in": "path",
             "required": true,
             "type": "string"
@@ -211,37 +211,6 @@
           "SwitchingService"
         ]
       }
-    },
-    "/v1/switching/payments/{uetr}": {
-      "get": {
-        "summary": "Query payment status/details by UETR.",
-        "operationId": "SwitchingService_QueryPayment",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1QueryPaymentResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "uetr",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "SwitchingService"
-        ]
-      }
     }
   },
   "definitions": {
@@ -267,6 +236,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -278,6 +248,7 @@
         "results": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentResult"
           }
         }
@@ -289,7 +260,7 @@
         "uetr": {
           "type": "string"
         },
-        "senderBank": {
+        "sender_bank": {
           "type": "string"
         },
         "reason": {
@@ -303,19 +274,19 @@
         "uetr": {
           "type": "string"
         },
-        "senderBank": {
+        "sender_bank": {
           "type": "string"
         },
-        "receiverBank": {
+        "receiver_bank": {
           "type": "string"
         },
-        "fromBankAccount": {
+        "from_bank_account": {
           "type": "string"
         },
-        "toBankAccount": {
+        "to_bank_account": {
           "type": "string"
         },
-        "txReference": {
+        "tx_reference": {
           "type": "string"
         },
         "note": {
@@ -326,12 +297,13 @@
     "v1HoldBatchPaymentRequest": {
       "type": "object",
       "properties": {
-        "senderBank": {
+        "sender_bank": {
           "type": "string"
         },
         "items": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1HoldPaymentItem"
           }
         }
@@ -343,10 +315,10 @@
         "uetr": {
           "type": "string"
         },
-        "beneficiaryAccount": {
+        "beneficiary_account": {
           "type": "string"
         },
-        "receiverBankCode": {
+        "receiver_bank_code": {
           "type": "string"
         },
         "amount": {
@@ -363,16 +335,16 @@
         "uetr": {
           "type": "string"
         },
-        "senderBank": {
+        "sender_bank": {
           "type": "string"
         },
-        "receiverBank": {
+        "receiver_bank": {
           "type": "string"
         },
-        "receiverBankCode": {
+        "receiver_bank_code": {
           "type": "string"
         },
-        "beneficiaryAccount": {
+        "beneficiary_account": {
           "type": "string"
         },
         "amount": {
@@ -386,10 +358,10 @@
     "v1PaymentResponse": {
       "type": "object",
       "properties": {
-        "txHash": {
+        "tx_hash": {
           "type": "string"
         },
-        "refId": {
+        "ref_id": {
           "type": "string"
         },
         "status": {
@@ -403,7 +375,7 @@
         "uetr": {
           "type": "string"
         },
-        "txHash": {
+        "tx_hash": {
           "type": "string"
         },
         "status": {
@@ -417,10 +389,10 @@
     "v1QueryBalanceResponse": {
       "type": "object",
       "properties": {
-        "bankAddress": {
+        "bank_address": {
           "type": "string"
         },
-        "tokenAddress": {
+        "token_address": {
           "type": "string"
         },
         "balance": {
@@ -428,39 +400,10 @@
         }
       }
     },
-    "v1QueryPaymentResponse": {
-      "type": "object",
-      "properties": {
-        "uetr": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "txHash": {
-          "type": "string"
-        },
-        "senderBank": {
-          "type": "string"
-        },
-        "receiverBank": {
-          "type": "string"
-        },
-        "amount": {
-          "type": "string"
-        },
-        "note": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
-    },
     "v1RegisterBankRequest": {
       "type": "object",
       "properties": {
-        "bankCode": {
+        "bank_code": {
           "type": "string"
         }
       }
@@ -468,13 +411,13 @@
     "v1RegisterBankResponse": {
       "type": "object",
       "properties": {
-        "bankCode": {
+        "bank_code": {
           "type": "string"
         },
-        "bankAddress": {
+        "bank_address": {
           "type": "string"
         },
-        "createdAt": {
+        "created_at": {
           "type": "string",
           "format": "int64"
         },
@@ -490,7 +433,7 @@
     "v1TransactionResponse": {
       "type": "object",
       "properties": {
-        "txHash": {
+        "tx_hash": {
           "type": "string"
         },
         "message": {

@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SwitchingService_RegisterBank_FullMethodName     = "/switching.v1.SwitchingService/RegisterBank"
-	SwitchingService_QueryBankBalance_FullMethodName = "/switching.v1.SwitchingService/QueryBankBalance"
-	SwitchingService_HoldPayment_FullMethodName      = "/switching.v1.SwitchingService/HoldPayment"
-	SwitchingService_HoldBatchPayment_FullMethodName = "/switching.v1.SwitchingService/HoldBatchPayment"
-	SwitchingService_CancelPayment_FullMethodName    = "/switching.v1.SwitchingService/CancelPayment"
-	SwitchingService_ConfirmPayment_FullMethodName   = "/switching.v1.SwitchingService/ConfirmPayment"
+	SwitchingService_RegisterBank_FullMethodName     = "/switchingservice.v1.SwitchingService/RegisterBank"
+	SwitchingService_QueryBankBalance_FullMethodName = "/switchingservice.v1.SwitchingService/QueryBankBalance"
+	SwitchingService_HoldPayment_FullMethodName      = "/switchingservice.v1.SwitchingService/HoldPayment"
+	SwitchingService_HoldBatchPayment_FullMethodName = "/switchingservice.v1.SwitchingService/HoldBatchPayment"
+	SwitchingService_CancelPayment_FullMethodName    = "/switchingservice.v1.SwitchingService/CancelPayment"
+	SwitchingService_ConfirmPayment_FullMethodName   = "/switchingservice.v1.SwitchingService/ConfirmPayment"
 )
 
 // SwitchingServiceClient is the client API for SwitchingService service.
@@ -296,7 +296,7 @@ func _SwitchingService_ConfirmPayment_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SwitchingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "switching.v1.SwitchingService",
+	ServiceName: "switchingservice.v1.SwitchingService",
 	HandlerType: (*SwitchingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

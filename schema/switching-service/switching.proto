@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package switching.v1;
+package switchingservice.v1;
 
 option go_package = "github.com/blcvn/switching-proto/go/switchingservice;switchingservice";
 option java_package = "com.blcvn.switching.switchingservice";
