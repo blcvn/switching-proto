@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package switching.v1;
+
+option go_package = "github.com/blcvn/switching-proto/go/switchingservice;switchingservice";
+option java_package = "com.blcvn.switching.switchingservice";
+
+// SwitchingService exposes the core operations that interact with the
+// InterbankSettlementData and InterbankSettlementLogic smart contracts.
+service SwitchingService {
+  // Register a new bank into the settlement data contract.
+  rpc RegisterBank(RegisterBankRequest) returns (RegisterBankResponse);
+
+  // Query the current on-chain balance of a bank.
+  rpc QueryBankBalance(QueryBalanceRequest) returns (QueryBalanceResponse);
+
+  // Create a single hold payment request.
+  rpc HoldPayment(HoldPaymentRequest) returns (PaymentResponse);
+
+  // Create a batch of hold payments in a single transaction.
+  rpc HoldBatchPayment(HoldBatchPaymentRequest) returns (BatchPaymentResponse);
+
+  // Cancel a previously created hold payment (refund to sender).
+  rpc CancelPayment(CancelPaymentRequest) returns (TransactionResponse);
+
+  // Confirm a held payment and trigger settlement on-chain.
+  rpc ConfirmPayment(ConfirmPaymentRequest) returns (PaymentResponse);
+}
+
+// ----- Requests & Responses -----
+
+message RegisterBankRequest {
+  string bank_code = 1;
+}
+
+message RegisterBankResponse {
+  string bank_code = 1;
+  string bank_address = 2;
+  int64 created_at = 3;
+  uint32 status = 4;
+  string message = 5;
+}
+
+message TransactionResponse {
+  string tx_hash = 1;
+  string message = 2;
+}
+
+message QueryBalanceRequest {
+  string bank_address = 1;
+}
+
+message QueryBalanceResponse {
+  string bank_address = 1;
+  string token_address = 2;
+  string balance = 3;
+}
+
+message HoldPaymentRequest {
+  string uetr = 1;
+  string sender_bank = 2;
+  string receiver_bank = 3;
+  string receiver_bank_code = 4;
+  string beneficiary_account = 5;
+  string amount = 6;
+  string note = 7;
+}
+
+message HoldBatchPaymentRequest {
+  string sender_bank = 1;
+  repeated HoldPaymentItem items = 2;
+}
+
+message HoldPaymentItem {
+  string uetr = 1;
+  string beneficiary_account = 2;
+  string receiver_bank_code = 3;
+  string amount = 4;
+  string note = 5;
+}
+
+message PaymentResponse {
+  string tx_hash = 1;
+  string ref_id = 2;
+  string status = 3;
+}
+
+message BatchPaymentResponse {
+  repeated PaymentResult results = 1;
+}
+
+message PaymentResult {
+  string uetr = 1;
+  string tx_hash = 2;
+  string status = 3;
+  string message = 4;
+}
+
+message CancelPaymentRequest {
+  string uetr = 1;
+  string sender_bank = 2;
+  string reason = 3;
+}
+
+message ConfirmPaymentRequest {
+  string uetr = 1;
+  string sender_bank = 2;
+  string receiver_bank = 3;
+  string from_bank_account = 4;
+  string to_bank_account = 5;
+  string tx_reference = 6;
+  string note = 7;
+}
+

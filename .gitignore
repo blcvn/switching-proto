@@ -5,3 +5,5 @@ release_artifacts/
 
 
 
+bin/
+.gradle/
