@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: users/user.proto
 
+// Package định nghĩa các message cho user service
+
 package user
 
 import (
@@ -21,11 +23,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Thông tin người dùng
 type User struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`       // ID định danh người dùng
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`   // Tên người dùng
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"` // Email của người dùng
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: access-point/health.proto
 
+// Package định nghĩa các message và service cho health check trong access point
+
 package accesspoint
 
 import (
@@ -26,8 +28,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// Health service
+// Service kiểm tra tình trạng sức khỏe của hệ thống (health check)
 type HealthServiceClient interface {
+	// Kiểm tra tình trạng sức khỏe của service
 	Check(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*HealthResponse, error)
 }
 
@@ -53,8 +56,9 @@ func (c *healthServiceClient) Check(ctx context.Context, in *Empty, opts ...grpc
 // All implementations must embed UnimplementedHealthServiceServer
 // for forward compatibility.
 //
-// Health service
+// Service kiểm tra tình trạng sức khỏe của hệ thống (health check)
 type HealthServiceServer interface {
+	// Kiểm tra tình trạng sức khỏe của service
 	Check(context.Context, *Empty) (*HealthResponse, error)
 	mustEmbedUnimplementedHealthServiceServer()
 }

@@ -1,4 +1,4 @@
-# Access-Point Error API Specification
+# Package Định Nghĩa Các Mã Lỗi Và Kết Quả Cho Access Point Service API Specification
 
 ---
 

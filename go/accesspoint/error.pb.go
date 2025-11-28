@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: access-point/error.proto
 
+// Package định nghĩa các mã lỗi và kết quả cho access point service
+
 package accesspoint
 
 import (
@@ -21,7 +23,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống
+// ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống access point
 type ResultCode int32
 
 const (

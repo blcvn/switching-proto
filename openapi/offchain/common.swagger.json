@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/common.proto",
+    "title": "Package định nghĩa các message dùng chung cho offchain services",
     "version": "version not set"
   },
   "consumes": [

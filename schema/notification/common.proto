@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+// Package định nghĩa các message và service cho notification service
+package notification.v1;
+
+import "google/protobuf/timestamp.proto";
+import "notification/error.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/notification;notification";
+option java_package = "com.blcvn.switching.notification";
+
+// Các message dùng chung cho notification service
+
+// Message rỗng, dùng cho các RPC không cần tham số đầu vào
+message Empty {}
+
+// Thông tin thanh toán
+message Transaction {
+  string id = 1;                              // ID định danh thanh toán
+  string uetr = 2;                            // Unique End-to-End Transaction Reference
+  double amount = 3;                          // Số tiền thanh toán
+  string currency = 4;                        // Mã tiền tệ (ví dụ: USD, VND)
+  string debtor_agent = 5;                    // BIC của ngân hàng người gửi
+  string creditor_agent = 6;                  // BIC của ngân hàng người nhận
+  string end_to_end_id = 7;                  // ID định danh end-to-end của giao dịch
+  string status = 8;                         // Trạng thái thanh toán
+  google.protobuf.Timestamp created_at = 9;  // Thời gian tạo thanh toán
+  // Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
+  Account debtor_agent_account = 10;
+  // Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
+  Account creditor_agent_account = 11;
+  string transaction_reference = 12;          // Mã tham chiếu giao dịch
+}
+
+// Thông tin chi tiết tài khoản liên kết với một agent
+message Account {
+  // Số tài khoản quốc tế IBAN (nếu có)
+  string iban = 1;
+  // Số tài khoản nội địa
+  string account_number = 2;
+  // Tên chủ tài khoản
+  string account_name = 3;
+  // Mã tiền tệ của tài khoản (tùy chọn)
+  string currency = 4;
+  // Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
+  string reference = 5;
+}
+
+// Metadata chứa thông tin về request/response
+message Metadata {
+  string request_id = 1;    // ID định danh duy nhất cho request
+  int64 request_time = 2;   // Thời gian gửi request (Unix timestamp)
+  string version = 3;       // Phiên bản của protocol
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// Result định nghĩa cấu trúc kết quả trả về
+message Result {
+  ResultCode code = 1;     // Mã kết quả thực thi (enum)
+  string message = 2;     // Thông điệp mô tả kết quả
+}

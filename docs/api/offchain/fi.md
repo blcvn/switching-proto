@@ -1,4 +1,4 @@
-# Offchain Fi API Specification
+# Package Định Nghĩa Các Message Và Service Cho Financial Institution (Fi) Trong Offchain API Specification
 
 ---
 
@@ -46,6 +46,7 @@ Phản hồi tạo lệnh chuyển tiền
 | `signature` | object [offchainv1Signature] | `False` | Chữ ký số của response |
 
 ### `offchainv1Metadata`
+Metadata chứa thông tin về request/response
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
@@ -96,12 +97,12 @@ Phản hồi tìm kiếm lệnh chuyển tiền
 | `signature` | object [offchainv1Signature] | `False` | Chữ ký số của response |
 
 ### `offchainv1Signature`
-CCSignature định nghĩa cấu trúc chữ ký số cho request
+Signature định nghĩa cấu trúc chữ ký số cho request/response
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `b` | string (byte) | `False` | Chữ ký số |
-| `s` | string | `False` | Chuỗi dùng tạo ra chữ ký |
+| `b` | string (byte) | `False` | Chữ ký số (dạng bytes) |
+| `s` | string | `False` | Chuỗi dữ liệu dùng để tạo ra chữ ký |
 | `s_type` | object [offchainv1SignatureSignatureType] | `False` | Loại chữ ký được sử dụng |
 
 ### `offchainv1SignatureSignatureType`

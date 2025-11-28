@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/kyc.proto",
+    "title": "Package định nghĩa các message và service cho KYC (Know Your Customer) trong offchain",
     "version": "version not set"
   },
   "tags": [
@@ -135,7 +135,8 @@
           "type": "string",
           "title": "Phiên bản của protocol"
         }
-      }
+      },
+      "title": "Metadata chứa thông tin về request/response"
     },
     "protobufAny": {
       "type": "object",
@@ -369,7 +370,7 @@
       ],
       "default": "UNSPECIFIED",
       "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
-      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống offchain"
     },
     "v1Signature": {
       "type": "object",
@@ -380,15 +381,15 @@
         },
         "s": {
           "type": "string",
-          "title": "Chuỗi dùng tạo ra chữ ký"
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
         },
         "b": {
           "type": "string",
           "format": "byte",
-          "title": "Chữ ký số"
+          "title": "Chữ ký số (dạng bytes)"
         }
       },
-      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
     },
     "v1SubmitKycResponse": {
       "type": "object",

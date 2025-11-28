@@ -16,7 +16,7 @@ public final class Error {
   }
   /**
    * <pre>
-   * ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống
+   * ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống offchain
    * </pre>
    *
    * Protobuf enum {@code offchain.v1.ResultCode}

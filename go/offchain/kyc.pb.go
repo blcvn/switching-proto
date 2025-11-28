@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: offchain/kyc.proto
 
+// Package định nghĩa các message và service cho KYC (Know Your Customer) trong offchain
+
 package offchain
 
 import (

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "access-point/gpi.proto",
+    "title": "Package định nghĩa các message cho GPI (Global Payments Innovation) trong access point",
     "version": "version not set"
   },
   "consumes": [

@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: offchain/error.proto
 
+// Package định nghĩa các mã lỗi và kết quả cho offchain service
+
 package offchain
 
 import (
@@ -21,7 +23,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống
+// ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống offchain
 type ResultCode int32
 
 const (

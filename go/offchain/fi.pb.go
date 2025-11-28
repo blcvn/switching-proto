@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: offchain/fi.proto
 
+// Package định nghĩa các message và service cho Financial Institution (FI) trong offchain
+
 package offchain
 
 import (

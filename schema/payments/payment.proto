@@ -1,11 +1,14 @@
 syntax = "proto3";
+
+// Package định nghĩa các message cho payment service
 package payment.v1;
 
 option go_package = "github.com/blcvn/switching-proto/go/payment;payment";
 option java_package = "com.blcvn.switching.payment";
 
+// Thông tin thanh toán
 message Payment {
-  string id = 1;
-  double amount = 2;
-  string currency = 3;
+  string id = 1;        // ID định danh thanh toán
+  double amount = 2;    // Số tiền thanh toán
+  string currency = 3;  // Mã tiền tệ (ví dụ: USD, VND)
 }

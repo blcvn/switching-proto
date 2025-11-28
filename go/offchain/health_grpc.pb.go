@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: offchain/health.proto
 
+// Package định nghĩa các message và service cho health check trong offchain
+
 package offchain
 
 import (

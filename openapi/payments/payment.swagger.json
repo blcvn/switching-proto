@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "payments/payment.proto",
+    "title": "Package định nghĩa các message cho payment service",
     "version": "version not set"
   },
   "consumes": [

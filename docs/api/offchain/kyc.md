@@ -1,4 +1,4 @@
-# Offchain Kyc API Specification
+# Package Định Nghĩa Các Message Và Service Cho Kyc (Know Your Customer) Trong Offchain API Specification
 
 ---
 

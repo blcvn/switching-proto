@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: offchain/common.proto
 
+// Package định nghĩa các message dùng chung cho offchain services
+
 package offchain
 
 import (
@@ -517,6 +519,7 @@ func (x *Account) GetReference() string {
 	return ""
 }
 
+// Metadata chứa thông tin về request/response
 type Metadata struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RequestId     string                 `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`        // ID định danh duy nhất cho request
@@ -577,12 +580,12 @@ func (x *Metadata) GetVersion() string {
 	return ""
 }
 
-// CCSignature định nghĩa cấu trúc chữ ký số cho request
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
 type Signature struct {
 	state         protoimpl.MessageState  `protogen:"open.v1"`
 	SType         Signature_SignatureType `protobuf:"varint,1,opt,name=s_type,json=sType,proto3,enum=offchain.v1.Signature_SignatureType" json:"s_type,omitempty"` // Loại chữ ký được sử dụng
-	S             string                  `protobuf:"bytes,2,opt,name=s,proto3" json:"s,omitempty"`                                                                // Chuỗi dùng tạo ra chữ ký
-	B             []byte                  `protobuf:"bytes,3,opt,name=b,proto3" json:"b,omitempty"`                                                                // Chữ ký số
+	S             string                  `protobuf:"bytes,2,opt,name=s,proto3" json:"s,omitempty"`                                                                // Chuỗi dữ liệu dùng để tạo ra chữ ký
+	B             []byte                  `protobuf:"bytes,3,opt,name=b,proto3" json:"b,omitempty"`                                                                // Chữ ký số (dạng bytes)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

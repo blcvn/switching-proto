@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: access-point/kyc.proto
 
+// Package định nghĩa các message và service cho KYC (Know Your Customer) trong access point
+
 package accesspoint
 
 import (
@@ -30,12 +32,20 @@ const (
 // KycServiceClient is the client API for KycService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Service quản lý KYC (Know Your Customer) - xác minh khách hàng
 type KycServiceClient interface {
+	// Lấy danh sách tất cả các thực thể KYC
 	ListEntities(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*ListEntitiesResponse, error)
+	// Lấy thông tin chi tiết của một thực thể KYC
 	GetEntity(ctx context.Context, in *GetEntityRequest, opts ...grpc.CallOption) (*KycEntity, error)
+	// Lấy danh sách tài liệu của một thực thể KYC
 	GetEntityDocuments(ctx context.Context, in *GetEntityDocsRequest, opts ...grpc.CallOption) (*GetEntityDocsResponse, error)
+	// Gửi thông tin KYC để xác minh
 	SubmitKyc(ctx context.Context, in *SubmitKycRequest, opts ...grpc.CallOption) (*SubmitKycResponse, error)
+	// Lấy metadata về các trường KYC được hỗ trợ
 	Metadata(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*KycMetadata, error)
+	// Lấy lịch sử audit (kiểm tra) của một thực thể KYC
 	Audit(ctx context.Context, in *GetEntityRequest, opts ...grpc.CallOption) (*AuditResponse, error)
 }
 
@@ -110,12 +120,20 @@ func (c *kycServiceClient) Audit(ctx context.Context, in *GetEntityRequest, opts
 // KycServiceServer is the server API for KycService service.
 // All implementations must embed UnimplementedKycServiceServer
 // for forward compatibility.
+//
+// Service quản lý KYC (Know Your Customer) - xác minh khách hàng
 type KycServiceServer interface {
+	// Lấy danh sách tất cả các thực thể KYC
 	ListEntities(context.Context, *Empty) (*ListEntitiesResponse, error)
+	// Lấy thông tin chi tiết của một thực thể KYC
 	GetEntity(context.Context, *GetEntityRequest) (*KycEntity, error)
+	// Lấy danh sách tài liệu của một thực thể KYC
 	GetEntityDocuments(context.Context, *GetEntityDocsRequest) (*GetEntityDocsResponse, error)
+	// Gửi thông tin KYC để xác minh
 	SubmitKyc(context.Context, *SubmitKycRequest) (*SubmitKycResponse, error)
+	// Lấy metadata về các trường KYC được hỗ trợ
 	Metadata(context.Context, *Empty) (*KycMetadata, error)
+	// Lấy lịch sử audit (kiểm tra) của một thực thể KYC
 	Audit(context.Context, *GetEntityRequest) (*AuditResponse, error)
 	mustEmbedUnimplementedKycServiceServer()
 }

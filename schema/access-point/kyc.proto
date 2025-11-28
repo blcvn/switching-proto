@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// Package định nghĩa các message và service cho KYC (Know Your Customer) trong access point
 package accesspoint.v1;
 
 import "access-point/common.proto";
@@ -7,57 +8,74 @@ import "access-point/common.proto";
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
 
+// Service quản lý KYC (Know Your Customer) - xác minh khách hàng
 service KycService {
+  // Lấy danh sách tất cả các thực thể KYC
   rpc ListEntities(Empty) returns (ListEntitiesResponse) {}
+  // Lấy thông tin chi tiết của một thực thể KYC
   rpc GetEntity(GetEntityRequest) returns (KycEntity) {}
+  // Lấy danh sách tài liệu của một thực thể KYC
   rpc GetEntityDocuments(GetEntityDocsRequest) returns (GetEntityDocsResponse) {}
+  // Gửi thông tin KYC để xác minh
   rpc SubmitKyc(SubmitKycRequest) returns (SubmitKycResponse) {}
+  // Lấy metadata về các trường KYC được hỗ trợ
   rpc Metadata(Empty) returns (KycMetadata) {}
+  // Lấy lịch sử audit (kiểm tra) của một thực thể KYC
   rpc Audit(GetEntityRequest) returns (AuditResponse) {}
 }
 
+// Response danh sách các thực thể KYC
 message ListEntitiesResponse {
-  repeated KycEntity entities = 1;
+  repeated KycEntity entities = 1;  // Danh sách các thực thể KYC
 }
 
+// Request lấy thông tin một thực thể KYC
 message GetEntityRequest {
-  string bic = 1;
+  string bic = 1;  // Bank Identifier Code của thực thể
 }
 
+// Request lấy tài liệu của một thực thể KYC
 message GetEntityDocsRequest {
-  string bic = 1;
+  string bic = 1;  // Bank Identifier Code của thực thể
 }
 
+// Thông tin tài liệu KYC
 message Document {
-  string id = 1;
-  string type = 2;
-  string url = 3;
+  string id = 1;      // ID của tài liệu
+  string type = 2;    // Loại tài liệu (ví dụ: "passport", "license")
+  string url = 3;     // URL để truy cập tài liệu
 }
 
+// Response danh sách tài liệu của thực thể KYC
 message GetEntityDocsResponse {
-  repeated Document documents = 1;
+  repeated Document documents = 1;  // Danh sách các tài liệu
 }
 
+// Request gửi thông tin KYC để xác minh
 message SubmitKycRequest {
-  string bic = 1;
-  map<string, string> updates = 2;
+  string bic = 1;                    // Bank Identifier Code của thực thể
+  map<string, string> updates = 2;   // Các trường cần cập nhật (key-value pairs)
 }
 
+// Response gửi thông tin KYC
 message SubmitKycResponse {
-  string status = 1;
+  string status = 1;  // Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
 }
 
+// Metadata về các trường KYC được hỗ trợ
 message KycMetadata {
-  string version = 1;
-  repeated string fields = 2;
+  string version = 1;           // Phiên bản của schema KYC
+  repeated string fields = 2;    // Danh sách các trường được hỗ trợ
 }
 
+// Một entry trong lịch sử audit
 message AuditEntry {
-  string bic = 1;
-  string action = 2;
-  string time = 3;
+  string bic = 1;     // Bank Identifier Code của thực thể
+  string action = 2; // Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+  string time = 3;    // Thời gian thực hiện hành động
 }
 
+// Response lịch sử audit
 message AuditResponse {
-  repeated AuditEntry entries = 1;
+  repeated AuditEntry entries = 1;  // Danh sách các entry trong lịch sử audit
 }

@@ -8239,6 +8239,10 @@ public final class Common {
         getVersionBytes();
   }
   /**
+   * <pre>
+   * Metadata chứa thông tin về request/response
+   * </pre>
+   *
    * Protobuf type {@code offchain.v1.Metadata}
    */
   public static final class Metadata extends
@@ -8618,6 +8622,10 @@ public final class Common {
       return builder;
     }
     /**
+     * <pre>
+     * Metadata chứa thông tin về request/response
+     * </pre>
+     *
      * Protobuf type {@code offchain.v1.Metadata}
      */
     public static final class Builder extends
@@ -9090,7 +9098,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Chuỗi dùng tạo ra chữ ký
+     * Chuỗi dữ liệu dùng để tạo ra chữ ký
      * </pre>
      *
      * <code>string s = 2;</code>
@@ -9099,7 +9107,7 @@ public final class Common {
     java.lang.String getS();
     /**
      * <pre>
-     * Chuỗi dùng tạo ra chữ ký
+     * Chuỗi dữ liệu dùng để tạo ra chữ ký
      * </pre>
      *
      * <code>string s = 2;</code>
@@ -9110,7 +9118,7 @@ public final class Common {
 
     /**
      * <pre>
-     * Chữ ký số 
+     * Chữ ký số (dạng bytes)
      * </pre>
      *
      * <code>bytes b = 3;</code>
@@ -9120,7 +9128,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * CCSignature định nghĩa cấu trúc chữ ký số cho request
+   * Signature định nghĩa cấu trúc chữ ký số cho request/response
    * </pre>
    *
    * Protobuf type {@code offchain.v1.Signature}
@@ -9412,7 +9420,7 @@ public final class Common {
     private volatile java.lang.Object s_;
     /**
      * <pre>
-     * Chuỗi dùng tạo ra chữ ký
+     * Chuỗi dữ liệu dùng để tạo ra chữ ký
      * </pre>
      *
      * <code>string s = 2;</code>
@@ -9433,7 +9441,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * Chuỗi dùng tạo ra chữ ký
+     * Chuỗi dữ liệu dùng để tạo ra chữ ký
      * </pre>
      *
      * <code>string s = 2;</code>
@@ -9458,7 +9466,7 @@ public final class Common {
     private com.google.protobuf.ByteString b_;
     /**
      * <pre>
-     * Chữ ký số 
+     * Chữ ký số (dạng bytes)
      * </pre>
      *
      * <code>bytes b = 3;</code>
@@ -9646,7 +9654,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * CCSignature định nghĩa cấu trúc chữ ký số cho request
+     * Signature định nghĩa cấu trúc chữ ký số cho request/response
      * </pre>
      *
      * Protobuf type {@code offchain.v1.Signature}
@@ -9885,7 +9893,7 @@ public final class Common {
       private java.lang.Object s_ = "";
       /**
        * <pre>
-       * Chuỗi dùng tạo ra chữ ký
+       * Chuỗi dữ liệu dùng để tạo ra chữ ký
        * </pre>
        *
        * <code>string s = 2;</code>
@@ -9905,7 +9913,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chuỗi dùng tạo ra chữ ký
+       * Chuỗi dữ liệu dùng để tạo ra chữ ký
        * </pre>
        *
        * <code>string s = 2;</code>
@@ -9926,7 +9934,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chuỗi dùng tạo ra chữ ký
+       * Chuỗi dữ liệu dùng để tạo ra chữ ký
        * </pre>
        *
        * <code>string s = 2;</code>
@@ -9945,7 +9953,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chuỗi dùng tạo ra chữ ký
+       * Chuỗi dữ liệu dùng để tạo ra chữ ký
        * </pre>
        *
        * <code>string s = 2;</code>
@@ -9959,7 +9967,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chuỗi dùng tạo ra chữ ký
+       * Chuỗi dữ liệu dùng để tạo ra chữ ký
        * </pre>
        *
        * <code>string s = 2;</code>
@@ -9981,7 +9989,7 @@ public final class Common {
       private com.google.protobuf.ByteString b_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * Chữ ký số 
+       * Chữ ký số (dạng bytes)
        * </pre>
        *
        * <code>bytes b = 3;</code>
@@ -9993,7 +10001,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chữ ký số 
+       * Chữ ký số (dạng bytes)
        * </pre>
        *
        * <code>bytes b = 3;</code>
@@ -10011,7 +10019,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * Chữ ký số 
+       * Chữ ký số (dạng bytes)
        * </pre>
        *
        * <code>bytes b = 3;</code>

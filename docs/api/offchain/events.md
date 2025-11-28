@@ -1,4 +1,4 @@
-# Offchain Events API Specification
+# Package Định Nghĩa Các Message Và Service Cho Events Trong Offchain API Specification
 
 ---
 

@@ -19,11 +19,19 @@ public final class Events {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference để theo dõi
+     * </pre>
+     *
      * <code>string uetr = 1;</code>
      * @return The uetr.
      */
     java.lang.String getUetr();
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference để theo dõi
+     * </pre>
+     *
      * <code>string uetr = 1;</code>
      * @return The bytes for uetr.
      */
@@ -31,6 +39,10 @@ public final class Events {
         getUetrBytes();
   }
   /**
+   * <pre>
+   * Request đăng ký nhận events
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.SubscribeEventsRequest}
    */
   public static final class SubscribeEventsRequest extends
@@ -117,6 +129,10 @@ public final class Events {
     public static final int UETR_FIELD_NUMBER = 1;
     private volatile java.lang.Object uetr_;
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference để theo dõi
+     * </pre>
+     *
      * <code>string uetr = 1;</code>
      * @return The uetr.
      */
@@ -134,6 +150,10 @@ public final class Events {
       }
     }
     /**
+     * <pre>
+     * Unique End-to-End Transaction Reference để theo dõi
+     * </pre>
+     *
      * <code>string uetr = 1;</code>
      * @return The bytes for uetr.
      */
@@ -307,6 +327,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Request đăng ký nhận events
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.SubscribeEventsRequest}
      */
     public static final class Builder extends
@@ -456,6 +480,10 @@ public final class Events {
 
       private java.lang.Object uetr_ = "";
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference để theo dõi
+       * </pre>
+       *
        * <code>string uetr = 1;</code>
        * @return The uetr.
        */
@@ -472,6 +500,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference để theo dõi
+       * </pre>
+       *
        * <code>string uetr = 1;</code>
        * @return The bytes for uetr.
        */
@@ -489,6 +521,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference để theo dõi
+       * </pre>
+       *
        * <code>string uetr = 1;</code>
        * @param value The uetr to set.
        * @return This builder for chaining.
@@ -504,6 +540,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference để theo dõi
+       * </pre>
+       *
        * <code>string uetr = 1;</code>
        * @return This builder for chaining.
        */
@@ -514,6 +554,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Unique End-to-End Transaction Reference để theo dõi
+       * </pre>
+       *
        * <code>string uetr = 1;</code>
        * @param value The bytes for uetr to set.
        * @return This builder for chaining.
@@ -588,7 +632,7 @@ public final class Events {
 
     /**
      * <pre>
-     * welcome, update, ping
+     * Loại event: welcome, update, ping
      * </pre>
      *
      * <code>string event = 1;</code>
@@ -597,7 +641,7 @@ public final class Events {
     java.lang.String getEvent();
     /**
      * <pre>
-     * welcome, update, ping
+     * Loại event: welcome, update, ping
      * </pre>
      *
      * <code>string event = 1;</code>
@@ -607,11 +651,19 @@ public final class Events {
         getEventBytes();
 
     /**
+     * <pre>
+     * Dữ liệu của event (dạng JSON string)
+     * </pre>
+     *
      * <code>string data = 2;</code>
      * @return The data.
      */
     java.lang.String getData();
     /**
+     * <pre>
+     * Dữ liệu của event (dạng JSON string)
+     * </pre>
+     *
      * <code>string data = 2;</code>
      * @return The bytes for data.
      */
@@ -619,21 +671,37 @@ public final class Events {
         getDataBytes();
 
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      * @return The timestamp.
      */
     com.google.protobuf.Timestamp getTimestamp();
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
   }
   /**
+   * <pre>
+   * Event (sự kiện) được gửi đến client
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.Event}
    */
   public static final class Event extends
@@ -741,7 +809,7 @@ public final class Events {
     private volatile java.lang.Object event_;
     /**
      * <pre>
-     * welcome, update, ping
+     * Loại event: welcome, update, ping
      * </pre>
      *
      * <code>string event = 1;</code>
@@ -762,7 +830,7 @@ public final class Events {
     }
     /**
      * <pre>
-     * welcome, update, ping
+     * Loại event: welcome, update, ping
      * </pre>
      *
      * <code>string event = 1;</code>
@@ -786,6 +854,10 @@ public final class Events {
     public static final int DATA_FIELD_NUMBER = 2;
     private volatile java.lang.Object data_;
     /**
+     * <pre>
+     * Dữ liệu của event (dạng JSON string)
+     * </pre>
+     *
      * <code>string data = 2;</code>
      * @return The data.
      */
@@ -803,6 +875,10 @@ public final class Events {
       }
     }
     /**
+     * <pre>
+     * Dữ liệu của event (dạng JSON string)
+     * </pre>
+     *
      * <code>string data = 2;</code>
      * @return The bytes for data.
      */
@@ -824,6 +900,10 @@ public final class Events {
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp timestamp_;
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      * @return Whether the timestamp field is set.
      */
@@ -832,6 +912,10 @@ public final class Events {
       return timestamp_ != null;
     }
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      * @return The timestamp.
      */
@@ -840,6 +924,10 @@ public final class Events {
       return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
     }
     /**
+     * <pre>
+     * Thời gian xảy ra event
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp timestamp = 3;</code>
      */
     @java.lang.Override
@@ -1028,6 +1116,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Event (sự kiện) được gửi đến client
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.Event}
      */
     public static final class Builder extends
@@ -1199,7 +1291,7 @@ public final class Events {
       private java.lang.Object event_ = "";
       /**
        * <pre>
-       * welcome, update, ping
+       * Loại event: welcome, update, ping
        * </pre>
        *
        * <code>string event = 1;</code>
@@ -1219,7 +1311,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * welcome, update, ping
+       * Loại event: welcome, update, ping
        * </pre>
        *
        * <code>string event = 1;</code>
@@ -1240,7 +1332,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * welcome, update, ping
+       * Loại event: welcome, update, ping
        * </pre>
        *
        * <code>string event = 1;</code>
@@ -1259,7 +1351,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * welcome, update, ping
+       * Loại event: welcome, update, ping
        * </pre>
        *
        * <code>string event = 1;</code>
@@ -1273,7 +1365,7 @@ public final class Events {
       }
       /**
        * <pre>
-       * welcome, update, ping
+       * Loại event: welcome, update, ping
        * </pre>
        *
        * <code>string event = 1;</code>
@@ -1294,6 +1386,10 @@ public final class Events {
 
       private java.lang.Object data_ = "";
       /**
+       * <pre>
+       * Dữ liệu của event (dạng JSON string)
+       * </pre>
+       *
        * <code>string data = 2;</code>
        * @return The data.
        */
@@ -1310,6 +1406,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu của event (dạng JSON string)
+       * </pre>
+       *
        * <code>string data = 2;</code>
        * @return The bytes for data.
        */
@@ -1327,6 +1427,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Dữ liệu của event (dạng JSON string)
+       * </pre>
+       *
        * <code>string data = 2;</code>
        * @param value The data to set.
        * @return This builder for chaining.
@@ -1342,6 +1446,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu của event (dạng JSON string)
+       * </pre>
+       *
        * <code>string data = 2;</code>
        * @return This builder for chaining.
        */
@@ -1352,6 +1460,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Dữ liệu của event (dạng JSON string)
+       * </pre>
+       *
        * <code>string data = 2;</code>
        * @param value The bytes for data to set.
        * @return This builder for chaining.
@@ -1372,6 +1484,10 @@ public final class Events {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        * @return Whether the timestamp field is set.
        */
@@ -1379,6 +1495,10 @@ public final class Events {
         return timestampBuilder_ != null || timestamp_ != null;
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        * @return The timestamp.
        */
@@ -1390,6 +1510,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public Builder setTimestamp(com.google.protobuf.Timestamp value) {
@@ -1406,6 +1530,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public Builder setTimestamp(
@@ -1420,6 +1548,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
@@ -1438,6 +1570,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public Builder clearTimestamp() {
@@ -1452,6 +1588,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
@@ -1460,6 +1600,10 @@ public final class Events {
         return getTimestampFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
@@ -1471,6 +1615,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Thời gian xảy ra event
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp timestamp = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1544,11 +1692,19 @@ public final class Events {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * URL callback để nhận events
+     * </pre>
+     *
      * <code>string callback_url = 1;</code>
      * @return The callbackUrl.
      */
     java.lang.String getCallbackUrl();
     /**
+     * <pre>
+     * URL callback để nhận events
+     * </pre>
+     *
      * <code>string callback_url = 1;</code>
      * @return The bytes for callbackUrl.
      */
@@ -1556,6 +1712,10 @@ public final class Events {
         getCallbackUrlBytes();
   }
   /**
+   * <pre>
+   * Request đăng ký callback URL
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.SubscribeCallbackRequest}
    */
   public static final class SubscribeCallbackRequest extends
@@ -1642,6 +1802,10 @@ public final class Events {
     public static final int CALLBACK_URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object callbackUrl_;
     /**
+     * <pre>
+     * URL callback để nhận events
+     * </pre>
+     *
      * <code>string callback_url = 1;</code>
      * @return The callbackUrl.
      */
@@ -1659,6 +1823,10 @@ public final class Events {
       }
     }
     /**
+     * <pre>
+     * URL callback để nhận events
+     * </pre>
+     *
      * <code>string callback_url = 1;</code>
      * @return The bytes for callbackUrl.
      */
@@ -1832,6 +2000,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Request đăng ký callback URL
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.SubscribeCallbackRequest}
      */
     public static final class Builder extends
@@ -1981,6 +2153,10 @@ public final class Events {
 
       private java.lang.Object callbackUrl_ = "";
       /**
+       * <pre>
+       * URL callback để nhận events
+       * </pre>
+       *
        * <code>string callback_url = 1;</code>
        * @return The callbackUrl.
        */
@@ -1997,6 +2173,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * URL callback để nhận events
+       * </pre>
+       *
        * <code>string callback_url = 1;</code>
        * @return The bytes for callbackUrl.
        */
@@ -2014,6 +2194,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * URL callback để nhận events
+       * </pre>
+       *
        * <code>string callback_url = 1;</code>
        * @param value The callbackUrl to set.
        * @return This builder for chaining.
@@ -2029,6 +2213,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * URL callback để nhận events
+       * </pre>
+       *
        * <code>string callback_url = 1;</code>
        * @return This builder for chaining.
        */
@@ -2039,6 +2227,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * URL callback để nhận events
+       * </pre>
+       *
        * <code>string callback_url = 1;</code>
        * @param value The bytes for callbackUrl to set.
        * @return This builder for chaining.
@@ -2112,11 +2304,19 @@ public final class Events {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Trạng thái đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string subscribed = 1;</code>
      * @return The subscribed.
      */
     java.lang.String getSubscribed();
     /**
+     * <pre>
+     * Trạng thái đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string subscribed = 1;</code>
      * @return The bytes for subscribed.
      */
@@ -2124,6 +2324,10 @@ public final class Events {
         getSubscribedBytes();
   }
   /**
+   * <pre>
+   * Response đăng ký callback
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.SubscribeCallbackResponse}
    */
   public static final class SubscribeCallbackResponse extends
@@ -2210,6 +2414,10 @@ public final class Events {
     public static final int SUBSCRIBED_FIELD_NUMBER = 1;
     private volatile java.lang.Object subscribed_;
     /**
+     * <pre>
+     * Trạng thái đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string subscribed = 1;</code>
      * @return The subscribed.
      */
@@ -2227,6 +2435,10 @@ public final class Events {
       }
     }
     /**
+     * <pre>
+     * Trạng thái đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string subscribed = 1;</code>
      * @return The bytes for subscribed.
      */
@@ -2400,6 +2612,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Response đăng ký callback
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.SubscribeCallbackResponse}
      */
     public static final class Builder extends
@@ -2549,6 +2765,10 @@ public final class Events {
 
       private java.lang.Object subscribed_ = "";
       /**
+       * <pre>
+       * Trạng thái đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string subscribed = 1;</code>
        * @return The subscribed.
        */
@@ -2565,6 +2785,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Trạng thái đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string subscribed = 1;</code>
        * @return The bytes for subscribed.
        */
@@ -2582,6 +2806,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Trạng thái đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string subscribed = 1;</code>
        * @param value The subscribed to set.
        * @return This builder for chaining.
@@ -2597,6 +2825,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string subscribed = 1;</code>
        * @return This builder for chaining.
        */
@@ -2607,6 +2839,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string subscribed = 1;</code>
        * @param value The bytes for subscribed to set.
        * @return This builder for chaining.
@@ -2680,6 +2916,10 @@ public final class Events {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Request hủy đăng ký callback
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.UnsubscribeCallbackRequest}
    */
   public static final class UnsubscribeCallbackRequest extends
@@ -2901,6 +3141,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Request hủy đăng ký callback
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.UnsubscribeCallbackRequest}
      */
     public static final class Builder extends
@@ -3098,11 +3342,19 @@ public final class Events {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string unsubscribed = 1;</code>
      * @return The unsubscribed.
      */
     java.lang.String getUnsubscribed();
     /**
+     * <pre>
+     * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string unsubscribed = 1;</code>
      * @return The bytes for unsubscribed.
      */
@@ -3110,6 +3362,10 @@ public final class Events {
         getUnsubscribedBytes();
   }
   /**
+   * <pre>
+   * Response hủy đăng ký callback
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.UnsubscribeCallbackResponse}
    */
   public static final class UnsubscribeCallbackResponse extends
@@ -3196,6 +3452,10 @@ public final class Events {
     public static final int UNSUBSCRIBED_FIELD_NUMBER = 1;
     private volatile java.lang.Object unsubscribed_;
     /**
+     * <pre>
+     * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string unsubscribed = 1;</code>
      * @return The unsubscribed.
      */
@@ -3213,6 +3473,10 @@ public final class Events {
       }
     }
     /**
+     * <pre>
+     * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+     * </pre>
+     *
      * <code>string unsubscribed = 1;</code>
      * @return The bytes for unsubscribed.
      */
@@ -3386,6 +3650,10 @@ public final class Events {
       return builder;
     }
     /**
+     * <pre>
+     * Response hủy đăng ký callback
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.UnsubscribeCallbackResponse}
      */
     public static final class Builder extends
@@ -3535,6 +3803,10 @@ public final class Events {
 
       private java.lang.Object unsubscribed_ = "";
       /**
+       * <pre>
+       * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string unsubscribed = 1;</code>
        * @return The unsubscribed.
        */
@@ -3551,6 +3823,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string unsubscribed = 1;</code>
        * @return The bytes for unsubscribed.
        */
@@ -3568,6 +3844,10 @@ public final class Events {
         }
       }
       /**
+       * <pre>
+       * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string unsubscribed = 1;</code>
        * @param value The unsubscribed to set.
        * @return This builder for chaining.
@@ -3583,6 +3863,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string unsubscribed = 1;</code>
        * @return This builder for chaining.
        */
@@ -3593,6 +3877,10 @@ public final class Events {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+       * </pre>
+       *
        * <code>string unsubscribed = 1;</code>
        * @param value The bytes for unsubscribed to set.
        * @return This builder for chaining.

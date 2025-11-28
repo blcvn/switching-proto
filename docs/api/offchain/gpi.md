@@ -1,4 +1,4 @@
-# Offchain Gpi API Specification
+# Package Định Nghĩa Các Message Và Service Cho Gpi (Global Payments Innovation) Trong Offchain API Specification
 
 ---
 

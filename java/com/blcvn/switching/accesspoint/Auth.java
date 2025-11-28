@@ -19,11 +19,19 @@ public final class Auth {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Loại grant (ví dụ: "client_credentials")
+     * </pre>
+     *
      * <code>string grant_type = 1;</code>
      * @return The grantType.
      */
     java.lang.String getGrantType();
     /**
+     * <pre>
+     * Loại grant (ví dụ: "client_credentials")
+     * </pre>
+     *
      * <code>string grant_type = 1;</code>
      * @return The bytes for grantType.
      */
@@ -31,11 +39,19 @@ public final class Auth {
         getGrantTypeBytes();
 
     /**
+     * <pre>
+     * ID của client
+     * </pre>
+     *
      * <code>string client_id = 2;</code>
      * @return The clientId.
      */
     java.lang.String getClientId();
     /**
+     * <pre>
+     * ID của client
+     * </pre>
+     *
      * <code>string client_id = 2;</code>
      * @return The bytes for clientId.
      */
@@ -43,11 +59,19 @@ public final class Auth {
         getClientIdBytes();
 
     /**
+     * <pre>
+     * Secret của client
+     * </pre>
+     *
      * <code>string client_secret = 3;</code>
      * @return The clientSecret.
      */
     java.lang.String getClientSecret();
     /**
+     * <pre>
+     * Secret của client
+     * </pre>
+     *
      * <code>string client_secret = 3;</code>
      * @return The bytes for clientSecret.
      */
@@ -55,6 +79,10 @@ public final class Auth {
         getClientSecretBytes();
   }
   /**
+   * <pre>
+   * Request lấy token
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.TokenRequest}
    */
   public static final class TokenRequest extends
@@ -155,6 +183,10 @@ public final class Auth {
     public static final int GRANT_TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object grantType_;
     /**
+     * <pre>
+     * Loại grant (ví dụ: "client_credentials")
+     * </pre>
+     *
      * <code>string grant_type = 1;</code>
      * @return The grantType.
      */
@@ -172,6 +204,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Loại grant (ví dụ: "client_credentials")
+     * </pre>
+     *
      * <code>string grant_type = 1;</code>
      * @return The bytes for grantType.
      */
@@ -193,6 +229,10 @@ public final class Auth {
     public static final int CLIENT_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object clientId_;
     /**
+     * <pre>
+     * ID của client
+     * </pre>
+     *
      * <code>string client_id = 2;</code>
      * @return The clientId.
      */
@@ -210,6 +250,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * ID của client
+     * </pre>
+     *
      * <code>string client_id = 2;</code>
      * @return The bytes for clientId.
      */
@@ -231,6 +275,10 @@ public final class Auth {
     public static final int CLIENT_SECRET_FIELD_NUMBER = 3;
     private volatile java.lang.Object clientSecret_;
     /**
+     * <pre>
+     * Secret của client
+     * </pre>
+     *
      * <code>string client_secret = 3;</code>
      * @return The clientSecret.
      */
@@ -248,6 +296,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Secret của client
+     * </pre>
+     *
      * <code>string client_secret = 3;</code>
      * @return The bytes for clientSecret.
      */
@@ -441,6 +493,10 @@ public final class Auth {
       return builder;
     }
     /**
+     * <pre>
+     * Request lấy token
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.TokenRequest}
      */
     public static final class Builder extends
@@ -604,6 +660,10 @@ public final class Auth {
 
       private java.lang.Object grantType_ = "";
       /**
+       * <pre>
+       * Loại grant (ví dụ: "client_credentials")
+       * </pre>
+       *
        * <code>string grant_type = 1;</code>
        * @return The grantType.
        */
@@ -620,6 +680,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Loại grant (ví dụ: "client_credentials")
+       * </pre>
+       *
        * <code>string grant_type = 1;</code>
        * @return The bytes for grantType.
        */
@@ -637,6 +701,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Loại grant (ví dụ: "client_credentials")
+       * </pre>
+       *
        * <code>string grant_type = 1;</code>
        * @param value The grantType to set.
        * @return This builder for chaining.
@@ -652,6 +720,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Loại grant (ví dụ: "client_credentials")
+       * </pre>
+       *
        * <code>string grant_type = 1;</code>
        * @return This builder for chaining.
        */
@@ -662,6 +734,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Loại grant (ví dụ: "client_credentials")
+       * </pre>
+       *
        * <code>string grant_type = 1;</code>
        * @param value The bytes for grantType to set.
        * @return This builder for chaining.
@@ -680,6 +756,10 @@ public final class Auth {
 
       private java.lang.Object clientId_ = "";
       /**
+       * <pre>
+       * ID của client
+       * </pre>
+       *
        * <code>string client_id = 2;</code>
        * @return The clientId.
        */
@@ -696,6 +776,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * ID của client
+       * </pre>
+       *
        * <code>string client_id = 2;</code>
        * @return The bytes for clientId.
        */
@@ -713,6 +797,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * ID của client
+       * </pre>
+       *
        * <code>string client_id = 2;</code>
        * @param value The clientId to set.
        * @return This builder for chaining.
@@ -728,6 +816,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * ID của client
+       * </pre>
+       *
        * <code>string client_id = 2;</code>
        * @return This builder for chaining.
        */
@@ -738,6 +830,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * ID của client
+       * </pre>
+       *
        * <code>string client_id = 2;</code>
        * @param value The bytes for clientId to set.
        * @return This builder for chaining.
@@ -756,6 +852,10 @@ public final class Auth {
 
       private java.lang.Object clientSecret_ = "";
       /**
+       * <pre>
+       * Secret của client
+       * </pre>
+       *
        * <code>string client_secret = 3;</code>
        * @return The clientSecret.
        */
@@ -772,6 +872,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Secret của client
+       * </pre>
+       *
        * <code>string client_secret = 3;</code>
        * @return The bytes for clientSecret.
        */
@@ -789,6 +893,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Secret của client
+       * </pre>
+       *
        * <code>string client_secret = 3;</code>
        * @param value The clientSecret to set.
        * @return This builder for chaining.
@@ -804,6 +912,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Secret của client
+       * </pre>
+       *
        * <code>string client_secret = 3;</code>
        * @return This builder for chaining.
        */
@@ -814,6 +926,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Secret của client
+       * </pre>
+       *
        * <code>string client_secret = 3;</code>
        * @param value The bytes for clientSecret to set.
        * @return This builder for chaining.
@@ -887,11 +1003,19 @@ public final class Auth {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Access token để sử dụng cho các API call
+     * </pre>
+     *
      * <code>string access_token = 1;</code>
      * @return The accessToken.
      */
     java.lang.String getAccessToken();
     /**
+     * <pre>
+     * Access token để sử dụng cho các API call
+     * </pre>
+     *
      * <code>string access_token = 1;</code>
      * @return The bytes for accessToken.
      */
@@ -899,11 +1023,19 @@ public final class Auth {
         getAccessTokenBytes();
 
     /**
+     * <pre>
+     * Loại token (thường là "Bearer")
+     * </pre>
+     *
      * <code>string token_type = 2;</code>
      * @return The tokenType.
      */
     java.lang.String getTokenType();
     /**
+     * <pre>
+     * Loại token (thường là "Bearer")
+     * </pre>
+     *
      * <code>string token_type = 2;</code>
      * @return The bytes for tokenType.
      */
@@ -911,12 +1043,20 @@ public final class Auth {
         getTokenTypeBytes();
 
     /**
+     * <pre>
+     * Thời gian hết hạn của token (tính bằng giây)
+     * </pre>
+     *
      * <code>int32 expires_in = 3;</code>
      * @return The expiresIn.
      */
     int getExpiresIn();
   }
   /**
+   * <pre>
+   * Response trả về token
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.TokenResponse}
    */
   public static final class TokenResponse extends
@@ -1015,6 +1155,10 @@ public final class Auth {
     public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object accessToken_;
     /**
+     * <pre>
+     * Access token để sử dụng cho các API call
+     * </pre>
+     *
      * <code>string access_token = 1;</code>
      * @return The accessToken.
      */
@@ -1032,6 +1176,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Access token để sử dụng cho các API call
+     * </pre>
+     *
      * <code>string access_token = 1;</code>
      * @return The bytes for accessToken.
      */
@@ -1053,6 +1201,10 @@ public final class Auth {
     public static final int TOKEN_TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object tokenType_;
     /**
+     * <pre>
+     * Loại token (thường là "Bearer")
+     * </pre>
+     *
      * <code>string token_type = 2;</code>
      * @return The tokenType.
      */
@@ -1070,6 +1222,10 @@ public final class Auth {
       }
     }
     /**
+     * <pre>
+     * Loại token (thường là "Bearer")
+     * </pre>
+     *
      * <code>string token_type = 2;</code>
      * @return The bytes for tokenType.
      */
@@ -1091,6 +1247,10 @@ public final class Auth {
     public static final int EXPIRES_IN_FIELD_NUMBER = 3;
     private int expiresIn_;
     /**
+     * <pre>
+     * Thời gian hết hạn của token (tính bằng giây)
+     * </pre>
+     *
      * <code>int32 expires_in = 3;</code>
      * @return The expiresIn.
      */
@@ -1275,6 +1435,10 @@ public final class Auth {
       return builder;
     }
     /**
+     * <pre>
+     * Response trả về token
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.TokenResponse}
      */
     public static final class Builder extends
@@ -1437,6 +1601,10 @@ public final class Auth {
 
       private java.lang.Object accessToken_ = "";
       /**
+       * <pre>
+       * Access token để sử dụng cho các API call
+       * </pre>
+       *
        * <code>string access_token = 1;</code>
        * @return The accessToken.
        */
@@ -1453,6 +1621,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Access token để sử dụng cho các API call
+       * </pre>
+       *
        * <code>string access_token = 1;</code>
        * @return The bytes for accessToken.
        */
@@ -1470,6 +1642,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Access token để sử dụng cho các API call
+       * </pre>
+       *
        * <code>string access_token = 1;</code>
        * @param value The accessToken to set.
        * @return This builder for chaining.
@@ -1485,6 +1661,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Access token để sử dụng cho các API call
+       * </pre>
+       *
        * <code>string access_token = 1;</code>
        * @return This builder for chaining.
        */
@@ -1495,6 +1675,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Access token để sử dụng cho các API call
+       * </pre>
+       *
        * <code>string access_token = 1;</code>
        * @param value The bytes for accessToken to set.
        * @return This builder for chaining.
@@ -1513,6 +1697,10 @@ public final class Auth {
 
       private java.lang.Object tokenType_ = "";
       /**
+       * <pre>
+       * Loại token (thường là "Bearer")
+       * </pre>
+       *
        * <code>string token_type = 2;</code>
        * @return The tokenType.
        */
@@ -1529,6 +1717,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Loại token (thường là "Bearer")
+       * </pre>
+       *
        * <code>string token_type = 2;</code>
        * @return The bytes for tokenType.
        */
@@ -1546,6 +1738,10 @@ public final class Auth {
         }
       }
       /**
+       * <pre>
+       * Loại token (thường là "Bearer")
+       * </pre>
+       *
        * <code>string token_type = 2;</code>
        * @param value The tokenType to set.
        * @return This builder for chaining.
@@ -1561,6 +1757,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Loại token (thường là "Bearer")
+       * </pre>
+       *
        * <code>string token_type = 2;</code>
        * @return This builder for chaining.
        */
@@ -1571,6 +1771,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Loại token (thường là "Bearer")
+       * </pre>
+       *
        * <code>string token_type = 2;</code>
        * @param value The bytes for tokenType to set.
        * @return This builder for chaining.
@@ -1589,6 +1793,10 @@ public final class Auth {
 
       private int expiresIn_ ;
       /**
+       * <pre>
+       * Thời gian hết hạn của token (tính bằng giây)
+       * </pre>
+       *
        * <code>int32 expires_in = 3;</code>
        * @return The expiresIn.
        */
@@ -1597,6 +1805,10 @@ public final class Auth {
         return expiresIn_;
       }
       /**
+       * <pre>
+       * Thời gian hết hạn của token (tính bằng giây)
+       * </pre>
+       *
        * <code>int32 expires_in = 3;</code>
        * @param value The expiresIn to set.
        * @return This builder for chaining.
@@ -1608,6 +1820,10 @@ public final class Auth {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian hết hạn của token (tính bằng giây)
+       * </pre>
+       *
        * <code>int32 expires_in = 3;</code>
        * @return This builder for chaining.
        */

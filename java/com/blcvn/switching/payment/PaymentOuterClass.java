@@ -19,11 +19,19 @@ public final class PaymentOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -31,17 +39,29 @@ public final class PaymentOuterClass {
         getIdBytes();
 
     /**
+     * <pre>
+     * Số tiền thanh toán
+     * </pre>
+     *
      * <code>double amount = 2;</code>
      * @return The amount.
      */
     double getAmount();
 
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 3;</code>
      * @return The currency.
      */
     java.lang.String getCurrency();
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 3;</code>
      * @return The bytes for currency.
      */
@@ -49,6 +69,10 @@ public final class PaymentOuterClass {
         getCurrencyBytes();
   }
   /**
+   * <pre>
+   * Thông tin thanh toán
+   * </pre>
+   *
    * Protobuf type {@code payment.v1.Payment}
    */
   public static final class Payment extends
@@ -147,6 +171,10 @@ public final class PaymentOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -164,6 +192,10 @@ public final class PaymentOuterClass {
       }
     }
     /**
+     * <pre>
+     * ID định danh thanh toán
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -185,6 +217,10 @@ public final class PaymentOuterClass {
     public static final int AMOUNT_FIELD_NUMBER = 2;
     private double amount_;
     /**
+     * <pre>
+     * Số tiền thanh toán
+     * </pre>
+     *
      * <code>double amount = 2;</code>
      * @return The amount.
      */
@@ -196,6 +232,10 @@ public final class PaymentOuterClass {
     public static final int CURRENCY_FIELD_NUMBER = 3;
     private volatile java.lang.Object currency_;
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 3;</code>
      * @return The currency.
      */
@@ -213,6 +253,10 @@ public final class PaymentOuterClass {
       }
     }
     /**
+     * <pre>
+     * Mã tiền tệ (ví dụ: USD, VND)
+     * </pre>
+     *
      * <code>string currency = 3;</code>
      * @return The bytes for currency.
      */
@@ -409,6 +453,10 @@ public final class PaymentOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin thanh toán
+     * </pre>
+     *
      * Protobuf type {@code payment.v1.Payment}
      */
     public static final class Builder extends
@@ -571,6 +619,10 @@ public final class PaymentOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -587,6 +639,10 @@ public final class PaymentOuterClass {
         }
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -604,6 +660,10 @@ public final class PaymentOuterClass {
         }
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -619,6 +679,10 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -629,6 +693,10 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh thanh toán
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -647,6 +715,10 @@ public final class PaymentOuterClass {
 
       private double amount_ ;
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 2;</code>
        * @return The amount.
        */
@@ -655,6 +727,10 @@ public final class PaymentOuterClass {
         return amount_;
       }
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 2;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
@@ -666,6 +742,10 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Số tiền thanh toán
+       * </pre>
+       *
        * <code>double amount = 2;</code>
        * @return This builder for chaining.
        */
@@ -678,6 +758,10 @@ public final class PaymentOuterClass {
 
       private java.lang.Object currency_ = "";
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 3;</code>
        * @return The currency.
        */
@@ -694,6 +778,10 @@ public final class PaymentOuterClass {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 3;</code>
        * @return The bytes for currency.
        */
@@ -711,6 +799,10 @@ public final class PaymentOuterClass {
         }
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 3;</code>
        * @param value The currency to set.
        * @return This builder for chaining.
@@ -726,6 +818,10 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 3;</code>
        * @return This builder for chaining.
        */
@@ -736,6 +832,10 @@ public final class PaymentOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Mã tiền tệ (ví dụ: USD, VND)
+       * </pre>
+       *
        * <code>string currency = 3;</code>
        * @param value The bytes for currency to set.
        * @return This builder for chaining.

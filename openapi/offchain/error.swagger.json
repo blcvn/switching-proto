@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/error.proto",
+    "title": "Package định nghĩa các mã lỗi và kết quả cho offchain service",
     "version": "version not set"
   },
   "consumes": [

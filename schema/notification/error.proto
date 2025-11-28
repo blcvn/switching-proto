@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+// Package định nghĩa các mã lỗi và kết quả cho notification service
+package notification.v1;
+
+option go_package = "github.com/blcvn/switching-proto/go/notification;notification";
+option java_package = "com.blcvn.switching.notification";
+
+// ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống notification
+enum ResultCode {
+  UNSPECIFIED = 0;              // Giá trị mặc định, không xác định
+  SUCCESS = 200;               // Thành công
+  BAD_REQUEST = 400;           // Lỗi validation hoặc request không hợp lệ
+  UNAUTHORIZED = 401;          // Chưa xác thực hoặc token không hợp lệ
+  FORBIDDEN = 403;             // Không có quyền truy cập
+  NOT_FOUND = 404;             // Không tìm thấy tài nguyên
+  DUPLICATE_REQUEST = 409;     // Request trùng lặp
+  UNPROCESSABLE_ENTITY = 422;  // Dữ liệu không thể xử lý
+  TOO_MANY_REQUESTS = 429;     // Quá nhiều request trong khoảng thời gian
+  INTERNAL = 500;              // Lỗi nội bộ của server
+  BAD_GATEWAY = 502;           // Lỗi gateway
+  SERVICE_UNAVAILABLE = 503;   // Dịch vụ không khả dụng
+  GATEWAY_TIMEOUT = 504;       // Gateway timeout
+}

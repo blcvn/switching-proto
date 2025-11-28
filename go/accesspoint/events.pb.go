@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: access-point/events.proto
 
+// Package định nghĩa các message và service cho events trong access point
+
 package accesspoint
 
 import (
@@ -22,9 +24,10 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Request đăng ký nhận events
 type SubscribeEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"` // Unique End-to-End Transaction Reference để theo dõi
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,11 +69,12 @@ func (x *SubscribeEventsRequest) GetUetr() string {
 	return ""
 }
 
+// Event (sự kiện) được gửi đến client
 type Event struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Event         string                 `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty"` // welcome, update, ping
-	Data          string                 `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
-	Timestamp     *timestamp.Timestamp   `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Event         string                 `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty"`         // Loại event: welcome, update, ping
+	Data          string                 `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu của event (dạng JSON string)
+	Timestamp     *timestamp.Timestamp   `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"` // Thời gian xảy ra event
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -126,9 +130,10 @@ func (x *Event) GetTimestamp() *timestamp.Timestamp {
 	return nil
 }
 
+// Request đăng ký callback URL
 type SubscribeCallbackRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CallbackUrl   string                 `protobuf:"bytes,1,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"`
+	CallbackUrl   string                 `protobuf:"bytes,1,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"` // URL callback để nhận events
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -170,9 +175,10 @@ func (x *SubscribeCallbackRequest) GetCallbackUrl() string {
 	return ""
 }
 
+// Response đăng ký callback
 type SubscribeCallbackResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Subscribed    string                 `protobuf:"bytes,1,opt,name=subscribed,proto3" json:"subscribed,omitempty"`
+	Subscribed    string                 `protobuf:"bytes,1,opt,name=subscribed,proto3" json:"subscribed,omitempty"` // Trạng thái đăng ký (thường là "ok" hoặc "success")
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -214,6 +220,7 @@ func (x *SubscribeCallbackResponse) GetSubscribed() string {
 	return ""
 }
 
+// Request hủy đăng ký callback
 type UnsubscribeCallbackRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -250,9 +257,10 @@ func (*UnsubscribeCallbackRequest) Descriptor() ([]byte, []int) {
 	return file_access_point_events_proto_rawDescGZIP(), []int{4}
 }
 
+// Response hủy đăng ký callback
 type UnsubscribeCallbackResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Unsubscribed  string                 `protobuf:"bytes,1,opt,name=unsubscribed,proto3" json:"unsubscribed,omitempty"`
+	Unsubscribed  string                 `protobuf:"bytes,1,opt,name=unsubscribed,proto3" json:"unsubscribed,omitempty"` // Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
