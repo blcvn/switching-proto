@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: offchain/auth.proto
 
+// Package định nghĩa các message và service cho offchain authentication
+
 package offchain
 
 import (

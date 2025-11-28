@@ -1,4 +1,4 @@
-# Offchain Auth API Specification
+# Package Định Nghĩa Các Message Và Service Cho Offchain Authentication API Specification
 
 ---
 

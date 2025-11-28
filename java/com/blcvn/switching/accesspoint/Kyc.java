@@ -19,30 +19,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     java.util.List<com.blcvn.switching.accesspoint.Common.KycEntity> 
         getEntitiesList();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     com.blcvn.switching.accesspoint.Common.KycEntity getEntities(int index);
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     int getEntitiesCount();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.accesspoint.Common.KycEntityOrBuilder> 
         getEntitiesOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     com.blcvn.switching.accesspoint.Common.KycEntityOrBuilder getEntitiesOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Response danh sách các thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.ListEntitiesResponse}
    */
   public static final class ListEntitiesResponse extends
@@ -136,6 +160,10 @@ public final class Kyc {
     public static final int ENTITIES_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.accesspoint.Common.KycEntity> entities_;
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -143,6 +171,10 @@ public final class Kyc {
       return entities_;
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -151,6 +183,10 @@ public final class Kyc {
       return entities_;
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -158,6 +194,10 @@ public final class Kyc {
       return entities_.size();
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -165,6 +205,10 @@ public final class Kyc {
       return entities_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các thực thể KYC
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
      */
     @java.lang.Override
@@ -331,6 +375,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Response danh sách các thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.ListEntitiesResponse}
      */
     public static final class Builder extends
@@ -528,6 +576,10 @@ public final class Kyc {
           com.blcvn.switching.accesspoint.Common.KycEntity, com.blcvn.switching.accesspoint.Common.KycEntity.Builder, com.blcvn.switching.accesspoint.Common.KycEntityOrBuilder> entitiesBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Common.KycEntity> getEntitiesList() {
@@ -538,6 +590,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public int getEntitiesCount() {
@@ -548,6 +604,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Common.KycEntity getEntities(int index) {
@@ -558,6 +618,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder setEntities(
@@ -575,6 +639,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder setEntities(
@@ -589,6 +657,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(com.blcvn.switching.accesspoint.Common.KycEntity value) {
@@ -605,6 +677,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -622,6 +698,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -636,6 +716,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder addEntities(
@@ -650,6 +734,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder addAllEntities(
@@ -665,6 +753,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder clearEntities() {
@@ -678,6 +770,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public Builder removeEntities(int index) {
@@ -691,6 +787,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Common.KycEntity.Builder getEntitiesBuilder(
@@ -698,6 +798,10 @@ public final class Kyc {
         return getEntitiesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Common.KycEntityOrBuilder getEntitiesOrBuilder(
@@ -708,6 +812,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.accesspoint.Common.KycEntityOrBuilder> 
@@ -719,6 +827,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Common.KycEntity.Builder addEntitiesBuilder() {
@@ -726,6 +838,10 @@ public final class Kyc {
             com.blcvn.switching.accesspoint.Common.KycEntity.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Common.KycEntity.Builder addEntitiesBuilder(
@@ -734,6 +850,10 @@ public final class Kyc {
             index, com.blcvn.switching.accesspoint.Common.KycEntity.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các thực thể KYC
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.KycEntity entities = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Common.KycEntity.Builder> 
@@ -812,11 +932,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -824,6 +952,10 @@ public final class Kyc {
         getBicBytes();
   }
   /**
+   * <pre>
+   * Request lấy thông tin một thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.GetEntityRequest}
    */
   public static final class GetEntityRequest extends
@@ -910,6 +1042,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -927,6 +1063,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -1100,6 +1240,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Request lấy thông tin một thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.GetEntityRequest}
      */
     public static final class Builder extends
@@ -1249,6 +1393,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -1265,6 +1413,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -1282,6 +1434,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -1297,6 +1453,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -1307,6 +1467,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -1380,11 +1544,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -1392,6 +1564,10 @@ public final class Kyc {
         getBicBytes();
   }
   /**
+   * <pre>
+   * Request lấy tài liệu của một thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.GetEntityDocsRequest}
    */
   public static final class GetEntityDocsRequest extends
@@ -1478,6 +1654,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -1495,6 +1675,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -1668,6 +1852,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Request lấy tài liệu của một thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.GetEntityDocsRequest}
      */
     public static final class Builder extends
@@ -1817,6 +2005,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -1833,6 +2025,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -1850,6 +2046,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -1865,6 +2065,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -1875,6 +2079,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -1948,11 +2156,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -1960,11 +2176,19 @@ public final class Kyc {
         getIdBytes();
 
     /**
+     * <pre>
+     * Loại tài liệu (ví dụ: "passport", "license")
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The type.
      */
     java.lang.String getType();
     /**
+     * <pre>
+     * Loại tài liệu (ví dụ: "passport", "license")
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The bytes for type.
      */
@@ -1972,11 +2196,19 @@ public final class Kyc {
         getTypeBytes();
 
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The url.
      */
     java.lang.String getUrl();
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The bytes for url.
      */
@@ -1984,6 +2216,10 @@ public final class Kyc {
         getUrlBytes();
   }
   /**
+   * <pre>
+   * Thông tin tài liệu KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.Document}
    */
   public static final class Document extends
@@ -2084,6 +2320,10 @@ public final class Kyc {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -2101,6 +2341,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * ID của tài liệu
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -2122,6 +2366,10 @@ public final class Kyc {
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
+     * <pre>
+     * Loại tài liệu (ví dụ: "passport", "license")
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The type.
      */
@@ -2139,6 +2387,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Loại tài liệu (ví dụ: "passport", "license")
+     * </pre>
+     *
      * <code>string type = 2;</code>
      * @return The bytes for type.
      */
@@ -2160,6 +2412,10 @@ public final class Kyc {
     public static final int URL_FIELD_NUMBER = 3;
     private volatile java.lang.Object url_;
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The url.
      */
@@ -2177,6 +2433,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * URL để truy cập tài liệu
+     * </pre>
+     *
      * <code>string url = 3;</code>
      * @return The bytes for url.
      */
@@ -2370,6 +2630,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin tài liệu KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.Document}
      */
     public static final class Builder extends
@@ -2533,6 +2797,10 @@ public final class Kyc {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -2549,6 +2817,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -2566,6 +2838,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -2581,6 +2857,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -2591,6 +2871,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * ID của tài liệu
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -2609,6 +2893,10 @@ public final class Kyc {
 
       private java.lang.Object type_ = "";
       /**
+       * <pre>
+       * Loại tài liệu (ví dụ: "passport", "license")
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return The type.
        */
@@ -2625,6 +2913,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Loại tài liệu (ví dụ: "passport", "license")
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return The bytes for type.
        */
@@ -2642,6 +2934,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Loại tài liệu (ví dụ: "passport", "license")
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @param value The type to set.
        * @return This builder for chaining.
@@ -2657,6 +2953,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Loại tài liệu (ví dụ: "passport", "license")
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @return This builder for chaining.
        */
@@ -2667,6 +2967,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Loại tài liệu (ví dụ: "passport", "license")
+       * </pre>
+       *
        * <code>string type = 2;</code>
        * @param value The bytes for type to set.
        * @return This builder for chaining.
@@ -2685,6 +2989,10 @@ public final class Kyc {
 
       private java.lang.Object url_ = "";
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return The url.
        */
@@ -2701,6 +3009,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return The bytes for url.
        */
@@ -2718,6 +3030,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @param value The url to set.
        * @return This builder for chaining.
@@ -2733,6 +3049,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @return This builder for chaining.
        */
@@ -2743,6 +3063,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * URL để truy cập tài liệu
+       * </pre>
+       *
        * <code>string url = 3;</code>
        * @param value The bytes for url to set.
        * @return This builder for chaining.
@@ -2816,30 +3140,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     java.util.List<com.blcvn.switching.accesspoint.Kyc.Document> 
         getDocumentsList();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     com.blcvn.switching.accesspoint.Kyc.Document getDocuments(int index);
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     int getDocumentsCount();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.accesspoint.Kyc.DocumentOrBuilder> 
         getDocumentsOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     com.blcvn.switching.accesspoint.Kyc.DocumentOrBuilder getDocumentsOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Response danh sách tài liệu của thực thể KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.GetEntityDocsResponse}
    */
   public static final class GetEntityDocsResponse extends
@@ -2933,6 +3281,10 @@ public final class Kyc {
     public static final int DOCUMENTS_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.accesspoint.Kyc.Document> documents_;
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -2940,6 +3292,10 @@ public final class Kyc {
       return documents_;
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -2948,6 +3304,10 @@ public final class Kyc {
       return documents_;
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -2955,6 +3315,10 @@ public final class Kyc {
       return documents_.size();
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -2962,6 +3326,10 @@ public final class Kyc {
       return documents_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các tài liệu
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.Document documents = 1;</code>
      */
     @java.lang.Override
@@ -3128,6 +3496,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Response danh sách tài liệu của thực thể KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.GetEntityDocsResponse}
      */
     public static final class Builder extends
@@ -3325,6 +3697,10 @@ public final class Kyc {
           com.blcvn.switching.accesspoint.Kyc.Document, com.blcvn.switching.accesspoint.Kyc.Document.Builder, com.blcvn.switching.accesspoint.Kyc.DocumentOrBuilder> documentsBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Kyc.Document> getDocumentsList() {
@@ -3335,6 +3711,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public int getDocumentsCount() {
@@ -3345,6 +3725,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.Document getDocuments(int index) {
@@ -3355,6 +3739,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder setDocuments(
@@ -3372,6 +3760,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder setDocuments(
@@ -3386,6 +3778,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(com.blcvn.switching.accesspoint.Kyc.Document value) {
@@ -3402,6 +3798,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -3419,6 +3819,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -3433,6 +3837,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder addDocuments(
@@ -3447,6 +3855,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder addAllDocuments(
@@ -3462,6 +3874,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder clearDocuments() {
@@ -3475,6 +3891,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public Builder removeDocuments(int index) {
@@ -3488,6 +3908,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.Document.Builder getDocumentsBuilder(
@@ -3495,6 +3919,10 @@ public final class Kyc {
         return getDocumentsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.DocumentOrBuilder getDocumentsOrBuilder(
@@ -3505,6 +3933,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.accesspoint.Kyc.DocumentOrBuilder> 
@@ -3516,6 +3948,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.Document.Builder addDocumentsBuilder() {
@@ -3523,6 +3959,10 @@ public final class Kyc {
             com.blcvn.switching.accesspoint.Kyc.Document.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.Document.Builder addDocumentsBuilder(
@@ -3531,6 +3971,10 @@ public final class Kyc {
             index, com.blcvn.switching.accesspoint.Kyc.Document.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các tài liệu
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.Document documents = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Kyc.Document.Builder> 
@@ -3609,11 +4053,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3621,10 +4073,18 @@ public final class Kyc {
         getBicBytes();
 
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     int getUpdatesCount();
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     boolean containsUpdates(
@@ -3636,11 +4096,19 @@ public final class Kyc {
     java.util.Map<java.lang.String, java.lang.String>
     getUpdates();
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getUpdatesMap();
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -3648,6 +4116,10 @@ public final class Kyc {
         java.lang.String key,
         java.lang.String defaultValue);
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -3655,6 +4127,10 @@ public final class Kyc {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * Request gửi thông tin KYC để xác minh
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.SubmitKycRequest}
    */
   public static final class SubmitKycRequest extends
@@ -3767,6 +4243,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -3784,6 +4264,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -3829,6 +4313,10 @@ public final class Kyc {
       return internalGetUpdates().getMap().size();
     }
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
 
@@ -3847,6 +4335,10 @@ public final class Kyc {
       return getUpdatesMap();
     }
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -3855,6 +4347,10 @@ public final class Kyc {
       return internalGetUpdates().getMap();
     }
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -3868,6 +4364,10 @@ public final class Kyc {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * Các trường cần cập nhật (key-value pairs)
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; updates = 2;</code>
      */
     @java.lang.Override
@@ -4060,6 +4560,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Request gửi thông tin KYC để xác minh
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.SubmitKycRequest}
      */
     public static final class Builder extends
@@ -4238,6 +4742,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -4254,6 +4762,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -4271,6 +4783,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -4286,6 +4802,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -4296,6 +4816,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -4339,6 +4863,10 @@ public final class Kyc {
         return internalGetUpdates().getMap().size();
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -4357,6 +4885,10 @@ public final class Kyc {
         return getUpdatesMap();
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -4365,6 +4897,10 @@ public final class Kyc {
         return internalGetUpdates().getMap();
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -4378,6 +4914,10 @@ public final class Kyc {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       @java.lang.Override
@@ -4399,6 +4939,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -4418,6 +4962,10 @@ public final class Kyc {
         return internalGetMutableUpdates().getMutableMap();
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
       public Builder putUpdates(
@@ -4430,6 +4978,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Các trường cần cập nhật (key-value pairs)
+       * </pre>
+       *
        * <code>map&lt;string, string&gt; updates = 2;</code>
        */
 
@@ -4497,11 +5049,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
     java.lang.String getStatus();
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -4509,6 +5069,10 @@ public final class Kyc {
         getStatusBytes();
   }
   /**
+   * <pre>
+   * Response gửi thông tin KYC
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.SubmitKycResponse}
    */
   public static final class SubmitKycResponse extends
@@ -4595,6 +5159,10 @@ public final class Kyc {
     public static final int STATUS_FIELD_NUMBER = 1;
     private volatile java.lang.Object status_;
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The status.
      */
@@ -4612,6 +5180,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+     * </pre>
+     *
      * <code>string status = 1;</code>
      * @return The bytes for status.
      */
@@ -4785,6 +5357,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Response gửi thông tin KYC
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.SubmitKycResponse}
      */
     public static final class Builder extends
@@ -4934,6 +5510,10 @@ public final class Kyc {
 
       private java.lang.Object status_ = "";
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The status.
        */
@@ -4950,6 +5530,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return The bytes for status.
        */
@@ -4967,6 +5551,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -4982,6 +5570,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @return This builder for chaining.
        */
@@ -4992,6 +5584,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Trạng thái xử lý (ví dụ: "pending", "approved", "rejected")
+       * </pre>
+       *
        * <code>string status = 1;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
@@ -5065,11 +5661,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The version.
      */
     java.lang.String getVersion();
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The bytes for version.
      */
@@ -5077,23 +5681,39 @@ public final class Kyc {
         getVersionBytes();
 
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return A list containing the fields.
      */
     java.util.List<java.lang.String>
         getFieldsList();
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return The count of fields.
      */
     int getFieldsCount();
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the element to return.
      * @return The fields at the given index.
      */
     java.lang.String getFields(int index);
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the fields at the given index.
@@ -5102,6 +5722,10 @@ public final class Kyc {
         getFieldsBytes(int index);
   }
   /**
+   * <pre>
+   * Metadata về các trường KYC được hỗ trợ
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.KycMetadata}
    */
   public static final class KycMetadata extends
@@ -5202,6 +5826,10 @@ public final class Kyc {
     public static final int VERSION_FIELD_NUMBER = 1;
     private volatile java.lang.Object version_;
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The version.
      */
@@ -5219,6 +5847,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Phiên bản của schema KYC
+     * </pre>
+     *
      * <code>string version = 1;</code>
      * @return The bytes for version.
      */
@@ -5240,6 +5872,10 @@ public final class Kyc {
     public static final int FIELDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList fields_;
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return A list containing the fields.
      */
@@ -5248,6 +5884,10 @@ public final class Kyc {
       return fields_;
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @return The count of fields.
      */
@@ -5255,6 +5895,10 @@ public final class Kyc {
       return fields_.size();
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the element to return.
      * @return The fields at the given index.
@@ -5263,6 +5907,10 @@ public final class Kyc {
       return fields_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các trường được hỗ trợ
+     * </pre>
+     *
      * <code>repeated string fields = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the fields at the given index.
@@ -5444,6 +6092,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Metadata về các trường KYC được hỗ trợ
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.KycMetadata}
      */
     public static final class Builder extends
@@ -5612,6 +6264,10 @@ public final class Kyc {
 
       private java.lang.Object version_ = "";
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return The version.
        */
@@ -5628,6 +6284,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return The bytes for version.
        */
@@ -5645,6 +6305,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @param value The version to set.
        * @return This builder for chaining.
@@ -5660,6 +6324,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @return This builder for chaining.
        */
@@ -5670,6 +6338,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Phiên bản của schema KYC
+       * </pre>
+       *
        * <code>string version = 1;</code>
        * @param value The bytes for version to set.
        * @return This builder for chaining.
@@ -5694,6 +6366,10 @@ public final class Kyc {
          }
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return A list containing the fields.
        */
@@ -5702,6 +6378,10 @@ public final class Kyc {
         return fields_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return The count of fields.
        */
@@ -5709,6 +6389,10 @@ public final class Kyc {
         return fields_.size();
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index of the element to return.
        * @return The fields at the given index.
@@ -5717,6 +6401,10 @@ public final class Kyc {
         return fields_.get(index);
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index of the value to return.
        * @return The bytes of the fields at the given index.
@@ -5726,6 +6414,10 @@ public final class Kyc {
         return fields_.getByteString(index);
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param index The index to set the value at.
        * @param value The fields to set.
@@ -5742,6 +6434,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param value The fields to add.
        * @return This builder for chaining.
@@ -5757,6 +6453,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param values The fields to add.
        * @return This builder for chaining.
@@ -5770,6 +6470,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @return This builder for chaining.
        */
@@ -5780,6 +6484,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các trường được hỗ trợ
+       * </pre>
+       *
        * <code>repeated string fields = 2;</code>
        * @param value The bytes of the fields to add.
        * @return This builder for chaining.
@@ -5853,11 +6561,19 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
     java.lang.String getBic();
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -5865,11 +6581,19 @@ public final class Kyc {
         getBicBytes();
 
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The action.
      */
     java.lang.String getAction();
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The bytes for action.
      */
@@ -5877,11 +6601,19 @@ public final class Kyc {
         getActionBytes();
 
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The time.
      */
     java.lang.String getTime();
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The bytes for time.
      */
@@ -5889,6 +6621,10 @@ public final class Kyc {
         getTimeBytes();
   }
   /**
+   * <pre>
+   * Một entry trong lịch sử audit
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.AuditEntry}
    */
   public static final class AuditEntry extends
@@ -5989,6 +6725,10 @@ public final class Kyc {
     public static final int BIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object bic_;
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bic.
      */
@@ -6006,6 +6746,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Bank Identifier Code của thực thể
+     * </pre>
+     *
      * <code>string bic = 1;</code>
      * @return The bytes for bic.
      */
@@ -6027,6 +6771,10 @@ public final class Kyc {
     public static final int ACTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object action_;
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The action.
      */
@@ -6044,6 +6792,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+     * </pre>
+     *
      * <code>string action = 2;</code>
      * @return The bytes for action.
      */
@@ -6065,6 +6817,10 @@ public final class Kyc {
     public static final int TIME_FIELD_NUMBER = 3;
     private volatile java.lang.Object time_;
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The time.
      */
@@ -6082,6 +6838,10 @@ public final class Kyc {
       }
     }
     /**
+     * <pre>
+     * Thời gian thực hiện hành động
+     * </pre>
+     *
      * <code>string time = 3;</code>
      * @return The bytes for time.
      */
@@ -6275,6 +7035,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Một entry trong lịch sử audit
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.AuditEntry}
      */
     public static final class Builder extends
@@ -6438,6 +7202,10 @@ public final class Kyc {
 
       private java.lang.Object bic_ = "";
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bic.
        */
@@ -6454,6 +7222,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return The bytes for bic.
        */
@@ -6471,6 +7243,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bic to set.
        * @return This builder for chaining.
@@ -6486,6 +7262,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @return This builder for chaining.
        */
@@ -6496,6 +7276,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Bank Identifier Code của thực thể
+       * </pre>
+       *
        * <code>string bic = 1;</code>
        * @param value The bytes for bic to set.
        * @return This builder for chaining.
@@ -6514,6 +7298,10 @@ public final class Kyc {
 
       private java.lang.Object action_ = "";
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return The action.
        */
@@ -6530,6 +7318,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return The bytes for action.
        */
@@ -6547,6 +7339,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @param value The action to set.
        * @return This builder for chaining.
@@ -6562,6 +7358,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @return This builder for chaining.
        */
@@ -6572,6 +7372,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Hành động đã thực hiện (ví dụ: "create", "update", "verify")
+       * </pre>
+       *
        * <code>string action = 2;</code>
        * @param value The bytes for action to set.
        * @return This builder for chaining.
@@ -6590,6 +7394,10 @@ public final class Kyc {
 
       private java.lang.Object time_ = "";
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return The time.
        */
@@ -6606,6 +7414,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return The bytes for time.
        */
@@ -6623,6 +7435,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @param value The time to set.
        * @return This builder for chaining.
@@ -6638,6 +7454,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @return This builder for chaining.
        */
@@ -6648,6 +7468,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Thời gian thực hiện hành động
+       * </pre>
+       *
        * <code>string time = 3;</code>
        * @param value The bytes for time to set.
        * @return This builder for chaining.
@@ -6721,30 +7545,54 @@ public final class Kyc {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     java.util.List<com.blcvn.switching.accesspoint.Kyc.AuditEntry> 
         getEntriesList();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     com.blcvn.switching.accesspoint.Kyc.AuditEntry getEntries(int index);
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     int getEntriesCount();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     java.util.List<? extends com.blcvn.switching.accesspoint.Kyc.AuditEntryOrBuilder> 
         getEntriesOrBuilderList();
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     com.blcvn.switching.accesspoint.Kyc.AuditEntryOrBuilder getEntriesOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * Response lịch sử audit
+   * </pre>
+   *
    * Protobuf type {@code accesspoint.v1.AuditResponse}
    */
   public static final class AuditResponse extends
@@ -6838,6 +7686,10 @@ public final class Kyc {
     public static final int ENTRIES_FIELD_NUMBER = 1;
     private java.util.List<com.blcvn.switching.accesspoint.Kyc.AuditEntry> entries_;
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -6845,6 +7697,10 @@ public final class Kyc {
       return entries_;
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -6853,6 +7709,10 @@ public final class Kyc {
       return entries_;
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -6860,6 +7720,10 @@ public final class Kyc {
       return entries_.size();
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -6867,6 +7731,10 @@ public final class Kyc {
       return entries_.get(index);
     }
     /**
+     * <pre>
+     * Danh sách các entry trong lịch sử audit
+     * </pre>
+     *
      * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
      */
     @java.lang.Override
@@ -7033,6 +7901,10 @@ public final class Kyc {
       return builder;
     }
     /**
+     * <pre>
+     * Response lịch sử audit
+     * </pre>
+     *
      * Protobuf type {@code accesspoint.v1.AuditResponse}
      */
     public static final class Builder extends
@@ -7230,6 +8102,10 @@ public final class Kyc {
           com.blcvn.switching.accesspoint.Kyc.AuditEntry, com.blcvn.switching.accesspoint.Kyc.AuditEntry.Builder, com.blcvn.switching.accesspoint.Kyc.AuditEntryOrBuilder> entriesBuilder_;
 
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Kyc.AuditEntry> getEntriesList() {
@@ -7240,6 +8116,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public int getEntriesCount() {
@@ -7250,6 +8130,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.AuditEntry getEntries(int index) {
@@ -7260,6 +8144,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder setEntries(
@@ -7277,6 +8165,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder setEntries(
@@ -7291,6 +8183,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(com.blcvn.switching.accesspoint.Kyc.AuditEntry value) {
@@ -7307,6 +8203,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -7324,6 +8224,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -7338,6 +8242,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder addEntries(
@@ -7352,6 +8260,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder addAllEntries(
@@ -7367,6 +8279,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder clearEntries() {
@@ -7380,6 +8296,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public Builder removeEntries(int index) {
@@ -7393,6 +8313,10 @@ public final class Kyc {
         return this;
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.AuditEntry.Builder getEntriesBuilder(
@@ -7400,6 +8324,10 @@ public final class Kyc {
         return getEntriesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.AuditEntryOrBuilder getEntriesOrBuilder(
@@ -7410,6 +8338,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<? extends com.blcvn.switching.accesspoint.Kyc.AuditEntryOrBuilder> 
@@ -7421,6 +8353,10 @@ public final class Kyc {
         }
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.AuditEntry.Builder addEntriesBuilder() {
@@ -7428,6 +8364,10 @@ public final class Kyc {
             com.blcvn.switching.accesspoint.Kyc.AuditEntry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public com.blcvn.switching.accesspoint.Kyc.AuditEntry.Builder addEntriesBuilder(
@@ -7436,6 +8376,10 @@ public final class Kyc {
             index, com.blcvn.switching.accesspoint.Kyc.AuditEntry.getDefaultInstance());
       }
       /**
+       * <pre>
+       * Danh sách các entry trong lịch sử audit
+       * </pre>
+       *
        * <code>repeated .accesspoint.v1.AuditEntry entries = 1;</code>
        */
       public java.util.List<com.blcvn.switching.accesspoint.Kyc.AuditEntry.Builder> 

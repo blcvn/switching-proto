@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "access-point/fi.proto",
+    "title": "Package định nghĩa các message và service cho Financial Institution (FI) trong access point",
     "version": "version not set"
   },
   "tags": [
@@ -22,81 +22,96 @@
       "properties": {
         "iban": {
           "type": "string",
-          "title": "International Bank Account Number (if available)"
+          "title": "Số tài khoản quốc tế IBAN (nếu có)"
         },
         "account_number": {
           "type": "string",
-          "title": "Local account number"
+          "title": "Số tài khoản nội địa"
         },
         "account_name": {
           "type": "string",
-          "title": "Account holder name"
+          "title": "Tên chủ tài khoản"
         },
         "currency": {
           "type": "string",
-          "title": "Account currency (optional)"
+          "title": "Mã tiền tệ của tài khoản (tùy chọn)"
         },
         "reference": {
           "type": "string",
-          "title": "Additional reference or identification (e.g., secondary id)"
+          "title": "Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)"
         }
       },
-      "description": "Account represents the account details associated with an agent."
+      "title": "Thông tin chi tiết tài khoản liên kết với một agent"
     },
     "accesspointv1BulkTransferResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/accesspointv1Metadata"
+          "$ref": "#/definitions/accesspointv1Metadata",
+          "title": "Thông tin metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/accesspointv1Signature"
+          "$ref": "#/definitions/accesspointv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/accesspointv1Result"
+          "$ref": "#/definitions/accesspointv1Result",
+          "title": "Kết quả xử lý"
         },
         "transfers": {
           "type": "array",
           "items": {
             "type": "object",
             "$ref": "#/definitions/accesspointv1Transfer"
-          }
+          },
+          "title": "Danh sách các lệnh chuyển tiền đã tạo"
         }
-      }
+      },
+      "title": "Response tạo nhiều lệnh chuyển tiền"
     },
     "accesspointv1ConfirmTransferResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/accesspointv1Metadata"
+          "$ref": "#/definitions/accesspointv1Metadata",
+          "title": "Thông tin metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/accesspointv1Signature"
+          "$ref": "#/definitions/accesspointv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/accesspointv1Result"
+          "$ref": "#/definitions/accesspointv1Result",
+          "title": "Kết quả xử lý"
         },
         "instruction_id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID của lệnh chuyển tiền đã xác nhận"
         }
-      }
+      },
+      "title": "Response xác nhận lệnh chuyển tiền"
     },
     "accesspointv1CreateTransferResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/accesspointv1Metadata"
+          "$ref": "#/definitions/accesspointv1Metadata",
+          "title": "Thông tin metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/accesspointv1Signature"
+          "$ref": "#/definitions/accesspointv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/accesspointv1Result"
+          "$ref": "#/definitions/accesspointv1Result",
+          "title": "Kết quả xử lý"
         },
         "data": {
-          "$ref": "#/definitions/accesspointv1Transfer"
+          "$ref": "#/definitions/accesspointv1Transfer",
+          "title": "Dữ liệu lệnh chuyển tiền đã tạo"
         }
-      }
+      },
+      "title": "Response tạo lệnh chuyển tiền"
     },
     "accesspointv1Metadata": {
       "type": "object",
@@ -114,7 +129,8 @@
           "type": "string",
           "title": "Phiên bản của protocol"
         }
-      }
+      },
+      "title": "Metadata chứa thông tin về request/response"
     },
     "accesspointv1Result": {
       "type": "object",
@@ -149,42 +165,51 @@
       ],
       "default": "UNSPECIFIED",
       "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
-      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống"
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống access point"
     },
     "accesspointv1SearchTransfersRequestFilter": {
       "type": "object",
       "properties": {
         "currency": {
-          "type": "string"
+          "type": "string",
+          "title": "Lọc theo mã tiền tệ"
         },
         "date_from": {
-          "type": "string"
+          "type": "string",
+          "title": "Ngày bắt đầu (từ ngày)"
         },
         "date_to": {
-          "type": "string"
+          "type": "string",
+          "title": "Ngày kết thúc (đến ngày)"
         }
-      }
+      },
+      "title": "Bộ lọc tìm kiếm"
     },
     "accesspointv1SearchTransfersResponse": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/accesspointv1Metadata"
+          "$ref": "#/definitions/accesspointv1Metadata",
+          "title": "Thông tin metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/accesspointv1Signature"
+          "$ref": "#/definitions/accesspointv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/accesspointv1Result"
+          "$ref": "#/definitions/accesspointv1Result",
+          "title": "Kết quả xử lý"
         },
         "results": {
           "type": "array",
           "items": {
             "type": "object",
             "$ref": "#/definitions/accesspointv1Transfer"
-          }
+          },
+          "title": "Danh sách các lệnh chuyển tiền tìm được"
         }
-      }
+      },
+      "title": "Response tìm kiếm lệnh chuyển tiền"
     },
     "accesspointv1Signature": {
       "type": "object",
@@ -195,15 +220,15 @@
         },
         "s": {
           "type": "string",
-          "title": "Chuỗi dùng tạo ra chữ ký"
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
         },
         "b": {
           "type": "string",
           "format": "byte",
-          "title": "Chữ ký số"
+          "title": "Chữ ký số (dạng bytes)"
         }
       },
-      "title": "CCSignature định nghĩa cấu trúc chữ ký số cho request"
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
     },
     "accesspointv1SignatureSignatureType": {
       "type": "string",
@@ -221,47 +246,59 @@
       "type": "object",
       "properties": {
         "instruction_id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID của lệnh chuyển tiền"
         },
         "creditor": {
-          "type": "string"
+          "type": "string",
+          "title": "BIC của người nhận"
         },
         "amount": {
           "type": "number",
-          "format": "double"
+          "format": "double",
+          "title": "Số tiền chuyển"
         },
         "currency": {
-          "type": "string"
+          "type": "string",
+          "title": "Mã tiền tệ"
         },
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái chuyển tiền"
         },
         "created_at": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian tạo lệnh chuyển"
         },
         "creditor_account": {
           "$ref": "#/definitions/accesspointv1Account",
-          "title": "Optional structured account details for the debtor/creditor in FI transfers"
+          "title": "Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)"
         }
-      }
+      },
+      "title": "Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính"
     },
     "accesspointv1TransferStatus": {
       "type": "object",
       "properties": {
         "metadata": {
-          "$ref": "#/definitions/accesspointv1Metadata"
+          "$ref": "#/definitions/accesspointv1Metadata",
+          "title": "Thông tin metadata của response"
         },
         "signature": {
-          "$ref": "#/definitions/accesspointv1Signature"
+          "$ref": "#/definitions/accesspointv1Signature",
+          "title": "Chữ ký số của response"
         },
         "result": {
-          "$ref": "#/definitions/accesspointv1Result"
+          "$ref": "#/definitions/accesspointv1Result",
+          "title": "Kết quả xử lý"
         },
         "data": {
-          "$ref": "#/definitions/accesspointv1Transfer"
+          "$ref": "#/definitions/accesspointv1Transfer",
+          "title": "Dữ liệu lệnh chuyển tiền và trạng thái"
         }
-      }
+      },
+      "title": "Response trạng thái lệnh chuyển tiền"
     },
     "protobufAny": {
       "type": "object",

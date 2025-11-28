@@ -1,11 +1,14 @@
 syntax = "proto3";
+
+// Package định nghĩa các message cho user service
 package user.v1;
 
 option go_package = "github.com/blcvn/switching-proto/go/user;user";
 option java_package = "com.blcvn.switching.user";
 
+// Thông tin người dùng
 message User {
-  string id = 1;
-  string name = 2;
-  string email = 3;
+  string id = 1;      // ID định danh người dùng
+  string name = 2;    // Tên người dùng
+  string email = 3;   // Email của người dùng
 }

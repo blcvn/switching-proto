@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// Package định nghĩa các message và service cho Financial Institution (FI) trong offchain
 package offchain.v1;
 
 import "offchain/common.proto";

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "access-point/health.proto",
+    "title": "Package định nghĩa các message và service cho health check trong access point",
     "version": "version not set"
   },
   "tags": [
@@ -21,13 +21,16 @@
       "type": "object",
       "properties": {
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái (ví dụ: \"healthy\", \"unhealthy\")"
         },
         "time": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian kiểm tra"
         }
-      }
+      },
+      "title": "Response kiểm tra sức khỏe"
     },
     "protobufAny": {
       "type": "object",

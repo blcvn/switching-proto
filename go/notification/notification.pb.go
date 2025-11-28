@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v3.12.4
-// source: notifications/notification.proto
+// source: notification/notification.proto
 
 package notification
 
@@ -21,30 +21,87 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type Notification struct {
+// Loại thông báo được gửi
+type NotificationType int32
+
+const (
+	NotificationType_NONE      NotificationType = 0 // Giá trị mặc định, không sử dụng
+	NotificationType_HELD      NotificationType = 1 // Giao dịch đang bị giữ lại
+	NotificationType_COMPLETE  NotificationType = 2 // Giao dịch đã hoàn thành
+	NotificationType_UNHELD    NotificationType = 3 // Giao dịch đã được giải phóng khỏi trạng thái giữ
+	NotificationType_CANCELLED NotificationType = 4 // Giao dịch đã bị hủy
+)
+
+// Enum value maps for NotificationType.
+var (
+	NotificationType_name = map[int32]string{
+		0: "NONE",
+		1: "HELD",
+		2: "COMPLETE",
+		3: "UNHELD",
+		4: "CANCELLED",
+	}
+	NotificationType_value = map[string]int32{
+		"NONE":      0,
+		"HELD":      1,
+		"COMPLETE":  2,
+		"UNHELD":    3,
+		"CANCELLED": 4,
+	}
+)
+
+func (x NotificationType) Enum() *NotificationType {
+	p := new(NotificationType)
+	*p = x
+	return p
+}
+
+func (x NotificationType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (NotificationType) Descriptor() protoreflect.EnumDescriptor {
+	return file_notification_notification_proto_enumTypes[0].Descriptor()
+}
+
+func (NotificationType) Type() protoreflect.EnumType {
+	return &file_notification_notification_proto_enumTypes[0]
+}
+
+func (x NotificationType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use NotificationType.Descriptor instead.
+func (NotificationType) EnumDescriptor() ([]byte, []int) {
+	return file_notification_notification_proto_rawDescGZIP(), []int{0}
+}
+
+// Request gửi thông báo
+type NotificationRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`       // Thông tin metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`     // Chữ ký số của request
+	Transaction   *Transaction           `protobuf:"bytes,3,opt,name=transaction,proto3" json:"transaction,omitempty"` // Thông tin giao dịch cần thông báo
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Notification) Reset() {
-	*x = Notification{}
-	mi := &file_notifications_notification_proto_msgTypes[0]
+func (x *NotificationRequest) Reset() {
+	*x = NotificationRequest{}
+	mi := &file_notification_notification_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Notification) String() string {
+func (x *NotificationRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Notification) ProtoMessage() {}
+func (*NotificationRequest) ProtoMessage() {}
 
-func (x *Notification) ProtoReflect() protoreflect.Message {
-	mi := &file_notifications_notification_proto_msgTypes[0]
+func (x *NotificationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_notification_notification_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,87 +112,188 @@ func (x *Notification) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Notification.ProtoReflect.Descriptor instead.
-func (*Notification) Descriptor() ([]byte, []int) {
-	return file_notifications_notification_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use NotificationRequest.ProtoReflect.Descriptor instead.
+func (*NotificationRequest) Descriptor() ([]byte, []int) {
+	return file_notification_notification_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Notification) GetId() string {
+func (x *NotificationRequest) GetMetadata() *Metadata {
 	if x != nil {
-		return x.Id
+		return x.Metadata
 	}
-	return ""
+	return nil
 }
 
-func (x *Notification) GetTitle() string {
+func (x *NotificationRequest) GetSignature() *Signature {
 	if x != nil {
-		return x.Title
+		return x.Signature
 	}
-	return ""
+	return nil
 }
 
-func (x *Notification) GetBody() string {
+func (x *NotificationRequest) GetTransaction() *Transaction {
 	if x != nil {
-		return x.Body
+		return x.Transaction
 	}
-	return ""
+	return nil
 }
 
-var File_notifications_notification_proto protoreflect.FileDescriptor
+// Response cho thông báo
+type NotificationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`       // Thông tin metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`     // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`           // Kết quả xử lý thông báo
+	Transaction   *Transaction           `protobuf:"bytes,4,opt,name=transaction,proto3" json:"transaction,omitempty"` // Thông tin giao dịch (nếu có)
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
 
-const file_notifications_notification_proto_rawDesc = "" +
+func (x *NotificationResponse) Reset() {
+	*x = NotificationResponse{}
+	mi := &file_notification_notification_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NotificationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NotificationResponse) ProtoMessage() {}
+
+func (x *NotificationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_notification_notification_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NotificationResponse.ProtoReflect.Descriptor instead.
+func (*NotificationResponse) Descriptor() ([]byte, []int) {
+	return file_notification_notification_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *NotificationResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *NotificationResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *NotificationResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *NotificationResponse) GetTransaction() *Transaction {
+	if x != nil {
+		return x.Transaction
+	}
+	return nil
+}
+
+var File_notification_notification_proto protoreflect.FileDescriptor
+
+const file_notification_notification_proto_rawDesc = "" +
 	"\n" +
-	" notifications/notification.proto\x12\x0fnotification.v2\"H\n" +
-	"\fNotification\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
-	"\x04body\x18\x03 \x01(\tR\x04bodyBa\n" +
+	"\x1fnotification/notification.proto\x12\x0fnotification.v1\x1a\x19notification/common.proto\"\xc6\x01\n" +
+	"\x13NotificationRequest\x125\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x19.notification.v1.MetadataR\bmetadata\x128\n" +
+	"\tsignature\x18\x02 \x01(\v2\x1a.notification.v1.SignatureR\tsignature\x12>\n" +
+	"\vtransaction\x18\x03 \x01(\v2\x1c.notification.v1.TransactionR\vtransaction\"\xf8\x01\n" +
+	"\x14NotificationResponse\x125\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x19.notification.v1.MetadataR\bmetadata\x128\n" +
+	"\tsignature\x18\x02 \x01(\v2\x1a.notification.v1.SignatureR\tsignature\x12/\n" +
+	"\x06result\x18\x03 \x01(\v2\x17.notification.v1.ResultR\x06result\x12>\n" +
+	"\vtransaction\x18\x04 \x01(\v2\x1c.notification.v1.TransactionR\vtransaction*O\n" +
+	"\x10NotificationType\x12\b\n" +
+	"\x04NONE\x10\x00\x12\b\n" +
+	"\x04HELD\x10\x01\x12\f\n" +
+	"\bCOMPLETE\x10\x02\x12\n" +
+	"\n" +
+	"\x06UNHELD\x10\x03\x12\r\n" +
+	"\tCANCELLED\x10\x042n\n" +
+	"\x13NotificationService\x12W\n" +
+	"\x06Notify\x12$.notification.v1.NotificationRequest\x1a%.notification.v1.NotificationResponse\"\x00Ba\n" +
 	" com.blcvn.switching.notificationZ=github.com/blcvn/switching-proto/go/notification;notificationb\x06proto3"
 
 var (
-	file_notifications_notification_proto_rawDescOnce sync.Once
-	file_notifications_notification_proto_rawDescData []byte
+	file_notification_notification_proto_rawDescOnce sync.Once
+	file_notification_notification_proto_rawDescData []byte
 )
 
-func file_notifications_notification_proto_rawDescGZIP() []byte {
-	file_notifications_notification_proto_rawDescOnce.Do(func() {
-		file_notifications_notification_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_notifications_notification_proto_rawDesc), len(file_notifications_notification_proto_rawDesc)))
+func file_notification_notification_proto_rawDescGZIP() []byte {
+	file_notification_notification_proto_rawDescOnce.Do(func() {
+		file_notification_notification_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_notification_notification_proto_rawDesc), len(file_notification_notification_proto_rawDesc)))
 	})
-	return file_notifications_notification_proto_rawDescData
+	return file_notification_notification_proto_rawDescData
 }
 
-var file_notifications_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_notifications_notification_proto_goTypes = []any{
-	(*Notification)(nil), // 0: notification.v2.Notification
+var file_notification_notification_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_notification_notification_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_notification_notification_proto_goTypes = []any{
+	(NotificationType)(0),        // 0: notification.v1.NotificationType
+	(*NotificationRequest)(nil),  // 1: notification.v1.NotificationRequest
+	(*NotificationResponse)(nil), // 2: notification.v1.NotificationResponse
+	(*Metadata)(nil),             // 3: notification.v1.Metadata
+	(*Signature)(nil),            // 4: notification.v1.Signature
+	(*Transaction)(nil),          // 5: notification.v1.Transaction
+	(*Result)(nil),               // 6: notification.v1.Result
 }
-var file_notifications_notification_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+var file_notification_notification_proto_depIdxs = []int32{
+	3, // 0: notification.v1.NotificationRequest.metadata:type_name -> notification.v1.Metadata
+	4, // 1: notification.v1.NotificationRequest.signature:type_name -> notification.v1.Signature
+	5, // 2: notification.v1.NotificationRequest.transaction:type_name -> notification.v1.Transaction
+	3, // 3: notification.v1.NotificationResponse.metadata:type_name -> notification.v1.Metadata
+	4, // 4: notification.v1.NotificationResponse.signature:type_name -> notification.v1.Signature
+	6, // 5: notification.v1.NotificationResponse.result:type_name -> notification.v1.Result
+	5, // 6: notification.v1.NotificationResponse.transaction:type_name -> notification.v1.Transaction
+	1, // 7: notification.v1.NotificationService.Notify:input_type -> notification.v1.NotificationRequest
+	2, // 8: notification.v1.NotificationService.Notify:output_type -> notification.v1.NotificationResponse
+	8, // [8:9] is the sub-list for method output_type
+	7, // [7:8] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
-func init() { file_notifications_notification_proto_init() }
-func file_notifications_notification_proto_init() {
-	if File_notifications_notification_proto != nil {
+func init() { file_notification_notification_proto_init() }
+func file_notification_notification_proto_init() {
+	if File_notification_notification_proto != nil {
 		return
 	}
+	file_notification_common_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_notifications_notification_proto_rawDesc), len(file_notifications_notification_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   1,
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_notification_notification_proto_rawDesc), len(file_notification_notification_proto_rawDesc)),
+			NumEnums:      1,
+			NumMessages:   2,
 			NumExtensions: 0,
-			NumServices:   0,
+			NumServices:   1,
 		},
-		GoTypes:           file_notifications_notification_proto_goTypes,
-		DependencyIndexes: file_notifications_notification_proto_depIdxs,
-		MessageInfos:      file_notifications_notification_proto_msgTypes,
+		GoTypes:           file_notification_notification_proto_goTypes,
+		DependencyIndexes: file_notification_notification_proto_depIdxs,
+		EnumInfos:         file_notification_notification_proto_enumTypes,
+		MessageInfos:      file_notification_notification_proto_msgTypes,
 	}.Build()
-	File_notifications_notification_proto = out.File
-	file_notifications_notification_proto_goTypes = nil
-	file_notifications_notification_proto_depIdxs = nil
+	File_notification_notification_proto = out.File
+	file_notification_notification_proto_goTypes = nil
+	file_notification_notification_proto_depIdxs = nil
 }

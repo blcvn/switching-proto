@@ -1,0 +1,38 @@
+syntax = "proto3";
+package notification.v1;
+
+import "notification/common.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/notification;notification";
+option java_package = "com.blcvn.switching.notification";
+
+// Service quản lý thông báo (Notification Service)
+service NotificationService {
+  // Gửi thông báo về trạng thái giao dịch
+  rpc Notify(NotificationRequest) returns (NotificationResponse) {}
+}
+
+// Loại thông báo được gửi
+enum NotificationType {
+  NONE = 0;        // Giá trị mặc định, không sử dụng
+  HELD = 1;        // Giao dịch đang bị giữ lại
+  COMPLETE = 2;    // Giao dịch đã hoàn thành
+  UNHELD = 3;      // Giao dịch đã được giải phóng khỏi trạng thái giữ
+  CANCELLED = 4;   // Giao dịch đã bị hủy
+}
+
+// Request gửi thông báo
+message NotificationRequest {
+  Metadata metadata = 1;        // Thông tin metadata của request
+  Signature signature = 2;      // Chữ ký số của request
+  Transaction transaction = 3;  // Thông tin giao dịch cần thông báo
+}
+
+// Response cho thông báo
+message NotificationResponse {
+  Metadata metadata = 1;        // Thông tin metadata của response
+  Signature signature = 2;     // Chữ ký số của response
+  Result result = 3;           // Kết quả xử lý thông báo
+  Transaction transaction = 4; // Thông tin giao dịch (nếu có)
+}
+

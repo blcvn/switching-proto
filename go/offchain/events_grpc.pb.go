@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: offchain/events.proto
 
+// Package định nghĩa các message và service cho events trong offchain
+
 package offchain
 
 import (

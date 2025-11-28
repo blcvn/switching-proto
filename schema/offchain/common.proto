@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// Package định nghĩa các message dùng chung cho offchain services
 package offchain.v1;
 
 import "google/protobuf/timestamp.proto";
@@ -8,7 +9,7 @@ import "offchain/error.proto";
 option go_package = "github.com/blcvn/switching-proto/go/offchain;offchain";
 option java_package = "com.blcvn.switching.offchain";
 
-// Các message dùng chung cho các service cụ thể
+// Các message dùng chung cho các service cụ thể trong offchain
 
 // Message rỗng, dùng cho các RPC không cần tham số đầu vào
 message Empty {}
@@ -69,13 +70,14 @@ message Account {
   string reference = 5;
 }
 
+// Metadata chứa thông tin về request/response
 message Metadata {
   string request_id = 1;    // ID định danh duy nhất cho request
   int64 request_time = 2;   // Thời gian gửi request (Unix timestamp)
   string version = 3;       // Phiên bản của protocol
 }
 
-// CCSignature định nghĩa cấu trúc chữ ký số cho request
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
 message Signature {
   // SignatureType định nghĩa các loại chữ ký được hỗ trợ
   enum SignatureType {
@@ -85,8 +87,8 @@ message Signature {
       S = 3;            // Chữ ký loại S
   }
   SignatureType s_type = 1;  // Loại chữ ký được sử dụng
-  string s = 2;              // Chuỗi dùng tạo ra chữ ký
-  bytes b = 3;               // Chữ ký số 
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
 }
 
 // Result định nghĩa cấu trúc kết quả trả về

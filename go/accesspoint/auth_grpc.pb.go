@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: access-point/auth.proto
 
+// Package định nghĩa các message và service cho access point authentication
+
 package accesspoint
 
 import (
@@ -26,8 +28,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
-// Authentication service (token endpoint)
+// Service xác thực (authentication service) - endpoint lấy token
 type AuthServiceClient interface {
+	// Lấy access token để xác thực các request tiếp theo
 	Token(ctx context.Context, in *TokenRequest, opts ...grpc.CallOption) (*TokenResponse, error)
 }
 
@@ -53,8 +56,9 @@ func (c *authServiceClient) Token(ctx context.Context, in *TokenRequest, opts ..
 // All implementations must embed UnimplementedAuthServiceServer
 // for forward compatibility.
 //
-// Authentication service (token endpoint)
+// Service xác thực (authentication service) - endpoint lấy token
 type AuthServiceServer interface {
+	// Lấy access token để xác thực các request tiếp theo
 	Token(context.Context, *TokenRequest) (*TokenResponse, error)
 	mustEmbedUnimplementedAuthServiceServer()
 }

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+// Package định nghĩa các message và service cho health check trong access point
 package accesspoint.v1;
 
 import "google/protobuf/timestamp.proto";
@@ -8,12 +9,14 @@ import "access-point/common.proto";
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
 
-// Health service
+// Service kiểm tra tình trạng sức khỏe của hệ thống (health check)
 service HealthService {
+  // Kiểm tra tình trạng sức khỏe của service
   rpc Check(Empty) returns (HealthResponse) {}
 }
 
+// Response kiểm tra sức khỏe
 message HealthResponse {
-  string status = 1;
-  google.protobuf.Timestamp time = 2;
+  string status = 1;                        // Trạng thái (ví dụ: "healthy", "unhealthy")
+  google.protobuf.Timestamp time = 2;      // Thời gian kiểm tra
 }

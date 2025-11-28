@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "access-point/kyc.proto",
+    "title": "Package định nghĩa các message và service cho KYC (Know Your Customer) trong access point",
     "version": "version not set"
   },
   "tags": [
@@ -21,15 +21,19 @@
       "type": "object",
       "properties": {
         "bic": {
-          "type": "string"
+          "type": "string",
+          "title": "Bank Identifier Code của thực thể"
         },
         "action": {
-          "type": "string"
+          "type": "string",
+          "title": "Hành động đã thực hiện (ví dụ: \"create\", \"update\", \"verify\")"
         },
         "time": {
-          "type": "string"
+          "type": "string",
+          "title": "Thời gian thực hiện hành động"
         }
-      }
+      },
+      "title": "Một entry trong lịch sử audit"
     },
     "accesspointv1AuditResponse": {
       "type": "object",
@@ -39,23 +43,29 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/accesspointv1AuditEntry"
-          }
+          },
+          "title": "Danh sách các entry trong lịch sử audit"
         }
-      }
+      },
+      "title": "Response lịch sử audit"
     },
     "accesspointv1Document": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "title": "ID của tài liệu"
         },
         "type": {
-          "type": "string"
+          "type": "string",
+          "title": "Loại tài liệu (ví dụ: \"passport\", \"license\")"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "title": "URL để truy cập tài liệu"
         }
-      }
+      },
+      "title": "Thông tin tài liệu KYC"
     },
     "accesspointv1GetEntityDocsResponse": {
       "type": "object",
@@ -65,43 +75,54 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/accesspointv1Document"
-          }
+          },
+          "title": "Danh sách các tài liệu"
         }
-      }
+      },
+      "title": "Response danh sách tài liệu của thực thể KYC"
     },
     "accesspointv1KycEntity": {
       "type": "object",
       "properties": {
         "bic": {
-          "type": "string"
+          "type": "string",
+          "title": "Bank Identifier Code"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "Tên thực thể"
         },
         "country": {
-          "type": "string"
+          "type": "string",
+          "title": "Quốc gia"
         },
         "lei": {
-          "type": "string"
+          "type": "string",
+          "title": "Legal Entity Identifier"
         },
         "updated_at": {
-          "type": "string"
+          "type": "string",
+          "title": "Thời gian cập nhật lần cuối"
         }
-      }
+      },
+      "title": "Thông tin thực thể KYC (Know Your Customer)"
     },
     "accesspointv1KycMetadata": {
       "type": "object",
       "properties": {
         "version": {
-          "type": "string"
+          "type": "string",
+          "title": "Phiên bản của schema KYC"
         },
         "fields": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Danh sách các trường được hỗ trợ"
         }
-      }
+      },
+      "title": "Metadata về các trường KYC được hỗ trợ"
     },
     "accesspointv1ListEntitiesResponse": {
       "type": "object",
@@ -111,17 +132,21 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/accesspointv1KycEntity"
-          }
+          },
+          "title": "Danh sách các thực thể KYC"
         }
-      }
+      },
+      "title": "Response danh sách các thực thể KYC"
     },
     "accesspointv1SubmitKycResponse": {
       "type": "object",
       "properties": {
         "status": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái xử lý (ví dụ: \"pending\", \"approved\", \"rejected\")"
         }
-      }
+      },
+      "title": "Response gửi thông tin KYC"
     },
     "protobufAny": {
       "type": "object",

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/events.proto",
+    "title": "Package định nghĩa các message và service cho events trong offchain",
     "version": "version not set"
   },
   "tags": [

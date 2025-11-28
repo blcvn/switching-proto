@@ -1,23 +1,27 @@
 syntax = "proto3";
 
+// Package định nghĩa các message và service cho access point authentication
 package accesspoint.v1;
 
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
 
-// Authentication service (token endpoint)
+// Service xác thực (authentication service) - endpoint lấy token
 service AuthService {
+  // Lấy access token để xác thực các request tiếp theo
   rpc Token(TokenRequest) returns (TokenResponse) {}
 }
 
+// Request lấy token
 message TokenRequest {
-  string grant_type = 1;
-  string client_id = 2;
-  string client_secret = 3;
+  string grant_type = 1;      // Loại grant (ví dụ: "client_credentials")
+  string client_id = 2;       // ID của client
+  string client_secret = 3;   // Secret của client
 }
 
+// Response trả về token
 message TokenResponse {
-  string access_token = 1;
-  string token_type = 2;
-  int32 expires_in = 3;
+  string access_token = 1;    // Access token để sử dụng cho các API call
+  string token_type = 2;     // Loại token (thường là "Bearer")
+  int32 expires_in = 3;      // Thời gian hết hạn của token (tính bằng giây)
 }

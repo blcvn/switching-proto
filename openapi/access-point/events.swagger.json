@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "access-point/events.proto",
+    "title": "Package định nghĩa các message và service cho events trong access point",
     "version": "version not set"
   },
   "tags": [
@@ -22,32 +22,39 @@
       "properties": {
         "event": {
           "type": "string",
-          "title": "welcome, update, ping"
+          "title": "Loại event: welcome, update, ping"
         },
         "data": {
-          "type": "string"
+          "type": "string",
+          "title": "Dữ liệu của event (dạng JSON string)"
         },
         "timestamp": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Thời gian xảy ra event"
         }
-      }
+      },
+      "title": "Event (sự kiện) được gửi đến client"
     },
     "accesspointv1SubscribeCallbackResponse": {
       "type": "object",
       "properties": {
         "subscribed": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái đăng ký (thường là \"ok\" hoặc \"success\")"
         }
-      }
+      },
+      "title": "Response đăng ký callback"
     },
     "accesspointv1UnsubscribeCallbackResponse": {
       "type": "object",
       "properties": {
         "unsubscribed": {
-          "type": "string"
+          "type": "string",
+          "title": "Trạng thái hủy đăng ký (thường là \"ok\" hoặc \"success\")"
         }
-      }
+      },
+      "title": "Response hủy đăng ký callback"
     },
     "protobufAny": {
       "type": "object",

@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: access-point/health.proto
 
+// Package định nghĩa các message và service cho health check trong access point
+
 package accesspoint
 
 import (
@@ -22,10 +24,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Response kiểm tra sức khỏe
 type HealthResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	Time          *timestamp.Timestamp   `protobuf:"bytes,2,opt,name=time,proto3" json:"time,omitempty"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // Trạng thái (ví dụ: "healthy", "unhealthy")
+	Time          *timestamp.Timestamp   `protobuf:"bytes,2,opt,name=time,proto3" json:"time,omitempty"`     // Thời gian kiểm tra
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

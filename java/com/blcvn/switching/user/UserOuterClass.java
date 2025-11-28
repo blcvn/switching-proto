@@ -19,11 +19,19 @@ public final class UserOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * ID định danh người dùng
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
     java.lang.String getId();
     /**
+     * <pre>
+     * ID định danh người dùng
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -31,11 +39,19 @@ public final class UserOuterClass {
         getIdBytes();
 
     /**
+     * <pre>
+     * Tên người dùng
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
+     * <pre>
+     * Tên người dùng
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -43,11 +59,19 @@ public final class UserOuterClass {
         getNameBytes();
 
     /**
+     * <pre>
+     * Email của người dùng
+     * </pre>
+     *
      * <code>string email = 3;</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
+     * <pre>
+     * Email của người dùng
+     * </pre>
+     *
      * <code>string email = 3;</code>
      * @return The bytes for email.
      */
@@ -55,6 +79,10 @@ public final class UserOuterClass {
         getEmailBytes();
   }
   /**
+   * <pre>
+   * Thông tin người dùng
+   * </pre>
+   *
    * Protobuf type {@code user.v1.User}
    */
   public static final class User extends
@@ -155,6 +183,10 @@ public final class UserOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     * <pre>
+     * ID định danh người dùng
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -172,6 +204,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * ID định danh người dùng
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -193,6 +229,10 @@ public final class UserOuterClass {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
+     * <pre>
+     * Tên người dùng
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -210,6 +250,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * Tên người dùng
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -231,6 +275,10 @@ public final class UserOuterClass {
     public static final int EMAIL_FIELD_NUMBER = 3;
     private volatile java.lang.Object email_;
     /**
+     * <pre>
+     * Email của người dùng
+     * </pre>
+     *
      * <code>string email = 3;</code>
      * @return The email.
      */
@@ -248,6 +296,10 @@ public final class UserOuterClass {
       }
     }
     /**
+     * <pre>
+     * Email của người dùng
+     * </pre>
+     *
      * <code>string email = 3;</code>
      * @return The bytes for email.
      */
@@ -441,6 +493,10 @@ public final class UserOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Thông tin người dùng
+     * </pre>
+     *
      * Protobuf type {@code user.v1.User}
      */
     public static final class Builder extends
@@ -604,6 +660,10 @@ public final class UserOuterClass {
 
       private java.lang.Object id_ = "";
       /**
+       * <pre>
+       * ID định danh người dùng
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The id.
        */
@@ -620,6 +680,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * ID định danh người dùng
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return The bytes for id.
        */
@@ -637,6 +701,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * ID định danh người dùng
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
@@ -652,6 +720,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh người dùng
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @return This builder for chaining.
        */
@@ -662,6 +734,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * ID định danh người dùng
+       * </pre>
+       *
        * <code>string id = 1;</code>
        * @param value The bytes for id to set.
        * @return This builder for chaining.
@@ -680,6 +756,10 @@ public final class UserOuterClass {
 
       private java.lang.Object name_ = "";
       /**
+       * <pre>
+       * Tên người dùng
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The name.
        */
@@ -696,6 +776,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * Tên người dùng
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The bytes for name.
        */
@@ -713,6 +797,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * Tên người dùng
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The name to set.
        * @return This builder for chaining.
@@ -728,6 +816,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tên người dùng
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return This builder for chaining.
        */
@@ -738,6 +830,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Tên người dùng
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -756,6 +852,10 @@ public final class UserOuterClass {
 
       private java.lang.Object email_ = "";
       /**
+       * <pre>
+       * Email của người dùng
+       * </pre>
+       *
        * <code>string email = 3;</code>
        * @return The email.
        */
@@ -772,6 +872,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * Email của người dùng
+       * </pre>
+       *
        * <code>string email = 3;</code>
        * @return The bytes for email.
        */
@@ -789,6 +893,10 @@ public final class UserOuterClass {
         }
       }
       /**
+       * <pre>
+       * Email của người dùng
+       * </pre>
+       *
        * <code>string email = 3;</code>
        * @param value The email to set.
        * @return This builder for chaining.
@@ -804,6 +912,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Email của người dùng
+       * </pre>
+       *
        * <code>string email = 3;</code>
        * @return This builder for chaining.
        */
@@ -814,6 +926,10 @@ public final class UserOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Email của người dùng
+       * </pre>
+       *
        * <code>string email = 3;</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.

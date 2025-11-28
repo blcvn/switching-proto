@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "offchain/auth.proto",
+    "title": "Package định nghĩa các message và service cho offchain authentication",
     "version": "version not set"
   },
   "tags": [

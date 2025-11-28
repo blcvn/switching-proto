@@ -4,6 +4,8 @@
 // 	protoc        v3.12.4
 // source: offchain/gpi.proto
 
+// Package định nghĩa các message và service cho GPI (Global Payments Innovation) trong offchain
+
 package offchain
 
 import (

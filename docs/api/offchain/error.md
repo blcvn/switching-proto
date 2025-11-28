@@ -1,4 +1,4 @@
-# Offchain Error API Specification
+# Package Định Nghĩa Các Mã Lỗi Và Kết Quả Cho Offchain Service API Specification
 
 ---
 
