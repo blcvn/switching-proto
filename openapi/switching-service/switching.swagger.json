@@ -1,0 +1,445 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "switching-service/switching.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SwitchingService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/switching/banks": {
+      "post": {
+        "summary": "Register a new bank into the settlement data contract.",
+        "operationId": "SwitchingService_RegisterBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1RegisterBankResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1RegisterBankRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/banks/{bank_address}/balance": {
+      "get": {
+        "summary": "Query the current on-chain balance of a bank.",
+        "operationId": "SwitchingService_QueryBankBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "bank_address",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/payments/cancel": {
+      "post": {
+        "summary": "Cancel a previously created hold payment (refund to sender).",
+        "operationId": "SwitchingService_CancelPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CancelPaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/payments/confirm": {
+      "post": {
+        "summary": "Confirm a held payment and trigger settlement on-chain.",
+        "operationId": "SwitchingService_ConfirmPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1ConfirmPaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/payments/hold": {
+      "post": {
+        "summary": "Create a single hold payment request.",
+        "operationId": "SwitchingService_HoldPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1HoldPaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/payments/holdBatch": {
+      "post": {
+        "summary": "Create a batch of hold payments in a single transaction.",
+        "operationId": "SwitchingService_HoldBatchPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1BatchPaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1HoldBatchPaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1BatchPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1PaymentResult"
+          }
+        }
+      }
+    },
+    "v1CancelPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "sender_bank": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ConfirmPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "sender_bank": {
+          "type": "string"
+        },
+        "receiver_bank": {
+          "type": "string"
+        },
+        "from_bank_account": {
+          "type": "string"
+        },
+        "to_bank_account": {
+          "type": "string"
+        },
+        "tx_reference": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "v1HoldBatchPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "sender_bank": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1HoldPaymentItem"
+          }
+        }
+      }
+    },
+    "v1HoldPaymentItem": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "beneficiary_account": {
+          "type": "string"
+        },
+        "receiver_bank_code": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "v1HoldPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "sender_bank": {
+          "type": "string"
+        },
+        "receiver_bank": {
+          "type": "string"
+        },
+        "receiver_bank_code": {
+          "type": "string"
+        },
+        "beneficiary_account": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PaymentResponse": {
+      "type": "object",
+      "properties": {
+        "tx_hash": {
+          "type": "string"
+        },
+        "ref_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "v1PaymentResult": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "tx_hash": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1QueryBalanceResponse": {
+      "type": "object",
+      "properties": {
+        "bank_address": {
+          "type": "string"
+        },
+        "token_address": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RegisterBankRequest": {
+      "type": "object",
+      "properties": {
+        "bank_code": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RegisterBankResponse": {
+      "type": "object",
+      "properties": {
+        "bank_code": {
+          "type": "string"
+        },
+        "bank_address": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "int64"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1TransactionResponse": {
+      "type": "object",
+      "properties": {
+        "tx_hash": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

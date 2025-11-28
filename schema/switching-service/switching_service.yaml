@@ -1,0 +1,27 @@
+type: google.api.Service
+config_version: 3
+http:
+  rules:
+    - selector: switchingservice.v1.SwitchingService.RegisterBank
+      post: /v1/switching/banks
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.QueryBankBalance
+      get: /v1/switching/banks/{bank_address}/balance
+
+    - selector: switchingservice.v1.SwitchingService.HoldPayment
+      post: /v1/switching/payments/hold
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.HoldBatchPayment
+      post: /v1/switching/payments/holdBatch
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.CancelPayment
+      post: /v1/switching/payments/cancel
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.ConfirmPayment
+      post: /v1/switching/payments/confirm
+      body: "*"
+
