@@ -4,6 +4,8 @@
 // - protoc             v3.12.4
 // source: access-point/gpi.proto
 
+// Package định nghĩa các message cho GPI (Global Payments Innovation) trong access point
+
 package accesspoint
 
 import (
@@ -22,17 +24,20 @@ const (
 	GpiService_CreatePayment_FullMethodName    = "/accesspoint.v1.GpiService/CreatePayment"
 	GpiService_GetPayment_FullMethodName       = "/accesspoint.v1.GpiService/GetPayment"
 	GpiService_GetPaymentStatus_FullMethodName = "/accesspoint.v1.GpiService/GetPaymentStatus"
-	GpiService_ConfirmPayment_FullMethodName   = "/accesspoint.v1.GpiService/ConfirmPayment"
 )
 
 // GpiServiceClient is the client API for GpiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// Service quản lý thanh toán GPI (Global Payments Innovation)
 type GpiServiceClient interface {
+	// Tạo thanh toán mới
 	CreatePayment(ctx context.Context, in *CreatePaymentRequest, opts ...grpc.CallOption) (*CreatePaymentResponse, error)
-	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*Payment, error)
-	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*PaymentStatus, error)
-	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*ConfirmPaymentResponse, error)
+	// Lấy thông tin chi tiết của một thanh toán
+	GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
+	// Lấy trạng thái của một thanh toán
+	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 }
 
 type gpiServiceClient struct {
@@ -53,9 +58,9 @@ func (c *gpiServiceClient) CreatePayment(ctx context.Context, in *CreatePaymentR
 	return out, nil
 }
 
-func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*Payment, error) {
+func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Payment)
+	out := new(GetPaymentResponse)
 	err := c.cc.Invoke(ctx, GpiService_GetPayment_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -63,20 +68,10 @@ func (c *gpiServiceClient) GetPayment(ctx context.Context, in *GetPaymentRequest
 	return out, nil
 }
 
-func (c *gpiServiceClient) GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*PaymentStatus, error) {
+func (c *gpiServiceClient) GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(PaymentStatus)
+	out := new(GetPaymentResponse)
 	err := c.cc.Invoke(ctx, GpiService_GetPaymentStatus_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gpiServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*ConfirmPaymentResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ConfirmPaymentResponse)
-	err := c.cc.Invoke(ctx, GpiService_ConfirmPayment_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -86,11 +81,15 @@ func (c *gpiServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymen
 // GpiServiceServer is the server API for GpiService service.
 // All implementations must embed UnimplementedGpiServiceServer
 // for forward compatibility.
+//
+// Service quản lý thanh toán GPI (Global Payments Innovation)
 type GpiServiceServer interface {
+	// Tạo thanh toán mới
 	CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error)
-	GetPayment(context.Context, *GetPaymentRequest) (*Payment, error)
-	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*PaymentStatus, error)
-	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error)
+	// Lấy thông tin chi tiết của một thanh toán
+	GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error)
+	// Lấy trạng thái của một thanh toán
+	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error)
 	mustEmbedUnimplementedGpiServiceServer()
 }
 
@@ -104,14 +103,11 @@ type UnimplementedGpiServiceServer struct{}
 func (UnimplementedGpiServiceServer) CreatePayment(context.Context, *CreatePaymentRequest) (*CreatePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePayment not implemented")
 }
-func (UnimplementedGpiServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*Payment, error) {
+func (UnimplementedGpiServiceServer) GetPayment(context.Context, *GetPaymentRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPayment not implemented")
 }
-func (UnimplementedGpiServiceServer) GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*PaymentStatus, error) {
+func (UnimplementedGpiServiceServer) GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentStatus not implemented")
-}
-func (UnimplementedGpiServiceServer) ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ConfirmPayment not implemented")
 }
 func (UnimplementedGpiServiceServer) mustEmbedUnimplementedGpiServiceServer() {}
 func (UnimplementedGpiServiceServer) testEmbeddedByValue()                    {}
@@ -188,24 +184,6 @@ func _GpiService_GetPaymentStatus_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _GpiService_ConfirmPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ConfirmPaymentRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GpiServiceServer).ConfirmPayment(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: GpiService_ConfirmPayment_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GpiServiceServer).ConfirmPayment(ctx, req.(*ConfirmPaymentRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 // GpiService_ServiceDesc is the grpc.ServiceDesc for GpiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -224,10 +202,6 @@ var GpiService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetPaymentStatus",
 			Handler:    _GpiService_GetPaymentStatus_Handler,
-		},
-		{
-			MethodName: "ConfirmPayment",
-			Handler:    _GpiService_ConfirmPayment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

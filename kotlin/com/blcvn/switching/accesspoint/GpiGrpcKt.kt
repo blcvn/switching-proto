@@ -37,19 +37,14 @@ public object GpiServiceGrpcKt {
     @JvmStatic
     get() = GpiServiceGrpc.getCreatePaymentMethod()
 
-  public val getPaymentMethod: MethodDescriptor<Gpi.GetPaymentRequest, Common.Payment>
+  public val getPaymentMethod: MethodDescriptor<Gpi.GetPaymentRequest, Gpi.GetPaymentResponse>
     @JvmStatic
     get() = GpiServiceGrpc.getGetPaymentMethod()
 
   public val getPaymentStatusMethod:
-      MethodDescriptor<Gpi.GetPaymentStatusRequest, Gpi.PaymentStatus>
+      MethodDescriptor<Gpi.GetPaymentStatusRequest, Gpi.GetPaymentResponse>
     @JvmStatic
     get() = GpiServiceGrpc.getGetPaymentStatusMethod()
-
-  public val confirmPaymentMethod:
-      MethodDescriptor<Gpi.ConfirmPaymentRequest, Gpi.ConfirmPaymentResponse>
-    @JvmStatic
-    get() = GpiServiceGrpc.getConfirmPaymentMethod()
 
   /**
    * A stub for issuing RPCs to a(n) accesspoint.v1.GpiService service as suspending coroutines.
@@ -98,7 +93,7 @@ public object GpiServiceGrpcKt {
      * @return The single response from the server.
      */
     public suspend fun getPayment(request: Gpi.GetPaymentRequest, headers: Metadata = Metadata()):
-        Common.Payment = unaryRpc(
+        Gpi.GetPaymentResponse = unaryRpc(
       channel,
       GpiServiceGrpc.getGetPaymentMethod(),
       request,
@@ -120,31 +115,9 @@ public object GpiServiceGrpcKt {
      * @return The single response from the server.
      */
     public suspend fun getPaymentStatus(request: Gpi.GetPaymentStatusRequest, headers: Metadata =
-        Metadata()): Gpi.PaymentStatus = unaryRpc(
+        Metadata()): Gpi.GetPaymentResponse = unaryRpc(
       channel,
       GpiServiceGrpc.getGetPaymentStatusMethod(),
-      request,
-      callOptions,
-      headers
-    )
-
-    /**
-     * Executes this RPC and returns the response message, suspending until the RPC completes
-     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
-     * corresponding
-     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
-     * with the corresponding exception as a cause.
-     *
-     * @param request The request message to send to the server.
-     *
-     * @param headers Metadata to attach to the request.  Most users will not need this.
-     *
-     * @return The single response from the server.
-     */
-    public suspend fun confirmPayment(request: Gpi.ConfirmPaymentRequest, headers: Metadata =
-        Metadata()): Gpi.ConfirmPaymentResponse = unaryRpc(
-      channel,
-      GpiServiceGrpc.getConfirmPaymentMethod(),
       request,
       callOptions,
       headers
@@ -183,7 +156,8 @@ public object GpiServiceGrpcKt {
      *
      * @param request The request from the client.
      */
-    public open suspend fun getPayment(request: Gpi.GetPaymentRequest): Common.Payment = throw
+    public open suspend fun getPayment(request: Gpi.GetPaymentRequest): Gpi.GetPaymentResponse =
+        throw
         StatusException(UNIMPLEMENTED.withDescription("Method accesspoint.v1.GpiService.GetPayment is unimplemented"))
 
     /**
@@ -198,23 +172,8 @@ public object GpiServiceGrpcKt {
      * @param request The request from the client.
      */
     public open suspend fun getPaymentStatus(request: Gpi.GetPaymentStatusRequest):
-        Gpi.PaymentStatus = throw
+        Gpi.GetPaymentResponse = throw
         StatusException(UNIMPLEMENTED.withDescription("Method accesspoint.v1.GpiService.GetPaymentStatus is unimplemented"))
-
-    /**
-     * Returns the response to an RPC for accesspoint.v1.GpiService.ConfirmPayment.
-     *
-     * If this method fails with a [StatusException], the RPC will fail with the corresponding
-     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
-     * the RPC will fail
-     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
-     * fail with `Status.UNKNOWN` with the exception as a cause.
-     *
-     * @param request The request from the client.
-     */
-    public open suspend fun confirmPayment(request: Gpi.ConfirmPaymentRequest):
-        Gpi.ConfirmPaymentResponse = throw
-        StatusException(UNIMPLEMENTED.withDescription("Method accesspoint.v1.GpiService.ConfirmPayment is unimplemented"))
 
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())
       .addMethod(unaryServerMethodDefinition(
@@ -231,11 +190,6 @@ public object GpiServiceGrpcKt {
       context = this.context,
       descriptor = GpiServiceGrpc.getGetPaymentStatusMethod(),
       implementation = ::getPaymentStatus
-    ))
-      .addMethod(unaryServerMethodDefinition(
-      context = this.context,
-      descriptor = GpiServiceGrpc.getConfirmPaymentMethod(),
-      implementation = ::confirmPayment
     )).build()
   }
 }

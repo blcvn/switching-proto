@@ -8,6 +8,16 @@ import "access-point/common.proto";
 option go_package = "github.com/blcvn/switching-proto/go/accesspoint;accesspoint";
 option java_package = "com.blcvn.switching.accesspoint";
 
+// Service quản lý thanh toán GPI (Global Payments Innovation)
+service GpiService {
+  // Tạo thanh toán mới
+  rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse) {}
+  // Lấy thông tin chi tiết của một thanh toán
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {}
+  // Lấy trạng thái của một thanh toán
+  rpc GetPaymentStatus(GetPaymentStatusRequest) returns (GetPaymentResponse) {}
+}
+
 // Message xác nhận thanh toán
 message ConfirmMessage {
   string uetr = 1;                // Unique End-to-End Transaction Reference
@@ -60,17 +70,4 @@ message PaymentStatus {
   string currency = 4;         // Mã tiền tệ
 }
 
-// Request xác nhận thanh toán
-message ConfirmPaymentRequest {
-  Metadata metadata = 1;        // Thông tin metadata của request
-  Signature signature = 2;      // Chữ ký số của request
-  ConfirmMessage data = 3;     // Dữ liệu xác nhận
-}
 
-// Response xác nhận thanh toán
-message ConfirmPaymentResponse {
-  Metadata metadata = 1;        // Thông tin metadata của response
-  Signature signature = 2;      // Chữ ký số của response
-  Result result = 3;           // Kết quả xử lý
-  Payment data = 4;            // Dữ liệu thanh toán đã xác nhận
-}

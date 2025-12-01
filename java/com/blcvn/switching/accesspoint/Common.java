@@ -516,30 +516,10 @@ public final class Common {
 
     /**
      * <pre>
-     * BIC của ngân hàng người gửi
-     * </pre>
-     *
-     * <code>string debtor_agent = 5;</code>
-     * @return The debtorAgent.
-     */
-    java.lang.String getDebtorAgent();
-    /**
-     * <pre>
-     * BIC của ngân hàng người gửi
-     * </pre>
-     *
-     * <code>string debtor_agent = 5;</code>
-     * @return The bytes for debtorAgent.
-     */
-    com.google.protobuf.ByteString
-        getDebtorAgentBytes();
-
-    /**
-     * <pre>
      * BIC của ngân hàng người nhận
      * </pre>
      *
-     * <code>string creditor_agent = 6;</code>
+     * <code>string creditor_agent = 5;</code>
      * @return The creditorAgent.
      */
     java.lang.String getCreditorAgent();
@@ -548,7 +528,7 @@ public final class Common {
      * BIC của ngân hàng người nhận
      * </pre>
      *
-     * <code>string creditor_agent = 6;</code>
+     * <code>string creditor_agent = 5;</code>
      * @return The bytes for creditorAgent.
      */
     com.google.protobuf.ByteString
@@ -559,7 +539,7 @@ public final class Common {
      * ID định danh end-to-end của giao dịch
      * </pre>
      *
-     * <code>string end_to_end_id = 7;</code>
+     * <code>string end_to_end_id = 6;</code>
      * @return The endToEndId.
      */
     java.lang.String getEndToEndId();
@@ -568,7 +548,7 @@ public final class Common {
      * ID định danh end-to-end của giao dịch
      * </pre>
      *
-     * <code>string end_to_end_id = 7;</code>
+     * <code>string end_to_end_id = 6;</code>
      * @return The bytes for endToEndId.
      */
     com.google.protobuf.ByteString
@@ -579,7 +559,7 @@ public final class Common {
      * Trạng thái thanh toán
      * </pre>
      *
-     * <code>string status = 8;</code>
+     * <code>string status = 7;</code>
      * @return The status.
      */
     java.lang.String getStatus();
@@ -588,7 +568,7 @@ public final class Common {
      * Trạng thái thanh toán
      * </pre>
      *
-     * <code>string status = 8;</code>
+     * <code>string status = 7;</code>
      * @return The bytes for status.
      */
     com.google.protobuf.ByteString
@@ -599,7 +579,7 @@ public final class Common {
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      * @return Whether the createdAt field is set.
      */
     boolean hasCreatedAt();
@@ -608,7 +588,7 @@ public final class Common {
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      * @return The createdAt.
      */
     com.google.protobuf.Timestamp getCreatedAt();
@@ -617,43 +597,16 @@ public final class Common {
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      */
     com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
-
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     * @return Whether the debtorAgentAccount field is set.
-     */
-    boolean hasDebtorAgentAccount();
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     * @return The debtorAgentAccount.
-     */
-    com.blcvn.switching.accesspoint.Common.Account getDebtorAgentAccount();
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     */
-    com.blcvn.switching.accesspoint.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder();
 
     /**
      * <pre>
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      * @return Whether the creditorAgentAccount field is set.
      */
     boolean hasCreditorAgentAccount();
@@ -662,7 +615,7 @@ public final class Common {
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      * @return The creditorAgentAccount.
      */
     com.blcvn.switching.accesspoint.Common.Account getCreditorAgentAccount();
@@ -671,7 +624,7 @@ public final class Common {
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      */
     com.blcvn.switching.accesspoint.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder();
   }
@@ -695,7 +648,6 @@ public final class Common {
       id_ = "";
       uetr_ = "";
       currency_ = "";
-      debtorAgent_ = "";
       creditorAgent_ = "";
       endToEndId_ = "";
       status_ = "";
@@ -757,28 +709,22 @@ public final class Common {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              debtorAgent_ = s;
+              creditorAgent_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              creditorAgent_ = s;
+              endToEndId_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              endToEndId_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               status_ = s;
               break;
             }
-            case 74: {
+            case 66: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (createdAt_ != null) {
                 subBuilder = createdAt_.toBuilder();
@@ -791,20 +737,7 @@ public final class Common {
 
               break;
             }
-            case 82: {
-              com.blcvn.switching.accesspoint.Common.Account.Builder subBuilder = null;
-              if (debtorAgentAccount_ != null) {
-                subBuilder = debtorAgentAccount_.toBuilder();
-              }
-              debtorAgentAccount_ = input.readMessage(com.blcvn.switching.accesspoint.Common.Account.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(debtorAgentAccount_);
-                debtorAgentAccount_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
+            case 74: {
               com.blcvn.switching.accesspoint.Common.Account.Builder subBuilder = null;
               if (creditorAgentAccount_ != null) {
                 subBuilder = creditorAgentAccount_.toBuilder();
@@ -1002,60 +935,14 @@ public final class Common {
       }
     }
 
-    public static final int DEBTOR_AGENT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object debtorAgent_;
-    /**
-     * <pre>
-     * BIC của ngân hàng người gửi
-     * </pre>
-     *
-     * <code>string debtor_agent = 5;</code>
-     * @return The debtorAgent.
-     */
-    @java.lang.Override
-    public java.lang.String getDebtorAgent() {
-      java.lang.Object ref = debtorAgent_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        debtorAgent_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * BIC của ngân hàng người gửi
-     * </pre>
-     *
-     * <code>string debtor_agent = 5;</code>
-     * @return The bytes for debtorAgent.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDebtorAgentBytes() {
-      java.lang.Object ref = debtorAgent_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        debtorAgent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREDITOR_AGENT_FIELD_NUMBER = 6;
+    public static final int CREDITOR_AGENT_FIELD_NUMBER = 5;
     private volatile java.lang.Object creditorAgent_;
     /**
      * <pre>
      * BIC của ngân hàng người nhận
      * </pre>
      *
-     * <code>string creditor_agent = 6;</code>
+     * <code>string creditor_agent = 5;</code>
      * @return The creditorAgent.
      */
     @java.lang.Override
@@ -1076,7 +963,7 @@ public final class Common {
      * BIC của ngân hàng người nhận
      * </pre>
      *
-     * <code>string creditor_agent = 6;</code>
+     * <code>string creditor_agent = 5;</code>
      * @return The bytes for creditorAgent.
      */
     @java.lang.Override
@@ -1094,14 +981,14 @@ public final class Common {
       }
     }
 
-    public static final int END_TO_END_ID_FIELD_NUMBER = 7;
+    public static final int END_TO_END_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object endToEndId_;
     /**
      * <pre>
      * ID định danh end-to-end của giao dịch
      * </pre>
      *
-     * <code>string end_to_end_id = 7;</code>
+     * <code>string end_to_end_id = 6;</code>
      * @return The endToEndId.
      */
     @java.lang.Override
@@ -1122,7 +1009,7 @@ public final class Common {
      * ID định danh end-to-end của giao dịch
      * </pre>
      *
-     * <code>string end_to_end_id = 7;</code>
+     * <code>string end_to_end_id = 6;</code>
      * @return The bytes for endToEndId.
      */
     @java.lang.Override
@@ -1140,14 +1027,14 @@ public final class Common {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 8;
+    public static final int STATUS_FIELD_NUMBER = 7;
     private volatile java.lang.Object status_;
     /**
      * <pre>
      * Trạng thái thanh toán
      * </pre>
      *
-     * <code>string status = 8;</code>
+     * <code>string status = 7;</code>
      * @return The status.
      */
     @java.lang.Override
@@ -1168,7 +1055,7 @@ public final class Common {
      * Trạng thái thanh toán
      * </pre>
      *
-     * <code>string status = 8;</code>
+     * <code>string status = 7;</code>
      * @return The bytes for status.
      */
     @java.lang.Override
@@ -1186,14 +1073,14 @@ public final class Common {
       }
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 9;
+    public static final int CREATED_AT_FIELD_NUMBER = 8;
     private com.google.protobuf.Timestamp createdAt_;
     /**
      * <pre>
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      * @return Whether the createdAt field is set.
      */
     @java.lang.Override
@@ -1205,7 +1092,7 @@ public final class Common {
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1217,59 +1104,21 @@ public final class Common {
      * Thời gian tạo thanh toán
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp created_at = 9;</code>
+     * <code>.google.protobuf.Timestamp created_at = 8;</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
       return getCreatedAt();
     }
 
-    public static final int DEBTOR_AGENT_ACCOUNT_FIELD_NUMBER = 10;
-    private com.blcvn.switching.accesspoint.Common.Account debtorAgentAccount_;
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     * @return Whether the debtorAgentAccount field is set.
-     */
-    @java.lang.Override
-    public boolean hasDebtorAgentAccount() {
-      return debtorAgentAccount_ != null;
-    }
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     * @return The debtorAgentAccount.
-     */
-    @java.lang.Override
-    public com.blcvn.switching.accesspoint.Common.Account getDebtorAgentAccount() {
-      return debtorAgentAccount_ == null ? com.blcvn.switching.accesspoint.Common.Account.getDefaultInstance() : debtorAgentAccount_;
-    }
-    /**
-     * <pre>
-     * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-     * </pre>
-     *
-     * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-     */
-    @java.lang.Override
-    public com.blcvn.switching.accesspoint.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder() {
-      return getDebtorAgentAccount();
-    }
-
-    public static final int CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER = 11;
+    public static final int CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER = 9;
     private com.blcvn.switching.accesspoint.Common.Account creditorAgentAccount_;
     /**
      * <pre>
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      * @return Whether the creditorAgentAccount field is set.
      */
     @java.lang.Override
@@ -1281,7 +1130,7 @@ public final class Common {
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      * @return The creditorAgentAccount.
      */
     @java.lang.Override
@@ -1293,7 +1142,7 @@ public final class Common {
      * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
      * </pre>
      *
-     * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+     * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
      */
     @java.lang.Override
     public com.blcvn.switching.accesspoint.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder() {
@@ -1326,26 +1175,20 @@ public final class Common {
       if (!getCurrencyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currency_);
       }
-      if (!getDebtorAgentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, debtorAgent_);
-      }
       if (!getCreditorAgentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creditorAgent_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, creditorAgent_);
       }
       if (!getEndToEndIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, endToEndId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endToEndId_);
       }
       if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, status_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, status_);
       }
       if (createdAt_ != null) {
-        output.writeMessage(9, getCreatedAt());
-      }
-      if (debtorAgentAccount_ != null) {
-        output.writeMessage(10, getDebtorAgentAccount());
+        output.writeMessage(8, getCreatedAt());
       }
       if (creditorAgentAccount_ != null) {
-        output.writeMessage(11, getCreditorAgentAccount());
+        output.writeMessage(9, getCreditorAgentAccount());
       }
       unknownFields.writeTo(output);
     }
@@ -1369,29 +1212,22 @@ public final class Common {
       if (!getCurrencyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currency_);
       }
-      if (!getDebtorAgentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, debtorAgent_);
-      }
       if (!getCreditorAgentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creditorAgent_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, creditorAgent_);
       }
       if (!getEndToEndIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, endToEndId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, endToEndId_);
       }
       if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, status_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, status_);
       }
       if (createdAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getCreatedAt());
-      }
-      if (debtorAgentAccount_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getDebtorAgentAccount());
+          .computeMessageSize(8, getCreatedAt());
       }
       if (creditorAgentAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getCreditorAgentAccount());
+          .computeMessageSize(9, getCreditorAgentAccount());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1417,8 +1253,6 @@ public final class Common {
               other.getAmount())) return false;
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
-      if (!getDebtorAgent()
-          .equals(other.getDebtorAgent())) return false;
       if (!getCreditorAgent()
           .equals(other.getCreditorAgent())) return false;
       if (!getEndToEndId()
@@ -1429,11 +1263,6 @@ public final class Common {
       if (hasCreatedAt()) {
         if (!getCreatedAt()
             .equals(other.getCreatedAt())) return false;
-      }
-      if (hasDebtorAgentAccount() != other.hasDebtorAgentAccount()) return false;
-      if (hasDebtorAgentAccount()) {
-        if (!getDebtorAgentAccount()
-            .equals(other.getDebtorAgentAccount())) return false;
       }
       if (hasCreditorAgentAccount() != other.hasCreditorAgentAccount()) return false;
       if (hasCreditorAgentAccount()) {
@@ -1460,8 +1289,6 @@ public final class Common {
           java.lang.Double.doubleToLongBits(getAmount()));
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCurrency().hashCode();
-      hash = (37 * hash) + DEBTOR_AGENT_FIELD_NUMBER;
-      hash = (53 * hash) + getDebtorAgent().hashCode();
       hash = (37 * hash) + CREDITOR_AGENT_FIELD_NUMBER;
       hash = (53 * hash) + getCreditorAgent().hashCode();
       hash = (37 * hash) + END_TO_END_ID_FIELD_NUMBER;
@@ -1471,10 +1298,6 @@ public final class Common {
       if (hasCreatedAt()) {
         hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
         hash = (53 * hash) + getCreatedAt().hashCode();
-      }
-      if (hasDebtorAgentAccount()) {
-        hash = (37 * hash) + DEBTOR_AGENT_ACCOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getDebtorAgentAccount().hashCode();
       }
       if (hasCreditorAgentAccount()) {
         hash = (37 * hash) + CREDITOR_AGENT_ACCOUNT_FIELD_NUMBER;
@@ -1625,8 +1448,6 @@ public final class Common {
 
         currency_ = "";
 
-        debtorAgent_ = "";
-
         creditorAgent_ = "";
 
         endToEndId_ = "";
@@ -1638,12 +1459,6 @@ public final class Common {
         } else {
           createdAt_ = null;
           createdAtBuilder_ = null;
-        }
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = null;
-        } else {
-          debtorAgentAccount_ = null;
-          debtorAgentAccountBuilder_ = null;
         }
         if (creditorAgentAccountBuilder_ == null) {
           creditorAgentAccount_ = null;
@@ -1681,7 +1496,6 @@ public final class Common {
         result.uetr_ = uetr_;
         result.amount_ = amount_;
         result.currency_ = currency_;
-        result.debtorAgent_ = debtorAgent_;
         result.creditorAgent_ = creditorAgent_;
         result.endToEndId_ = endToEndId_;
         result.status_ = status_;
@@ -1689,11 +1503,6 @@ public final class Common {
           result.createdAt_ = createdAt_;
         } else {
           result.createdAt_ = createdAtBuilder_.build();
-        }
-        if (debtorAgentAccountBuilder_ == null) {
-          result.debtorAgentAccount_ = debtorAgentAccount_;
-        } else {
-          result.debtorAgentAccount_ = debtorAgentAccountBuilder_.build();
         }
         if (creditorAgentAccountBuilder_ == null) {
           result.creditorAgentAccount_ = creditorAgentAccount_;
@@ -1763,10 +1572,6 @@ public final class Common {
           currency_ = other.currency_;
           onChanged();
         }
-        if (!other.getDebtorAgent().isEmpty()) {
-          debtorAgent_ = other.debtorAgent_;
-          onChanged();
-        }
         if (!other.getCreditorAgent().isEmpty()) {
           creditorAgent_ = other.creditorAgent_;
           onChanged();
@@ -1781,9 +1586,6 @@ public final class Common {
         }
         if (other.hasCreatedAt()) {
           mergeCreatedAt(other.getCreatedAt());
-        }
-        if (other.hasDebtorAgentAccount()) {
-          mergeDebtorAgentAccount(other.getDebtorAgentAccount());
         }
         if (other.hasCreditorAgentAccount()) {
           mergeCreditorAgentAccount(other.getCreditorAgentAccount());
@@ -2148,109 +1950,13 @@ public final class Common {
         return this;
       }
 
-      private java.lang.Object debtorAgent_ = "";
-      /**
-       * <pre>
-       * BIC của ngân hàng người gửi
-       * </pre>
-       *
-       * <code>string debtor_agent = 5;</code>
-       * @return The debtorAgent.
-       */
-      public java.lang.String getDebtorAgent() {
-        java.lang.Object ref = debtorAgent_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          debtorAgent_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * BIC của ngân hàng người gửi
-       * </pre>
-       *
-       * <code>string debtor_agent = 5;</code>
-       * @return The bytes for debtorAgent.
-       */
-      public com.google.protobuf.ByteString
-          getDebtorAgentBytes() {
-        java.lang.Object ref = debtorAgent_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          debtorAgent_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * BIC của ngân hàng người gửi
-       * </pre>
-       *
-       * <code>string debtor_agent = 5;</code>
-       * @param value The debtorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDebtorAgent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        debtorAgent_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * BIC của ngân hàng người gửi
-       * </pre>
-       *
-       * <code>string debtor_agent = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDebtorAgent() {
-        
-        debtorAgent_ = getDefaultInstance().getDebtorAgent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * BIC của ngân hàng người gửi
-       * </pre>
-       *
-       * <code>string debtor_agent = 5;</code>
-       * @param value The bytes for debtorAgent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDebtorAgentBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        debtorAgent_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object creditorAgent_ = "";
       /**
        * <pre>
        * BIC của ngân hàng người nhận
        * </pre>
        *
-       * <code>string creditor_agent = 6;</code>
+       * <code>string creditor_agent = 5;</code>
        * @return The creditorAgent.
        */
       public java.lang.String getCreditorAgent() {
@@ -2270,7 +1976,7 @@ public final class Common {
        * BIC của ngân hàng người nhận
        * </pre>
        *
-       * <code>string creditor_agent = 6;</code>
+       * <code>string creditor_agent = 5;</code>
        * @return The bytes for creditorAgent.
        */
       public com.google.protobuf.ByteString
@@ -2291,7 +1997,7 @@ public final class Common {
        * BIC của ngân hàng người nhận
        * </pre>
        *
-       * <code>string creditor_agent = 6;</code>
+       * <code>string creditor_agent = 5;</code>
        * @param value The creditorAgent to set.
        * @return This builder for chaining.
        */
@@ -2310,7 +2016,7 @@ public final class Common {
        * BIC của ngân hàng người nhận
        * </pre>
        *
-       * <code>string creditor_agent = 6;</code>
+       * <code>string creditor_agent = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreditorAgent() {
@@ -2324,7 +2030,7 @@ public final class Common {
        * BIC của ngân hàng người nhận
        * </pre>
        *
-       * <code>string creditor_agent = 6;</code>
+       * <code>string creditor_agent = 5;</code>
        * @param value The bytes for creditorAgent to set.
        * @return This builder for chaining.
        */
@@ -2346,7 +2052,7 @@ public final class Common {
        * ID định danh end-to-end của giao dịch
        * </pre>
        *
-       * <code>string end_to_end_id = 7;</code>
+       * <code>string end_to_end_id = 6;</code>
        * @return The endToEndId.
        */
       public java.lang.String getEndToEndId() {
@@ -2366,7 +2072,7 @@ public final class Common {
        * ID định danh end-to-end của giao dịch
        * </pre>
        *
-       * <code>string end_to_end_id = 7;</code>
+       * <code>string end_to_end_id = 6;</code>
        * @return The bytes for endToEndId.
        */
       public com.google.protobuf.ByteString
@@ -2387,7 +2093,7 @@ public final class Common {
        * ID định danh end-to-end của giao dịch
        * </pre>
        *
-       * <code>string end_to_end_id = 7;</code>
+       * <code>string end_to_end_id = 6;</code>
        * @param value The endToEndId to set.
        * @return This builder for chaining.
        */
@@ -2406,7 +2112,7 @@ public final class Common {
        * ID định danh end-to-end của giao dịch
        * </pre>
        *
-       * <code>string end_to_end_id = 7;</code>
+       * <code>string end_to_end_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndToEndId() {
@@ -2420,7 +2126,7 @@ public final class Common {
        * ID định danh end-to-end của giao dịch
        * </pre>
        *
-       * <code>string end_to_end_id = 7;</code>
+       * <code>string end_to_end_id = 6;</code>
        * @param value The bytes for endToEndId to set.
        * @return This builder for chaining.
        */
@@ -2442,7 +2148,7 @@ public final class Common {
        * Trạng thái thanh toán
        * </pre>
        *
-       * <code>string status = 8;</code>
+       * <code>string status = 7;</code>
        * @return The status.
        */
       public java.lang.String getStatus() {
@@ -2462,7 +2168,7 @@ public final class Common {
        * Trạng thái thanh toán
        * </pre>
        *
-       * <code>string status = 8;</code>
+       * <code>string status = 7;</code>
        * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
@@ -2483,7 +2189,7 @@ public final class Common {
        * Trạng thái thanh toán
        * </pre>
        *
-       * <code>string status = 8;</code>
+       * <code>string status = 7;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -2502,7 +2208,7 @@ public final class Common {
        * Trạng thái thanh toán
        * </pre>
        *
-       * <code>string status = 8;</code>
+       * <code>string status = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -2516,7 +2222,7 @@ public final class Common {
        * Trạng thái thanh toán
        * </pre>
        *
-       * <code>string status = 8;</code>
+       * <code>string status = 7;</code>
        * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
@@ -2540,7 +2246,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        * @return Whether the createdAt field is set.
        */
       public boolean hasCreatedAt() {
@@ -2551,7 +2257,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        * @return The createdAt.
        */
       public com.google.protobuf.Timestamp getCreatedAt() {
@@ -2566,7 +2272,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
         if (createdAtBuilder_ == null) {
@@ -2586,7 +2292,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public Builder setCreatedAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2604,7 +2310,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
         if (createdAtBuilder_ == null) {
@@ -2626,7 +2332,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public Builder clearCreatedAt() {
         if (createdAtBuilder_ == null) {
@@ -2644,7 +2350,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
         
@@ -2656,7 +2362,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
         if (createdAtBuilder_ != null) {
@@ -2671,7 +2377,7 @@ public final class Common {
        * Thời gian tạo thanh toán
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp created_at = 9;</code>
+       * <code>.google.protobuf.Timestamp created_at = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2687,161 +2393,6 @@ public final class Common {
         return createdAtBuilder_;
       }
 
-      private com.blcvn.switching.accesspoint.Common.Account debtorAgentAccount_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.accesspoint.Common.Account, com.blcvn.switching.accesspoint.Common.Account.Builder, com.blcvn.switching.accesspoint.Common.AccountOrBuilder> debtorAgentAccountBuilder_;
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       * @return Whether the debtorAgentAccount field is set.
-       */
-      public boolean hasDebtorAgentAccount() {
-        return debtorAgentAccountBuilder_ != null || debtorAgentAccount_ != null;
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       * @return The debtorAgentAccount.
-       */
-      public com.blcvn.switching.accesspoint.Common.Account getDebtorAgentAccount() {
-        if (debtorAgentAccountBuilder_ == null) {
-          return debtorAgentAccount_ == null ? com.blcvn.switching.accesspoint.Common.Account.getDefaultInstance() : debtorAgentAccount_;
-        } else {
-          return debtorAgentAccountBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public Builder setDebtorAgentAccount(com.blcvn.switching.accesspoint.Common.Account value) {
-        if (debtorAgentAccountBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          debtorAgentAccount_ = value;
-          onChanged();
-        } else {
-          debtorAgentAccountBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public Builder setDebtorAgentAccount(
-          com.blcvn.switching.accesspoint.Common.Account.Builder builderForValue) {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = builderForValue.build();
-          onChanged();
-        } else {
-          debtorAgentAccountBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public Builder mergeDebtorAgentAccount(com.blcvn.switching.accesspoint.Common.Account value) {
-        if (debtorAgentAccountBuilder_ == null) {
-          if (debtorAgentAccount_ != null) {
-            debtorAgentAccount_ =
-              com.blcvn.switching.accesspoint.Common.Account.newBuilder(debtorAgentAccount_).mergeFrom(value).buildPartial();
-          } else {
-            debtorAgentAccount_ = value;
-          }
-          onChanged();
-        } else {
-          debtorAgentAccountBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public Builder clearDebtorAgentAccount() {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccount_ = null;
-          onChanged();
-        } else {
-          debtorAgentAccount_ = null;
-          debtorAgentAccountBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public com.blcvn.switching.accesspoint.Common.Account.Builder getDebtorAgentAccountBuilder() {
-        
-        onChanged();
-        return getDebtorAgentAccountFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      public com.blcvn.switching.accesspoint.Common.AccountOrBuilder getDebtorAgentAccountOrBuilder() {
-        if (debtorAgentAccountBuilder_ != null) {
-          return debtorAgentAccountBuilder_.getMessageOrBuilder();
-        } else {
-          return debtorAgentAccount_ == null ?
-              com.blcvn.switching.accesspoint.Common.Account.getDefaultInstance() : debtorAgentAccount_;
-        }
-      }
-      /**
-       * <pre>
-       * Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-       * </pre>
-       *
-       * <code>.accesspoint.v1.Account debtor_agent_account = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.blcvn.switching.accesspoint.Common.Account, com.blcvn.switching.accesspoint.Common.Account.Builder, com.blcvn.switching.accesspoint.Common.AccountOrBuilder> 
-          getDebtorAgentAccountFieldBuilder() {
-        if (debtorAgentAccountBuilder_ == null) {
-          debtorAgentAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.blcvn.switching.accesspoint.Common.Account, com.blcvn.switching.accesspoint.Common.Account.Builder, com.blcvn.switching.accesspoint.Common.AccountOrBuilder>(
-                  getDebtorAgentAccount(),
-                  getParentForChildren(),
-                  isClean());
-          debtorAgentAccount_ = null;
-        }
-        return debtorAgentAccountBuilder_;
-      }
-
       private com.blcvn.switching.accesspoint.Common.Account creditorAgentAccount_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.accesspoint.Common.Account, com.blcvn.switching.accesspoint.Common.Account.Builder, com.blcvn.switching.accesspoint.Common.AccountOrBuilder> creditorAgentAccountBuilder_;
@@ -2850,7 +2401,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        * @return Whether the creditorAgentAccount field is set.
        */
       public boolean hasCreditorAgentAccount() {
@@ -2861,7 +2412,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        * @return The creditorAgentAccount.
        */
       public com.blcvn.switching.accesspoint.Common.Account getCreditorAgentAccount() {
@@ -2876,7 +2427,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public Builder setCreditorAgentAccount(com.blcvn.switching.accesspoint.Common.Account value) {
         if (creditorAgentAccountBuilder_ == null) {
@@ -2896,7 +2447,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public Builder setCreditorAgentAccount(
           com.blcvn.switching.accesspoint.Common.Account.Builder builderForValue) {
@@ -2914,7 +2465,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public Builder mergeCreditorAgentAccount(com.blcvn.switching.accesspoint.Common.Account value) {
         if (creditorAgentAccountBuilder_ == null) {
@@ -2936,7 +2487,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public Builder clearCreditorAgentAccount() {
         if (creditorAgentAccountBuilder_ == null) {
@@ -2954,7 +2505,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public com.blcvn.switching.accesspoint.Common.Account.Builder getCreditorAgentAccountBuilder() {
         
@@ -2966,7 +2517,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       public com.blcvn.switching.accesspoint.Common.AccountOrBuilder getCreditorAgentAccountOrBuilder() {
         if (creditorAgentAccountBuilder_ != null) {
@@ -2981,7 +2532,7 @@ public final class Common {
        * Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
        * </pre>
        *
-       * <code>.accesspoint.v1.Account creditor_agent_account = 11;</code>
+       * <code>.accesspoint.v1.Account creditor_agent_account = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.blcvn.switching.accesspoint.Common.Account, com.blcvn.switching.accesspoint.Common.Account.Builder, com.blcvn.switching.accesspoint.Common.AccountOrBuilder> 
@@ -10255,35 +9806,33 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n\031access-point/common.proto\022\016accesspoint" +
       ".v1\032\037google/protobuf/timestamp.proto\032\030ac" +
-      "cess-point/error.proto\"\007\n\005Empty\"\272\002\n\007Paym" +
+      "cess-point/error.proto\"\007\n\005Empty\"\355\001\n\007Paym" +
       "ent\022\n\n\002id\030\001 \001(\t\022\014\n\004uetr\030\002 \001(\t\022\016\n\006amount\030" +
-      "\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\024\n\014debtor_agent\030" +
-      "\005 \001(\t\022\026\n\016creditor_agent\030\006 \001(\t\022\025\n\rend_to_" +
-      "end_id\030\007 \001(\t\022\016\n\006status\030\010 \001(\t\022.\n\ncreated_" +
-      "at\030\t \001(\0132\032.google.protobuf.Timestamp\0225\n\024" +
-      "debtor_agent_account\030\n \001(\0132\027.accesspoint" +
-      ".v1.Account\0227\n\026creditor_agent_account\030\013 " +
-      "\001(\0132\027.accesspoint.v1.Account\"\311\001\n\010Transfe" +
-      "r\022\026\n\016instruction_id\030\001 \001(\t\022\020\n\010creditor\030\002 " +
-      "\001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\016\n" +
-      "\006status\030\005 \001(\t\022.\n\ncreated_at\030\006 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\0221\n\020creditor_accoun" +
-      "t\030\007 \001(\0132\027.accesspoint.v1.Account\"X\n\tKycE" +
-      "ntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007coun" +
-      "try\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030\005 \001" +
-      "(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_n" +
-      "umber\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010cur" +
-      "rency\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metada" +
-      "ta\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_time\030\002" +
-      " \001(\003\022\017\n\007version\030\003 \001(\t\"\221\001\n\tSignature\0227\n\006s" +
-      "_type\030\001 \001(\0162\'.accesspoint.v1.Signature.S" +
-      "ignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSi" +
-      "gnatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C" +
-      "\020\002\022\005\n\001S\020\003\"C\n\006Result\022(\n\004code\030\001 \001(\0162\032.acce" +
-      "sspoint.v1.ResultCode\022\017\n\007message\030\002 \001(\tB^" +
-      "\n\037com.blcvn.switching.accesspointZ;githu" +
-      "b.com/blcvn/switching-proto/go/accesspoi" +
-      "nt;accesspointb\006proto3"
+      "\003 \001(\001\022\020\n\010currency\030\004 \001(\t\022\026\n\016creditor_agen" +
+      "t\030\005 \001(\t\022\025\n\rend_to_end_id\030\006 \001(\t\022\016\n\006status" +
+      "\030\007 \001(\t\022.\n\ncreated_at\030\010 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\0227\n\026creditor_agent_account" +
+      "\030\t \001(\0132\027.accesspoint.v1.Account\"\311\001\n\010Tran" +
+      "sfer\022\026\n\016instruction_id\030\001 \001(\t\022\020\n\010creditor" +
+      "\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010currency\030\004 \001(\t" +
+      "\022\016\n\006status\030\005 \001(\t\022.\n\ncreated_at\030\006 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\0221\n\020creditor_acc" +
+      "ount\030\007 \001(\0132\027.accesspoint.v1.Account\"X\n\tK" +
+      "ycEntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007c" +
+      "ountry\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030" +
+      "\005 \001(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016accoun" +
+      "t_number\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010" +
+      "currency\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Met" +
+      "adata\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_tim" +
+      "e\030\002 \001(\003\022\017\n\007version\030\003 \001(\t\"\221\001\n\tSignature\0227" +
+      "\n\006s_type\030\001 \001(\0162\'.accesspoint.v1.Signatur" +
+      "e.SignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n" +
+      "\rSignatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005" +
+      "\n\001C\020\002\022\005\n\001S\020\003\"C\n\006Result\022(\n\004code\030\001 \001(\0162\032.a" +
+      "ccesspoint.v1.ResultCode\022\017\n\007message\030\002 \001(" +
+      "\tB^\n\037com.blcvn.switching.accesspointZ;gi" +
+      "thub.com/blcvn/switching-proto/go/access" +
+      "point;accesspointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10302,7 +9851,7 @@ public final class Common {
     internal_static_accesspoint_v1_Payment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_accesspoint_v1_Payment_descriptor,
-        new java.lang.String[] { "Id", "Uetr", "Amount", "Currency", "DebtorAgent", "CreditorAgent", "EndToEndId", "Status", "CreatedAt", "DebtorAgentAccount", "CreditorAgentAccount", });
+        new java.lang.String[] { "Id", "Uetr", "Amount", "Currency", "CreditorAgent", "EndToEndId", "Status", "CreatedAt", "CreditorAgentAccount", });
     internal_static_accesspoint_v1_Transfer_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_accesspoint_v1_Transfer_fieldAccessorTable = new
