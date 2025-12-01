@@ -19,12 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SwitchingService_RegisterBank_FullMethodName     = "/switchingservice.v1.SwitchingService/RegisterBank"
-	SwitchingService_QueryBankBalance_FullMethodName = "/switchingservice.v1.SwitchingService/QueryBankBalance"
-	SwitchingService_HoldPayment_FullMethodName      = "/switchingservice.v1.SwitchingService/HoldPayment"
-	SwitchingService_HoldBatchPayment_FullMethodName = "/switchingservice.v1.SwitchingService/HoldBatchPayment"
-	SwitchingService_CancelPayment_FullMethodName    = "/switchingservice.v1.SwitchingService/CancelPayment"
-	SwitchingService_ConfirmPayment_FullMethodName   = "/switchingservice.v1.SwitchingService/ConfirmPayment"
+	SwitchingService_RegisterBank_FullMethodName      = "/switchingservice.v1.SwitchingService/RegisterBank"
+	SwitchingService_QueryBankBalance_FullMethodName  = "/switchingservice.v1.SwitchingService/QueryBankBalance"
+	SwitchingService_QueryTokenBalance_FullMethodName = "/switchingservice.v1.SwitchingService/QueryTokenBalance"
+	SwitchingService_HoldPayment_FullMethodName       = "/switchingservice.v1.SwitchingService/HoldPayment"
+	SwitchingService_HoldBatchPayment_FullMethodName  = "/switchingservice.v1.SwitchingService/HoldBatchPayment"
+	SwitchingService_CancelPayment_FullMethodName     = "/switchingservice.v1.SwitchingService/CancelPayment"
+	SwitchingService_UnheldPayment_FullMethodName     = "/switchingservice.v1.SwitchingService/UnheldPayment"
+	SwitchingService_ConfirmPayment_FullMethodName    = "/switchingservice.v1.SwitchingService/ConfirmPayment"
+	SwitchingService_DepositBank_FullMethodName       = "/switchingservice.v1.SwitchingService/DepositBank"
+	SwitchingService_WithdrawBank_FullMethodName      = "/switchingservice.v1.SwitchingService/WithdrawBank"
+	SwitchingService_MintToBankCode_FullMethodName    = "/switchingservice.v1.SwitchingService/MintToBankCode"
 )
 
 // SwitchingServiceClient is the client API for SwitchingService service.
@@ -36,16 +41,26 @@ const (
 type SwitchingServiceClient interface {
 	// Register a new bank into the settlement data contract.
 	RegisterBank(ctx context.Context, in *RegisterBankRequest, opts ...grpc.CallOption) (*RegisterBankResponse, error)
-	// Query the current on-chain balance of a bank.
+	// Query the balance in smart contract (settlement data contract balance) of a bank by address.
 	QueryBankBalance(ctx context.Context, in *QueryBalanceRequest, opts ...grpc.CallOption) (*QueryBalanceResponse, error)
+	// Query the ERC20 token balance of a bank by address.
+	QueryTokenBalance(ctx context.Context, in *QueryBalanceRequest, opts ...grpc.CallOption) (*QueryBalanceResponse, error)
 	// Create a single hold payment request.
 	HoldPayment(ctx context.Context, in *HoldPaymentRequest, opts ...grpc.CallOption) (*PaymentResponse, error)
 	// Create a batch of hold payments in a single transaction.
 	HoldBatchPayment(ctx context.Context, in *HoldBatchPaymentRequest, opts ...grpc.CallOption) (*BatchPaymentResponse, error)
-	// Cancel a previously created hold payment (refund to sender).
+	// Cancel a previously created hold payment (refund to sender) - for timeout/unhold.
 	CancelPayment(ctx context.Context, in *CancelPaymentRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
+	// Unhold a held payment manually (only receiver bank or operator can cancel).
+	UnheldPayment(ctx context.Context, in *UnheldPaymentRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
 	// Confirm a held payment and trigger settlement on-chain.
 	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*PaymentResponse, error)
+	// Deposit settlement tokens for a bank.
+	DepositBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
+	// Withdraw settlement tokens for a bank.
+	WithdrawBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
+	// Mint settlement tokens directly to a bank by its bank code.
+	MintToBankCode(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
 }
 
 type switchingServiceClient struct {
@@ -70,6 +85,16 @@ func (c *switchingServiceClient) QueryBankBalance(ctx context.Context, in *Query
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(QueryBalanceResponse)
 	err := c.cc.Invoke(ctx, SwitchingService_QueryBankBalance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *switchingServiceClient) QueryTokenBalance(ctx context.Context, in *QueryBalanceRequest, opts ...grpc.CallOption) (*QueryBalanceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(QueryBalanceResponse)
+	err := c.cc.Invoke(ctx, SwitchingService_QueryTokenBalance_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -106,10 +131,50 @@ func (c *switchingServiceClient) CancelPayment(ctx context.Context, in *CancelPa
 	return out, nil
 }
 
+func (c *switchingServiceClient) UnheldPayment(ctx context.Context, in *UnheldPaymentRequest, opts ...grpc.CallOption) (*TransactionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TransactionResponse)
+	err := c.cc.Invoke(ctx, SwitchingService_UnheldPayment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *switchingServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*PaymentResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(PaymentResponse)
 	err := c.cc.Invoke(ctx, SwitchingService_ConfirmPayment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *switchingServiceClient) DepositBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TransactionResponse)
+	err := c.cc.Invoke(ctx, SwitchingService_DepositBank_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *switchingServiceClient) WithdrawBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TransactionResponse)
+	err := c.cc.Invoke(ctx, SwitchingService_WithdrawBank_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *switchingServiceClient) MintToBankCode(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TransactionResponse)
+	err := c.cc.Invoke(ctx, SwitchingService_MintToBankCode_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -125,16 +190,26 @@ func (c *switchingServiceClient) ConfirmPayment(ctx context.Context, in *Confirm
 type SwitchingServiceServer interface {
 	// Register a new bank into the settlement data contract.
 	RegisterBank(context.Context, *RegisterBankRequest) (*RegisterBankResponse, error)
-	// Query the current on-chain balance of a bank.
+	// Query the balance in smart contract (settlement data contract balance) of a bank by address.
 	QueryBankBalance(context.Context, *QueryBalanceRequest) (*QueryBalanceResponse, error)
+	// Query the ERC20 token balance of a bank by address.
+	QueryTokenBalance(context.Context, *QueryBalanceRequest) (*QueryBalanceResponse, error)
 	// Create a single hold payment request.
 	HoldPayment(context.Context, *HoldPaymentRequest) (*PaymentResponse, error)
 	// Create a batch of hold payments in a single transaction.
 	HoldBatchPayment(context.Context, *HoldBatchPaymentRequest) (*BatchPaymentResponse, error)
-	// Cancel a previously created hold payment (refund to sender).
+	// Cancel a previously created hold payment (refund to sender) - for timeout/unhold.
 	CancelPayment(context.Context, *CancelPaymentRequest) (*TransactionResponse, error)
+	// Unhold a held payment manually (only receiver bank or operator can cancel).
+	UnheldPayment(context.Context, *UnheldPaymentRequest) (*TransactionResponse, error)
 	// Confirm a held payment and trigger settlement on-chain.
 	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*PaymentResponse, error)
+	// Deposit settlement tokens for a bank.
+	DepositBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error)
+	// Withdraw settlement tokens for a bank.
+	WithdrawBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error)
+	// Mint settlement tokens directly to a bank by its bank code.
+	MintToBankCode(context.Context, *BankTransactionRequest) (*TransactionResponse, error)
 	mustEmbedUnimplementedSwitchingServiceServer()
 }
 
@@ -151,6 +226,9 @@ func (UnimplementedSwitchingServiceServer) RegisterBank(context.Context, *Regist
 func (UnimplementedSwitchingServiceServer) QueryBankBalance(context.Context, *QueryBalanceRequest) (*QueryBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method QueryBankBalance not implemented")
 }
+func (UnimplementedSwitchingServiceServer) QueryTokenBalance(context.Context, *QueryBalanceRequest) (*QueryBalanceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryTokenBalance not implemented")
+}
 func (UnimplementedSwitchingServiceServer) HoldPayment(context.Context, *HoldPaymentRequest) (*PaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HoldPayment not implemented")
 }
@@ -160,8 +238,20 @@ func (UnimplementedSwitchingServiceServer) HoldBatchPayment(context.Context, *Ho
 func (UnimplementedSwitchingServiceServer) CancelPayment(context.Context, *CancelPaymentRequest) (*TransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CancelPayment not implemented")
 }
+func (UnimplementedSwitchingServiceServer) UnheldPayment(context.Context, *UnheldPaymentRequest) (*TransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnheldPayment not implemented")
+}
 func (UnimplementedSwitchingServiceServer) ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*PaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfirmPayment not implemented")
+}
+func (UnimplementedSwitchingServiceServer) DepositBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DepositBank not implemented")
+}
+func (UnimplementedSwitchingServiceServer) WithdrawBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method WithdrawBank not implemented")
+}
+func (UnimplementedSwitchingServiceServer) MintToBankCode(context.Context, *BankTransactionRequest) (*TransactionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MintToBankCode not implemented")
 }
 func (UnimplementedSwitchingServiceServer) mustEmbedUnimplementedSwitchingServiceServer() {}
 func (UnimplementedSwitchingServiceServer) testEmbeddedByValue()                          {}
@@ -220,6 +310,24 @@ func _SwitchingService_QueryBankBalance_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SwitchingService_QueryTokenBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryBalanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).QueryTokenBalance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_QueryTokenBalance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).QueryTokenBalance(ctx, req.(*QueryBalanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SwitchingService_HoldPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HoldPaymentRequest)
 	if err := dec(in); err != nil {
@@ -274,6 +382,24 @@ func _SwitchingService_CancelPayment_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SwitchingService_UnheldPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnheldPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).UnheldPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_UnheldPayment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).UnheldPayment(ctx, req.(*UnheldPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SwitchingService_ConfirmPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConfirmPaymentRequest)
 	if err := dec(in); err != nil {
@@ -288,6 +414,60 @@ func _SwitchingService_ConfirmPayment_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SwitchingServiceServer).ConfirmPayment(ctx, req.(*ConfirmPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SwitchingService_DepositBank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BankTransactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).DepositBank(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_DepositBank_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).DepositBank(ctx, req.(*BankTransactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SwitchingService_WithdrawBank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BankTransactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).WithdrawBank(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_WithdrawBank_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).WithdrawBank(ctx, req.(*BankTransactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SwitchingService_MintToBankCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BankTransactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).MintToBankCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_MintToBankCode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).MintToBankCode(ctx, req.(*BankTransactionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -308,6 +488,10 @@ var SwitchingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SwitchingService_QueryBankBalance_Handler,
 		},
 		{
+			MethodName: "QueryTokenBalance",
+			Handler:    _SwitchingService_QueryTokenBalance_Handler,
+		},
+		{
 			MethodName: "HoldPayment",
 			Handler:    _SwitchingService_HoldPayment_Handler,
 		},
@@ -320,8 +504,24 @@ var SwitchingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _SwitchingService_CancelPayment_Handler,
 		},
 		{
+			MethodName: "UnheldPayment",
+			Handler:    _SwitchingService_UnheldPayment_Handler,
+		},
+		{
 			MethodName: "ConfirmPayment",
 			Handler:    _SwitchingService_ConfirmPayment_Handler,
+		},
+		{
+			MethodName: "DepositBank",
+			Handler:    _SwitchingService_DepositBank_Handler,
+		},
+		{
+			MethodName: "WithdrawBank",
+			Handler:    _SwitchingService_WithdrawBank_Handler,
+		},
+		{
+			MethodName: "MintToBankCode",
+			Handler:    _SwitchingService_MintToBankCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

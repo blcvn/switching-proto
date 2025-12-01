@@ -49,10 +49,140 @@
         ]
       }
     },
+    "/v1/switching/banks/deposit": {
+      "post": {
+        "summary": "Deposit settlement tokens for a bank.",
+        "operationId": "SwitchingService_DepositBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BankTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/banks/mint": {
+      "post": {
+        "summary": "Mint settlement tokens directly to a bank by its bank code.",
+        "operationId": "SwitchingService_MintToBankCode",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BankTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/banks/withdraw": {
+      "post": {
+        "summary": "Withdraw settlement tokens for a bank.",
+        "operationId": "SwitchingService_WithdrawBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1BankTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
     "/v1/switching/banks/{bank_address}/balance": {
       "get": {
-        "summary": "Query the current on-chain balance of a bank.",
+        "summary": "Query the balance in smart contract (settlement data contract balance) of a bank by address.",
         "operationId": "SwitchingService_QueryBankBalance",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1QueryBalanceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "bank_address",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
+    },
+    "/v1/switching/banks/{bank_address}/tokenBalance": {
+      "get": {
+        "summary": "Query the ERC20 token balance of a bank by address.",
+        "operationId": "SwitchingService_QueryTokenBalance",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -82,7 +212,7 @@
     },
     "/v1/switching/payments/cancel": {
       "post": {
-        "summary": "Cancel a previously created hold payment (refund to sender).",
+        "summary": "Cancel a previously created hold payment (refund to sender) - for timeout/unhold.",
         "operationId": "SwitchingService_CancelPayment",
         "responses": {
           "200": {
@@ -211,6 +341,39 @@
           "SwitchingService"
         ]
       }
+    },
+    "/v1/switching/payments/unheld": {
+      "post": {
+        "summary": "Unhold a held payment manually (only receiver bank or operator can cancel).",
+        "operationId": "SwitchingService_UnheldPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UnheldPaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -236,9 +399,25 @@
         "details": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1BankTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "bank_code": {
+          "type": "string"
+        },
+        "bank_address": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
         }
       }
     },
@@ -248,7 +427,6 @@
         "results": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1PaymentResult"
           }
         }
@@ -261,6 +439,9 @@
           "type": "string"
         },
         "sender_bank": {
+          "type": "string"
+        },
+        "bank_code": {
           "type": "string"
         },
         "reason": {
@@ -277,7 +458,13 @@
         "sender_bank": {
           "type": "string"
         },
+        "sender_bank_code": {
+          "type": "string"
+        },
         "receiver_bank": {
+          "type": "string"
+        },
+        "receiver_bank_code": {
           "type": "string"
         },
         "from_bank_account": {
@@ -300,10 +487,12 @@
         "sender_bank": {
           "type": "string"
         },
+        "sender_bank_code": {
+          "type": "string"
+        },
         "items": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "#/definitions/v1HoldPaymentItem"
           }
         }
@@ -321,6 +510,9 @@
         "receiver_bank_code": {
           "type": "string"
         },
+        "receiver_bank_address": {
+          "type": "string"
+        },
         "amount": {
           "type": "string"
         },
@@ -336,6 +528,9 @@
           "type": "string"
         },
         "sender_bank": {
+          "type": "string"
+        },
+        "sender_bank_code": {
           "type": "string"
         },
         "receiver_bank": {
@@ -392,10 +587,16 @@
         "bank_address": {
           "type": "string"
         },
-        "token_address": {
+        "balance": {
           "type": "string"
         },
-        "balance": {
+        "balance_type": {
+          "type": "string"
+        },
+        "bank_code": {
+          "type": "string"
+        },
+        "message": {
           "type": "string"
         }
       }
@@ -437,6 +638,23 @@
           "type": "string"
         },
         "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UnheldPaymentRequest": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "receiver_bank": {
+          "type": "string"
+        },
+        "receiver_bank_code": {
+          "type": "string"
+        },
+        "reason": {
           "type": "string"
         }
       }

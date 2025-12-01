@@ -11,8 +11,11 @@ service SwitchingService {
   // Register a new bank into the settlement data contract.
   rpc RegisterBank(RegisterBankRequest) returns (RegisterBankResponse);
 
-  // Query the current on-chain balance of a bank.
+  // Query the balance in smart contract (settlement data contract balance) of a bank by address.
   rpc QueryBankBalance(QueryBalanceRequest) returns (QueryBalanceResponse);
+
+  // Query the ERC20 token balance of a bank by address.
+  rpc QueryTokenBalance(QueryBalanceRequest) returns (QueryBalanceResponse);
 
   // Create a single hold payment request.
   rpc HoldPayment(HoldPaymentRequest) returns (PaymentResponse);
@@ -20,11 +23,23 @@ service SwitchingService {
   // Create a batch of hold payments in a single transaction.
   rpc HoldBatchPayment(HoldBatchPaymentRequest) returns (BatchPaymentResponse);
 
-  // Cancel a previously created hold payment (refund to sender).
+  // Cancel a previously created hold payment (refund to sender) - for timeout/unhold.
   rpc CancelPayment(CancelPaymentRequest) returns (TransactionResponse);
+
+  // Unhold a held payment manually (only receiver bank or operator can cancel).
+  rpc UnheldPayment(UnheldPaymentRequest) returns (TransactionResponse);
 
   // Confirm a held payment and trigger settlement on-chain.
   rpc ConfirmPayment(ConfirmPaymentRequest) returns (PaymentResponse);
+
+  // Deposit settlement tokens for a bank.
+  rpc DepositBank(BankTransactionRequest) returns (TransactionResponse);
+
+  // Withdraw settlement tokens for a bank.
+  rpc WithdrawBank(BankTransactionRequest) returns (TransactionResponse);
+
+  // Mint settlement tokens directly to a bank by its bank code.
+  rpc MintToBankCode(BankTransactionRequest) returns (TransactionResponse);
 }
 
 // ----- Requests & Responses -----
@@ -47,27 +62,38 @@ message TransactionResponse {
 }
 
 message QueryBalanceRequest {
-  string bank_address = 1;
+  string bank_address = 1;  // bank address (required)
 }
 
 message QueryBalanceResponse {
   string bank_address = 1;
-  string token_address = 2;
-  string balance = 3;
+  string balance = 2;       // balance value
+  string balance_type = 5;  // "token" or "contract" - indicates which type of balance
+  string bank_code = 3;
+  string message = 4;
+}
+
+message BankTransactionRequest {
+  string bank_code = 1;
+  string bank_address = 2;  // bank address (required)
+  string amount = 3;
+  string note = 4;
 }
 
 message HoldPaymentRequest {
   string uetr = 1;
-  string sender_bank = 2;
-  string receiver_bank = 3;
-  string receiver_bank_code = 4;
+  string sender_bank = 2;              // sender bank address
+  string sender_bank_code = 8;         // sender bank code (optional, for reference)
+  string receiver_bank = 3;            // receiver bank address
+  string receiver_bank_code = 4;       // receiver bank code (optional, for reference)
   string beneficiary_account = 5;
   string amount = 6;
   string note = 7;
 }
 
 message HoldBatchPaymentRequest {
-  string sender_bank = 1;
+  string sender_bank = 1;              // sender bank address
+  string sender_bank_code = 3;         // sender bank code (optional, for reference)
   repeated HoldPaymentItem items = 2;
 }
 
@@ -75,6 +101,7 @@ message HoldPaymentItem {
   string uetr = 1;
   string beneficiary_account = 2;
   string receiver_bank_code = 3;
+  string receiver_bank_address = 6;    // receiver bank address (required for batch hold)
   string amount = 4;
   string note = 5;
 }
@@ -98,17 +125,27 @@ message PaymentResult {
 
 message CancelPaymentRequest {
   string uetr = 1;
-  string sender_bank = 2;
+  string sender_bank = 2;              // bank address (for unholdPayment - anyone can call after expiry)
+  string bank_code = 4;                // bank code (optional, for reference)
   string reason = 3;
 }
 
 message ConfirmPaymentRequest {
   string uetr = 1;
-  string sender_bank = 2;
-  string receiver_bank = 3;
+  string sender_bank = 2;              // sender bank address (optional, for reference)
+  string sender_bank_code = 8;         // sender bank code (optional, for reference)
+  string receiver_bank = 3;            // receiver bank address (required - caller)
+  string receiver_bank_code = 9;       // receiver bank code (optional, for reference)
   string from_bank_account = 4;
   string to_bank_account = 5;
   string tx_reference = 6;
   string note = 7;
+}
+
+message UnheldPaymentRequest {
+  string uetr = 1;
+  string receiver_bank = 2;            // receiver bank address (required - only receiver or operator can cancel)
+  string receiver_bank_code = 4;       // receiver bank code (optional, for reference)
+  string reason = 3;
 }
 

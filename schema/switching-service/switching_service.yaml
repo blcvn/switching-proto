@@ -9,6 +9,9 @@ http:
     - selector: switchingservice.v1.SwitchingService.QueryBankBalance
       get: /v1/switching/banks/{bank_address}/balance
 
+    - selector: switchingservice.v1.SwitchingService.QueryTokenBalance
+      get: /v1/switching/banks/{bank_address}/tokenBalance
+
     - selector: switchingservice.v1.SwitchingService.HoldPayment
       post: /v1/switching/payments/hold
       body: "*"
@@ -21,7 +24,23 @@ http:
       post: /v1/switching/payments/cancel
       body: "*"
 
+    - selector: switchingservice.v1.SwitchingService.UnheldPayment
+      post: /v1/switching/payments/unheld
+      body: "*"
+
     - selector: switchingservice.v1.SwitchingService.ConfirmPayment
       post: /v1/switching/payments/confirm
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.DepositBank
+      post: /v1/switching/banks/deposit
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.WithdrawBank
+      post: /v1/switching/banks/withdraw
+      body: "*"
+
+    - selector: switchingservice.v1.SwitchingService.MintToBankCode
+      post: /v1/switching/banks/mint
       body: "*"
 

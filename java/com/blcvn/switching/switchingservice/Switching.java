@@ -2314,11 +2314,19 @@ public final class Switching {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
      * <code>string bank_address = 1;</code>
      * @return The bankAddress.
      */
     java.lang.String getBankAddress();
     /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
      * <code>string bank_address = 1;</code>
      * @return The bytes for bankAddress.
      */
@@ -2412,6 +2420,10 @@ public final class Switching {
     public static final int BANK_ADDRESS_FIELD_NUMBER = 1;
     private volatile java.lang.Object bankAddress_;
     /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
      * <code>string bank_address = 1;</code>
      * @return The bankAddress.
      */
@@ -2429,6 +2441,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
      * <code>string bank_address = 1;</code>
      * @return The bytes for bankAddress.
      */
@@ -2751,6 +2767,10 @@ public final class Switching {
 
       private java.lang.Object bankAddress_ = "";
       /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
        * <code>string bank_address = 1;</code>
        * @return The bankAddress.
        */
@@ -2767,6 +2787,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
        * <code>string bank_address = 1;</code>
        * @return The bytes for bankAddress.
        */
@@ -2784,6 +2808,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
        * <code>string bank_address = 1;</code>
        * @param value The bankAddress to set.
        * @return This builder for chaining.
@@ -2799,6 +2827,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
        * <code>string bank_address = 1;</code>
        * @return This builder for chaining.
        */
@@ -2809,6 +2841,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
        * <code>string bank_address = 1;</code>
        * @param value The bytes for bankAddress to set.
        * @return This builder for chaining.
@@ -2894,28 +2930,68 @@ public final class Switching {
         getBankAddressBytes();
 
     /**
-     * <code>string token_address = 2;</code>
-     * @return The tokenAddress.
-     */
-    java.lang.String getTokenAddress();
-    /**
-     * <code>string token_address = 2;</code>
-     * @return The bytes for tokenAddress.
-     */
-    com.google.protobuf.ByteString
-        getTokenAddressBytes();
-
-    /**
-     * <code>string balance = 3;</code>
+     * <pre>
+     * balance value
+     * </pre>
+     *
+     * <code>string balance = 2;</code>
      * @return The balance.
      */
     java.lang.String getBalance();
     /**
-     * <code>string balance = 3;</code>
+     * <pre>
+     * balance value
+     * </pre>
+     *
+     * <code>string balance = 2;</code>
      * @return The bytes for balance.
      */
     com.google.protobuf.ByteString
         getBalanceBytes();
+
+    /**
+     * <pre>
+     * "token" or "contract" - indicates which type of balance
+     * </pre>
+     *
+     * <code>string balance_type = 5;</code>
+     * @return The balanceType.
+     */
+    java.lang.String getBalanceType();
+    /**
+     * <pre>
+     * "token" or "contract" - indicates which type of balance
+     * </pre>
+     *
+     * <code>string balance_type = 5;</code>
+     * @return The bytes for balanceType.
+     */
+    com.google.protobuf.ByteString
+        getBalanceTypeBytes();
+
+    /**
+     * <code>string bank_code = 3;</code>
+     * @return The bankCode.
+     */
+    java.lang.String getBankCode();
+    /**
+     * <code>string bank_code = 3;</code>
+     * @return The bytes for bankCode.
+     */
+    com.google.protobuf.ByteString
+        getBankCodeBytes();
+
+    /**
+     * <code>string message = 4;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 4;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
   }
   /**
    * Protobuf type {@code switchingservice.v1.QueryBalanceResponse}
@@ -2931,8 +3007,10 @@ public final class Switching {
     }
     private QueryBalanceResponse() {
       bankAddress_ = "";
-      tokenAddress_ = "";
       balance_ = "";
+      balanceType_ = "";
+      bankCode_ = "";
+      message_ = "";
     }
 
     @java.lang.Override
@@ -2974,13 +3052,25 @@ public final class Switching {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              tokenAddress_ = s;
+              balance_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              balance_ = s;
+              bankCode_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              balanceType_ = s;
               break;
             }
             default: {
@@ -3053,48 +3143,14 @@ public final class Switching {
       }
     }
 
-    public static final int TOKEN_ADDRESS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tokenAddress_;
-    /**
-     * <code>string token_address = 2;</code>
-     * @return The tokenAddress.
-     */
-    @java.lang.Override
-    public java.lang.String getTokenAddress() {
-      java.lang.Object ref = tokenAddress_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tokenAddress_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token_address = 2;</code>
-     * @return The bytes for tokenAddress.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenAddressBytes() {
-      java.lang.Object ref = tokenAddress_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tokenAddress_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BALANCE_FIELD_NUMBER = 3;
+    public static final int BALANCE_FIELD_NUMBER = 2;
     private volatile java.lang.Object balance_;
     /**
-     * <code>string balance = 3;</code>
+     * <pre>
+     * balance value
+     * </pre>
+     *
+     * <code>string balance = 2;</code>
      * @return The balance.
      */
     @java.lang.Override
@@ -3111,7 +3167,11 @@ public final class Switching {
       }
     }
     /**
-     * <code>string balance = 3;</code>
+     * <pre>
+     * balance value
+     * </pre>
+     *
+     * <code>string balance = 2;</code>
      * @return The bytes for balance.
      */
     @java.lang.Override
@@ -3123,6 +3183,128 @@ public final class Switching {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         balance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BALANCE_TYPE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object balanceType_;
+    /**
+     * <pre>
+     * "token" or "contract" - indicates which type of balance
+     * </pre>
+     *
+     * <code>string balance_type = 5;</code>
+     * @return The balanceType.
+     */
+    @java.lang.Override
+    public java.lang.String getBalanceType() {
+      java.lang.Object ref = balanceType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        balanceType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * "token" or "contract" - indicates which type of balance
+     * </pre>
+     *
+     * <code>string balance_type = 5;</code>
+     * @return The bytes for balanceType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBalanceTypeBytes() {
+      java.lang.Object ref = balanceType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        balanceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BANK_CODE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object bankCode_;
+    /**
+     * <code>string bank_code = 3;</code>
+     * @return The bankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getBankCode() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string bank_code = 3;</code>
+     * @return The bytes for bankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBankCodeBytes() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bankCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>string message = 4;</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 4;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3146,11 +3328,17 @@ public final class Switching {
       if (!getBankAddressBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bankAddress_);
       }
-      if (!getTokenAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tokenAddress_);
-      }
       if (!getBalanceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, balance_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, balance_);
+      }
+      if (!getBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bankCode_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+      }
+      if (!getBalanceTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, balanceType_);
       }
       unknownFields.writeTo(output);
     }
@@ -3164,11 +3352,17 @@ public final class Switching {
       if (!getBankAddressBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bankAddress_);
       }
-      if (!getTokenAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tokenAddress_);
-      }
       if (!getBalanceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, balance_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, balance_);
+      }
+      if (!getBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bankCode_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+      }
+      if (!getBalanceTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, balanceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3187,10 +3381,14 @@ public final class Switching {
 
       if (!getBankAddress()
           .equals(other.getBankAddress())) return false;
-      if (!getTokenAddress()
-          .equals(other.getTokenAddress())) return false;
       if (!getBalance()
           .equals(other.getBalance())) return false;
+      if (!getBalanceType()
+          .equals(other.getBalanceType())) return false;
+      if (!getBankCode()
+          .equals(other.getBankCode())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3204,10 +3402,14 @@ public final class Switching {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BANK_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getBankAddress().hashCode();
-      hash = (37 * hash) + TOKEN_ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenAddress().hashCode();
       hash = (37 * hash) + BALANCE_FIELD_NUMBER;
       hash = (53 * hash) + getBalance().hashCode();
+      hash = (37 * hash) + BALANCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getBalanceType().hashCode();
+      hash = (37 * hash) + BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBankCode().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3343,9 +3545,13 @@ public final class Switching {
         super.clear();
         bankAddress_ = "";
 
-        tokenAddress_ = "";
-
         balance_ = "";
+
+        balanceType_ = "";
+
+        bankCode_ = "";
+
+        message_ = "";
 
         return this;
       }
@@ -3374,8 +3580,10 @@ public final class Switching {
       public com.blcvn.switching.switchingservice.Switching.QueryBalanceResponse buildPartial() {
         com.blcvn.switching.switchingservice.Switching.QueryBalanceResponse result = new com.blcvn.switching.switchingservice.Switching.QueryBalanceResponse(this);
         result.bankAddress_ = bankAddress_;
-        result.tokenAddress_ = tokenAddress_;
         result.balance_ = balance_;
+        result.balanceType_ = balanceType_;
+        result.bankCode_ = bankCode_;
+        result.message_ = message_;
         onBuilt();
         return result;
       }
@@ -3428,12 +3636,20 @@ public final class Switching {
           bankAddress_ = other.bankAddress_;
           onChanged();
         }
-        if (!other.getTokenAddress().isEmpty()) {
-          tokenAddress_ = other.tokenAddress_;
-          onChanged();
-        }
         if (!other.getBalance().isEmpty()) {
           balance_ = other.balance_;
+          onChanged();
+        }
+        if (!other.getBalanceType().isEmpty()) {
+          balanceType_ = other.balanceType_;
+          onChanged();
+        }
+        if (!other.getBankCode().isEmpty()) {
+          bankCode_ = other.bankCode_;
+          onChanged();
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3541,85 +3757,13 @@ public final class Switching {
         return this;
       }
 
-      private java.lang.Object tokenAddress_ = "";
-      /**
-       * <code>string token_address = 2;</code>
-       * @return The tokenAddress.
-       */
-      public java.lang.String getTokenAddress() {
-        java.lang.Object ref = tokenAddress_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tokenAddress_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token_address = 2;</code>
-       * @return The bytes for tokenAddress.
-       */
-      public com.google.protobuf.ByteString
-          getTokenAddressBytes() {
-        java.lang.Object ref = tokenAddress_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tokenAddress_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token_address = 2;</code>
-       * @param value The tokenAddress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenAddress(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        tokenAddress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token_address = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenAddress() {
-        
-        tokenAddress_ = getDefaultInstance().getTokenAddress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token_address = 2;</code>
-       * @param value The bytes for tokenAddress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        tokenAddress_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object balance_ = "";
       /**
-       * <code>string balance = 3;</code>
+       * <pre>
+       * balance value
+       * </pre>
+       *
+       * <code>string balance = 2;</code>
        * @return The balance.
        */
       public java.lang.String getBalance() {
@@ -3635,7 +3779,11 @@ public final class Switching {
         }
       }
       /**
-       * <code>string balance = 3;</code>
+       * <pre>
+       * balance value
+       * </pre>
+       *
+       * <code>string balance = 2;</code>
        * @return The bytes for balance.
        */
       public com.google.protobuf.ByteString
@@ -3652,7 +3800,11 @@ public final class Switching {
         }
       }
       /**
-       * <code>string balance = 3;</code>
+       * <pre>
+       * balance value
+       * </pre>
+       *
+       * <code>string balance = 2;</code>
        * @param value The balance to set.
        * @return This builder for chaining.
        */
@@ -3667,7 +3819,11 @@ public final class Switching {
         return this;
       }
       /**
-       * <code>string balance = 3;</code>
+       * <pre>
+       * balance value
+       * </pre>
+       *
+       * <code>string balance = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBalance() {
@@ -3677,7 +3833,11 @@ public final class Switching {
         return this;
       }
       /**
-       * <code>string balance = 3;</code>
+       * <pre>
+       * balance value
+       * </pre>
+       *
+       * <code>string balance = 2;</code>
        * @param value The bytes for balance to set.
        * @return This builder for chaining.
        */
@@ -3689,6 +3849,254 @@ public final class Switching {
   checkByteStringIsUtf8(value);
         
         balance_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object balanceType_ = "";
+      /**
+       * <pre>
+       * "token" or "contract" - indicates which type of balance
+       * </pre>
+       *
+       * <code>string balance_type = 5;</code>
+       * @return The balanceType.
+       */
+      public java.lang.String getBalanceType() {
+        java.lang.Object ref = balanceType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          balanceType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * "token" or "contract" - indicates which type of balance
+       * </pre>
+       *
+       * <code>string balance_type = 5;</code>
+       * @return The bytes for balanceType.
+       */
+      public com.google.protobuf.ByteString
+          getBalanceTypeBytes() {
+        java.lang.Object ref = balanceType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          balanceType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * "token" or "contract" - indicates which type of balance
+       * </pre>
+       *
+       * <code>string balance_type = 5;</code>
+       * @param value The balanceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalanceType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        balanceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * "token" or "contract" - indicates which type of balance
+       * </pre>
+       *
+       * <code>string balance_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBalanceType() {
+        
+        balanceType_ = getDefaultInstance().getBalanceType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * "token" or "contract" - indicates which type of balance
+       * </pre>
+       *
+       * <code>string balance_type = 5;</code>
+       * @param value The bytes for balanceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalanceTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        balanceType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bankCode_ = "";
+      /**
+       * <code>string bank_code = 3;</code>
+       * @return The bankCode.
+       */
+      public java.lang.String getBankCode() {
+        java.lang.Object ref = bankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string bank_code = 3;</code>
+       * @return The bytes for bankCode.
+       */
+      public com.google.protobuf.ByteString
+          getBankCodeBytes() {
+        java.lang.Object ref = bankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string bank_code = 3;</code>
+       * @param value The bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bank_code = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBankCode() {
+        
+        bankCode_ = getDefaultInstance().getBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bank_code = 3;</code>
+       * @param value The bytes for bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bankCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 4;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
         onChanged();
         return this;
       }
@@ -3745,6 +4153,1060 @@ public final class Switching {
 
   }
 
+  public interface BankTransactionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:switchingservice.v1.BankTransactionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string bank_code = 1;</code>
+     * @return The bankCode.
+     */
+    java.lang.String getBankCode();
+    /**
+     * <code>string bank_code = 1;</code>
+     * @return The bytes for bankCode.
+     */
+    com.google.protobuf.ByteString
+        getBankCodeBytes();
+
+    /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
+     * <code>string bank_address = 2;</code>
+     * @return The bankAddress.
+     */
+    java.lang.String getBankAddress();
+    /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
+     * <code>string bank_address = 2;</code>
+     * @return The bytes for bankAddress.
+     */
+    com.google.protobuf.ByteString
+        getBankAddressBytes();
+
+    /**
+     * <code>string amount = 3;</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <code>string amount = 3;</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <code>string note = 4;</code>
+     * @return The note.
+     */
+    java.lang.String getNote();
+    /**
+     * <code>string note = 4;</code>
+     * @return The bytes for note.
+     */
+    com.google.protobuf.ByteString
+        getNoteBytes();
+  }
+  /**
+   * Protobuf type {@code switchingservice.v1.BankTransactionRequest}
+   */
+  public static final class BankTransactionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:switchingservice.v1.BankTransactionRequest)
+      BankTransactionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BankTransactionRequest.newBuilder() to construct.
+    private BankTransactionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BankTransactionRequest() {
+      bankCode_ = "";
+      bankAddress_ = "";
+      amount_ = "";
+      note_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BankTransactionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BankTransactionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bankCode_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bankAddress_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              note_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_BankTransactionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_BankTransactionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.class, com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.Builder.class);
+    }
+
+    public static final int BANK_CODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object bankCode_;
+    /**
+     * <code>string bank_code = 1;</code>
+     * @return The bankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getBankCode() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string bank_code = 1;</code>
+     * @return The bytes for bankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBankCodeBytes() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bankCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BANK_ADDRESS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object bankAddress_;
+    /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
+     * <code>string bank_address = 2;</code>
+     * @return The bankAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getBankAddress() {
+      java.lang.Object ref = bankAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bankAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * bank address (required)
+     * </pre>
+     *
+     * <code>string bank_address = 2;</code>
+     * @return The bytes for bankAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBankAddressBytes() {
+      java.lang.Object ref = bankAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bankAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object amount_;
+    /**
+     * <code>string amount = 3;</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string amount = 3;</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object note_;
+    /**
+     * <code>string note = 4;</code>
+     * @return The note.
+     */
+    @java.lang.Override
+    public java.lang.String getNote() {
+      java.lang.Object ref = note_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        note_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string note = 4;</code>
+     * @return The bytes for note.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNoteBytes() {
+      java.lang.Object ref = note_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        note_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bankCode_);
+      }
+      if (!getBankAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bankAddress_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
+      }
+      if (!getNoteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, note_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bankCode_);
+      }
+      if (!getBankAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bankAddress_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
+      }
+      if (!getNoteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, note_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.switchingservice.Switching.BankTransactionRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.switchingservice.Switching.BankTransactionRequest other = (com.blcvn.switching.switchingservice.Switching.BankTransactionRequest) obj;
+
+      if (!getBankCode()
+          .equals(other.getBankCode())) return false;
+      if (!getBankAddress()
+          .equals(other.getBankAddress())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!getNote()
+          .equals(other.getNote())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBankCode().hashCode();
+      hash = (37 * hash) + BANK_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getBankAddress().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + NOTE_FIELD_NUMBER;
+      hash = (53 * hash) + getNote().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.switchingservice.Switching.BankTransactionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code switchingservice.v1.BankTransactionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:switchingservice.v1.BankTransactionRequest)
+        com.blcvn.switching.switchingservice.Switching.BankTransactionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_BankTransactionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_BankTransactionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.class, com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bankCode_ = "";
+
+        bankAddress_ = "";
+
+        amount_ = "";
+
+        note_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_BankTransactionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.BankTransactionRequest getDefaultInstanceForType() {
+        return com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.BankTransactionRequest build() {
+        com.blcvn.switching.switchingservice.Switching.BankTransactionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.BankTransactionRequest buildPartial() {
+        com.blcvn.switching.switchingservice.Switching.BankTransactionRequest result = new com.blcvn.switching.switchingservice.Switching.BankTransactionRequest(this);
+        result.bankCode_ = bankCode_;
+        result.bankAddress_ = bankAddress_;
+        result.amount_ = amount_;
+        result.note_ = note_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.switchingservice.Switching.BankTransactionRequest) {
+          return mergeFrom((com.blcvn.switching.switchingservice.Switching.BankTransactionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.switchingservice.Switching.BankTransactionRequest other) {
+        if (other == com.blcvn.switching.switchingservice.Switching.BankTransactionRequest.getDefaultInstance()) return this;
+        if (!other.getBankCode().isEmpty()) {
+          bankCode_ = other.bankCode_;
+          onChanged();
+        }
+        if (!other.getBankAddress().isEmpty()) {
+          bankAddress_ = other.bankAddress_;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        if (!other.getNote().isEmpty()) {
+          note_ = other.note_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.switchingservice.Switching.BankTransactionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.switchingservice.Switching.BankTransactionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object bankCode_ = "";
+      /**
+       * <code>string bank_code = 1;</code>
+       * @return The bankCode.
+       */
+      public java.lang.String getBankCode() {
+        java.lang.Object ref = bankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string bank_code = 1;</code>
+       * @return The bytes for bankCode.
+       */
+      public com.google.protobuf.ByteString
+          getBankCodeBytes() {
+        java.lang.Object ref = bankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string bank_code = 1;</code>
+       * @param value The bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bank_code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBankCode() {
+        
+        bankCode_ = getDefaultInstance().getBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string bank_code = 1;</code>
+       * @param value The bytes for bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bankCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bankAddress_ = "";
+      /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
+       * <code>string bank_address = 2;</code>
+       * @return The bankAddress.
+       */
+      public java.lang.String getBankAddress() {
+        java.lang.Object ref = bankAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bankAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
+       * <code>string bank_address = 2;</code>
+       * @return The bytes for bankAddress.
+       */
+      public com.google.protobuf.ByteString
+          getBankAddressBytes() {
+        java.lang.Object ref = bankAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bankAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
+       * <code>string bank_address = 2;</code>
+       * @param value The bankAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bankAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
+       * <code>string bank_address = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBankAddress() {
+        
+        bankAddress_ = getDefaultInstance().getBankAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * bank address (required)
+       * </pre>
+       *
+       * <code>string bank_address = 2;</code>
+       * @param value The bytes for bankAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bankAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <code>string amount = 3;</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string amount = 3;</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string amount = 3;</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+        
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 3;</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object note_ = "";
+      /**
+       * <code>string note = 4;</code>
+       * @return The note.
+       */
+      public java.lang.String getNote() {
+        java.lang.Object ref = note_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          note_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string note = 4;</code>
+       * @return The bytes for note.
+       */
+      public com.google.protobuf.ByteString
+          getNoteBytes() {
+        java.lang.Object ref = note_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          note_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string note = 4;</code>
+       * @param value The note to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNote(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        note_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string note = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNote() {
+        
+        note_ = getDefaultInstance().getNote();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string note = 4;</code>
+       * @param value The bytes for note to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        note_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:switchingservice.v1.BankTransactionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:switchingservice.v1.BankTransactionRequest)
+    private static final com.blcvn.switching.switchingservice.Switching.BankTransactionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.switchingservice.Switching.BankTransactionRequest();
+    }
+
+    public static com.blcvn.switching.switchingservice.Switching.BankTransactionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BankTransactionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<BankTransactionRequest>() {
+      @java.lang.Override
+      public BankTransactionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BankTransactionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BankTransactionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BankTransactionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.switchingservice.Switching.BankTransactionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface HoldPaymentRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:switchingservice.v1.HoldPaymentRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -3762,11 +5224,19 @@ public final class Switching {
         getUetrBytes();
 
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
     java.lang.String getSenderBank();
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
@@ -3774,11 +5244,39 @@ public final class Switching {
         getSenderBankBytes();
 
     /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The senderBankCode.
+     */
+    java.lang.String getSenderBankCode();
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The bytes for senderBankCode.
+     */
+    com.google.protobuf.ByteString
+        getSenderBankCodeBytes();
+
+    /**
+     * <pre>
+     * receiver bank address
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The receiverBank.
      */
     java.lang.String getReceiverBank();
     /**
+     * <pre>
+     * receiver bank address
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The bytes for receiverBank.
      */
@@ -3786,11 +5284,19 @@ public final class Switching {
         getReceiverBankBytes();
 
     /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
      * <code>string receiver_bank_code = 4;</code>
      * @return The receiverBankCode.
      */
     java.lang.String getReceiverBankCode();
     /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
      * <code>string receiver_bank_code = 4;</code>
      * @return The bytes for receiverBankCode.
      */
@@ -3848,6 +5354,7 @@ public final class Switching {
     private HoldPaymentRequest() {
       uetr_ = "";
       senderBank_ = "";
+      senderBankCode_ = "";
       receiverBank_ = "";
       receiverBankCode_ = "";
       beneficiaryAccount_ = "";
@@ -3927,6 +5434,12 @@ public final class Switching {
               note_ = s;
               break;
             }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              senderBankCode_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4000,6 +5513,10 @@ public final class Switching {
     public static final int SENDER_BANK_FIELD_NUMBER = 2;
     private volatile java.lang.Object senderBank_;
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
@@ -4017,6 +5534,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
@@ -4035,9 +5556,59 @@ public final class Switching {
       }
     }
 
+    public static final int SENDER_BANK_CODE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object senderBankCode_;
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The senderBankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getSenderBankCode() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        senderBankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The bytes for senderBankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBankCodeBytes() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        senderBankCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int RECEIVER_BANK_FIELD_NUMBER = 3;
     private volatile java.lang.Object receiverBank_;
     /**
+     * <pre>
+     * receiver bank address
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The receiverBank.
      */
@@ -4055,6 +5626,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * receiver bank address
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The bytes for receiverBank.
      */
@@ -4076,6 +5651,10 @@ public final class Switching {
     public static final int RECEIVER_BANK_CODE_FIELD_NUMBER = 4;
     private volatile java.lang.Object receiverBankCode_;
     /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
      * <code>string receiver_bank_code = 4;</code>
      * @return The receiverBankCode.
      */
@@ -4093,6 +5672,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
      * <code>string receiver_bank_code = 4;</code>
      * @return The bytes for receiverBankCode.
      */
@@ -4260,6 +5843,9 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, note_);
       }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, senderBankCode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4290,6 +5876,9 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, note_);
       }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, senderBankCode_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4309,6 +5898,8 @@ public final class Switching {
           .equals(other.getUetr())) return false;
       if (!getSenderBank()
           .equals(other.getSenderBank())) return false;
+      if (!getSenderBankCode()
+          .equals(other.getSenderBankCode())) return false;
       if (!getReceiverBank()
           .equals(other.getReceiverBank())) return false;
       if (!getReceiverBankCode()
@@ -4334,6 +5925,8 @@ public final class Switching {
       hash = (53 * hash) + getUetr().hashCode();
       hash = (37 * hash) + SENDER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getSenderBank().hashCode();
+      hash = (37 * hash) + SENDER_BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSenderBankCode().hashCode();
       hash = (37 * hash) + RECEIVER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getReceiverBank().hashCode();
       hash = (37 * hash) + RECEIVER_BANK_CODE_FIELD_NUMBER;
@@ -4481,6 +6074,8 @@ public final class Switching {
 
         senderBank_ = "";
 
+        senderBankCode_ = "";
+
         receiverBank_ = "";
 
         receiverBankCode_ = "";
@@ -4519,6 +6114,7 @@ public final class Switching {
         com.blcvn.switching.switchingservice.Switching.HoldPaymentRequest result = new com.blcvn.switching.switchingservice.Switching.HoldPaymentRequest(this);
         result.uetr_ = uetr_;
         result.senderBank_ = senderBank_;
+        result.senderBankCode_ = senderBankCode_;
         result.receiverBank_ = receiverBank_;
         result.receiverBankCode_ = receiverBankCode_;
         result.beneficiaryAccount_ = beneficiaryAccount_;
@@ -4578,6 +6174,10 @@ public final class Switching {
         }
         if (!other.getSenderBank().isEmpty()) {
           senderBank_ = other.senderBank_;
+          onChanged();
+        }
+        if (!other.getSenderBankCode().isEmpty()) {
+          senderBankCode_ = other.senderBankCode_;
           onChanged();
         }
         if (!other.getReceiverBank().isEmpty()) {
@@ -4707,6 +6307,10 @@ public final class Switching {
 
       private java.lang.Object senderBank_ = "";
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The senderBank.
        */
@@ -4723,6 +6327,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The bytes for senderBank.
        */
@@ -4740,6 +6348,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The senderBank to set.
        * @return This builder for chaining.
@@ -4755,6 +6367,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return This builder for chaining.
        */
@@ -4765,6 +6381,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The bytes for senderBank to set.
        * @return This builder for chaining.
@@ -4781,8 +6401,108 @@ public final class Switching {
         return this;
       }
 
+      private java.lang.Object senderBankCode_ = "";
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return The senderBankCode.
+       */
+      public java.lang.String getSenderBankCode() {
+        java.lang.Object ref = senderBankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          senderBankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return The bytes for senderBankCode.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBankCodeBytes() {
+        java.lang.Object ref = senderBankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          senderBankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @param value The senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        senderBankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSenderBankCode() {
+        
+        senderBankCode_ = getDefaultInstance().getSenderBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @param value The bytes for senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        senderBankCode_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object receiverBank_ = "";
       /**
+       * <pre>
+       * receiver bank address
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return The receiverBank.
        */
@@ -4799,6 +6519,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank address
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return The bytes for receiverBank.
        */
@@ -4816,6 +6540,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank address
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @param value The receiverBank to set.
        * @return This builder for chaining.
@@ -4831,6 +6559,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank address
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return This builder for chaining.
        */
@@ -4841,6 +6573,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank address
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @param value The bytes for receiverBank to set.
        * @return This builder for chaining.
@@ -4859,6 +6595,10 @@ public final class Switching {
 
       private java.lang.Object receiverBankCode_ = "";
       /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
        * <code>string receiver_bank_code = 4;</code>
        * @return The receiverBankCode.
        */
@@ -4875,6 +6615,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
        * <code>string receiver_bank_code = 4;</code>
        * @return The bytes for receiverBankCode.
        */
@@ -4892,6 +6636,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
        * <code>string receiver_bank_code = 4;</code>
        * @param value The receiverBankCode to set.
        * @return This builder for chaining.
@@ -4907,6 +6655,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
        * <code>string receiver_bank_code = 4;</code>
        * @return This builder for chaining.
        */
@@ -4917,6 +6669,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
        * <code>string receiver_bank_code = 4;</code>
        * @param value The bytes for receiverBankCode to set.
        * @return This builder for chaining.
@@ -5218,16 +6974,44 @@ public final class Switching {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 1;</code>
      * @return The senderBank.
      */
     java.lang.String getSenderBank();
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 1;</code>
      * @return The bytes for senderBank.
      */
     com.google.protobuf.ByteString
         getSenderBankBytes();
+
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 3;</code>
+     * @return The senderBankCode.
+     */
+    java.lang.String getSenderBankCode();
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 3;</code>
+     * @return The bytes for senderBankCode.
+     */
+    com.google.protobuf.ByteString
+        getSenderBankCodeBytes();
 
     /**
      * <code>repeated .switchingservice.v1.HoldPaymentItem items = 2;</code>
@@ -5267,6 +7051,7 @@ public final class Switching {
     }
     private HoldBatchPaymentRequest() {
       senderBank_ = "";
+      senderBankCode_ = "";
       items_ = java.util.Collections.emptyList();
     }
 
@@ -5316,6 +7101,12 @@ public final class Switching {
                   input.readMessage(com.blcvn.switching.switchingservice.Switching.HoldPaymentItem.parser(), extensionRegistry));
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              senderBankCode_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5354,6 +7145,10 @@ public final class Switching {
     public static final int SENDER_BANK_FIELD_NUMBER = 1;
     private volatile java.lang.Object senderBank_;
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 1;</code>
      * @return The senderBank.
      */
@@ -5371,6 +7166,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * sender bank address
+     * </pre>
+     *
      * <code>string sender_bank = 1;</code>
      * @return The bytes for senderBank.
      */
@@ -5383,6 +7182,52 @@ public final class Switching {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         senderBank_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SENDER_BANK_CODE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object senderBankCode_;
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 3;</code>
+     * @return The senderBankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getSenderBankCode() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        senderBankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 3;</code>
+     * @return The bytes for senderBankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBankCodeBytes() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        senderBankCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5449,6 +7294,9 @@ public final class Switching {
       for (int i = 0; i < items_.size(); i++) {
         output.writeMessage(2, items_.get(i));
       }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, senderBankCode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5464,6 +7312,9 @@ public final class Switching {
       for (int i = 0; i < items_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, items_.get(i));
+      }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, senderBankCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5482,6 +7333,8 @@ public final class Switching {
 
       if (!getSenderBank()
           .equals(other.getSenderBank())) return false;
+      if (!getSenderBankCode()
+          .equals(other.getSenderBankCode())) return false;
       if (!getItemsList()
           .equals(other.getItemsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -5497,6 +7350,8 @@ public final class Switching {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENDER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getSenderBank().hashCode();
+      hash = (37 * hash) + SENDER_BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSenderBankCode().hashCode();
       if (getItemsCount() > 0) {
         hash = (37 * hash) + ITEMS_FIELD_NUMBER;
         hash = (53 * hash) + getItemsList().hashCode();
@@ -5637,6 +7492,8 @@ public final class Switching {
         super.clear();
         senderBank_ = "";
 
+        senderBankCode_ = "";
+
         if (itemsBuilder_ == null) {
           items_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -5671,6 +7528,7 @@ public final class Switching {
         com.blcvn.switching.switchingservice.Switching.HoldBatchPaymentRequest result = new com.blcvn.switching.switchingservice.Switching.HoldBatchPaymentRequest(this);
         int from_bitField0_ = bitField0_;
         result.senderBank_ = senderBank_;
+        result.senderBankCode_ = senderBankCode_;
         if (itemsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             items_ = java.util.Collections.unmodifiableList(items_);
@@ -5732,6 +7590,10 @@ public final class Switching {
           senderBank_ = other.senderBank_;
           onChanged();
         }
+        if (!other.getSenderBankCode().isEmpty()) {
+          senderBankCode_ = other.senderBankCode_;
+          onChanged();
+        }
         if (itemsBuilder_ == null) {
           if (!other.items_.isEmpty()) {
             if (items_.isEmpty()) {
@@ -5790,6 +7652,10 @@ public final class Switching {
 
       private java.lang.Object senderBank_ = "";
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 1;</code>
        * @return The senderBank.
        */
@@ -5806,6 +7672,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 1;</code>
        * @return The bytes for senderBank.
        */
@@ -5823,6 +7693,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 1;</code>
        * @param value The senderBank to set.
        * @return This builder for chaining.
@@ -5838,6 +7712,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 1;</code>
        * @return This builder for chaining.
        */
@@ -5848,6 +7726,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address
+       * </pre>
+       *
        * <code>string sender_bank = 1;</code>
        * @param value The bytes for senderBank to set.
        * @return This builder for chaining.
@@ -5860,6 +7742,102 @@ public final class Switching {
   checkByteStringIsUtf8(value);
         
         senderBank_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object senderBankCode_ = "";
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 3;</code>
+       * @return The senderBankCode.
+       */
+      public java.lang.String getSenderBankCode() {
+        java.lang.Object ref = senderBankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          senderBankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 3;</code>
+       * @return The bytes for senderBankCode.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBankCodeBytes() {
+        java.lang.Object ref = senderBankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          senderBankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 3;</code>
+       * @param value The senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        senderBankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSenderBankCode() {
+        
+        senderBankCode_ = getDefaultInstance().getSenderBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 3;</code>
+       * @param value The bytes for senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        senderBankCode_ = value;
         onChanged();
         return this;
       }
@@ -6197,6 +8175,26 @@ public final class Switching {
         getReceiverBankCodeBytes();
 
     /**
+     * <pre>
+     * receiver bank address (required for batch hold)
+     * </pre>
+     *
+     * <code>string receiver_bank_address = 6;</code>
+     * @return The receiverBankAddress.
+     */
+    java.lang.String getReceiverBankAddress();
+    /**
+     * <pre>
+     * receiver bank address (required for batch hold)
+     * </pre>
+     *
+     * <code>string receiver_bank_address = 6;</code>
+     * @return The bytes for receiverBankAddress.
+     */
+    com.google.protobuf.ByteString
+        getReceiverBankAddressBytes();
+
+    /**
      * <code>string amount = 4;</code>
      * @return The amount.
      */
@@ -6236,6 +8234,7 @@ public final class Switching {
       uetr_ = "";
       beneficiaryAccount_ = "";
       receiverBankCode_ = "";
+      receiverBankAddress_ = "";
       amount_ = "";
       note_ = "";
     }
@@ -6298,6 +8297,12 @@ public final class Switching {
               java.lang.String s = input.readStringRequireUtf8();
 
               note_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              receiverBankAddress_ = s;
               break;
             }
             default: {
@@ -6446,6 +8451,52 @@ public final class Switching {
       }
     }
 
+    public static final int RECEIVER_BANK_ADDRESS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object receiverBankAddress_;
+    /**
+     * <pre>
+     * receiver bank address (required for batch hold)
+     * </pre>
+     *
+     * <code>string receiver_bank_address = 6;</code>
+     * @return The receiverBankAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getReceiverBankAddress() {
+      java.lang.Object ref = receiverBankAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiverBankAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * receiver bank address (required for batch hold)
+     * </pre>
+     *
+     * <code>string receiver_bank_address = 6;</code>
+     * @return The bytes for receiverBankAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReceiverBankAddressBytes() {
+      java.lang.Object ref = receiverBankAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiverBankAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int AMOUNT_FIELD_NUMBER = 4;
     private volatile java.lang.Object amount_;
     /**
@@ -6551,6 +8602,9 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, note_);
       }
+      if (!getReceiverBankAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, receiverBankAddress_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6575,6 +8629,9 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, note_);
       }
+      if (!getReceiverBankAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, receiverBankAddress_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6596,6 +8653,8 @@ public final class Switching {
           .equals(other.getBeneficiaryAccount())) return false;
       if (!getReceiverBankCode()
           .equals(other.getReceiverBankCode())) return false;
+      if (!getReceiverBankAddress()
+          .equals(other.getReceiverBankAddress())) return false;
       if (!getAmount()
           .equals(other.getAmount())) return false;
       if (!getNote()
@@ -6617,6 +8676,8 @@ public final class Switching {
       hash = (53 * hash) + getBeneficiaryAccount().hashCode();
       hash = (37 * hash) + RECEIVER_BANK_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getReceiverBankCode().hashCode();
+      hash = (37 * hash) + RECEIVER_BANK_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getReceiverBankAddress().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
       hash = (37 * hash) + NOTE_FIELD_NUMBER;
@@ -6760,6 +8821,8 @@ public final class Switching {
 
         receiverBankCode_ = "";
 
+        receiverBankAddress_ = "";
+
         amount_ = "";
 
         note_ = "";
@@ -6793,6 +8856,7 @@ public final class Switching {
         result.uetr_ = uetr_;
         result.beneficiaryAccount_ = beneficiaryAccount_;
         result.receiverBankCode_ = receiverBankCode_;
+        result.receiverBankAddress_ = receiverBankAddress_;
         result.amount_ = amount_;
         result.note_ = note_;
         onBuilt();
@@ -6853,6 +8917,10 @@ public final class Switching {
         }
         if (!other.getReceiverBankCode().isEmpty()) {
           receiverBankCode_ = other.receiverBankCode_;
+          onChanged();
+        }
+        if (!other.getReceiverBankAddress().isEmpty()) {
+          receiverBankAddress_ = other.receiverBankAddress_;
           onChanged();
         }
         if (!other.getAmount().isEmpty()) {
@@ -7116,6 +9184,102 @@ public final class Switching {
   checkByteStringIsUtf8(value);
         
         receiverBankCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object receiverBankAddress_ = "";
+      /**
+       * <pre>
+       * receiver bank address (required for batch hold)
+       * </pre>
+       *
+       * <code>string receiver_bank_address = 6;</code>
+       * @return The receiverBankAddress.
+       */
+      public java.lang.String getReceiverBankAddress() {
+        java.lang.Object ref = receiverBankAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiverBankAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank address (required for batch hold)
+       * </pre>
+       *
+       * <code>string receiver_bank_address = 6;</code>
+       * @return The bytes for receiverBankAddress.
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBankAddressBytes() {
+        java.lang.Object ref = receiverBankAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiverBankAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank address (required for batch hold)
+       * </pre>
+       *
+       * <code>string receiver_bank_address = 6;</code>
+       * @param value The receiverBankAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        receiverBankAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank address (required for batch hold)
+       * </pre>
+       *
+       * <code>string receiver_bank_address = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceiverBankAddress() {
+        
+        receiverBankAddress_ = getDefaultInstance().getReceiverBankAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank address (required for batch hold)
+       * </pre>
+       *
+       * <code>string receiver_bank_address = 6;</code>
+       * @param value The bytes for receiverBankAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        receiverBankAddress_ = value;
         onChanged();
         return this;
       }
@@ -10020,16 +12184,44 @@ public final class Switching {
         getUetrBytes();
 
     /**
+     * <pre>
+     * bank address (for unholdPayment - anyone can call after expiry)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
     java.lang.String getSenderBank();
     /**
+     * <pre>
+     * bank address (for unholdPayment - anyone can call after expiry)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
     com.google.protobuf.ByteString
         getSenderBankBytes();
+
+    /**
+     * <pre>
+     * bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string bank_code = 4;</code>
+     * @return The bankCode.
+     */
+    java.lang.String getBankCode();
+    /**
+     * <pre>
+     * bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string bank_code = 4;</code>
+     * @return The bytes for bankCode.
+     */
+    com.google.protobuf.ByteString
+        getBankCodeBytes();
 
     /**
      * <code>string reason = 3;</code>
@@ -10058,6 +12250,7 @@ public final class Switching {
     private CancelPaymentRequest() {
       uetr_ = "";
       senderBank_ = "";
+      bankCode_ = "";
       reason_ = "";
     }
 
@@ -10107,6 +12300,12 @@ public final class Switching {
               java.lang.String s = input.readStringRequireUtf8();
 
               reason_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bankCode_ = s;
               break;
             }
             default: {
@@ -10182,6 +12381,10 @@ public final class Switching {
     public static final int SENDER_BANK_FIELD_NUMBER = 2;
     private volatile java.lang.Object senderBank_;
     /**
+     * <pre>
+     * bank address (for unholdPayment - anyone can call after expiry)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
@@ -10199,6 +12402,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * bank address (for unholdPayment - anyone can call after expiry)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
@@ -10211,6 +12418,52 @@ public final class Switching {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         senderBank_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BANK_CODE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object bankCode_;
+    /**
+     * <pre>
+     * bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string bank_code = 4;</code>
+     * @return The bankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getBankCode() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string bank_code = 4;</code>
+     * @return The bytes for bankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBankCodeBytes() {
+      java.lang.Object ref = bankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bankCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -10278,6 +12531,9 @@ public final class Switching {
       if (!getReasonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
       }
+      if (!getBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bankCode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10295,6 +12551,9 @@ public final class Switching {
       }
       if (!getReasonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
+      }
+      if (!getBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, bankCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10315,6 +12574,8 @@ public final class Switching {
           .equals(other.getUetr())) return false;
       if (!getSenderBank()
           .equals(other.getSenderBank())) return false;
+      if (!getBankCode()
+          .equals(other.getBankCode())) return false;
       if (!getReason()
           .equals(other.getReason())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -10332,6 +12593,8 @@ public final class Switching {
       hash = (53 * hash) + getUetr().hashCode();
       hash = (37 * hash) + SENDER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getSenderBank().hashCode();
+      hash = (37 * hash) + BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBankCode().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + getReason().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -10471,6 +12734,8 @@ public final class Switching {
 
         senderBank_ = "";
 
+        bankCode_ = "";
+
         reason_ = "";
 
         return this;
@@ -10501,6 +12766,7 @@ public final class Switching {
         com.blcvn.switching.switchingservice.Switching.CancelPaymentRequest result = new com.blcvn.switching.switchingservice.Switching.CancelPaymentRequest(this);
         result.uetr_ = uetr_;
         result.senderBank_ = senderBank_;
+        result.bankCode_ = bankCode_;
         result.reason_ = reason_;
         onBuilt();
         return result;
@@ -10556,6 +12822,10 @@ public final class Switching {
         }
         if (!other.getSenderBank().isEmpty()) {
           senderBank_ = other.senderBank_;
+          onChanged();
+        }
+        if (!other.getBankCode().isEmpty()) {
+          bankCode_ = other.bankCode_;
           onChanged();
         }
         if (!other.getReason().isEmpty()) {
@@ -10669,6 +12939,10 @@ public final class Switching {
 
       private java.lang.Object senderBank_ = "";
       /**
+       * <pre>
+       * bank address (for unholdPayment - anyone can call after expiry)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The senderBank.
        */
@@ -10685,6 +12959,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * bank address (for unholdPayment - anyone can call after expiry)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The bytes for senderBank.
        */
@@ -10702,6 +12980,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * bank address (for unholdPayment - anyone can call after expiry)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The senderBank to set.
        * @return This builder for chaining.
@@ -10717,6 +12999,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * bank address (for unholdPayment - anyone can call after expiry)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return This builder for chaining.
        */
@@ -10727,6 +13013,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * bank address (for unholdPayment - anyone can call after expiry)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The bytes for senderBank to set.
        * @return This builder for chaining.
@@ -10739,6 +13029,102 @@ public final class Switching {
   checkByteStringIsUtf8(value);
         
         senderBank_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object bankCode_ = "";
+      /**
+       * <pre>
+       * bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string bank_code = 4;</code>
+       * @return The bankCode.
+       */
+      public java.lang.String getBankCode() {
+        java.lang.Object ref = bankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string bank_code = 4;</code>
+       * @return The bytes for bankCode.
+       */
+      public com.google.protobuf.ByteString
+          getBankCodeBytes() {
+        java.lang.Object ref = bankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          bankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string bank_code = 4;</code>
+       * @param value The bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string bank_code = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBankCode() {
+        
+        bankCode_ = getDefaultInstance().getBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string bank_code = 4;</code>
+       * @param value The bytes for bankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bankCode_ = value;
         onChanged();
         return this;
       }
@@ -10888,11 +13274,19 @@ public final class Switching {
         getUetrBytes();
 
     /**
+     * <pre>
+     * sender bank address (optional, for reference)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
     java.lang.String getSenderBank();
     /**
+     * <pre>
+     * sender bank address (optional, for reference)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
@@ -10900,16 +13294,64 @@ public final class Switching {
         getSenderBankBytes();
 
     /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The senderBankCode.
+     */
+    java.lang.String getSenderBankCode();
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The bytes for senderBankCode.
+     */
+    com.google.protobuf.ByteString
+        getSenderBankCodeBytes();
+
+    /**
+     * <pre>
+     * receiver bank address (required - caller)
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The receiverBank.
      */
     java.lang.String getReceiverBank();
     /**
+     * <pre>
+     * receiver bank address (required - caller)
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The bytes for receiverBank.
      */
     com.google.protobuf.ByteString
         getReceiverBankBytes();
+
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 9;</code>
+     * @return The receiverBankCode.
+     */
+    java.lang.String getReceiverBankCode();
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 9;</code>
+     * @return The bytes for receiverBankCode.
+     */
+    com.google.protobuf.ByteString
+        getReceiverBankCodeBytes();
 
     /**
      * <code>string from_bank_account = 4;</code>
@@ -10974,7 +13416,9 @@ public final class Switching {
     private ConfirmPaymentRequest() {
       uetr_ = "";
       senderBank_ = "";
+      senderBankCode_ = "";
       receiverBank_ = "";
+      receiverBankCode_ = "";
       fromBankAccount_ = "";
       toBankAccount_ = "";
       txReference_ = "";
@@ -11053,6 +13497,18 @@ public final class Switching {
               note_ = s;
               break;
             }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              senderBankCode_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              receiverBankCode_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11126,6 +13582,10 @@ public final class Switching {
     public static final int SENDER_BANK_FIELD_NUMBER = 2;
     private volatile java.lang.Object senderBank_;
     /**
+     * <pre>
+     * sender bank address (optional, for reference)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The senderBank.
      */
@@ -11143,6 +13603,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * sender bank address (optional, for reference)
+     * </pre>
+     *
      * <code>string sender_bank = 2;</code>
      * @return The bytes for senderBank.
      */
@@ -11161,9 +13625,59 @@ public final class Switching {
       }
     }
 
+    public static final int SENDER_BANK_CODE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object senderBankCode_;
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The senderBankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getSenderBankCode() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        senderBankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * sender bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string sender_bank_code = 8;</code>
+     * @return The bytes for senderBankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBankCodeBytes() {
+      java.lang.Object ref = senderBankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        senderBankCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int RECEIVER_BANK_FIELD_NUMBER = 3;
     private volatile java.lang.Object receiverBank_;
     /**
+     * <pre>
+     * receiver bank address (required - caller)
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The receiverBank.
      */
@@ -11181,6 +13695,10 @@ public final class Switching {
       }
     }
     /**
+     * <pre>
+     * receiver bank address (required - caller)
+     * </pre>
+     *
      * <code>string receiver_bank = 3;</code>
      * @return The bytes for receiverBank.
      */
@@ -11193,6 +13711,52 @@ public final class Switching {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         receiverBank_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECEIVER_BANK_CODE_FIELD_NUMBER = 9;
+    private volatile java.lang.Object receiverBankCode_;
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 9;</code>
+     * @return The receiverBankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getReceiverBankCode() {
+      java.lang.Object ref = receiverBankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiverBankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 9;</code>
+     * @return The bytes for receiverBankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReceiverBankCodeBytes() {
+      java.lang.Object ref = receiverBankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiverBankCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -11386,6 +13950,12 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, note_);
       }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, senderBankCode_);
+      }
+      if (!getReceiverBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, receiverBankCode_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11416,6 +13986,12 @@ public final class Switching {
       if (!getNoteBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, note_);
       }
+      if (!getSenderBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, senderBankCode_);
+      }
+      if (!getReceiverBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, receiverBankCode_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11435,8 +14011,12 @@ public final class Switching {
           .equals(other.getUetr())) return false;
       if (!getSenderBank()
           .equals(other.getSenderBank())) return false;
+      if (!getSenderBankCode()
+          .equals(other.getSenderBankCode())) return false;
       if (!getReceiverBank()
           .equals(other.getReceiverBank())) return false;
+      if (!getReceiverBankCode()
+          .equals(other.getReceiverBankCode())) return false;
       if (!getFromBankAccount()
           .equals(other.getFromBankAccount())) return false;
       if (!getToBankAccount()
@@ -11460,8 +14040,12 @@ public final class Switching {
       hash = (53 * hash) + getUetr().hashCode();
       hash = (37 * hash) + SENDER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getSenderBank().hashCode();
+      hash = (37 * hash) + SENDER_BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSenderBankCode().hashCode();
       hash = (37 * hash) + RECEIVER_BANK_FIELD_NUMBER;
       hash = (53 * hash) + getReceiverBank().hashCode();
+      hash = (37 * hash) + RECEIVER_BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getReceiverBankCode().hashCode();
       hash = (37 * hash) + FROM_BANK_ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getFromBankAccount().hashCode();
       hash = (37 * hash) + TO_BANK_ACCOUNT_FIELD_NUMBER;
@@ -11607,7 +14191,11 @@ public final class Switching {
 
         senderBank_ = "";
 
+        senderBankCode_ = "";
+
         receiverBank_ = "";
+
+        receiverBankCode_ = "";
 
         fromBankAccount_ = "";
 
@@ -11645,7 +14233,9 @@ public final class Switching {
         com.blcvn.switching.switchingservice.Switching.ConfirmPaymentRequest result = new com.blcvn.switching.switchingservice.Switching.ConfirmPaymentRequest(this);
         result.uetr_ = uetr_;
         result.senderBank_ = senderBank_;
+        result.senderBankCode_ = senderBankCode_;
         result.receiverBank_ = receiverBank_;
+        result.receiverBankCode_ = receiverBankCode_;
         result.fromBankAccount_ = fromBankAccount_;
         result.toBankAccount_ = toBankAccount_;
         result.txReference_ = txReference_;
@@ -11706,8 +14296,16 @@ public final class Switching {
           senderBank_ = other.senderBank_;
           onChanged();
         }
+        if (!other.getSenderBankCode().isEmpty()) {
+          senderBankCode_ = other.senderBankCode_;
+          onChanged();
+        }
         if (!other.getReceiverBank().isEmpty()) {
           receiverBank_ = other.receiverBank_;
+          onChanged();
+        }
+        if (!other.getReceiverBankCode().isEmpty()) {
+          receiverBankCode_ = other.receiverBankCode_;
           onChanged();
         }
         if (!other.getFromBankAccount().isEmpty()) {
@@ -11833,6 +14431,10 @@ public final class Switching {
 
       private java.lang.Object senderBank_ = "";
       /**
+       * <pre>
+       * sender bank address (optional, for reference)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The senderBank.
        */
@@ -11849,6 +14451,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address (optional, for reference)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return The bytes for senderBank.
        */
@@ -11866,6 +14472,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * sender bank address (optional, for reference)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The senderBank to set.
        * @return This builder for chaining.
@@ -11881,6 +14491,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address (optional, for reference)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @return This builder for chaining.
        */
@@ -11891,6 +14505,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * sender bank address (optional, for reference)
+       * </pre>
+       *
        * <code>string sender_bank = 2;</code>
        * @param value The bytes for senderBank to set.
        * @return This builder for chaining.
@@ -11907,8 +14525,108 @@ public final class Switching {
         return this;
       }
 
+      private java.lang.Object senderBankCode_ = "";
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return The senderBankCode.
+       */
+      public java.lang.String getSenderBankCode() {
+        java.lang.Object ref = senderBankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          senderBankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return The bytes for senderBankCode.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBankCodeBytes() {
+        java.lang.Object ref = senderBankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          senderBankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @param value The senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        senderBankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSenderBankCode() {
+        
+        senderBankCode_ = getDefaultInstance().getSenderBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * sender bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string sender_bank_code = 8;</code>
+       * @param value The bytes for senderBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        senderBankCode_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object receiverBank_ = "";
       /**
+       * <pre>
+       * receiver bank address (required - caller)
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return The receiverBank.
        */
@@ -11925,6 +14643,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank address (required - caller)
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return The bytes for receiverBank.
        */
@@ -11942,6 +14664,10 @@ public final class Switching {
         }
       }
       /**
+       * <pre>
+       * receiver bank address (required - caller)
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @param value The receiverBank to set.
        * @return This builder for chaining.
@@ -11957,6 +14683,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank address (required - caller)
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @return This builder for chaining.
        */
@@ -11967,6 +14697,10 @@ public final class Switching {
         return this;
       }
       /**
+       * <pre>
+       * receiver bank address (required - caller)
+       * </pre>
+       *
        * <code>string receiver_bank = 3;</code>
        * @param value The bytes for receiverBank to set.
        * @return This builder for chaining.
@@ -11979,6 +14713,102 @@ public final class Switching {
   checkByteStringIsUtf8(value);
         
         receiverBank_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object receiverBankCode_ = "";
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 9;</code>
+       * @return The receiverBankCode.
+       */
+      public java.lang.String getReceiverBankCode() {
+        java.lang.Object ref = receiverBankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiverBankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 9;</code>
+       * @return The bytes for receiverBankCode.
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBankCodeBytes() {
+        java.lang.Object ref = receiverBankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiverBankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 9;</code>
+       * @param value The receiverBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        receiverBankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceiverBankCode() {
+        
+        receiverBankCode_ = getDefaultInstance().getReceiverBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 9;</code>
+       * @param value The bytes for receiverBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        receiverBankCode_ = value;
         onChanged();
         return this;
       }
@@ -12339,6 +15169,1096 @@ public final class Switching {
 
   }
 
+  public interface UnheldPaymentRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:switchingservice.v1.UnheldPaymentRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string uetr = 1;</code>
+     * @return The uetr.
+     */
+    java.lang.String getUetr();
+    /**
+     * <code>string uetr = 1;</code>
+     * @return The bytes for uetr.
+     */
+    com.google.protobuf.ByteString
+        getUetrBytes();
+
+    /**
+     * <pre>
+     * receiver bank address (required - only receiver or operator can cancel)
+     * </pre>
+     *
+     * <code>string receiver_bank = 2;</code>
+     * @return The receiverBank.
+     */
+    java.lang.String getReceiverBank();
+    /**
+     * <pre>
+     * receiver bank address (required - only receiver or operator can cancel)
+     * </pre>
+     *
+     * <code>string receiver_bank = 2;</code>
+     * @return The bytes for receiverBank.
+     */
+    com.google.protobuf.ByteString
+        getReceiverBankBytes();
+
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 4;</code>
+     * @return The receiverBankCode.
+     */
+    java.lang.String getReceiverBankCode();
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 4;</code>
+     * @return The bytes for receiverBankCode.
+     */
+    com.google.protobuf.ByteString
+        getReceiverBankCodeBytes();
+
+    /**
+     * <code>string reason = 3;</code>
+     * @return The reason.
+     */
+    java.lang.String getReason();
+    /**
+     * <code>string reason = 3;</code>
+     * @return The bytes for reason.
+     */
+    com.google.protobuf.ByteString
+        getReasonBytes();
+  }
+  /**
+   * Protobuf type {@code switchingservice.v1.UnheldPaymentRequest}
+   */
+  public static final class UnheldPaymentRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:switchingservice.v1.UnheldPaymentRequest)
+      UnheldPaymentRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UnheldPaymentRequest.newBuilder() to construct.
+    private UnheldPaymentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UnheldPaymentRequest() {
+      uetr_ = "";
+      receiverBank_ = "";
+      receiverBankCode_ = "";
+      reason_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UnheldPaymentRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UnheldPaymentRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uetr_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              receiverBank_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reason_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              receiverBankCode_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_UnheldPaymentRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.class, com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.Builder.class);
+    }
+
+    public static final int UETR_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uetr_;
+    /**
+     * <code>string uetr = 1;</code>
+     * @return The uetr.
+     */
+    @java.lang.Override
+    public java.lang.String getUetr() {
+      java.lang.Object ref = uetr_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uetr_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uetr = 1;</code>
+     * @return The bytes for uetr.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUetrBytes() {
+      java.lang.Object ref = uetr_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uetr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECEIVER_BANK_FIELD_NUMBER = 2;
+    private volatile java.lang.Object receiverBank_;
+    /**
+     * <pre>
+     * receiver bank address (required - only receiver or operator can cancel)
+     * </pre>
+     *
+     * <code>string receiver_bank = 2;</code>
+     * @return The receiverBank.
+     */
+    @java.lang.Override
+    public java.lang.String getReceiverBank() {
+      java.lang.Object ref = receiverBank_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiverBank_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * receiver bank address (required - only receiver or operator can cancel)
+     * </pre>
+     *
+     * <code>string receiver_bank = 2;</code>
+     * @return The bytes for receiverBank.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReceiverBankBytes() {
+      java.lang.Object ref = receiverBank_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiverBank_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECEIVER_BANK_CODE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object receiverBankCode_;
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 4;</code>
+     * @return The receiverBankCode.
+     */
+    @java.lang.Override
+    public java.lang.String getReceiverBankCode() {
+      java.lang.Object ref = receiverBankCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiverBankCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * receiver bank code (optional, for reference)
+     * </pre>
+     *
+     * <code>string receiver_bank_code = 4;</code>
+     * @return The bytes for receiverBankCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReceiverBankCodeBytes() {
+      java.lang.Object ref = receiverBankCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiverBankCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REASON_FIELD_NUMBER = 3;
+    private volatile java.lang.Object reason_;
+    /**
+     * <code>string reason = 3;</code>
+     * @return The reason.
+     */
+    @java.lang.Override
+    public java.lang.String getReason() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reason_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reason = 3;</code>
+     * @return The bytes for reason.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getReasonBytes() {
+      java.lang.Object ref = reason_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUetrBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uetr_);
+      }
+      if (!getReceiverBankBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, receiverBank_);
+      }
+      if (!getReasonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
+      }
+      if (!getReceiverBankCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, receiverBankCode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUetrBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uetr_);
+      }
+      if (!getReceiverBankBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, receiverBank_);
+      }
+      if (!getReasonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
+      }
+      if (!getReceiverBankCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, receiverBankCode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest other = (com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest) obj;
+
+      if (!getUetr()
+          .equals(other.getUetr())) return false;
+      if (!getReceiverBank()
+          .equals(other.getReceiverBank())) return false;
+      if (!getReceiverBankCode()
+          .equals(other.getReceiverBankCode())) return false;
+      if (!getReason()
+          .equals(other.getReason())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UETR_FIELD_NUMBER;
+      hash = (53 * hash) + getUetr().hashCode();
+      hash = (37 * hash) + RECEIVER_BANK_FIELD_NUMBER;
+      hash = (53 * hash) + getReceiverBank().hashCode();
+      hash = (37 * hash) + RECEIVER_BANK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getReceiverBankCode().hashCode();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getReason().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code switchingservice.v1.UnheldPaymentRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:switchingservice.v1.UnheldPaymentRequest)
+        com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_UnheldPaymentRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.class, com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uetr_ = "";
+
+        receiverBank_ = "";
+
+        receiverBankCode_ = "";
+
+        reason_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.switchingservice.Switching.internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest getDefaultInstanceForType() {
+        return com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest build() {
+        com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest buildPartial() {
+        com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest result = new com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest(this);
+        result.uetr_ = uetr_;
+        result.receiverBank_ = receiverBank_;
+        result.receiverBankCode_ = receiverBankCode_;
+        result.reason_ = reason_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest) {
+          return mergeFrom((com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest other) {
+        if (other == com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest.getDefaultInstance()) return this;
+        if (!other.getUetr().isEmpty()) {
+          uetr_ = other.uetr_;
+          onChanged();
+        }
+        if (!other.getReceiverBank().isEmpty()) {
+          receiverBank_ = other.receiverBank_;
+          onChanged();
+        }
+        if (!other.getReceiverBankCode().isEmpty()) {
+          receiverBankCode_ = other.receiverBankCode_;
+          onChanged();
+        }
+        if (!other.getReason().isEmpty()) {
+          reason_ = other.reason_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uetr_ = "";
+      /**
+       * <code>string uetr = 1;</code>
+       * @return The uetr.
+       */
+      public java.lang.String getUetr() {
+        java.lang.Object ref = uetr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uetr_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @return The bytes for uetr.
+       */
+      public com.google.protobuf.ByteString
+          getUetrBytes() {
+        java.lang.Object ref = uetr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uetr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @param value The uetr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUetr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uetr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUetr() {
+        
+        uetr_ = getDefaultInstance().getUetr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uetr = 1;</code>
+       * @param value The bytes for uetr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUetrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uetr_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object receiverBank_ = "";
+      /**
+       * <pre>
+       * receiver bank address (required - only receiver or operator can cancel)
+       * </pre>
+       *
+       * <code>string receiver_bank = 2;</code>
+       * @return The receiverBank.
+       */
+      public java.lang.String getReceiverBank() {
+        java.lang.Object ref = receiverBank_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiverBank_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank address (required - only receiver or operator can cancel)
+       * </pre>
+       *
+       * <code>string receiver_bank = 2;</code>
+       * @return The bytes for receiverBank.
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBankBytes() {
+        java.lang.Object ref = receiverBank_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiverBank_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank address (required - only receiver or operator can cancel)
+       * </pre>
+       *
+       * <code>string receiver_bank = 2;</code>
+       * @param value The receiverBank to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBank(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        receiverBank_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank address (required - only receiver or operator can cancel)
+       * </pre>
+       *
+       * <code>string receiver_bank = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceiverBank() {
+        
+        receiverBank_ = getDefaultInstance().getReceiverBank();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank address (required - only receiver or operator can cancel)
+       * </pre>
+       *
+       * <code>string receiver_bank = 2;</code>
+       * @param value The bytes for receiverBank to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        receiverBank_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object receiverBankCode_ = "";
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 4;</code>
+       * @return The receiverBankCode.
+       */
+      public java.lang.String getReceiverBankCode() {
+        java.lang.Object ref = receiverBankCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiverBankCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 4;</code>
+       * @return The bytes for receiverBankCode.
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBankCodeBytes() {
+        java.lang.Object ref = receiverBankCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiverBankCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 4;</code>
+       * @param value The receiverBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        receiverBankCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceiverBankCode() {
+        
+        receiverBankCode_ = getDefaultInstance().getReceiverBankCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * receiver bank code (optional, for reference)
+       * </pre>
+       *
+       * <code>string receiver_bank_code = 4;</code>
+       * @param value The bytes for receiverBankCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceiverBankCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        receiverBankCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reason_ = "";
+      /**
+       * <code>string reason = 3;</code>
+       * @return The reason.
+       */
+      public java.lang.String getReason() {
+        java.lang.Object ref = reason_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reason_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reason = 3;</code>
+       * @return The bytes for reason.
+       */
+      public com.google.protobuf.ByteString
+          getReasonBytes() {
+        java.lang.Object ref = reason_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reason_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reason = 3;</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reason = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = getDefaultInstance().getReason();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reason = 3;</code>
+       * @param value The bytes for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:switchingservice.v1.UnheldPaymentRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:switchingservice.v1.UnheldPaymentRequest)
+    private static final com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest();
+    }
+
+    public static com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnheldPaymentRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UnheldPaymentRequest>() {
+      @java.lang.Override
+      public UnheldPaymentRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UnheldPaymentRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UnheldPaymentRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnheldPaymentRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.switchingservice.Switching.UnheldPaymentRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_switchingservice_v1_RegisterBankRequest_descriptor;
   private static final 
@@ -12364,6 +16284,11 @@ public final class Switching {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_switchingservice_v1_QueryBalanceResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_switchingservice_v1_BankTransactionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_switchingservice_v1_BankTransactionRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_switchingservice_v1_HoldPaymentRequest_descriptor;
   private static final 
@@ -12404,6 +16329,11 @@ public final class Switching {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_switchingservice_v1_ConfirmPaymentRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_switchingservice_v1_UnheldPaymentRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12420,50 +16350,73 @@ public final class Switching {
       "\001(\t\022\022\n\ncreated_at\030\003 \001(\003\022\016\n\006status\030\004 \001(\r\022" +
       "\017\n\007message\030\005 \001(\t\"7\n\023TransactionResponse\022" +
       "\017\n\007tx_hash\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"+\n\023Que" +
-      "ryBalanceRequest\022\024\n\014bank_address\030\001 \001(\t\"T" +
+      "ryBalanceRequest\022\024\n\014bank_address\030\001 \001(\t\"w" +
       "\n\024QueryBalanceResponse\022\024\n\014bank_address\030\001" +
-      " \001(\t\022\025\n\rtoken_address\030\002 \001(\t\022\017\n\007balance\030\003" +
-      " \001(\t\"\245\001\n\022HoldPaymentRequest\022\014\n\004uetr\030\001 \001(" +
-      "\t\022\023\n\013sender_bank\030\002 \001(\t\022\025\n\rreceiver_bank\030" +
-      "\003 \001(\t\022\032\n\022receiver_bank_code\030\004 \001(\t\022\033\n\023ben" +
-      "eficiary_account\030\005 \001(\t\022\016\n\006amount\030\006 \001(\t\022\014" +
-      "\n\004note\030\007 \001(\t\"c\n\027HoldBatchPaymentRequest\022" +
-      "\023\n\013sender_bank\030\001 \001(\t\0223\n\005items\030\002 \003(\0132$.sw" +
-      "itchingservice.v1.HoldPaymentItem\"v\n\017Hol" +
-      "dPaymentItem\022\014\n\004uetr\030\001 \001(\t\022\033\n\023beneficiar" +
-      "y_account\030\002 \001(\t\022\032\n\022receiver_bank_code\030\003 " +
-      "\001(\t\022\016\n\006amount\030\004 \001(\t\022\014\n\004note\030\005 \001(\t\"B\n\017Pay" +
-      "mentResponse\022\017\n\007tx_hash\030\001 \001(\t\022\016\n\006ref_id\030" +
-      "\002 \001(\t\022\016\n\006status\030\003 \001(\t\"K\n\024BatchPaymentRes" +
-      "ponse\0223\n\007results\030\001 \003(\0132\".switchingservic" +
-      "e.v1.PaymentResult\"O\n\rPaymentResult\022\014\n\004u" +
-      "etr\030\001 \001(\t\022\017\n\007tx_hash\030\002 \001(\t\022\016\n\006status\030\003 \001" +
-      "(\t\022\017\n\007message\030\004 \001(\t\"I\n\024CancelPaymentRequ" +
-      "est\022\014\n\004uetr\030\001 \001(\t\022\023\n\013sender_bank\030\002 \001(\t\022\016" +
-      "\n\006reason\030\003 \001(\t\"\251\001\n\025ConfirmPaymentRequest" +
-      "\022\014\n\004uetr\030\001 \001(\t\022\023\n\013sender_bank\030\002 \001(\t\022\025\n\rr" +
-      "eceiver_bank\030\003 \001(\t\022\031\n\021from_bank_account\030" +
-      "\004 \001(\t\022\027\n\017to_bank_account\030\005 \001(\t\022\024\n\014tx_ref" +
-      "erence\030\006 \001(\t\022\014\n\004note\030\007 \001(\t2\365\004\n\020Switching" +
-      "Service\022c\n\014RegisterBank\022(.switchingservi" +
-      "ce.v1.RegisterBankRequest\032).switchingser" +
-      "vice.v1.RegisterBankResponse\022g\n\020QueryBan" +
-      "kBalance\022(.switchingservice.v1.QueryBala" +
-      "nceRequest\032).switchingservice.v1.QueryBa" +
-      "lanceResponse\022\\\n\013HoldPayment\022\'.switching" +
-      "service.v1.HoldPaymentRequest\032$.switchin" +
-      "gservice.v1.PaymentResponse\022k\n\020HoldBatch" +
-      "Payment\022,.switchingservice.v1.HoldBatchP" +
-      "aymentRequest\032).switchingservice.v1.Batc" +
-      "hPaymentResponse\022d\n\rCancelPayment\022).swit" +
-      "chingservice.v1.CancelPaymentRequest\032(.s" +
-      "witchingservice.v1.TransactionResponse\022b" +
-      "\n\016ConfirmPayment\022*.switchingservice.v1.C" +
-      "onfirmPaymentRequest\032$.switchingservice." +
-      "v1.PaymentResponseBm\n$com.blcvn.switchin" +
-      "g.switchingserviceZEgithub.com/blcvn/swi" +
-      "tching-proto/go/switchingservice;switchi" +
-      "ngserviceb\006proto3"
+      " \001(\t\022\017\n\007balance\030\002 \001(\t\022\024\n\014balance_type\030\005 " +
+      "\001(\t\022\021\n\tbank_code\030\003 \001(\t\022\017\n\007message\030\004 \001(\t\"" +
+      "_\n\026BankTransactionRequest\022\021\n\tbank_code\030\001" +
+      " \001(\t\022\024\n\014bank_address\030\002 \001(\t\022\016\n\006amount\030\003 \001" +
+      "(\t\022\014\n\004note\030\004 \001(\t\"\277\001\n\022HoldPaymentRequest\022" +
+      "\014\n\004uetr\030\001 \001(\t\022\023\n\013sender_bank\030\002 \001(\t\022\030\n\020se" +
+      "nder_bank_code\030\010 \001(\t\022\025\n\rreceiver_bank\030\003 " +
+      "\001(\t\022\032\n\022receiver_bank_code\030\004 \001(\t\022\033\n\023benef" +
+      "iciary_account\030\005 \001(\t\022\016\n\006amount\030\006 \001(\t\022\014\n\004" +
+      "note\030\007 \001(\t\"}\n\027HoldBatchPaymentRequest\022\023\n" +
+      "\013sender_bank\030\001 \001(\t\022\030\n\020sender_bank_code\030\003" +
+      " \001(\t\0223\n\005items\030\002 \003(\0132$.switchingservice.v" +
+      "1.HoldPaymentItem\"\225\001\n\017HoldPaymentItem\022\014\n" +
+      "\004uetr\030\001 \001(\t\022\033\n\023beneficiary_account\030\002 \001(\t" +
+      "\022\032\n\022receiver_bank_code\030\003 \001(\t\022\035\n\025receiver" +
+      "_bank_address\030\006 \001(\t\022\016\n\006amount\030\004 \001(\t\022\014\n\004n" +
+      "ote\030\005 \001(\t\"B\n\017PaymentResponse\022\017\n\007tx_hash\030" +
+      "\001 \001(\t\022\016\n\006ref_id\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\"K\n" +
+      "\024BatchPaymentResponse\0223\n\007results\030\001 \003(\0132\"" +
+      ".switchingservice.v1.PaymentResult\"O\n\rPa" +
+      "ymentResult\022\014\n\004uetr\030\001 \001(\t\022\017\n\007tx_hash\030\002 \001" +
+      "(\t\022\016\n\006status\030\003 \001(\t\022\017\n\007message\030\004 \001(\t\"\\\n\024C" +
+      "ancelPaymentRequest\022\014\n\004uetr\030\001 \001(\t\022\023\n\013sen" +
+      "der_bank\030\002 \001(\t\022\021\n\tbank_code\030\004 \001(\t\022\016\n\006rea" +
+      "son\030\003 \001(\t\"\337\001\n\025ConfirmPaymentRequest\022\014\n\004u" +
+      "etr\030\001 \001(\t\022\023\n\013sender_bank\030\002 \001(\t\022\030\n\020sender" +
+      "_bank_code\030\010 \001(\t\022\025\n\rreceiver_bank\030\003 \001(\t\022" +
+      "\032\n\022receiver_bank_code\030\t \001(\t\022\031\n\021from_bank" +
+      "_account\030\004 \001(\t\022\027\n\017to_bank_account\030\005 \001(\t\022" +
+      "\024\n\014tx_reference\030\006 \001(\t\022\014\n\004note\030\007 \001(\t\"g\n\024U" +
+      "nheldPaymentRequest\022\014\n\004uetr\030\001 \001(\t\022\025\n\rrec" +
+      "eiver_bank\030\002 \001(\t\022\032\n\022receiver_bank_code\030\004" +
+      " \001(\t\022\016\n\006reason\030\003 \001(\t2\373\010\n\020SwitchingServic" +
+      "e\022c\n\014RegisterBank\022(.switchingservice.v1." +
+      "RegisterBankRequest\032).switchingservice.v" +
+      "1.RegisterBankResponse\022g\n\020QueryBankBalan" +
+      "ce\022(.switchingservice.v1.QueryBalanceReq" +
+      "uest\032).switchingservice.v1.QueryBalanceR" +
+      "esponse\022h\n\021QueryTokenBalance\022(.switching" +
+      "service.v1.QueryBalanceRequest\032).switchi" +
+      "ngservice.v1.QueryBalanceResponse\022\\\n\013Hol" +
+      "dPayment\022\'.switchingservice.v1.HoldPayme" +
+      "ntRequest\032$.switchingservice.v1.PaymentR" +
+      "esponse\022k\n\020HoldBatchPayment\022,.switchings" +
+      "ervice.v1.HoldBatchPaymentRequest\032).swit" +
+      "chingservice.v1.BatchPaymentResponse\022d\n\r" +
+      "CancelPayment\022).switchingservice.v1.Canc" +
+      "elPaymentRequest\032(.switchingservice.v1.T" +
+      "ransactionResponse\022d\n\rUnheldPayment\022).sw" +
+      "itchingservice.v1.UnheldPaymentRequest\032(" +
+      ".switchingservice.v1.TransactionResponse" +
+      "\022b\n\016ConfirmPayment\022*.switchingservice.v1" +
+      ".ConfirmPaymentRequest\032$.switchingservic" +
+      "e.v1.PaymentResponse\022d\n\013DepositBank\022+.sw" +
+      "itchingservice.v1.BankTransactionRequest" +
+      "\032(.switchingservice.v1.TransactionRespon" +
+      "se\022e\n\014WithdrawBank\022+.switchingservice.v1" +
+      ".BankTransactionRequest\032(.switchingservi" +
+      "ce.v1.TransactionResponse\022g\n\016MintToBankC" +
+      "ode\022+.switchingservice.v1.BankTransactio" +
+      "nRequest\032(.switchingservice.v1.Transacti" +
+      "onResponseBm\n$com.blcvn.switching.switch" +
+      "ingserviceZEgithub.com/blcvn/switching-p" +
+      "roto/go/switchingservice;switchingservic" +
+      "eb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12498,55 +16451,67 @@ public final class Switching {
     internal_static_switchingservice_v1_QueryBalanceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_QueryBalanceResponse_descriptor,
-        new java.lang.String[] { "BankAddress", "TokenAddress", "Balance", });
-    internal_static_switchingservice_v1_HoldPaymentRequest_descriptor =
+        new java.lang.String[] { "BankAddress", "Balance", "BalanceType", "BankCode", "Message", });
+    internal_static_switchingservice_v1_BankTransactionRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_switchingservice_v1_BankTransactionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_switchingservice_v1_BankTransactionRequest_descriptor,
+        new java.lang.String[] { "BankCode", "BankAddress", "Amount", "Note", });
+    internal_static_switchingservice_v1_HoldPaymentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_switchingservice_v1_HoldPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_HoldPaymentRequest_descriptor,
-        new java.lang.String[] { "Uetr", "SenderBank", "ReceiverBank", "ReceiverBankCode", "BeneficiaryAccount", "Amount", "Note", });
+        new java.lang.String[] { "Uetr", "SenderBank", "SenderBankCode", "ReceiverBank", "ReceiverBankCode", "BeneficiaryAccount", "Amount", "Note", });
     internal_static_switchingservice_v1_HoldBatchPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_switchingservice_v1_HoldBatchPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_HoldBatchPaymentRequest_descriptor,
-        new java.lang.String[] { "SenderBank", "Items", });
+        new java.lang.String[] { "SenderBank", "SenderBankCode", "Items", });
     internal_static_switchingservice_v1_HoldPaymentItem_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_switchingservice_v1_HoldPaymentItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_HoldPaymentItem_descriptor,
-        new java.lang.String[] { "Uetr", "BeneficiaryAccount", "ReceiverBankCode", "Amount", "Note", });
+        new java.lang.String[] { "Uetr", "BeneficiaryAccount", "ReceiverBankCode", "ReceiverBankAddress", "Amount", "Note", });
     internal_static_switchingservice_v1_PaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_switchingservice_v1_PaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_PaymentResponse_descriptor,
         new java.lang.String[] { "TxHash", "RefId", "Status", });
     internal_static_switchingservice_v1_BatchPaymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_switchingservice_v1_BatchPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_BatchPaymentResponse_descriptor,
         new java.lang.String[] { "Results", });
     internal_static_switchingservice_v1_PaymentResult_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_switchingservice_v1_PaymentResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_PaymentResult_descriptor,
         new java.lang.String[] { "Uetr", "TxHash", "Status", "Message", });
     internal_static_switchingservice_v1_CancelPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_switchingservice_v1_CancelPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_CancelPaymentRequest_descriptor,
-        new java.lang.String[] { "Uetr", "SenderBank", "Reason", });
+        new java.lang.String[] { "Uetr", "SenderBank", "BankCode", "Reason", });
     internal_static_switchingservice_v1_ConfirmPaymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_switchingservice_v1_ConfirmPaymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_switchingservice_v1_ConfirmPaymentRequest_descriptor,
-        new java.lang.String[] { "Uetr", "SenderBank", "ReceiverBank", "FromBankAccount", "ToBankAccount", "TxReference", "Note", });
+        new java.lang.String[] { "Uetr", "SenderBank", "SenderBankCode", "ReceiverBank", "ReceiverBankCode", "FromBankAccount", "ToBankAccount", "TxReference", "Note", });
+    internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_switchingservice_v1_UnheldPaymentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_switchingservice_v1_UnheldPaymentRequest_descriptor,
+        new java.lang.String[] { "Uetr", "ReceiverBank", "ReceiverBankCode", "Reason", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
