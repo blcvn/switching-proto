@@ -41,8 +41,119 @@
 }
 ```
 
+### POST /v1/switching/banks/deposit
+- Mô tả: Deposit settlement tokens for a bank.
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "bank_code": "...",
+  "bank_address": "...",
+  "amount": "...",
+  "note": "..."
+}
+```
+
+- Response 200 (object `v1TransactionResponse`):
+
+```json
+{
+  "tx_hash": "...",
+  "message": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /v1/switching/banks/mint
+- Mô tả: Mint settlement tokens directly to a bank by its bank code.
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "bank_code": "...",
+  "bank_address": "...",
+  "amount": "...",
+  "note": "..."
+}
+```
+
+- Response 200 (object `v1TransactionResponse`):
+
+```json
+{
+  "tx_hash": "...",
+  "message": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /v1/switching/banks/withdraw
+- Mô tả: Withdraw settlement tokens for a bank.
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "bank_code": "...",
+  "bank_address": "...",
+  "amount": "...",
+  "note": "..."
+}
+```
+
+- Response 200 (object `v1TransactionResponse`):
+
+```json
+{
+  "tx_hash": "...",
+  "message": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
 ### GET /v1/switching/banks/{bank_address}/balance
-- Mô tả: Query the current on-chain balance of a bank. theo `bank_address`
+- Mô tả: Query the balance in smart contract (settlement data contract balance) of a bank by address. theo `bank_address`
 - Auth: không
 
 - Response 200 (object `v1QueryBalanceResponse`):
@@ -50,8 +161,40 @@
 ```json
 {
   "bank_address": "...",
-  "token_address": "...",
-  "balance": "..."
+  "balance": "...",
+  "balance_type": "...",
+  "bank_code": "...",
+  "message": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### GET /v1/switching/banks/{bank_address}/tokenBalance
+- Mô tả: Query the ERC20 token balance of a bank by address. theo `bank_address`
+- Auth: không
+
+- Response 200 (object `v1QueryBalanceResponse`):
+
+```json
+{
+  "bank_address": "...",
+  "balance": "...",
+  "balance_type": "...",
+  "bank_code": "...",
+  "message": "..."
 }
 ```
 
@@ -70,7 +213,7 @@
 ```
 
 ### POST /v1/switching/payments/cancel
-- Mô tả: Cancel a previously created hold payment (refund to sender).
+- Mô tả: Cancel a previously created hold payment (refund to sender) - for timeout/unhold.
 - Auth: không
 - Request JSON:
 
@@ -78,6 +221,7 @@
 {
   "uetr": "...",
   "sender_bank": "...",
+  "bank_code": "...",
   "reason": "..."
 }
 ```
@@ -114,7 +258,9 @@
 {
   "uetr": "...",
   "sender_bank": "...",
+  "sender_bank_code": "...",
   "receiver_bank": "...",
+  "receiver_bank_code": "...",
   "from_bank_account": "...",
   "to_bank_account": "...",
   "tx_reference": "...",
@@ -155,6 +301,7 @@
 {
   "uetr": "...",
   "sender_bank": "...",
+  "sender_bank_code": "...",
   "receiver_bank": "...",
   "receiver_bank_code": "...",
   "beneficiary_account": "...",
@@ -195,11 +342,13 @@
 ```json
 {
   "sender_bank": "...",
+  "sender_bank_code": "...",
   "items": [
     {
       "uetr": "...",
       "beneficiary_account": "...",
       "receiver_bank_code": "...",
+      "receiver_bank_address": "...",
       "amount": "...",
       "note": "..."
     }
@@ -219,6 +368,43 @@
       "message": "..."
     }
   ]
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /v1/switching/payments/unheld
+- Mô tả: Unhold a held payment manually (only receiver bank or operator can cancel).
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "uetr": "...",
+  "receiver_bank": "...",
+  "receiver_bank_code": "...",
+  "reason": "..."
+}
+```
+
+- Response 200 (object `v1TransactionResponse`):
+
+```json
+{
+  "tx_hash": "...",
+  "message": "..."
 }
 ```
 
