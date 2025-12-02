@@ -607,6 +607,25 @@ public final class Common {
      * <code>.onchain.v1.Account creditor_account = 8;</code>
      */
     com.blcvn.switching.onchain.Common.AccountOrBuilder getCreditorAccountOrBuilder();
+
+    /**
+     * <pre>
+     * Mức độ ưu tiên của lệnh chuyển
+     * </pre>
+     *
+     * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+     * @return The enum numeric value on the wire for priority.
+     */
+    int getPriorityValue();
+    /**
+     * <pre>
+     * Mức độ ưu tiên của lệnh chuyển
+     * </pre>
+     *
+     * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+     * @return The priority.
+     */
+    com.blcvn.switching.onchain.Common.Transaction.Priority getPriority();
   }
   /**
    * <pre>
@@ -630,6 +649,7 @@ public final class Common {
       creditor_ = "";
       currency_ = "";
       status_ = "";
+      priority_ = 0;
     }
 
     @java.lang.Override
@@ -723,6 +743,12 @@ public final class Common {
 
               break;
             }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              priority_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -753,6 +779,147 @@ public final class Common {
       return com.blcvn.switching.onchain.Common.internal_static_onchain_v1_Transaction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.blcvn.switching.onchain.Common.Transaction.class, com.blcvn.switching.onchain.Common.Transaction.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code onchain.v1.Transaction.Priority}
+     */
+    public enum Priority
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * Ưu tiên bình thường
+       * </pre>
+       *
+       * <code>NORMAL = 0;</code>
+       */
+      NORMAL(0),
+      /**
+       * <pre>
+       * Ưu tiên cao
+       * </pre>
+       *
+       * <code>HIGH = 1;</code>
+       */
+      HIGH(1),
+      /**
+       * <pre>
+       * Ưu tiên khẩn cấp
+       * </pre>
+       *
+       * <code>URGENT = 2;</code>
+       */
+      URGENT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * Ưu tiên bình thường
+       * </pre>
+       *
+       * <code>NORMAL = 0;</code>
+       */
+      public static final int NORMAL_VALUE = 0;
+      /**
+       * <pre>
+       * Ưu tiên cao
+       * </pre>
+       *
+       * <code>HIGH = 1;</code>
+       */
+      public static final int HIGH_VALUE = 1;
+      /**
+       * <pre>
+       * Ưu tiên khẩn cấp
+       * </pre>
+       *
+       * <code>URGENT = 2;</code>
+       */
+      public static final int URGENT_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Priority valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Priority forNumber(int value) {
+        switch (value) {
+          case 0: return NORMAL;
+          case 1: return HIGH;
+          case 2: return URGENT;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Priority>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Priority> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+              public Priority findValueByNumber(int number) {
+                return Priority.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.blcvn.switching.onchain.Common.Transaction.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Priority[] VALUES = values();
+
+      public static Priority valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Priority(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:onchain.v1.Transaction.Priority)
     }
 
     public static final int INSTRUCTION_ID_FIELD_NUMBER = 1;
@@ -1076,6 +1243,33 @@ public final class Common {
       return getCreditorAccount();
     }
 
+    public static final int PRIORITY_FIELD_NUMBER = 9;
+    private int priority_;
+    /**
+     * <pre>
+     * Mức độ ưu tiên của lệnh chuyển
+     * </pre>
+     *
+     * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * Mức độ ưu tiên của lệnh chuyển
+     * </pre>
+     *
+     * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+     * @return The priority.
+     */
+    @java.lang.Override public com.blcvn.switching.onchain.Common.Transaction.Priority getPriority() {
+      @SuppressWarnings("deprecation")
+      com.blcvn.switching.onchain.Common.Transaction.Priority result = com.blcvn.switching.onchain.Common.Transaction.Priority.valueOf(priority_);
+      return result == null ? com.blcvn.switching.onchain.Common.Transaction.Priority.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1114,6 +1308,9 @@ public final class Common {
       if (creditorAccount_ != null) {
         output.writeMessage(8, getCreditorAccount());
       }
+      if (priority_ != com.blcvn.switching.onchain.Common.Transaction.Priority.NORMAL.getNumber()) {
+        output.writeEnum(9, priority_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1149,6 +1346,10 @@ public final class Common {
       if (creditorAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getCreditorAccount());
+      }
+      if (priority_ != com.blcvn.switching.onchain.Common.Transaction.Priority.NORMAL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, priority_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1188,6 +1389,7 @@ public final class Common {
         if (!getCreditorAccount()
             .equals(other.getCreditorAccount())) return false;
       }
+      if (priority_ != other.priority_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1220,6 +1422,8 @@ public final class Common {
         hash = (37 * hash) + CREDITOR_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getCreditorAccount().hashCode();
       }
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + priority_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1381,6 +1585,8 @@ public final class Common {
           creditorAccount_ = null;
           creditorAccountBuilder_ = null;
         }
+        priority_ = 0;
+
         return this;
       }
 
@@ -1423,6 +1629,7 @@ public final class Common {
         } else {
           result.creditorAccount_ = creditorAccountBuilder_.build();
         }
+        result.priority_ = priority_;
         onBuilt();
         return result;
       }
@@ -1499,6 +1706,9 @@ public final class Common {
         }
         if (other.hasCreditorAccount()) {
           mergeCreditorAccount(other.getCreditorAccount());
+        }
+        if (other.priority_ != 0) {
+          setPriorityValue(other.getPriorityValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2360,6 +2570,80 @@ public final class Common {
           creditorAccount_ = null;
         }
         return creditorAccountBuilder_;
+      }
+
+      private int priority_ = 0;
+      /**
+       * <pre>
+       * Mức độ ưu tiên của lệnh chuyển
+       * </pre>
+       *
+       * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+       * @return The enum numeric value on the wire for priority.
+       */
+      @java.lang.Override public int getPriorityValue() {
+        return priority_;
+      }
+      /**
+       * <pre>
+       * Mức độ ưu tiên của lệnh chuyển
+       * </pre>
+       *
+       * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+       * @param value The enum numeric value on the wire for priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriorityValue(int value) {
+        
+        priority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mức độ ưu tiên của lệnh chuyển
+       * </pre>
+       *
+       * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+       * @return The priority.
+       */
+      @java.lang.Override
+      public com.blcvn.switching.onchain.Common.Transaction.Priority getPriority() {
+        @SuppressWarnings("deprecation")
+        com.blcvn.switching.onchain.Common.Transaction.Priority result = com.blcvn.switching.onchain.Common.Transaction.Priority.valueOf(priority_);
+        return result == null ? com.blcvn.switching.onchain.Common.Transaction.Priority.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Mức độ ưu tiên của lệnh chuyển
+       * </pre>
+       *
+       * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+       * @param value The priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriority(com.blcvn.switching.onchain.Common.Transaction.Priority value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        priority_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Mức độ ưu tiên của lệnh chuyển
+       * </pre>
+       *
+       * <code>.onchain.v1.Transaction.Priority priority = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPriority() {
+        
+        priority_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7827,27 +8111,29 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n\024onchain/common.proto\022\nonchain.v1\032\037goog" +
       "le/protobuf/timestamp.proto\032\023onchain/err" +
-      "or.proto\"\007\n\005Empty\"\331\001\n\013Transaction\022\026\n\016ins" +
+      "or.proto\"\007\n\005Empty\"\273\002\n\013Transaction\022\026\n\016ins" +
       "truction_id\030\001 \001(\t\022\017\n\007debitor\030\002 \001(\t\022\020\n\010cr" +
       "editor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010currency" +
       "\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022.\n\ncreated_at\030\007 \001" +
       "(\0132\032.google.protobuf.Timestamp\022-\n\020credit" +
-      "or_account\030\010 \001(\0132\023.onchain.v1.Account\"X\n" +
-      "\tKycEntity\022\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n" +
-      "\007country\030\003 \001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_a" +
-      "t\030\005 \001(\t\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016acco" +
-      "unt_number\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020" +
-      "\n\010currency\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010M" +
-      "etadata\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_t" +
-      "ime\030\002 \001(\003\022\017\n\007version\030\003 \001(\t\"\215\001\n\tSignature" +
-      "\0223\n\006s_type\030\001 \001(\0162#.onchain.v1.Signature." +
-      "SignatureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rS" +
-      "ignatureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001" +
-      "C\020\002\022\005\n\001S\020\003\"?\n\006Result\022$\n\004code\030\001 \001(\0162\026.onc" +
-      "hain.v1.ResultCode\022\017\n\007message\030\002 \001(\tBR\n\033c" +
-      "om.blcvn.switching.onchainZ3github.com/b" +
-      "lcvn/switching-proto/go/onchain;onchainb" +
-      "\006proto3"
+      "or_account\030\010 \001(\0132\023.onchain.v1.Account\0222\n" +
+      "\010priority\030\t \001(\0162 .onchain.v1.Transaction" +
+      ".Priority\",\n\010Priority\022\n\n\006NORMAL\020\000\022\010\n\004HIG" +
+      "H\020\001\022\n\n\006URGENT\020\002\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(" +
+      "\t\022\014\n\004name\030\002 \001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030" +
+      "\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004" +
+      "iban\030\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\024\n\014ac" +
+      "count_name\030\003 \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\tre" +
+      "ference\030\005 \001(\t\"E\n\010Metadata\022\022\n\nrequest_id\030" +
+      "\001 \001(\t\022\024\n\014request_time\030\002 \001(\003\022\017\n\007version\030\003" +
+      " \001(\t\"\215\001\n\tSignature\0223\n\006s_type\030\001 \001(\0162#.onc" +
+      "hain.v1.Signature.SignatureType\022\t\n\001s\030\002 \001" +
+      "(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureType\022\017\n\013NO_USE" +
+      "_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"?\n\006Result\022$" +
+      "\n\004code\030\001 \001(\0162\026.onchain.v1.ResultCode\022\017\n\007" +
+      "message\030\002 \001(\tBR\n\033com.blcvn.switching.onc" +
+      "hainZ3github.com/blcvn/switching-proto/g" +
+      "o/onchain;onchainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7866,7 +8152,7 @@ public final class Common {
     internal_static_onchain_v1_Transaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_onchain_v1_Transaction_descriptor,
-        new java.lang.String[] { "InstructionId", "Debitor", "Creditor", "Amount", "Currency", "Status", "CreatedAt", "CreditorAccount", });
+        new java.lang.String[] { "InstructionId", "Debitor", "Creditor", "Amount", "Currency", "Status", "CreatedAt", "CreditorAccount", "Priority", });
     internal_static_onchain_v1_KycEntity_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_onchain_v1_KycEntity_fieldAccessorTable = new

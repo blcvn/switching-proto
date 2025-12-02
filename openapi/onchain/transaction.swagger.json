@@ -216,6 +216,16 @@
       "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
       "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
     },
+    "TransactionPriority": {
+      "type": "string",
+      "enum": [
+        "NORMAL",
+        "HIGH",
+        "URGENT"
+      ],
+      "default": "NORMAL",
+      "title": "- NORMAL: Ưu tiên bình thường\n - HIGH: Ưu tiên cao\n - URGENT: Ưu tiên khẩn cấp"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -401,6 +411,10 @@
         "creditor_account": {
           "$ref": "#/definitions/v1Account",
           "title": "Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)"
+        },
+        "priority": {
+          "$ref": "#/definitions/TransactionPriority",
+          "title": "Mức độ ưu tiên của lệnh chuyển"
         }
       },
       "title": "Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính"

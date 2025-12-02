@@ -42,7 +42,8 @@ Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -79,7 +80,8 @@ Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -131,7 +133,8 @@ Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -168,7 +171,8 @@ Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -220,7 +224,8 @@ Trả về: TransactionResponse
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -257,7 +262,8 @@ Trả về: TransactionResponse
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```
@@ -314,7 +320,8 @@ Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy) theo `
       "account_name": "...",
       "currency": "...",
       "reference": "..."
-    }
+    },
+    "priority": "..."
   }
 }
 ```

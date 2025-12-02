@@ -16,6 +16,11 @@ message Empty {}
 
 // Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính
 message Transaction {
+  enum Priority {
+      NORMAL = 0;    // Ưu tiên bình thường
+      HIGH = 1;      // Ưu tiên cao
+      URGENT = 2;    // Ưu tiên khẩn cấp
+  }
   string instruction_id = 1;                 // ID của lệnh chuyển tiền
   string debitor = 2;                        // BIC của người gửi
   string creditor = 3;                       // BIC của người nhận
@@ -25,6 +30,7 @@ message Transaction {
   google.protobuf.Timestamp created_at = 7;  // Thời gian tạo lệnh chuyển
   // Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)
   Account creditor_account = 8;
+  Priority priority = 9;                      // Mức độ ưu tiên của lệnh chuyển
 }
 
 // Thông tin thực thể KYC (Know Your Customer)

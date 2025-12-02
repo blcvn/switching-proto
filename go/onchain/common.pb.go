@@ -24,6 +24,55 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Transaction_Priority int32
+
+const (
+	Transaction_NORMAL Transaction_Priority = 0 // Ưu tiên bình thường
+	Transaction_HIGH   Transaction_Priority = 1 // Ưu tiên cao
+	Transaction_URGENT Transaction_Priority = 2 // Ưu tiên khẩn cấp
+)
+
+// Enum value maps for Transaction_Priority.
+var (
+	Transaction_Priority_name = map[int32]string{
+		0: "NORMAL",
+		1: "HIGH",
+		2: "URGENT",
+	}
+	Transaction_Priority_value = map[string]int32{
+		"NORMAL": 0,
+		"HIGH":   1,
+		"URGENT": 2,
+	}
+)
+
+func (x Transaction_Priority) Enum() *Transaction_Priority {
+	p := new(Transaction_Priority)
+	*p = x
+	return p
+}
+
+func (x Transaction_Priority) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Transaction_Priority) Descriptor() protoreflect.EnumDescriptor {
+	return file_onchain_common_proto_enumTypes[0].Descriptor()
+}
+
+func (Transaction_Priority) Type() protoreflect.EnumType {
+	return &file_onchain_common_proto_enumTypes[0]
+}
+
+func (x Transaction_Priority) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Transaction_Priority.Descriptor instead.
+func (Transaction_Priority) EnumDescriptor() ([]byte, []int) {
+	return file_onchain_common_proto_rawDescGZIP(), []int{1, 0}
+}
+
 // SignatureType định nghĩa các loại chữ ký được hỗ trợ
 type Signature_SignatureType int32
 
@@ -61,11 +110,11 @@ func (x Signature_SignatureType) String() string {
 }
 
 func (Signature_SignatureType) Descriptor() protoreflect.EnumDescriptor {
-	return file_onchain_common_proto_enumTypes[0].Descriptor()
+	return file_onchain_common_proto_enumTypes[1].Descriptor()
 }
 
 func (Signature_SignatureType) Type() protoreflect.EnumType {
-	return &file_onchain_common_proto_enumTypes[0]
+	return &file_onchain_common_proto_enumTypes[1]
 }
 
 func (x Signature_SignatureType) Number() protoreflect.EnumNumber {
@@ -125,7 +174,8 @@ type Transaction struct {
 	Status        string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái chuyển tiền
 	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo lệnh chuyển
 	// Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)
-	CreditorAccount *Account `protobuf:"bytes,8,opt,name=creditor_account,json=creditorAccount,proto3" json:"creditor_account,omitempty"`
+	CreditorAccount *Account             `protobuf:"bytes,8,opt,name=creditor_account,json=creditorAccount,proto3" json:"creditor_account,omitempty"`
+	Priority        Transaction_Priority `protobuf:"varint,9,opt,name=priority,proto3,enum=onchain.v1.Transaction_Priority" json:"priority,omitempty"` // Mức độ ưu tiên của lệnh chuyển
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -214,6 +264,13 @@ func (x *Transaction) GetCreditorAccount() *Account {
 		return x.CreditorAccount
 	}
 	return nil
+}
+
+func (x *Transaction) GetPriority() Transaction_Priority {
+	if x != nil {
+		return x.Priority
+	}
+	return Transaction_NORMAL
 }
 
 // Thông tin thực thể KYC (Know Your Customer)
@@ -556,7 +613,7 @@ const file_onchain_common_proto_rawDesc = "" +
 	"\n" +
 	"\x14onchain/common.proto\x12\n" +
 	"onchain.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x13onchain/error.proto\"\a\n" +
-	"\x05Empty\"\xb1\x02\n" +
+	"\x05Empty\"\x9d\x03\n" +
 	"\vTransaction\x12%\n" +
 	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x18\n" +
 	"\adebitor\x18\x02 \x01(\tR\adebitor\x12\x1a\n" +
@@ -566,7 +623,14 @@ const file_onchain_common_proto_rawDesc = "" +
 	"\x06status\x18\x06 \x01(\tR\x06status\x129\n" +
 	"\n" +
 	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12>\n" +
-	"\x10creditor_account\x18\b \x01(\v2\x13.onchain.v1.AccountR\x0fcreditorAccount\"|\n" +
+	"\x10creditor_account\x18\b \x01(\v2\x13.onchain.v1.AccountR\x0fcreditorAccount\x12<\n" +
+	"\bpriority\x18\t \x01(\x0e2 .onchain.v1.Transaction.PriorityR\bpriority\",\n" +
+	"\bPriority\x12\n" +
+	"\n" +
+	"\x06NORMAL\x10\x00\x12\b\n" +
+	"\x04HIGH\x10\x01\x12\n" +
+	"\n" +
+	"\x06URGENT\x10\x02\"|\n" +
 	"\tKycEntity\x12\x10\n" +
 	"\x03bic\x18\x01 \x01(\tR\x03bic\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -611,30 +675,32 @@ func file_onchain_common_proto_rawDescGZIP() []byte {
 	return file_onchain_common_proto_rawDescData
 }
 
-var file_onchain_common_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_onchain_common_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_onchain_common_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_onchain_common_proto_goTypes = []any{
-	(Signature_SignatureType)(0), // 0: onchain.v1.Signature.SignatureType
-	(*Empty)(nil),                // 1: onchain.v1.Empty
-	(*Transaction)(nil),          // 2: onchain.v1.Transaction
-	(*KycEntity)(nil),            // 3: onchain.v1.KycEntity
-	(*Account)(nil),              // 4: onchain.v1.Account
-	(*Metadata)(nil),             // 5: onchain.v1.Metadata
-	(*Signature)(nil),            // 6: onchain.v1.Signature
-	(*Result)(nil),               // 7: onchain.v1.Result
-	(*timestamp.Timestamp)(nil),  // 8: google.protobuf.Timestamp
-	(ResultCode)(0),              // 9: onchain.v1.ResultCode
+	(Transaction_Priority)(0),    // 0: onchain.v1.Transaction.Priority
+	(Signature_SignatureType)(0), // 1: onchain.v1.Signature.SignatureType
+	(*Empty)(nil),                // 2: onchain.v1.Empty
+	(*Transaction)(nil),          // 3: onchain.v1.Transaction
+	(*KycEntity)(nil),            // 4: onchain.v1.KycEntity
+	(*Account)(nil),              // 5: onchain.v1.Account
+	(*Metadata)(nil),             // 6: onchain.v1.Metadata
+	(*Signature)(nil),            // 7: onchain.v1.Signature
+	(*Result)(nil),               // 8: onchain.v1.Result
+	(*timestamp.Timestamp)(nil),  // 9: google.protobuf.Timestamp
+	(ResultCode)(0),              // 10: onchain.v1.ResultCode
 }
 var file_onchain_common_proto_depIdxs = []int32{
-	8, // 0: onchain.v1.Transaction.created_at:type_name -> google.protobuf.Timestamp
-	4, // 1: onchain.v1.Transaction.creditor_account:type_name -> onchain.v1.Account
-	0, // 2: onchain.v1.Signature.s_type:type_name -> onchain.v1.Signature.SignatureType
-	9, // 3: onchain.v1.Result.code:type_name -> onchain.v1.ResultCode
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	9,  // 0: onchain.v1.Transaction.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 1: onchain.v1.Transaction.creditor_account:type_name -> onchain.v1.Account
+	0,  // 2: onchain.v1.Transaction.priority:type_name -> onchain.v1.Transaction.Priority
+	1,  // 3: onchain.v1.Signature.s_type:type_name -> onchain.v1.Signature.SignatureType
+	10, // 4: onchain.v1.Result.code:type_name -> onchain.v1.ResultCode
+	5,  // [5:5] is the sub-list for method output_type
+	5,  // [5:5] is the sub-list for method input_type
+	5,  // [5:5] is the sub-list for extension type_name
+	5,  // [5:5] is the sub-list for extension extendee
+	0,  // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_onchain_common_proto_init() }
@@ -648,7 +714,7 @@ func file_onchain_common_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_onchain_common_proto_rawDesc), len(file_onchain_common_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
