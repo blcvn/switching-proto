@@ -1,0 +1,449 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "onchain/transaction.proto",
+    "description": "Mô tả: Định nghĩa message và service liên quan đến giao dịch on-chain (GPI - Global Payments Innovation).\nFile này chỉ bổ sung các định nghĩa request/response cho các thao tác Credit/Debit/Transfer\nvà truy vấn thông tin thanh toán.\nLưu ý: Các kiểu Metadata, Signature, Transaction, Result được định nghĩa trong onchain/common.proto.",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "TransactionService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/onchain/credit": {
+      "post": {
+        "summary": "Tạo một giao dịch Credit (ghi có) mới.\nYêu cầu: TransactionRequest\nTrả về: TransactionResponse (kết quả + giao dịch đã tạo)",
+        "operationId": "TransactionService_Credit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Request dùng để tạo một giao dịch mới.\nTrường metadata và signature dùng cho xác thực, audit; txn chứa dữ liệu giao dịch chi tiết.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1TransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    },
+    "/onchain/debit": {
+      "post": {
+        "summary": "Tạo một giao dịch Debit (ghi nợ) mới.\nYêu cầu: TransactionRequest\nTrả về: TransactionResponse (kết quả + giao dịch đã tạo)",
+        "operationId": "TransactionService_Debit",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Request dùng để tạo một giao dịch mới.\nTrường metadata và signature dùng cho xác thực, audit; txn chứa dữ liệu giao dịch chi tiết.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1TransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    },
+    "/onchain/transfer": {
+      "post": {
+        "summary": "Chuyển khoản (transfer) giữa hai tài khoản/điểm.\nYêu cầu: TransactionRequest\nTrả về: TransactionResponse",
+        "operationId": "TransactionService_Transfer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1TransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Request dùng để tạo một giao dịch mới.\nTrường metadata và signature dùng cho xác thực, audit; txn chứa dữ liệu giao dịch chi tiết.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1TransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    },
+    "/onchain/txn/{id}": {
+      "get": {
+        "summary": "Lấy thông tin chi tiết của một thanh toán theo ID.\nYêu cầu: GetTransactionRequest (chứa ID)\nTrả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)",
+        "operationId": "TransactionService_GetTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID của thanh toán cần truy vấn",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Account": {
+      "type": "object",
+      "properties": {
+        "iban": {
+          "type": "string",
+          "title": "Số tài khoản quốc tế IBAN (nếu có)"
+        },
+        "account_number": {
+          "type": "string",
+          "title": "Số tài khoản nội địa"
+        },
+        "account_name": {
+          "type": "string",
+          "title": "Tên chủ tài khoản"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Mã tiền tệ của tài khoản (tùy chọn)"
+        },
+        "reference": {
+          "type": "string",
+          "title": "Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)"
+        }
+      },
+      "title": "Thông tin chi tiết tài khoản liên kết với một agent"
+    },
+    "v1GetTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của response"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của response"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result",
+          "title": "Kết quả xử lý (thành công/không tìm thấy/lỗi)"
+        },
+        "txn": {
+          "$ref": "#/definitions/v1Transaction",
+          "title": "Dữ liệu thanh toán nếu tìm thấy"
+        }
+      },
+      "description": "Response trả về khi truy vấn thông tin thanh toán."
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      },
+      "title": "Metadata chứa thông tin về request/response"
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống access point"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
+    },
+    "v1Transaction": {
+      "type": "object",
+      "properties": {
+        "instruction_id": {
+          "type": "string",
+          "title": "ID của lệnh chuyển tiền"
+        },
+        "debitor": {
+          "type": "string",
+          "title": "BIC của người gửi"
+        },
+        "creditor": {
+          "type": "string",
+          "title": "BIC của người nhận"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double",
+          "title": "Số tiền chuyển"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Mã tiền tệ"
+        },
+        "status": {
+          "type": "string",
+          "title": "Trạng thái chuyển tiền"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Thời gian tạo lệnh chuyển"
+        },
+        "creditor_account": {
+          "$ref": "#/definitions/v1Account",
+          "title": "Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)"
+        }
+      },
+      "title": "Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính"
+    },
+    "v1TransactionRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của request (ví dụ: trace id, timestamp, source)"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của request để xác thực nguồn gốc và tính toàn vẹn"
+        },
+        "txn": {
+          "$ref": "#/definitions/v1Transaction",
+          "title": "Dữ liệu giao dịch (amount, currency, from/to, reference, ...)"
+        }
+      },
+      "description": "Request dùng để tạo một giao dịch mới.\nTrường metadata và signature dùng cho xác thực, audit; txn chứa dữ liệu giao dịch chi tiết."
+    },
+    "v1TransactionResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của response (ví dụ: server id, timestamp)"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của response (nếu cần xác thực bởi client)"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result",
+          "title": "Kết quả xử lý (mã lỗi/nội dung thông báo, trạng thái)"
+        },
+        "txn": {
+          "$ref": "#/definitions/v1Transaction",
+          "title": "Dữ liệu giao dịch đã tạo (có thể chứa id, trạng thái, thông tin ghi nhận)"
+        }
+      },
+      "description": "Response trả về sau khi xử lý tạo giao dịch.\nChứa metadata/ signature phản hồi, kết quả xử lý và thông tin transaction đã được tạo/ghi nhận."
+    }
+  }
+}

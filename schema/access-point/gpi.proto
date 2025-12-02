@@ -70,4 +70,3 @@ message PaymentStatus {
   string currency = 4;         // Mã tiền tệ
 }
 
-

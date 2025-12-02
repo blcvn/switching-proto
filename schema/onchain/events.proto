@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+// Package định nghĩa các message và service cho events trong access point
+package onchain.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/onchain;onchain";
+option java_package = "com.blcvn.switching.onchain";
+
+// Service quản lý events (sự kiện) - hỗ trợ streaming và callback
+service EventsService {
+  // Đăng ký nhận events qua server streaming (theo dõi theo UETR)
+  rpc SubscribeEvents(SubscribeEventsRequest) returns (stream Event) {}
+  // Đăng ký callback URL để nhận events
+  rpc RegisterCallback(SubscribeCallbackRequest) returns (SubscribeCallbackResponse) {}
+  // Hủy đăng ký callback URL
+  rpc UnregisterCallback(UnsubscribeCallbackRequest) returns (UnsubscribeCallbackResponse) {}
+}
+
+// Request đăng ký nhận events
+message SubscribeEventsRequest {
+  string uetr = 1;  // Unique End-to-End Transaction Reference để theo dõi
+}
+
+// Event (sự kiện) được gửi đến client
+message Event {
+  string event = 1;  // Loại event: welcome, update, ping
+  string data = 2;   // Dữ liệu của event (dạng JSON string)
+  google.protobuf.Timestamp timestamp = 3;  // Thời gian xảy ra event
+}
+
+// Request đăng ký callback URL
+message SubscribeCallbackRequest {
+  string callback_url = 1;  // URL callback để nhận events
+}
+
+// Response đăng ký callback
+message SubscribeCallbackResponse {
+  string subscribed = 1;  // Trạng thái đăng ký (thường là "ok" hoặc "success")
+}
+
+// Request hủy đăng ký callback
+message UnsubscribeCallbackRequest {}
+
+// Response hủy đăng ký callback
+message UnsubscribeCallbackResponse {
+  string unsubscribed = 1;  // Trạng thái hủy đăng ký (thường là "ok" hoặc "success")
+}
