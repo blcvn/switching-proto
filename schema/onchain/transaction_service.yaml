@@ -1,0 +1,19 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: onchain.v1.TransactionService.Credit
+          post: /onchain/credit
+          body: "*"
+
+        - selector: onchain.v1.TransactionService.Debit
+          post: /onchain/debit
+          body: "*"
+        - selector: onchain.v1.TransactionService.Transfer
+          post: /onchain/transfer
+          body: "*"
+
+        - selector: onchain.v1.TransactionService.GetTransaction
+          get: /onchain/txn/{id}

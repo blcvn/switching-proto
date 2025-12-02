@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+// Package định nghĩa các message dùng chung cho access point services
+package onchain.v1;
+
+import "google/protobuf/timestamp.proto";
+import "onchain/error.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/onchain;onchain";
+option java_package = "com.blcvn.switching.onchain";
+
+// Các message dùng chung cho các service cụ thể trong access point
+
+// Message rỗng, dùng cho các RPC không cần tham số đầu vào
+message Empty {}
+
+// Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính
+message Transaction {
+  string instruction_id = 1;                 // ID của lệnh chuyển tiền
+  string debitor = 2;                        // BIC của người gửi
+  string creditor = 3;                       // BIC của người nhận
+  double amount = 4;                         // Số tiền chuyển
+  string currency = 5;                       // Mã tiền tệ
+  string status = 6;                         // Trạng thái chuyển tiền
+  google.protobuf.Timestamp created_at = 7;  // Thời gian tạo lệnh chuyển
+  // Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)
+  Account creditor_account = 8;
+}
+
+// Thông tin thực thể KYC (Know Your Customer)
+message KycEntity {
+  string bic = 1;          // Bank Identifier Code
+  string name = 2;         // Tên thực thể
+  string country = 3;      // Quốc gia
+  string lei = 4;          // Legal Entity Identifier
+  string updated_at = 5;   // Thời gian cập nhật lần cuối
+}
+
+// Thông tin chi tiết tài khoản liên kết với một agent
+message Account {
+  // Số tài khoản quốc tế IBAN (nếu có)
+  string iban = 1;
+  // Số tài khoản nội địa
+  string account_number = 2;
+  // Tên chủ tài khoản
+  string account_name = 3;
+  // Mã tiền tệ của tài khoản (tùy chọn)
+  string currency = 4;
+  // Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)
+  string reference = 5;
+}
+
+// Metadata chứa thông tin về request/response
+message Metadata {
+  string request_id = 1;    // ID định danh duy nhất cho request
+  int64 request_time = 2;   // Thời gian gửi request (Unix timestamp)
+  string version = 3;       // Phiên bản của protocol
+}
+
+// Signature định nghĩa cấu trúc chữ ký số cho request/response
+message Signature {
+  // SignatureType định nghĩa các loại chữ ký được hỗ trợ
+  enum SignatureType {
+      NO_USE_TYPE = 0;  // Giá trị mặc định, không sử dụng
+      J = 1;            // Chữ ký loại J
+      C = 2;            // Chữ ký loại C
+      S = 3;            // Chữ ký loại S
+  }
+  SignatureType s_type = 1;  // Loại chữ ký được sử dụng
+  string s = 2;              // Chuỗi dữ liệu dùng để tạo ra chữ ký
+  bytes b = 3;               // Chữ ký số (dạng bytes)
+}
+
+// Result định nghĩa cấu trúc kết quả trả về
+message Result {
+  ResultCode code = 1;     // Mã kết quả thực thi (enum)
+  string message = 2;     // Thông điệp mô tả kết quả
+}

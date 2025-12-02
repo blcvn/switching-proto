@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+// Mô tả: Định nghĩa message và service liên quan đến giao dịch on-chain (GPI - Global Payments Innovation).
+// File này chỉ bổ sung các định nghĩa request/response cho các thao tác Credit/Debit/Transfer
+// và truy vấn thông tin thanh toán.
+// Lưu ý: Các kiểu Metadata, Signature, Transaction, Result được định nghĩa trong onchain/common.proto.
+package onchain.v1;
+
+import "onchain/common.proto";
+
+option go_package = "github.com/blcvn/switching-proto/go/onchain;onchain";
+option java_package = "com.blcvn.switching.onchain";
+
+// Service quản lý thanh toán GPI (Global Payments Innovation).
+// Chứa các RPC để tạo giao dịch (Credit/Debit/Transfer) và truy vấn thông tin thanh toán.
+service TransactionService {
+  // Tạo một giao dịch Credit (ghi có) mới.
+  // Yêu cầu: TransactionRequest
+  // Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
+  rpc Credit(TransactionRequest) returns (TransactionResponse) {}
+
+  // Tạo một giao dịch Debit (ghi nợ) mới.
+  // Yêu cầu: TransactionRequest
+  // Trả về: TransactionResponse (kết quả + giao dịch đã tạo)
+  rpc Debit(TransactionRequest) returns (TransactionResponse) {}
+
+  // Chuyển khoản (transfer) giữa hai tài khoản/điểm.
+  // Yêu cầu: TransactionRequest
+  // Trả về: TransactionResponse
+  rpc Transfer(TransactionRequest) returns (TransactionResponse) {}
+
+  // Lấy thông tin chi tiết của một thanh toán theo ID.
+  // Yêu cầu: GetTransactionRequest (chứa ID)
+  // Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)
+  rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {}
+}
+
+// Request dùng để tạo một giao dịch mới.
+// Trường metadata và signature dùng cho xác thực, audit; txn chứa dữ liệu giao dịch chi tiết.
+message TransactionRequest {
+  // Thông tin metadata của request (ví dụ: trace id, timestamp, source)
+  Metadata metadata = 1;
+
+  // Chữ ký số của request để xác thực nguồn gốc và tính toàn vẹn
+  Signature signature = 2;
+
+  // Dữ liệu giao dịch (amount, currency, from/to, reference, ...)
+  Transaction txn = 3;
+}
+
+// Response trả về sau khi xử lý tạo giao dịch.
+// Chứa metadata/ signature phản hồi, kết quả xử lý và thông tin transaction đã được tạo/ghi nhận.
+message TransactionResponse {
+  // Thông tin metadata của response (ví dụ: server id, timestamp)
+  Metadata metadata = 1;
+
+  // Chữ ký số của response (nếu cần xác thực bởi client)
+  Signature signature = 2;
+
+  // Kết quả xử lý (mã lỗi/nội dung thông báo, trạng thái)
+  Result result = 3;
+
+  // Dữ liệu giao dịch đã tạo (có thể chứa id, trạng thái, thông tin ghi nhận)
+  Transaction txn = 4;
+}
+
+// Request để lấy thông tin thanh toán theo ID.
+// Bao gồm metadata/signature tương tự để xác thực request.
+message GetTransactionRequest {
+  // Thông tin metadata của request
+  Metadata metadata = 1;
+
+  // Chữ ký số của request
+  Signature signature = 2;
+
+  // ID của thanh toán cần truy vấn
+  string id = 3;
+}
+
+// Response trả về khi truy vấn thông tin thanh toán.
+message GetTransactionResponse {
+  // Thông tin metadata của response
+  Metadata metadata = 1;
+
+  // Chữ ký số của response
+  Signature signature = 2;
+
+  // Kết quả xử lý (thành công/không tìm thấy/lỗi)
+  Result result = 3;
+
+  // Dữ liệu thanh toán nếu tìm thấy
+  Transaction txn = 4;
+}
+
