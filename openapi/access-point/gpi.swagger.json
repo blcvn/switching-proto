@@ -4,14 +4,231 @@
     "title": "Package định nghĩa các message cho GPI (Global Payments Innovation) trong access point",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "GpiService"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/gpi/create": {
+      "post": {
+        "summary": "Tạo thanh toán mới",
+        "operationId": "GpiService_CreatePayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreatePaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1CreatePaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GpiService"
+        ]
+      }
+    },
+    "/gpi/id/{id}": {
+      "get": {
+        "summary": "Lấy thông tin chi tiết của một thanh toán",
+        "operationId": "GpiService_GetPayment",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID của thanh toán",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "GpiService"
+        ]
+      }
+    },
+    "/gpi/uetr/{uetr}": {
+      "get": {
+        "summary": "Lấy trạng thái của một thanh toán",
+        "operationId": "GpiService_GetPaymentStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPaymentResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uetr",
+            "description": "Unique End-to-End Transaction Reference",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_id",
+            "description": "ID định danh duy nhất cho request",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "metadata.request_time",
+            "description": "Thời gian gửi request (Unix timestamp)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "metadata.version",
+            "description": "Phiên bản của protocol",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.s_type",
+            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "NO_USE_TYPE",
+              "J",
+              "C",
+              "S"
+            ],
+            "default": "NO_USE_TYPE"
+          },
+          {
+            "name": "signature.s",
+            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "signature.b",
+            "description": "Chữ ký số (dạng bytes)",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "tags": [
+          "GpiService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "SignatureSignatureType": {
+      "type": "string",
+      "enum": [
+        "NO_USE_TYPE",
+        "J",
+        "C",
+        "S"
+      ],
+      "default": "NO_USE_TYPE",
+      "description": "- NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
+      "title": "SignatureType định nghĩa các loại chữ ký được hỗ trợ"
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -39,6 +256,211 @@
           }
         }
       }
+    },
+    "v1Account": {
+      "type": "object",
+      "properties": {
+        "iban": {
+          "type": "string",
+          "title": "Số tài khoản quốc tế IBAN (nếu có)"
+        },
+        "account_number": {
+          "type": "string",
+          "title": "Số tài khoản nội địa"
+        },
+        "account_name": {
+          "type": "string",
+          "title": "Tên chủ tài khoản"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Mã tiền tệ của tài khoản (tùy chọn)"
+        },
+        "reference": {
+          "type": "string",
+          "title": "Thông tin tham chiếu hoặc định danh bổ sung (ví dụ: ID phụ)"
+        }
+      },
+      "title": "Thông tin chi tiết tài khoản liên kết với một agent"
+    },
+    "v1CreatePaymentRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của request"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của request"
+        },
+        "data": {
+          "$ref": "#/definitions/v1Payment",
+          "title": "Dữ liệu thanh toán"
+        }
+      },
+      "title": "Request tạo thanh toán mới"
+    },
+    "v1CreatePaymentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của response"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của response"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result",
+          "title": "Kết quả xử lý"
+        },
+        "data": {
+          "$ref": "#/definitions/v1Payment",
+          "title": "Dữ liệu thanh toán đã tạo"
+        }
+      },
+      "title": "Response tạo thanh toán"
+    },
+    "v1GetPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của response"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của response"
+        },
+        "result": {
+          "$ref": "#/definitions/v1Result",
+          "title": "Kết quả xử lý"
+        },
+        "data": {
+          "$ref": "#/definitions/v1Payment",
+          "title": "Dữ liệu thanh toán"
+        }
+      },
+      "title": "Response lấy thông tin thanh toán"
+    },
+    "v1Metadata": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "title": "ID định danh duy nhất cho request"
+        },
+        "request_time": {
+          "type": "string",
+          "format": "int64",
+          "title": "Thời gian gửi request (Unix timestamp)"
+        },
+        "version": {
+          "type": "string",
+          "title": "Phiên bản của protocol"
+        }
+      },
+      "title": "Metadata chứa thông tin về request/response"
+    },
+    "v1Payment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "ID định danh thanh toán"
+        },
+        "uetr": {
+          "type": "string",
+          "title": "Unique End-to-End Transaction Reference"
+        },
+        "amount": {
+          "type": "number",
+          "format": "double",
+          "title": "Số tiền thanh toán"
+        },
+        "currency": {
+          "type": "string",
+          "title": "Mã tiền tệ (ví dụ: USD, VND)"
+        },
+        "creditor_agent": {
+          "type": "string",
+          "title": "BIC của ngân hàng người nhận"
+        },
+        "end_to_end_id": {
+          "type": "string",
+          "title": "ID định danh end-to-end của giao dịch"
+        },
+        "status": {
+          "type": "string",
+          "title": "Trạng thái thanh toán"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Thời gian tạo thanh toán"
+        },
+        "creditor_agent_account": {
+          "$ref": "#/definitions/v1Account",
+          "title": "Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)"
+        }
+      },
+      "title": "Thông tin thanh toán (payment)"
+    },
+    "v1Result": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/v1ResultCode",
+          "title": "Mã kết quả thực thi (enum)"
+        },
+        "message": {
+          "type": "string",
+          "title": "Thông điệp mô tả kết quả"
+        }
+      },
+      "title": "Result định nghĩa cấu trúc kết quả trả về"
+    },
+    "v1ResultCode": {
+      "type": "string",
+      "enum": [
+        "UNSPECIFIED",
+        "SUCCESS",
+        "BAD_REQUEST",
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "DUPLICATE_REQUEST",
+        "UNPROCESSABLE_ENTITY",
+        "TOO_MANY_REQUESTS",
+        "INTERNAL",
+        "BAD_GATEWAY",
+        "SERVICE_UNAVAILABLE",
+        "GATEWAY_TIMEOUT"
+      ],
+      "default": "UNSPECIFIED",
+      "description": "- UNSPECIFIED: Giá trị mặc định, không xác định\n - SUCCESS: Thành công\n - BAD_REQUEST: Lỗi validation hoặc request không hợp lệ\n - UNAUTHORIZED: Chưa xác thực hoặc token không hợp lệ\n - FORBIDDEN: Không có quyền truy cập\n - NOT_FOUND: Không tìm thấy tài nguyên\n - DUPLICATE_REQUEST: Request trùng lặp\n - UNPROCESSABLE_ENTITY: Dữ liệu không thể xử lý\n - TOO_MANY_REQUESTS: Quá nhiều request trong khoảng thời gian\n - INTERNAL: Lỗi nội bộ của server\n - BAD_GATEWAY: Lỗi gateway\n - SERVICE_UNAVAILABLE: Dịch vụ không khả dụng\n - GATEWAY_TIMEOUT: Gateway timeout",
+      "title": "ResultCode định nghĩa các mã kết quả được sử dụng trong hệ thống access point"
+    },
+    "v1Signature": {
+      "type": "object",
+      "properties": {
+        "s_type": {
+          "$ref": "#/definitions/SignatureSignatureType",
+          "title": "Loại chữ ký được sử dụng"
+        },
+        "s": {
+          "type": "string",
+          "title": "Chuỗi dữ liệu dùng để tạo ra chữ ký"
+        },
+        "b": {
+          "type": "string",
+          "format": "byte",
+          "title": "Chữ ký số (dạng bytes)"
+        }
+      },
+      "title": "Signature định nghĩa cấu trúc chữ ký số cho request/response"
     }
   }
 }

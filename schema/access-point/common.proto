@@ -20,15 +20,12 @@ message Payment {
   string uetr = 2;                            // Unique End-to-End Transaction Reference
   double amount = 3;                          // Số tiền thanh toán
   string currency = 4;                        // Mã tiền tệ (ví dụ: USD, VND)
-  string debtor_agent = 5;                    // BIC của ngân hàng người gửi
-  string creditor_agent = 6;                  // BIC của ngân hàng người nhận
-  string end_to_end_id = 7;                  // ID định danh end-to-end của giao dịch
-  string status = 8;                         // Trạng thái thanh toán
-  google.protobuf.Timestamp created_at = 9;  // Thời gian tạo thanh toán
-  // Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-  Account debtor_agent_account = 10;
+  string creditor_agent = 5;                  // BIC của ngân hàng người nhận
+  string end_to_end_id = 6;                  // ID định danh end-to-end của giao dịch
+  string status = 7;                         // Trạng thái thanh toán
+  google.protobuf.Timestamp created_at = 8;  // Thời gian tạo thanh toán
   // Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
-  Account creditor_agent_account = 11;
+  Account creditor_agent_account = 9;
 }
 
 // Thông tin chuyển tiền (transfer) giữa các tổ chức tài chính
@@ -37,7 +34,7 @@ message Transfer {
   string creditor = 2;                       // BIC của người nhận
   double amount = 3;                         // Số tiền chuyển
   string currency = 4;                       // Mã tiền tệ
-  string status = 5;                        // Trạng thái chuyển tiền
+  string status = 5;                         // Trạng thái chuyển tiền
   google.protobuf.Timestamp created_at = 6;  // Thời gian tạo lệnh chuyển
   // Thông tin tài khoản chi tiết của người nhận trong chuyển tiền FI (tùy chọn)
   Account creditor_account = 7;

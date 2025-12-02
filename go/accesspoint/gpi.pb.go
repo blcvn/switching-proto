@@ -474,136 +474,6 @@ func (x *PaymentStatus) GetCurrency() string {
 	return ""
 }
 
-// Request xác nhận thanh toán
-type ConfirmPaymentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Thông tin metadata của request
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
-	Data          *ConfirmMessage        `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu xác nhận
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ConfirmPaymentRequest) Reset() {
-	*x = ConfirmPaymentRequest{}
-	mi := &file_access_point_gpi_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ConfirmPaymentRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConfirmPaymentRequest) ProtoMessage() {}
-
-func (x *ConfirmPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_access_point_gpi_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConfirmPaymentRequest.ProtoReflect.Descriptor instead.
-func (*ConfirmPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_access_point_gpi_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *ConfirmPaymentRequest) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *ConfirmPaymentRequest) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *ConfirmPaymentRequest) GetData() *ConfirmMessage {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
-// Response xác nhận thanh toán
-type ConfirmPaymentResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Thông tin metadata của response
-	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
-	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả xử lý
-	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán đã xác nhận
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *ConfirmPaymentResponse) Reset() {
-	*x = ConfirmPaymentResponse{}
-	mi := &file_access_point_gpi_proto_msgTypes[8]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *ConfirmPaymentResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ConfirmPaymentResponse) ProtoMessage() {}
-
-func (x *ConfirmPaymentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_access_point_gpi_proto_msgTypes[8]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ConfirmPaymentResponse.ProtoReflect.Descriptor instead.
-func (*ConfirmPaymentResponse) Descriptor() ([]byte, []int) {
-	return file_access_point_gpi_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *ConfirmPaymentResponse) GetMetadata() *Metadata {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
-func (x *ConfirmPaymentResponse) GetSignature() *Signature {
-	if x != nil {
-		return x.Signature
-	}
-	return nil
-}
-
-func (x *ConfirmPaymentResponse) GetResult() *Result {
-	if x != nil {
-		return x.Result
-	}
-	return nil
-}
-
-func (x *ConfirmPaymentResponse) GetData() *Payment {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
 var File_access_point_gpi_proto protoreflect.FileDescriptor
 
 const file_access_point_gpi_proto_rawDesc = "" +
@@ -639,16 +509,13 @@ const file_access_point_gpi_proto_rawDesc = "" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x12\x16\n" +
 	"\x06amount\x18\x03 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x04 \x01(\tR\bcurrency\"\xba\x01\n" +
-	"\x15ConfirmPaymentRequest\x124\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x18.accesspoint.v1.MetadataR\bmetadata\x127\n" +
-	"\tsignature\x18\x02 \x01(\v2\x19.accesspoint.v1.SignatureR\tsignature\x122\n" +
-	"\x04data\x18\x03 \x01(\v2\x1e.accesspoint.v1.ConfirmMessageR\x04data\"\xe4\x01\n" +
-	"\x16ConfirmPaymentResponse\x124\n" +
-	"\bmetadata\x18\x01 \x01(\v2\x18.accesspoint.v1.MetadataR\bmetadata\x127\n" +
-	"\tsignature\x18\x02 \x01(\v2\x19.accesspoint.v1.SignatureR\tsignature\x12.\n" +
-	"\x06result\x18\x03 \x01(\v2\x16.accesspoint.v1.ResultR\x06result\x12+\n" +
-	"\x04data\x18\x04 \x01(\v2\x17.accesspoint.v1.PaymentR\x04dataB^\n" +
+	"\bcurrency\x18\x04 \x01(\tR\bcurrency2\xa6\x02\n" +
+	"\n" +
+	"GpiService\x12^\n" +
+	"\rCreatePayment\x12$.accesspoint.v1.CreatePaymentRequest\x1a%.accesspoint.v1.CreatePaymentResponse\"\x00\x12U\n" +
+	"\n" +
+	"GetPayment\x12!.accesspoint.v1.GetPaymentRequest\x1a\".accesspoint.v1.GetPaymentResponse\"\x00\x12a\n" +
+	"\x10GetPaymentStatus\x12'.accesspoint.v1.GetPaymentStatusRequest\x1a\".accesspoint.v1.GetPaymentResponse\"\x00B^\n" +
 	"\x1fcom.blcvn.switching.accesspointZ;github.com/blcvn/switching-proto/go/accesspoint;accesspointb\x06proto3"
 
 var (
@@ -663,7 +530,7 @@ func file_access_point_gpi_proto_rawDescGZIP() []byte {
 	return file_access_point_gpi_proto_rawDescData
 }
 
-var file_access_point_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_access_point_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_access_point_gpi_proto_goTypes = []any{
 	(*ConfirmMessage)(nil),          // 0: accesspoint.v1.ConfirmMessage
 	(*CreatePaymentRequest)(nil),    // 1: accesspoint.v1.CreatePaymentRequest
@@ -672,41 +539,38 @@ var file_access_point_gpi_proto_goTypes = []any{
 	(*GetPaymentResponse)(nil),      // 4: accesspoint.v1.GetPaymentResponse
 	(*GetPaymentStatusRequest)(nil), // 5: accesspoint.v1.GetPaymentStatusRequest
 	(*PaymentStatus)(nil),           // 6: accesspoint.v1.PaymentStatus
-	(*ConfirmPaymentRequest)(nil),   // 7: accesspoint.v1.ConfirmPaymentRequest
-	(*ConfirmPaymentResponse)(nil),  // 8: accesspoint.v1.ConfirmPaymentResponse
-	(*Metadata)(nil),                // 9: accesspoint.v1.Metadata
-	(*Signature)(nil),               // 10: accesspoint.v1.Signature
-	(*Payment)(nil),                 // 11: accesspoint.v1.Payment
-	(*Result)(nil),                  // 12: accesspoint.v1.Result
+	(*Metadata)(nil),                // 7: accesspoint.v1.Metadata
+	(*Signature)(nil),               // 8: accesspoint.v1.Signature
+	(*Payment)(nil),                 // 9: accesspoint.v1.Payment
+	(*Result)(nil),                  // 10: accesspoint.v1.Result
 }
 var file_access_point_gpi_proto_depIdxs = []int32{
-	9,  // 0: accesspoint.v1.CreatePaymentRequest.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 1: accesspoint.v1.CreatePaymentRequest.signature:type_name -> accesspoint.v1.Signature
-	11, // 2: accesspoint.v1.CreatePaymentRequest.data:type_name -> accesspoint.v1.Payment
-	9,  // 3: accesspoint.v1.CreatePaymentResponse.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 4: accesspoint.v1.CreatePaymentResponse.signature:type_name -> accesspoint.v1.Signature
-	12, // 5: accesspoint.v1.CreatePaymentResponse.result:type_name -> accesspoint.v1.Result
-	11, // 6: accesspoint.v1.CreatePaymentResponse.data:type_name -> accesspoint.v1.Payment
-	9,  // 7: accesspoint.v1.GetPaymentRequest.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 8: accesspoint.v1.GetPaymentRequest.signature:type_name -> accesspoint.v1.Signature
-	9,  // 9: accesspoint.v1.GetPaymentResponse.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 10: accesspoint.v1.GetPaymentResponse.signature:type_name -> accesspoint.v1.Signature
-	12, // 11: accesspoint.v1.GetPaymentResponse.result:type_name -> accesspoint.v1.Result
-	11, // 12: accesspoint.v1.GetPaymentResponse.data:type_name -> accesspoint.v1.Payment
-	9,  // 13: accesspoint.v1.GetPaymentStatusRequest.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 14: accesspoint.v1.GetPaymentStatusRequest.signature:type_name -> accesspoint.v1.Signature
-	9,  // 15: accesspoint.v1.ConfirmPaymentRequest.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 16: accesspoint.v1.ConfirmPaymentRequest.signature:type_name -> accesspoint.v1.Signature
-	0,  // 17: accesspoint.v1.ConfirmPaymentRequest.data:type_name -> accesspoint.v1.ConfirmMessage
-	9,  // 18: accesspoint.v1.ConfirmPaymentResponse.metadata:type_name -> accesspoint.v1.Metadata
-	10, // 19: accesspoint.v1.ConfirmPaymentResponse.signature:type_name -> accesspoint.v1.Signature
-	12, // 20: accesspoint.v1.ConfirmPaymentResponse.result:type_name -> accesspoint.v1.Result
-	11, // 21: accesspoint.v1.ConfirmPaymentResponse.data:type_name -> accesspoint.v1.Payment
-	22, // [22:22] is the sub-list for method output_type
-	22, // [22:22] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	7,  // 0: accesspoint.v1.CreatePaymentRequest.metadata:type_name -> accesspoint.v1.Metadata
+	8,  // 1: accesspoint.v1.CreatePaymentRequest.signature:type_name -> accesspoint.v1.Signature
+	9,  // 2: accesspoint.v1.CreatePaymentRequest.data:type_name -> accesspoint.v1.Payment
+	7,  // 3: accesspoint.v1.CreatePaymentResponse.metadata:type_name -> accesspoint.v1.Metadata
+	8,  // 4: accesspoint.v1.CreatePaymentResponse.signature:type_name -> accesspoint.v1.Signature
+	10, // 5: accesspoint.v1.CreatePaymentResponse.result:type_name -> accesspoint.v1.Result
+	9,  // 6: accesspoint.v1.CreatePaymentResponse.data:type_name -> accesspoint.v1.Payment
+	7,  // 7: accesspoint.v1.GetPaymentRequest.metadata:type_name -> accesspoint.v1.Metadata
+	8,  // 8: accesspoint.v1.GetPaymentRequest.signature:type_name -> accesspoint.v1.Signature
+	7,  // 9: accesspoint.v1.GetPaymentResponse.metadata:type_name -> accesspoint.v1.Metadata
+	8,  // 10: accesspoint.v1.GetPaymentResponse.signature:type_name -> accesspoint.v1.Signature
+	10, // 11: accesspoint.v1.GetPaymentResponse.result:type_name -> accesspoint.v1.Result
+	9,  // 12: accesspoint.v1.GetPaymentResponse.data:type_name -> accesspoint.v1.Payment
+	7,  // 13: accesspoint.v1.GetPaymentStatusRequest.metadata:type_name -> accesspoint.v1.Metadata
+	8,  // 14: accesspoint.v1.GetPaymentStatusRequest.signature:type_name -> accesspoint.v1.Signature
+	1,  // 15: accesspoint.v1.GpiService.CreatePayment:input_type -> accesspoint.v1.CreatePaymentRequest
+	3,  // 16: accesspoint.v1.GpiService.GetPayment:input_type -> accesspoint.v1.GetPaymentRequest
+	5,  // 17: accesspoint.v1.GpiService.GetPaymentStatus:input_type -> accesspoint.v1.GetPaymentStatusRequest
+	2,  // 18: accesspoint.v1.GpiService.CreatePayment:output_type -> accesspoint.v1.CreatePaymentResponse
+	4,  // 19: accesspoint.v1.GpiService.GetPayment:output_type -> accesspoint.v1.GetPaymentResponse
+	4,  // 20: accesspoint.v1.GpiService.GetPaymentStatus:output_type -> accesspoint.v1.GetPaymentResponse
+	18, // [18:21] is the sub-list for method output_type
+	15, // [15:18] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_access_point_gpi_proto_init() }
@@ -721,9 +585,9 @@ func file_access_point_gpi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_access_point_gpi_proto_rawDesc), len(file_access_point_gpi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   7,
 			NumExtensions: 0,
-			NumServices:   0,
+			NumServices:   1,
 		},
 		GoTypes:           file_access_point_gpi_proto_goTypes,
 		DependencyIndexes: file_access_point_gpi_proto_depIdxs,

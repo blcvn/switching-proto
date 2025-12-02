@@ -1,0 +1,15 @@
+type: google.api.http
+config_version: 3
+
+http:
+    rules:
+        # Account Service
+        - selector: accesspoint.v1.GpiService.CreatePayment
+          post: /gpi/create
+          body: "*"
+
+        - selector: accesspoint.v1.GpiService.GetPayment
+          get: /gpi/id/{id}
+
+        - selector: accesspoint.v1.GpiService.GetPaymentStatus
+          get: /gpi/uetr/{uetr}

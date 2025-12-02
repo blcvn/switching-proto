@@ -169,6 +169,7 @@
         "parameters": [
           {
             "name": "bank_address",
+            "description": "bank address (required)",
             "in": "path",
             "required": true,
             "type": "string"
@@ -200,6 +201,7 @@
         "parameters": [
           {
             "name": "bank_address",
+            "description": "bank address (required)",
             "in": "path",
             "required": true,
             "type": "string"
@@ -399,6 +401,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }
@@ -411,7 +414,8 @@
           "type": "string"
         },
         "bank_address": {
-          "type": "string"
+          "type": "string",
+          "title": "bank address (required)"
         },
         "amount": {
           "type": "string"
@@ -427,6 +431,7 @@
         "results": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1PaymentResult"
           }
         }
@@ -439,10 +444,12 @@
           "type": "string"
         },
         "sender_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "bank address (for unholdPayment - anyone can call after expiry)"
         },
         "bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "bank code (optional, for reference)"
         },
         "reason": {
           "type": "string"
@@ -456,16 +463,20 @@
           "type": "string"
         },
         "sender_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank address (optional, for reference)"
         },
         "sender_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank code (optional, for reference)"
         },
         "receiver_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank address (required - caller)"
         },
         "receiver_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank code (optional, for reference)"
         },
         "from_bank_account": {
           "type": "string"
@@ -485,14 +496,17 @@
       "type": "object",
       "properties": {
         "sender_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank address"
         },
         "sender_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank code (optional, for reference)"
         },
         "items": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/v1HoldPaymentItem"
           }
         }
@@ -511,7 +525,8 @@
           "type": "string"
         },
         "receiver_bank_address": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank address (required for batch hold)"
         },
         "amount": {
           "type": "string"
@@ -528,16 +543,20 @@
           "type": "string"
         },
         "sender_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank address"
         },
         "sender_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "sender bank code (optional, for reference)"
         },
         "receiver_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank address"
         },
         "receiver_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank code (optional, for reference)"
         },
         "beneficiary_account": {
           "type": "string"
@@ -588,10 +607,12 @@
           "type": "string"
         },
         "balance": {
-          "type": "string"
+          "type": "string",
+          "title": "balance value"
         },
         "balance_type": {
-          "type": "string"
+          "type": "string",
+          "title": "\"token\" or \"contract\" - indicates which type of balance"
         },
         "bank_code": {
           "type": "string"
@@ -649,10 +670,12 @@
           "type": "string"
         },
         "receiver_bank": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank address (required - only receiver or operator can cancel)"
         },
         "receiver_bank_code": {
-          "type": "string"
+          "type": "string",
+          "title": "receiver bank code (optional, for reference)"
         },
         "reason": {
           "type": "string"

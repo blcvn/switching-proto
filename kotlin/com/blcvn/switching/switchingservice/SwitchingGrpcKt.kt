@@ -43,6 +43,11 @@ public object SwitchingServiceGrpcKt {
     @JvmStatic
     get() = SwitchingServiceGrpc.getQueryBankBalanceMethod()
 
+  public val queryTokenBalanceMethod:
+      MethodDescriptor<Switching.QueryBalanceRequest, Switching.QueryBalanceResponse>
+    @JvmStatic
+    get() = SwitchingServiceGrpc.getQueryTokenBalanceMethod()
+
   public val holdPaymentMethod:
       MethodDescriptor<Switching.HoldPaymentRequest, Switching.PaymentResponse>
     @JvmStatic
@@ -58,10 +63,30 @@ public object SwitchingServiceGrpcKt {
     @JvmStatic
     get() = SwitchingServiceGrpc.getCancelPaymentMethod()
 
+  public val unheldPaymentMethod:
+      MethodDescriptor<Switching.UnheldPaymentRequest, Switching.TransactionResponse>
+    @JvmStatic
+    get() = SwitchingServiceGrpc.getUnheldPaymentMethod()
+
   public val confirmPaymentMethod:
       MethodDescriptor<Switching.ConfirmPaymentRequest, Switching.PaymentResponse>
     @JvmStatic
     get() = SwitchingServiceGrpc.getConfirmPaymentMethod()
+
+  public val depositBankMethod:
+      MethodDescriptor<Switching.BankTransactionRequest, Switching.TransactionResponse>
+    @JvmStatic
+    get() = SwitchingServiceGrpc.getDepositBankMethod()
+
+  public val withdrawBankMethod:
+      MethodDescriptor<Switching.BankTransactionRequest, Switching.TransactionResponse>
+    @JvmStatic
+    get() = SwitchingServiceGrpc.getWithdrawBankMethod()
+
+  public val mintToBankCodeMethod:
+      MethodDescriptor<Switching.BankTransactionRequest, Switching.TransactionResponse>
+    @JvmStatic
+    get() = SwitchingServiceGrpc.getMintToBankCodeMethod()
 
   /**
    * A stub for issuing RPCs to a(n) switchingservice.v1.SwitchingService service as suspending
@@ -114,6 +139,28 @@ public object SwitchingServiceGrpcKt {
         Metadata()): Switching.QueryBalanceResponse = unaryRpc(
       channel,
       SwitchingServiceGrpc.getQueryBankBalanceMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun queryTokenBalance(request: Switching.QueryBalanceRequest, headers: Metadata =
+        Metadata()): Switching.QueryBalanceResponse = unaryRpc(
+      channel,
+      SwitchingServiceGrpc.getQueryTokenBalanceMethod(),
       request,
       callOptions,
       headers
@@ -198,10 +245,98 @@ public object SwitchingServiceGrpcKt {
      *
      * @return The single response from the server.
      */
+    public suspend fun unheldPayment(request: Switching.UnheldPaymentRequest, headers: Metadata =
+        Metadata()): Switching.TransactionResponse = unaryRpc(
+      channel,
+      SwitchingServiceGrpc.getUnheldPaymentMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
     public suspend fun confirmPayment(request: Switching.ConfirmPaymentRequest, headers: Metadata =
         Metadata()): Switching.PaymentResponse = unaryRpc(
       channel,
       SwitchingServiceGrpc.getConfirmPaymentMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun depositBank(request: Switching.BankTransactionRequest, headers: Metadata =
+        Metadata()): Switching.TransactionResponse = unaryRpc(
+      channel,
+      SwitchingServiceGrpc.getDepositBankMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun withdrawBank(request: Switching.BankTransactionRequest, headers: Metadata =
+        Metadata()): Switching.TransactionResponse = unaryRpc(
+      channel,
+      SwitchingServiceGrpc.getWithdrawBankMethod(),
+      request,
+      callOptions,
+      headers
+    )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun mintToBankCode(request: Switching.BankTransactionRequest, headers: Metadata =
+        Metadata()): Switching.TransactionResponse = unaryRpc(
+      channel,
+      SwitchingServiceGrpc.getMintToBankCodeMethod(),
       request,
       callOptions,
       headers
@@ -244,6 +379,21 @@ public object SwitchingServiceGrpcKt {
     public open suspend fun queryBankBalance(request: Switching.QueryBalanceRequest):
         Switching.QueryBalanceResponse = throw
         StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.QueryBankBalance is unimplemented"))
+
+    /**
+     * Returns the response to an RPC for switchingservice.v1.SwitchingService.QueryTokenBalance.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun queryTokenBalance(request: Switching.QueryBalanceRequest):
+        Switching.QueryBalanceResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.QueryTokenBalance is unimplemented"))
 
     /**
      * Returns the response to an RPC for switchingservice.v1.SwitchingService.HoldPayment.
@@ -291,6 +441,21 @@ public object SwitchingServiceGrpcKt {
         StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.CancelPayment is unimplemented"))
 
     /**
+     * Returns the response to an RPC for switchingservice.v1.SwitchingService.UnheldPayment.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun unheldPayment(request: Switching.UnheldPaymentRequest):
+        Switching.TransactionResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.UnheldPayment is unimplemented"))
+
+    /**
      * Returns the response to an RPC for switchingservice.v1.SwitchingService.ConfirmPayment.
      *
      * If this method fails with a [StatusException], the RPC will fail with the corresponding
@@ -305,6 +470,51 @@ public object SwitchingServiceGrpcKt {
         Switching.PaymentResponse = throw
         StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.ConfirmPayment is unimplemented"))
 
+    /**
+     * Returns the response to an RPC for switchingservice.v1.SwitchingService.DepositBank.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun depositBank(request: Switching.BankTransactionRequest):
+        Switching.TransactionResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.DepositBank is unimplemented"))
+
+    /**
+     * Returns the response to an RPC for switchingservice.v1.SwitchingService.WithdrawBank.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun withdrawBank(request: Switching.BankTransactionRequest):
+        Switching.TransactionResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.WithdrawBank is unimplemented"))
+
+    /**
+     * Returns the response to an RPC for switchingservice.v1.SwitchingService.MintToBankCode.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun mintToBankCode(request: Switching.BankTransactionRequest):
+        Switching.TransactionResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method switchingservice.v1.SwitchingService.MintToBankCode is unimplemented"))
+
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
@@ -315,6 +525,11 @@ public object SwitchingServiceGrpcKt {
       context = this.context,
       descriptor = SwitchingServiceGrpc.getQueryBankBalanceMethod(),
       implementation = ::queryBankBalance
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = SwitchingServiceGrpc.getQueryTokenBalanceMethod(),
+      implementation = ::queryTokenBalance
     ))
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
@@ -333,8 +548,28 @@ public object SwitchingServiceGrpcKt {
     ))
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
+      descriptor = SwitchingServiceGrpc.getUnheldPaymentMethod(),
+      implementation = ::unheldPayment
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
       descriptor = SwitchingServiceGrpc.getConfirmPaymentMethod(),
       implementation = ::confirmPayment
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = SwitchingServiceGrpc.getDepositBankMethod(),
+      implementation = ::depositBank
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = SwitchingServiceGrpc.getWithdrawBankMethod(),
+      implementation = ::withdrawBank
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = SwitchingServiceGrpc.getMintToBankCodeMethod(),
+      implementation = ::mintToBankCode
     )).build()
   }
 }

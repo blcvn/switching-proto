@@ -121,15 +121,12 @@ type Payment struct {
 	Uetr          string                 `protobuf:"bytes,2,opt,name=uetr,proto3" json:"uetr,omitempty"`                                        // Unique End-to-End Transaction Reference
 	Amount        float64                `protobuf:"fixed64,3,opt,name=amount,proto3" json:"amount,omitempty"`                                  // Số tiền thanh toán
 	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`                                // Mã tiền tệ (ví dụ: USD, VND)
-	DebtorAgent   string                 `protobuf:"bytes,5,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`       // BIC của ngân hàng người gửi
-	CreditorAgent string                 `protobuf:"bytes,6,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"` // BIC của ngân hàng người nhận
-	EndToEndId    string                 `protobuf:"bytes,7,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`      // ID định danh end-to-end của giao dịch
-	Status        string                 `protobuf:"bytes,8,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái thanh toán
-	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo thanh toán
-	// Thông tin tài khoản chi tiết của ngân hàng người gửi (tùy chọn)
-	DebtorAgentAccount *Account `protobuf:"bytes,10,opt,name=debtor_agent_account,json=debtorAgentAccount,proto3" json:"debtor_agent_account,omitempty"`
+	CreditorAgent string                 `protobuf:"bytes,5,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"` // BIC của ngân hàng người nhận
+	EndToEndId    string                 `protobuf:"bytes,6,opt,name=end_to_end_id,json=endToEndId,proto3" json:"end_to_end_id,omitempty"`      // ID định danh end-to-end của giao dịch
+	Status        string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái thanh toán
+	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo thanh toán
 	// Thông tin tài khoản chi tiết của ngân hàng người nhận (tùy chọn)
-	CreditorAgentAccount *Account `protobuf:"bytes,11,opt,name=creditor_agent_account,json=creditorAgentAccount,proto3" json:"creditor_agent_account,omitempty"`
+	CreditorAgentAccount *Account `protobuf:"bytes,9,opt,name=creditor_agent_account,json=creditorAgentAccount,proto3" json:"creditor_agent_account,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -192,13 +189,6 @@ func (x *Payment) GetCurrency() string {
 	return ""
 }
 
-func (x *Payment) GetDebtorAgent() string {
-	if x != nil {
-		return x.DebtorAgent
-	}
-	return ""
-}
-
 func (x *Payment) GetCreditorAgent() string {
 	if x != nil {
 		return x.CreditorAgent
@@ -223,13 +213,6 @@ func (x *Payment) GetStatus() string {
 func (x *Payment) GetCreatedAt() *timestamp.Timestamp {
 	if x != nil {
 		return x.CreatedAt
-	}
-	return nil
-}
-
-func (x *Payment) GetDebtorAgentAccount() *Account {
-	if x != nil {
-		return x.DebtorAgentAccount
 	}
 	return nil
 }
@@ -674,22 +657,19 @@ var File_access_point_common_proto protoreflect.FileDescriptor
 const file_access_point_common_proto_rawDesc = "" +
 	"\n" +
 	"\x19access-point/common.proto\x12\x0eaccesspoint.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x18access-point/error.proto\"\a\n" +
-	"\x05Empty\"\xbb\x03\n" +
+	"\x05Empty\"\xcd\x02\n" +
 	"\aPayment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04uetr\x18\x02 \x01(\tR\x04uetr\x12\x16\n" +
 	"\x06amount\x18\x03 \x01(\x01R\x06amount\x12\x1a\n" +
-	"\bcurrency\x18\x04 \x01(\tR\bcurrency\x12!\n" +
-	"\fdebtor_agent\x18\x05 \x01(\tR\vdebtorAgent\x12%\n" +
-	"\x0ecreditor_agent\x18\x06 \x01(\tR\rcreditorAgent\x12!\n" +
-	"\rend_to_end_id\x18\a \x01(\tR\n" +
+	"\bcurrency\x18\x04 \x01(\tR\bcurrency\x12%\n" +
+	"\x0ecreditor_agent\x18\x05 \x01(\tR\rcreditorAgent\x12!\n" +
+	"\rend_to_end_id\x18\x06 \x01(\tR\n" +
 	"endToEndId\x12\x16\n" +
-	"\x06status\x18\b \x01(\tR\x06status\x129\n" +
+	"\x06status\x18\a \x01(\tR\x06status\x129\n" +
 	"\n" +
-	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12I\n" +
-	"\x14debtor_agent_account\x18\n" +
-	" \x01(\v2\x17.accesspoint.v1.AccountR\x12debtorAgentAccount\x12M\n" +
-	"\x16creditor_agent_account\x18\v \x01(\v2\x17.accesspoint.v1.AccountR\x14creditorAgentAccount\"\x98\x02\n" +
+	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12M\n" +
+	"\x16creditor_agent_account\x18\t \x01(\v2\x17.accesspoint.v1.AccountR\x14creditorAgentAccount\"\x98\x02\n" +
 	"\bTransfer\x12%\n" +
 	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x1a\n" +
 	"\bcreditor\x18\x02 \x01(\tR\bcreditor\x12\x16\n" +
@@ -760,17 +740,16 @@ var file_access_point_common_proto_goTypes = []any{
 }
 var file_access_point_common_proto_depIdxs = []int32{
 	9,  // 0: accesspoint.v1.Payment.created_at:type_name -> google.protobuf.Timestamp
-	5,  // 1: accesspoint.v1.Payment.debtor_agent_account:type_name -> accesspoint.v1.Account
-	5,  // 2: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
-	9,  // 3: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
-	5,  // 4: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
-	0,  // 5: accesspoint.v1.Signature.s_type:type_name -> accesspoint.v1.Signature.SignatureType
-	10, // 6: accesspoint.v1.Result.code:type_name -> accesspoint.v1.ResultCode
-	7,  // [7:7] is the sub-list for method output_type
-	7,  // [7:7] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	5,  // 1: accesspoint.v1.Payment.creditor_agent_account:type_name -> accesspoint.v1.Account
+	9,  // 2: accesspoint.v1.Transfer.created_at:type_name -> google.protobuf.Timestamp
+	5,  // 3: accesspoint.v1.Transfer.creditor_account:type_name -> accesspoint.v1.Account
+	0,  // 4: accesspoint.v1.Signature.s_type:type_name -> accesspoint.v1.Signature.SignatureType
+	10, // 5: accesspoint.v1.Result.code:type_name -> accesspoint.v1.ResultCode
+	6,  // [6:6] is the sub-list for method output_type
+	6,  // [6:6] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_access_point_common_proto_init() }
