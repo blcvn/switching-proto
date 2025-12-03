@@ -18,7 +18,7 @@
   ],
   "paths": {
     "/onchain/bank/info": {
-      "get": {
+      "post": {
         "operationId": "TransactionService_GetBankInfo",
         "responses": {
           "200": {
@@ -36,47 +36,12 @@
         },
         "parameters": [
           {
-            "name": "bic",
-            "description": "Bank Identifier Code",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "description": "Tên thực thể",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "country",
-            "description": "Quốc gia",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "lei",
-            "description": "Legal Entity Identifier",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "updated_at",
-            "description": "Thời gian cập nhật lần cuối",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "balance",
-            "description": "Số dư tài khoản",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "int64"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1KycEntity"
+            }
           }
         ],
         "tags": [
@@ -218,8 +183,8 @@
         ]
       }
     },
-    "/onchain/txn/{id}": {
-      "get": {
+    "/onchain/txn/info": {
+      "post": {
         "summary": "Lấy thông tin chi tiết của một thanh toán theo ID.\nYêu cầu: GetTransactionRequest (chứa ID)\nTrả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)",
         "operationId": "TransactionService_GetTransaction",
         "responses": {
@@ -238,62 +203,13 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "description": "ID của thanh toán cần truy vấn",
-            "in": "path",
+            "name": "body",
+            "description": "Request để lấy thông tin thanh toán theo ID.\nBao gồm metadata/signature tương tự để xác thực request.",
+            "in": "body",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "metadata.request_id",
-            "description": "ID định danh duy nhất cho request",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "metadata.request_time",
-            "description": "Thời gian gửi request (Unix timestamp)",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "int64"
-          },
-          {
-            "name": "metadata.version",
-            "description": "Phiên bản của protocol",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "signature.s_type",
-            "description": "Loại chữ ký được sử dụng\n\n - NO_USE_TYPE: Giá trị mặc định, không sử dụng\n - J: Chữ ký loại J\n - C: Chữ ký loại C\n - S: Chữ ký loại S",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "NO_USE_TYPE",
-              "J",
-              "C",
-              "S"
-            ],
-            "default": "NO_USE_TYPE"
-          },
-          {
-            "name": "signature.s",
-            "description": "Chuỗi dữ liệu dùng để tạo ra chữ ký",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "signature.b",
-            "description": "Chữ ký số (dạng bytes)",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "byte"
+            "schema": {
+              "$ref": "#/definitions/v1GetTransactionRequest"
+            }
           }
         ],
         "tags": [
@@ -378,6 +294,24 @@
         }
       },
       "title": "Thông tin chi tiết tài khoản liên kết với một agent"
+    },
+    "v1GetTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/v1Metadata",
+          "title": "Thông tin metadata của request"
+        },
+        "signature": {
+          "$ref": "#/definitions/v1Signature",
+          "title": "Chữ ký số của request"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID của thanh toán cần truy vấn"
+        }
+      },
+      "description": "Request để lấy thông tin thanh toán theo ID.\nBao gồm metadata/signature tương tự để xác thực request."
     },
     "v1GetTransactionResponse": {
       "type": "object",

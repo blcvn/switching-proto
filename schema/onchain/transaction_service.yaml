@@ -16,10 +16,12 @@ http:
           body: "*"
 
         - selector: onchain.v1.TransactionService.GetTransaction
-          get: /onchain/txn/{id}
+          post: /onchain/txn/info
+          body: "*"
 
         - selector: onchain.v1.TransactionService.RegisterBank
           post: /onchain/bank/register
           body: "*"
         - selector: onchain.v1.TransactionService.GetBankInfo
-          get: /onchain/bank/info
+          post: /onchain/bank/info
+          body: "*"

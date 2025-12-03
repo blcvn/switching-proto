@@ -9,9 +9,21 @@ Lưu ý: Các kiểu Metadata, Signature, Transaction, Result được định n
 
 ## Public endpoints
 
-### GET /onchain/bank/info
-- Mô tả: Lấy thông tin
+### POST /onchain/bank/info
+- Mô tả: Gửi yêu cầu
 - Auth: không
+- Request JSON:
+
+```json
+{
+  "bic": "...",
+  "name": "...",
+  "country": "...",
+  "lei": "...",
+  "updated_at": "...",
+  "balance": "..."
+}
+```
 
 - Response 200 (object `v1KycEntity`):
 
@@ -356,11 +368,28 @@ Trả về: TransactionResponse
 }
 ```
 
-### GET /onchain/txn/{id}
+### POST /onchain/txn/info
 - Mô tả: Lấy thông tin chi tiết của một thanh toán theo ID.
 Yêu cầu: GetTransactionRequest (chứa ID)
-Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy) theo `id`
+Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)
 - Auth: không
+- Request JSON:
+
+```json
+{
+  "metadata": {
+    "request_id": "...",
+    "request_time": "...",
+    "version": "..."
+  },
+  "signature": {
+    "s_type": "...",
+    "s": "...",
+    "b": "..."
+  },
+  "id": "..."
+}
+```
 
 - Response 200 (object `v1GetTransactionResponse`):
 
