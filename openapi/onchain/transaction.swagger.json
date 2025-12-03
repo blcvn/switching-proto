@@ -302,6 +302,37 @@
       },
       "description": "Response trả về khi truy vấn thông tin thanh toán."
     },
+    "v1KycEntity": {
+      "type": "object",
+      "properties": {
+        "bic": {
+          "type": "string",
+          "title": "Bank Identifier Code"
+        },
+        "name": {
+          "type": "string",
+          "title": "Tên thực thể"
+        },
+        "country": {
+          "type": "string",
+          "title": "Quốc gia"
+        },
+        "lei": {
+          "type": "string",
+          "title": "Legal Entity Identifier"
+        },
+        "updated_at": {
+          "type": "string",
+          "title": "Thời gian cập nhật lần cuối"
+        },
+        "balance": {
+          "type": "string",
+          "format": "int64",
+          "title": "Số dư tài khoản"
+        }
+      },
+      "title": "Thông tin thực thể KYC (Know Your Customer)"
+    },
     "v1Metadata": {
       "type": "object",
       "properties": {
@@ -391,8 +422,8 @@
           "title": "BIC của người nhận"
         },
         "amount": {
-          "type": "number",
-          "format": "double",
+          "type": "string",
+          "format": "int64",
           "title": "Số tiền chuyển"
         },
         "currency": {

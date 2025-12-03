@@ -169,7 +169,7 @@ type Transaction struct {
 	InstructionId string                 `protobuf:"bytes,1,opt,name=instruction_id,json=instructionId,proto3" json:"instruction_id,omitempty"` // ID của lệnh chuyển tiền
 	Debitor       string                 `protobuf:"bytes,2,opt,name=debitor,proto3" json:"debitor,omitempty"`                                  // BIC của người gửi
 	Creditor      string                 `protobuf:"bytes,3,opt,name=creditor,proto3" json:"creditor,omitempty"`                                // BIC của người nhận
-	Amount        float64                `protobuf:"fixed64,4,opt,name=amount,proto3" json:"amount,omitempty"`                                  // Số tiền chuyển
+	Amount        int64                  `protobuf:"varint,4,opt,name=amount,proto3" json:"amount,omitempty"`                                   // Số tiền chuyển
 	Currency      string                 `protobuf:"bytes,5,opt,name=currency,proto3" json:"currency,omitempty"`                                // Mã tiền tệ
 	Status        string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`                                    // Trạng thái chuyển tiền
 	CreatedAt     *timestamp.Timestamp   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`             // Thời gian tạo lệnh chuyển
@@ -231,7 +231,7 @@ func (x *Transaction) GetCreditor() string {
 	return ""
 }
 
-func (x *Transaction) GetAmount() float64 {
+func (x *Transaction) GetAmount() int64 {
 	if x != nil {
 		return x.Amount
 	}
@@ -281,6 +281,7 @@ type KycEntity struct {
 	Country       string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`                      // Quốc gia
 	Lei           string                 `protobuf:"bytes,4,opt,name=lei,proto3" json:"lei,omitempty"`                              // Legal Entity Identifier
 	UpdatedAt     string                 `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // Thời gian cập nhật lần cuối
+	Balance       int64                  `protobuf:"varint,6,opt,name=balance,proto3" json:"balance,omitempty"`                     // Số dư tài khoản
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -348,6 +349,13 @@ func (x *KycEntity) GetUpdatedAt() string {
 		return x.UpdatedAt
 	}
 	return ""
+}
+
+func (x *KycEntity) GetBalance() int64 {
+	if x != nil {
+		return x.Balance
+	}
+	return 0
 }
 
 // Thông tin chi tiết tài khoản liên kết với một agent
@@ -618,7 +626,7 @@ const file_onchain_common_proto_rawDesc = "" +
 	"\x0einstruction_id\x18\x01 \x01(\tR\rinstructionId\x12\x18\n" +
 	"\adebitor\x18\x02 \x01(\tR\adebitor\x12\x1a\n" +
 	"\bcreditor\x18\x03 \x01(\tR\bcreditor\x12\x16\n" +
-	"\x06amount\x18\x04 \x01(\x01R\x06amount\x12\x1a\n" +
+	"\x06amount\x18\x04 \x01(\x03R\x06amount\x12\x1a\n" +
 	"\bcurrency\x18\x05 \x01(\tR\bcurrency\x12\x16\n" +
 	"\x06status\x18\x06 \x01(\tR\x06status\x129\n" +
 	"\n" +
@@ -630,14 +638,15 @@ const file_onchain_common_proto_rawDesc = "" +
 	"\x06NORMAL\x10\x00\x12\b\n" +
 	"\x04HIGH\x10\x01\x12\n" +
 	"\n" +
-	"\x06URGENT\x10\x02\"|\n" +
+	"\x06URGENT\x10\x02\"\x96\x01\n" +
 	"\tKycEntity\x12\x10\n" +
 	"\x03bic\x18\x01 \x01(\tR\x03bic\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
 	"\acountry\x18\x03 \x01(\tR\acountry\x12\x10\n" +
 	"\x03lei\x18\x04 \x01(\tR\x03lei\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x05 \x01(\tR\tupdatedAt\"\xa1\x01\n" +
+	"updated_at\x18\x05 \x01(\tR\tupdatedAt\x12\x18\n" +
+	"\abalance\x18\x06 \x01(\x03R\abalance\"\xa1\x01\n" +
 	"\aAccount\x12\x12\n" +
 	"\x04iban\x18\x01 \x01(\tR\x04iban\x12%\n" +
 	"\x0eaccount_number\x18\x02 \x01(\tR\raccountNumber\x12!\n" +

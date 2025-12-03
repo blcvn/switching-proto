@@ -28,6 +28,8 @@ const (
 	TransactionService_Debit_FullMethodName          = "/onchain.v1.TransactionService/Debit"
 	TransactionService_Transfer_FullMethodName       = "/onchain.v1.TransactionService/Transfer"
 	TransactionService_GetTransaction_FullMethodName = "/onchain.v1.TransactionService/GetTransaction"
+	TransactionService_RegisterBank_FullMethodName   = "/onchain.v1.TransactionService/RegisterBank"
+	TransactionService_GetBankInfo_FullMethodName    = "/onchain.v1.TransactionService/GetBankInfo"
 )
 
 // TransactionServiceClient is the client API for TransactionService service.
@@ -53,6 +55,8 @@ type TransactionServiceClient interface {
 	// Yêu cầu: GetTransactionRequest (chứa ID)
 	// Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)
 	GetTransaction(ctx context.Context, in *GetTransactionRequest, opts ...grpc.CallOption) (*GetTransactionResponse, error)
+	RegisterBank(ctx context.Context, in *KycEntity, opts ...grpc.CallOption) (*KycEntity, error)
+	GetBankInfo(ctx context.Context, in *KycEntity, opts ...grpc.CallOption) (*KycEntity, error)
 }
 
 type transactionServiceClient struct {
@@ -103,6 +107,26 @@ func (c *transactionServiceClient) GetTransaction(ctx context.Context, in *GetTr
 	return out, nil
 }
 
+func (c *transactionServiceClient) RegisterBank(ctx context.Context, in *KycEntity, opts ...grpc.CallOption) (*KycEntity, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(KycEntity)
+	err := c.cc.Invoke(ctx, TransactionService_RegisterBank_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *transactionServiceClient) GetBankInfo(ctx context.Context, in *KycEntity, opts ...grpc.CallOption) (*KycEntity, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(KycEntity)
+	err := c.cc.Invoke(ctx, TransactionService_GetBankInfo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TransactionServiceServer is the server API for TransactionService service.
 // All implementations must embed UnimplementedTransactionServiceServer
 // for forward compatibility.
@@ -126,6 +150,8 @@ type TransactionServiceServer interface {
 	// Yêu cầu: GetTransactionRequest (chứa ID)
 	// Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)
 	GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error)
+	RegisterBank(context.Context, *KycEntity) (*KycEntity, error)
+	GetBankInfo(context.Context, *KycEntity) (*KycEntity, error)
 	mustEmbedUnimplementedTransactionServiceServer()
 }
 
@@ -147,6 +173,12 @@ func (UnimplementedTransactionServiceServer) Transfer(context.Context, *Transact
 }
 func (UnimplementedTransactionServiceServer) GetTransaction(context.Context, *GetTransactionRequest) (*GetTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
+}
+func (UnimplementedTransactionServiceServer) RegisterBank(context.Context, *KycEntity) (*KycEntity, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterBank not implemented")
+}
+func (UnimplementedTransactionServiceServer) GetBankInfo(context.Context, *KycEntity) (*KycEntity, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBankInfo not implemented")
 }
 func (UnimplementedTransactionServiceServer) mustEmbedUnimplementedTransactionServiceServer() {}
 func (UnimplementedTransactionServiceServer) testEmbeddedByValue()                            {}
@@ -241,6 +273,42 @@ func _TransactionService_GetTransaction_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TransactionService_RegisterBank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KycEntity)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TransactionServiceServer).RegisterBank(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TransactionService_RegisterBank_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TransactionServiceServer).RegisterBank(ctx, req.(*KycEntity))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TransactionService_GetBankInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KycEntity)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TransactionServiceServer).GetBankInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TransactionService_GetBankInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TransactionServiceServer).GetBankInfo(ctx, req.(*KycEntity))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TransactionService_ServiceDesc is the grpc.ServiceDesc for TransactionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -263,6 +331,14 @@ var TransactionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTransaction",
 			Handler:    _TransactionService_GetTransaction_Handler,
+		},
+		{
+			MethodName: "RegisterBank",
+			Handler:    _TransactionService_RegisterBank_Handler,
+		},
+		{
+			MethodName: "GetBankInfo",
+			Handler:    _TransactionService_GetBankInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -5375,7 +5375,7 @@ public final class Transaction {
       "1.Metadata\022(\n\tsignature\030\002 \001(\0132\025.onchain." +
       "v1.Signature\022\"\n\006result\030\003 \001(\0132\022.onchain.v" +
       "1.Result\022$\n\003txn\030\004 \001(\0132\027.onchain.v1.Trans" +
-      "action2\327\002\n\022TransactionService\022K\n\006Credit\022" +
+      "action2\326\003\n\022TransactionService\022K\n\006Credit\022" +
       "\036.onchain.v1.TransactionRequest\032\037.onchai" +
       "n.v1.TransactionResponse\"\000\022J\n\005Debit\022\036.on" +
       "chain.v1.TransactionRequest\032\037.onchain.v1" +
@@ -5383,10 +5383,13 @@ public final class Transaction {
       "hain.v1.TransactionRequest\032\037.onchain.v1." +
       "TransactionResponse\"\000\022Y\n\016GetTransaction\022" +
       "!.onchain.v1.GetTransactionRequest\032\".onc" +
-      "hain.v1.GetTransactionResponse\"\000BR\n\033com." +
-      "blcvn.switching.onchainZ3github.com/blcv" +
-      "n/switching-proto/go/onchain;onchainb\006pr" +
-      "oto3"
+      "hain.v1.GetTransactionResponse\"\000\022>\n\014Regi" +
+      "sterBank\022\025.onchain.v1.KycEntity\032\025.onchai" +
+      "n.v1.KycEntity\"\000\022=\n\013GetBankInfo\022\025.onchai" +
+      "n.v1.KycEntity\032\025.onchain.v1.KycEntity\"\000B" +
+      "R\n\033com.blcvn.switching.onchainZ3github.c" +
+      "om/blcvn/switching-proto/go/onchain;onch" +
+      "ainb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

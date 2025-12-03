@@ -326,12 +326,14 @@ const file_onchain_transaction_proto_rawDesc = "" +
 	"\bmetadata\x18\x01 \x01(\v2\x14.onchain.v1.MetadataR\bmetadata\x123\n" +
 	"\tsignature\x18\x02 \x01(\v2\x15.onchain.v1.SignatureR\tsignature\x12*\n" +
 	"\x06result\x18\x03 \x01(\v2\x12.onchain.v1.ResultR\x06result\x12)\n" +
-	"\x03txn\x18\x04 \x01(\v2\x17.onchain.v1.TransactionR\x03txn2\xd7\x02\n" +
+	"\x03txn\x18\x04 \x01(\v2\x17.onchain.v1.TransactionR\x03txn2\xd6\x03\n" +
 	"\x12TransactionService\x12K\n" +
 	"\x06Credit\x12\x1e.onchain.v1.TransactionRequest\x1a\x1f.onchain.v1.TransactionResponse\"\x00\x12J\n" +
 	"\x05Debit\x12\x1e.onchain.v1.TransactionRequest\x1a\x1f.onchain.v1.TransactionResponse\"\x00\x12M\n" +
 	"\bTransfer\x12\x1e.onchain.v1.TransactionRequest\x1a\x1f.onchain.v1.TransactionResponse\"\x00\x12Y\n" +
-	"\x0eGetTransaction\x12!.onchain.v1.GetTransactionRequest\x1a\".onchain.v1.GetTransactionResponse\"\x00BR\n" +
+	"\x0eGetTransaction\x12!.onchain.v1.GetTransactionRequest\x1a\".onchain.v1.GetTransactionResponse\"\x00\x12>\n" +
+	"\fRegisterBank\x12\x15.onchain.v1.KycEntity\x1a\x15.onchain.v1.KycEntity\"\x00\x12=\n" +
+	"\vGetBankInfo\x12\x15.onchain.v1.KycEntity\x1a\x15.onchain.v1.KycEntity\"\x00BR\n" +
 	"\x1bcom.blcvn.switching.onchainZ3github.com/blcvn/switching-proto/go/onchain;onchainb\x06proto3"
 
 var (
@@ -356,6 +358,7 @@ var file_onchain_transaction_proto_goTypes = []any{
 	(*Signature)(nil),              // 5: onchain.v1.Signature
 	(*Transaction)(nil),            // 6: onchain.v1.Transaction
 	(*Result)(nil),                 // 7: onchain.v1.Result
+	(*KycEntity)(nil),              // 8: onchain.v1.KycEntity
 }
 var file_onchain_transaction_proto_depIdxs = []int32{
 	4,  // 0: onchain.v1.TransactionRequest.metadata:type_name -> onchain.v1.Metadata
@@ -375,12 +378,16 @@ var file_onchain_transaction_proto_depIdxs = []int32{
 	0,  // 14: onchain.v1.TransactionService.Debit:input_type -> onchain.v1.TransactionRequest
 	0,  // 15: onchain.v1.TransactionService.Transfer:input_type -> onchain.v1.TransactionRequest
 	2,  // 16: onchain.v1.TransactionService.GetTransaction:input_type -> onchain.v1.GetTransactionRequest
-	1,  // 17: onchain.v1.TransactionService.Credit:output_type -> onchain.v1.TransactionResponse
-	1,  // 18: onchain.v1.TransactionService.Debit:output_type -> onchain.v1.TransactionResponse
-	1,  // 19: onchain.v1.TransactionService.Transfer:output_type -> onchain.v1.TransactionResponse
-	3,  // 20: onchain.v1.TransactionService.GetTransaction:output_type -> onchain.v1.GetTransactionResponse
-	17, // [17:21] is the sub-list for method output_type
-	13, // [13:17] is the sub-list for method input_type
+	8,  // 17: onchain.v1.TransactionService.RegisterBank:input_type -> onchain.v1.KycEntity
+	8,  // 18: onchain.v1.TransactionService.GetBankInfo:input_type -> onchain.v1.KycEntity
+	1,  // 19: onchain.v1.TransactionService.Credit:output_type -> onchain.v1.TransactionResponse
+	1,  // 20: onchain.v1.TransactionService.Debit:output_type -> onchain.v1.TransactionResponse
+	1,  // 21: onchain.v1.TransactionService.Transfer:output_type -> onchain.v1.TransactionResponse
+	3,  // 22: onchain.v1.TransactionService.GetTransaction:output_type -> onchain.v1.GetTransactionResponse
+	8,  // 23: onchain.v1.TransactionService.RegisterBank:output_type -> onchain.v1.KycEntity
+	8,  // 24: onchain.v1.TransactionService.GetBankInfo:output_type -> onchain.v1.KycEntity
+	19, // [19:25] is the sub-list for method output_type
+	13, // [13:19] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name
 	13, // [13:13] is the sub-list for extension extendee
 	0,  // [0:13] is the sub-list for field type_name

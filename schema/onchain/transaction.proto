@@ -33,6 +33,9 @@ service TransactionService {
   // Yêu cầu: GetTransactionRequest (chứa ID)
   // Trả về: GetTransactionResponse (chứa Transaction nếu tìm thấy)
   rpc GetTransaction(GetTransactionRequest) returns (GetTransactionResponse) {}
+
+  rpc RegisterBank(KycEntity) returns (KycEntity) {}
+  rpc GetBankInfo(KycEntity) returns (KycEntity) {}
 }
 
 // Request dùng để tạo một giao dịch mới.

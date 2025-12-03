@@ -509,10 +509,10 @@ public final class Common {
      * Số tiền chuyển
      * </pre>
      *
-     * <code>double amount = 4;</code>
+     * <code>int64 amount = 4;</code>
      * @return The amount.
      */
-    double getAmount();
+    long getAmount();
 
     /**
      * <pre>
@@ -700,9 +700,9 @@ public final class Common {
               creditor_ = s;
               break;
             }
-            case 33: {
+            case 32: {
 
-              amount_ = input.readDouble();
+              amount_ = input.readInt64();
               break;
             }
             case 42: {
@@ -1061,17 +1061,17 @@ public final class Common {
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 4;
-    private double amount_;
+    private long amount_;
     /**
      * <pre>
      * Số tiền chuyển
      * </pre>
      *
-     * <code>double amount = 4;</code>
+     * <code>int64 amount = 4;</code>
      * @return The amount.
      */
     @java.lang.Override
-    public double getAmount() {
+    public long getAmount() {
       return amount_;
     }
 
@@ -1293,8 +1293,8 @@ public final class Common {
       if (!getCreditorBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, creditor_);
       }
-      if (amount_ != 0D) {
-        output.writeDouble(4, amount_);
+      if (amount_ != 0L) {
+        output.writeInt64(4, amount_);
       }
       if (!getCurrencyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, currency_);
@@ -1329,9 +1329,9 @@ public final class Common {
       if (!getCreditorBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, creditor_);
       }
-      if (amount_ != 0D) {
+      if (amount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, amount_);
+          .computeInt64Size(4, amount_);
       }
       if (!getCurrencyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, currency_);
@@ -1372,9 +1372,8 @@ public final class Common {
           .equals(other.getDebitor())) return false;
       if (!getCreditor()
           .equals(other.getCreditor())) return false;
-      if (java.lang.Double.doubleToLongBits(getAmount())
-          != java.lang.Double.doubleToLongBits(
-              other.getAmount())) return false;
+      if (getAmount()
+          != other.getAmount()) return false;
       if (!getCurrency()
           .equals(other.getCurrency())) return false;
       if (!getStatus()
@@ -1409,7 +1408,7 @@ public final class Common {
       hash = (53 * hash) + getCreditor().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getAmount()));
+          getAmount());
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -1567,7 +1566,7 @@ public final class Common {
 
         creditor_ = "";
 
-        amount_ = 0D;
+        amount_ = 0L;
 
         currency_ = "";
 
@@ -1690,7 +1689,7 @@ public final class Common {
           creditor_ = other.creditor_;
           onChanged();
         }
-        if (other.getAmount() != 0D) {
+        if (other.getAmount() != 0L) {
           setAmount(other.getAmount());
         }
         if (!other.getCurrency().isEmpty()) {
@@ -2027,17 +2026,17 @@ public final class Common {
         return this;
       }
 
-      private double amount_ ;
+      private long amount_ ;
       /**
        * <pre>
        * Số tiền chuyển
        * </pre>
        *
-       * <code>double amount = 4;</code>
+       * <code>int64 amount = 4;</code>
        * @return The amount.
        */
       @java.lang.Override
-      public double getAmount() {
+      public long getAmount() {
         return amount_;
       }
       /**
@@ -2045,11 +2044,11 @@ public final class Common {
        * Số tiền chuyển
        * </pre>
        *
-       * <code>double amount = 4;</code>
+       * <code>int64 amount = 4;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(double value) {
+      public Builder setAmount(long value) {
         
         amount_ = value;
         onChanged();
@@ -2060,12 +2059,12 @@ public final class Common {
        * Số tiền chuyển
        * </pre>
        *
-       * <code>double amount = 4;</code>
+       * <code>int64 amount = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
         
-        amount_ = 0D;
+        amount_ = 0L;
         onChanged();
         return this;
       }
@@ -2801,6 +2800,16 @@ public final class Common {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <pre>
+     * Số dư tài khoản
+     * </pre>
+     *
+     * <code>int64 balance = 6;</code>
+     * @return The balance.
+     */
+    long getBalance();
   }
   /**
    * <pre>
@@ -2884,6 +2893,11 @@ public final class Common {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 48: {
+
+              balance_ = input.readInt64();
               break;
             }
             default: {
@@ -3148,6 +3162,21 @@ public final class Common {
       }
     }
 
+    public static final int BALANCE_FIELD_NUMBER = 6;
+    private long balance_;
+    /**
+     * <pre>
+     * Số dư tài khoản
+     * </pre>
+     *
+     * <code>int64 balance = 6;</code>
+     * @return The balance.
+     */
+    @java.lang.Override
+    public long getBalance() {
+      return balance_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3177,6 +3206,9 @@ public final class Common {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, updatedAt_);
       }
+      if (balance_ != 0L) {
+        output.writeInt64(6, balance_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3200,6 +3232,10 @@ public final class Common {
       }
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, updatedAt_);
+      }
+      if (balance_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, balance_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3226,6 +3262,8 @@ public final class Common {
           .equals(other.getLei())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (getBalance()
+          != other.getBalance()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3247,6 +3285,9 @@ public final class Common {
       hash = (53 * hash) + getLei().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + BALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBalance());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3394,6 +3435,8 @@ public final class Common {
 
         updatedAt_ = "";
 
+        balance_ = 0L;
+
         return this;
       }
 
@@ -3425,6 +3468,7 @@ public final class Common {
         result.country_ = country_;
         result.lei_ = lei_;
         result.updatedAt_ = updatedAt_;
+        result.balance_ = balance_;
         onBuilt();
         return result;
       }
@@ -3492,6 +3536,9 @@ public final class Common {
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
           onChanged();
+        }
+        if (other.getBalance() != 0L) {
+          setBalance(other.getBalance());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3998,6 +4045,49 @@ public final class Common {
   checkByteStringIsUtf8(value);
         
         updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long balance_ ;
+      /**
+       * <pre>
+       * Số dư tài khoản
+       * </pre>
+       *
+       * <code>int64 balance = 6;</code>
+       * @return The balance.
+       */
+      @java.lang.Override
+      public long getBalance() {
+        return balance_;
+      }
+      /**
+       * <pre>
+       * Số dư tài khoản
+       * </pre>
+       *
+       * <code>int64 balance = 6;</code>
+       * @param value The balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalance(long value) {
+        
+        balance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Số dư tài khoản
+       * </pre>
+       *
+       * <code>int64 balance = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBalance() {
+        
+        balance_ = 0L;
         onChanged();
         return this;
       }
@@ -8113,27 +8203,28 @@ public final class Common {
       "le/protobuf/timestamp.proto\032\023onchain/err" +
       "or.proto\"\007\n\005Empty\"\273\002\n\013Transaction\022\026\n\016ins" +
       "truction_id\030\001 \001(\t\022\017\n\007debitor\030\002 \001(\t\022\020\n\010cr" +
-      "editor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\001\022\020\n\010currency" +
+      "editor\030\003 \001(\t\022\016\n\006amount\030\004 \001(\003\022\020\n\010currency" +
       "\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022.\n\ncreated_at\030\007 \001" +
       "(\0132\032.google.protobuf.Timestamp\022-\n\020credit" +
       "or_account\030\010 \001(\0132\023.onchain.v1.Account\0222\n" +
       "\010priority\030\t \001(\0162 .onchain.v1.Transaction" +
       ".Priority\",\n\010Priority\022\n\n\006NORMAL\020\000\022\010\n\004HIG" +
-      "H\020\001\022\n\n\006URGENT\020\002\"X\n\tKycEntity\022\013\n\003bic\030\001 \001(" +
+      "H\020\001\022\n\n\006URGENT\020\002\"i\n\tKycEntity\022\013\n\003bic\030\001 \001(" +
       "\t\022\014\n\004name\030\002 \001(\t\022\017\n\007country\030\003 \001(\t\022\013\n\003lei\030" +
-      "\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\"j\n\007Account\022\014\n\004" +
-      "iban\030\001 \001(\t\022\026\n\016account_number\030\002 \001(\t\022\024\n\014ac" +
-      "count_name\030\003 \001(\t\022\020\n\010currency\030\004 \001(\t\022\021\n\tre" +
-      "ference\030\005 \001(\t\"E\n\010Metadata\022\022\n\nrequest_id\030" +
-      "\001 \001(\t\022\024\n\014request_time\030\002 \001(\003\022\017\n\007version\030\003" +
-      " \001(\t\"\215\001\n\tSignature\0223\n\006s_type\030\001 \001(\0162#.onc" +
-      "hain.v1.Signature.SignatureType\022\t\n\001s\030\002 \001" +
-      "(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureType\022\017\n\013NO_USE" +
-      "_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"?\n\006Result\022$" +
-      "\n\004code\030\001 \001(\0162\026.onchain.v1.ResultCode\022\017\n\007" +
-      "message\030\002 \001(\tBR\n\033com.blcvn.switching.onc" +
-      "hainZ3github.com/blcvn/switching-proto/g" +
-      "o/onchain;onchainb\006proto3"
+      "\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\022\017\n\007balance\030\006 \001" +
+      "(\003\"j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_n" +
+      "umber\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010cur" +
+      "rency\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metada" +
+      "ta\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_time\030\002" +
+      " \001(\003\022\017\n\007version\030\003 \001(\t\"\215\001\n\tSignature\0223\n\006s" +
+      "_type\030\001 \001(\0162#.onchain.v1.Signature.Signa" +
+      "tureType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignat" +
+      "ureType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005" +
+      "\n\001S\020\003\"?\n\006Result\022$\n\004code\030\001 \001(\0162\026.onchain." +
+      "v1.ResultCode\022\017\n\007message\030\002 \001(\tBR\n\033com.bl" +
+      "cvn.switching.onchainZ3github.com/blcvn/" +
+      "switching-proto/go/onchain;onchainb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8158,7 +8249,7 @@ public final class Common {
     internal_static_onchain_v1_KycEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_onchain_v1_KycEntity_descriptor,
-        new java.lang.String[] { "Bic", "Name", "Country", "Lei", "UpdatedAt", });
+        new java.lang.String[] { "Bic", "Name", "Country", "Lei", "UpdatedAt", "Balance", });
     internal_static_onchain_v1_Account_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_onchain_v1_Account_fieldAccessorTable = new

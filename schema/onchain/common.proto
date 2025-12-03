@@ -24,7 +24,7 @@ message Transaction {
   string instruction_id = 1;                 // ID của lệnh chuyển tiền
   string debitor = 2;                        // BIC của người gửi
   string creditor = 3;                       // BIC của người nhận
-  double amount = 4;                         // Số tiền chuyển
+  int64 amount = 4;                         // Số tiền chuyển
   string currency = 5;                       // Mã tiền tệ
   string status = 6;                         // Trạng thái chuyển tiền
   google.protobuf.Timestamp created_at = 7;  // Thời gian tạo lệnh chuyển
@@ -40,6 +40,7 @@ message KycEntity {
   string country = 3;      // Quốc gia
   string lei = 4;          // Legal Entity Identifier
   string updated_at = 5;   // Thời gian cập nhật lần cuối
+  int64 balance = 6;      // Số dư tài khoản
 }
 
 // Thông tin chi tiết tài khoản liên kết với một agent
