@@ -9,6 +9,80 @@ Lưu ý: Các kiểu Metadata, Signature, Transaction, Result được định n
 
 ## Public endpoints
 
+### GET /onchain/bank/info
+- Mô tả: Lấy thông tin
+- Auth: không
+
+- Response 200 (object `v1KycEntity`):
+
+```json
+{
+  "bic": "...",
+  "name": "...",
+  "country": "...",
+  "lei": "...",
+  "updated_at": "...",
+  "balance": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
+### POST /onchain/bank/register
+- Mô tả: Gửi yêu cầu
+- Auth: không
+- Request JSON:
+
+```json
+{
+  "bic": "...",
+  "name": "...",
+  "country": "...",
+  "lei": "...",
+  "updated_at": "...",
+  "balance": "..."
+}
+```
+
+- Response 200 (object `v1KycEntity`):
+
+```json
+{
+  "bic": "...",
+  "name": "...",
+  "country": "...",
+  "lei": "...",
+  "updated_at": "...",
+  "balance": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
 ### POST /onchain/credit
 - Mô tả: Tạo một giao dịch Credit (ghi có) mới.
 Yêu cầu: TransactionRequest

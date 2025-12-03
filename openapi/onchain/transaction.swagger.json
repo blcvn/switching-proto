@@ -17,6 +17,105 @@
     "application/json"
   ],
   "paths": {
+    "/onchain/bank/info": {
+      "get": {
+        "operationId": "TransactionService_GetBankInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1KycEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "bic",
+            "description": "Bank Identifier Code",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "description": "Tên thực thể",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "description": "Quốc gia",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lei",
+            "description": "Legal Entity Identifier",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "updated_at",
+            "description": "Thời gian cập nhật lần cuối",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "balance",
+            "description": "Số dư tài khoản",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    },
+    "/onchain/bank/register": {
+      "post": {
+        "operationId": "TransactionService_RegisterBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1KycEntity"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1KycEntity"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionService"
+        ]
+      }
+    },
     "/onchain/credit": {
       "post": {
         "summary": "Tạo một giao dịch Credit (ghi có) mới.\nYêu cầu: TransactionRequest\nTrả về: TransactionResponse (kết quả + giao dịch đã tạo)",

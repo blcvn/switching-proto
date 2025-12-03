@@ -17,3 +17,9 @@ http:
 
         - selector: onchain.v1.TransactionService.GetTransaction
           get: /onchain/txn/{id}
+
+        - selector: onchain.v1.TransactionService.RegisterBank
+          post: /onchain/bank/register
+          body: "*"
+        - selector: onchain.v1.TransactionService.GetBankInfo
+          get: /onchain/bank/info
