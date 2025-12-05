@@ -21,10 +21,15 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	GpiService_CreatePayment_FullMethodName    = "/offchain.v1.GpiService/CreatePayment"
-	GpiService_GetPayment_FullMethodName       = "/offchain.v1.GpiService/GetPayment"
-	GpiService_GetPaymentStatus_FullMethodName = "/offchain.v1.GpiService/GetPaymentStatus"
-	GpiService_ConfirmPayment_FullMethodName   = "/offchain.v1.GpiService/ConfirmPayment"
+	GpiService_CreatePayment_FullMethodName               = "/offchain.v1.GpiService/CreatePayment"
+	GpiService_GetPayment_FullMethodName                  = "/offchain.v1.GpiService/GetPayment"
+	GpiService_GetPaymentStatus_FullMethodName            = "/offchain.v1.GpiService/GetPaymentStatus"
+	GpiService_ConfirmPayment_FullMethodName              = "/offchain.v1.GpiService/ConfirmPayment"
+	GpiService_UnheldPayment_FullMethodName               = "/offchain.v1.GpiService/UnheldPayment"
+	GpiService_ListUetr_FullMethodName                    = "/offchain.v1.GpiService/ListUetr"
+	GpiService_ListTransactionHistory_FullMethodName      = "/offchain.v1.GpiService/ListTransactionHistory"
+	GpiService_GetTransactionHistoryByUetr_FullMethodName = "/offchain.v1.GpiService/GetTransactionHistoryByUetr"
+	GpiService_InitFundingAccount_FullMethodName          = "/offchain.v1.GpiService/InitFundingAccount"
 )
 
 // GpiServiceClient is the client API for GpiService service.
@@ -41,6 +46,16 @@ type GpiServiceClient interface {
 	GetPaymentStatus(ctx context.Context, in *GetPaymentStatusRequest, opts ...grpc.CallOption) (*GetPaymentResponse, error)
 	// Xác nhận một thanh toán
 	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*ConfirmPaymentResponse, error)
+	// Unhold một thanh toán đã được hold (chỉ sau khi expired)
+	UnheldPayment(ctx context.Context, in *UnheldPaymentRequest, opts ...grpc.CallOption) (*UnheldPaymentResponse, error)
+	// Lấy danh sách tất cả các giao dịch (UETR)
+	ListUetr(ctx context.Context, in *ListUetrRequest, opts ...grpc.CallOption) (*ListUetrResponse, error)
+	// Lấy danh sách tất cả transaction history
+	ListTransactionHistory(ctx context.Context, in *ListTransactionHistoryRequest, opts ...grpc.CallOption) (*ListTransactionHistoryResponse, error)
+	// Lấy transaction history theo UETR
+	GetTransactionHistoryByUetr(ctx context.Context, in *GetTransactionHistoryByUetrRequest, opts ...grpc.CallOption) (*ListTransactionHistoryResponse, error)
+	// Khởi tạo funding cho account (mint và deposit)
+	InitFundingAccount(ctx context.Context, in *InitFundingAccountRequest, opts ...grpc.CallOption) (*InitFundingAccountResponse, error)
 }
 
 type gpiServiceClient struct {
@@ -91,6 +106,56 @@ func (c *gpiServiceClient) ConfirmPayment(ctx context.Context, in *ConfirmPaymen
 	return out, nil
 }
 
+func (c *gpiServiceClient) UnheldPayment(ctx context.Context, in *UnheldPaymentRequest, opts ...grpc.CallOption) (*UnheldPaymentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnheldPaymentResponse)
+	err := c.cc.Invoke(ctx, GpiService_UnheldPayment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gpiServiceClient) ListUetr(ctx context.Context, in *ListUetrRequest, opts ...grpc.CallOption) (*ListUetrResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUetrResponse)
+	err := c.cc.Invoke(ctx, GpiService_ListUetr_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gpiServiceClient) ListTransactionHistory(ctx context.Context, in *ListTransactionHistoryRequest, opts ...grpc.CallOption) (*ListTransactionHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTransactionHistoryResponse)
+	err := c.cc.Invoke(ctx, GpiService_ListTransactionHistory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gpiServiceClient) GetTransactionHistoryByUetr(ctx context.Context, in *GetTransactionHistoryByUetrRequest, opts ...grpc.CallOption) (*ListTransactionHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTransactionHistoryResponse)
+	err := c.cc.Invoke(ctx, GpiService_GetTransactionHistoryByUetr_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *gpiServiceClient) InitFundingAccount(ctx context.Context, in *InitFundingAccountRequest, opts ...grpc.CallOption) (*InitFundingAccountResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InitFundingAccountResponse)
+	err := c.cc.Invoke(ctx, GpiService_InitFundingAccount_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GpiServiceServer is the server API for GpiService service.
 // All implementations must embed UnimplementedGpiServiceServer
 // for forward compatibility.
@@ -105,6 +170,16 @@ type GpiServiceServer interface {
 	GetPaymentStatus(context.Context, *GetPaymentStatusRequest) (*GetPaymentResponse, error)
 	// Xác nhận một thanh toán
 	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error)
+	// Unhold một thanh toán đã được hold (chỉ sau khi expired)
+	UnheldPayment(context.Context, *UnheldPaymentRequest) (*UnheldPaymentResponse, error)
+	// Lấy danh sách tất cả các giao dịch (UETR)
+	ListUetr(context.Context, *ListUetrRequest) (*ListUetrResponse, error)
+	// Lấy danh sách tất cả transaction history
+	ListTransactionHistory(context.Context, *ListTransactionHistoryRequest) (*ListTransactionHistoryResponse, error)
+	// Lấy transaction history theo UETR
+	GetTransactionHistoryByUetr(context.Context, *GetTransactionHistoryByUetrRequest) (*ListTransactionHistoryResponse, error)
+	// Khởi tạo funding cho account (mint và deposit)
+	InitFundingAccount(context.Context, *InitFundingAccountRequest) (*InitFundingAccountResponse, error)
 	mustEmbedUnimplementedGpiServiceServer()
 }
 
@@ -126,6 +201,21 @@ func (UnimplementedGpiServiceServer) GetPaymentStatus(context.Context, *GetPayme
 }
 func (UnimplementedGpiServiceServer) ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*ConfirmPaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfirmPayment not implemented")
+}
+func (UnimplementedGpiServiceServer) UnheldPayment(context.Context, *UnheldPaymentRequest) (*UnheldPaymentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnheldPayment not implemented")
+}
+func (UnimplementedGpiServiceServer) ListUetr(context.Context, *ListUetrRequest) (*ListUetrResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListUetr not implemented")
+}
+func (UnimplementedGpiServiceServer) ListTransactionHistory(context.Context, *ListTransactionHistoryRequest) (*ListTransactionHistoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTransactionHistory not implemented")
+}
+func (UnimplementedGpiServiceServer) GetTransactionHistoryByUetr(context.Context, *GetTransactionHistoryByUetrRequest) (*ListTransactionHistoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTransactionHistoryByUetr not implemented")
+}
+func (UnimplementedGpiServiceServer) InitFundingAccount(context.Context, *InitFundingAccountRequest) (*InitFundingAccountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InitFundingAccount not implemented")
 }
 func (UnimplementedGpiServiceServer) mustEmbedUnimplementedGpiServiceServer() {}
 func (UnimplementedGpiServiceServer) testEmbeddedByValue()                    {}
@@ -220,6 +310,96 @@ func _GpiService_ConfirmPayment_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _GpiService_UnheldPayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnheldPaymentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GpiServiceServer).UnheldPayment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GpiService_UnheldPayment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GpiServiceServer).UnheldPayment(ctx, req.(*UnheldPaymentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GpiService_ListUetr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUetrRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GpiServiceServer).ListUetr(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GpiService_ListUetr_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GpiServiceServer).ListUetr(ctx, req.(*ListUetrRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GpiService_ListTransactionHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTransactionHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GpiServiceServer).ListTransactionHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GpiService_ListTransactionHistory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GpiServiceServer).ListTransactionHistory(ctx, req.(*ListTransactionHistoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GpiService_GetTransactionHistoryByUetr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTransactionHistoryByUetrRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GpiServiceServer).GetTransactionHistoryByUetr(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GpiService_GetTransactionHistoryByUetr_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GpiServiceServer).GetTransactionHistoryByUetr(ctx, req.(*GetTransactionHistoryByUetrRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _GpiService_InitFundingAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InitFundingAccountRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GpiServiceServer).InitFundingAccount(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: GpiService_InitFundingAccount_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GpiServiceServer).InitFundingAccount(ctx, req.(*InitFundingAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // GpiService_ServiceDesc is the grpc.ServiceDesc for GpiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -242,6 +422,26 @@ var GpiService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConfirmPayment",
 			Handler:    _GpiService_ConfirmPayment_Handler,
+		},
+		{
+			MethodName: "UnheldPayment",
+			Handler:    _GpiService_UnheldPayment_Handler,
+		},
+		{
+			MethodName: "ListUetr",
+			Handler:    _GpiService_ListUetr_Handler,
+		},
+		{
+			MethodName: "ListTransactionHistory",
+			Handler:    _GpiService_ListTransactionHistory_Handler,
+		},
+		{
+			MethodName: "GetTransactionHistoryByUetr",
+			Handler:    _GpiService_GetTransactionHistoryByUetr_Handler,
+		},
+		{
+			MethodName: "InitFundingAccount",
+			Handler:    _GpiService_InitFundingAccount_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

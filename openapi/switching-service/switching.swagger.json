@@ -376,6 +376,37 @@
           "SwitchingService"
         ]
       }
+    },
+    "/v1/switching/payments/{uetr}": {
+      "get": {
+        "summary": "Get payment status by UETR (offchain tracking reference).\nReturns full on-chain hold payment information.",
+        "operationId": "SwitchingService_GetPaymentByUetr",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1PaymentInfo"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uetr",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SwitchingService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -568,6 +599,42 @@
           "type": "string"
         }
       }
+    },
+    "v1PaymentInfo": {
+      "type": "object",
+      "properties": {
+        "uetr": {
+          "type": "string"
+        },
+        "sender_bank": {
+          "type": "string"
+        },
+        "receiver_bank": {
+          "type": "string"
+        },
+        "receiver_bank_code": {
+          "type": "string"
+        },
+        "beneficiary_iban": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "hold_timestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "expiry_time": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "description": "Detailed payment information as stored on-chain for a hold payment."
     },
     "v1PaymentResponse": {
       "type": "object",

@@ -973,6 +973,160 @@ func (x *ConfirmPaymentRequest) GetNote() string {
 	return ""
 }
 
+// Request to get payment information by UETR.
+type GetPaymentByUetrRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Uetr          string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPaymentByUetrRequest) Reset() {
+	*x = GetPaymentByUetrRequest{}
+	mi := &file_switching_service_switching_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPaymentByUetrRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPaymentByUetrRequest) ProtoMessage() {}
+
+func (x *GetPaymentByUetrRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_switching_service_switching_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPaymentByUetrRequest.ProtoReflect.Descriptor instead.
+func (*GetPaymentByUetrRequest) Descriptor() ([]byte, []int) {
+	return file_switching_service_switching_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *GetPaymentByUetrRequest) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+// Detailed payment information as stored on-chain for a hold payment.
+type PaymentInfo struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
+	SenderBank       string                 `protobuf:"bytes,2,opt,name=sender_bank,json=senderBank,proto3" json:"sender_bank,omitempty"`
+	ReceiverBank     string                 `protobuf:"bytes,3,opt,name=receiver_bank,json=receiverBank,proto3" json:"receiver_bank,omitempty"`
+	ReceiverBankCode string                 `protobuf:"bytes,4,opt,name=receiver_bank_code,json=receiverBankCode,proto3" json:"receiver_bank_code,omitempty"`
+	BeneficiaryIban  string                 `protobuf:"bytes,5,opt,name=beneficiary_iban,json=beneficiaryIban,proto3" json:"beneficiary_iban,omitempty"`
+	Amount           string                 `protobuf:"bytes,6,opt,name=amount,proto3" json:"amount,omitempty"`
+	HoldTimestamp    int64                  `protobuf:"varint,7,opt,name=hold_timestamp,json=holdTimestamp,proto3" json:"hold_timestamp,omitempty"`
+	Status           uint32                 `protobuf:"varint,8,opt,name=status,proto3" json:"status,omitempty"`
+	ExpiryTime       int64                  `protobuf:"varint,9,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *PaymentInfo) Reset() {
+	*x = PaymentInfo{}
+	mi := &file_switching_service_switching_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PaymentInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PaymentInfo) ProtoMessage() {}
+
+func (x *PaymentInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_switching_service_switching_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PaymentInfo.ProtoReflect.Descriptor instead.
+func (*PaymentInfo) Descriptor() ([]byte, []int) {
+	return file_switching_service_switching_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *PaymentInfo) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetSenderBank() string {
+	if x != nil {
+		return x.SenderBank
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetReceiverBank() string {
+	if x != nil {
+		return x.ReceiverBank
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetReceiverBankCode() string {
+	if x != nil {
+		return x.ReceiverBankCode
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetBeneficiaryIban() string {
+	if x != nil {
+		return x.BeneficiaryIban
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetAmount() string {
+	if x != nil {
+		return x.Amount
+	}
+	return ""
+}
+
+func (x *PaymentInfo) GetHoldTimestamp() int64 {
+	if x != nil {
+		return x.HoldTimestamp
+	}
+	return 0
+}
+
+func (x *PaymentInfo) GetStatus() uint32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+func (x *PaymentInfo) GetExpiryTime() int64 {
+	if x != nil {
+		return x.ExpiryTime
+	}
+	return 0
+}
+
 type UnheldPaymentRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Uetr             string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`
@@ -985,7 +1139,7 @@ type UnheldPaymentRequest struct {
 
 func (x *UnheldPaymentRequest) Reset() {
 	*x = UnheldPaymentRequest{}
-	mi := &file_switching_service_switching_proto_msgTypes[14]
+	mi := &file_switching_service_switching_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -997,7 +1151,7 @@ func (x *UnheldPaymentRequest) String() string {
 func (*UnheldPaymentRequest) ProtoMessage() {}
 
 func (x *UnheldPaymentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_switching_service_switching_proto_msgTypes[14]
+	mi := &file_switching_service_switching_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1010,7 +1164,7 @@ func (x *UnheldPaymentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnheldPaymentRequest.ProtoReflect.Descriptor instead.
 func (*UnheldPaymentRequest) Descriptor() ([]byte, []int) {
-	return file_switching_service_switching_proto_rawDescGZIP(), []int{14}
+	return file_switching_service_switching_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *UnheldPaymentRequest) GetUetr() string {
@@ -1120,12 +1274,26 @@ const file_switching_service_switching_proto_rawDesc = "" +
 	"\x11from_bank_account\x18\x04 \x01(\tR\x0ffromBankAccount\x12&\n" +
 	"\x0fto_bank_account\x18\x05 \x01(\tR\rtoBankAccount\x12!\n" +
 	"\ftx_reference\x18\x06 \x01(\tR\vtxReference\x12\x12\n" +
-	"\x04note\x18\a \x01(\tR\x04note\"\x95\x01\n" +
+	"\x04note\x18\a \x01(\tR\x04note\"-\n" +
+	"\x17GetPaymentByUetrRequest\x12\x12\n" +
+	"\x04uetr\x18\x01 \x01(\tR\x04uetr\"\xb8\x02\n" +
+	"\vPaymentInfo\x12\x12\n" +
+	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x1f\n" +
+	"\vsender_bank\x18\x02 \x01(\tR\n" +
+	"senderBank\x12#\n" +
+	"\rreceiver_bank\x18\x03 \x01(\tR\freceiverBank\x12,\n" +
+	"\x12receiver_bank_code\x18\x04 \x01(\tR\x10receiverBankCode\x12)\n" +
+	"\x10beneficiary_iban\x18\x05 \x01(\tR\x0fbeneficiaryIban\x12\x16\n" +
+	"\x06amount\x18\x06 \x01(\tR\x06amount\x12%\n" +
+	"\x0ehold_timestamp\x18\a \x01(\x03R\rholdTimestamp\x12\x16\n" +
+	"\x06status\x18\b \x01(\rR\x06status\x12\x1f\n" +
+	"\vexpiry_time\x18\t \x01(\x03R\n" +
+	"expiryTime\"\x95\x01\n" +
 	"\x14UnheldPaymentRequest\x12\x12\n" +
 	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12#\n" +
 	"\rreceiver_bank\x18\x02 \x01(\tR\freceiverBank\x12,\n" +
 	"\x12receiver_bank_code\x18\x04 \x01(\tR\x10receiverBankCode\x12\x16\n" +
-	"\x06reason\x18\x03 \x01(\tR\x06reason2\xfb\b\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason2\xdf\t\n" +
 	"\x10SwitchingService\x12c\n" +
 	"\fRegisterBank\x12(.switchingservice.v1.RegisterBankRequest\x1a).switchingservice.v1.RegisterBankResponse\x12g\n" +
 	"\x10QueryBankBalance\x12(.switchingservice.v1.QueryBalanceRequest\x1a).switchingservice.v1.QueryBalanceResponse\x12h\n" +
@@ -1134,7 +1302,8 @@ const file_switching_service_switching_proto_rawDesc = "" +
 	"\x10HoldBatchPayment\x12,.switchingservice.v1.HoldBatchPaymentRequest\x1a).switchingservice.v1.BatchPaymentResponse\x12d\n" +
 	"\rCancelPayment\x12).switchingservice.v1.CancelPaymentRequest\x1a(.switchingservice.v1.TransactionResponse\x12d\n" +
 	"\rUnheldPayment\x12).switchingservice.v1.UnheldPaymentRequest\x1a(.switchingservice.v1.TransactionResponse\x12b\n" +
-	"\x0eConfirmPayment\x12*.switchingservice.v1.ConfirmPaymentRequest\x1a$.switchingservice.v1.PaymentResponse\x12d\n" +
+	"\x0eConfirmPayment\x12*.switchingservice.v1.ConfirmPaymentRequest\x1a$.switchingservice.v1.PaymentResponse\x12b\n" +
+	"\x10GetPaymentByUetr\x12,.switchingservice.v1.GetPaymentByUetrRequest\x1a .switchingservice.v1.PaymentInfo\x12d\n" +
 	"\vDepositBank\x12+.switchingservice.v1.BankTransactionRequest\x1a(.switchingservice.v1.TransactionResponse\x12e\n" +
 	"\fWithdrawBank\x12+.switchingservice.v1.BankTransactionRequest\x1a(.switchingservice.v1.TransactionResponse\x12g\n" +
 	"\x0eMintToBankCode\x12+.switchingservice.v1.BankTransactionRequest\x1a(.switchingservice.v1.TransactionResponseBm\n" +
@@ -1152,7 +1321,7 @@ func file_switching_service_switching_proto_rawDescGZIP() []byte {
 	return file_switching_service_switching_proto_rawDescData
 }
 
-var file_switching_service_switching_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_switching_service_switching_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_switching_service_switching_proto_goTypes = []any{
 	(*RegisterBankRequest)(nil),     // 0: switchingservice.v1.RegisterBankRequest
 	(*RegisterBankResponse)(nil),    // 1: switchingservice.v1.RegisterBankResponse
@@ -1168,7 +1337,9 @@ var file_switching_service_switching_proto_goTypes = []any{
 	(*PaymentResult)(nil),           // 11: switchingservice.v1.PaymentResult
 	(*CancelPaymentRequest)(nil),    // 12: switchingservice.v1.CancelPaymentRequest
 	(*ConfirmPaymentRequest)(nil),   // 13: switchingservice.v1.ConfirmPaymentRequest
-	(*UnheldPaymentRequest)(nil),    // 14: switchingservice.v1.UnheldPaymentRequest
+	(*GetPaymentByUetrRequest)(nil), // 14: switchingservice.v1.GetPaymentByUetrRequest
+	(*PaymentInfo)(nil),             // 15: switchingservice.v1.PaymentInfo
+	(*UnheldPaymentRequest)(nil),    // 16: switchingservice.v1.UnheldPaymentRequest
 }
 var file_switching_service_switching_proto_depIdxs = []int32{
 	8,  // 0: switchingservice.v1.HoldBatchPaymentRequest.items:type_name -> switchingservice.v1.HoldPaymentItem
@@ -1179,24 +1350,26 @@ var file_switching_service_switching_proto_depIdxs = []int32{
 	6,  // 5: switchingservice.v1.SwitchingService.HoldPayment:input_type -> switchingservice.v1.HoldPaymentRequest
 	7,  // 6: switchingservice.v1.SwitchingService.HoldBatchPayment:input_type -> switchingservice.v1.HoldBatchPaymentRequest
 	12, // 7: switchingservice.v1.SwitchingService.CancelPayment:input_type -> switchingservice.v1.CancelPaymentRequest
-	14, // 8: switchingservice.v1.SwitchingService.UnheldPayment:input_type -> switchingservice.v1.UnheldPaymentRequest
+	16, // 8: switchingservice.v1.SwitchingService.UnheldPayment:input_type -> switchingservice.v1.UnheldPaymentRequest
 	13, // 9: switchingservice.v1.SwitchingService.ConfirmPayment:input_type -> switchingservice.v1.ConfirmPaymentRequest
-	5,  // 10: switchingservice.v1.SwitchingService.DepositBank:input_type -> switchingservice.v1.BankTransactionRequest
-	5,  // 11: switchingservice.v1.SwitchingService.WithdrawBank:input_type -> switchingservice.v1.BankTransactionRequest
-	5,  // 12: switchingservice.v1.SwitchingService.MintToBankCode:input_type -> switchingservice.v1.BankTransactionRequest
-	1,  // 13: switchingservice.v1.SwitchingService.RegisterBank:output_type -> switchingservice.v1.RegisterBankResponse
-	4,  // 14: switchingservice.v1.SwitchingService.QueryBankBalance:output_type -> switchingservice.v1.QueryBalanceResponse
-	4,  // 15: switchingservice.v1.SwitchingService.QueryTokenBalance:output_type -> switchingservice.v1.QueryBalanceResponse
-	9,  // 16: switchingservice.v1.SwitchingService.HoldPayment:output_type -> switchingservice.v1.PaymentResponse
-	10, // 17: switchingservice.v1.SwitchingService.HoldBatchPayment:output_type -> switchingservice.v1.BatchPaymentResponse
-	2,  // 18: switchingservice.v1.SwitchingService.CancelPayment:output_type -> switchingservice.v1.TransactionResponse
-	2,  // 19: switchingservice.v1.SwitchingService.UnheldPayment:output_type -> switchingservice.v1.TransactionResponse
-	9,  // 20: switchingservice.v1.SwitchingService.ConfirmPayment:output_type -> switchingservice.v1.PaymentResponse
-	2,  // 21: switchingservice.v1.SwitchingService.DepositBank:output_type -> switchingservice.v1.TransactionResponse
-	2,  // 22: switchingservice.v1.SwitchingService.WithdrawBank:output_type -> switchingservice.v1.TransactionResponse
-	2,  // 23: switchingservice.v1.SwitchingService.MintToBankCode:output_type -> switchingservice.v1.TransactionResponse
-	13, // [13:24] is the sub-list for method output_type
-	2,  // [2:13] is the sub-list for method input_type
+	14, // 10: switchingservice.v1.SwitchingService.GetPaymentByUetr:input_type -> switchingservice.v1.GetPaymentByUetrRequest
+	5,  // 11: switchingservice.v1.SwitchingService.DepositBank:input_type -> switchingservice.v1.BankTransactionRequest
+	5,  // 12: switchingservice.v1.SwitchingService.WithdrawBank:input_type -> switchingservice.v1.BankTransactionRequest
+	5,  // 13: switchingservice.v1.SwitchingService.MintToBankCode:input_type -> switchingservice.v1.BankTransactionRequest
+	1,  // 14: switchingservice.v1.SwitchingService.RegisterBank:output_type -> switchingservice.v1.RegisterBankResponse
+	4,  // 15: switchingservice.v1.SwitchingService.QueryBankBalance:output_type -> switchingservice.v1.QueryBalanceResponse
+	4,  // 16: switchingservice.v1.SwitchingService.QueryTokenBalance:output_type -> switchingservice.v1.QueryBalanceResponse
+	9,  // 17: switchingservice.v1.SwitchingService.HoldPayment:output_type -> switchingservice.v1.PaymentResponse
+	10, // 18: switchingservice.v1.SwitchingService.HoldBatchPayment:output_type -> switchingservice.v1.BatchPaymentResponse
+	2,  // 19: switchingservice.v1.SwitchingService.CancelPayment:output_type -> switchingservice.v1.TransactionResponse
+	2,  // 20: switchingservice.v1.SwitchingService.UnheldPayment:output_type -> switchingservice.v1.TransactionResponse
+	9,  // 21: switchingservice.v1.SwitchingService.ConfirmPayment:output_type -> switchingservice.v1.PaymentResponse
+	15, // 22: switchingservice.v1.SwitchingService.GetPaymentByUetr:output_type -> switchingservice.v1.PaymentInfo
+	2,  // 23: switchingservice.v1.SwitchingService.DepositBank:output_type -> switchingservice.v1.TransactionResponse
+	2,  // 24: switchingservice.v1.SwitchingService.WithdrawBank:output_type -> switchingservice.v1.TransactionResponse
+	2,  // 25: switchingservice.v1.SwitchingService.MintToBankCode:output_type -> switchingservice.v1.TransactionResponse
+	14, // [14:26] is the sub-list for method output_type
+	2,  // [2:14] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
 	2,  // [2:2] is the sub-list for extension extendee
 	0,  // [0:2] is the sub-list for field type_name
@@ -1213,7 +1386,7 @@ func file_switching_service_switching_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_switching_service_switching_proto_rawDesc), len(file_switching_service_switching_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   15,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -32,6 +32,9 @@ http:
       post: /v1/switching/payments/confirm
       body: "*"
 
+    - selector: switchingservice.v1.SwitchingService.GetPaymentByUetr
+      get: /v1/switching/payments/{uetr}
+
     - selector: switchingservice.v1.SwitchingService.DepositBank
       post: /v1/switching/banks/deposit
       body: "*"

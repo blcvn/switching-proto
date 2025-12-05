@@ -27,6 +27,7 @@ const (
 	SwitchingService_CancelPayment_FullMethodName     = "/switchingservice.v1.SwitchingService/CancelPayment"
 	SwitchingService_UnheldPayment_FullMethodName     = "/switchingservice.v1.SwitchingService/UnheldPayment"
 	SwitchingService_ConfirmPayment_FullMethodName    = "/switchingservice.v1.SwitchingService/ConfirmPayment"
+	SwitchingService_GetPaymentByUetr_FullMethodName  = "/switchingservice.v1.SwitchingService/GetPaymentByUetr"
 	SwitchingService_DepositBank_FullMethodName       = "/switchingservice.v1.SwitchingService/DepositBank"
 	SwitchingService_WithdrawBank_FullMethodName      = "/switchingservice.v1.SwitchingService/WithdrawBank"
 	SwitchingService_MintToBankCode_FullMethodName    = "/switchingservice.v1.SwitchingService/MintToBankCode"
@@ -55,6 +56,9 @@ type SwitchingServiceClient interface {
 	UnheldPayment(ctx context.Context, in *UnheldPaymentRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
 	// Confirm a held payment and trigger settlement on-chain.
 	ConfirmPayment(ctx context.Context, in *ConfirmPaymentRequest, opts ...grpc.CallOption) (*PaymentResponse, error)
+	// Get payment status by UETR (offchain tracking reference).
+	// Returns full on-chain hold payment information.
+	GetPaymentByUetr(ctx context.Context, in *GetPaymentByUetrRequest, opts ...grpc.CallOption) (*PaymentInfo, error)
 	// Deposit settlement tokens for a bank.
 	DepositBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error)
 	// Withdraw settlement tokens for a bank.
@@ -151,6 +155,16 @@ func (c *switchingServiceClient) ConfirmPayment(ctx context.Context, in *Confirm
 	return out, nil
 }
 
+func (c *switchingServiceClient) GetPaymentByUetr(ctx context.Context, in *GetPaymentByUetrRequest, opts ...grpc.CallOption) (*PaymentInfo, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PaymentInfo)
+	err := c.cc.Invoke(ctx, SwitchingService_GetPaymentByUetr_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *switchingServiceClient) DepositBank(ctx context.Context, in *BankTransactionRequest, opts ...grpc.CallOption) (*TransactionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(TransactionResponse)
@@ -204,6 +218,9 @@ type SwitchingServiceServer interface {
 	UnheldPayment(context.Context, *UnheldPaymentRequest) (*TransactionResponse, error)
 	// Confirm a held payment and trigger settlement on-chain.
 	ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*PaymentResponse, error)
+	// Get payment status by UETR (offchain tracking reference).
+	// Returns full on-chain hold payment information.
+	GetPaymentByUetr(context.Context, *GetPaymentByUetrRequest) (*PaymentInfo, error)
 	// Deposit settlement tokens for a bank.
 	DepositBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error)
 	// Withdraw settlement tokens for a bank.
@@ -243,6 +260,9 @@ func (UnimplementedSwitchingServiceServer) UnheldPayment(context.Context, *Unhel
 }
 func (UnimplementedSwitchingServiceServer) ConfirmPayment(context.Context, *ConfirmPaymentRequest) (*PaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfirmPayment not implemented")
+}
+func (UnimplementedSwitchingServiceServer) GetPaymentByUetr(context.Context, *GetPaymentByUetrRequest) (*PaymentInfo, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPaymentByUetr not implemented")
 }
 func (UnimplementedSwitchingServiceServer) DepositBank(context.Context, *BankTransactionRequest) (*TransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DepositBank not implemented")
@@ -418,6 +438,24 @@ func _SwitchingService_ConfirmPayment_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SwitchingService_GetPaymentByUetr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPaymentByUetrRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SwitchingServiceServer).GetPaymentByUetr(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: SwitchingService_GetPaymentByUetr_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SwitchingServiceServer).GetPaymentByUetr(ctx, req.(*GetPaymentByUetrRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SwitchingService_DepositBank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(BankTransactionRequest)
 	if err := dec(in); err != nil {
@@ -510,6 +548,10 @@ var SwitchingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConfirmPayment",
 			Handler:    _SwitchingService_ConfirmPayment_Handler,
+		},
+		{
+			MethodName: "GetPaymentByUetr",
+			Handler:    _SwitchingService_GetPaymentByUetr_Handler,
 		},
 		{
 			MethodName: "DepositBank",

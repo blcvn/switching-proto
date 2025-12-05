@@ -362,14 +362,16 @@ func (x *Transfer) GetCreditorAccount() *Account {
 
 // Thông tin thực thể KYC (Know Your Customer)
 type KycEntity struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Bic           string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`                              // Bank Identifier Code
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                            // Tên tổ chức
-	Country       string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`                      // Mã quốc gia
-	Lei           string                 `protobuf:"bytes,4,opt,name=lei,proto3" json:"lei,omitempty"`                              // Legal Entity Identifier
-	UpdatedAt     string                 `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // Thời gian cập nhật lần cuối
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Bic            string                 `protobuf:"bytes,1,opt,name=bic,proto3" json:"bic,omitempty"`                                               // Bank Identifier Code
+	Name           string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                             // Tên tổ chức
+	Country        string                 `protobuf:"bytes,3,opt,name=country,proto3" json:"country,omitempty"`                                       // Mã quốc gia
+	Lei            string                 `protobuf:"bytes,4,opt,name=lei,proto3" json:"lei,omitempty"`                                               // Legal Entity Identifier
+	UpdatedAt      string                 `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`                  // Thời gian cập nhật lần cuối
+	AccessPointUrl string                 `protobuf:"bytes,6,opt,name=access_point_url,json=accessPointUrl,proto3" json:"access_point_url,omitempty"` // URL của access point
+	Balance        string                 `protobuf:"bytes,7,opt,name=balance,proto3" json:"balance,omitempty"`                                       // Số dư trong smart contract
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *KycEntity) Reset() {
@@ -433,6 +435,20 @@ func (x *KycEntity) GetLei() string {
 func (x *KycEntity) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
+	}
+	return ""
+}
+
+func (x *KycEntity) GetAccessPointUrl() string {
+	if x != nil {
+		return x.AccessPointUrl
+	}
+	return ""
+}
+
+func (x *KycEntity) GetBalance() string {
+	if x != nil {
+		return x.Balance
 	}
 	return ""
 }
@@ -726,14 +742,16 @@ const file_offchain_common_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
 	"\x0edebtor_account\x18\b \x01(\v2\x14.offchain.v1.AccountR\rdebtorAccount\x12?\n" +
-	"\x10creditor_account\x18\t \x01(\v2\x14.offchain.v1.AccountR\x0fcreditorAccount\"|\n" +
+	"\x10creditor_account\x18\t \x01(\v2\x14.offchain.v1.AccountR\x0fcreditorAccount\"\xc0\x01\n" +
 	"\tKycEntity\x12\x10\n" +
 	"\x03bic\x18\x01 \x01(\tR\x03bic\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
 	"\acountry\x18\x03 \x01(\tR\acountry\x12\x10\n" +
 	"\x03lei\x18\x04 \x01(\tR\x03lei\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x05 \x01(\tR\tupdatedAt\"\xa1\x01\n" +
+	"updated_at\x18\x05 \x01(\tR\tupdatedAt\x12(\n" +
+	"\x10access_point_url\x18\x06 \x01(\tR\x0eaccessPointUrl\x12\x18\n" +
+	"\abalance\x18\a \x01(\tR\abalance\"\xa1\x01\n" +
 	"\aAccount\x12\x12\n" +
 	"\x04iban\x18\x01 \x01(\tR\x04iban\x12%\n" +
 	"\x0eaccount_number\x18\x02 \x01(\tR\raccountNumber\x12!\n" +

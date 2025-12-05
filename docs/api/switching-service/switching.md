@@ -422,6 +422,41 @@
 }
 ```
 
+### GET /v1/switching/payments/{uetr}
+- Mô tả: Get payment status by UETR (offchain tracking reference).
+Returns full on-chain hold payment information. theo `uetr`
+- Auth: không
+
+- Response 200 (object `v1PaymentInfo`):
+
+```json
+{
+  "uetr": "...",
+  "sender_bank": "...",
+  "receiver_bank": "...",
+  "receiver_bank_code": "...",
+  "beneficiary_iban": "...",
+  "amount": "...",
+  "hold_timestamp": "...",
+  "status": 1000,
+  "expiry_time": "..."
+}
+```
+
+- Response default: An unexpected error response.
+
+```json
+{
+  "code": 1000,
+  "message": "...",
+  "details": [
+    {
+      "@type": "..."
+    }
+  ]
+}
+```
+
 ---
 
 ## Notes chung / Behaviour

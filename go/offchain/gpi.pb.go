@@ -604,6 +604,850 @@ func (x *ConfirmPaymentResponse) GetData() *Payment {
 	return nil
 }
 
+// Yêu cầu unhold một thanh toán
+type UnheldPaymentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Uetr          string                 `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`           // Unique End-to-End Transaction Reference
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnheldPaymentRequest) Reset() {
+	*x = UnheldPaymentRequest{}
+	mi := &file_offchain_gpi_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnheldPaymentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnheldPaymentRequest) ProtoMessage() {}
+
+func (x *UnheldPaymentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnheldPaymentRequest.ProtoReflect.Descriptor instead.
+func (*UnheldPaymentRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *UnheldPaymentRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *UnheldPaymentRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *UnheldPaymentRequest) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+// Phản hồi unhold thanh toán
+type UnheldPaymentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *Payment               `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu thanh toán đã unhold
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UnheldPaymentResponse) Reset() {
+	*x = UnheldPaymentResponse{}
+	mi := &file_offchain_gpi_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnheldPaymentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnheldPaymentResponse) ProtoMessage() {}
+
+func (x *UnheldPaymentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnheldPaymentResponse.ProtoReflect.Descriptor instead.
+func (*UnheldPaymentResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *UnheldPaymentResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *UnheldPaymentResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *UnheldPaymentResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *UnheldPaymentResponse) GetData() *Payment {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Yêu cầu lấy danh sách tất cả các giao dịch (UETR)
+type ListUetrRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUetrRequest) Reset() {
+	*x = ListUetrRequest{}
+	mi := &file_offchain_gpi_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUetrRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUetrRequest) ProtoMessage() {}
+
+func (x *ListUetrRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUetrRequest.ProtoReflect.Descriptor instead.
+func (*ListUetrRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ListUetrRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ListUetrRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+// Phản hồi danh sách các giao dịch (UETR)
+type ListUetrResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          []*Payment             `protobuf:"bytes,4,rep,name=data,proto3" json:"data,omitempty"`           // Danh sách các thanh toán
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUetrResponse) Reset() {
+	*x = ListUetrResponse{}
+	mi := &file_offchain_gpi_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUetrResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUetrResponse) ProtoMessage() {}
+
+func (x *ListUetrResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUetrResponse.ProtoReflect.Descriptor instead.
+func (*ListUetrResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *ListUetrResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ListUetrResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *ListUetrResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *ListUetrResponse) GetData() []*Payment {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Transaction History message
+type TransactionHistory struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Uetr               string                 `protobuf:"bytes,1,opt,name=uetr,proto3" json:"uetr,omitempty"`                                                       // Unique End-to-End Transaction Reference
+	TxHash             string                 `protobuf:"bytes,2,opt,name=tx_hash,json=txHash,proto3" json:"tx_hash,omitempty"`                                     // Transaction hash từ switching service
+	TransactionType    string                 `protobuf:"bytes,3,opt,name=transaction_type,json=transactionType,proto3" json:"transaction_type,omitempty"`          // Loại transaction: HOLD, CONFIRM, UNHELD, CANCEL
+	DebtorAgent        string                 `protobuf:"bytes,4,opt,name=debtor_agent,json=debtorAgent,proto3" json:"debtor_agent,omitempty"`                      // Bank address của người gửi
+	CreditorAgent      string                 `protobuf:"bytes,5,opt,name=creditor_agent,json=creditorAgent,proto3" json:"creditor_agent,omitempty"`                // Bank address của người nhận
+	BeneficiaryAccount string                 `protobuf:"bytes,6,opt,name=beneficiary_account,json=beneficiaryAccount,proto3" json:"beneficiary_account,omitempty"` // IBAN của beneficiary account
+	Amount             float64                `protobuf:"fixed64,7,opt,name=amount,proto3" json:"amount,omitempty"`                                                 // Số tiền
+	Currency           string                 `protobuf:"bytes,8,opt,name=currency,proto3" json:"currency,omitempty"`                                               // Mã tiền tệ
+	Status             string                 `protobuf:"bytes,9,opt,name=status,proto3" json:"status,omitempty"`                                                   // Trạng thái
+	CreatedAt          string                 `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`                           // Thời gian tạo (RFC3339 format)
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *TransactionHistory) Reset() {
+	*x = TransactionHistory{}
+	mi := &file_offchain_gpi_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TransactionHistory) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TransactionHistory) ProtoMessage() {}
+
+func (x *TransactionHistory) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TransactionHistory.ProtoReflect.Descriptor instead.
+func (*TransactionHistory) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *TransactionHistory) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetTxHash() string {
+	if x != nil {
+		return x.TxHash
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetTransactionType() string {
+	if x != nil {
+		return x.TransactionType
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetDebtorAgent() string {
+	if x != nil {
+		return x.DebtorAgent
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetCreditorAgent() string {
+	if x != nil {
+		return x.CreditorAgent
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetBeneficiaryAccount() string {
+	if x != nil {
+		return x.BeneficiaryAccount
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetAmount() float64 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *TransactionHistory) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TransactionHistory) GetCreatedAt() string {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return ""
+}
+
+// Yêu cầu lấy danh sách transaction history
+type ListTransactionHistoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTransactionHistoryRequest) Reset() {
+	*x = ListTransactionHistoryRequest{}
+	mi := &file_offchain_gpi_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTransactionHistoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTransactionHistoryRequest) ProtoMessage() {}
+
+func (x *ListTransactionHistoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTransactionHistoryRequest.ProtoReflect.Descriptor instead.
+func (*ListTransactionHistoryRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListTransactionHistoryRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ListTransactionHistoryRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+// Phản hồi danh sách transaction history
+type ListTransactionHistoryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          []*TransactionHistory  `protobuf:"bytes,4,rep,name=data,proto3" json:"data,omitempty"`           // Danh sách transaction history
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTransactionHistoryResponse) Reset() {
+	*x = ListTransactionHistoryResponse{}
+	mi := &file_offchain_gpi_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTransactionHistoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTransactionHistoryResponse) ProtoMessage() {}
+
+func (x *ListTransactionHistoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTransactionHistoryResponse.ProtoReflect.Descriptor instead.
+func (*ListTransactionHistoryResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ListTransactionHistoryResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *ListTransactionHistoryResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *ListTransactionHistoryResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *ListTransactionHistoryResponse) GetData() []*TransactionHistory {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Yêu cầu lấy transaction history theo UETR
+type GetTransactionHistoryByUetrRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Uetr          string                 `protobuf:"bytes,3,opt,name=uetr,proto3" json:"uetr,omitempty"`           // Unique End-to-End Transaction Reference
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTransactionHistoryByUetrRequest) Reset() {
+	*x = GetTransactionHistoryByUetrRequest{}
+	mi := &file_offchain_gpi_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTransactionHistoryByUetrRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTransactionHistoryByUetrRequest) ProtoMessage() {}
+
+func (x *GetTransactionHistoryByUetrRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTransactionHistoryByUetrRequest.ProtoReflect.Descriptor instead.
+func (*GetTransactionHistoryByUetrRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *GetTransactionHistoryByUetrRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *GetTransactionHistoryByUetrRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *GetTransactionHistoryByUetrRequest) GetUetr() string {
+	if x != nil {
+		return x.Uetr
+	}
+	return ""
+}
+
+// Yêu cầu khởi tạo funding cho account
+type InitFundingAccountRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của request
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của request
+	Data          *FundingAccountData    `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`           // Dữ liệu funding account
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *InitFundingAccountRequest) Reset() {
+	*x = InitFundingAccountRequest{}
+	mi := &file_offchain_gpi_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InitFundingAccountRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InitFundingAccountRequest) ProtoMessage() {}
+
+func (x *InitFundingAccountRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InitFundingAccountRequest.ProtoReflect.Descriptor instead.
+func (*InitFundingAccountRequest) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *InitFundingAccountRequest) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *InitFundingAccountRequest) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *InitFundingAccountRequest) GetData() *FundingAccountData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Dữ liệu funding account
+type FundingAccountData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BankCode      string                 `protobuf:"bytes,1,opt,name=bank_code,json=bankCode,proto3" json:"bank_code,omitempty"`                  // BIC code của bank
+	MintAmount    float64                `protobuf:"fixed64,2,opt,name=mint_amount,json=mintAmount,proto3" json:"mint_amount,omitempty"`          // Số tiền để mint
+	DepositAmount float64                `protobuf:"fixed64,3,opt,name=deposit_amount,json=depositAmount,proto3" json:"deposit_amount,omitempty"` // Số tiền để deposit
+	Currency      string                 `protobuf:"bytes,4,opt,name=currency,proto3" json:"currency,omitempty"`                                  // Mã tiền tệ (ví dụ: USD, VND)
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FundingAccountData) Reset() {
+	*x = FundingAccountData{}
+	mi := &file_offchain_gpi_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FundingAccountData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FundingAccountData) ProtoMessage() {}
+
+func (x *FundingAccountData) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FundingAccountData.ProtoReflect.Descriptor instead.
+func (*FundingAccountData) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *FundingAccountData) GetBankCode() string {
+	if x != nil {
+		return x.BankCode
+	}
+	return ""
+}
+
+func (x *FundingAccountData) GetMintAmount() float64 {
+	if x != nil {
+		return x.MintAmount
+	}
+	return 0
+}
+
+func (x *FundingAccountData) GetDepositAmount() float64 {
+	if x != nil {
+		return x.DepositAmount
+	}
+	return 0
+}
+
+func (x *FundingAccountData) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
+// Phản hồi khởi tạo funding cho account
+type InitFundingAccountResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *Metadata              `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`   // Metadata của response
+	Signature     *Signature             `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"` // Chữ ký số của response
+	Result        *Result                `protobuf:"bytes,3,opt,name=result,proto3" json:"result,omitempty"`       // Kết quả thực thi
+	Data          *FundingAccountResult  `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`           // Kết quả funding
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *InitFundingAccountResponse) Reset() {
+	*x = InitFundingAccountResponse{}
+	mi := &file_offchain_gpi_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InitFundingAccountResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InitFundingAccountResponse) ProtoMessage() {}
+
+func (x *InitFundingAccountResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InitFundingAccountResponse.ProtoReflect.Descriptor instead.
+func (*InitFundingAccountResponse) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *InitFundingAccountResponse) GetMetadata() *Metadata {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *InitFundingAccountResponse) GetSignature() *Signature {
+	if x != nil {
+		return x.Signature
+	}
+	return nil
+}
+
+func (x *InitFundingAccountResponse) GetResult() *Result {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+func (x *InitFundingAccountResponse) GetData() *FundingAccountResult {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Kết quả funding account
+type FundingAccountResult struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BankCode      string                 `protobuf:"bytes,1,opt,name=bank_code,json=bankCode,proto3" json:"bank_code,omitempty"`                  // BIC code của bank
+	BankAddress   string                 `protobuf:"bytes,2,opt,name=bank_address,json=bankAddress,proto3" json:"bank_address,omitempty"`         // Địa chỉ bank address từ on-chain
+	MintTxHash    string                 `protobuf:"bytes,3,opt,name=mint_tx_hash,json=mintTxHash,proto3" json:"mint_tx_hash,omitempty"`          // Transaction hash của mint
+	DepositTxHash string                 `protobuf:"bytes,4,opt,name=deposit_tx_hash,json=depositTxHash,proto3" json:"deposit_tx_hash,omitempty"` // Transaction hash của deposit
+	MintAmount    float64                `protobuf:"fixed64,5,opt,name=mint_amount,json=mintAmount,proto3" json:"mint_amount,omitempty"`          // Số tiền đã mint
+	DepositAmount float64                `protobuf:"fixed64,6,opt,name=deposit_amount,json=depositAmount,proto3" json:"deposit_amount,omitempty"` // Số tiền đã deposit
+	Currency      string                 `protobuf:"bytes,7,opt,name=currency,proto3" json:"currency,omitempty"`                                  // Mã tiền tệ
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FundingAccountResult) Reset() {
+	*x = FundingAccountResult{}
+	mi := &file_offchain_gpi_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FundingAccountResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FundingAccountResult) ProtoMessage() {}
+
+func (x *FundingAccountResult) ProtoReflect() protoreflect.Message {
+	mi := &file_offchain_gpi_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FundingAccountResult.ProtoReflect.Descriptor instead.
+func (*FundingAccountResult) Descriptor() ([]byte, []int) {
+	return file_offchain_gpi_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *FundingAccountResult) GetBankCode() string {
+	if x != nil {
+		return x.BankCode
+	}
+	return ""
+}
+
+func (x *FundingAccountResult) GetBankAddress() string {
+	if x != nil {
+		return x.BankAddress
+	}
+	return ""
+}
+
+func (x *FundingAccountResult) GetMintTxHash() string {
+	if x != nil {
+		return x.MintTxHash
+	}
+	return ""
+}
+
+func (x *FundingAccountResult) GetDepositTxHash() string {
+	if x != nil {
+		return x.DepositTxHash
+	}
+	return ""
+}
+
+func (x *FundingAccountResult) GetMintAmount() float64 {
+	if x != nil {
+		return x.MintAmount
+	}
+	return 0
+}
+
+func (x *FundingAccountResult) GetDepositAmount() float64 {
+	if x != nil {
+		return x.DepositAmount
+	}
+	return 0
+}
+
+func (x *FundingAccountResult) GetCurrency() string {
+	if x != nil {
+		return x.Currency
+	}
+	return ""
+}
+
 var File_offchain_gpi_proto protoreflect.FileDescriptor
 
 const file_offchain_gpi_proto_rawDesc = "" +
@@ -648,14 +1492,86 @@ const file_offchain_gpi_proto_rawDesc = "" +
 	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
 	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
 	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
-	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data2\xf1\x02\n" +
+	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data\"\x93\x01\n" +
+	"\x14UnheldPaymentRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12\x12\n" +
+	"\x04uetr\x18\x03 \x01(\tR\x04uetr\"\xd7\x01\n" +
+	"\x15UnheldPaymentResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
+	"\x04data\x18\x04 \x01(\v2\x14.offchain.v1.PaymentR\x04data\"z\n" +
+	"\x0fListUetrRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\"\xd2\x01\n" +
+	"\x10ListUetrResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x12(\n" +
+	"\x04data\x18\x04 \x03(\v2\x14.offchain.v1.PaymentR\x04data\"\xd2\x02\n" +
+	"\x12TransactionHistory\x12\x12\n" +
+	"\x04uetr\x18\x01 \x01(\tR\x04uetr\x12\x17\n" +
+	"\atx_hash\x18\x02 \x01(\tR\x06txHash\x12)\n" +
+	"\x10transaction_type\x18\x03 \x01(\tR\x0ftransactionType\x12!\n" +
+	"\fdebtor_agent\x18\x04 \x01(\tR\vdebtorAgent\x12%\n" +
+	"\x0ecreditor_agent\x18\x05 \x01(\tR\rcreditorAgent\x12/\n" +
+	"\x13beneficiary_account\x18\x06 \x01(\tR\x12beneficiaryAccount\x12\x16\n" +
+	"\x06amount\x18\a \x01(\x01R\x06amount\x12\x1a\n" +
+	"\bcurrency\x18\b \x01(\tR\bcurrency\x12\x16\n" +
+	"\x06status\x18\t \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\n" +
+	" \x01(\tR\tcreatedAt\"\x88\x01\n" +
+	"\x1dListTransactionHistoryRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\"\xeb\x01\n" +
+	"\x1eListTransactionHistoryResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x123\n" +
+	"\x04data\x18\x04 \x03(\v2\x1f.offchain.v1.TransactionHistoryR\x04data\"\xa1\x01\n" +
+	"\"GetTransactionHistoryByUetrRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12\x12\n" +
+	"\x04uetr\x18\x03 \x01(\tR\x04uetr\"\xb9\x01\n" +
+	"\x19InitFundingAccountRequest\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x123\n" +
+	"\x04data\x18\x03 \x01(\v2\x1f.offchain.v1.FundingAccountDataR\x04data\"\x95\x01\n" +
+	"\x12FundingAccountData\x12\x1b\n" +
+	"\tbank_code\x18\x01 \x01(\tR\bbankCode\x12\x1f\n" +
+	"\vmint_amount\x18\x02 \x01(\x01R\n" +
+	"mintAmount\x12%\n" +
+	"\x0edeposit_amount\x18\x03 \x01(\x01R\rdepositAmount\x12\x1a\n" +
+	"\bcurrency\x18\x04 \x01(\tR\bcurrency\"\xe9\x01\n" +
+	"\x1aInitFundingAccountResponse\x121\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x15.offchain.v1.MetadataR\bmetadata\x124\n" +
+	"\tsignature\x18\x02 \x01(\v2\x16.offchain.v1.SignatureR\tsignature\x12+\n" +
+	"\x06result\x18\x03 \x01(\v2\x13.offchain.v1.ResultR\x06result\x125\n" +
+	"\x04data\x18\x04 \x01(\v2!.offchain.v1.FundingAccountResultR\x04data\"\x84\x02\n" +
+	"\x14FundingAccountResult\x12\x1b\n" +
+	"\tbank_code\x18\x01 \x01(\tR\bbankCode\x12!\n" +
+	"\fbank_address\x18\x02 \x01(\tR\vbankAddress\x12 \n" +
+	"\fmint_tx_hash\x18\x03 \x01(\tR\n" +
+	"mintTxHash\x12&\n" +
+	"\x0fdeposit_tx_hash\x18\x04 \x01(\tR\rdepositTxHash\x12\x1f\n" +
+	"\vmint_amount\x18\x05 \x01(\x01R\n" +
+	"mintAmount\x12%\n" +
+	"\x0edeposit_amount\x18\x06 \x01(\x01R\rdepositAmount\x12\x1a\n" +
+	"\bcurrency\x18\a \x01(\tR\bcurrency2\xf3\x06\n" +
 	"\n" +
 	"GpiService\x12X\n" +
 	"\rCreatePayment\x12!.offchain.v1.CreatePaymentRequest\x1a\".offchain.v1.CreatePaymentResponse\"\x00\x12O\n" +
 	"\n" +
 	"GetPayment\x12\x1e.offchain.v1.GetPaymentRequest\x1a\x1f.offchain.v1.GetPaymentResponse\"\x00\x12[\n" +
 	"\x10GetPaymentStatus\x12$.offchain.v1.GetPaymentStatusRequest\x1a\x1f.offchain.v1.GetPaymentResponse\"\x00\x12[\n" +
-	"\x0eConfirmPayment\x12\".offchain.v1.ConfirmPaymentRequest\x1a#.offchain.v1.ConfirmPaymentResponse\"\x00BU\n" +
+	"\x0eConfirmPayment\x12\".offchain.v1.ConfirmPaymentRequest\x1a#.offchain.v1.ConfirmPaymentResponse\"\x00\x12X\n" +
+	"\rUnheldPayment\x12!.offchain.v1.UnheldPaymentRequest\x1a\".offchain.v1.UnheldPaymentResponse\"\x00\x12I\n" +
+	"\bListUetr\x12\x1c.offchain.v1.ListUetrRequest\x1a\x1d.offchain.v1.ListUetrResponse\"\x00\x12s\n" +
+	"\x16ListTransactionHistory\x12*.offchain.v1.ListTransactionHistoryRequest\x1a+.offchain.v1.ListTransactionHistoryResponse\"\x00\x12}\n" +
+	"\x1bGetTransactionHistoryByUetr\x12/.offchain.v1.GetTransactionHistoryByUetrRequest\x1a+.offchain.v1.ListTransactionHistoryResponse\"\x00\x12g\n" +
+	"\x12InitFundingAccount\x12&.offchain.v1.InitFundingAccountRequest\x1a'.offchain.v1.InitFundingAccountResponse\"\x00BU\n" +
 	"\x1ccom.blcvn.switching.offchainZ5github.com/blcvn/switching-proto/go/offchain;offchainb\x06proto3"
 
 var (
@@ -670,58 +1586,107 @@ func file_offchain_gpi_proto_rawDescGZIP() []byte {
 	return file_offchain_gpi_proto_rawDescData
 }
 
-var file_offchain_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_offchain_gpi_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_offchain_gpi_proto_goTypes = []any{
-	(*ConfirmMessage)(nil),          // 0: offchain.v1.ConfirmMessage
-	(*CreatePaymentRequest)(nil),    // 1: offchain.v1.CreatePaymentRequest
-	(*CreatePaymentResponse)(nil),   // 2: offchain.v1.CreatePaymentResponse
-	(*GetPaymentRequest)(nil),       // 3: offchain.v1.GetPaymentRequest
-	(*GetPaymentResponse)(nil),      // 4: offchain.v1.GetPaymentResponse
-	(*GetPaymentStatusRequest)(nil), // 5: offchain.v1.GetPaymentStatusRequest
-	(*PaymentStatus)(nil),           // 6: offchain.v1.PaymentStatus
-	(*ConfirmPaymentRequest)(nil),   // 7: offchain.v1.ConfirmPaymentRequest
-	(*ConfirmPaymentResponse)(nil),  // 8: offchain.v1.ConfirmPaymentResponse
-	(*Metadata)(nil),                // 9: offchain.v1.Metadata
-	(*Signature)(nil),               // 10: offchain.v1.Signature
-	(*Payment)(nil),                 // 11: offchain.v1.Payment
-	(*Result)(nil),                  // 12: offchain.v1.Result
+	(*ConfirmMessage)(nil),                     // 0: offchain.v1.ConfirmMessage
+	(*CreatePaymentRequest)(nil),               // 1: offchain.v1.CreatePaymentRequest
+	(*CreatePaymentResponse)(nil),              // 2: offchain.v1.CreatePaymentResponse
+	(*GetPaymentRequest)(nil),                  // 3: offchain.v1.GetPaymentRequest
+	(*GetPaymentResponse)(nil),                 // 4: offchain.v1.GetPaymentResponse
+	(*GetPaymentStatusRequest)(nil),            // 5: offchain.v1.GetPaymentStatusRequest
+	(*PaymentStatus)(nil),                      // 6: offchain.v1.PaymentStatus
+	(*ConfirmPaymentRequest)(nil),              // 7: offchain.v1.ConfirmPaymentRequest
+	(*ConfirmPaymentResponse)(nil),             // 8: offchain.v1.ConfirmPaymentResponse
+	(*UnheldPaymentRequest)(nil),               // 9: offchain.v1.UnheldPaymentRequest
+	(*UnheldPaymentResponse)(nil),              // 10: offchain.v1.UnheldPaymentResponse
+	(*ListUetrRequest)(nil),                    // 11: offchain.v1.ListUetrRequest
+	(*ListUetrResponse)(nil),                   // 12: offchain.v1.ListUetrResponse
+	(*TransactionHistory)(nil),                 // 13: offchain.v1.TransactionHistory
+	(*ListTransactionHistoryRequest)(nil),      // 14: offchain.v1.ListTransactionHistoryRequest
+	(*ListTransactionHistoryResponse)(nil),     // 15: offchain.v1.ListTransactionHistoryResponse
+	(*GetTransactionHistoryByUetrRequest)(nil), // 16: offchain.v1.GetTransactionHistoryByUetrRequest
+	(*InitFundingAccountRequest)(nil),          // 17: offchain.v1.InitFundingAccountRequest
+	(*FundingAccountData)(nil),                 // 18: offchain.v1.FundingAccountData
+	(*InitFundingAccountResponse)(nil),         // 19: offchain.v1.InitFundingAccountResponse
+	(*FundingAccountResult)(nil),               // 20: offchain.v1.FundingAccountResult
+	(*Metadata)(nil),                           // 21: offchain.v1.Metadata
+	(*Signature)(nil),                          // 22: offchain.v1.Signature
+	(*Payment)(nil),                            // 23: offchain.v1.Payment
+	(*Result)(nil),                             // 24: offchain.v1.Result
 }
 var file_offchain_gpi_proto_depIdxs = []int32{
-	9,  // 0: offchain.v1.CreatePaymentRequest.metadata:type_name -> offchain.v1.Metadata
-	10, // 1: offchain.v1.CreatePaymentRequest.signature:type_name -> offchain.v1.Signature
-	11, // 2: offchain.v1.CreatePaymentRequest.data:type_name -> offchain.v1.Payment
-	9,  // 3: offchain.v1.CreatePaymentResponse.metadata:type_name -> offchain.v1.Metadata
-	10, // 4: offchain.v1.CreatePaymentResponse.signature:type_name -> offchain.v1.Signature
-	12, // 5: offchain.v1.CreatePaymentResponse.result:type_name -> offchain.v1.Result
-	11, // 6: offchain.v1.CreatePaymentResponse.data:type_name -> offchain.v1.Payment
-	9,  // 7: offchain.v1.GetPaymentRequest.metadata:type_name -> offchain.v1.Metadata
-	10, // 8: offchain.v1.GetPaymentRequest.signature:type_name -> offchain.v1.Signature
-	9,  // 9: offchain.v1.GetPaymentResponse.metadata:type_name -> offchain.v1.Metadata
-	10, // 10: offchain.v1.GetPaymentResponse.signature:type_name -> offchain.v1.Signature
-	12, // 11: offchain.v1.GetPaymentResponse.result:type_name -> offchain.v1.Result
-	11, // 12: offchain.v1.GetPaymentResponse.data:type_name -> offchain.v1.Payment
-	9,  // 13: offchain.v1.GetPaymentStatusRequest.metadata:type_name -> offchain.v1.Metadata
-	10, // 14: offchain.v1.GetPaymentStatusRequest.signature:type_name -> offchain.v1.Signature
-	9,  // 15: offchain.v1.ConfirmPaymentRequest.metadata:type_name -> offchain.v1.Metadata
-	10, // 16: offchain.v1.ConfirmPaymentRequest.signature:type_name -> offchain.v1.Signature
+	21, // 0: offchain.v1.CreatePaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 1: offchain.v1.CreatePaymentRequest.signature:type_name -> offchain.v1.Signature
+	23, // 2: offchain.v1.CreatePaymentRequest.data:type_name -> offchain.v1.Payment
+	21, // 3: offchain.v1.CreatePaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 4: offchain.v1.CreatePaymentResponse.signature:type_name -> offchain.v1.Signature
+	24, // 5: offchain.v1.CreatePaymentResponse.result:type_name -> offchain.v1.Result
+	23, // 6: offchain.v1.CreatePaymentResponse.data:type_name -> offchain.v1.Payment
+	21, // 7: offchain.v1.GetPaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 8: offchain.v1.GetPaymentRequest.signature:type_name -> offchain.v1.Signature
+	21, // 9: offchain.v1.GetPaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 10: offchain.v1.GetPaymentResponse.signature:type_name -> offchain.v1.Signature
+	24, // 11: offchain.v1.GetPaymentResponse.result:type_name -> offchain.v1.Result
+	23, // 12: offchain.v1.GetPaymentResponse.data:type_name -> offchain.v1.Payment
+	21, // 13: offchain.v1.GetPaymentStatusRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 14: offchain.v1.GetPaymentStatusRequest.signature:type_name -> offchain.v1.Signature
+	21, // 15: offchain.v1.ConfirmPaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 16: offchain.v1.ConfirmPaymentRequest.signature:type_name -> offchain.v1.Signature
 	0,  // 17: offchain.v1.ConfirmPaymentRequest.data:type_name -> offchain.v1.ConfirmMessage
-	9,  // 18: offchain.v1.ConfirmPaymentResponse.metadata:type_name -> offchain.v1.Metadata
-	10, // 19: offchain.v1.ConfirmPaymentResponse.signature:type_name -> offchain.v1.Signature
-	12, // 20: offchain.v1.ConfirmPaymentResponse.result:type_name -> offchain.v1.Result
-	11, // 21: offchain.v1.ConfirmPaymentResponse.data:type_name -> offchain.v1.Payment
-	1,  // 22: offchain.v1.GpiService.CreatePayment:input_type -> offchain.v1.CreatePaymentRequest
-	3,  // 23: offchain.v1.GpiService.GetPayment:input_type -> offchain.v1.GetPaymentRequest
-	5,  // 24: offchain.v1.GpiService.GetPaymentStatus:input_type -> offchain.v1.GetPaymentStatusRequest
-	7,  // 25: offchain.v1.GpiService.ConfirmPayment:input_type -> offchain.v1.ConfirmPaymentRequest
-	2,  // 26: offchain.v1.GpiService.CreatePayment:output_type -> offchain.v1.CreatePaymentResponse
-	4,  // 27: offchain.v1.GpiService.GetPayment:output_type -> offchain.v1.GetPaymentResponse
-	4,  // 28: offchain.v1.GpiService.GetPaymentStatus:output_type -> offchain.v1.GetPaymentResponse
-	8,  // 29: offchain.v1.GpiService.ConfirmPayment:output_type -> offchain.v1.ConfirmPaymentResponse
-	26, // [26:30] is the sub-list for method output_type
-	22, // [22:26] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	21, // 18: offchain.v1.ConfirmPaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 19: offchain.v1.ConfirmPaymentResponse.signature:type_name -> offchain.v1.Signature
+	24, // 20: offchain.v1.ConfirmPaymentResponse.result:type_name -> offchain.v1.Result
+	23, // 21: offchain.v1.ConfirmPaymentResponse.data:type_name -> offchain.v1.Payment
+	21, // 22: offchain.v1.UnheldPaymentRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 23: offchain.v1.UnheldPaymentRequest.signature:type_name -> offchain.v1.Signature
+	21, // 24: offchain.v1.UnheldPaymentResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 25: offchain.v1.UnheldPaymentResponse.signature:type_name -> offchain.v1.Signature
+	24, // 26: offchain.v1.UnheldPaymentResponse.result:type_name -> offchain.v1.Result
+	23, // 27: offchain.v1.UnheldPaymentResponse.data:type_name -> offchain.v1.Payment
+	21, // 28: offchain.v1.ListUetrRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 29: offchain.v1.ListUetrRequest.signature:type_name -> offchain.v1.Signature
+	21, // 30: offchain.v1.ListUetrResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 31: offchain.v1.ListUetrResponse.signature:type_name -> offchain.v1.Signature
+	24, // 32: offchain.v1.ListUetrResponse.result:type_name -> offchain.v1.Result
+	23, // 33: offchain.v1.ListUetrResponse.data:type_name -> offchain.v1.Payment
+	21, // 34: offchain.v1.ListTransactionHistoryRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 35: offchain.v1.ListTransactionHistoryRequest.signature:type_name -> offchain.v1.Signature
+	21, // 36: offchain.v1.ListTransactionHistoryResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 37: offchain.v1.ListTransactionHistoryResponse.signature:type_name -> offchain.v1.Signature
+	24, // 38: offchain.v1.ListTransactionHistoryResponse.result:type_name -> offchain.v1.Result
+	13, // 39: offchain.v1.ListTransactionHistoryResponse.data:type_name -> offchain.v1.TransactionHistory
+	21, // 40: offchain.v1.GetTransactionHistoryByUetrRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 41: offchain.v1.GetTransactionHistoryByUetrRequest.signature:type_name -> offchain.v1.Signature
+	21, // 42: offchain.v1.InitFundingAccountRequest.metadata:type_name -> offchain.v1.Metadata
+	22, // 43: offchain.v1.InitFundingAccountRequest.signature:type_name -> offchain.v1.Signature
+	18, // 44: offchain.v1.InitFundingAccountRequest.data:type_name -> offchain.v1.FundingAccountData
+	21, // 45: offchain.v1.InitFundingAccountResponse.metadata:type_name -> offchain.v1.Metadata
+	22, // 46: offchain.v1.InitFundingAccountResponse.signature:type_name -> offchain.v1.Signature
+	24, // 47: offchain.v1.InitFundingAccountResponse.result:type_name -> offchain.v1.Result
+	20, // 48: offchain.v1.InitFundingAccountResponse.data:type_name -> offchain.v1.FundingAccountResult
+	1,  // 49: offchain.v1.GpiService.CreatePayment:input_type -> offchain.v1.CreatePaymentRequest
+	3,  // 50: offchain.v1.GpiService.GetPayment:input_type -> offchain.v1.GetPaymentRequest
+	5,  // 51: offchain.v1.GpiService.GetPaymentStatus:input_type -> offchain.v1.GetPaymentStatusRequest
+	7,  // 52: offchain.v1.GpiService.ConfirmPayment:input_type -> offchain.v1.ConfirmPaymentRequest
+	9,  // 53: offchain.v1.GpiService.UnheldPayment:input_type -> offchain.v1.UnheldPaymentRequest
+	11, // 54: offchain.v1.GpiService.ListUetr:input_type -> offchain.v1.ListUetrRequest
+	14, // 55: offchain.v1.GpiService.ListTransactionHistory:input_type -> offchain.v1.ListTransactionHistoryRequest
+	16, // 56: offchain.v1.GpiService.GetTransactionHistoryByUetr:input_type -> offchain.v1.GetTransactionHistoryByUetrRequest
+	17, // 57: offchain.v1.GpiService.InitFundingAccount:input_type -> offchain.v1.InitFundingAccountRequest
+	2,  // 58: offchain.v1.GpiService.CreatePayment:output_type -> offchain.v1.CreatePaymentResponse
+	4,  // 59: offchain.v1.GpiService.GetPayment:output_type -> offchain.v1.GetPaymentResponse
+	4,  // 60: offchain.v1.GpiService.GetPaymentStatus:output_type -> offchain.v1.GetPaymentResponse
+	8,  // 61: offchain.v1.GpiService.ConfirmPayment:output_type -> offchain.v1.ConfirmPaymentResponse
+	10, // 62: offchain.v1.GpiService.UnheldPayment:output_type -> offchain.v1.UnheldPaymentResponse
+	12, // 63: offchain.v1.GpiService.ListUetr:output_type -> offchain.v1.ListUetrResponse
+	15, // 64: offchain.v1.GpiService.ListTransactionHistory:output_type -> offchain.v1.ListTransactionHistoryResponse
+	15, // 65: offchain.v1.GpiService.GetTransactionHistoryByUetr:output_type -> offchain.v1.ListTransactionHistoryResponse
+	19, // 66: offchain.v1.GpiService.InitFundingAccount:output_type -> offchain.v1.InitFundingAccountResponse
+	58, // [58:67] is the sub-list for method output_type
+	49, // [49:58] is the sub-list for method input_type
+	49, // [49:49] is the sub-list for extension type_name
+	49, // [49:49] is the sub-list for extension extendee
+	0,  // [0:49] is the sub-list for field type_name
 }
 
 func init() { file_offchain_gpi_proto_init() }
@@ -736,7 +1701,7 @@ func file_offchain_gpi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_offchain_gpi_proto_rawDesc), len(file_offchain_gpi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
