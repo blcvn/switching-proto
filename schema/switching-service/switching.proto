@@ -32,6 +32,10 @@ service SwitchingService {
   // Confirm a held payment and trigger settlement on-chain.
   rpc ConfirmPayment(ConfirmPaymentRequest) returns (PaymentResponse);
 
+  // Get payment status by UETR (offchain tracking reference).
+  // Returns full on-chain hold payment information.
+  rpc GetPaymentByUetr(GetPaymentByUetrRequest) returns (PaymentInfo);
+
   // Deposit settlement tokens for a bank.
   rpc DepositBank(BankTransactionRequest) returns (TransactionResponse);
 
@@ -140,6 +144,24 @@ message ConfirmPaymentRequest {
   string to_bank_account = 5;
   string tx_reference = 6;
   string note = 7;
+}
+
+// Request to get payment information by UETR.
+message GetPaymentByUetrRequest {
+  string uetr = 1;
+}
+
+// Detailed payment information as stored on-chain for a hold payment.
+message PaymentInfo {
+  string uetr = 1;
+  string sender_bank = 2;
+  string receiver_bank = 3;
+  string receiver_bank_code = 4;
+  string beneficiary_iban = 5;
+  string amount = 6;
+  int64 hold_timestamp = 7;
+  uint32 status = 8;
+  int64 expiry_time = 9;
 }
 
 message UnheldPaymentRequest {

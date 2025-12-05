@@ -11214,6 +11214,2660 @@ public final class Gpi {
 
   }
 
+  public interface ListUetrRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.ListUetrRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+  }
+  /**
+   * <pre>
+   * Yêu cầu lấy danh sách tất cả các giao dịch (UETR)
+   * </pre>
+   *
+   * Protobuf type {@code offchain.v1.ListUetrRequest}
+   */
+  public static final class ListUetrRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.ListUetrRequest)
+      ListUetrRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListUetrRequest.newBuilder() to construct.
+    private ListUetrRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListUetrRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListUetrRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListUetrRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Gpi.ListUetrRequest.class, com.blcvn.switching.offchain.Gpi.ListUetrRequest.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <pre>
+     * Metadata của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <pre>
+     * Chữ ký số của request
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Gpi.ListUetrRequest)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Gpi.ListUetrRequest other = (com.blcvn.switching.offchain.Gpi.ListUetrRequest) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Gpi.ListUetrRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Yêu cầu lấy danh sách tất cả các giao dịch (UETR)
+     * </pre>
+     *
+     * Protobuf type {@code offchain.v1.ListUetrRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.ListUetrRequest)
+        com.blcvn.switching.offchain.Gpi.ListUetrRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Gpi.ListUetrRequest.class, com.blcvn.switching.offchain.Gpi.ListUetrRequest.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Gpi.ListUetrRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrRequest getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Gpi.ListUetrRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrRequest build() {
+        com.blcvn.switching.offchain.Gpi.ListUetrRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrRequest buildPartial() {
+        com.blcvn.switching.offchain.Gpi.ListUetrRequest result = new com.blcvn.switching.offchain.Gpi.ListUetrRequest(this);
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Gpi.ListUetrRequest) {
+          return mergeFrom((com.blcvn.switching.offchain.Gpi.ListUetrRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.ListUetrRequest other) {
+        if (other == com.blcvn.switching.offchain.Gpi.ListUetrRequest.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Gpi.ListUetrRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Gpi.ListUetrRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <pre>
+       * Metadata của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <pre>
+       * Chữ ký số của request
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.ListUetrRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.ListUetrRequest)
+    private static final com.blcvn.switching.offchain.Gpi.ListUetrRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Gpi.ListUetrRequest();
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ListUetrRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListUetrRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListUetrRequest>() {
+      @java.lang.Override
+      public ListUetrRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListUetrRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListUetrRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListUetrRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Gpi.ListUetrRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListUetrResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:offchain.v1.ListUetrResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    com.blcvn.switching.offchain.Common.Metadata getMetadata();
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    boolean hasSignature();
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    com.blcvn.switching.offchain.Common.Signature getSignature();
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder();
+
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    boolean hasResult();
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    com.blcvn.switching.offchain.Common.Result getResult();
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder();
+
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    java.util.List<com.blcvn.switching.offchain.Common.Payment> 
+        getDataList();
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.Payment getData(int index);
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    int getDataCount();
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    java.util.List<? extends com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+        getDataOrBuilderList();
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * Phản hồi danh sách các giao dịch (UETR)
+   * </pre>
+   *
+   * Protobuf type {@code offchain.v1.ListUetrResponse}
+   */
+  public static final class ListUetrResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:offchain.v1.ListUetrResponse)
+      ListUetrResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListUetrResponse.newBuilder() to construct.
+    private ListUetrResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListUetrResponse() {
+      data_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListUetrResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListUetrResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.blcvn.switching.offchain.Common.Metadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.blcvn.switching.offchain.Common.Metadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.blcvn.switching.offchain.Common.Signature.Builder subBuilder = null;
+              if (signature_ != null) {
+                subBuilder = signature_.toBuilder();
+              }
+              signature_ = input.readMessage(com.blcvn.switching.offchain.Common.Signature.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.blcvn.switching.offchain.Common.Result.Builder subBuilder = null;
+              if (result_ != null) {
+                subBuilder = result_.toBuilder();
+              }
+              result_ = input.readMessage(com.blcvn.switching.offchain.Common.Result.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(result_);
+                result_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                data_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Payment>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              data_.add(
+                  input.readMessage(com.blcvn.switching.offchain.Common.Payment.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          data_ = java.util.Collections.unmodifiableList(data_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.blcvn.switching.offchain.Gpi.ListUetrResponse.class, com.blcvn.switching.offchain.Gpi.ListUetrResponse.Builder.class);
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 1;
+    private com.blcvn.switching.offchain.Common.Metadata metadata_;
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+      return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+    }
+    /**
+     * <pre>
+     * Metadata của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Metadata metadata = 1;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+      return getMetadata();
+    }
+
+    public static final int SIGNATURE_FIELD_NUMBER = 2;
+    private com.blcvn.switching.offchain.Common.Signature signature_;
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return Whether the signature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignature() {
+      return signature_ != null;
+    }
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     * @return The signature.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Signature getSignature() {
+      return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+    }
+    /**
+     * <pre>
+     * Chữ ký số của response
+     * </pre>
+     *
+     * <code>.offchain.v1.Signature signature = 2;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+      return getSignature();
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 3;
+    private com.blcvn.switching.offchain.Common.Result result_;
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return Whether the result field is set.
+     */
+    @java.lang.Override
+    public boolean hasResult() {
+      return result_ != null;
+    }
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Result getResult() {
+      return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+    }
+    /**
+     * <pre>
+     * Kết quả thực thi
+     * </pre>
+     *
+     * <code>.offchain.v1.Result result = 3;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+      return getResult();
+    }
+
+    public static final int DATA_FIELD_NUMBER = 4;
+    private java.util.List<com.blcvn.switching.offchain.Common.Payment> data_;
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.blcvn.switching.offchain.Common.Payment> getDataList() {
+      return data_;
+    }
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+        getDataOrBuilderList() {
+      return data_;
+    }
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public int getDataCount() {
+      return data_.size();
+    }
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.Payment getData(int index) {
+      return data_.get(index);
+    }
+    /**
+     * <pre>
+     * Danh sách các thanh toán
+     * </pre>
+     *
+     * <code>repeated .offchain.v1.Payment data = 4;</code>
+     */
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder(
+        int index) {
+      return data_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (metadata_ != null) {
+        output.writeMessage(1, getMetadata());
+      }
+      if (signature_ != null) {
+        output.writeMessage(2, getSignature());
+      }
+      if (result_ != null) {
+        output.writeMessage(3, getResult());
+      }
+      for (int i = 0; i < data_.size(); i++) {
+        output.writeMessage(4, data_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getMetadata());
+      }
+      if (signature_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getSignature());
+      }
+      if (result_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResult());
+      }
+      for (int i = 0; i < data_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, data_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.blcvn.switching.offchain.Gpi.ListUetrResponse)) {
+        return super.equals(obj);
+      }
+      com.blcvn.switching.offchain.Gpi.ListUetrResponse other = (com.blcvn.switching.offchain.Gpi.ListUetrResponse) obj;
+
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata()
+            .equals(other.getMetadata())) return false;
+      }
+      if (hasSignature() != other.hasSignature()) return false;
+      if (hasSignature()) {
+        if (!getSignature()
+            .equals(other.getSignature())) return false;
+      }
+      if (hasResult() != other.hasResult()) return false;
+      if (hasResult()) {
+        if (!getResult()
+            .equals(other.getResult())) return false;
+      }
+      if (!getDataList()
+          .equals(other.getDataList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
+      if (hasSignature()) {
+        hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSignature().hashCode();
+      }
+      if (hasResult()) {
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+      }
+      if (getDataCount() > 0) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getDataList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.blcvn.switching.offchain.Gpi.ListUetrResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Phản hồi danh sách các giao dịch (UETR)
+     * </pre>
+     *
+     * Protobuf type {@code offchain.v1.ListUetrResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:offchain.v1.ListUetrResponse)
+        com.blcvn.switching.offchain.Gpi.ListUetrResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.blcvn.switching.offchain.Gpi.ListUetrResponse.class, com.blcvn.switching.offchain.Gpi.ListUetrResponse.Builder.class);
+      }
+
+      // Construct using com.blcvn.switching.offchain.Gpi.ListUetrResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDataFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+        if (resultBuilder_ == null) {
+          result_ = null;
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.blcvn.switching.offchain.Gpi.internal_static_offchain_v1_ListUetrResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrResponse getDefaultInstanceForType() {
+        return com.blcvn.switching.offchain.Gpi.ListUetrResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrResponse build() {
+        com.blcvn.switching.offchain.Gpi.ListUetrResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.blcvn.switching.offchain.Gpi.ListUetrResponse buildPartial() {
+        com.blcvn.switching.offchain.Gpi.ListUetrResponse result = new com.blcvn.switching.offchain.Gpi.ListUetrResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (metadataBuilder_ == null) {
+          result.metadata_ = metadata_;
+        } else {
+          result.metadata_ = metadataBuilder_.build();
+        }
+        if (signatureBuilder_ == null) {
+          result.signature_ = signature_;
+        } else {
+          result.signature_ = signatureBuilder_.build();
+        }
+        if (resultBuilder_ == null) {
+          result.result_ = result_;
+        } else {
+          result.result_ = resultBuilder_.build();
+        }
+        if (dataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            data_ = java.util.Collections.unmodifiableList(data_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.blcvn.switching.offchain.Gpi.ListUetrResponse) {
+          return mergeFrom((com.blcvn.switching.offchain.Gpi.ListUetrResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.blcvn.switching.offchain.Gpi.ListUetrResponse other) {
+        if (other == com.blcvn.switching.offchain.Gpi.ListUetrResponse.getDefaultInstance()) return this;
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
+        if (other.hasSignature()) {
+          mergeSignature(other.getSignature());
+        }
+        if (other.hasResult()) {
+          mergeResult(other.getResult());
+        }
+        if (dataBuilder_ == null) {
+          if (!other.data_.isEmpty()) {
+            if (data_.isEmpty()) {
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDataIsMutable();
+              data_.addAll(other.data_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.data_.isEmpty()) {
+            if (dataBuilder_.isEmpty()) {
+              dataBuilder_.dispose();
+              dataBuilder_ = null;
+              data_ = other.data_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              dataBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDataFieldBuilder() : null;
+            } else {
+              dataBuilder_.addAllMessages(other.data_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.blcvn.switching.offchain.Gpi.ListUetrResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.blcvn.switching.offchain.Gpi.ListUetrResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.blcvn.switching.offchain.Common.Metadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> metadataBuilder_;
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return metadataBuilder_ != null || metadata_ != null;
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       * @return The metadata.
+       */
+      public com.blcvn.switching.offchain.Common.Metadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null ? com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder setMetadata(
+          com.blcvn.switching.offchain.Common.Metadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder mergeMetadata(com.blcvn.switching.offchain.Common.Metadata value) {
+        if (metadataBuilder_ == null) {
+          if (metadata_ != null) {
+            metadata_ =
+              com.blcvn.switching.offchain.Common.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          } else {
+            metadata_ = value;
+          }
+          onChanged();
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public Builder clearMetadata() {
+        if (metadataBuilder_ == null) {
+          metadata_ = null;
+          onChanged();
+        } else {
+          metadata_ = null;
+          metadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Metadata.Builder getMetadataBuilder() {
+        
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      public com.blcvn.switching.offchain.Common.MetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null ?
+              com.blcvn.switching.offchain.Common.Metadata.getDefaultInstance() : metadata_;
+        }
+      }
+      /**
+       * <pre>
+       * Metadata của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Metadata metadata = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder> 
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Metadata, com.blcvn.switching.offchain.Common.Metadata.Builder, com.blcvn.switching.offchain.Common.MetadataOrBuilder>(
+                  getMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Signature signature_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> signatureBuilder_;
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return Whether the signature field is set.
+       */
+      public boolean hasSignature() {
+        return signatureBuilder_ != null || signature_ != null;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       * @return The signature.
+       */
+      public com.blcvn.switching.offchain.Common.Signature getSignature() {
+        if (signatureBuilder_ == null) {
+          return signature_ == null ? com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        } else {
+          return signatureBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          signature_ = value;
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder setSignature(
+          com.blcvn.switching.offchain.Common.Signature.Builder builderForValue) {
+        if (signatureBuilder_ == null) {
+          signature_ = builderForValue.build();
+          onChanged();
+        } else {
+          signatureBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder mergeSignature(com.blcvn.switching.offchain.Common.Signature value) {
+        if (signatureBuilder_ == null) {
+          if (signature_ != null) {
+            signature_ =
+              com.blcvn.switching.offchain.Common.Signature.newBuilder(signature_).mergeFrom(value).buildPartial();
+          } else {
+            signature_ = value;
+          }
+          onChanged();
+        } else {
+          signatureBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public Builder clearSignature() {
+        if (signatureBuilder_ == null) {
+          signature_ = null;
+          onChanged();
+        } else {
+          signature_ = null;
+          signatureBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Signature.Builder getSignatureBuilder() {
+        
+        onChanged();
+        return getSignatureFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      public com.blcvn.switching.offchain.Common.SignatureOrBuilder getSignatureOrBuilder() {
+        if (signatureBuilder_ != null) {
+          return signatureBuilder_.getMessageOrBuilder();
+        } else {
+          return signature_ == null ?
+              com.blcvn.switching.offchain.Common.Signature.getDefaultInstance() : signature_;
+        }
+      }
+      /**
+       * <pre>
+       * Chữ ký số của response
+       * </pre>
+       *
+       * <code>.offchain.v1.Signature signature = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder> 
+          getSignatureFieldBuilder() {
+        if (signatureBuilder_ == null) {
+          signatureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Signature, com.blcvn.switching.offchain.Common.Signature.Builder, com.blcvn.switching.offchain.Common.SignatureOrBuilder>(
+                  getSignature(),
+                  getParentForChildren(),
+                  isClean());
+          signature_ = null;
+        }
+        return signatureBuilder_;
+      }
+
+      private com.blcvn.switching.offchain.Common.Result result_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> resultBuilder_;
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return Whether the result field is set.
+       */
+      public boolean hasResult() {
+        return resultBuilder_ != null || result_ != null;
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       * @return The result.
+       */
+      public com.blcvn.switching.offchain.Common.Result getResult() {
+        if (resultBuilder_ == null) {
+          return result_ == null ? com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        } else {
+          return resultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder setResult(
+          com.blcvn.switching.offchain.Common.Result.Builder builderForValue) {
+        if (resultBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          resultBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder mergeResult(com.blcvn.switching.offchain.Common.Result value) {
+        if (resultBuilder_ == null) {
+          if (result_ != null) {
+            result_ =
+              com.blcvn.switching.offchain.Common.Result.newBuilder(result_).mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          resultBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public Builder clearResult() {
+        if (resultBuilder_ == null) {
+          result_ = null;
+          onChanged();
+        } else {
+          result_ = null;
+          resultBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Result.Builder getResultBuilder() {
+        
+        onChanged();
+        return getResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      public com.blcvn.switching.offchain.Common.ResultOrBuilder getResultOrBuilder() {
+        if (resultBuilder_ != null) {
+          return resultBuilder_.getMessageOrBuilder();
+        } else {
+          return result_ == null ?
+              com.blcvn.switching.offchain.Common.Result.getDefaultInstance() : result_;
+        }
+      }
+      /**
+       * <pre>
+       * Kết quả thực thi
+       * </pre>
+       *
+       * <code>.offchain.v1.Result result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder> 
+          getResultFieldBuilder() {
+        if (resultBuilder_ == null) {
+          resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Result, com.blcvn.switching.offchain.Common.Result.Builder, com.blcvn.switching.offchain.Common.ResultOrBuilder>(
+                  getResult(),
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        return resultBuilder_;
+      }
+
+      private java.util.List<com.blcvn.switching.offchain.Common.Payment> data_ =
+        java.util.Collections.emptyList();
+      private void ensureDataIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          data_ = new java.util.ArrayList<com.blcvn.switching.offchain.Common.Payment>(data_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> dataBuilder_;
+
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public java.util.List<com.blcvn.switching.offchain.Common.Payment> getDataList() {
+        if (dataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(data_);
+        } else {
+          return dataBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public int getDataCount() {
+        if (dataBuilder_ == null) {
+          return data_.size();
+        } else {
+          return dataBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment getData(int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);
+        } else {
+          return dataBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(
+          int index, com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.set(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder setData(
+          int index, com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder addData(com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder addData(
+          int index, com.blcvn.switching.offchain.Common.Payment value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataIsMutable();
+          data_.add(index, value);
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder addData(
+          com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder addData(
+          int index, com.blcvn.switching.offchain.Common.Payment.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder addAllData(
+          java.lang.Iterable<? extends com.blcvn.switching.offchain.Common.Payment> values) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, data_);
+          onChanged();
+        } else {
+          dataBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public Builder removeData(int index) {
+        if (dataBuilder_ == null) {
+          ensureDataIsMutable();
+          data_.remove(index);
+          onChanged();
+        } else {
+          dataBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder getDataBuilder(
+          int index) {
+        return getDataFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.PaymentOrBuilder getDataOrBuilder(
+          int index) {
+        if (dataBuilder_ == null) {
+          return data_.get(index);  } else {
+          return dataBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public java.util.List<? extends com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+           getDataOrBuilderList() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(data_);
+        }
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder addDataBuilder() {
+        return getDataFieldBuilder().addBuilder(
+            com.blcvn.switching.offchain.Common.Payment.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public com.blcvn.switching.offchain.Common.Payment.Builder addDataBuilder(
+          int index) {
+        return getDataFieldBuilder().addBuilder(
+            index, com.blcvn.switching.offchain.Common.Payment.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Danh sách các thanh toán
+       * </pre>
+       *
+       * <code>repeated .offchain.v1.Payment data = 4;</code>
+       */
+      public java.util.List<com.blcvn.switching.offchain.Common.Payment.Builder> 
+           getDataBuilderList() {
+        return getDataFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.blcvn.switching.offchain.Common.Payment, com.blcvn.switching.offchain.Common.Payment.Builder, com.blcvn.switching.offchain.Common.PaymentOrBuilder>(
+                  data_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:offchain.v1.ListUetrResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:offchain.v1.ListUetrResponse)
+    private static final com.blcvn.switching.offchain.Gpi.ListUetrResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.blcvn.switching.offchain.Gpi.ListUetrResponse();
+    }
+
+    public static com.blcvn.switching.offchain.Gpi.ListUetrResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListUetrResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListUetrResponse>() {
+      @java.lang.Override
+      public ListUetrResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListUetrResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListUetrResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListUetrResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.blcvn.switching.offchain.Gpi.ListUetrResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_offchain_v1_ConfirmMessage_descriptor;
   private static final 
@@ -11259,6 +13913,16 @@ public final class Gpi {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_offchain_v1_ConfirmPaymentResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_ListUetrRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_ListUetrRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_offchain_v1_ListUetrResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_offchain_v1_ListUetrResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11300,19 +13964,28 @@ public final class Gpi {
       "\001(\0132\025.offchain.v1.Metadata\022)\n\tsignature\030" +
       "\002 \001(\0132\026.offchain.v1.Signature\022#\n\006result\030" +
       "\003 \001(\0132\023.offchain.v1.Result\022\"\n\004data\030\004 \001(\013" +
-      "2\024.offchain.v1.Payment2\361\002\n\nGpiService\022X\n" +
-      "\rCreatePayment\022!.offchain.v1.CreatePayme" +
-      "ntRequest\032\".offchain.v1.CreatePaymentRes" +
-      "ponse\"\000\022O\n\nGetPayment\022\036.offchain.v1.GetP" +
-      "aymentRequest\032\037.offchain.v1.GetPaymentRe" +
-      "sponse\"\000\022[\n\020GetPaymentStatus\022$.offchain." +
-      "v1.GetPaymentStatusRequest\032\037.offchain.v1" +
-      ".GetPaymentResponse\"\000\022[\n\016ConfirmPayment\022" +
-      "\".offchain.v1.ConfirmPaymentRequest\032#.of" +
-      "fchain.v1.ConfirmPaymentResponse\"\000BU\n\034co" +
-      "m.blcvn.switching.offchainZ5github.com/b" +
-      "lcvn/switching-proto/go/offchain;offchai" +
-      "nb\006proto3"
+      "2\024.offchain.v1.Payment\"e\n\017ListUetrReques" +
+      "t\022\'\n\010metadata\030\001 \001(\0132\025.offchain.v1.Metada" +
+      "ta\022)\n\tsignature\030\002 \001(\0132\026.offchain.v1.Sign" +
+      "ature\"\257\001\n\020ListUetrResponse\022\'\n\010metadata\030\001" +
+      " \001(\0132\025.offchain.v1.Metadata\022)\n\tsignature" +
+      "\030\002 \001(\0132\026.offchain.v1.Signature\022#\n\006result" +
+      "\030\003 \001(\0132\023.offchain.v1.Result\022\"\n\004data\030\004 \003(" +
+      "\0132\024.offchain.v1.Payment2\274\003\n\nGpiService\022X" +
+      "\n\rCreatePayment\022!.offchain.v1.CreatePaym" +
+      "entRequest\032\".offchain.v1.CreatePaymentRe" +
+      "sponse\"\000\022O\n\nGetPayment\022\036.offchain.v1.Get" +
+      "PaymentRequest\032\037.offchain.v1.GetPaymentR" +
+      "esponse\"\000\022[\n\020GetPaymentStatus\022$.offchain" +
+      ".v1.GetPaymentStatusRequest\032\037.offchain.v" +
+      "1.GetPaymentResponse\"\000\022[\n\016ConfirmPayment" +
+      "\022\".offchain.v1.ConfirmPaymentRequest\032#.o" +
+      "ffchain.v1.ConfirmPaymentResponse\"\000\022I\n\010L" +
+      "istUetr\022\034.offchain.v1.ListUetrRequest\032\035." +
+      "offchain.v1.ListUetrResponse\"\000BU\n\034com.bl" +
+      "cvn.switching.offchainZ5github.com/blcvn" +
+      "/switching-proto/go/offchain;offchainb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11372,6 +14045,18 @@ public final class Gpi {
     internal_static_offchain_v1_ConfirmPaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_ConfirmPaymentResponse_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
+    internal_static_offchain_v1_ListUetrRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_offchain_v1_ListUetrRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_ListUetrRequest_descriptor,
+        new java.lang.String[] { "Metadata", "Signature", });
+    internal_static_offchain_v1_ListUetrResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_offchain_v1_ListUetrResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_offchain_v1_ListUetrResponse_descriptor,
         new java.lang.String[] { "Metadata", "Signature", "Result", "Data", });
     com.blcvn.switching.offchain.Common.getDescriptor();
   }

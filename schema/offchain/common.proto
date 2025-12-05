@@ -54,6 +54,8 @@ message KycEntity {
   string country = 3;      // Mã quốc gia
   string lei = 4;          // Legal Entity Identifier
   string updated_at = 5;   // Thời gian cập nhật lần cuối
+  string access_point_url = 6;  // URL của access point
+  string balance = 7;      // Số dư trong smart contract
 }
 
 // Thông tin chi tiết tài khoản liên kết với một agent

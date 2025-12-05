@@ -5575,6 +5575,46 @@ public final class Common {
      */
     com.google.protobuf.ByteString
         getUpdatedAtBytes();
+
+    /**
+     * <pre>
+     * URL của access point
+     * </pre>
+     *
+     * <code>string access_point_url = 6;</code>
+     * @return The accessPointUrl.
+     */
+    java.lang.String getAccessPointUrl();
+    /**
+     * <pre>
+     * URL của access point
+     * </pre>
+     *
+     * <code>string access_point_url = 6;</code>
+     * @return The bytes for accessPointUrl.
+     */
+    com.google.protobuf.ByteString
+        getAccessPointUrlBytes();
+
+    /**
+     * <pre>
+     * Số dư trong smart contract
+     * </pre>
+     *
+     * <code>string balance = 7;</code>
+     * @return The balance.
+     */
+    java.lang.String getBalance();
+    /**
+     * <pre>
+     * Số dư trong smart contract
+     * </pre>
+     *
+     * <code>string balance = 7;</code>
+     * @return The bytes for balance.
+     */
+    com.google.protobuf.ByteString
+        getBalanceBytes();
   }
   /**
    * <pre>
@@ -5598,6 +5638,8 @@ public final class Common {
       country_ = "";
       lei_ = "";
       updatedAt_ = "";
+      accessPointUrl_ = "";
+      balance_ = "";
     }
 
     @java.lang.Override
@@ -5658,6 +5700,18 @@ public final class Common {
               java.lang.String s = input.readStringRequireUtf8();
 
               updatedAt_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accessPointUrl_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              balance_ = s;
               break;
             }
             default: {
@@ -5922,6 +5976,98 @@ public final class Common {
       }
     }
 
+    public static final int ACCESS_POINT_URL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object accessPointUrl_;
+    /**
+     * <pre>
+     * URL của access point
+     * </pre>
+     *
+     * <code>string access_point_url = 6;</code>
+     * @return The accessPointUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getAccessPointUrl() {
+      java.lang.Object ref = accessPointUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessPointUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URL của access point
+     * </pre>
+     *
+     * <code>string access_point_url = 6;</code>
+     * @return The bytes for accessPointUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccessPointUrlBytes() {
+      java.lang.Object ref = accessPointUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessPointUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BALANCE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object balance_;
+    /**
+     * <pre>
+     * Số dư trong smart contract
+     * </pre>
+     *
+     * <code>string balance = 7;</code>
+     * @return The balance.
+     */
+    @java.lang.Override
+    public java.lang.String getBalance() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        balance_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Số dư trong smart contract
+     * </pre>
+     *
+     * <code>string balance = 7;</code>
+     * @return The bytes for balance.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBalanceBytes() {
+      java.lang.Object ref = balance_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        balance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5951,6 +6097,12 @@ public final class Common {
       if (!getUpdatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, updatedAt_);
       }
+      if (!getAccessPointUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, accessPointUrl_);
+      }
+      if (!getBalanceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, balance_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5974,6 +6126,12 @@ public final class Common {
       }
       if (!getUpdatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, updatedAt_);
+      }
+      if (!getAccessPointUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, accessPointUrl_);
+      }
+      if (!getBalanceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, balance_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6000,6 +6158,10 @@ public final class Common {
           .equals(other.getLei())) return false;
       if (!getUpdatedAt()
           .equals(other.getUpdatedAt())) return false;
+      if (!getAccessPointUrl()
+          .equals(other.getAccessPointUrl())) return false;
+      if (!getBalance()
+          .equals(other.getBalance())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6021,6 +6183,10 @@ public final class Common {
       hash = (53 * hash) + getLei().hashCode();
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedAt().hashCode();
+      hash = (37 * hash) + ACCESS_POINT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessPointUrl().hashCode();
+      hash = (37 * hash) + BALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getBalance().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6168,6 +6334,10 @@ public final class Common {
 
         updatedAt_ = "";
 
+        accessPointUrl_ = "";
+
+        balance_ = "";
+
         return this;
       }
 
@@ -6199,6 +6369,8 @@ public final class Common {
         result.country_ = country_;
         result.lei_ = lei_;
         result.updatedAt_ = updatedAt_;
+        result.accessPointUrl_ = accessPointUrl_;
+        result.balance_ = balance_;
         onBuilt();
         return result;
       }
@@ -6265,6 +6437,14 @@ public final class Common {
         }
         if (!other.getUpdatedAt().isEmpty()) {
           updatedAt_ = other.updatedAt_;
+          onChanged();
+        }
+        if (!other.getAccessPointUrl().isEmpty()) {
+          accessPointUrl_ = other.accessPointUrl_;
+          onChanged();
+        }
+        if (!other.getBalance().isEmpty()) {
+          balance_ = other.balance_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6772,6 +6952,198 @@ public final class Common {
   checkByteStringIsUtf8(value);
         
         updatedAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object accessPointUrl_ = "";
+      /**
+       * <pre>
+       * URL của access point
+       * </pre>
+       *
+       * <code>string access_point_url = 6;</code>
+       * @return The accessPointUrl.
+       */
+      public java.lang.String getAccessPointUrl() {
+        java.lang.Object ref = accessPointUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessPointUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL của access point
+       * </pre>
+       *
+       * <code>string access_point_url = 6;</code>
+       * @return The bytes for accessPointUrl.
+       */
+      public com.google.protobuf.ByteString
+          getAccessPointUrlBytes() {
+        java.lang.Object ref = accessPointUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accessPointUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL của access point
+       * </pre>
+       *
+       * <code>string access_point_url = 6;</code>
+       * @param value The accessPointUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPointUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accessPointUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL của access point
+       * </pre>
+       *
+       * <code>string access_point_url = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccessPointUrl() {
+        
+        accessPointUrl_ = getDefaultInstance().getAccessPointUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL của access point
+       * </pre>
+       *
+       * <code>string access_point_url = 6;</code>
+       * @param value The bytes for accessPointUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPointUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accessPointUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object balance_ = "";
+      /**
+       * <pre>
+       * Số dư trong smart contract
+       * </pre>
+       *
+       * <code>string balance = 7;</code>
+       * @return The balance.
+       */
+      public java.lang.String getBalance() {
+        java.lang.Object ref = balance_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          balance_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Số dư trong smart contract
+       * </pre>
+       *
+       * <code>string balance = 7;</code>
+       * @return The bytes for balance.
+       */
+      public com.google.protobuf.ByteString
+          getBalanceBytes() {
+        java.lang.Object ref = balance_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          balance_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Số dư trong smart contract
+       * </pre>
+       *
+       * <code>string balance = 7;</code>
+       * @param value The balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalance(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        balance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Số dư trong smart contract
+       * </pre>
+       *
+       * <code>string balance = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBalance() {
+        
+        balance_ = getDefaultInstance().getBalance();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Số dư trong smart contract
+       * </pre>
+       *
+       * <code>string balance = 7;</code>
+       * @param value The bytes for balance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBalanceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        balance_ = value;
         onChanged();
         return this;
       }
@@ -10905,21 +11277,23 @@ public final class Common {
       "\001(\t\022.\n\ncreated_at\030\007 \001(\0132\032.google.protobu" +
       "f.Timestamp\022,\n\016debtor_account\030\010 \001(\0132\024.of" +
       "fchain.v1.Account\022.\n\020creditor_account\030\t " +
-      "\001(\0132\024.offchain.v1.Account\"X\n\tKycEntity\022\013" +
-      "\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007country\030\003 \001" +
-      "(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\"j\n\007A" +
-      "ccount\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_number\030\002" +
-      " \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010currency\030\004" +
-      " \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metadata\022\022\n\nr" +
-      "equest_id\030\001 \001(\t\022\024\n\014request_time\030\002 \001(\003\022\017\n" +
-      "\007version\030\003 \001(\t\"\216\001\n\tSignature\0224\n\006s_type\030\001" +
-      " \001(\0162$.offchain.v1.Signature.SignatureTy" +
-      "pe\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatureTyp" +
-      "e\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001S\020\003\"" +
-      "@\n\006Result\022%\n\004code\030\001 \001(\0162\027.offchain.v1.Re" +
-      "sultCode\022\017\n\007message\030\002 \001(\tBU\n\034com.blcvn.s" +
-      "witching.offchainZ5github.com/blcvn/swit" +
-      "ching-proto/go/offchain;offchainb\006proto3"
+      "\001(\0132\024.offchain.v1.Account\"\203\001\n\tKycEntity\022" +
+      "\013\n\003bic\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\017\n\007country\030\003 " +
+      "\001(\t\022\013\n\003lei\030\004 \001(\t\022\022\n\nupdated_at\030\005 \001(\t\022\030\n\020" +
+      "access_point_url\030\006 \001(\t\022\017\n\007balance\030\007 \001(\t\"" +
+      "j\n\007Account\022\014\n\004iban\030\001 \001(\t\022\026\n\016account_numb" +
+      "er\030\002 \001(\t\022\024\n\014account_name\030\003 \001(\t\022\020\n\010curren" +
+      "cy\030\004 \001(\t\022\021\n\treference\030\005 \001(\t\"E\n\010Metadata\022" +
+      "\022\n\nrequest_id\030\001 \001(\t\022\024\n\014request_time\030\002 \001(" +
+      "\003\022\017\n\007version\030\003 \001(\t\"\216\001\n\tSignature\0224\n\006s_ty" +
+      "pe\030\001 \001(\0162$.offchain.v1.Signature.Signatu" +
+      "reType\022\t\n\001s\030\002 \001(\t\022\t\n\001b\030\003 \001(\014\"5\n\rSignatur" +
+      "eType\022\017\n\013NO_USE_TYPE\020\000\022\005\n\001J\020\001\022\005\n\001C\020\002\022\005\n\001" +
+      "S\020\003\"@\n\006Result\022%\n\004code\030\001 \001(\0162\027.offchain.v" +
+      "1.ResultCode\022\017\n\007message\030\002 \001(\tBU\n\034com.blc" +
+      "vn.switching.offchainZ5github.com/blcvn/" +
+      "switching-proto/go/offchain;offchainb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10950,7 +11324,7 @@ public final class Common {
     internal_static_offchain_v1_KycEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_offchain_v1_KycEntity_descriptor,
-        new java.lang.String[] { "Bic", "Name", "Country", "Lei", "UpdatedAt", });
+        new java.lang.String[] { "Bic", "Name", "Country", "Lei", "UpdatedAt", "AccessPointUrl", "Balance", });
     internal_static_offchain_v1_Account_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_offchain_v1_Account_fieldAccessorTable = new

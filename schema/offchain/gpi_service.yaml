@@ -17,3 +17,20 @@ http:
         - selector: offchain.v1.GpiService.ConfirmPayment
           post: /gpi/confirm
           body: "*"
+
+        - selector: offchain.v1.GpiService.UnheldPayment
+          post: /gpi/unheld
+          body: "*"
+
+        - selector: offchain.v1.GpiService.ListUetr
+          get: /gpi/uetr/list
+
+        - selector: offchain.v1.GpiService.ListTransactionHistory
+          get: /gpi/transaction-history/list
+
+        - selector: offchain.v1.GpiService.GetTransactionHistoryByUetr
+          get: /gpi/transaction-history/uetr/{uetr}
+
+        - selector: offchain.v1.GpiService.InitFundingAccount
+          post: /gpi/funding/init
+          body: "*"

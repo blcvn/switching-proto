@@ -18,6 +18,16 @@ service GpiService {
   rpc GetPaymentStatus(GetPaymentStatusRequest) returns (GetPaymentResponse) {}
   // Xác nhận một thanh toán
   rpc ConfirmPayment(ConfirmPaymentRequest) returns (ConfirmPaymentResponse) {}
+  // Unhold một thanh toán đã được hold (chỉ sau khi expired)
+  rpc UnheldPayment(UnheldPaymentRequest) returns (UnheldPaymentResponse) {}
+  // Lấy danh sách tất cả các giao dịch (UETR)
+  rpc ListUetr(ListUetrRequest) returns (ListUetrResponse) {}
+  // Lấy danh sách tất cả transaction history
+  rpc ListTransactionHistory(ListTransactionHistoryRequest) returns (ListTransactionHistoryResponse) {}
+  // Lấy transaction history theo UETR
+  rpc GetTransactionHistoryByUetr(GetTransactionHistoryByUetrRequest) returns (ListTransactionHistoryResponse) {}
+  // Khởi tạo funding cho account (mint và deposit)
+  rpc InitFundingAccount(InitFundingAccountRequest) returns (InitFundingAccountResponse) {}
 }
 
 // Thông điệp xác nhận thanh toán
@@ -85,4 +95,102 @@ message ConfirmPaymentResponse {
   Signature signature = 2;  // Chữ ký số của response
   Result result = 3;        // Kết quả thực thi
   Payment data = 4;        // Dữ liệu thanh toán đã xác nhận
+}
+
+// Yêu cầu unhold một thanh toán
+message UnheldPaymentRequest {
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string uetr = 3;          // Unique End-to-End Transaction Reference
+}
+
+// Phản hồi unhold thanh toán
+message UnheldPaymentResponse {
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  Payment data = 4;        // Dữ liệu thanh toán đã unhold
+}
+
+// Yêu cầu lấy danh sách tất cả các giao dịch (UETR)
+message ListUetrRequest {
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+}
+
+// Phản hồi danh sách các giao dịch (UETR)
+message ListUetrResponse {
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  repeated Payment data = 4; // Danh sách các thanh toán
+}
+
+// Transaction History message
+message TransactionHistory {
+  string uetr = 1;                // Unique End-to-End Transaction Reference
+  string tx_hash = 2;              // Transaction hash từ switching service
+  string transaction_type = 3;     // Loại transaction: HOLD, CONFIRM, UNHELD, CANCEL
+  string debtor_agent = 4;         // Bank address của người gửi
+  string creditor_agent = 5;       // Bank address của người nhận
+  string beneficiary_account = 6;  // IBAN của beneficiary account
+  double amount = 7;              // Số tiền
+  string currency = 8;            // Mã tiền tệ
+  string status = 9;              // Trạng thái
+  string created_at = 10;          // Thời gian tạo (RFC3339 format)
+}
+
+// Yêu cầu lấy danh sách transaction history
+message ListTransactionHistoryRequest {
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+}
+
+// Phản hồi danh sách transaction history
+message ListTransactionHistoryResponse {
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  repeated TransactionHistory data = 4; // Danh sách transaction history
+}
+
+// Yêu cầu lấy transaction history theo UETR
+message GetTransactionHistoryByUetrRequest {
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  string uetr = 3;          // Unique End-to-End Transaction Reference
+}
+
+// Yêu cầu khởi tạo funding cho account
+message InitFundingAccountRequest {
+  Metadata metadata = 1;    // Metadata của request
+  Signature signature = 2;  // Chữ ký số của request
+  FundingAccountData data = 3;  // Dữ liệu funding account
+}
+
+// Dữ liệu funding account
+message FundingAccountData {
+  string bank_code = 1;     // BIC code của bank
+  double mint_amount = 2;   // Số tiền để mint
+  double deposit_amount = 3; // Số tiền để deposit
+  string currency = 4;      // Mã tiền tệ (ví dụ: USD, VND)
+}
+
+// Phản hồi khởi tạo funding cho account
+message InitFundingAccountResponse {
+  Metadata metadata = 1;    // Metadata của response
+  Signature signature = 2;  // Chữ ký số của response
+  Result result = 3;        // Kết quả thực thi
+  FundingAccountResult data = 4;  // Kết quả funding
+}
+
+// Kết quả funding account
+message FundingAccountResult {
+  string bank_code = 1;           // BIC code của bank
+  string bank_address = 2;        // Địa chỉ bank address từ on-chain
+  string mint_tx_hash = 3;        // Transaction hash của mint
+  string deposit_tx_hash = 4;     // Transaction hash của deposit
+  double mint_amount = 5;         // Số tiền đã mint
+  double deposit_amount = 6;      // Số tiền đã deposit
+  string currency = 7;            // Mã tiền tệ
 }
